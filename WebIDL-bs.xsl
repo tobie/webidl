@@ -3,7 +3,7 @@
                 xmlns:x='http://mcc.id.au/ns/local'
                 xmlns='http://www.w3.org/1999/xhtml'
                 exclude-result-prefixes='h x'
-                version='1.0' id='xslt'>
+                version='2.0' id='xslt'>
 
   <xsl:output method='xml' encoding='UTF-8'
               omit-xml-declaration='yes'
@@ -12,7 +12,7 @@
   <xsl:variable name='options' select='/*/h:head/x:options'/>
   <xsl:variable name='id' select='/*/h:head/h:meta[@name="revision"]/@content'/>
   <xsl:variable name='rev' select='substring-before(substring-after(substring-after($id, " "), " "), " ")'/>
-  <xsl:variable name='tocpi' value='false'/>
+  <xsl:variable name='tocpi' />
   <xsl:param name='now'>12340506<!--
     <xsl:value-of select='translate(substring-before(substring-after(substring-after(substring-after($id, " "), " "), " "), " "), "/", "")'/>-->
   </xsl:param>
