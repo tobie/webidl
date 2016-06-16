@@ -20,20 +20,6 @@
     <xsl:value-of select='translate(substring-before(substring-after(substring-after(substring-after($id, " "), " "), " "), " "), "/", "")'/>-->
   </xsl:param>
 
-  <xsl:template match='/'>
-    <xsl:text>&#xa;</xsl:text>
-    <xsl:if test='$options/x:maturity="ED"'>
-      <xsl:comment>
-  index.html
-  Web IDL
-
-  Note: This file is generated from index.xml.  Run "make" to regenerate it.
-  </xsl:comment>
-      <xsl:text>&#xa;</xsl:text>
-    </xsl:if>
-    <xsl:apply-templates select='/*'/>
-  </xsl:template>
-
   <xsl:template match='h:*'>
     <xsl:element name="{name()}" namespace="{namespace-uri()}">
       <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
