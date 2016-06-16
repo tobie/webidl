@@ -12,8 +12,7 @@
   <xsl:variable name='options' select='/*/h:head/x:options'/>
   <xsl:variable name='id' select='/*/h:head/h:meta[@name="revision"]/@content'/>
   <xsl:variable name='rev' select='substring-before(substring-after(substring-after($id, " "), " "), " ")'/>
-  <xsl:variable name='tocpi' select='//processing-instruction("toc")[1]'/>
-
+  <xsl:variable name='tocpi' value='false'/>
   <xsl:param name='now'>12340506<!--
     <xsl:value-of select='translate(substring-before(substring-after(substring-after(substring-after($id, " "), " "), " "), " "), "/", "")'/>-->
   </xsl:param>
@@ -125,33 +124,8 @@
     </table>
   </xsl:template>
 
-  <xsl:template match='processing-instruction("toc")'>
-    <xsl:variable name='sectionsID' select='substring-before(., " ")'/>
-    <xsl:variable name='appendicesID' select='substring-after(., " ")'/>
-
-    <div class='toc'>
-      <xsl:for-each select='//*[@id=$sectionsID]'>
-        <xsl:call-template name='toc1'/>
-      </xsl:for-each>
-      <xsl:for-each select='//*[@id=$appendicesID]'>
-        <xsl:call-template name='toc1'>
-          <xsl:with-param name='alpha' select='true()'/>
-        </xsl:call-template>
-      </xsl:for-each>
-    </div>
-  </xsl:template>
-
-  <xsl:template match='processing-instruction("sref")'>
-    <xsl:variable name='id' select='string(.)'/>
-    <xsl:variable name='s' select='//*[@id=$id]/self::h:div[@class="section"]'/>
-    <xsl:choose>
-      <xsl:when test='$s'>
-        <xsl:call-template name='section-number'>
-          <xsl:with-param name='section' select='$s'/>
-        </xsl:call-template>
-      </xsl:when>
-      <xsl:otherwise>@@</xsl:otherwise>
-    </xsl:choose>
+  <xsl:template match='*[processing-instruction("sref")]'>
+      <xsl:text>[[</xsl:text><xsl:value-of select='./@href'/><xsl:text>]]</xsl:text>
   </xsl:template>
 
   <xsl:template match='processing-instruction("sdir")'>
@@ -232,60 +206,6 @@
 
   <xsl:template match='processing-instruction()|comment()'/>
 
-  <xsl:template name='toc1'>
-    <xsl:param name='prefix'/>
-    <xsl:param name='alpha'/>
-
-    <xsl:variable name='subsections' select='h:div[@class="section"]'/>
-    <xsl:if test='$subsections'>
-      <ul>
-        <xsl:for-each select='h:div[@class="section"]'>
-          <xsl:variable name='number'>
-            <xsl:value-of select='$prefix'/>
-            <xsl:if test='$prefix'>.</xsl:if>
-            <xsl:choose>
-              <xsl:when test='$alpha'><xsl:number value='position()' format='A'/></xsl:when>
-              <xsl:otherwise><xsl:value-of select='position()'/></xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <xsl:variable name='frag'>
-            <xsl:choose>
-              <xsl:when test='@id'><xsl:value-of select='@id'/></xsl:when>
-              <xsl:otherwise><xsl:value-of select='generate-id(.)'/></xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <li>
-            <a href='#{$frag}'>
-              <xsl:value-of select='$number'/>
-              <xsl:text>. </xsl:text>
-              <xsl:for-each select='h:h2|h:h3|h:h4|h:h5|h:h6'>
-                <xsl:call-template name='toc-entry-name'/>
-              </xsl:for-each>
-            </a>
-            <xsl:call-template name='toc1'>
-              <xsl:with-param name='prefix' select='$number'/>
-            </xsl:call-template>
-          </li>
-        </xsl:for-each>
-      </ul>
-    </xsl:if>
-  </xsl:template>
-
-  <xsl:template name='toc-entry-name'>
-    <xsl:for-each select='node()'>
-      <xsl:choose>
-        <xsl:when test='self::h:var'>
-          <var>
-            <xsl:value-of select='.'/>
-          </var>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select='.'/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:for-each>
-  </xsl:template>
-
   <xsl:template name='section-number'>
     <xsl:param name='section'/>
     <xsl:variable name='sections' select='//*[@id=substring-before($tocpi, " ")]'/>
@@ -334,6 +254,8 @@
       <xsl:apply-templates select='node()'/>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match='h:div[@id="toc"]' />
 
   <xsl:template match='h:div[@class="ednote"]'>
     <div>
