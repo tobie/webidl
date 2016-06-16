@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
   index.xml
   Web IDL (Second Edition)
@@ -143,7 +142,7 @@
               (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
             <li>IDL grammar snippets:
               <table class="grammar">
-                <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br /> | AnotherSymbol<br /> | ε  <span class="comment">// nothing</span></span></td></tr>
+                <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  <span class="comment">// nothing</span></span></td></tr>
               </table>
               (Each grammar rule is assigned a number for reference, shown on the left.)</li>
             <li>Non-normative notes: <div class="note"><div class="noteHeader">Note</div><p>This is a note.</p></div></li>
@@ -269,13 +268,13 @@ interface <i>identifier</i> {
   <i>interface-members…</i>
 };</pre>
 
-        <table class="grammar"><tr id="proddef-Definitions"><td><span class="prod-number">[1]</span></td><td><a class="sym" href="#prod-Definitions">Definitions</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-Definition">Definition</a> <a class="sym" href="#prod-Definitions">Definitions</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Definition"><td><span class="prod-number">[2]</span></td><td><a class="sym" href="#prod-Definition">Definition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a> <br /> |
-             <a class="sym" href="#prod-Partial">Partial</a> <br /> |
-             <a class="sym" href="#prod-Dictionary">Dictionary</a> <br /> |
-             <a class="sym" href="#prod-Enum">Enum</a> <br /> |
-             <a class="sym" href="#prod-Typedef">Typedef</a> <br /> |
-             <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a></span></td></tr><tr id="proddef-CallbackOrInterface"><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br /> |
+        <table class="grammar"><tr id="proddef-Definitions"><td><span class="prod-number">[1]</span></td><td><a class="sym" href="#prod-Definitions">Definitions</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-Definition">Definition</a> <a class="sym" href="#prod-Definitions">Definitions</a> <br/> |
+             ε</span></td></tr><tr id="proddef-Definition"><td><span class="prod-number">[2]</span></td><td><a class="sym" href="#prod-Definition">Definition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a> <br/> |
+             <a class="sym" href="#prod-Partial">Partial</a> <br/> |
+             <a class="sym" href="#prod-Dictionary">Dictionary</a> <br/> |
+             <a class="sym" href="#prod-Enum">Enum</a> <br/> |
+             <a class="sym" href="#prod-Typedef">Typedef</a> <br/> |
+             <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a></span></td></tr><tr id="proddef-CallbackOrInterface"><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
              <a class="sym" href="#prod-Interface">Interface</a></span></td></tr></table>
 
         <div class="example"><div class="exampleHeader">Example</div>
@@ -441,30 +440,30 @@ dictionary <i>identifier</i> {
           </p>
           <pre class="syntax"><i>return-type</i> <i>operation-identifier</i>(<i>argument-type</i> <em>argument-identifier</em>, …);</pre>
           <table class="grammar"><tr id="proddef-ArgumentNameKeyword"><td><span class="prod-number">[71]</span></td><td><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
-              "attribute" <br /> |
-             "callback" <br /> |
-             "const" <br /> |
-             "deleter" <br /> |
+              "attribute" <br/> |
+             "callback" <br/> |
+             "const" <br/> |
+             "deleter" <br/> |
              "dictionary"
-            <br /> |
-             "enum" <br /> |
-             "getter" <br /> |
-             "implements" <br /> |
-             "inherit" <br /> |
-             "interface" <br /> |
+            <br/> |
+             "enum" <br/> |
+             "getter" <br/> |
+             "implements" <br/> |
+             "inherit" <br/> |
+             "interface" <br/> |
              "iterable"
-            <br /> |
-             "legacycaller" <br /> |
-             "maplike" <br /> |
-             "partial" <br /> |
-             "required" <br /> |
-             "serializer" <br /> |
-             "setlike" <br /> |
-             "setter" <br /> |
-             "static" <br /> |
-             "stringifier" <br /> |
+            <br/> |
+             "legacycaller" <br/> |
+             "maplike" <br/> |
+             "partial" <br/> |
+             "required" <br/> |
+             "serializer" <br/> |
+             "setlike" <br/> |
+             "setter" <br/> |
+             "static" <br/> |
+             "stringifier" <br/> |
              "typedef"
-            <br /> |
+            <br/> |
              "unrestricted"
           </span></td></tr></table>
           <p>
@@ -941,20 +940,20 @@ partial interface <em>SomeInterface</em> {
             <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
           </p>
 
-          <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br /> |
-             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="proddef-CallbackRestOrInterface"><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br /> |
-             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="proddef-Interface"><td><span class="prod-number">[5]</span></td><td><a class="sym" href="#prod-Interface">Interface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="proddef-Partial"><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#prod-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr id="proddef-PartialDefinition"><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br /> |
-             <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="proddef-PartialInterface"><td><span class="prod-number">[8]</span></td><td><a class="sym" href="#prod-PartialInterface">PartialInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="proddef-InterfaceMembers"><td><span class="prod-number">[9]</span></td><td><a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-InterfaceMember">InterfaceMember</a> <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> <br /> |
-             ε</span></td></tr><tr id="proddef-InterfaceMember"><td><span class="prod-number">[10]</span></td><td><a class="sym" href="#prod-InterfaceMember">InterfaceMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Const">Const</a> <br /> |
-             <a class="sym" href="#prod-Operation">Operation</a> <br /> |
-             <a class="sym" href="#prod-Serializer">Serializer</a> <br /> |
-             <a class="sym" href="#prod-Stringifier">Stringifier</a> <br /> |
-             <a class="sym" href="#prod-StaticMember">StaticMember</a> <br /> |
-             <a class="sym" href="#prod-Iterable">Iterable</a> <br /> |
-             <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-Inheritance"><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br /> |
+          <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
+             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="proddef-CallbackRestOrInterface"><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br/> |
+             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="proddef-Interface"><td><span class="prod-number">[5]</span></td><td><a class="sym" href="#prod-Interface">Interface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="proddef-Partial"><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#prod-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr id="proddef-PartialDefinition"><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br/> |
+             <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="proddef-PartialInterface"><td><span class="prod-number">[8]</span></td><td><a class="sym" href="#prod-PartialInterface">PartialInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="proddef-InterfaceMembers"><td><span class="prod-number">[9]</span></td><td><a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-InterfaceMember">InterfaceMember</a> <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> <br/> |
+             ε</span></td></tr><tr id="proddef-InterfaceMember"><td><span class="prod-number">[10]</span></td><td><a class="sym" href="#prod-InterfaceMember">InterfaceMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Const">Const</a> <br/> |
+             <a class="sym" href="#prod-Operation">Operation</a> <br/> |
+             <a class="sym" href="#prod-Serializer">Serializer</a> <br/> |
+             <a class="sym" href="#prod-Stringifier">Stringifier</a> <br/> |
+             <a class="sym" href="#prod-StaticMember">StaticMember</a> <br/> |
+             <a class="sym" href="#prod-Iterable">Iterable</a> <br/> |
+             <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-Inheritance"><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br/> |
              ε</span></td></tr></table>
 
           <div class="example"><div class="exampleHeader">Example</div>
@@ -1238,14 +1237,14 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               <a class="xattr" href="#SecureContext">[SecureContext]</a>.
             </p>
 
-            <table class="grammar"><tr id="proddef-Const"><td><span class="prod-number">[26]</span></td><td><a class="sym" href="#prod-Const">Const</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"const" <a class="sym" href="#prod-ConstType">ConstType</a> <a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ConstValue">ConstValue</a> ";"</span></td></tr><tr id="proddef-ConstValue"><td><span class="prod-number">[27]</span></td><td><a class="sym" href="#prod-ConstValue">ConstValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a> <br /> |
-             <a class="sym" href="#prod-FloatLiteral">FloatLiteral</a> <br /> |
-             <a class="sym" href="#prod-integer">integer</a> <br /> |
-             "null"</span></td></tr><tr id="proddef-BooleanLiteral"><td><span class="prod-number">[28]</span></td><td><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"true" <br /> |
-             "false"</span></td></tr><tr id="proddef-FloatLiteral"><td><span class="prod-number">[29]</span></td><td><a class="sym" href="#prod-FloatLiteral">FloatLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-float">float</a> <br /> |
-             "-Infinity" <br /> |
-             "Infinity" <br /> |
-             "NaN"</span></td></tr><tr id="proddef-ConstType"><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
+            <table class="grammar"><tr id="proddef-Const"><td><span class="prod-number">[26]</span></td><td><a class="sym" href="#prod-Const">Const</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"const" <a class="sym" href="#prod-ConstType">ConstType</a> <a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ConstValue">ConstValue</a> ";"</span></td></tr><tr id="proddef-ConstValue"><td><span class="prod-number">[27]</span></td><td><a class="sym" href="#prod-ConstValue">ConstValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a> <br/> |
+             <a class="sym" href="#prod-FloatLiteral">FloatLiteral</a> <br/> |
+             <a class="sym" href="#prod-integer">integer</a> <br/> |
+             "null"</span></td></tr><tr id="proddef-BooleanLiteral"><td><span class="prod-number">[28]</span></td><td><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"true" <br/> |
+             "false"</span></td></tr><tr id="proddef-FloatLiteral"><td><span class="prod-number">[29]</span></td><td><a class="sym" href="#prod-FloatLiteral">FloatLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-float">float</a> <br/> |
+             "-Infinity" <br/> |
+             "Infinity" <br/> |
+             "NaN"</span></td></tr><tr id="proddef-ConstType"><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
             <div class="example"><div class="exampleHeader">Example</div>
               <p>
@@ -1411,12 +1410,12 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
               <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
             </p>
 
-            <table class="grammar"><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="proddef-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#prod-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="proddef-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#prod-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="proddef-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#prod-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br /> |
-             ε</span></td></tr><tr id="proddef-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#prod-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br /> |
+            <table class="grammar"><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="proddef-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#prod-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="proddef-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#prod-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="proddef-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#prod-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br/> |
+             ε</span></td></tr><tr id="proddef-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#prod-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br/> |
              ε</span></td></tr></table>
 
             <div class="example"><div class="exampleHeader">Example</div>
@@ -1803,46 +1802,46 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>.
             </p>
 
-            <table class="grammar"><tr id="proddef-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#prod-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br /> |
-             <a class="sym" href="#prod-string">string</a> <br /> |
-             "[" "]"</span></td></tr><tr id="proddef-Operation"><td><span class="prod-number">[47]</span></td><td><a class="sym" href="#prod-Operation">Operation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             <a class="sym" href="#prod-SpecialOperation">SpecialOperation</a></span></td></tr><tr id="proddef-SpecialOperation"><td><span class="prod-number">[48]</span></td><td><a class="sym" href="#prod-SpecialOperation">SpecialOperation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="proddef-Specials"><td><span class="prod-number">[49]</span></td><td><a class="sym" href="#prod-Specials">Specials</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Special"><td><span class="prod-number">[50]</span></td><td><a class="sym" href="#prod-Special">Special</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
-             "setter" <br /> |
-             "deleter" <br /> |
-             "legacycaller"</span></td></tr><tr id="proddef-OperationRest"><td><span class="prod-number">[51]</span></td><td><a class="sym" href="#prod-OperationRest">OperationRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OptionalIdentifier">OptionalIdentifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr><tr id="proddef-OptionalIdentifier"><td><span class="prod-number">[52]</span></td><td><a class="sym" href="#prod-OptionalIdentifier">OptionalIdentifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <br /> |
-             ε</span></td></tr><tr id="proddef-ArgumentList"><td><span class="prod-number">[53]</span></td><td><a class="sym" href="#prod-ArgumentList">ArgumentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Arguments"><td><span class="prod-number">[54]</span></td><td><a class="sym" href="#prod-Arguments">Arguments</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Argument"><td><span class="prod-number">[55]</span></td><td><a class="sym" href="#prod-Argument">Argument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></span></td></tr><tr id="proddef-OptionalOrRequiredArgument"><td><span class="prod-number">[56]</span></td><td><a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"optional" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a> <a class="sym" href="#prod-Default">Default</a> <br /> |
-             <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-Ellipsis">Ellipsis</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a></span></td></tr><tr id="proddef-ArgumentName"><td><span class="prod-number">[57]</span></td><td><a class="sym" href="#prod-ArgumentName">ArgumentName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-Ellipsis"><td><span class="prod-number">[58]</span></td><td><a class="sym" href="#prod-Ellipsis">Ellipsis</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"..." <br /> |
+            <table class="grammar"><tr id="proddef-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#prod-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br/> |
+             <a class="sym" href="#prod-string">string</a> <br/> |
+             "[" "]"</span></td></tr><tr id="proddef-Operation"><td><span class="prod-number">[47]</span></td><td><a class="sym" href="#prod-Operation">Operation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
+             <a class="sym" href="#prod-SpecialOperation">SpecialOperation</a></span></td></tr><tr id="proddef-SpecialOperation"><td><span class="prod-number">[48]</span></td><td><a class="sym" href="#prod-SpecialOperation">SpecialOperation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="proddef-Specials"><td><span class="prod-number">[49]</span></td><td><a class="sym" href="#prod-Specials">Specials</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <br/> |
+             ε</span></td></tr><tr id="proddef-Special"><td><span class="prod-number">[50]</span></td><td><a class="sym" href="#prod-Special">Special</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br/> |
+             "setter" <br/> |
+             "deleter" <br/> |
+             "legacycaller"</span></td></tr><tr id="proddef-OperationRest"><td><span class="prod-number">[51]</span></td><td><a class="sym" href="#prod-OperationRest">OperationRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OptionalIdentifier">OptionalIdentifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr><tr id="proddef-OptionalIdentifier"><td><span class="prod-number">[52]</span></td><td><a class="sym" href="#prod-OptionalIdentifier">OptionalIdentifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <br/> |
+             ε</span></td></tr><tr id="proddef-ArgumentList"><td><span class="prod-number">[53]</span></td><td><a class="sym" href="#prod-ArgumentList">ArgumentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br/> |
+             ε</span></td></tr><tr id="proddef-Arguments"><td><span class="prod-number">[54]</span></td><td><a class="sym" href="#prod-Arguments">Arguments</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br/> |
+             ε</span></td></tr><tr id="proddef-Argument"><td><span class="prod-number">[55]</span></td><td><a class="sym" href="#prod-Argument">Argument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></span></td></tr><tr id="proddef-OptionalOrRequiredArgument"><td><span class="prod-number">[56]</span></td><td><a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"optional" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a> <a class="sym" href="#prod-Default">Default</a> <br/> |
+             <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-Ellipsis">Ellipsis</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a></span></td></tr><tr id="proddef-ArgumentName"><td><span class="prod-number">[57]</span></td><td><a class="sym" href="#prod-ArgumentName">ArgumentName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-Ellipsis"><td><span class="prod-number">[58]</span></td><td><a class="sym" href="#prod-Ellipsis">Ellipsis</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"..." <br/> |
              ε</span></td></tr><tr><td><span class="prod-number">[71]</span></td><td><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
-              "attribute" <br /> |
-             "callback" <br /> |
-             "const" <br /> |
-             "deleter" <br /> |
+              "attribute" <br/> |
+             "callback" <br/> |
+             "const" <br/> |
+             "deleter" <br/> |
              "dictionary"
-            <br /> |
-             "enum" <br /> |
-             "getter" <br /> |
-             "implements" <br /> |
-             "inherit" <br /> |
-             "interface" <br /> |
+            <br/> |
+             "enum" <br/> |
+             "getter" <br/> |
+             "implements" <br/> |
+             "inherit" <br/> |
+             "interface" <br/> |
              "iterable"
-            <br /> |
-             "legacycaller" <br /> |
-             "maplike" <br /> |
-             "partial" <br /> |
-             "required" <br /> |
-             "serializer" <br /> |
-             "setlike" <br /> |
-             "setter" <br /> |
-             "static" <br /> |
-             "stringifier" <br /> |
+            <br/> |
+             "legacycaller" <br/> |
+             "maplike" <br/> |
+             "partial" <br/> |
+             "required" <br/> |
+             "serializer" <br/> |
+             "setlike" <br/> |
+             "setter" <br/> |
+             "static" <br/> |
+             "stringifier" <br/> |
              "typedef"
-            <br /> |
+            <br/> |
              "unrestricted"
-          </span></td></tr><tr id="proddef-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#prod-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br /> |
+          </span></td></tr><tr id="proddef-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#prod-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br/> |
              "void"</span></td></tr></table>
           </div>
 
@@ -2157,8 +2156,8 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
               </p>
               <pre class="syntax">stringifier attribute DOMString <i>identifier</i>;</pre>
 
-              <table class="grammar"><tr id="proddef-Stringifier"><td><span class="prod-number">[35]</span></td><td><a class="sym" href="#prod-Stringifier">Stringifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"stringifier" <a class="sym" href="#prod-StringifierRest">StringifierRest</a></span></td></tr><tr id="proddef-StringifierRest"><td><span class="prod-number">[36]</span></td><td><a class="sym" href="#prod-StringifierRest">StringifierRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
+              <table class="grammar"><tr id="proddef-Stringifier"><td><span class="prod-number">[35]</span></td><td><a class="sym" href="#prod-Stringifier">Stringifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"stringifier" <a class="sym" href="#prod-StringifierRest">StringifierRest</a></span></td></tr><tr id="proddef-StringifierRest"><td><span class="prod-number">[36]</span></td><td><a class="sym" href="#prod-StringifierRest">StringifierRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
              ";"</span></td></tr></table>
 
               <div class="example"><div class="exampleHeader">Example</div>
@@ -2493,16 +2492,16 @@ serializer = { inherit, attribute };</pre>
                 the value returned from invoking the operation to a serialized value.
               </p>
 
-              <table class="grammar"><tr id="proddef-Serializer"><td><span class="prod-number">[30]</span></td><td><a class="sym" href="#prod-Serializer">Serializer</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"serializer" <a class="sym" href="#prod-SerializerRest">SerializerRest</a></span></td></tr><tr id="proddef-SerializerRest"><td><span class="prod-number">[31]</span></td><td><a class="sym" href="#prod-SerializerRest">SerializerRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> ";" <br /> |
-             ";"</span></td></tr><tr id="proddef-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#prod-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br /> |
-             "[" <a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a> "]" <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-SerializationPatternMap"><td><span class="prod-number">[33]</span></td><td><a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
-             "inherit" <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="proddef-SerializationPatternList"><td><span class="prod-number">[34]</span></td><td><a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
+              <table class="grammar"><tr id="proddef-Serializer"><td><span class="prod-number">[30]</span></td><td><a class="sym" href="#prod-Serializer">Serializer</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"serializer" <a class="sym" href="#prod-SerializerRest">SerializerRest</a></span></td></tr><tr id="proddef-SerializerRest"><td><span class="prod-number">[31]</span></td><td><a class="sym" href="#prod-SerializerRest">SerializerRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
+             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> ";" <br/> |
+             ";"</span></td></tr><tr id="proddef-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#prod-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br/> |
+             "[" <a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a> "]" <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-SerializationPatternMap"><td><span class="prod-number">[33]</span></td><td><a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br/> |
+             "inherit" <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
+             ε</span></td></tr><tr id="proddef-SerializationPatternList"><td><span class="prod-number">[34]</span></td><td><a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
+             ε</span></td></tr><tr id="proddef-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
              ε</span></td></tr></table>
 
               <div class="example"><div class="exampleHeader">Example</div>
@@ -2864,7 +2863,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
               declared on <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>.
             </p>
 
-            <table class="grammar"><tr id="proddef-StaticMember"><td><span class="prod-number">[37]</span></td><td><a class="sym" href="#prod-StaticMember">StaticMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"static" <a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></span></td></tr><tr id="proddef-StaticMemberRest"><td><span class="prod-number">[38]</span></td><td><a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
+            <table class="grammar"><tr id="proddef-StaticMember"><td><span class="prod-number">[37]</span></td><td><a class="sym" href="#prod-StaticMember">StaticMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"static" <a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></span></td></tr><tr id="proddef-StaticMemberRest"><td><span class="prod-number">[38]</span></td><td><a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
              <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr></table>
 
             <div class="example"><div class="exampleHeader">Example</div>
@@ -3188,13 +3187,13 @@ partial interface A {
                 identifier <code>f</code> and argument count 4 is:
               </p>
               <div class="set">
-                { &lt;f1, (DOMString), (required)&gt;,<br />
-                  &lt;f2, (Node, DOMString), (required, required)&gt;,<br />
-                  &lt;f2, (Node, DOMString, double), (required, required, variadic)&gt;,<br />
-                  &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)&gt;,<br />
-                  &lt;f3, (), ()&gt;,<br />
-                  &lt;f4, (Event, DOMString), (required, required)&gt;,<br />
-                  &lt;f4, (Event, DOMString, DOMString), (required, required, optional)&gt;,<br />
+                { &lt;f1, (DOMString), (required)&gt;,<br/>
+                  &lt;f2, (Node, DOMString), (required, required)&gt;,<br/>
+                  &lt;f2, (Node, DOMString, double), (required, required, variadic)&gt;,<br/>
+                  &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)&gt;,<br/>
+                  &lt;f3, (), ()&gt;,<br/>
+                  &lt;f4, (Event, DOMString), (required, required)&gt;,<br/>
+                  &lt;f4, (Event, DOMString, DOMString), (required, required, optional)&gt;,<br/>
                   &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)&gt; }
               </div>
             </div>
@@ -3230,13 +3229,13 @@ partial interface A {
                   requirement below the table is satisfied:</p>
                 <table id="distinguishable-table" class="matrix">
                   <tr>
-                    <th class="corner"></th>
+                    <th class="corner"/>
                     <th>boolean</th>
                     <th>numeric types</th>
                     <th>string types</th>
                     <th>interface</th>
                     <th>object</th>
-                    <th>callback <br />function</th>
+                    <th>callback <br/>function</th>
                     <th>dictionary</th>
                     <th>sequence&lt;<var>T</var>&gt;</th>
                     <th>FrozenArray&lt;<var>T</var>&gt;</th>
@@ -3246,7 +3245,7 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>boolean</th>
-                    <td></td>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
@@ -3261,8 +3260,8 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>numeric types</th>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
@@ -3276,9 +3275,9 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>string types</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
@@ -3291,11 +3290,11 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>interface</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
                     <td>(a)</td>
-                    <td></td>
+                    <td/>
                     <td>(b)</td>
                     <td>(b)</td>
                     <td>●</td>
@@ -3306,28 +3305,28 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>object</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
                   </tr>
                   <tr>
                     <th>callback function</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
@@ -3336,13 +3335,13 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>dictionary</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
@@ -3351,78 +3350,78 @@ partial interface A {
                   </tr>
                   <tr>
                     <th>sequence&lt;<var>T</var>&gt;</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
                   </tr>
                   <tr>
                     <th>FrozenArray&lt;<var>T</var>&gt;</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                     <td>●</td>
                   </tr>
                   <tr>
                     <th>RegExp</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
                     <td>●</td>
                     <td>●</td>
                   </tr>
                   <tr>
                     <th>exception types</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
                     <td>●</td>
                   </tr>
                   <tr>
                     <th>buffer source types</th>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td class="belowdiagonal"></td>
-                    <td></td>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td class="belowdiagonal"/>
+                    <td/>
                   </tr>
                 </table>
                 <ol type="a">
@@ -3502,8 +3501,8 @@ partial interface A {
                 For argument count 4, the effective overload set is:
               </p>
               <div class="set">
-                { &lt;f1, (DOMString), (required)&gt;,<br />
-                  &lt;f2, (long, double, Node, Node), (required, required, required, required)&gt;,<br />
+                { &lt;f1, (DOMString), (required)&gt;,<br/>
+                  &lt;f2, (long, double, Node, Node), (required, required, required, required)&gt;,<br/>
                   &lt;f3, (double, double, DOMString, Node), (required, required, required, required)&gt; }
               </div>
               <p>
@@ -3732,7 +3731,7 @@ for (let session of sm) {
             </p>
             -->
 
-            <table class="grammar"><tr id="proddef-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#prod-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="proddef-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#prod-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br /> |
+            <table class="grammar"><tr id="proddef-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#prod-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="proddef-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#prod-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br/> |
              ε</span></td></tr></table>
           </div>
 
@@ -3810,8 +3809,8 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a> or
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.
             </p>
-            <table class="grammar"><tr><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br /> |
+            <table class="grammar"><tr><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br/> |
              <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-ReadWriteMaplike"><td><span class="prod-number">[61]</span></td><td><a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-MaplikeRest">MaplikeRest</a></span></td></tr><tr id="proddef-MaplikeRest"><td><span class="prod-number">[63]</span></td><td><a class="sym" href="#prod-MaplikeRest">MaplikeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"maplike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "," <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr></table>
             <p>
               No <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
@@ -3893,8 +3892,8 @@ setlike&lt;<i>type</i>&gt;;</pre>
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a> or
               <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.
             </p>
-            <table class="grammar"><tr><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br /> |
+            <table class="grammar"><tr><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br/> |
              <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-ReadWriteSetlike"><td><span class="prod-number">[62]</span></td><td><a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SetlikeRest">SetlikeRest</a></span></td></tr><tr id="proddef-SetlikeRest"><td><span class="prod-number">[64]</span></td><td><a class="sym" href="#prod-SetlikeRest">SetlikeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"setlike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr></table>
             <p>
               No <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
@@ -4155,12 +4154,12 @@ something.f(dict);</code></pre></div></div>
             <a class="xattr" href="#Clamp">[Clamp]</a>,
             <a class="xattr" href="#EnforceRange">[EnforceRange]</a>.
           </p>
-          <table class="grammar"><tr><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#prod-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br /> |
-             <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="proddef-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#prod-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="proddef-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br /> |
-             ε</span></td></tr><tr id="proddef-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#prod-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Required">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="proddef-PartialDictionary"><td><span class="prod-number">[15]</span></td><td><a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="proddef-Default"><td><span class="prod-number">[16]</span></td><td><a class="sym" href="#prod-Default">Default</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"=" <a class="sym" href="#prod-DefaultValue">DefaultValue</a> <br /> |
-             ε</span></td></tr><tr><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#prod-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br /> |
-             <a class="sym" href="#prod-string">string</a> <br /> |
-             "[" "]"</span></td></tr><tr><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br /> |
+          <table class="grammar"><tr><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#prod-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br/> |
+             <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="proddef-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#prod-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="proddef-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br/> |
+             ε</span></td></tr><tr id="proddef-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#prod-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Required">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="proddef-PartialDictionary"><td><span class="prod-number">[15]</span></td><td><a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="proddef-Default"><td><span class="prod-number">[16]</span></td><td><a class="sym" href="#prod-Default">Default</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"=" <a class="sym" href="#prod-DefaultValue">DefaultValue</a> <br/> |
+             ε</span></td></tr><tr><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#prod-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br/> |
+             <a class="sym" href="#prod-string">string</a> <br/> |
+             "[" "]"</span></td></tr><tr><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br/> |
              ε</span></td></tr></table>
           <div class="example"><div class="exampleHeader">Example</div>
             <p>
@@ -4554,8 +4553,8 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             defined in this specification are applicable to <a class="dnfref" href="#dfn-enumeration">enumerations</a>.
           </p>
 
-          <table class="grammar"><tr id="proddef-Enum"><td><span class="prod-number">[19]</span></td><td><a class="sym" href="#prod-Enum">Enum</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"enum" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-EnumValueList">EnumValueList</a> "}" ";"</span></td></tr><tr id="proddef-EnumValueList"><td><span class="prod-number">[20]</span></td><td><a class="sym" href="#prod-EnumValueList">EnumValueList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></span></td></tr><tr id="proddef-EnumValueListComma"><td><span class="prod-number">[21]</span></td><td><a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-EnumValueListString">EnumValueListString</a> <br /> |
-             ε</span></td></tr><tr id="proddef-EnumValueListString"><td><span class="prod-number">[22]</span></td><td><a class="sym" href="#prod-EnumValueListString">EnumValueListString</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a> <br /> |
+          <table class="grammar"><tr id="proddef-Enum"><td><span class="prod-number">[19]</span></td><td><a class="sym" href="#prod-Enum">Enum</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"enum" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-EnumValueList">EnumValueList</a> "}" ";"</span></td></tr><tr id="proddef-EnumValueList"><td><span class="prod-number">[20]</span></td><td><a class="sym" href="#prod-EnumValueList">EnumValueList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></span></td></tr><tr id="proddef-EnumValueListComma"><td><span class="prod-number">[21]</span></td><td><a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-EnumValueListString">EnumValueListString</a> <br/> |
+             ε</span></td></tr><tr id="proddef-EnumValueListString"><td><span class="prod-number">[22]</span></td><td><a class="sym" href="#prod-EnumValueListString">EnumValueListString</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a> <br/> |
              ε</span></td></tr></table>
 
           <div class="example"><div class="exampleHeader">Example</div>
@@ -4625,8 +4624,8 @@ meal.type == "noodles";              <span class="comment">// Evaluates to true.
             <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>.
           </p>
 
-          <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br /> |
-             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br /> |
+          <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
+             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br/> |
              <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="proddef-CallbackRest"><td><span class="prod-number">[23]</span></td><td><a class="sym" href="#prod-CallbackRest">CallbackRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ReturnType">ReturnType</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr></table>
 
           <div class="example"><div class="exampleHeader">Example</div>
@@ -5067,33 +5066,33 @@ interface Person {
             assign to the attribute.
           </p>
 
-          <table class="grammar"><tr id="proddef-Type"><td><span class="prod-number">[73]</span></td><td><a class="sym" href="#prod-Type">Type</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SingleType">SingleType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#prod-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             "any"</span></td></tr><tr id="proddef-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="proddef-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
-             ε</span></td></tr><tr id="proddef-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "USVString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-PrimitiveType"><td><span class="prod-number">[81]</span></td><td><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a> <br /> |
-             <a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a> <br /> |
-             "boolean" <br /> |
-             "byte" <br /> |
-             "octet"</span></td></tr><tr id="proddef-UnrestrictedFloatType"><td><span class="prod-number">[82]</span></td><td><a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unrestricted" <a class="sym" href="#prod-FloatType">FloatType</a> <br /> |
-             <a class="sym" href="#prod-FloatType">FloatType</a></span></td></tr><tr id="proddef-FloatType"><td><span class="prod-number">[83]</span></td><td><a class="sym" href="#prod-FloatType">FloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"float" <br /> |
-             "double"</span></td></tr><tr id="proddef-UnsignedIntegerType"><td><span class="prod-number">[84]</span></td><td><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unsigned" <a class="sym" href="#prod-IntegerType">IntegerType</a> <br /> |
-             <a class="sym" href="#prod-IntegerType">IntegerType</a></span></td></tr><tr id="proddef-IntegerType"><td><span class="prod-number">[85]</span></td><td><a class="sym" href="#prod-IntegerType">IntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"short" <br /> |
-             "long" <a class="sym" href="#prod-OptionalLong">OptionalLong</a></span></td></tr><tr id="proddef-OptionalLong"><td><span class="prod-number">[86]</span></td><td><a class="sym" href="#prod-OptionalLong">OptionalLong</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"long" <br /> |
-             ε</span></td></tr><tr id="proddef-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#prod-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="proddef-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#prod-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br /> |
+          <table class="grammar"><tr id="proddef-Type"><td><span class="prod-number">[73]</span></td><td><a class="sym" href="#prod-Type">Type</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SingleType">SingleType</a> <br/> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#prod-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br/> |
+             "any"</span></td></tr><tr id="proddef-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="proddef-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br/> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br/> |
+             ε</span></td></tr><tr id="proddef-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "USVString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "object" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "Error" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-PrimitiveType"><td><span class="prod-number">[81]</span></td><td><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a> <br/> |
+             <a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a> <br/> |
+             "boolean" <br/> |
+             "byte" <br/> |
+             "octet"</span></td></tr><tr id="proddef-UnrestrictedFloatType"><td><span class="prod-number">[82]</span></td><td><a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unrestricted" <a class="sym" href="#prod-FloatType">FloatType</a> <br/> |
+             <a class="sym" href="#prod-FloatType">FloatType</a></span></td></tr><tr id="proddef-FloatType"><td><span class="prod-number">[83]</span></td><td><a class="sym" href="#prod-FloatType">FloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"float" <br/> |
+             "double"</span></td></tr><tr id="proddef-UnsignedIntegerType"><td><span class="prod-number">[84]</span></td><td><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unsigned" <a class="sym" href="#prod-IntegerType">IntegerType</a> <br/> |
+             <a class="sym" href="#prod-IntegerType">IntegerType</a></span></td></tr><tr id="proddef-IntegerType"><td><span class="prod-number">[85]</span></td><td><a class="sym" href="#prod-IntegerType">IntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"short" <br/> |
+             "long" <a class="sym" href="#prod-OptionalLong">OptionalLong</a></span></td></tr><tr id="proddef-OptionalLong"><td><span class="prod-number">[86]</span></td><td><a class="sym" href="#prod-OptionalLong">OptionalLong</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"long" <br/> |
+             ε</span></td></tr><tr id="proddef-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#prod-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="proddef-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#prod-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br/> |
              ε</span></td></tr></table>
 
           <div id="idl-any" class="section">
@@ -5906,20 +5905,20 @@ interface Person {
               type is formed by taking the type names of each member type, in order,
               and joining them with the string “Or”.
             </p>
-            <table class="grammar"><tr><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
-             ε</span></td></tr><tr><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "USVString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
+            <table class="grammar"><tr><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br/> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br/> |
+             ε</span></td></tr><tr><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "USVString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "object" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "Error" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
              "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
           </div>
 
@@ -5988,19 +5987,19 @@ interface Person {
               <tr><td><span id="idl-ArrayBuffer" class="idltype">ArrayBuffer</span></td><td>An object that holds a pointer (which may be null) to a buffer of a fixed number of bytes</td></tr>
               <tr><td><span id="idl-DataView" class="idltype">DataView</span></td><td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that allows typed access to integers and floating point values stored at arbitrary offsets into the buffer</td></tr>
               <tr><td>
-                <span id="idl-Int8Array" class="idltype">Int8Array</span>,<br />
-                <span id="idl-Int16Array" class="idltype">Int16Array</span>,<br />
+                <span id="idl-Int8Array" class="idltype">Int8Array</span>,<br/>
+                <span id="idl-Int16Array" class="idltype">Int16Array</span>,<br/>
                 <span id="idl-Int32Array" class="idltype">Int32Array</span></td>
                 <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of two’s complement signed integers of the given size in bits</td></tr>
               <tr><td>
-                <span id="idl-Uint8Array" class="idltype">Uint8Array</span>,<br />
-                <span id="idl-Uint16Array" class="idltype">Uint16Array</span>,<br />
+                <span id="idl-Uint8Array" class="idltype">Uint8Array</span>,<br/>
+                <span id="idl-Uint16Array" class="idltype">Uint16Array</span>,<br/>
                 <span id="idl-Uint32Array" class="idltype">Uint32Array</span></td>
                 <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of unsigned integers of the given size in bits</td></tr>
               <tr><td><span id="idl-Uint8ClampedArray" class="idltype">Uint8ClampedArray</span></td>
                 <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of unsigned 8 bit integers with clamped conversions</td></tr>
               <tr><td>
-                <span id="idl-Float32Array" class="idltype">Float32Array</span>,<br />
+                <span id="idl-Float32Array" class="idltype">Float32Array</span>,<br/>
                 <span id="idl-Float64Array" class="idltype">Float64Array</span></td>
                 <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of IEEE 754 floating point numbers of the given size in bits</td></tr>
             </table>
@@ -6207,77 +6206,77 @@ interface Person {
             are ambiguous, no extended attribute defined in this document takes both of those forms.-->
           </p>
 
-          <table class="grammar"><tr id="proddef-ExtendedAttributeList"><td><span class="prod-number">[65]</span></td><td><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> "]" <br /> |
-             ε</span></td></tr><tr id="proddef-ExtendedAttributes"><td><span class="prod-number">[66]</span></td><td><a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> <br /> |
+          <table class="grammar"><tr id="proddef-ExtendedAttributeList"><td><span class="prod-number">[65]</span></td><td><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> "]" <br/> |
+             ε</span></td></tr><tr id="proddef-ExtendedAttributes"><td><span class="prod-number">[66]</span></td><td><a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> <br/> |
              ε</span></td></tr><tr id="proddef-ExtendedAttribute"><td><span class="prod-number">[67]</span></td><td><a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
               "(" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> ")" <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-            <br /> |
+            <br/> |
              "[" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "]" <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-            <br /> |
+            <br/> |
              "{" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "}" <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-Other">Other</a> <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-          </span></td></tr><tr id="proddef-ExtendedAttributeRest"><td><span class="prod-number">[68]</span></td><td><a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <br /> |
+          </span></td></tr><tr id="proddef-ExtendedAttributeRest"><td><span class="prod-number">[68]</span></td><td><a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <br/> |
              ε</span></td></tr><tr id="proddef-ExtendedAttributeInner"><td><span class="prod-number">[69]</span></td><td><a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
               "(" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> ")" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              "[" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "]" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              "{" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "}" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-OtherOrComma">OtherOrComma</a> <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              ε
           </span></td></tr><tr id="proddef-Other"><td><span class="prod-number">[70]</span></td><td><a class="sym" href="#prod-Other">Other</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
-              <a class="sym" href="#prod-integer">integer</a> <br /> |
-             <a class="sym" href="#prod-float">float</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <br /> |
-             <a class="sym" href="#prod-string">string</a>  <br /> |
+              <a class="sym" href="#prod-integer">integer</a> <br/> |
+             <a class="sym" href="#prod-float">float</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <br/> |
+             <a class="sym" href="#prod-string">string</a>  <br/> |
              <a class="sym" href="#prod-other">other</a>
-            <br /> |
-             "-" <br /> |
-             "-Infinity" <br /> |
-             "." <br /> |
-             "..." <br /> |
-             ":" <br /> |
-             ";" <br /> |
-             "&lt;" <br /> |
-             "=" <br /> |
-             "&gt;" <br /> |
+            <br/> |
+             "-" <br/> |
+             "-Infinity" <br/> |
+             "." <br/> |
+             "..." <br/> |
+             ":" <br/> |
+             ";" <br/> |
+             "&lt;" <br/> |
+             "=" <br/> |
+             "&gt;" <br/> |
              "?"
-            <br /> |
-             "ByteString" <br /> |
-             "DOMString" <br /> |
-             "FrozenArray" <br /> |
-             "Infinity" <br /> |
-             "NaN" <br /> |
-             "RegExp" <br /> |
-             "USVString" <br /> |
-             "any" <br /> |
-             "boolean" <br /> |
-             "byte" <br /> |
-             "double" <br /> |
-             "false" <br /> |
+            <br/> |
+             "ByteString" <br/> |
+             "DOMString" <br/> |
+             "FrozenArray" <br/> |
+             "Infinity" <br/> |
+             "NaN" <br/> |
+             "RegExp" <br/> |
+             "USVString" <br/> |
+             "any" <br/> |
+             "boolean" <br/> |
+             "byte" <br/> |
+             "double" <br/> |
+             "false" <br/> |
              "float"
-            <br /> |
-             "long" <br /> |
-             "null" <br /> |
-             "object" <br /> |
-             "octet" <br /> |
-             "or" <br /> |
-             "optional" <br /> |
+            <br/> |
+             "long" <br/> |
+             "null" <br/> |
+             "object" <br/> |
+             "octet" <br/> |
+             "or" <br/> |
+             "optional" <br/> |
              "sequence"
-            <br /> |
-             "short" <br /> |
-             "true" <br /> |
-             "unsigned" <br /> |
+            <br/> |
+             "short" <br/> |
+             "true" <br/> |
+             "unsigned" <br/> |
              "void"
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a>
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a>
-          </span></td></tr><tr id="proddef-OtherOrComma"><td><span class="prod-number">[72]</span></td><td><a class="sym" href="#prod-OtherOrComma">OtherOrComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Other">Other</a> <br /> |
-             ","</span></td></tr><tr id="proddef-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#prod-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
+          </span></td></tr><tr id="proddef-OtherOrComma"><td><span class="prod-number">[72]</span></td><td><a class="sym" href="#prod-OtherOrComma">OtherOrComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Other">Other</a> <br/> |
+             ","</span></td></tr><tr id="proddef-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#prod-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
              ε</span></td></tr><tr id="proddef-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
 
         </div>
@@ -14990,205 +14989,205 @@ d.type = et;
           matches an <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>:
         </p>
 
-        <table class="grammar"><tr id="prod-Definitions"><td><span class="prod-number">[1]</span></td><td><a class="sym" href="#proddef-Definitions">Definitions</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-Definition">Definition</a> <a class="sym" href="#prod-Definitions">Definitions</a> <br /> |
-             ε</span></td></tr><tr id="prod-Definition"><td><span class="prod-number">[2]</span></td><td><a class="sym" href="#proddef-Definition">Definition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a> <br /> |
-             <a class="sym" href="#prod-Partial">Partial</a> <br /> |
-             <a class="sym" href="#prod-Dictionary">Dictionary</a> <br /> |
-             <a class="sym" href="#prod-Enum">Enum</a> <br /> |
-             <a class="sym" href="#prod-Typedef">Typedef</a> <br /> |
-             <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a></span></td></tr><tr id="prod-CallbackOrInterface"><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#proddef-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br /> |
-             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="prod-CallbackRestOrInterface"><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#proddef-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br /> |
-             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="prod-Interface"><td><span class="prod-number">[5]</span></td><td><a class="sym" href="#proddef-Interface">Interface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="prod-Partial"><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#proddef-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr id="prod-PartialDefinition"><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#proddef-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br /> |
-             <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="prod-PartialInterface"><td><span class="prod-number">[8]</span></td><td><a class="sym" href="#proddef-PartialInterface">PartialInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="prod-InterfaceMembers"><td><span class="prod-number">[9]</span></td><td><a class="sym" href="#proddef-InterfaceMembers">InterfaceMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-InterfaceMember">InterfaceMember</a> <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> <br /> |
-             ε</span></td></tr><tr id="prod-InterfaceMember"><td><span class="prod-number">[10]</span></td><td><a class="sym" href="#proddef-InterfaceMember">InterfaceMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Const">Const</a> <br /> |
-             <a class="sym" href="#prod-Operation">Operation</a> <br /> |
-             <a class="sym" href="#prod-Serializer">Serializer</a> <br /> |
-             <a class="sym" href="#prod-Stringifier">Stringifier</a> <br /> |
-             <a class="sym" href="#prod-StaticMember">StaticMember</a> <br /> |
-             <a class="sym" href="#prod-Iterable">Iterable</a> <br /> |
-             <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="prod-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#proddef-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#proddef-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br /> |
-             ε</span></td></tr><tr id="prod-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#proddef-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Required">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="prod-Required"><td><span class="prod-number">[14]</span></td><td><a class="sym" href="#proddef-Required">Required</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required" <br /> |
-             ε</span></td></tr><tr id="prod-PartialDictionary"><td><span class="prod-number">[15]</span></td><td><a class="sym" href="#proddef-PartialDictionary">PartialDictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-Default"><td><span class="prod-number">[16]</span></td><td><a class="sym" href="#proddef-Default">Default</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"=" <a class="sym" href="#prod-DefaultValue">DefaultValue</a> <br /> |
-             ε</span></td></tr><tr id="prod-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#proddef-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br /> |
-             <a class="sym" href="#prod-string">string</a> <br /> |
-             "[" "]"</span></td></tr><tr id="prod-Inheritance"><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#proddef-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br /> |
-             ε</span></td></tr><tr id="prod-Enum"><td><span class="prod-number">[19]</span></td><td><a class="sym" href="#proddef-Enum">Enum</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"enum" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-EnumValueList">EnumValueList</a> "}" ";"</span></td></tr><tr id="prod-EnumValueList"><td><span class="prod-number">[20]</span></td><td><a class="sym" href="#proddef-EnumValueList">EnumValueList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></span></td></tr><tr id="prod-EnumValueListComma"><td><span class="prod-number">[21]</span></td><td><a class="sym" href="#proddef-EnumValueListComma">EnumValueListComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-EnumValueListString">EnumValueListString</a> <br /> |
-             ε</span></td></tr><tr id="prod-EnumValueListString"><td><span class="prod-number">[22]</span></td><td><a class="sym" href="#proddef-EnumValueListString">EnumValueListString</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a> <br /> |
-             ε</span></td></tr><tr id="prod-CallbackRest"><td><span class="prod-number">[23]</span></td><td><a class="sym" href="#proddef-CallbackRest">CallbackRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ReturnType">ReturnType</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr><tr id="prod-Typedef"><td><span class="prod-number">[24]</span></td><td><a class="sym" href="#proddef-Typedef">Typedef</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"typedef" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> ";"</span></td></tr><tr id="prod-ImplementsStatement"><td><span class="prod-number">[25]</span></td><td><a class="sym" href="#proddef-ImplementsStatement">ImplementsStatement</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "implements" <a class="sym" href="#prod-identifier">identifier</a> ";"</span></td></tr><tr id="prod-Const"><td><span class="prod-number">[26]</span></td><td><a class="sym" href="#proddef-Const">Const</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"const" <a class="sym" href="#prod-ConstType">ConstType</a> <a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ConstValue">ConstValue</a> ";"</span></td></tr><tr id="prod-ConstValue"><td><span class="prod-number">[27]</span></td><td><a class="sym" href="#proddef-ConstValue">ConstValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a> <br /> |
-             <a class="sym" href="#prod-FloatLiteral">FloatLiteral</a> <br /> |
-             <a class="sym" href="#prod-integer">integer</a> <br /> |
-             "null"</span></td></tr><tr id="prod-BooleanLiteral"><td><span class="prod-number">[28]</span></td><td><a class="sym" href="#proddef-BooleanLiteral">BooleanLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"true" <br /> |
-             "false"</span></td></tr><tr id="prod-FloatLiteral"><td><span class="prod-number">[29]</span></td><td><a class="sym" href="#proddef-FloatLiteral">FloatLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-float">float</a> <br /> |
-             "-Infinity" <br /> |
-             "Infinity" <br /> |
-             "NaN"</span></td></tr><tr id="prod-Serializer"><td><span class="prod-number">[30]</span></td><td><a class="sym" href="#proddef-Serializer">Serializer</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"serializer" <a class="sym" href="#prod-SerializerRest">SerializerRest</a></span></td></tr><tr id="prod-SerializerRest"><td><span class="prod-number">[31]</span></td><td><a class="sym" href="#proddef-SerializerRest">SerializerRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> ";" <br /> |
-             ";"</span></td></tr><tr id="prod-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#proddef-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br /> |
-             "[" <a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a> "]" <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-SerializationPatternMap"><td><span class="prod-number">[33]</span></td><td><a class="sym" href="#proddef-SerializationPatternMap">SerializationPatternMap</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
-             "inherit" <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="prod-SerializationPatternList"><td><span class="prod-number">[34]</span></td><td><a class="sym" href="#proddef-SerializationPatternList">SerializationPatternList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="prod-Stringifier"><td><span class="prod-number">[35]</span></td><td><a class="sym" href="#proddef-Stringifier">Stringifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"stringifier" <a class="sym" href="#prod-StringifierRest">StringifierRest</a></span></td></tr><tr id="prod-StringifierRest"><td><span class="prod-number">[36]</span></td><td><a class="sym" href="#proddef-StringifierRest">StringifierRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             ";"</span></td></tr><tr id="prod-StaticMember"><td><span class="prod-number">[37]</span></td><td><a class="sym" href="#proddef-StaticMember">StaticMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"static" <a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></span></td></tr><tr id="prod-StaticMemberRest"><td><span class="prod-number">[38]</span></td><td><a class="sym" href="#proddef-StaticMemberRest">StaticMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="prod-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#proddef-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="prod-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#proddef-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br /> |
-             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="prod-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#proddef-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br /> |
-             <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="prod-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#proddef-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="prod-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#proddef-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#proddef-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="prod-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#proddef-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br /> |
-             ε</span></td></tr><tr id="prod-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#proddef-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br /> |
-             ε</span></td></tr><tr id="prod-Operation"><td><span class="prod-number">[47]</span></td><td><a class="sym" href="#proddef-Operation">Operation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             <a class="sym" href="#prod-SpecialOperation">SpecialOperation</a></span></td></tr><tr id="prod-SpecialOperation"><td><span class="prod-number">[48]</span></td><td><a class="sym" href="#proddef-SpecialOperation">SpecialOperation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="prod-Specials"><td><span class="prod-number">[49]</span></td><td><a class="sym" href="#proddef-Specials">Specials</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <br /> |
-             ε</span></td></tr><tr id="prod-Special"><td><span class="prod-number">[50]</span></td><td><a class="sym" href="#proddef-Special">Special</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
-             "setter" <br /> |
-             "deleter" <br /> |
-             "legacycaller"</span></td></tr><tr id="prod-OperationRest"><td><span class="prod-number">[51]</span></td><td><a class="sym" href="#proddef-OperationRest">OperationRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OptionalIdentifier">OptionalIdentifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr><tr id="prod-OptionalIdentifier"><td><span class="prod-number">[52]</span></td><td><a class="sym" href="#proddef-OptionalIdentifier">OptionalIdentifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <br /> |
-             ε</span></td></tr><tr id="prod-ArgumentList"><td><span class="prod-number">[53]</span></td><td><a class="sym" href="#proddef-ArgumentList">ArgumentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br /> |
-             ε</span></td></tr><tr id="prod-Arguments"><td><span class="prod-number">[54]</span></td><td><a class="sym" href="#proddef-Arguments">Arguments</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br /> |
-             ε</span></td></tr><tr id="prod-Argument"><td><span class="prod-number">[55]</span></td><td><a class="sym" href="#proddef-Argument">Argument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></span></td></tr><tr id="prod-OptionalOrRequiredArgument"><td><span class="prod-number">[56]</span></td><td><a class="sym" href="#proddef-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"optional" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a> <a class="sym" href="#prod-Default">Default</a> <br /> |
-             <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-Ellipsis">Ellipsis</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a></span></td></tr><tr id="prod-ArgumentName"><td><span class="prod-number">[57]</span></td><td><a class="sym" href="#proddef-ArgumentName">ArgumentName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-Ellipsis"><td><span class="prod-number">[58]</span></td><td><a class="sym" href="#proddef-Ellipsis">Ellipsis</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"..." <br /> |
-             ε</span></td></tr><tr id="prod-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#proddef-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="prod-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#proddef-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br /> |
-             ε</span></td></tr><tr id="prod-ReadWriteMaplike"><td><span class="prod-number">[61]</span></td><td><a class="sym" href="#proddef-ReadWriteMaplike">ReadWriteMaplike</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-MaplikeRest">MaplikeRest</a></span></td></tr><tr id="prod-ReadWriteSetlike"><td><span class="prod-number">[62]</span></td><td><a class="sym" href="#proddef-ReadWriteSetlike">ReadWriteSetlike</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SetlikeRest">SetlikeRest</a></span></td></tr><tr id="prod-MaplikeRest"><td><span class="prod-number">[63]</span></td><td><a class="sym" href="#proddef-MaplikeRest">MaplikeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"maplike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "," <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr><tr id="prod-SetlikeRest"><td><span class="prod-number">[64]</span></td><td><a class="sym" href="#proddef-SetlikeRest">SetlikeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"setlike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr><tr id="prod-ExtendedAttributeList"><td><span class="prod-number">[65]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeList">ExtendedAttributeList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> "]" <br /> |
-             ε</span></td></tr><tr id="prod-ExtendedAttributes"><td><span class="prod-number">[66]</span></td><td><a class="sym" href="#proddef-ExtendedAttributes">ExtendedAttributes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> <br /> |
+        <table class="grammar"><tr id="prod-Definitions"><td><span class="prod-number">[1]</span></td><td><a class="sym" href="#proddef-Definitions">Definitions</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-Definition">Definition</a> <a class="sym" href="#prod-Definitions">Definitions</a> <br/> |
+             ε</span></td></tr><tr id="prod-Definition"><td><span class="prod-number">[2]</span></td><td><a class="sym" href="#proddef-Definition">Definition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a> <br/> |
+             <a class="sym" href="#prod-Partial">Partial</a> <br/> |
+             <a class="sym" href="#prod-Dictionary">Dictionary</a> <br/> |
+             <a class="sym" href="#prod-Enum">Enum</a> <br/> |
+             <a class="sym" href="#prod-Typedef">Typedef</a> <br/> |
+             <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a></span></td></tr><tr id="prod-CallbackOrInterface"><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#proddef-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
+             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="prod-CallbackRestOrInterface"><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#proddef-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br/> |
+             <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="prod-Interface"><td><span class="prod-number">[5]</span></td><td><a class="sym" href="#proddef-Interface">Interface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="prod-Partial"><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#proddef-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr id="prod-PartialDefinition"><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#proddef-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br/> |
+             <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="prod-PartialInterface"><td><span class="prod-number">[8]</span></td><td><a class="sym" href="#proddef-PartialInterface">PartialInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"interface" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> "}" ";"</span></td></tr><tr id="prod-InterfaceMembers"><td><span class="prod-number">[9]</span></td><td><a class="sym" href="#proddef-InterfaceMembers">InterfaceMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-InterfaceMember">InterfaceMember</a> <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a> <br/> |
+             ε</span></td></tr><tr id="prod-InterfaceMember"><td><span class="prod-number">[10]</span></td><td><a class="sym" href="#proddef-InterfaceMember">InterfaceMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Const">Const</a> <br/> |
+             <a class="sym" href="#prod-Operation">Operation</a> <br/> |
+             <a class="sym" href="#prod-Serializer">Serializer</a> <br/> |
+             <a class="sym" href="#prod-Stringifier">Stringifier</a> <br/> |
+             <a class="sym" href="#prod-StaticMember">StaticMember</a> <br/> |
+             <a class="sym" href="#prod-Iterable">Iterable</a> <br/> |
+             <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="prod-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#proddef-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#proddef-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br/> |
+             ε</span></td></tr><tr id="prod-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#proddef-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Required">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="prod-Required"><td><span class="prod-number">[14]</span></td><td><a class="sym" href="#proddef-Required">Required</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required" <br/> |
+             ε</span></td></tr><tr id="prod-PartialDictionary"><td><span class="prod-number">[15]</span></td><td><a class="sym" href="#proddef-PartialDictionary">PartialDictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-Default"><td><span class="prod-number">[16]</span></td><td><a class="sym" href="#proddef-Default">Default</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"=" <a class="sym" href="#prod-DefaultValue">DefaultValue</a> <br/> |
+             ε</span></td></tr><tr id="prod-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#proddef-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br/> |
+             <a class="sym" href="#prod-string">string</a> <br/> |
+             "[" "]"</span></td></tr><tr id="prod-Inheritance"><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#proddef-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br/> |
+             ε</span></td></tr><tr id="prod-Enum"><td><span class="prod-number">[19]</span></td><td><a class="sym" href="#proddef-Enum">Enum</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"enum" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-EnumValueList">EnumValueList</a> "}" ";"</span></td></tr><tr id="prod-EnumValueList"><td><span class="prod-number">[20]</span></td><td><a class="sym" href="#proddef-EnumValueList">EnumValueList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></span></td></tr><tr id="prod-EnumValueListComma"><td><span class="prod-number">[21]</span></td><td><a class="sym" href="#proddef-EnumValueListComma">EnumValueListComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-EnumValueListString">EnumValueListString</a> <br/> |
+             ε</span></td></tr><tr id="prod-EnumValueListString"><td><span class="prod-number">[22]</span></td><td><a class="sym" href="#proddef-EnumValueListString">EnumValueListString</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a> <br/> |
+             ε</span></td></tr><tr id="prod-CallbackRest"><td><span class="prod-number">[23]</span></td><td><a class="sym" href="#proddef-CallbackRest">CallbackRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ReturnType">ReturnType</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr><tr id="prod-Typedef"><td><span class="prod-number">[24]</span></td><td><a class="sym" href="#proddef-Typedef">Typedef</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"typedef" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> ";"</span></td></tr><tr id="prod-ImplementsStatement"><td><span class="prod-number">[25]</span></td><td><a class="sym" href="#proddef-ImplementsStatement">ImplementsStatement</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "implements" <a class="sym" href="#prod-identifier">identifier</a> ";"</span></td></tr><tr id="prod-Const"><td><span class="prod-number">[26]</span></td><td><a class="sym" href="#proddef-Const">Const</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"const" <a class="sym" href="#prod-ConstType">ConstType</a> <a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ConstValue">ConstValue</a> ";"</span></td></tr><tr id="prod-ConstValue"><td><span class="prod-number">[27]</span></td><td><a class="sym" href="#proddef-ConstValue">ConstValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a> <br/> |
+             <a class="sym" href="#prod-FloatLiteral">FloatLiteral</a> <br/> |
+             <a class="sym" href="#prod-integer">integer</a> <br/> |
+             "null"</span></td></tr><tr id="prod-BooleanLiteral"><td><span class="prod-number">[28]</span></td><td><a class="sym" href="#proddef-BooleanLiteral">BooleanLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"true" <br/> |
+             "false"</span></td></tr><tr id="prod-FloatLiteral"><td><span class="prod-number">[29]</span></td><td><a class="sym" href="#proddef-FloatLiteral">FloatLiteral</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-float">float</a> <br/> |
+             "-Infinity" <br/> |
+             "Infinity" <br/> |
+             "NaN"</span></td></tr><tr id="prod-Serializer"><td><span class="prod-number">[30]</span></td><td><a class="sym" href="#proddef-Serializer">Serializer</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"serializer" <a class="sym" href="#prod-SerializerRest">SerializerRest</a></span></td></tr><tr id="prod-SerializerRest"><td><span class="prod-number">[31]</span></td><td><a class="sym" href="#proddef-SerializerRest">SerializerRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
+             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> ";" <br/> |
+             ";"</span></td></tr><tr id="prod-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#proddef-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br/> |
+             "[" <a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a> "]" <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-SerializationPatternMap"><td><span class="prod-number">[33]</span></td><td><a class="sym" href="#proddef-SerializationPatternMap">SerializationPatternMap</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br/> |
+             "inherit" <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
+             ε</span></td></tr><tr id="prod-SerializationPatternList"><td><span class="prod-number">[34]</span></td><td><a class="sym" href="#proddef-SerializationPatternList">SerializationPatternList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
+             ε</span></td></tr><tr id="prod-Stringifier"><td><span class="prod-number">[35]</span></td><td><a class="sym" href="#proddef-Stringifier">Stringifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"stringifier" <a class="sym" href="#prod-StringifierRest">StringifierRest</a></span></td></tr><tr id="prod-StringifierRest"><td><span class="prod-number">[36]</span></td><td><a class="sym" href="#proddef-StringifierRest">StringifierRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
+             ";"</span></td></tr><tr id="prod-StaticMember"><td><span class="prod-number">[37]</span></td><td><a class="sym" href="#proddef-StaticMember">StaticMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"static" <a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></span></td></tr><tr id="prod-StaticMemberRest"><td><span class="prod-number">[38]</span></td><td><a class="sym" href="#proddef-StaticMemberRest">StaticMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="prod-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#proddef-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="prod-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#proddef-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br/> |
+             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="prod-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#proddef-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
+             <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="prod-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#proddef-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="prod-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#proddef-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#proddef-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="prod-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#proddef-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br/> |
+             ε</span></td></tr><tr id="prod-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#proddef-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br/> |
+             ε</span></td></tr><tr id="prod-Operation"><td><span class="prod-number">[47]</span></td><td><a class="sym" href="#proddef-Operation">Operation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
+             <a class="sym" href="#prod-SpecialOperation">SpecialOperation</a></span></td></tr><tr id="prod-SpecialOperation"><td><span class="prod-number">[48]</span></td><td><a class="sym" href="#proddef-SpecialOperation">SpecialOperation</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="prod-Specials"><td><span class="prod-number">[49]</span></td><td><a class="sym" href="#proddef-Specials">Specials</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Special">Special</a> <a class="sym" href="#prod-Specials">Specials</a> <br/> |
+             ε</span></td></tr><tr id="prod-Special"><td><span class="prod-number">[50]</span></td><td><a class="sym" href="#proddef-Special">Special</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br/> |
+             "setter" <br/> |
+             "deleter" <br/> |
+             "legacycaller"</span></td></tr><tr id="prod-OperationRest"><td><span class="prod-number">[51]</span></td><td><a class="sym" href="#proddef-OperationRest">OperationRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OptionalIdentifier">OptionalIdentifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr><tr id="prod-OptionalIdentifier"><td><span class="prod-number">[52]</span></td><td><a class="sym" href="#proddef-OptionalIdentifier">OptionalIdentifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <br/> |
+             ε</span></td></tr><tr id="prod-ArgumentList"><td><span class="prod-number">[53]</span></td><td><a class="sym" href="#proddef-ArgumentList">ArgumentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br/> |
+             ε</span></td></tr><tr id="prod-Arguments"><td><span class="prod-number">[54]</span></td><td><a class="sym" href="#proddef-Arguments">Arguments</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Argument">Argument</a> <a class="sym" href="#prod-Arguments">Arguments</a> <br/> |
+             ε</span></td></tr><tr id="prod-Argument"><td><span class="prod-number">[55]</span></td><td><a class="sym" href="#proddef-Argument">Argument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></span></td></tr><tr id="prod-OptionalOrRequiredArgument"><td><span class="prod-number">[56]</span></td><td><a class="sym" href="#proddef-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"optional" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a> <a class="sym" href="#prod-Default">Default</a> <br/> |
+             <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-Ellipsis">Ellipsis</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a></span></td></tr><tr id="prod-ArgumentName"><td><span class="prod-number">[57]</span></td><td><a class="sym" href="#proddef-ArgumentName">ArgumentName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-Ellipsis"><td><span class="prod-number">[58]</span></td><td><a class="sym" href="#proddef-Ellipsis">Ellipsis</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"..." <br/> |
+             ε</span></td></tr><tr id="prod-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#proddef-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="prod-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#proddef-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br/> |
+             ε</span></td></tr><tr id="prod-ReadWriteMaplike"><td><span class="prod-number">[61]</span></td><td><a class="sym" href="#proddef-ReadWriteMaplike">ReadWriteMaplike</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-MaplikeRest">MaplikeRest</a></span></td></tr><tr id="prod-ReadWriteSetlike"><td><span class="prod-number">[62]</span></td><td><a class="sym" href="#proddef-ReadWriteSetlike">ReadWriteSetlike</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SetlikeRest">SetlikeRest</a></span></td></tr><tr id="prod-MaplikeRest"><td><span class="prod-number">[63]</span></td><td><a class="sym" href="#proddef-MaplikeRest">MaplikeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"maplike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "," <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr><tr id="prod-SetlikeRest"><td><span class="prod-number">[64]</span></td><td><a class="sym" href="#proddef-SetlikeRest">SetlikeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"setlike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr><tr id="prod-ExtendedAttributeList"><td><span class="prod-number">[65]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeList">ExtendedAttributeList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> "]" <br/> |
+             ε</span></td></tr><tr id="prod-ExtendedAttributes"><td><span class="prod-number">[66]</span></td><td><a class="sym" href="#proddef-ExtendedAttributes">ExtendedAttributes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> <br/> |
              ε</span></td></tr><tr id="prod-ExtendedAttribute"><td><span class="prod-number">[67]</span></td><td><a class="sym" href="#proddef-ExtendedAttribute">ExtendedAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
               "(" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> ")" <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-            <br /> |
+            <br/> |
              "[" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "]" <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-            <br /> |
+            <br/> |
              "{" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "}" <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-Other">Other</a> <a class="sym" href="#prod-ExtendedAttributeRest">ExtendedAttributeRest</a>
-          </span></td></tr><tr id="prod-ExtendedAttributeRest"><td><span class="prod-number">[68]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeRest">ExtendedAttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <br /> |
+          </span></td></tr><tr id="prod-ExtendedAttributeRest"><td><span class="prod-number">[68]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeRest">ExtendedAttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <br/> |
              ε</span></td></tr><tr id="prod-ExtendedAttributeInner"><td><span class="prod-number">[69]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeInner">ExtendedAttributeInner</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
               "(" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> ")" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              "[" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "]" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              "{" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a> "}" <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-OtherOrComma">OtherOrComma</a> <a class="sym" href="#prod-ExtendedAttributeInner">ExtendedAttributeInner</a>
-            <br /> |
+            <br/> |
              ε
           </span></td></tr><tr id="prod-Other"><td><span class="prod-number">[70]</span></td><td><a class="sym" href="#proddef-Other">Other</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
-              <a class="sym" href="#prod-integer">integer</a> <br /> |
-             <a class="sym" href="#prod-float">float</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <br /> |
-             <a class="sym" href="#prod-string">string</a>  <br /> |
+              <a class="sym" href="#prod-integer">integer</a> <br/> |
+             <a class="sym" href="#prod-float">float</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <br/> |
+             <a class="sym" href="#prod-string">string</a>  <br/> |
              <a class="sym" href="#prod-other">other</a>
-            <br /> |
-             "-" <br /> |
-             "-Infinity" <br /> |
-             "." <br /> |
-             "..." <br /> |
-             ":" <br /> |
-             ";" <br /> |
-             "&lt;" <br /> |
-             "=" <br /> |
-             "&gt;" <br /> |
+            <br/> |
+             "-" <br/> |
+             "-Infinity" <br/> |
+             "." <br/> |
+             "..." <br/> |
+             ":" <br/> |
+             ";" <br/> |
+             "&lt;" <br/> |
+             "=" <br/> |
+             "&gt;" <br/> |
              "?"
-            <br /> |
-             "ByteString" <br /> |
-             "DOMString" <br /> |
-             "FrozenArray" <br /> |
-             "Infinity" <br /> |
-             "NaN" <br /> |
-             "RegExp" <br /> |
-             "USVString" <br /> |
-             "any" <br /> |
-             "boolean" <br /> |
-             "byte" <br /> |
-             "double" <br /> |
-             "false" <br /> |
+            <br/> |
+             "ByteString" <br/> |
+             "DOMString" <br/> |
+             "FrozenArray" <br/> |
+             "Infinity" <br/> |
+             "NaN" <br/> |
+             "RegExp" <br/> |
+             "USVString" <br/> |
+             "any" <br/> |
+             "boolean" <br/> |
+             "byte" <br/> |
+             "double" <br/> |
+             "false" <br/> |
              "float"
-            <br /> |
-             "long" <br /> |
-             "null" <br /> |
-             "object" <br /> |
-             "octet" <br /> |
-             "or" <br /> |
-             "optional" <br /> |
+            <br/> |
+             "long" <br/> |
+             "null" <br/> |
+             "object" <br/> |
+             "octet" <br/> |
+             "or" <br/> |
+             "optional" <br/> |
              "sequence"
-            <br /> |
-             "short" <br /> |
-             "true" <br /> |
-             "unsigned" <br /> |
+            <br/> |
+             "short" <br/> |
+             "true" <br/> |
+             "unsigned" <br/> |
              "void"
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a>
-            <br /> |
+            <br/> |
              <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a>
           </span></td></tr><tr id="prod-ArgumentNameKeyword"><td><span class="prod-number">[71]</span></td><td><a class="sym" href="#proddef-ArgumentNameKeyword">ArgumentNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
-              "attribute" <br /> |
-             "callback" <br /> |
-             "const" <br /> |
-             "deleter" <br /> |
+              "attribute" <br/> |
+             "callback" <br/> |
+             "const" <br/> |
+             "deleter" <br/> |
              "dictionary"
-            <br /> |
-             "enum" <br /> |
-             "getter" <br /> |
-             "implements" <br /> |
-             "inherit" <br /> |
-             "interface" <br /> |
+            <br/> |
+             "enum" <br/> |
+             "getter" <br/> |
+             "implements" <br/> |
+             "inherit" <br/> |
+             "interface" <br/> |
              "iterable"
-            <br /> |
-             "legacycaller" <br /> |
-             "maplike" <br /> |
-             "partial" <br /> |
-             "required" <br /> |
-             "serializer" <br /> |
-             "setlike" <br /> |
-             "setter" <br /> |
-             "static" <br /> |
-             "stringifier" <br /> |
+            <br/> |
+             "legacycaller" <br/> |
+             "maplike" <br/> |
+             "partial" <br/> |
+             "required" <br/> |
+             "serializer" <br/> |
+             "setlike" <br/> |
+             "setter" <br/> |
+             "static" <br/> |
+             "stringifier" <br/> |
              "typedef"
-            <br /> |
+            <br/> |
              "unrestricted"
-          </span></td></tr><tr id="prod-OtherOrComma"><td><span class="prod-number">[72]</span></td><td><a class="sym" href="#proddef-OtherOrComma">OtherOrComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Other">Other</a> <br /> |
-             ","</span></td></tr><tr id="prod-Type"><td><span class="prod-number">[73]</span></td><td><a class="sym" href="#proddef-Type">Type</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SingleType">SingleType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#proddef-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             "any"</span></td></tr><tr id="prod-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#proddef-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="prod-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#proddef-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#proddef-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
-             ε</span></td></tr><tr id="prod-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#proddef-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "USVString" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-BufferRelatedType"><td><span class="prod-number">[79]</span></td><td><a class="sym" href="#proddef-BufferRelatedType">BufferRelatedType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"ArrayBuffer" <br /> |
-             "DataView" <br /> |
-             "Int8Array" <br /> |
-             "Int16Array" <br /> |
-             "Int32Array" <br /> |
-             "Uint8Array" <br /> |
-             "Uint16Array" <br /> |
-             "Uint32Array" <br /> |
-             "Uint8ClampedArray" <br /> |
-             "Float32Array" <br /> |
-             "Float64Array"</span></td></tr><tr id="prod-ConstType"><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#proddef-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-PrimitiveType"><td><span class="prod-number">[81]</span></td><td><a class="sym" href="#proddef-PrimitiveType">PrimitiveType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a> <br /> |
-             <a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a> <br /> |
-             "boolean" <br /> |
-             "byte" <br /> |
-             "octet"</span></td></tr><tr id="prod-UnrestrictedFloatType"><td><span class="prod-number">[82]</span></td><td><a class="sym" href="#proddef-UnrestrictedFloatType">UnrestrictedFloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unrestricted" <a class="sym" href="#prod-FloatType">FloatType</a> <br /> |
-             <a class="sym" href="#prod-FloatType">FloatType</a></span></td></tr><tr id="prod-FloatType"><td><span class="prod-number">[83]</span></td><td><a class="sym" href="#proddef-FloatType">FloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"float" <br /> |
-             "double"</span></td></tr><tr id="prod-UnsignedIntegerType"><td><span class="prod-number">[84]</span></td><td><a class="sym" href="#proddef-UnsignedIntegerType">UnsignedIntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unsigned" <a class="sym" href="#prod-IntegerType">IntegerType</a> <br /> |
-             <a class="sym" href="#prod-IntegerType">IntegerType</a></span></td></tr><tr id="prod-IntegerType"><td><span class="prod-number">[85]</span></td><td><a class="sym" href="#proddef-IntegerType">IntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"short" <br /> |
-             "long" <a class="sym" href="#prod-OptionalLong">OptionalLong</a></span></td></tr><tr id="prod-OptionalLong"><td><span class="prod-number">[86]</span></td><td><a class="sym" href="#proddef-OptionalLong">OptionalLong</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"long" <br /> |
-             ε</span></td></tr><tr id="prod-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#proddef-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="prod-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#proddef-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br /> |
-             ε</span></td></tr><tr id="prod-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#proddef-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br /> |
-             "void"</span></td></tr><tr id="prod-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#proddef-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr id="prod-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#proddef-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
+          </span></td></tr><tr id="prod-OtherOrComma"><td><span class="prod-number">[72]</span></td><td><a class="sym" href="#proddef-OtherOrComma">OtherOrComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Other">Other</a> <br/> |
+             ","</span></td></tr><tr id="prod-Type"><td><span class="prod-number">[73]</span></td><td><a class="sym" href="#proddef-Type">Type</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SingleType">SingleType</a> <br/> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#proddef-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br/> |
+             "any"</span></td></tr><tr id="prod-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#proddef-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="prod-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#proddef-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br/> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#proddef-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br/> |
+             ε</span></td></tr><tr id="prod-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#proddef-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "USVString" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "object" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "Error" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-BufferRelatedType"><td><span class="prod-number">[79]</span></td><td><a class="sym" href="#proddef-BufferRelatedType">BufferRelatedType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"ArrayBuffer" <br/> |
+             "DataView" <br/> |
+             "Int8Array" <br/> |
+             "Int16Array" <br/> |
+             "Int32Array" <br/> |
+             "Uint8Array" <br/> |
+             "Uint16Array" <br/> |
+             "Uint32Array" <br/> |
+             "Uint8ClampedArray" <br/> |
+             "Float32Array" <br/> |
+             "Float64Array"</span></td></tr><tr id="prod-ConstType"><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#proddef-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-PrimitiveType"><td><span class="prod-number">[81]</span></td><td><a class="sym" href="#proddef-PrimitiveType">PrimitiveType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a> <br/> |
+             <a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a> <br/> |
+             "boolean" <br/> |
+             "byte" <br/> |
+             "octet"</span></td></tr><tr id="prod-UnrestrictedFloatType"><td><span class="prod-number">[82]</span></td><td><a class="sym" href="#proddef-UnrestrictedFloatType">UnrestrictedFloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unrestricted" <a class="sym" href="#prod-FloatType">FloatType</a> <br/> |
+             <a class="sym" href="#prod-FloatType">FloatType</a></span></td></tr><tr id="prod-FloatType"><td><span class="prod-number">[83]</span></td><td><a class="sym" href="#proddef-FloatType">FloatType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"float" <br/> |
+             "double"</span></td></tr><tr id="prod-UnsignedIntegerType"><td><span class="prod-number">[84]</span></td><td><a class="sym" href="#proddef-UnsignedIntegerType">UnsignedIntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unsigned" <a class="sym" href="#prod-IntegerType">IntegerType</a> <br/> |
+             <a class="sym" href="#prod-IntegerType">IntegerType</a></span></td></tr><tr id="prod-IntegerType"><td><span class="prod-number">[85]</span></td><td><a class="sym" href="#proddef-IntegerType">IntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"short" <br/> |
+             "long" <a class="sym" href="#prod-OptionalLong">OptionalLong</a></span></td></tr><tr id="prod-OptionalLong"><td><span class="prod-number">[86]</span></td><td><a class="sym" href="#proddef-OptionalLong">OptionalLong</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"long" <br/> |
+             ε</span></td></tr><tr id="prod-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#proddef-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="prod-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#proddef-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br/> |
+             ε</span></td></tr><tr id="prod-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#proddef-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br/> |
+             "void"</span></td></tr><tr id="prod-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#proddef-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr id="prod-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#proddef-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
              ε</span></td></tr><tr id="prod-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
         <div class="note"><div class="noteHeader">Note</div>
           <p>
@@ -15224,7 +15223,7 @@ d.type = et;
             <dd>
               <cite><a href="https://tc39.github.io/ecma262/">ECMAScript Language Specification</a></cite>.
               Ecma International.
-              <span class="print"><br />Available at https://tc39.github.io/ecma262/.</span>
+              <span class="print"><br/>Available at https://tc39.github.io/ecma262/.</span>
             </dd>
             <dt id="ref-IEEE-754">[IEEE-754]</dt>
             <dd>
@@ -15235,44 +15234,44 @@ d.type = et;
             <dd>
               <cite><a href="http://search.cpan.org/dist/perl/pod/perlre.pod">Perl regular expressions (Perl 5.8.8)</a></cite>.
               The Perl Foundation, February 2006.
-              <span class="print"><br />Available at http://www.perl.com/doc/manual/html/pod/perlre.html.</span>
+              <span class="print"><br/>Available at http://www.perl.com/doc/manual/html/pod/perlre.html.</span>
             </dd>
             <dt id="ref-RFC2119">[RFC2119]</dt>
             <dd>
               <cite><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a></cite>,
               S. Bradner.  IETF, March 1997.
-              <span class="print"><br />Available at http://tools.ietf.org/html/rfc2119.</span>
+              <span class="print"><br/>Available at http://tools.ietf.org/html/rfc2119.</span>
             </dd>
             <dt id="ref-RFC2781">[RFC2781]</dt>
             <dd>
               <cite><a href="http://tools.ietf.org/html/rfc2781">UTF-16, an encoding of ISO 10646</a></cite>,
               P. Hoffmann and F. Yergeau.  IETF, February 2000.
-              <span class="print"><br />Available at http://tools.ietf.org/html/rfc2781.</span>
+              <span class="print"><br/>Available at http://tools.ietf.org/html/rfc2781.</span>
             </dd>
             <dt id="ref-RFC3629">[RFC3629]</dt>
             <dd>
               <cite><a href="http://tools.ietf.org/html/rfc3629">UTF-8, a transformation format of ISO 10646</a></cite>,
               F. Yergeau.  IETF, November 2003.
-              <span class="print"><br />Available at http://tools.ietf.org/html/rfc3629.</span>
+              <span class="print"><br/>Available at http://tools.ietf.org/html/rfc3629.</span>
             </dd>
             <dt id="ref-SECURE-CONTEXTS">[SECURE-CONTEXTS]</dt>
             <dd>
               <cite><a href="https://w3c.github.io/webappsec-secure-contexts/">Secure Contexts</a></cite>.
               M. West and Y. Zhu, Editors.  World Wide Web Consortium, October 2015.
-              <span class="print"><br />Available at https://w3c.github.io/webappsec-secure-contexts/.</span>
+              <span class="print"><br/>Available at https://w3c.github.io/webappsec-secure-contexts/.</span>
             </dd>
             <dt id="ref-TYPEDARRAYS">[TYPEDARRAYS]</dt>
             <dd>
               <cite><a href="https://www.khronos.org/registry/typedarray/specs/1.0/">Typed Array Specification</a></cite>,
               V. Vukicevic and K. Russell, eds.  The Khronos Group, 08 February 2011.
-              <span class="print"><br />Available at https://www.khronos.org/registry/typedarray/specs/1.0/.</span>
+              <span class="print"><br/>Available at https://www.khronos.org/registry/typedarray/specs/1.0/.</span>
             </dd>
             <dt id="ref-UNICODE">[UNICODE]</dt>
             <dd>
               <cite><a href="http://www.unicode.org/standard/versions/">The Unicode Standard</a></cite>,
               Version 6.0 or later.  The Unicode Consortium.  Mountain View, California, 2011.
               ISBN 978-1-936213-01-6.
-              <span class="print"><br />Available at http://www.unicode.org/versions/Unicode6.0.0/.</span>
+              <span class="print"><br/>Available at http://www.unicode.org/versions/Unicode6.0.0/.</span>
             </dd>
           </dl>
         </div>
@@ -15285,38 +15284,38 @@ d.type = et;
             <dd>
               <cite><a href="http://dom.spec.whatwg.org/">DOM Standard</a></cite>.
               A. van Kesteren, A. Gregor and Ms2ger, Editors.  WHATWG, 22 July 2013.
-              <span class="print"><br />Available at http://dom.spec.whatwg.org/.</span>
+              <span class="print"><br/>Available at http://dom.spec.whatwg.org/.</span>
             </dd>
             <dt id="ref-DOM3CORE">[DOM3CORE]</dt>
             <dd>
               <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/">Document Object Model (DOM) Level 3 Core Specification</a></cite>.
               A. Le Hors, et al., Editors.  World Wide Web Consortium, April 2004.
-              <span class="print"><br />Available at http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/.</span>
+              <span class="print"><br/>Available at http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/.</span>
             </dd>
             <dt id="ref-HTML5">[HTML5]</dt>
             <dd>
               <cite><a href="http://www.w3.org/TR/2011/WD-html5-20110525/">HTML5</a></cite>.
               I. Hickson, Editor.  World Wide Web Consortium, May 2011.
-              <span class="print"><br />Available at http://www.w3.org/TR/2011/WD-html5-20110525/.</span>
+              <span class="print"><br/>Available at http://www.w3.org/TR/2011/WD-html5-20110525/.</span>
             </dd>
             <dt id="ref-OMGIDL">[OMGIDL]</dt>
             <dd>
               <cite><a href="http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf">CORBA 3.1 – OMG IDL Syntax and Semantics chapter</a></cite>.
               Object Management Group, January 2008.
-              <span class="print"><br />Available at http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf.</span>
+              <span class="print"><br/>Available at http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf.</span>
             </dd>
             <dt id="ref-WEBIDL-JAVA">[WEBIDL-JAVA]</dt>
             <dd>
               <cite><a href="http://dev.w3.org/2006/webapi/WebIDL/java.html">Java langage binding for Web IDL</a></cite>.
               World Wide Consortium, work in progress.
-              <span class="print"><br />Available at http://dev.w3.org/2006/webapi/WebIDL/java.html.</span>
+              <span class="print"><br/>Available at http://dev.w3.org/2006/webapi/WebIDL/java.html.</span>
             </dd>
             <dt id="ref-XMLNS">[XMLNS]</dt>
             <dd>
               <cite class="w3crec"><a href="http://www.w3.org/TR/2009/REC-xml-names-20091208/">Namespaces in XML 1.0 (Third Edition)</a></cite>,
               T. Bray, D. Hollander, A. Layman, R. Tobin, H. Thompson, eds.
               World Wide Web Consortium, 8 December 2009.
-              <span class="print"><br />Available at http://www.w3.org/TR/2009/REC-xml-names-20091208/.</span>
+              <span class="print"><br/>Available at http://www.w3.org/TR/2009/REC-xml-names-20091208/.</span>
             </dd>
           </dl>
         </div>

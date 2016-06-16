@@ -7,8 +7,6 @@
 
   <xsl:output method='xml' encoding='UTF-8'
               omit-xml-declaration='yes'
-              doctype-public='-//W3C//DTD XHTML 1.0 Transitional//EN'
-              doctype-system='http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'
               media-type='application/xhtml+xml; charset=UTF-8'/>
 
   <xsl:variable name='options' select='/*/h:head/x:options'/>
