@@ -28,18 +28,6 @@
   </xsl:template>
 
   <xsl:template match='h:head'>
-    <head>
-      <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <xsl:apply-templates select='node()'/>
-      <xsl:choose>
-        <xsl:when test='$options/x:maturity="FPWD" or $options/x:maturity="LCWD" or $options/x:maturity="FPWDLC"'>
-          <link rel='stylesheet' href='https://www.w3.org/StyleSheets/TR/W3C-WD' type='text/css'/>
-        </xsl:when>
-        <xsl:otherwise>
-          <link rel='stylesheet' href='https://www.w3.org/StyleSheets/TR/W3C-{$options/x:maturity}' type='text/css'/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </head>
   </xsl:template>
 
   <xsl:template match='h:span[@class="idltype"]'>
