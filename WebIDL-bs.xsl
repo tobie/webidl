@@ -24,9 +24,6 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match='h:head'>
-  </xsl:template>
-
   <xsl:template match='h:span[@class="idltype"]'>
     <xsl:variable name='id' select='concat("idl-", translate(., " ", "-"))'/>
     <xsl:variable name='def' select='//*[@id=$id]'/>
@@ -255,7 +252,7 @@
     </xsl:element>
   </xsl:template>
   
-  <xsl:template match='h:div[@id="toc"]' />
+  <xsl:template match='h:div[@id="toc"] | h:head' />
 
   
   <xsl:template name='markdown-note-issue-advisement'>
