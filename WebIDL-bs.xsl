@@ -326,6 +326,11 @@
     </xsl:variable>
     <pre class='{$lang}'><xsl:apply-templates select='node()'/></pre>
   </xsl:template>
+  <xsl:template match='h:span[@class="comment"]'>
+      <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
+  
 
   <xsl:template match='x:grammar'>
     <table class='grammar'>

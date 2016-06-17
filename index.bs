@@ -138,17 +138,17 @@
               (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
             <li>IDL grammar snippets:
               <table class="grammar">
-                <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  <span class="comment">// nothing</span></span></td></tr>
+                <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  // nothing</span></td></tr>
               </table>
               (Each grammar rule is assigned a number for reference, shown on the left.)</li>
             <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
             <li>Non-normative examples: <div class="example"><div class="exampleHeader">Example</div><p>This is an example.</p></div></li>
             <li>Normative warnings: <div class="warning"><p>This is a warning.</p></div></li>
-            <li>Code blocks: <pre class="idl"><span class="comment">// This is an IDL code block.</span>
+            <li>Code blocks: <pre class="idl">// This is an IDL code block.
 interface Example {
   attribute long something;
 };</pre>
-<pre class="js"><span class="comment">// This is an ECMAScript code block.</span>
+<pre class="js">// This is an ECMAScript code block.
 window.onload = function() { window.alert("loaded"); };</pre></li>
           </ul>
         </div>
@@ -505,30 +505,30 @@ typedef sequence&lt;long&gt; SequenceOfLongs;</pre>
               demonstrates how <a class="dfnref" href="#dfn-identifier">identifiers</a>
               are given to definitions and <a class="dfnref" href="#dfn-interface-member">interface members</a>.
             </p>
-            <pre class="idl"><span class="comment">// Typedef identifier: "number"</span>
+            <pre class="idl">// Typedef identifier: "number"
 typedef double number;
 
-<span class="comment">// Interface identifier: "System"</span>
+// Interface identifier: "System"
 interface System {
 
-  <span class="comment">// Operation identifier:          "createObject"</span>
-  <span class="comment">// Operation argument identifier: "interface"</span>
+  // Operation identifier:          "createObject"
+  // Operation argument identifier: "interface"
   object createObject(DOMString _interface);
 
-  <span class="comment">// Operation argument identifier: "interface"</span>
+  // Operation argument identifier: "interface"
   sequence&lt;object&gt; getObjects(DOMString interface);
 
-  <span class="comment">// Operation has no identifier; it declares a getter.</span>
+  // Operation has no identifier; it declares a getter.
   getter DOMString (DOMString keyName);
 };
 
-<span class="comment">// Interface identifier: "TextField"</span>
+// Interface identifier: "TextField"
 interface TextField {
 
-  <span class="comment">// Attribute identifier: "const"</span>
+  // Attribute identifier: "const"
   attribute boolean _const;
 
-  <span class="comment">// Attribute identifier: "value"</span>
+  // Attribute identifier: "value"
   attribute DOMString? _value;
 };</pre>
             <p>
@@ -757,7 +757,7 @@ interface A {
             <p>
               to be used like this:
             </p>
-            <pre class="js">var a = getA();  <span class="comment">// Get an instance of A.</span>
+            <pre class="js">var a = getA();  // Get an instance of A.
 
 a.doTask("something", { option1: "banana", option3: 100 });</pre>
             <p>
@@ -932,20 +932,20 @@ callback interface EventListener {
               callback interface, <a class="dfnref" href="#dfn-user-object">user objects</a>
               can implement it:
             </p>
-            <pre class="js">var node = getNode();                                <span class="comment">// Obtain an instance of Node.</span>
+            <pre class="js">var node = getNode();                                // Obtain an instance of Node.
 
 var listener = {
   handleEvent: function(event) {
     ...
   }
 };
-node.addEventListener("click", listener);            <span class="comment">// This works.</span>
+node.addEventListener("click", listener);            // This works.
 
-node.addEventListener("click", function() { ... });  <span class="comment">// As does this.</span></pre>
+node.addEventListener("click", function() { ... });  // As does this.</pre>
             <p>
               It is not possible for a user object to implement <span class="idltype">Node</span>, however:
             </p>
-            <pre class="js">var node = getNode();  <span class="comment">// Obtain an instance of Node.</span>
+            <pre class="js">var node = getNode();  // Obtain an instance of Node.
 
 var newNode = {
   nodeName: "span",
@@ -957,7 +957,7 @@ var newNode = {
     ...
   }
 };
-node.appendChild(newNode);  <span class="comment">// This will throw a TypeError exception.</span></pre>
+node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
           </div>
 
           <div id="idl-constants" class="section">
@@ -1343,17 +1343,17 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
 exception NoSuchPet { };
 -->interface Animal {
 
-  <span class="comment">// A simple attribute that can be set to any string value.</span>
+  // A simple attribute that can be set to any string value.
   readonly attribute DOMString name;
 
-  <span class="comment">// An attribute whose value can be assigned to.</span>
+  // An attribute whose value can be assigned to.
   attribute unsigned short age;
 };
 
 interface Person : Animal {
 
-  <span class="comment">// An attribute whose getter behavior is inherited from Animal, and need not be</span>
-  <span class="comment">// specified in the description of Person.</span>
+  // An attribute whose getter behavior is inherited from Animal, and need not be
+  // specified in the description of Person.
   inherit attribute DOMString name<!-- setraises (InvalidName)-->;
 <!--
   <span class='comment'>// An attribute whose value cannot be assigned to, and which can raise an</span>
@@ -1488,11 +1488,11 @@ interface Person : Animal {
 
 interface Button {
 
-  <span class="comment">// An operation that takes no arguments and returns a boolean<!--, and could possibly</span>
-  <span class='comment'>// raise an exception-->.</span>
+  // An operation that takes no arguments and returns a boolean<!--, and could possibly</span>
+  <span class='comment'>// raise an exception-->.
   boolean isMouseOver()<!-- raises (NoPointerDevice)-->;
 
-  <span class="comment">// Overloaded operations.</span>
+  // Overloaded operations.
   void setDimensions(Dimensions size);
   void setDimensions(unsigned long width, unsigned long height);
 };</pre>
@@ -1536,10 +1536,10 @@ interface Button {
                 In the ECMAScript binding, variadic operations are implemented by
                 functions that can accept the subsequent arguments:
               </p>
-              <pre class="js">var s = getIntegerSet();  <span class="comment">// Obtain an instance of IntegerSet.</span>
+              <pre class="js">var s = getIntegerSet();  // Obtain an instance of IntegerSet.
 
-s.union();                <span class="comment">// Passing no arguments corresponding to 'ints'.</span>
-s.union(1, 4, 7);         <span class="comment">// Passing three arguments corresponding to 'ints'.</span></pre>
+s.union();                // Passing no arguments corresponding to 'ints'.
+s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</pre>
               <p>
                 A binding for a language that does not support variadic functions
                 might specify that an explicit array or list of integers be passed
@@ -1985,7 +1985,7 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
                   with a <a class="dfnref" href="#dfn-legacy-caller">legacy caller</a>.
                 </p>
                 <pre class="idl">interface NumberQuadrupler {
-  <span class="comment">// This operation simply returns four times the given number x.</span>
+  // This operation simply returns four times the given number x.
   legacycaller double compute(double x);
 };</pre>
                 <p>
@@ -1994,10 +1994,10 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
                   that implements <span class="idltype">NumberQuadrupler</span>
                   to be called as a function:
                 </p>
-                <pre class="js">var f = getNumberQuadrupler();  <span class="comment">// Obtain an instance of NumberQuadrupler.</span>
+                <pre class="js">var f = getNumberQuadrupler();  // Obtain an instance of NumberQuadrupler.
 
-f.compute(3);                   <span class="comment">// This evaluates to 12.</span>
-f(3);                           <span class="comment">// This also evaluates to 12.</span></pre>
+f.compute(3);                   // This evaluates to 12.
+f(3);                           // This also evaluates to 12.</pre>
               </div>
             </div>
 
@@ -2080,7 +2080,7 @@ interface Student {
 s.id = 12345678;
 s.name = '周杰倫';
 
-var greeting = 'Hello, ' + s + '!';  <span class="comment">// Now greeting == 'Hello, 周杰倫!'.</span></pre>
+var greeting = 'Hello, ' + s + '!';  // Now greeting == 'Hello, 周杰倫!'.</pre>
                 <p>
                   The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                   defines an interface that has custom stringification behavior that is
@@ -2121,7 +2121,7 @@ s.id = 12345679;
 s.familyName = 'Smithee';
 s.givenName = 'Alan';
 
-var greeting = 'Hi ' + s;  <span class="comment">// Now greeting == 'Hi Alan Smithee'.</span></pre>
+var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
               </div>
             </div>
 
@@ -2471,20 +2471,20 @@ interface Account {
                   In the ECMAScript language binding, there would exist a <code>toJSON</code> method on
                   <span class="idltype">Transaction</span> objects:
                 </p>
-                <pre class="js"><span class="comment">// Get an instance of Transaction.</span>
+                <pre class="js">// Get an instance of Transaction.
 var txn = getTransaction();
 
-<span class="comment">// Evaluates to an object like this:
+// Evaluates to an object like this:
 // {
 //   from: 1234
 //   to: 5678
 //   amount: 110.75
 //   description: "dinner"
-// }</span>
+// }
 txn.toJSON();
 
-<span class="comment">// Evaluates to a string like this:
-// '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'</span>
+// Evaluates to a string like this:
+// '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'
 JSON.stringify(txn);</pre>
               </div>
             </div>
@@ -2565,11 +2565,11 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                 </p>
                 <pre class="js">var a = getA();
 
-a.toWord(0);  <span class="comment">// Evalautes to "zero".</span>
-a[0];         <span class="comment">// Also evaluates to "zero".</span>
+a.toWord(0);  // Evalautes to "zero".
+a[0];         // Also evaluates to "zero".
 
-a.toWord(5);  <span class="comment">// Evaluates to "five".</span>
-a[5];         <span class="comment">// Evaluates to undefined, since there is no property "5".</span></pre>
+a.toWord(5);  // Evaluates to "five".
+a[5];         // Evaluates to undefined, since there is no property "5".</pre>
               </div>
 
               <div class="example"><div class="exampleHeader">Example</div>
@@ -2618,40 +2618,40 @@ a[5];         <span class="comment">// Evaluates to undefined, since there is no
                   with the object in the same way as invoking the object’s
                   methods, as demonstrated below:
                 </p>
-                <pre class="js"><span class="comment">// Assume map is a platform object implementing the OrderedMap interface.</span>
+                <pre class="js">// Assume map is a platform object implementing the OrderedMap interface.
 var map = getOrderedMap();
 var x, y;
 
-x = map[0];       <span class="comment">// If map.length &gt; 0, then this is equivalent to:
+x = map[0];       // If map.length &gt; 0, then this is equivalent to:
                   //
                   //   x = map.getByIndex(0)
                   //
                   // since a property named "0" will have been placed on map.
                   // Otherwise, x will be set to undefined, since there will be
-                  // no property named "0" on map.</span>
+                  // no property named "0" on map.
 
-map[1] = false;   <span class="comment">// This will do the equivalent of:
+map[1] = false;   // This will do the equivalent of:
                   //
-                  //   map.setByIndex(1, false)</span>
+                  //   map.setByIndex(1, false)
 
-y = map.apple;    <span class="comment">// If there exists a named property named "apple", then this
+y = map.apple;    // If there exists a named property named "apple", then this
                   // will be equivalent to:
                   //
                   //   y = map.get('apple')
                   //
                   // since a property named "apple" will have been placed on
                   // map.  Otherwise, y will be set to undefined, since there
-                  // will be no property named "apple" on map.</span>
+                  // will be no property named "apple" on map.
 
-map.berry = 123;  <span class="comment">// This will do the equivalent of:
+map.berry = 123;  // This will do the equivalent of:
                   //
-                  //   map.set('berry', 123)</span>
+                  //   map.set('berry', 123)
 
-delete map.cake;  <span class="comment">// If a named property named "cake" exists, then the "cake"
+delete map.cake;  // If a named property named "cake" exists, then the "cake"
                   // property will be deleted, and then the equivalent to the
                   // following will be performed:
                   //
-                  //   map.remove("cake")</span>
+                  //   map.remove("cake")
 </pre></div>
             </div>
 
@@ -2779,19 +2779,19 @@ interface Circle {
                 will exist on the <a class="dfnref" href="#dfn-interface-object">interface object</a>
                 for <span class="idltype">Circle</span>:
               </p>
-              <pre class="js">var circles = getCircles();           <span class="comment">// an Array of Circle objects</span>
+              <pre class="js">var circles = getCircles();           // an Array of Circle objects
 
-typeof Circle.triangulate;            <span class="comment">// Evaluates to "function"</span>
-typeof Circle.triangulationCount;     <span class="comment">// Evaluates to "number"</span>
-Circle.prototype.triangulate;         <span class="comment">// Evaluates to undefined</span>
-Circle.prototype.triangulationCount;  <span class="comment">// Also evaluates to undefined</span>
-circles[0].triangulate;               <span class="comment">// As does this</span>
-circles[0].triangulationCount;        <span class="comment">// And this</span>
+typeof Circle.triangulate;            // Evaluates to "function"
+typeof Circle.triangulationCount;     // Evaluates to "number"
+Circle.prototype.triangulate;         // Evaluates to undefined
+Circle.prototype.triangulationCount;  // Also evaluates to undefined
+circles[0].triangulate;               // As does this
+circles[0].triangulationCount;        // And this
 
-<span class="comment">// Call the static operation</span>
+// Call the static operation
 var triangulationPoint = Circle.triangulate(circles[0], circles[1], circles[2]);
 
-<span class="comment">// Find out how many triangulations we have done</span>
+// Find out how many triangulations we have done
 window.alert(Circle.triangulationCount);</pre>
               
             </div>
@@ -3373,9 +3373,9 @@ partial interface A {
             <div class="example"><div class="exampleHeader">Example</div>
               <p>The following is invalid:</p>
               <pre class="idl">interface B {
-  <span class="comment">/* f1 */</span> void f(DOMString w);
-  <span class="comment">/* f2 */</span> void f(long w, double x, Node y, Node z);
-  <span class="comment">/* f3 */</span> void f(double w, double x, DOMString y, Node z);
+  /* f1 */ void f(DOMString w);
+  /* f2 */ void f(long w, double x, Node y, Node z);
+  /* f3 */ void f(double w, double x, DOMString y, Node z);
 };</pre>
               <p>
                 For argument count 4, the effective overload set is:
@@ -3531,7 +3531,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
 
 interface Session {
   readonly attribute DOMString username;
-  <span class="comment">// ...</span>
+  // ...
 };</pre>
               <p>
                 The behavior of the iterator could be defined like so:
@@ -3554,16 +3554,16 @@ interface Session {
                 a <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> method that allows a <span class="idltype">SessionManager</span>
                 to be used in a <code>for..of</code> loop:
               </p>
-              <pre class="js"><span class="comment">// Get an instance of SessionManager.
-// Assume that it has sessions for two users, "anna" and "brian".</span>
+              <pre class="js">// Get an instance of SessionManager.
+// Assume that it has sessions for two users, "anna" and "brian".
 var sm = getSessionManager();
 
-typeof SessionManager.prototype.values;            <span class="comment">// Evaluates to "function"</span>
-var it = sm.values();                              <span class="comment">// values() returns an iterator object</span>
-String(it);                                        <span class="comment">// Evaluates to "[object SessionManager Iterator]"</span>
-typeof it.next;                                    <span class="comment">// Evaluates to "function"</span>
+typeof SessionManager.prototype.values;            // Evaluates to "function"
+var it = sm.values();                              // values() returns an iterator object
+String(it);                                        // Evaluates to "[object SessionManager Iterator]"
+typeof it.next;                                    // Evaluates to "function"
 
-<span class="comment">// This loop will alert "anna" and then "brian".</span>
+// This loop will alert "anna" and then "brian".
 for (;;) {
   let result = it.next();
   if (result.done) {
@@ -3573,7 +3573,7 @@ for (;;) {
   window.alert(session.username);
 }
 
-<span class="comment">// This loop will also alert "anna" and then "brian".</span>
+// This loop will also alert "anna" and then "brian".
 for (let session of sm) {
   window.alert(session.username);
 }</pre>
@@ -3979,7 +3979,7 @@ partial dictionary A {
             <p>
               and this ECMAScript code:
             </p>
-            <pre class="js">var something = getSomething();  <span class="comment">// Get an instance of Something.</span>
+            <pre class="js">var something = getSomething();  // Get an instance of Something.
 var x = 0;
 
 var dict = { };
@@ -4048,10 +4048,10 @@ interface GraphicsContext {
               In an ECMAScript implementation of the IDL, an <span class="estype">Object</span>
               can be passed in for the optional <span class="idltype">PaintOptions</span> dictionary:
             </p>
-            <pre class="js"><span class="comment">// Get an instance of GraphicsContext.</span>
+            <pre class="js">// Get an instance of GraphicsContext.
 var ctx = getGraphicsContext();
 
-<span class="comment">// Draw a rectangle.</span>
+// Draw a rectangle.
 ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) });</pre>
             <p>
               Both fillPattern and strokePattern are given <a class="dfnref" href="#dfn-dictionary-member-default-value">default values</a>,
@@ -4418,7 +4418,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
 
 interface Meal {
   attribute MealType type;
-  attribute double size;     <span class="comment">// in grams</span>
+  attribute double size;     // in grams
 
   void initialize(MealType type, double size);
 };</pre>
@@ -4427,18 +4427,18 @@ interface Meal {
               assigned to the type property or passed to the initializeMeal function
               to those identified in the <a class="dfnref" href="#dfn-enumeration">enumeration</a>.
             </p>
-            <pre class="js">var meal = getMeal();                <span class="comment">// Get an instance of Meal.</span>
+            <pre class="js">var meal = getMeal();                // Get an instance of Meal.
 
-meal.initialize("rice", 200);        <span class="comment">// Operation invoked as normal.</span>
+meal.initialize("rice", 200);        // Operation invoked as normal.
 
 try {
-  meal.initialize("sandwich", 100);  <span class="comment">// Throws a TypeError.</span>
+  meal.initialize("sandwich", 100);  // Throws a TypeError.
 } catch (e) {
 }
 
-meal.type = "noodles";               <span class="comment">// Attribute assigned as normal.</span>
-meal.type = "dumplings";             <span class="comment">// Attribute assignment ignored.</span>
-meal.type == "noodles";              <span class="comment">// Evaluates to true.</span></pre>
+meal.type = "noodles";               // Attribute assigned as normal.
+meal.type = "dumplings";             // Attribute assignment ignored.
+meal.type == "noodles";              // Evaluates to true.</pre>
           </div>
         </div>
 
@@ -4489,7 +4489,7 @@ interface AsyncOperations {
               In the ECMAScript language binding, a <span class="estype">Function</span> object is
               passed as the operation argument.
             </p>
-            <pre class="js">var ops = getAsyncOperations();  <span class="comment">// Get an instance of AsyncOperations.</span>
+            <pre class="js">var ops = getAsyncOperations();  // Get an instance of AsyncOperations.
 
 ops.performOperation(function(status) {
   window.alert("Operation finished, status is " + status + ".");
@@ -4661,14 +4661,14 @@ Gizmo implements MoreFunctionality;</pre>
             </p>
             <pre class="idl">interface Entry {
   readonly attribute unsigned short entryType;
-  <span class="comment">// ...</span>
+  // ...
 };
 
 interface Observable {
   void addEventListener(DOMString type,
                         EventListener listener,
                         boolean useCapture);
-  <span class="comment">// ...</span>
+  // ...
 };
 
 Entry implements Observable;</pre>
@@ -4676,8 +4676,8 @@ Entry implements Observable;</pre>
               An ECMAScript implementation would thus have an “addEventListener”
               property in the prototype chain of every <span class="idltype">Entry</span>:
             </p>
-            <pre class="js">var e = getEntry();          <span class="comment">// Obtain an instance of Entry.</span>
-typeof e.addEventListener;  <span class="comment">// Evaluates to "function".</span></pre>
+            <pre class="js">var e = getEntry();          // Obtain an instance of Entry.
+typeof e.addEventListener;  // Evaluates to "function".</pre>
             
             <p>
               Note that it is not the case that all <span class="idltype">Observable</span>
@@ -5516,7 +5516,7 @@ interface Person {
               <pre class="idl">interface Node {
   readonly attribute DOMString? namespaceURI;
   readonly attribute Node? parentNode;
-  <span class="comment">// ...</span>
+  // ...
 };</pre>
             </div>
           </div>
@@ -6217,14 +6217,14 @@ interface Person {
 &lt;iframe id=a&gt;&lt;/iframe&gt;
 &lt;script&gt;
 var iframe = document.getElementById("a");
-var w = iframe.contentWindow;              <span class="comment">// The global object in the frame</span>
+var w = iframe.contentWindow;              // The global object in the frame
 
-Object == w.Object;                        <span class="comment">// Evaluates to false, per ECMA-262</span>
-Node == w.Node;                            <span class="comment">// Evaluates to false</span>
-iframe instanceof w.Node;                  <span class="comment">// Evaluates to false</span>
-iframe instanceof w.Object;                <span class="comment">// Evaluates to false</span>
-iframe.appendChild instanceof Function;    <span class="comment">// Evaluates to true</span>
-iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to false</span>
+Object == w.Object;                        // Evaluates to false, per ECMA-262
+Node == w.Node;                            // Evaluates to false
+iframe instanceof w.Node;                  // Evaluates to false
+iframe instanceof w.Object;                // Evaluates to false
+iframe.appendChild instanceof Function;    // Evaluates to true
+iframe.appendChild instanceof w.Function;  // Evaluates to false
 &lt;/script&gt;</pre>
           </div>
           <p>
@@ -7470,7 +7470,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
   void drawPolygon(sequence&lt;double&gt; coordinates);
   sequence&lt;double&gt; getLastDrawnPolygon();
 
-  <span class="comment">// ...</span>
+  // ...
 };</pre>
               <p>
                 In an ECMAScript implementation of this interface, an <span class="estype">Array</span>
@@ -7486,47 +7486,47 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 will be kept after the call completes.
               </p>
               <pre class="js">
-<span class="comment">// Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()</span>
-<span class="comment">// returns a sequence with two DOMString values: "image/png" and "image/svg+xml".</span>
+// Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()
+// returns a sequence with two DOMString values: "image/png" and "image/svg+xml".
 var canvas = getCanvas();
 
-<span class="comment">// An Array object of length 2.</span>
+// An Array object of length 2.
 var supportedImageCodecs = canvas.getSupportedImageCodecs();
 
-<span class="comment">// Evaluates to "image/png".</span>
+// Evaluates to "image/png".
 supportedImageCodecs[0];
 
-<span class="comment">// Each time canvas.getSupportedImageCodecs() is called, it returns a</span>
-<span class="comment">// new Array object.  Thus modifying the returned Array will not</span>
-<span class="comment">// affect the value returned from a subsequent call to the function.</span>
+// Each time canvas.getSupportedImageCodecs() is called, it returns a
+// new Array object.  Thus modifying the returned Array will not
+// affect the value returned from a subsequent call to the function.
 supportedImageCodecs[0] = "image/jpeg";
 
-<span class="comment">// Evaluates to "image/png".</span>
+// Evaluates to "image/png".
 canvas.getSupportedImageCodecs()[0];
 
-<span class="comment">// This evaluates to false, since a new Array object is returned each call.</span>
+// This evaluates to false, since a new Array object is returned each call.
 canvas.getSupportedImageCodecs() == canvas.getSupportedImageCodecs();
 
 
-<span class="comment">// An Array of Numbers...</span>
+// An Array of Numbers...
 var a = [0, 0, 100, 0, 50, 62.5];
 
-<span class="comment">// ...can be passed to a platform object expecting a sequence&lt;double&gt;.</span>
+// ...can be passed to a platform object expecting a sequence&lt;double&gt;.
 canvas.drawPolygon(a);
 
-<span class="comment">// Each element will be converted to a double by first calling ToNumber().</span>
-<span class="comment">// So the following call is equivalent to the previous one, except that</span>
-<span class="comment">// "hi" will be alerted before drawPolygon() returns.</span>
+// Each element will be converted to a double by first calling ToNumber().
+// So the following call is equivalent to the previous one, except that
+// "hi" will be alerted before drawPolygon() returns.
 a = [false, '',
      { valueOf: function() { alert('hi'); return 100; } }, 0,
      '50', new Number(62.5)];
 canvas.drawPolygon(s);
 
-<span class="comment">// Modifying an Array that was passed to drawPolygon() is guaranteed not to</span>
-<span class="comment">// have an effect on the Canvas, since the Array is effectively passed by value.</span>
+// Modifying an Array that was passed to drawPolygon() is guaranteed not to
+// have an effect on the Canvas, since the Array is effectively passed by value.
 a[4] = 20;
 var b = canvas.getLastDrawnPolygon();
-alert(b[4]);    <span class="comment">// This would alert "50".</span></pre>
+alert(b[4]);    // This would alert "50".</pre>
             </div>
             <!--
             <div class='ignore'>
@@ -8283,15 +8283,15 @@ interface Circle {
                 <span class="idltype">NodeList</span> interface object would not
                 have a <span class="prop">[[Construct]]</span> property.
               </p>
-              <pre class="js">var x = new Circle();      <span class="comment">// The uses the zero-argument constructor to create a</span>
-                           <span class="comment">// reference to a platform object that implements the</span>
-                           <span class="comment">// Circle interface.</span>
+              <pre class="js">var x = new Circle();      // The uses the zero-argument constructor to create a
+                           // reference to a platform object that implements the
+                           // Circle interface.
 
-var y = new Circle(1.25);  <span class="comment">// This also creates a Circle object, this time using</span>
-                           <span class="comment">// the one-argument constructor.</span>
+var y = new Circle(1.25);  // This also creates a Circle object, this time using
+                           // the one-argument constructor.
 
-var z = new NodeList();    <span class="comment">// This would throw a TypeError, since no</span>
-                           <span class="comment">// [Constructor] is declared.</span></pre>
+var z = new NodeList();    // This would throw a TypeError, since no
+                           // [Constructor] is declared.</pre>
             </div>
           </div>
 
@@ -8501,9 +8501,9 @@ interface Window {
   ...
 };
 
-<span class="comment">// By using the same identifier Worker for both SharedWorkerGlobalScope
+// By using the same identifier Worker for both SharedWorkerGlobalScope
 // and DedicatedWorkerGlobalScope, both can be addressed in an [Exposed]
-// extended attribute at once.</span>
+// extended attribute at once.
 [Global=Worker]
 interface SharedWorkerGlobalScope : WorkerGlobalScope {
   ...
@@ -8514,22 +8514,22 @@ interface DedicatedWorkerGlobalScope : WorkerGlobalScope {
   ...
 };
 
-<span class="comment">// MathUtils is available for use in workers and on the main thread.</span>
+// MathUtils is available for use in workers and on the main thread.
 [Exposed=(Window,Worker)]
 interface MathUtils {
   static double someComplicatedFunction(double x, double y);
 };
 
-<span class="comment">// WorkerUtils is only available in workers.  Evaluating WorkerUtils
+// WorkerUtils is only available in workers.  Evaluating WorkerUtils
 // in the global scope of a worker would give you its interface object, while
-// doing so on the main thread will give you a ReferenceError.</span>
+// doing so on the main thread will give you a ReferenceError.
 [Exposed=Worker]
 interface WorkerUtils {
   static void setPriority(double x);
 };
 
-<span class="comment">// Node is only available on the main thread.  Evaluating Node
-// in the global scope of a worker would give you a ReferenceError.</span>
+// Node is only available on the main thread.  Evaluating Node
+// in the global scope of a worker would give you a ReferenceError.
 interface Node {
   ...
 };</pre>
@@ -8580,12 +8580,12 @@ interface Window {
               without an explicit object, even in strict mode:</p>
             <pre class="js">"use strict";
 
-window.alert("hello");      <span class="comment">// Calling alert with an explicit window object works.</span>
-alert("hello");             <span class="comment">// This also works, even though we are in strict mode.</span>
-alert.call(null, "hello");  <span class="comment">// As does passing null explicitly as the this value.</span>
+window.alert("hello");      // Calling alert with an explicit window object works.
+alert("hello");             // This also works, even though we are in strict mode.
+alert.call(null, "hello");  // As does passing null explicitly as the this value.
 
-<span class="comment">// This does not apply to getters for attributes on the interface, though.</span>
-<span class="comment">// The following will throw a TypeError.</span>
+// This does not apply to getters for attributes on the interface, though.
+// The following will throw a TypeError.
 Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
             </div>
           </div>
@@ -8767,25 +8767,25 @@ interface Window {
               <pre class="html">&lt;!DOCTYPE html&gt;
 &lt;title&gt;Variable declarations and assignments on Window&lt;/title&gt;
 &lt;iframe name=abc&gt;&lt;/iframe&gt;
-<span class="comment">&lt;!-- Shadowing named properties --&gt;</span>
+&lt;!-- Shadowing named properties --&gt;
 &lt;script&gt;
-  window.abc;    <span class="comment">// Evaluates to the iframe's Window object.</span>
-  abc = 1;       <span class="comment">// Shadows the named property.</span>
-  window.abc;    <span class="comment">// Evaluates to 1.</span>
+  window.abc;    // Evaluates to the iframe's Window object.
+  abc = 1;       // Shadows the named property.
+  window.abc;    // Evaluates to 1.
 &lt;/script&gt;
 
-<span class="comment">&lt;!-- Preserving properties for IDL attributes --&gt;</span>
+&lt;!-- Preserving properties for IDL attributes --&gt;
 &lt;script&gt;
-  Window.prototype.def = 2;         <span class="comment">// Places a property on the prototype.</span>
-  window.hasOwnProperty("length");  <span class="comment">// Evaluates to true.</span>
-  length;                           <span class="comment">// Evaluates to 1.</span>
-  def;                              <span class="comment">// Evaluates to 2.</span>
+  Window.prototype.def = 2;         // Places a property on the prototype.
+  window.hasOwnProperty("length");  // Evaluates to true.
+  length;                           // Evaluates to 1.
+  def;                              // Evaluates to 2.
 &lt;/script&gt;
 &lt;script&gt;
-  var length;                       <span class="comment">// Variable declaration leaves existing property.</span>
-  length;                           <span class="comment">// Evaluates to 1.</span>
-  var def;                          <span class="comment">// Variable declaration creates shadowing property.</span>
-  def;                              <span class="comment">// Evaluates to undefined.</span>
+  var length;                       // Variable declaration leaves existing property.
+  length;                           // Evaluates to 1.
+  var def;                          // Variable declaration creates shadowing property.
+  def;                              // Evaluates to undefined.
 &lt;/script&gt;</pre>
             </div>
           </div>
@@ -8848,11 +8848,11 @@ interface ImmutableItemList {
                 <span class="estype">Array</span> methods to inspect and
                 modify the array-like object can be used.
               </p>
-              <pre class="js">var list = getItemList();  <span class="comment">// Obtain an instance of ItemList.</span>
+              <pre class="js">var list = getItemList();  // Obtain an instance of ItemList.
 
-list.concat();             <span class="comment">// Clone the ItemList into an Array.</span>
-list.pop();                <span class="comment">// Remove an item from the ItemList.</span>
-list.unshift({ });         <span class="comment">// Insert an item at index 0.</span></pre>
+list.concat();             // Clone the ItemList into an Array.
+list.pop();                // Remove an item from the ItemList.
+list.unshift({ });         // Insert an item at index 0.</pre>
               <p>
                 <span class="idltype">ImmutableItemList</span> has a read only
                 length <a class="dfnref" href="#dfn-attribute">attribute</a>
@@ -8960,12 +8960,12 @@ list.unshift({ });         <span class="comment">// Insert an item at index 0.</
               </p>
               <pre class="js">"use strict";
 
-var example = getExample();  <span class="comment">// Get an instance of Example.</span>
+var example = getExample();  // Get an instance of Example.
 
-<span class="comment">// Fine; while we are in strict mode, there is a setter that is a no-op.</span>
+// Fine; while we are in strict mode, there is a setter that is a no-op.
 example.x = 1;
 
-<span class="comment">// Throws a TypeError, since we are in strict mode and there is no setter.</span>
+// Throws a TypeError, since we are in strict mode and there is no setter.
 example.y = 1;</pre>
             </div>
           </div>
@@ -9015,19 +9015,19 @@ example.y = 1;</pre>
                 to x to be invoked with something other than an <span class="idltype">Example</span>
                 object.
               </p>
-              <pre class="js">var example = getExample();  <span class="comment">// Get an instance of Example.</span>
+              <pre class="js">var example = getExample();  // Get an instance of Example.
 var obj = { };
 
-<span class="comment">// Fine.</span>
+// Fine.
 example.x;
 
-<span class="comment">// Ignored, since the this value is not an Example object and [LenientThis] is used.</span>
+// Ignored, since the this value is not an Example object and [LenientThis] is used.
 Object.getOwnPropertyDescriptor(Example.prototype, "x").get.call(obj);
 
-<span class="comment">// Also ignored, since Example.prototype is not an Example object and [LenientThis] is used.</span>
+// Also ignored, since Example.prototype is not an Example object and [LenientThis] is used.
 Example.prototype.x;
 
-<span class="comment">// Throws a TypeError, since Example.prototype is not an Example object.</span>
+// Throws a TypeError, since Example.prototype is not an Example object.
 Example.prototype.y;</pre>
             </div>
           </div>
@@ -9084,21 +9084,21 @@ Example.prototype.y;</pre>
               <pre class="idl">[NamedConstructor=Audio,
  NamedConstructor=Audio(DOMString src)]
 interface HTMLAudioElement : HTMLMediaElement {
-  <span class="comment">// ...</span>
+  // ...
 };</pre>
               <p>
                 An ECMAScript implementation that supports this interface will
                 allow the construction of <span class="estype">HTMLAudioElement</span>
                 objects using the <span class="estype">Audio</span> constructor.
               </p>
-              <pre class="js">typeof Audio;                   <span class="comment">// Evaluates to 'function'.</span>
+              <pre class="js">typeof Audio;                   // Evaluates to 'function'.
 
-var a1 = new Audio();           <span class="comment">// Creates a new object that implements</span>
-                                <span class="comment">// HTMLAudioElement, using the zero-argument</span>
-                                <span class="comment">// constructor.</span>
+var a1 = new Audio();           // Creates a new object that implements
+                                // HTMLAudioElement, using the zero-argument
+                                // constructor.
 
-var a2 = new Audio('a.flac');   <span class="comment">// Creates an HTMLAudioElement using the</span>
-                                <span class="comment">// one-argument constructor.</span></pre>
+var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
+                                // one-argument constructor.</pre>
             </div>
           </div>
 
@@ -9218,17 +9218,17 @@ interface Query {
                 manipulation of <span class="idltype">Storage</span>’s
                 prototype, but not <span class="idltype">Query</span>’s.
               </p>
-              <pre class="js">typeof Storage;                        <span class="comment">// evaluates to "object"</span>
+              <pre class="js">typeof Storage;                        // evaluates to "object"
 
-<span class="comment">// Add some tracing alert() call to Storage.addEntry.</span>
+// Add some tracing alert() call to Storage.addEntry.
 var fn = Storage.prototype.addEntry;
 Storage.prototype.addEntry = function(key, value) {
   alert('Calling addEntry()');
   return fn.call(this, key, value);
 };
 
-typeof Query;                          <span class="comment">// evaluates to "undefined"</span>
-var fn = Query.prototype.lookupEntry;  <span class="comment">// exception, Query isn’t defined</span>
+typeof Query;                          // evaluates to "undefined"
+var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
 </pre>
             </div>
           </div>
@@ -9293,34 +9293,34 @@ interface StringMap2 {
                 getting certain properties on objects implementing
                 the interfaces will result in different values:
               </p>
-              <pre class="js"><span class="comment">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and</span>
-<span class="comment">// "toString" as supported property names.</span>
+              <pre class="js">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and
+// "toString" as supported property names.
 var map1 = getStringMap();
 
-<span class="comment">// This invokes the named property getter.</span>
+// This invokes the named property getter.
 map1.abc;
 
-<span class="comment">// This fetches the "length" property on the object that corresponds to the</span>
-<span class="comment">// length attribute.</span>
+// This fetches the "length" property on the object that corresponds to the
+// length attribute.
 map1.length;
 
-<span class="comment">// This fetches the "toString" property from the object's prototype chain.</span>
+// This fetches the "toString" property from the object's prototype chain.
 map1.toString;
 
 
-<span class="comment">// Obtain an instance of StringMap2.  Assume that it also has "abc", "length"</span>
-<span class="comment">// and "toString" as supported property names.</span>
+// Obtain an instance of StringMap2.  Assume that it also has "abc", "length"
+// and "toString" as supported property names.
 var map2 = getStringMap2();
 
-<span class="comment">// This invokes the named property getter.</span>
+// This invokes the named property getter.
 map2.abc;
 
-<span class="comment">// This also invokes the named property getter, despite the fact that the "length"</span>
-<span class="comment">// property on the object corresponds to the length attribute.</span>
+// This also invokes the named property getter, despite the fact that the "length"
+// property on the object corresponds to the length attribute.
 map2.length;
 
-<span class="comment">// This too invokes the named property getter, despite the fact that "toString" is</span>
-<span class="comment">// a property in map2's prototype chain.</span>
+// This too invokes the named property getter, despite the fact that "toString" is
+// a property in map2's prototype chain.
 map2.toString;</pre>
             </div>
           </div>
@@ -9518,10 +9518,10 @@ interface Person {
                 In the ECMAScript binding, this would allow assignments to the
                 “name” property:
               </p>
-              <pre class="js">var p = getPerson();           <span class="comment">// Obtain an instance of Person.</span>
+              <pre class="js">var p = getPerson();           // Obtain an instance of Person.
 
-p.name = 'John Citizen';       <span class="comment">// This statement...</span>
-p.name.full = 'John Citizen';  <span class="comment">// ...has the same behavior as this one.</span></pre>
+p.name = 'John Citizen';       // This statement...
+p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
             </div>
           </div>
 
@@ -9590,26 +9590,26 @@ p.name.full = 'John Citizen';  <span class="comment">// ...has the same behavior
                 will shadow the property that corresponds to the
                 <a class="dfnref" href="#dfn-attribute">attribute</a>:
               </p>
-              <pre class="js">var counter = getCounter();                              <span class="comment">// Obtain an instance of Counter.</span>
-counter.value;                                           <span class="comment">// Evaluates to 0.</span>
+              <pre class="js">var counter = getCounter();                              // Obtain an instance of Counter.
+counter.value;                                           // Evaluates to 0.
 
-counter.hasOwnProperty("value");                         <span class="comment">// Evaluates to false.</span>
-Object.getPrototypeOf(counter).hasOwnProperty("value");  <span class="comment">// Evaluates to true.</span>
-
-counter.increment();
-counter.increment();
-counter.value;                                           <span class="comment">// Evaluates to 2.</span>
-
-counter.value = 'a';                                     <span class="comment">// Shadows the property with one that is unrelated</span>
-                                                         <span class="comment">// to Counter::value.</span>
-
-counter.hasOwnProperty("value");                         <span class="comment">// Evaluates to true.</span>
+counter.hasOwnProperty("value");                         // Evaluates to false.
+Object.getPrototypeOf(counter).hasOwnProperty("value");  // Evaluates to true.
 
 counter.increment();
-counter.value;                                           <span class="comment">// Evaluates to 'a'.</span>
+counter.increment();
+counter.value;                                           // Evaluates to 2.
 
-delete counter.value;                                    <span class="comment">// Reveals the original property.</span>
-counter.value;                                           <span class="comment">// Evaluates to 3.</span></pre>
+counter.value = 'a';                                     // Shadows the property with one that is unrelated
+                                                         // to Counter::value.
+
+counter.hasOwnProperty("value");                         // Evaluates to true.
+
+counter.increment();
+counter.value;                                           // Evaluates to 'a'.
+
+delete counter.value;                                    // Reveals the original property.
+counter.value;                                           // Evaluates to 3.</pre>
             </div>
           </div>
 
@@ -9740,16 +9740,16 @@ counter.value;                                           <span class="comment">/
               contexts, and two which are executable only from secure contexts.</p>
 
               <pre class="idl">interface PowerfulFeature {
-  <span class="comment">// This call will succeed in all contexts.</span>
+  // This call will succeed in all contexts.
   Promise &lt;Result&gt; calculateNotSoSecretResult();
 
-  <span class="comment">// This operation will not be exposed to a non-secure context. In such a context,
-  // there will be no "calculateSecretResult" property on PowerfulFeature.prototype.</span>
+  // This operation will not be exposed to a non-secure context. In such a context,
+  // there will be no "calculateSecretResult" property on PowerfulFeature.prototype.
   [SecureContext] Promise&lt;Result&gt; calculateSecretResult();
 
-  <span class="comment">// The same applies here: the attribute will not be exposed to a non-secure context,
+  // The same applies here: the attribute will not be exposed to a non-secure context,
   // and in a non-secure context there will be no "secretBoolean" property on
-  // PowerfulFeature.prototype.</span>
+  // PowerfulFeature.prototype.
   [SecureContext] readonly attribute boolean secretBoolean;
 };</pre>
 
@@ -9808,21 +9808,21 @@ interface Manager {
                 to handler1 will have different behavior from that when assigning
                 to handler2:
               </p>
-              <pre class="js">var manager = getManager();  <span class="comment">// Get an instance of Manager.</span>
+              <pre class="js">var manager = getManager();  // Get an instance of Manager.
 
 manager.handler1 = function() { };
-manager.handler1;            <span class="comment">// Evaluates to the function.</span>
+manager.handler1;            // Evaluates to the function.
 
 try {
-  manager.handler1 = 123;    <span class="comment">// Throws a TypeError.</span>
+  manager.handler1 = 123;    // Throws a TypeError.
 } catch (e) {
 }
 
 manager.handler2 = function() { };
-manager.handler2;            <span class="comment">// Evaluates to the function.</span>
+manager.handler2;            // Evaluates to the function.
 
 manager.handler2 = 123;
-manager.handler2;            <span class="comment">// Evaluates to null.</span></pre>
+manager.handler2;            // Evaluates to null.</pre>
             </div>
           </div>
 
@@ -9891,16 +9891,16 @@ manager.handler2;            <span class="comment">// Evaluates to null.</span><
                 argument to the <code>isMemberOfBreed</code> function
                 to the empty string rather than <code>"null"</code>:
               </p>
-              <pre class="js">var d = getDog();         <span class="comment">// Assume d is a platform object implementing the Dog</span>
-                          <span class="comment">// interface.</span>
+              <pre class="js">var d = getDog();         // Assume d is a platform object implementing the Dog
+                          // interface.
 
-d.name = null;            <span class="comment">// This assigns the string "null" to the .name</span>
-                          <span class="comment">// property.</span>
+d.name = null;            // This assigns the string "null" to the .name
+                          // property.
 
-d.owner = null;           <span class="comment">// This assigns the string "" to the .owner property.</span>
+d.owner = null;           // This assigns the string "" to the .owner property.
 
-d.isMemberOfBreed(null);  <span class="comment">// This passes the string "" to the isMemberOfBreed</span>
-                          <span class="comment">// function.</span></pre>
+d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
+                          // function.</pre>
             </div>
           </div>
 
@@ -10001,24 +10001,24 @@ d.isMemberOfBreed(null);  <span class="comment">// This passes the string "" to 
                 In an ECMAScript implementation of the interface, the username attribute will be exposed as a non-configurable property on the
                 object itself:
               </p>
-              <pre class="js">var system = getSystem();                      <span class="comment">// Get an instance of System.</span>
+              <pre class="js">var system = getSystem();                      // Get an instance of System.
 
-system.hasOwnProperty("username");             <span class="comment">// Evaluates to true.</span>
-system.hasOwnProperty("loginTime");            <span class="comment">// Evaluates to false.</span>
-System.prototype.hasOwnProperty("username");   <span class="comment">// Evaluates to false.</span>
-System.prototype.hasOwnProperty("loginTime");  <span class="comment">// Evaluates to true.</span>
+system.hasOwnProperty("username");             // Evaluates to true.
+system.hasOwnProperty("loginTime");            // Evaluates to false.
+System.prototype.hasOwnProperty("username");   // Evaluates to false.
+System.prototype.hasOwnProperty("loginTime");  // Evaluates to true.
 
 try {
-  <span class="comment">// This call would fail, since the property is non-configurable.</span>
+  // This call would fail, since the property is non-configurable.
   Object.defineProperty(system, "username", { value: "administrator" });
 } catch (e) { }
 
-<span class="comment">// This defineProperty call would succeed, because System.prototype.loginTime</span>
-<span class="comment">// is configurable.</span>
+// This defineProperty call would succeed, because System.prototype.loginTime
+// is configurable.
 var forgedLoginTime = 5;
 Object.defineProperty(System.prototype, "loginTime", { value: forgedLoginTime });
 
-system.loginTime;  <span class="comment">// So this now evaluates to forgedLoginTime.</span></pre>
+system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             </div>
           </div>
 
@@ -10063,10 +10063,10 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
 };</pre>
               <p>the “f” property an be referenced with a bare identifier
               in a <code>with</code> statement but the “g” property cannot:</p>
-              <pre class="js">var thing = getThing();  <span class="comment">// An instance of Thing</span>
+              <pre class="js">var thing = getThing();  // An instance of Thing
 with (thing) {
-  f;                     <span class="comment">// Evaluates to a Function object.</span>
-  g;                     <span class="comment">// Throws a ReferenceError.</span>
+  f;                     // Evaluates to a Function object.
+  g;                     // Throws a ReferenceError.
 }</pre>
             </div>
           </div>
@@ -14208,17 +14208,17 @@ C implements A;</pre>
             </p>
             <pre class="idl">interface A {
 
-  <span class="comment">/**
+  /**
    * Calls computeSquareRoot on m, passing x as its argument.
-   */</span>
+   */
   double doComputation(MathUtils m, double x);
 };
 
 interface MathUtils {
-  <span class="comment">/**
+  /**
    * If x is negative, throws a <a href="#notsupportederror">NotSupportedError</a>.  Otherwise, returns
    * the square root of x.
-   */</span>
+   */
   double computeSquareRoot(double x);
 };</pre>
             <p>
@@ -14273,38 +14273,38 @@ try {
 };
 
 interface ExceptionThrower {
-  <span class="comment">// This attribute always throws a NotSupportedError and never returns a value.</span>
+  // This attribute always throws a NotSupportedError and never returns a value.
   attribute long valueOf<!-- getraises(SomeException)-->;
 };</pre>
             <p>
               Assuming an ECMAScript implementation supporting this interface,
               the following code demonstrates how exceptions are handled:
             </p>
-            <pre class="js">var d = getDahut();              <span class="comment">// Obtain an instance of Dahut.</span>
-var et = getExceptionThrower();  <span class="comment">// Obtain an instance of ExceptionThrower.</span>
+            <pre class="js">var d = getDahut();              // Obtain an instance of Dahut.
+var et = getExceptionThrower();  // Obtain an instance of ExceptionThrower.
 
 try {
   d.type = { toString: function() { throw "abc"; } };
 } catch (e) {
-  <span class="comment">// The string "abc" is caught here, since as part of the conversion</span>
-  <span class="comment">// from the native object to a string, the anonymous function</span>
-  <span class="comment">// was invoked, and none of the [[DefaultValue]], ToPrimitive or</span>
-  <span class="comment">// ToString algorithms are defined to catch the exception.</span>
+  // The string "abc" is caught here, since as part of the conversion
+  // from the native object to a string, the anonymous function
+  // was invoked, and none of the [[DefaultValue]], ToPrimitive or
+  // ToString algorithms are defined to catch the exception.
 }
 
 try {
   d.type = { toString: { } };
 } catch (e) {
-  <span class="comment">// An exception is caught here, since an attempt is made to invoke</span>
-  <span class="comment">// [[Call]] on the native object that is the value of toString</span>
-  <span class="comment">// property.</span>
+  // An exception is caught here, since an attempt is made to invoke
+  // [[Call]] on the native object that is the value of toString
+  // property.
 }
 
 d.type = et;
-<span class="comment">// An uncaught NotSupportedError DOMException is thrown here, since the</span>
-<span class="comment">// [[DefaultValue]] algorithm attempts to get the value of the</span>
-<span class="comment">// "valueOf" property on the ExceptionThrower object.  The exception</span>
-<span class="comment">// propagates out of this block of code.</span></pre>
+// An uncaught NotSupportedError DOMException is thrown here, since the
+// [[DefaultValue]] algorithm attempts to get the value of the
+// "valueOf" property on the ExceptionThrower object.  The exception
+// propagates out of this block of code.</pre>
           </div>
         </div>
       </div>
