@@ -319,23 +319,13 @@ interface GraphicalWindow {
             objects; each ECMAScript object that implements <span class="idltype">GraphicalWindow</span>
             will have that prototype object in its prototype chain.
           </p>
-          <!--JAVA
-          <p>
-            In Java, there will exist a Java interface that corresponds to the IDL
-            <span class='idltype'>GraphicalWindow</span> interface.  This Java interface
-            will have methods that correspond to the operations, and getter and setter
-            methods that correspond to the attributes.  Java objects that are considered
-            to implement the IDL <span class='idltype'>GraphicalWindow</span> interface
-            will implement the corresponding Java interface.
-          </p>
-          -->
+          
           <p>
             The <a class="xattr" href="#Constructor">[Constructor]</a> that appears on <span class="idltype">GraphicalWindow</span>
             is an <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.
             This extended attribute causes a constructor to exist in ECMAScript implementations,
             so that calling <code>new GraphicalWindow()</code> would return a new object
-            that implemented the interface.  <!--JAVA The <a class='xattr' href='#Constructor'>[Constructor]</a>
-            extended attribute has no effect in the Java language binding, however.-->
+            that implemented the interface.  
           </p>
         </div>
 
@@ -587,15 +577,7 @@ interface TextField {
             provides ways to inspect and modify the object's state and to
             invoke the behavior described by the interface.
           </p>
-          <!--JAVA
-          <div class='note'>
-            <p>
-              In the Java language binding, for example, this is achieved by having the
-              object implement a Java interface that has methods for reading and
-              writing attribute values and to invoke an operation.
-            </p>
-          </div>
-          -->
+          
           <p>
             An interface can be defined to <dfn data-export="" data-dfn-for="interface" id="dfn-inherit">inherit</dfn> from another interface.
             If the identifier of the interface is followed by a
@@ -650,36 +632,7 @@ interface B : A {
               can still be invoked on an object that implements <span class="idltype">B</span> by
               calling <code>A.prototype.f.call(instanceOfB)</code>.
             </p>
-            <!--JAVA
-            <p>
-              In the Java language binding, the two IDL interfaces will correspond to
-              the following Java interfaces:
-            </p>
-            <x:codeblock language='java'>public interface A {
-  void f();
-  void g();
-}
-
-public interface B extends A {
-  void f();
-  void g(String x);
-}</x:codeblock>
-            <p>
-              Calling <code>instanceOfB.f()</code> in Java will invoke
-              the f defined on <span class='idltype'>B</span>.  Due to
-              the way method overriding is defined in Java, there is no
-              way to call the f defined on <span class='idltype'>A</span>
-              on an object that implements <span class='idltype'>B</span>.
-              Since the signature of g is different in <span class='idltype'>A</span>
-              and <span class='idltype'>B</span>, however, both can be called
-              with, for example, <code>instanceOfB.g()</code> and
-              <code>instanceOfB.g("")</code>.
-            </p>
-            <p>
-              In both languages, the f and g from the derived interface
-              <span class='idltype'>B</span> are always accessible.
-            </p>
-            -->
+            
           </div>
           <p>
             The <dfn data-export="" id="dfn-inherited-interfaces">inherited interfaces</dfn> of
@@ -857,9 +810,7 @@ partial interface <em>SomeInterface</em> {
             be specified on partial interface definitions:
             <a class="xattr" href="#Constructor">[Constructor]</a>,
             <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>,
-            <!--JAVA
-            <a class='xattr' href='#JavaPackage'>[JavaPackage]</a>,
-            -->
+            
             <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>.
@@ -902,9 +853,7 @@ partial interface <em>SomeInterface</em> {
             <a class="xattr" href="#Exposed">[Exposed]</a>,
             <a class="xattr" href="#Global">[Global]</a>,
             <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>,
-            <!--JAVA
-            <a class='xattr' href='#JavaPackage'>[JavaPackage]</a>,
-            -->
+            
             <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>,
@@ -1179,9 +1128,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
             </p>
             <div class="note">
               <p>
-                <!--JAVA
-                Both the ECMAScript and the Java language binding do however
-                -->
+                
                 The ECMAScript language binding does however
                 allow <a class="dfnref" href="#dfn-constant">constants</a> to be accessed
                 through objects implementing the IDL <a class="dfnref" href="#dfn-interface">interfaces</a>
@@ -1192,7 +1139,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
   const short rambaldi = 47;
 };</code></pre></div></div>
               <p>
-                the constant value can be accessed in ECMAScript <!--JAVA and in Java--> either as
+                the constant value can be accessed in ECMAScript  either as
                 <code>A.rambaldi</code> or <code>instanceOfA.rambaldi</code>.
               </p>
             </div>
@@ -1873,9 +1820,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
 };</code></pre></div></div>
               <p>In language bindings that do not support property getters and setters,
                 objects implementing <span class="idltype">Dictionary</span> will not
-                have that special behavior.  <!--JAVA For example, in the Java language binding,
-                the corresponding Java interface will have only a single method,
-                <code>long getPropertyCount()</code>.--></p>
+                have that special behavior.  </p>
             </div>
             <!--
             <p>
@@ -2848,16 +2793,7 @@ var triangulationPoint = Circle.triangulate(circles[0], circles[1], circles[2]);
 
 <span class="comment">// Find out how many triangulations we have done</span>
 window.alert(Circle.triangulationCount);</code></pre></div></div>
-              <!--JAVA
-              <p>
-                In the Java language binding, however, the <code>triangulate</code> method
-                will exist on an abstract class:
-              </p>
-              <x:codeblock language='java'>Circle[] circles = getCircles();  <span class='comment'>// an array of Circle objects</span>
-
-<span class='comment'>// Call the static operation</span>
-Point triangulationPoint = CircleUtils.triangulate(circles[0], circles[1], circles[2]);</x:codeblock>
-              -->
+              
             </div>
           </div>
 
@@ -4742,14 +4678,7 @@ Entry implements Observable;</code></pre></div></div>
             </p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">ECMAScript</span></div><div class="blockContent"><pre class="code"><code class="es-code">var e = getEntry();          <span class="comment">// Obtain an instance of Entry.</span>
 typeof e.addEventListener;  <span class="comment">// Evaluates to "function".</span></code></pre></div></div>
-            <!--JAVA
-            <p>
-              Similarly, in Java, any <span class='javatype'>Node</span>
-              object could be cast to <span class='javatype'>EventTarget</span>:
-            </p>
-            <x:codeblock language='java'>Node n = getNode();               <span class='comment'>// Obtain an instance of Node.</span>
-EventTarget et = (EventTarget) n; <span class='comment'>// This should never throw ClassCastException.</span></x:codeblock>
-            -->
+            
             <p>
               Note that it is not the case that all <span class="idltype">Observable</span>
               objects implement <span class="idltype">Entry</span>.
@@ -5978,9 +5907,7 @@ interface Person {
             defined in this document only accept a more restricted syntax.
             Any extended attribute encountered in an
             <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is
-            <!--JAVA
-            matched against the following five grammar symbols to determine
-            -->
+            
             matched against the following six grammar symbols to determine
             which form (or forms) it is in:
           </p>
@@ -6045,19 +5972,7 @@ interface Person {
                 <code>[Exposed=(Window,Worker)]</code>
               </td>
             </tr>
-            <!--JAVA
-            <tr>
-              <td>
-                <a class='sym' href='#prod-ExtendedAttributeDottedName'>ExtendedAttributeDottedName</a>
-              </td>
-              <td>
-                <dfn id='dfn-xattr-dotted-name'>takes a dotted name</dfn>
-              </td>
-              <td>
-                <code>[JavaPackage=org.example]</code>
-              </td>
-            </tr>
-            -->
+            
           </table>
 
           <p>
@@ -6065,9 +5980,7 @@ interface Person {
             are applicable to the ECMAScript language binding, which are described in
             [[#es-extended-attributes]].
             Each extended attribute definition will state which of the above
-            six forms are allowed.  <!--JAVA Although <a class='sym' href='#prod-ExtendedAttributeIdent'>ExtendedAttributeIdent</a>
-            and <a class='sym' href='#prod-ExtendedAttributeDottedName'>ExtendedAttributeDottedName</a>
-            are ambiguous, no extended attribute defined in this document takes both of those forms.-->
+            six forms are allowed.  
           </p>
 
           <table class="grammar"><tr id="proddef-ExtendedAttributeList"><td><span class="prod-number">[65]</span></td><td><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> "]" <br/> |
