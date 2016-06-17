@@ -311,7 +311,7 @@
         <xsl:when test='@language="java"'>java</xsl:when>
         <xsl:when test='@language="c"'>c</xsl:when>
         <xsl:when test='@language="html"'>html</xsl:when>
-        <xsl:otherwise></xsl:otherwise>
+        <xsl:otherwise>@@</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:choose>
