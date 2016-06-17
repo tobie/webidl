@@ -141,9 +141,9 @@
                 <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  <span class="comment">// nothing</span></span></td></tr>
               </table>
               (Each grammar rule is assigned a number for reference, shown on the left.)</li>
-            <li>Non-normative notes: <div class="note"><div class="noteHeader">Note</div><p>This is a note.</p></div></li>
+            <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
             <li>Non-normative examples: <div class="example"><div class="exampleHeader">Example</div><p>This is an example.</p></div></li>
-            <li>Normative warnings: <div class="warning"><div class="warningHeader">Warning</div><p>This is a warning.</p></div></li>
+            <li>Normative warnings: <div class="warning"><p>This is a warning.</p></div></li>
             <li>Code blocks: <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code"><span class="comment">// This is an IDL code block.</span>
 interface Example {
   attribute long something;
@@ -407,25 +407,19 @@ dictionary <i>identifier</i> {
               <pre class="syntax"><i>return-type</i> <em>operation-identifier</em>(<i>arguments…</i>);</pre>
             </li>
           </ul>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>
-              Operations can have no identifier when they are being used to declare a
+              Note: Operations can have no identifier when they are being used to declare a
               <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
-            </p>
-          </div>
+            
           <p>
             For all of these constructs, the <a class="dfnref" href="#dfn-identifier">identifier</a>
             is the value of the <a class="sym" href="#prod-identifier">identifier</a> token with any leading
             <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>
-              A leading <span class="char">"_"</span> is used to escape an identifier from looking
+              Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
               like a reserved word so that, for example, an interface named “interface” can be
               defined.  The leading <span class="char">"_"</span> is dropped to unescape the
               identifier.
-            </p>
-          </div>
+            
           <p>
             Operation arguments can take a slightly wider set of identifiers.  In an operation
             declaration, the identifier of an argument is specified immediately after its
@@ -478,10 +472,8 @@ dictionary <i>identifier</i> {
             or begin with a <span class="char">U+005F LOW LINE ("_")</span> character.  These
             are known as <dfn data-export="" id="dfn-reserved-identifier">reserved identifiers</dfn>.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>Further restrictions on identifier names for particular constructs may be made
-            in later sections.</p>
-          </div>
+              Note: Further restrictions on identifier names for particular constructs may be made
+            in later sections.
           <p>
             Within the set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>
             that a given implementation supports,
@@ -743,9 +735,7 @@ public interface B extends A {
           <pre class="syntax">callback interface <i>identifier</i> {
   <i>interface-members…</i>
 };</pre>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>See also the similarly named <a class="dfnref" href="#dfn-callback-function">callback function</a> definition.</p>
-          </div>
+              Note: See also the similarly named <a class="dfnref" href="#dfn-callback-function">callback function</a> definition.
           <p>
             <a class="dfnref" href="#dfn-callback-interface">Callback interfaces</a>
             <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a>
@@ -759,7 +749,7 @@ public interface B extends A {
             <a class="dfnref" href="#dfn-static-operation">static operations</a> <span class="rfc2119">MUST NOT</span>
             be defined on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
           </p>
-          <div class="warning"><div class="warningHeader">Warning</div>
+          <div class="warning">
             <p>
               Specification authors <span class="rfc2119">SHOULD NOT</span> define
               <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>
@@ -779,26 +769,20 @@ public interface B extends A {
               language binding).
             </p>
           </div>
-          <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-            <p>
-              Perhaps this warning shouldn't apply if you are planning to extend the callback
+              Issue: Perhaps this warning shouldn't apply if you are planning to extend the callback
               interface in the future.  That's probably a good reason to start off with a single
               operation callback interface.
-            </p>
-          </div>
-          <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-            <p>
-              I think we need to support operations not being implemented on a given
+            
+              Issue: I think we need to support operations not being implemented on a given
               user object implementing a callback interface.  If specs extending an existing
               callback interface, we probably want to be able to avoid calling the
               operations that aren't implemented (and having some default behavior instead).
               So we should perhaps define a term that means whether the operation is
               implemented, which in the ECMAScript binding would correspond to checking
               for the property's existence.
-            </p>
-          </div>
+            
 
-          <div class="note"><div class="noteHeader">Note</div>
+          <div class="note">
             <p>
               Specification authors wanting to define APIs that take ECMAScript objects
               as “property bag” like function arguments are suggested to use
@@ -854,22 +838,18 @@ interface A {
 partial interface <em>SomeInterface</em> {
   <i>interface-members…</i>
 };</pre>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>Partial interface definitions are intended for use as a specification
+              Note: Partial interface definitions are intended for use as a specification
               editorial aide, allowing the definition of an interface to be separated
-              over more than one section of the document, and sometimes multiple documents.</p>
-          </div>
+              over more than one section of the document, and sometimes multiple documents.
           <p>
             The order of appearance of an <a class="dfnref" href="#dfn-interface">interface</a>
             definition and any of its <a class="dfnref" href="#dfn-partial-interface">partial interface</a>
             definitions does not matter.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>A partial interface definition cannot specify that the interface
+              Note: A partial interface definition cannot specify that the interface
               <a class="dfnref" href="#dfn-inherit">inherits</a> from another interface.
               Inheritance must be specified on the original <a class="dfnref" href="#dfn-interface">interface</a>
-              definition.</p>
-          </div>
+              definition.
           <p>
             <a class="dfnref" href="#dfn-extended-attribute">Extended attributes</a> can be specified on
             <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions, with some
@@ -884,8 +864,7 @@ partial interface <em>SomeInterface</em> {
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>The above list of <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
+              Note: The above list of <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               is all of those defined in this document that are applicable to
               <a class="dfnref" href="#dfn-interface">interfaces</a> except for
               <a class="xattr" href="#Exposed">[Exposed]</a>,
@@ -893,8 +872,7 @@ partial interface <em>SomeInterface</em> {
               <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>,
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>,
               <a class="xattr" href="#SecureContext">[SecureContext]</a> and
-              <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.</p>
-          </div>
+              <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
           <p>
             Any <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> specified
             on a <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definition
@@ -1041,16 +1019,13 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               <a class="sym" href="#prod-Const">Const</a>) used to bind a constant value to a name.
               Constants can appear on <a class="dfnref" href="#dfn-interface">interfaces</a>.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                Constants have in the past primarily been used to define
+                Advisement: Constants have in the past primarily been used to define
                 named integer codes in the style of an enumeration.  The Web platform
                 is moving away from this design pattern in favor of the use of strings.
                 Specification authors who wish to define constants are strongly advised to discuss
                 this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                 mailing list before proceeding.
-              </p>
-            </div>
+              
             <pre class="syntax">const <i>type</i> <i>identifier</i> = <i>value</i>;</pre>
             <p>
               The <a class="dfnref" href="#dfn-identifier">identifier</a> of a
@@ -1061,12 +1036,9 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               The identifier also <span class="rfc2119">MUST NOT</span>
               be “length”, “name” or “prototype”.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                These three names are the names of properties that exist on all
+                Note: These three names are the names of properties that exist on all
                 <span class="estype">Function</span> objects.
-              </p>
-            </div>
+              
             <p>
               The type of a constant (matching <a class="sym" href="#prod-ConstType">ConstType</a>)
               <span class="rfc2119">MUST NOT</span> be any type other than
@@ -1087,16 +1059,13 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               or one of the three special floating point constant values
               (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>).
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                These values – in addition to strings and the empty sequence – can also be used to specify the
+                Note: These values – in addition to strings and the empty sequence – can also be used to specify the
                 <a class="dfnref" href="#dfn-dictionary-member-default-value">default value
                   of a dictionary member</a> or <a class="dfnref" href="#dfn-optional-argument-default-value">of
                   an optional argument</a>.  Note that strings and the
                 empty sequence <code>[]</code> cannot be used as the value of a
                 <a class="dfnref" href="#dfn-constant">constant</a>.
-              </p>
-            </div>
+              
             <p>
               The value of the boolean literal tokens <code>true</code> and
               <code>false</code> are the IDL <a class="idltype" href="#idl-boolean">boolean</a> values
@@ -1208,7 +1177,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               on which they appear.  It is language binding specific whether
               <a class="dfnref" href="#dfn-constant">constants</a> are exposed on instances.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 <!--JAVA
                 Both the ECMAScript and the Java language binding do however
@@ -1506,12 +1475,9 @@ interface Person : Animal {
               The identifier of a static operation <span class="rfc2119">MUST NOT</span>
               be “prototype”.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                The identifier can be the same as that of another operation on the
+                Note: The identifier can be the same as that of another operation on the
                 interface, however.  This is how operation overloading is specified.
-              </p>
-            </div>
+              
             <p>
               The <a class="dfnref" href="#dfn-identifier">identifier</a> of a <a class="dfnref" href="#dfn-static-operation">static operation</a>
               also <span class="rfc2119">MUST NOT</span> be the same as the identifier
@@ -1535,11 +1501,9 @@ interface Person : Animal {
               as a type (matching <a class="sym" href="#prod-Type">Type</a>) followed by an <a class="dfnref" href="#dfn-identifier">identifier</a>
               (matching <a class="sym" href="#prod-ArgumentName">ArgumentName</a>).
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>For expressiveness, the identifier of an operation argument can also be specified
+                Note: For expressiveness, the identifier of an operation argument can also be specified
                 as one of the keywords matching the <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a>
-                symbol without needing to escape it.</p>
-            </div>
+                symbol without needing to escape it.
             <p>
               If the <a class="sym" href="#prod-Type">Type</a> of an operation argument is an identifier
               followed by <code>?</code>,
@@ -1659,14 +1623,11 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               corresponding argument omitted.
             </p>
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                It is strongly suggested not to use <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>
+                Advisement: It is strongly suggested not to use <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>
                 of <span class="idlvalue">true</span> for <span class="estype">boolean</span>-typed arguments,
                 as this can be confusing for authors who might otherwise expect the default
                 conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
-              </p>
-            </div>
+              
             <p>
               If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
               or a <a class="dfnref" href="#dfn-union-type">union type</a> that has a
@@ -1679,7 +1640,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a> of an empty dictionary,
               unless otherwise specified.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 This is to encourage API designs that do not require authors to pass an
                 empty dictionary value when they wish only to use the dictionary’s
@@ -2064,16 +2025,13 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
                 Legacy callers <span class="rfc2119">MUST NOT</span> be defined to return a
                 <a href="#idl-promise">promise type</a>.
               </p>
-              <div class="warning"><div class="warningHeader">Warning</div>
-                <p>
-                  Legacy callers are universally recognised as an undesirable feature.  They exist
+                  Advisement: Legacy callers are universally recognised as an undesirable feature.  They exist
                   only so that legacy Web platform features can be specified.  Legacy callers
                   <span class="rfc2119">SHOULD NOT</span> be used in specifications unless required to
                   specify the behavior of legacy APIs, and even then this should be discussed on
                   the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                   mailing list before proceeding.
-                </p>
-              </div>
+                
 
               <div class="example"><div class="exampleHeader">Example</div>
                 <p>
@@ -2255,15 +2213,13 @@ var greeting = 'Hi ' + s;  <span class="comment">// Now greeting == 'Hi Alan Smi
                 <a class="dfnref" href="#dfn-serialized-value">serialized value</a> is converted into
                 an appropriate concrete value, is language binding specific.
               </p>
-              <div class="note"><div class="noteHeader">Note</div>
-                <p>In the ECMAScript language binding,
+                  Note: In the ECMAScript language binding,
                 <a class="dfnref" href="#dfn-serialization-behavior">serialization behavior</a>
                 is exposed as a <code>toJSON</code> method which returns the
                 <a class="dfnref" href="#dfn-serialized-value">serialized value</a> converted
                 into an ECMAScript value that can be serialized to JSON by the
                 <code>JSON.stringify</code> function.  See [[#es-serializer]]
-                below for details.</p>
-              </div>
+                below for details.
               <p>
                 <a class="dfnref" href="#dfn-serialization-behavior">Serialization behavior</a>
                 can also be specified directly in IDL, rather than separately as prose.
@@ -2417,13 +2373,10 @@ serializer = { inherit, attribute };</pre>
                 </li>
               </ul>
 
-              <div class="note"><div class="noteHeader">Note</div>
-                <p>
-                  Entries are added to maps in a particular order so that in the ECMAScript language binding
+                  Note: Entries are added to maps in a particular order so that in the ECMAScript language binding
                   it is defined what order properties are added to objects.  This is because this order
                   can influence the serialization that <code>JSON.stringify</code> can produce.
-                </p>
-              </div>
+                
 
               <p>The list of <dfn data-export="" data-lt="serializable type" id="dfn-serializable-type">serializable types</dfn> and how they are
               <dfn data-export="" data-lt="converted to a serialized value|converted to serialized values" id="dfn-convert-to-serialized-value">converted to serialized values</dfn> is as follows:</p>
@@ -2643,7 +2596,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                 </li>
               </ul>
 
-              <div class="note"><div class="noteHeader">Note</div>
+              <div class="note">
                 <p>
                   Note that if an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a> or
                   <a class="dfnref" href="#dfn-indexed-property-setter">setter</a>
@@ -2822,9 +2775,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                 </li>
               </ul>
 
-              <div class="note"><div class="noteHeader">Note</div>
-                <p>
-                  As with <a href="#idl-indexed-properties">indexed properties</a>,
+                  Note: As with <a href="#idl-indexed-properties">indexed properties</a>,
                   if an <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>,
                   <a class="dfnref" href="#dfn-named-property-setter">setter</a> or
                   <a class="dfnref" href="#dfn-named-property-deleter">deleter</a>
@@ -2832,8 +2783,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                   then indexing an object with a name that is not a <a class="dfnref" href="#dfn-supported-property-names">supported property name</a>
                   does not necessarily elicit the same behavior as invoking the operation with that name; the behavior
                   is language binding specific.
-                </p>
-              </div>
+                
             </div>
           </div>
 
@@ -2940,7 +2890,7 @@ Point triangulationPoint = CircleUtils.triangulate(circles[0], circles[1], circl
               <span class="rfc2119">MUST NOT</span> be overloaded across <a class="dfnref" href="#dfn-interface">interface</a>
               and <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span>
                 are disallowed:
@@ -3119,7 +3069,7 @@ partial interface A {
                 Let <var>maxarg</var> be the maximum number of arguments the operations, constructor extended attributes or callback functions in <var>F</var> are declared to take.
                 For <a class="dfnref" href="#dfn-variadic">variadic</a> operations and constructor extended attributes,
                 the argument on which the ellipsis appears counts as a single argument.
-                <div class="note"><div class="noteHeader">Note</div>
+                <div class="note">
                   <p>So <code>void f(long x, long... y);</code> is considered to be declared to take two arguments.</p>
                 </div>
               </li>
@@ -3137,7 +3087,7 @@ partial interface A {
                   <li>If <var>X</var> is declared to be <a class="dfnref" href="#dfn-variadic">variadic</a>, then:
                     <ol>
                       <li>Add to <var>S</var> the tuple &lt;<var>X</var>, <var>t</var><sub>0..<var>n</var>−2</sub>, <var>o</var><sub>0..<var>n</var>−2</sub>&gt;.
-                        <div class="note"><div class="noteHeader">Note</div>
+                        <div class="note">
                           <p>This leaves off the final, variadic argument.</p>
                         </div>
                       </li>
@@ -3439,10 +3389,8 @@ partial interface A {
                 is distinguishable with each member type of the other.
               </li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p><a href="#idl-promise">Promise types</a> do not appear in the above table, and as a consequence
-              are not distinguishable with any other type.</p>
-            </div>
+                Note: Promise types do not appear in the above table, and as a consequence
+              are not distinguishable with any other type.
             <p>
               If there is more than one entry in an <a class="dfnref" href="#dfn-effective-overload-set">effective overload set</a>
               that has a given type list length, then for those entries there
@@ -3566,11 +3514,9 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               Objects implementing an interface that is declared to be iterable
               support being iterated over to obtain a sequence of values.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>In the ECMAScript language binding, an interface that is iterable
+                Note: In the ECMAScript language binding, an interface that is iterable
               will have “entries”, “forEach”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>
-              properties on its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</p>
-            </div>
+              properties on its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.
             <p>
               If a single type parameter is given, then the interface has a
               <dfn data-export="" id="dfn-value-iterator">value iterator</dfn> and provides
@@ -3602,7 +3548,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               <dfn data-export="" id="dfn-value-pairs-to-iterate-over">value pairs to iterate over</dfn>
               is.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 The ECMAScript forEach method that is generated for a
                 <a class="dfnref" href="#dfn-value-iterator">value iterator</a>
@@ -3624,12 +3570,10 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>.
               </p>
             </div>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>This is how <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a> work.
+                Note: This is how <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a> work.
                 For interfaces that <a class="dfnref" href="#dfn-support-indexed-properties">support indexed properties</a>,
                 the iterator objects returned by “entries”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> are
-                actual <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>.</p>
-            </div>
+                actual <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>.
             <p>
               Interfaces with iterable declarations <span class="rfc2119">MUST NOT</span>
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
@@ -3761,17 +3705,14 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               keyword is not used, then it also supports an API for modifying
               the map entries.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                In the ECMAScript language binding, the API for interacting
+                Note: In the ECMAScript language binding, the API for interacting
                 with the map entries is similar to that available on ECMAScript
                 <span class="estype">Map</span> objects.  If the <code>readonly</code>
                 keyword is used, this includes “entries”, “forEach”, “get”, “has”,
                 “keys”, “values”, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
                 For read–write maplikes, it also includes “clear”, “delete” and
                 “set” methods.
-              </p>
-            </div>
+              
             <p>
               Maplike interfaces <span class="rfc2119">MUST NOT</span>
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
@@ -3786,12 +3727,10 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               or <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
               interfaces that have attributes or constants with these names.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Operations named “clear”, “delete”, or “set” are allowed on read–write maplike
+                Note: Operations named “clear”, “delete”, or “set” are allowed on read–write maplike
                 interfaces and will prevent the default implementation of these methods being
                 added to the interface prototype object in the ECMAScript language binding.
-                This allows the default behavior of these operations to be overridden.</p>
-            </div>
+                This allows the default behavior of these operations to be overridden.
             <p>
               An interface <span class="rfc2119">MUST NOT</span> have more than one
               <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.
@@ -3812,7 +3751,7 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               No <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               defined in this specification are applicable to <a class="dfnref" href="#dfn-maplike-declaration">maplike declarations</a>.
             </p>
-            <div class="ednote"><div class="ednoteHeader">Editorial note</div><p>Add example.</p></div>
+                Issue: Add example.
           </div>
 
           <div id="idl-setlike" class="section">
@@ -3845,16 +3784,13 @@ setlike&lt;<i>type</i>&gt;;</pre>
               keyword is not used, then it also supports an API for modifying
               the set entries.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                In the ECMAScript language binding, the API for interacting
+                Note: In the ECMAScript language binding, the API for interacting
                 with the set entries is similar to that available on ECMAScript
                 <span class="estype">Set</span> objects.  If the <code>readonly</code>
                 keyword is used, this includes “entries”, “forEach”, “has”,
                 “keys”, “values”, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
                 For read–write setlikes, it also includes “add”, “clear”, and “delete” methods.
-              </p>
-            </div>
+              
             <p>
               Setlike interfaces <span class="rfc2119">MUST NOT</span>
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
@@ -3869,12 +3805,10 @@ setlike&lt;<i>type</i>&gt;;</pre>
               or <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
               interfaces that have attributes or constants with these names.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Operations named “add”, “clear”, or “delete” are allowed on read–write setlike
+                Note: Operations named “add”, “clear”, or “delete” are allowed on read–write setlike
                 interfaces and will prevent the default implementation of these methods being
                 added to the interface prototype object in the ECMAScript language binding.
-                This allows the default behavior of these operations to be overridden.</p>
-            </div>
+                This allows the default behavior of these operations to be overridden.
             <p>
               An interface <span class="rfc2119">MUST NOT</span> have more than one
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.
@@ -3895,7 +3829,7 @@ setlike&lt;<i>type</i>&gt;;</pre>
               No <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               defined in this specification are applicable to <a class="dfnref" href="#dfn-setlike-declaration">setlike declarations</a>.
             </p>
-            <div class="ednote"><div class="ednoteHeader">Editorial note</div><p>Add example.</p></div>
+                Issue: Add example.
           </div>
         </div>
 
@@ -3958,17 +3892,14 @@ dictionary <i>Derived</i> : <em>Base</em> {
             not have a specified value.  Dictionary members with default values are
             always considered to be present.
           </p>
-          <div class="warning"><div class="warningHeader">Warning</div>
-            <p>
-              As with <a class="dfnref" href="#dfn-optional-argument-default-value">operation argument default values</a>,
+              Advisement: As with <a class="dfnref" href="#dfn-optional-argument-default-value">operation argument default values</a>,
               is strongly suggested not to use of <span class="idlvalue">true</span> as the
               <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a> for
               <span class="estype">boolean</span>-typed
               <a class="dfnref" href="#dfn-dictionary-member">dictionary members</a>,
               as this can be confusing for authors who might otherwise expect the default
               conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
-            </p>
-          </div>
+            
           <p>
             Each <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> (matching
             <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a>) is specified
@@ -4062,11 +3993,9 @@ dictionary <i>Derived</i> : <em>Base</em> {
 partial dictionary <em>SomeDictionary</em> {
   <i>dictionary-members…</i>
 };</pre>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>As with partial interface definitions, partial dictionary definitions are intended for use as a specification
+              Note: As with partial interface definitions, partial dictionary definitions are intended for use as a specification
               editorial aide, allowing the definition of an interface to be separated
-              over more than one section of the document, and sometimes multiple documents.</p>
-          </div>
+              over more than one section of the document, and sometimes multiple documents.
           <p>
             The order of the <a class="dfnref" href="#dfn-dictionary-member">dictionary members</a>
             on a given dictionary is such that inherited dictionary members are ordered
@@ -4075,7 +4004,7 @@ partial dictionary <em>SomeDictionary</em> {
             ordered lexicographically by the Unicode codepoints that comprise their
             identifiers.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
+          <div class="note">
             <p>For example, with the following definitions:</p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">dictionary B : A {
   long b;
@@ -4268,13 +4197,10 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
           <p>
             The resulting behavior from creating and throwing an exception is language binding-specific.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>
-              See [[#es-creating-throwing-exceptions]]
+              Note: See [[#es-creating-throwing-exceptions]]
               below for details on what creating and throwing an exception
               entails in the ECMAScript language binding.
-            </p>
-          </div>
+            
           <div class="example"><div class="exampleHeader">Example</div>
             <p>
               Here is are some examples of wording to use to create and throw exceptions.
@@ -4311,9 +4237,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               and legacy code values.
             </p>
 
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>If an error name is not listed here, please file a bug as indicated at the top of this specification and it will be addressed shortly. Thanks!</p>
-            </div>
+                Note: If an error name is not listed here, please file a bug as indicated at the top of this specification and it will be addressed shortly. Thanks!
 
             <table id="error-names" class="vert">
               <thead>
@@ -4517,9 +4441,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             The list of <a class="dfnref" href="#dfn-enumeration-value">enumeration values</a>
             <span class="rfc2119">MUST NOT</span> include duplicates.
           </p>
-          <div class="warning"><div class="warningHeader">Warning</div>
-            <p>
-              It is strongly suggested that enumeration values be all lowercase,
+              Advisement: It is strongly suggested that enumeration values be all lowercase,
               and that multiple words be separated using dashes or not be
               separated at all, unless there is a specific reason to use another
               value naming scheme.  For example, an enumeration value that
@@ -4528,22 +4450,18 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               Consider related uses of enumeration values when deciding whether
               to dash-separate or not separate enumeration value words so that
               similar APIs are consistent.
-            </p>
-          </div>
+            
           <p>
             The behavior when a string value that is not one a valid enumeration value
             is used when assigning to an <a class="dfnref" href="#dfn-attribute">attribute</a>,
             or passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument,
             whose type is the enumeration, is language binding specific.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>
-              In the ECMAScript binding, assignment of an invalid string value to an
+              Note: In the ECMAScript binding, assignment of an invalid string value to an
               <a class="dfnref" href="#dfn-attribute">attribute</a> is ignored, while
               passing such a value as an <a class="dfnref" href="#dfn-operation">operation</a> argument
               results in an exception being thrown.
-            </p>
-          </div>
+            
           <p>
             No <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
             defined in this specification are applicable to <a class="dnfref" href="#dfn-enumeration">enumerations</a>.
@@ -4591,19 +4509,15 @@ meal.type == "noodles";              <span class="comment">// Evaluates to true.
         <div id="idl-callback-functions" class="section">
           <h3>Callback functions</h3>
 
-          <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-            <p>The “Custom DOM Elements” spec wants to use callback function types for
+              Issue: The “Custom DOM Elements” spec wants to use callback function types for
             platform object provided functions.  Should we rename “callback functions” to
-            just “functions” to make it clear that they can be used for both purposes?</p>
-          </div>
+            just “functions” to make it clear that they can be used for both purposes?
           <p>
             A <dfn data-export="" id="dfn-callback-function">callback function</dfn> is a definition (matching
             <span class="sym">"callback"</span> <a class="sym" href="#prod-CallbackRest">CallbackRest</a>) used to declare a function type.
           </p>
           <pre class="syntax">callback <i>identifier</i> = <i>return-type</i> (<i>arguments…</i>);</pre>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>See also the similarly named <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>.</p>
-          </div>
+              Note: See also the similarly named <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>.
           <p>
             The <a class="dfnref" href="#dfn-identifier">identifier</a> on the
             left of the equals sign gives the name of the <a class="dfnref" href="#dfn-callback-function">callback function</a>
@@ -4746,7 +4660,7 @@ interface Widget {
             <li><var>O</var> implements a different <a class="dfnref" href="#dfn-supplemental-interface">supplemental interface</a>
               <var>C</var>, and <var>C</var> <a class="dfnref" href="#dfn-inherit">inherits</a> from <var>A</var>.</li>
           </ul>
-          <div class="note"><div class="noteHeader">Note</div>
+          <div class="note">
             <p>
               Specification authors are discouraged from writing <a class="dfnref" href="#dfn-implements-statement">implements statements</a>
               where the <a class="dfnref" href="#dfn-interface">interface</a> on the left-hand side
@@ -4794,23 +4708,7 @@ Gizmo implements MoreFunctionality;</code></pre></div></div>
             whose identifier is the same as any other member defined on any
             of those consequential interfaces or on the original interface itself.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>For example, that precludes the following:</p>
-            <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface A { attribute long x; };
-interface B { attribute long x; };
-A implements B;  <span class="comment">// B::x would clash with A::x</span>
-
-interface C { attribute long y; };
-interface D { attribute long y; };
-interface E : D { };
-C implements E;  <span class="comment">// D::y would clash with C::y</span>
-
-interface F { };
-interface H { attribute long z; };
-interface I { attribute long z; };
-F implements H;
-F implements I;  <span class="comment">// H::z and I::z would clash when mixed in to F</span></code></pre></div></div>
-          </div>
+              Note: For example, that precludes the following:
           <p>
             No <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
             defined in this specification are applicable to
@@ -5296,15 +5194,12 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-float">float</a> type is “Float”.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                Unless there are specific reasons to use a 32 bit floating point type,
+                Advisement: Unless there are specific reasons to use a 32 bit floating point type,
                 specifications <span class="rfc2119">SHOULD</span> use
                 <a class="idltype" href="#idl-double">double</a> rather than <a class="idltype" href="#idl-float">float</a>,
                 since the set of values that a <a class="idltype" href="#idl-double">double</a> can
                 represent more closely matches an ECMAScript <span class="estype">Number</span>.
-              </p>
-            </div>
+              
           </div>
 
           <div id="idl-unrestricted-float" class="section">
@@ -5380,15 +5275,12 @@ interface Person {
               special casing that sequence type in various situations where a
               string is required.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Note also that <span class="idlvalue">null</span>
+                Note: Note also that <span class="idlvalue">null</span>
                 is not a value of type <a class="idltype" href="#idl-DOMString">DOMString</a>.
                 To allow <span class="idlvalue">null</span>, a
                 <a href="#idl-nullable-type">nullable</a> <a class="idltype" href="#idl-DOMString">DOMString</a>,
                 written as <code>DOMString?</code> in IDL, needs to be used.
-              </p>
-            </div>
+              
             <p>
               Nothing in this specification requires a <a class="idltype" href="#idl-DOMString">DOMString</a>
               value to be a valid UTF-16 string.  For example, a <a class="idltype" href="#idl-DOMString">DOMString</a>
@@ -5474,9 +5366,7 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-ByteString">ByteString</a> type is “ByteString”.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                Specifications <span class="rfc2119">SHOULD</span> only use
+                Advisement: Specifications <span class="rfc2119">SHOULD</span> only use
                 <a class="idltype" href="#idl-ByteString">ByteString</a> for interfacing with protocols
                 that use bytes and strings interchangably, such as HTTP.  In general,
                 strings <span class="rfc2119">SHOULD</span> be represented with
@@ -5488,8 +5378,7 @@ interface Person {
                 elements <span class="rfc2119">SHOULD</span> be used for holding
                 8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
                 <a href="#ref-TYPEDARRAYS">[TYPEDARRAYS]</a>
-              </p>
-            </div>
+              
           </div>
 
           <div id="idl-USVString" class="section">
@@ -5512,17 +5401,14 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-USVString">USVString</a> type is “USVString”.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                Specifications <span class="rfc2119">SHOULD</span> only use
+                Advisement: Specifications <span class="rfc2119">SHOULD</span> only use
                 <a class="idltype" href="#idl-USVString">USVString</a> for APIs that perform
                 text processing and need a string of Unicode
                 scalar values to operate on.  Most APIs that use strings
                 should instead be using <a class="idltype" href="#idl-DOMString">DOMString</a>,
                 which does not make any interpretations of the <a class="dfnref" href="#dfn-code-unit">code units</a>
                 in the string.  When in doubt, use <a class="idltype" href="#idl-DOMString">DOMString</a>.
-              </p>
-            </div>
+              
           </div>
 
           <div id="idl-object" class="section">
@@ -5564,14 +5450,12 @@ interface Person {
               binding specific value, and is used to store information about the execution context at
               the time the language binding specific object reference is converted to an IDL value.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>For ECMAScript objects, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
+                Note: For ECMAScript objects, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
               <a href="#ref-HTML">[HTML]</a> at the time the <span class="estype">Object</span> value
               is converted to an IDL callback interface type value.  See
-              [[#es-interface]] below.</p>
-            </div>
+              [[#es-interface]] below.
             <p>
               There is no way to represent a constant object reference value for
               a particular interface type in IDL.
@@ -5640,14 +5524,12 @@ interface Person {
               An IDL value of the callback function type is represented by a tuple of an object
               reference and a <a class="dfnref" href="#dfn-callback-context">callback context</a>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
+                Note: As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
               <a href="#ref-HTML">[HTML]</a> at the time an ECMAScript <span class="estype">Object</span> value
               is converted to an IDL callback function type value.  See
-              [[#es-callback-function]] below.</p>
-            </div>
+              [[#es-callback-function]] below.
             <p>
               There is no way to represent a constant <a class="dfnref" href="#dfn-callback-function">callback function</a>
               value in IDL.
@@ -5674,10 +5556,8 @@ interface Person {
               or has a dictionary type as one of its
               <a class="dfnref" href="#dfn-flattened-union-member-type">flattened member types</a>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Although dictionary types can in general be nullable, they cannot when used
-              as the type of an operation argument or a dictionary member.</p>
-            </div>
+                Note: Although dictionary types can in general be nullable, they cannot when used
+              as the type of an operation argument or a dictionary member.
             <p>
               Nullable type constant values in IDL are represented in the same way that
               constant values of their <a class="dfnref" href="#dfn-inner-type">inner type</a>
@@ -5736,16 +5616,13 @@ interface Person {
               type of an <a class="dfnref" href="#dfn-attribute">attribute</a> or
               <a class="dfnref" href="#dfn-constant">constant</a>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                This restriction exists so that it is clear to specification writers
+                Note: This restriction exists so that it is clear to specification writers
                 and API users that <a href="#idl-sequence">sequences</a>
                 are copied rather than having references
                 to them passed around.  Instead of a writable <a class="dfnref" href="#dfn-attribute">attribute</a> of a sequence
                 type, it is suggested that a pair of <a class="dfnref" href="#dfn-operation">operations</a> to get and set the
                 sequence is used.
-              </p>
-            </div>
+              
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of a sequence type
               is the concatenation of the type name for <var>T</var> and
@@ -5786,7 +5663,7 @@ interface Person {
               The types which comprise the union type are known as the
               union’s <dfn data-export="" data-dfn-for="union" id="dfn-union-member-type">member types</dfn>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 For example, you might write <code>(Node or DOMString)</code>
                 or <code>(double or sequence&lt;double&gt;)</code>.  When applying a
@@ -5830,16 +5707,13 @@ interface Person {
               </li>
               <li>Return <var>S</var>.</li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                For example, the <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>
+                Note: For example, the <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>
                 of the <a class="dfnref" href="#dfn-union-type">union type</a>
                 <code>(Node or (sequence&lt;long&gt; or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;)</code>
                 are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Event</code>,
                 <code>XMLHttpRequest</code>, <code>DOMString</code> and
                 <code>sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;</code>.
-              </p>
-            </div>
+              
             <p>
               The <dfn data-export="" id="dfn-number-of-nullable-member-types">number of nullable member types</dfn>
               of a <a class="dfnref" href="#dfn-union-type">union type</a> is an integer
@@ -5999,9 +5873,7 @@ interface Person {
                 <span id="idl-Float64Array" class="idltype">Float64Array</span></td>
                 <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of IEEE 754 floating point numbers of the given size in bits</td></tr>
             </table>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>These types all correspond to classes defined in ECMAScript.</p>
-            </div>
+                Note: These types all correspond to classes defined in ECMAScript.
             <p>
               To <dfn data-export="" data-dfn-for="ArrayBuffer" id="dfn-detach">detach</dfn> an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>
               is to set its buffer pointer to <span class="idlvalue">null</span>.
@@ -6022,7 +5894,7 @@ interface Person {
               With a reference to the buffer source’s bytes, specification prose can get or set individual
               byte values using that reference.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
+            <div class="warning">
               <p>
                 Extreme care must be taken when writing specification text that gets a reference
                 to the bytes held by a buffer source, as the underyling data can easily be changed
@@ -6036,7 +5908,7 @@ interface Person {
                 help specification reviewers look for problematic uses of these buffer source types.
               </p>
             </div>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 When designing APIs that take a buffer, it is recommended to use the
                 <span class="idltype">BufferSource</span> typedef rather than <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>
@@ -6054,13 +5926,9 @@ interface Person {
               when the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> has been <a class="dfnref" href="#dfn-detach">detached</a>
               will fail in a language binding-specific manner.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>See [[#es-buffer-source-types]] below for
-                how interacting with buffer source types works in the ECMAScript language binding.</p>
-            </div>
-            <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-              <p>We should include an example of specification text that uses these types and terms.</p>
-            </div>
+                Note: See [[#es-buffer-source-types]] below for
+                how interacting with buffer source types works in the ECMAScript language binding.
+                Issue: We should include an example of specification text that uses these types and terms.
           </div>
 
           <div id="idl-frozen-array" class="section">
@@ -6304,16 +6172,13 @@ interface Person {
           of any internal method of a <a class="dfnref" href="#dfn-platform-object">platform object</a>
           that is an instance of an <a class="dfnref" href="#dfn-interface">interface</a>.
         </p>
-        <div class="warning"><div class="warningHeader">Warning</div>
-          <p>
-            As overriding internal ECMAScript object methods is a low level operation and
+            Advisement: As overriding internal ECMAScript object methods is a low level operation and
             can result in objects that behave differently from ordinary objects,
             this facility <span class="rfc2119">SHOULD NOT</span> be used unless necessary
             for security or compatibility.  The expectation is that this will be used
             for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
             and possibly WindowProxy objects</a>.
-          </p>
-        </div>
+          
         <p>
           Unless otherwise specified, the <span class="prop">[[Extensible]]</span> internal property
           of objects defined in this section has the value <span class="esvalue">true</span>.
@@ -6329,11 +6194,9 @@ interface Person {
           at the time it is created, have a property whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol
           and whose value is the specified string.
         </p>
-        <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-          <p>Should define whether <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
+            Issue: Should define whether <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
             All <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
-            and configurable.</p>
-        </div>
+            and configurable.
         <p>
           If an object is defined to be a <dfn data-export="" id="dfn-function-object">function object</dfn>, then
           it has characteristics as follows:
@@ -6345,9 +6208,7 @@ interface Person {
           <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
         </ul>
-        <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-          <p>The list above needs updating for the latest ES6 draft.</p>
-        </div>
+            Issue: The list above needs updating for the latest ES6 draft.
         <p id="ecmascript-abstractop">
           Algorithms in this section use the conventions described in <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262
           section 5.2</a>, such as the use of steps and substeps, the use of mathematical
@@ -6461,13 +6322,10 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
             [[#es-interfaces]] are
             not followed for that interface.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>
-              This allows, for example, ECMAScript global environments for Web Workers to <a class="dfnref" href="#dfn-expose">expose</a>
+              Note: This allows, for example, ECMAScript global environments for Web Workers to <a class="dfnref" href="#dfn-expose">expose</a>
               different sets of supported interfaces from those exposed in environments
               for Web pages.
-            </p>
-          </div>
+            
 
           <p>
             Although at the time of this writing the ECMAScript specification does not reflect this,
@@ -7113,14 +6971,11 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 Return <var>y</var>.
               </li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
+                Note: Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
                 it must be canonicalized to a particular single precision IEEE 754 NaN value.  The NaN value
                 mentioned above is chosen simply because it is the quiet NaN with the lowest
                 value when its bit pattern is interpreted as an unsigned 32 bit integer.
-              </p>
-            </div>
+              
             <p id="unrestricted-float-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
               an IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value to an ECMAScript
@@ -7182,14 +7037,11 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 that has the same numeric value as <var>x</var>.
               </li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
+                Note: Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
                 it must be canonicalized to a particular double precision IEEE 754 NaN value.  The NaN value
                 mentioned above is chosen simply because it is the quiet NaN with the lowest
                 value when its bit pattern is interpreted as an unsigned 64 bit integer.
-              </p>
-            </div>
+              
             <p id="unrestricted-double-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
               an IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value to an ECMAScript
@@ -7429,12 +7281,9 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               </li>
               <li>Return <var>dict</var>.</li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                The order that <a class="dfnref" href="#dfn-dictionary-member">dictionary members</a> are looked
+                Note: The order that <a class="dfnref" href="#dfn-dictionary-member">dictionary members</a> are looked
                 up on the ECMAScript object are not necessarily the same as the object’s property enumeration order.
-              </p>
-            </div>
+              
             <p id="dictionary-to-es">
               An IDL dictionary value <var>V</var> is
               <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a>
@@ -7856,9 +7705,9 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
             </p>
             <ol class="algorithm">
               <li>Let <var>resolve</var> be the original value of <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.resolve.
-                <div class="ednote"><div class="ednoteHeader">Editorial note</div>
+                
                   <p>ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.</p>
-                </div>
+                
               </li>
               <li>Let <var>promise</var> be the result of calling <var>resolve</var> with <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>
                 as the <span class="esvalue">this</span> value and <var>V</var> as the single argument value.</li>
@@ -7916,9 +7765,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               <li>Return the result of calling <var>then</var> with <var>promise</var> as the <span class="esvalue">this</span> value and <var>onFulfilled</var> and <var>onRejected</var>
                 as its two arguments.</li>
             </ol>
-            <div class="ednote"><div class="ednoteHeader">Editorial note</div>
-              <p>Include an example of how to write spec text using this term.</p>
-            </div>
+                Issue: Include an example of how to write spec text using this term.
           </div>
 
           <div id="es-union" class="section">
@@ -8150,7 +7997,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
                 then set <var>V</var> to be a newly created <span class="estype">RegExp</span> object created as if by the
                 expression <code>new RegExp(<var>V</var>)</code>, where <code>RegExp</code> is the standard built-in constructor with that name
                 from the <a class="dfnref" href="#dfn-current-global-environment">current global environment</a>.
-                <div class="note"><div class="noteHeader">Note</div>
+                <div class="note">
                   <p>Note that this can result in an exception being thrown, if <var>V</var>, when converted to a string,
                     does not have valid regular expression syntax.</p>
                 </div>
@@ -8713,15 +8560,13 @@ context.setColorEnforcedRange(-1, 255, 256);</code></pre></div></div>
               <li>the <a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a> for the ECMAScript global object is a <a class="external" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a>; or</li>
               <li>the interface or interface member is not <a class="dfnref" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</li>
             </ul>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Since it is not possible for the <a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a>
+                Note: Since it is not possible for the <a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a>
               for an ECMAScript global object to change whether it is a
               <a class="external" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a> or not over time, an implementation's
               decision to create properties for an interface or interface member
               can be made once, at the time the
               <a class="dfnref" href="#dfn-initial-object">initial objects</a>
-              are created.</p>
-            </div>
+              are created.
             <p>
               See
               [[#es-interfaces]],
@@ -8801,13 +8646,11 @@ interface Node {
               for the specific requirements that the use of
               <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> entails.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>The <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
+                Note: The <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               is intended for use on the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> as defined
-              in HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2).</p>
-            </div>
+              in HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2).
             <div class="example"><div class="exampleHeader">Example</div>
               <p>In the following example, the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> is defined
@@ -8860,7 +8703,7 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</code>
               will correspond to properties on the object itself rather than on
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype objects</a>.</li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 Placing named properties on an object in the prototype chain
                 is done so that variable declarations and bareword assignments
@@ -8913,12 +8756,10 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               be used on an <a class="dfnref" href="#dfn-interface">interface</a> that can have more
               than one object implementing it in the same ECMAScript global environment.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>This is because the <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>,
+                Note: This is because the <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>,
                 which exposes the named properties, is in the prototype chain, and it would not make
                 sense for more than one object’s named properties to be exposed on an object that
-                all of those objects inherit from.</p>
-            </div>
+                all of those objects inherit from.
             <p>
               If an interface is declared with the <a class="xattr" href="#Global">[Global]</a> or
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
@@ -8935,10 +8776,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>
               across those interfaces.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>This is because all of the members of the interface and its consequential
-              interfaces get flattened down on to the object that implements the interface.</p>
-            </div>
+                Note: This is because all of the members of the interface and its consequential
+              interfaces get flattened down on to the object that implements the interface.
             <p>
               The <a class="xattr" href="#Global">[Global]</a> and
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attributes
@@ -8961,11 +8800,9 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               <dfn data-export="" id="dfn-global-name">global names</dfn>; otherwise, the interface has
               a single global name, which is the interface's identifier.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>The identifier argument list exists so that more than one global interface can
+                Note: The identifier argument list exists so that more than one global interface can
                 be addressed with a single name in an <a class="xattr" href="#Exposed">[Exposed]</a>
-                <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.</p>
-            </div>
+                <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.
             <p>
               The <a class="xattr" href="#Global">[Global]</a> and
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
@@ -9061,17 +8898,14 @@ interface Window {
               It <span class="rfc2119">MUST NOT</span> be used on an interface that
               has any <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Interfaces using <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> will
+                Note: Interfaces using <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> will
                 need to define a “length” <a class="dfnref" href="#dfn-attribute">attribute</a>
                 of type <span class="estype">unsigned long</span> that exposes the length
                 of the array-like object, in order for the inherited <span class="estype">Array</span>
                 methods to operate correctly.  Such interfaces would typically also
                 <a class="dfnref" href="#dfn-support-indexed-properties">support indexed properties</a>,
                 which would provide access to the array elements.
-              </p>
-            </div>
+              
             <p>
               See [[#interface-prototype-object]] for the
               specific requirements that the use of <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
@@ -9160,7 +8994,7 @@ list.unshift({ });         <span class="comment">// Insert an item at index 0.</
               accessor property.  This results in erroneous assignments to the property
               in strict mode to be ignored rather than causing an exception to be thrown.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
+            <div class="warning">
               <p>
                 Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#LenientThis" class="xattr">[LenientSetter]</a>
                 unless required for compatibility reasons.  Pages have been observed
@@ -9241,15 +9075,12 @@ example.y = 1;</code></pre></div></div>
               It <span class="rfc2119">MUST NOT</span> be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#LenientThis" class="xattr">[LenientThis]</a>
+                Advisement: Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#LenientThis" class="xattr">[LenientThis]</a>
                 unless required for compatibility reasons.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                 mailing list before proceeding.
-              </p>
-            </div>
+              
             <p>
               See the <a href="#es-attributes">Attributes</a> section below for how
               <a class="xattr" href="#LenientThis">[LenientThis]</a>
@@ -9413,17 +9244,14 @@ var a2 = new Audio('a.flac');   <span class="comment">// Creates an HTMLAudioEle
               <a class="dfnref" href="#dfn-interface-object">interface object</a>
               will not exist for the interface in the ECMAScript binding.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
+                Advisement: The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
                 <span class="rfc2119">SHOULD NOT</span> be used on interfaces that are not
                 solely used as <a class="dfnref" href="#dfn-supplemental-interface">supplemental</a> interfaces,
                 unless there are clear Web compatibility reasons for doing so.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                 mailing list before proceeding.
-              </p>
-            </div>
+              
             <p>
               The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
               <span class="rfc2119">MUST</span> <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
@@ -9972,14 +9800,11 @@ counter.value;                                           <span class="comment">/
                 </dl>
               </li>
             </ul>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Whether a construct is
+                Note: Whether a construct is
                 <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
                 influences whether it is <a class="dfnref" href="#dfn-exposed">exposed</a> in a given
                 ECMAScript global environment.
-              </p>
-            </div>
+              
             <p>
               If <a class="xattr" href="#SecureContext">[SecureContext]</a> appears on an
               <a class="dfnref" href="#dfn-overloaded">overloaded</a> <a class="dfnref" href="#dfn-operation">operation</a>,
@@ -10031,9 +9856,7 @@ counter.value;                                           <span class="comment">/
               that is not an object will be converted to
               the <span class="idlvalue">null</span> value.
             </p>
-            <div class="warning"><div class="warningHeader">Warning</div>
-              <p>
-                Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
+                Advisement: Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
                 unless required to specify the behavior of legacy APIs or for consistency with these
                 APIs.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
@@ -10044,8 +9867,7 @@ counter.value;                                           <span class="comment">/
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
                 (<a href="#ref-HTML5">[HTML5]</a>, section 6.1.6.1)
                 such as <code>onclick</code> and <code>onerror</code>.
-              </p>
-            </div>
+              
             <p>
               See [[#es-nullable-type]]
               for the specific requirements that the use of
@@ -10123,11 +9945,9 @@ manager.handler2;            <span class="comment">// Evaluates to null.</span><
               <span class="rfc2119">MUST NOT</span> be specified on an operation argument,
               attribute or operation return value whose type is not <a class="idltype" href="#idl-DOMString">DOMString</a>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>This means that even an attribute of type <span class="idltype">DOMString?</span> must not
+                Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
               use <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>, since <span class="idlvalue">null</span>
-              is a valid value of that type.</p>
-            </div>
+              is a valid value of that type.
             <p>
               The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute
               also <span class="rfc2119">MUST NOT</span> be specified on an operation on
@@ -10244,41 +10064,7 @@ d.isMemberOfBreed(null);  <span class="comment">// This passes the string "" to 
               <a class="dfnref" href="#dfn-regular-operation">regular operation</a> with the same
               <a class="dfnref" href="#dfn-identifier">identifier</a> as <var>X</var>.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>For example, the following is disallowed:</p>
-              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface A1 {
-  [Unforgeable] readonly attribute DOMString x;
-};
-interface B1 : A1 {
-  void x();  <span class="comment">// Invalid; would be shadowed by A1's x.</span>
-};
-
-interface B2 : A1 { };
-B2 implements Mixin;
-interface Mixin {
-  void x();  <span class="comment">// Invalid; B2's copy of x would be shadowed by A1's x.</span>
-};
-
-[Unforgeable]
-interface A2 {
-  readonly attribute DOMString x;
-};
-interface B3 : A2 {
-  void x();  <span class="comment">// Invalid; would be shadowed by A2's x.</span>
-};
-
-interface B4 : A2 { };
-B4 implements Mixin;
-interface Mixin {
-  void x();  <span class="comment">// Invalid; B4's copy of x would be shadowed by A2's x.</span>
-};
-
-interface A3 { };
-A3 implements A2;
-interface B5 : A3 {
-  void x();  <span class="comment">// Invalid; would be shadowed by A3's mixed-in copy of A2's x.</span>
-};</code></pre></div></div>
-            </div>
+                Note: For example, the following is disallowed:
             <p>
               See [[#es-attributes]],
               [[#es-operations]],
@@ -10356,7 +10142,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               for the specific requirements that the use of
               <a class="xattr" href="#Unscopable">[Unscopable]</a> entails.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>For example, with the following IDL:</p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Thing {
   void f();
@@ -10397,11 +10183,9 @@ with (thing) {
               “getter” or “setter” (when it corresponds to the
               getter or setter function of an IDL attribute).</li>
           </ol>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>The expectation is that the HTML specification defines how a
+              Note: The expectation is that the HTML specification defines how a
             security check is performed, and that it will either throw an
-            appropriate exception or return normally. <a href="#ref-HTML">[HTML]</a></p>
-          </div>
+            appropriate exception or return normally. <a href="#ref-HTML">[HTML]</a>
         </div>
 
         <div id="es-overloads" class="section">
@@ -10443,7 +10227,7 @@ with (thing) {
               <ol>
                 <li>Let <var>V</var> be <var>arg</var><sub><var>i</var></sub>.</li>
                 <li>Let <var>type</var> be the type at index <var>i</var> in the type list of any entry in <var>S</var>.
-                  <div class="note"><div class="noteHeader">Note</div><p>All entries in <var>S</var> at this point have the same type and <a class="dfnref" href="#dfn-optionality-value">optionality value</a> at index <var>i</var>.</p></div>
+                  <div class="note"><p>All entries in <var>S</var> at this point have the same type and <a class="dfnref" href="#dfn-optionality-value">optionality value</a> at index <var>i</var>.</p></div>
                 </li>
                 <li>Let <var>optionality</var> be the value at index <var>i</var> in the list of <a class="dfnref" href="#dfn-optionality-value">optionality values</a> of any entry in <var>S</var>.</li>
                 <li>If <var>optionality</var> is “optional” and <var>V</var> is <span class="esvalue">undefined</span>, then:
@@ -10462,7 +10246,7 @@ with (thing) {
             <li>If <var>i</var> = <var>d</var>, then:
               <ol>
                 <li>Let <var>V</var> be <var>arg</var><sub><var>i</var></sub>.
-                  <div class="note"><div class="noteHeader">Note</div><p>This is the argument that will be used to resolve which overload is selected.</p></div></li>
+                  <div class="note"><p>This is the argument that will be used to resolve which overload is selected.</p></div></li>
 
                 <li>If <var>V</var> is <span class="esvalue">undefined</span>, and there is an entry in <var>S</var>
                   whose list of <a class="dfnref" href="#dfn-optionality-value">optionality values</a> has “optional” at index <var>i</var>,
@@ -10774,7 +10558,7 @@ with (thing) {
 
             <li>Return the pair &lt;<var>callable</var>, <var>values</var>&gt;.</li>
           </ol>
-          <div class="note"><div class="noteHeader">Note</div>
+          <div class="note">
             <p>
               The overload resolution algorithm performs both the identification
               of which overloaded operation, constructor, etc. is being called,
@@ -10911,21 +10695,17 @@ with (thing) {
               [[#interface-prototype-object]]
               below.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Since an interface object for a non-callback interface is a <a class="dfnref" href="#dfn-function-object">function object</a> the <code>typeof</code> operator will return
+                Note: Since an interface object for a non-callback interface is a <a class="dfnref" href="#dfn-function-object">function object</a> the <code>typeof</code> operator will return
                 <span class="esvalue">"function"</span> when applied to
-                such an interface object.</p>
-            </div>
+                such an interface object.
             <p>
               The internal <span class="esprop">[[Prototype]]</span> property
               of an interface object for a callback interface <span class="rfc2119">MUST</span> be
               the Object.prototype object.
             </p>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Remember that interface objects for callback interfaces only exist if they have
+                Note: Remember that interface objects for callback interfaces only exist if they have
               <a class="dfnref" href="#dfn-constant">constants</a> declared on them;
-              when they do exist, they are not <a class="dfnref" href="#dfn-function-object">function objects</a>.</p>
-            </div>
+              when they do exist, they are not <a class="dfnref" href="#dfn-function-object">function objects</a>.
 
             <div id="es-interface-call" class="section">
               <h5>Interface object [[Call]] method</h5>
@@ -11208,7 +10988,7 @@ with (thing) {
               <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
               (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 15.2.4).</li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
+            <div class="note">
               <p>
                 The <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 of an <a class="dfnref" href="#dfn-interface">interface</a> that is defined with
@@ -11319,7 +11099,7 @@ partial interface Window {
                 <li>Let <var>A</var> be the <a class="dfnref" href="#dfn-interface">interface</a> for the
                   <a class="dfnref" href="#dfn-named-properties-object">named properties object</a> <var>O</var>.</li>
                 <li>Let <var>object</var> be the sole object from <var>O</var>’s ECMAScript global environment that implements <var>A</var>.
-                  <div class="note"><div class="noteHeader">Note</div>
+                  <div class="note">
                     <p>For example, if the <a class="dfnref" href="#dfn-interface">interface</a> is the <span class="idltype">Window</span>
                       interface as defined in HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2), then the sole object
                       will be this global environment’s window object.</p>
@@ -11533,7 +11313,7 @@ interface
                       <li>Let <var>I</var> be the <a class="dfnref" href="#dfn-interface">interface</a>
                         whose <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                         this property corresponding to the attribute appears on.
-                        <div class="note"><div class="noteHeader">Note</div>
+                        <div class="note">
                           <p>This means that even if an implements statement was used to make
                           an attribute available on the interface, <var>I</var> is the interface
                           on the left hand side of the implements statement, and not the one
@@ -11668,23 +11448,17 @@ interface
                   concatenation of “set ” and the identifier of the attribute.</p>
               </li>
             </ul>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Although there is only a single property for an IDL attribute, since
+                Note: Although there is only a single property for an IDL attribute, since
                 accessor property getters and setters are passed a <span class="estype">this</span>
                 value for the object on which property corresponding to the IDL attribute is
                 accessed, they are able to expose instance-specific data.
-              </p>
-            </div>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>
-                Note that attempting to assign to a property corresponding to a
+              
+                Note: Note that attempting to assign to a property corresponding to a
                 <a class="dfnref" href="#dfn-read-only">read only</a> <a class="dfnref" href="#dfn-attribute">attribute</a>
                 results in different behavior depending on whether the script doing so is in strict mode.
                 When in strict mode, such an assignment will result in a <span class="estype">TypeError</span>
                 being thrown.  When not in strict mode, the assignment attempt will be ignored.
-              </p>
-            </div>
+              
           </div>
 
           <div id="es-operations" class="section">
@@ -11743,7 +11517,7 @@ interface
                         whose <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                         (or <a class="dfnref" href="#dfn-interface-object">interface object</a>, for a static
                         operation) this property corresponding to the operation appears on.
-                        <div class="note"><div class="noteHeader">Note</div>
+                        <div class="note">
                           <p>This means that even if an implements statement was used to make
                           an operation available on the interface, <var>I</var> is the interface
                           on the left hand side of the implements statement, and not the one
@@ -12256,15 +12030,15 @@ interface
                     <li>Call the [[Call]] internal method of <var>callbackFn</var> with <var>thisArg</var> as <var>thisArgument</var>
                       and <var>v</var>, <var>k</var> and <var>object</var> as <var>argumentsList</var>.</li>
                   </ol>
-                  <div class="note"><div class="noteHeader">Note</div>
+                  <div class="note">
                     <p>The <var>callbackWrapper</var> function simply calls the incoming <var>callbackFn</var>
                       with <var>object</var> as the third argument rather than its internal [[BackingMap]] or [[BackingSet]] object.</p>
                   </div>
-                  <div class="ednote"><div class="ednoteHeader">Editorial note</div>
+                  
                     <p>Can the script author observe that <var>callbackWrapper</var> might be a new function
                       every time forEach is called?  What's the best way of specifying that there's only
                       one function that has captured an environment?</p>
-                  </div>
+                  
                 </li>
                 <li>Let <var>forEach</var> be the result of calling the [[Get]] internal method of
                   <var>backing</var> with “forEach” and <var>backing</var> as arguments.</li>
@@ -12453,15 +12227,12 @@ interface
                 <li>its <em>kind</em>, which is the iteration kind,</li>
                 <li>its <em>index</em>, which is the current index into the values value to be iterated.</li>
               </ol>
-              <div class="note"><div class="noteHeader">Note</div>
-                <p>
-                  Default iterator objects are only used for <a class="dfnref" href="#dfn-pair-iterator">pair iterators</a>;
+                  Note: Default iterator objects are only used for <a class="dfnref" href="#dfn-pair-iterator">pair iterators</a>;
                   <a class="dfnref" href="#dfn-value-iterator">value iterators</a>, as they are currently
                   restricted to iterating over an object’s
                   <a class="dfnref" href="#dfn-supported-indexed-properties">supported indexed properties</a>,
                   use standard ECMAScript Array iterator objects.
-                </p>
-              </div>
+                
               <p>
                 When a <a class="dfnref" href="#dfn-default-iterator-object">default iterator object</a> is first created,
                 its index is set to 0.
@@ -13125,7 +12896,7 @@ interface
             distinct <span class="estype">Function</span> objects for their getters,
             and similarly with their setters.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
+          <div class="note">
             <p>
               When invoking an <a class="dfnref" href="#dfn-operation">operation</a> by calling
               a <span class="estype">Function</span> object that is the value of one of the copies that exists
@@ -13472,33 +13243,7 @@ C implements A;</code></pre></div></div>
               </li>
               <li>Return true.</li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>This should ensure that for objects with named properties, property resolution is done in the following order:</p>
-              <ol>
-                <li>Indexed properties.</li>
-                <li>Unforgeable attributes and operations.</li>
-                <li>Then, if <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>:
-                  <ol>
-                    <li>Named properties.</li>
-                    <li>Own properties.</li>
-                    <li>Properties from the prototype chain.</li>
-                  </ol>
-                </li>
-                <li>Otherwise, if not <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>:
-                  <ol>
-                    <li>Own properties.</li>
-                    <!--
-                    <li>Any named properties to be <a class='dfnref' href='#dfn-resolved-before-prototype-properties'>resolved before prototype properties</a>.</li>
-                    -->
-                    <li>Properties from the prototype chain.</li>
-                    <!--
-                    <li>Any other named properties.</li>
-                    -->
-                    <li>Named properties.</li>
-                  </ol>
-                </li>
-              </ol>
-            </div>
+                Note: This should ensure that for objects with named properties, property resolution is done in the following order:
             [[]]
           </div>
 
@@ -13915,9 +13660,7 @@ C implements A;</code></pre></div></div>
               <li>Finally, any enumerable own properties or properties from the object’s prototype chain are then enumerated,
               in no defined order.</li>
             </ol>
-            <div class="note"><div class="noteHeader">Note</div>
-              <p>Future versions of the ECMAScript specification may define a total order for property enumeration.</p>
-            </div>
+                Note: Future versions of the ECMAScript specification may define a total order for property enumeration.
           </div>
         </div>
 
@@ -14236,7 +13979,7 @@ C implements A;</code></pre></div></div>
                   <p>If the callback function's return type is <a class="idltype" href="#idl-void">void</a>,
                   return.</p>
 
-                  <div class="note"><div class="noteHeader">Note</div>
+                  <div class="note">
                     <p>This is only possible when the callback function came from an attribute
                     marked with <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>.</p>
                   </div>
@@ -14442,16 +14185,14 @@ C implements A;</code></pre></div></div>
             of a <a class="dfnref" href="#dfn-DOMException">DOMException</a> object
             <span class="rfc2119">MUST</span> be “DOMException”.
           </p>
-          <div class="note"><div class="noteHeader">Note</div>
-            <p>The intention is for DOMException objects to be just like the other
+              Note: The intention is for DOMException objects to be just like the other
             various native <span class="estype">Error</span> objects that the
             ECMAScript specification defines, apart from responding differently
             to being passed to Object.prototype.toString and it having a “code” property.
             If an implementation places non-standard properties on native
             <span class="estype">Error</span> objects, exposing for example
             stack traces or error line numbers, then these ought to be exposed
-            on exception objects too.</p>
-          </div>
+            on exception objects too.
         </div>
 
         <div id="es-creating-throwing-exceptions" class="section">
@@ -14544,7 +14285,7 @@ C implements A;</code></pre></div></div>
               optional user agent-defined message <var>M</var>.</li>
             <li>Throw <var>O</var>.</li>
           </ol>
-          <div class="note"><div class="noteHeader">Note</div>
+          <div class="note">
             <p>
               The above algorithms do not restrict <a class="dfnref" href="#es-exception-objects">platform objects representing exceptions</a>
               propagating out of a <span class="estype">Function</span> to be
@@ -15167,16 +14908,13 @@ d.type = et;
              ε</span></td></tr><tr id="prod-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#proddef-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br/> |
              "void"</span></td></tr><tr id="prod-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#proddef-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr id="prod-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#proddef-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
              ε</span></td></tr><tr id="prod-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
-        <div class="note"><div class="noteHeader">Note</div>
-          <p>
-            The <a class="sym" href="#prod-Other">Other</a>
+            Note: The <a class="sym" href="#prod-Other">Other</a>
             non-terminal matches any single terminal symbol except for
             <span class="sym">"("</span>, <span class="sym">")"</span>,
             <span class="sym">"["</span>, <span class="sym">"]"</span>,
             <span class="sym">"{"</span>, <span class="sym">"}"</span>
             and <span class="sym">","</span>.
-          </p>
-        </div>
+          
         <p>
           While the <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a>
           non-terminal matches any non-empty sequence of terminal symbols (as long as any

@@ -258,20 +258,10 @@
   <xsl:template match='h:div[@id="toc"]' />
 
   <xsl:template match='h:div[@class="ednote"]'>
-    <div>
-      <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='ednoteHeader'>Editorial note</div>
       <xsl:apply-templates select='node()'/>
-    </div>
   </xsl:template>
 
-  <xsl:template match='h:div[@class="warning"]'>
-    <div>
-      <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='warningHeader'>Warning</div>
-      <xsl:apply-templates select='node()'/>
-    </div>
-  </xsl:template>
+
 
   <xsl:template match='h:div[@class="example"]'>
     <div>
@@ -280,13 +270,31 @@
       <xsl:apply-templates select='node()'/>
     </div>
   </xsl:template>
-
-  <xsl:template match='h:div[@class="note"]'>
-    <div>
-      <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='noteHeader'>Note</div>
-      <xsl:apply-templates select='node()'/>
-    </div>
+  
+  <xsl:template match='h:div[not(parent::h:li)][@class="note" or @class="warning" or @class="ednote"][count(h:p)=1][not(not(h:p))]'>
+    <xsl:text>    </xsl:text>
+    <xsl:choose>
+      <xsl:when test='@class="note"'>
+          <xsl:text>Note</xsl:text>
+      </xsl:when>
+      <xsl:when test='@class="warning"'>
+          <xsl:text>Advisement</xsl:text>
+      </xsl:when>
+      <xsl:when test='@class="ednote"'>
+          <xsl:text>Issue</xsl:text>
+      </xsl:when>
+    </xsl:choose>
+    <xsl:text>: </xsl:text>
+    <xsl:for-each select="h:p/node()">
+      <xsl:choose>
+        <xsl:when test="position()=1">
+            <xsl:value-of select='replace(., "^\s+", "")'/>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:apply-templates select='.'/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
   </xsl:template>
 
   <!--
