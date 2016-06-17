@@ -142,7 +142,7 @@
               </table>
               (Each grammar rule is assigned a number for reference, shown on the left.)</li>
             <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
-            <li>Non-normative examples: <div class="example"><div class="exampleHeader">Example</div><p>This is an example.</p></div></li>
+            <li>Non-normative examples: <div class="example"><p>This is an example.</p></div></li>
             <li>Normative warnings: <div class="advisement"><p>This is a warning.</p></div></li>
             <li>Code blocks: <pre class="idl example">// This is an IDL code block.
 interface Example {
@@ -273,7 +273,7 @@ interface <i>identifier</i> {
              <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a></span></td></tr><tr id="proddef-CallbackOrInterface"><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
              <a class="sym" href="#prod-Interface">Interface</a></span></td></tr></table>
 
-        <div class="example"><div class="exampleHeader">Example</div>
+        <div class="example">
           <p>
             The following is an example of an <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>.
           </p>
@@ -487,7 +487,7 @@ dictionary <i>identifier</i> {
             the declaration of the referenced definition.  References can also be made
             across <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>.
           </p>
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>Therefore, the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is valid:</p>
             <pre class="idl">interface B : A {
   void f(SequenceOfLongs x);
@@ -499,7 +499,7 @@ interface A {
 typedef sequence&lt;long&gt; SequenceOfLongs;</pre>
           </div>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               demonstrates how <a class="dfnref" href="#dfn-identifier">identifiers</a>
@@ -602,7 +602,7 @@ interface TextField {
             language binding specific whether the overridden member can be
             accessed on the object.
           </p>
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               Consider the following two interfaces.
             </p>
@@ -879,7 +879,7 @@ partial interface <em>SomeInterface</em> {
              <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-Inheritance"><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br/> |
              ε</span></td></tr></table>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <!--
             <p>
               The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
@@ -911,7 +911,7 @@ interface Dog : Animal {
 };</pre>
           </div>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
               simplified versions of a few DOM <a class="dfnref" href="#dfn-interface">interfaces</a>, one of which
@@ -1158,7 +1158,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
              "Infinity" <br/> |
              "NaN"</span></td></tr><tr id="proddef-ConstType"><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 demonstrates how <a class="dfnref" href="#dfn-constant">constants</a>
@@ -1330,7 +1330,7 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
              ε</span></td></tr><tr id="proddef-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#prod-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br/> |
              ε</span></td></tr></table>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 demonstrates how <a class="dfnref" href="#dfn-attribute">attributes</a>
@@ -1475,7 +1475,7 @@ interface Person : Animal {
             </p>
             <pre class="syntax"><i>return-type</i> <i>identifier</i>([<em>extended-attributes</em>] <i>type</i> <i>identifier</i>, [<em>extended-attributes</em>] <i>type</i> <i>identifier</i>, …);</pre>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 demonstrates how <a class="dfnref" href="#dfn-regular-operation">regular operations</a>
@@ -1521,7 +1521,7 @@ interface Button {
               when the <code>...</code> token is used in their argument lists.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has
                 two variadic operations:
@@ -1645,7 +1645,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               <a class="dfnref" href="#dfn-nullable-type">nullable type</a>.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines an <a class="dfnref" href="#dfn-interface">interface</a>
@@ -1810,7 +1810,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               not support the particular kind of special operations there simply
               will not be such functionality.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>The following IDL fragment defines an interface with a getter and a setter:</p>
               <pre class="idl">interface Dictionary {
   readonly attribute unsigned long propertyCount;
@@ -1873,7 +1873,7 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
               declaration without an identifier.  This approach is allowed to
               simplify prose descriptions of an interface’s operations.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>The following two interfaces are equivalent:</p>
               <pre class="idl">interface Dictionary {
   readonly attribute unsigned long propertyCount;
@@ -1978,7 +1978,7 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
                   mailing list before proceeding.
                 
 
-              <div class="example"><div class="exampleHeader">Example</div>
+              <div class="example">
                 <p>
                   The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                   defines an <a class="dfnref" href="#dfn-interface">interface</a>
@@ -2034,7 +2034,7 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
                 argument list can be omitted.
               </p>
               <pre class="syntax">stringifier;</pre>
-              <div class="example"><div class="exampleHeader">Example</div>
+              <div class="example">
                 <p>The following two interfaces are equivalent:</p>
                 <pre class="idl">interface A {
   stringifier DOMString ();
@@ -2059,7 +2059,7 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
              <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br/> |
              ";"</span></td></tr></table>
 
-              <div class="example"><div class="exampleHeader">Example</div>
+              <div class="example">
                 <p>
                   The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                   defines an interface that will stringify to the value of its
@@ -2398,7 +2398,7 @@ serializer = { inherit, attribute };</pre>
              ε</span></td></tr><tr id="proddef-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
              ε</span></td></tr></table>
 
-              <div class="example"><div class="exampleHeader">Example</div>
+              <div class="example">
                 <p>
                   The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
                   an interface <span class="idltype">Transaction</span> that has a
@@ -2572,7 +2572,7 @@ a.toWord(5);  // Evaluates to "five".
 a[5];         // Evaluates to undefined, since there is no property "5".</pre>
               </div>
 
-              <div class="example"><div class="exampleHeader">Example</div>
+              <div class="example">
                 <p>
                   The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface
                   <span class="idltype">OrderedMap</span> which allows
@@ -2757,7 +2757,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
             <table class="grammar"><tr id="proddef-StaticMember"><td><span class="prod-number">[37]</span></td><td><a class="sym" href="#prod-StaticMember">StaticMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"static" <a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></span></td></tr><tr id="proddef-StaticMemberRest"><td><span class="prod-number">[38]</span></td><td><a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
              <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr></table>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface
                 <span class="idltype">Circle</span> that has a static
@@ -3051,7 +3051,7 @@ partial interface A {
                 The effective overload set is <var>S</var>.
               </li>
             </ol>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                For the following interface:
               </p>
@@ -3342,7 +3342,7 @@ partial interface A {
               The lowest such index is termed the <dfn data-export="" id="dfn-distinguishing-argument-index">distinguishing argument index</dfn>
               for the entries of the effective overload set with the given type list length.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 Consider the effective overload set shown in the previous example.
                 There are multiple entries in the set with type lists 2, 3 and 4.
@@ -3370,7 +3370,7 @@ partial interface A {
               and the booleans in the corresponding list indicating argument optionality <span class="rfc2119">MUST</span>
               be the same.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>The following is invalid:</p>
               <pre class="idl">interface B {
   /* f1 */ void f(DOMString w);
@@ -3519,7 +3519,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               interfaces that have interface members with these names.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>Consider the following interface <span class="idltype">SessionManager</span>, which allows access to
               a number of <span class="idltype">Session</span> objects:</p>
               <pre class="idl">interface SessionManager {
@@ -4022,7 +4022,7 @@ something.f(dict);</pre>
              <a class="sym" href="#prod-string">string</a> <br/> |
              "[" "]"</span></td></tr><tr><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br/> |
              ε</span></td></tr></table>
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               One use of dictionary types is to allow a number of optional arguments to
               an <a class="dfnref" href="#dfn-operation">operation</a> without being
@@ -4137,7 +4137,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               below for details on what creating and throwing an exception
               entails in the ECMAScript language binding.
             
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               Here is are some examples of wording to use to create and throw exceptions.
               To throw a new <a class="dfnref" href="#dfn-simple-exception">simple exception</a> named
@@ -4407,7 +4407,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
              ε</span></td></tr><tr id="proddef-EnumValueListString"><td><span class="prod-number">[22]</span></td><td><a class="sym" href="#prod-EnumValueListString">EnumValueListString</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a> <br/> |
              ε</span></td></tr></table>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               defines an <a class="dfnref" href="#dfn-enumeration">enumeration</a>
@@ -4474,7 +4474,7 @@ meal.type == "noodles";              // Evaluates to true.</pre>
              <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr><td><span class="prod-number">[4]</span></td><td><a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackRest">CallbackRest</a> <br/> |
              <a class="sym" href="#prod-Interface">Interface</a></span></td></tr><tr id="proddef-CallbackRest"><td><span class="prod-number">[23]</span></td><td><a class="sym" href="#prod-CallbackRest">CallbackRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ReturnType">ReturnType</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span></td></tr></table>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
               a <a class="dfnref" href="#dfn-callback-function">callback function</a> used for an API that
@@ -4525,7 +4525,7 @@ ops.performOperation(function(status) {
 
           <table class="grammar"><tr id="proddef-Typedef"><td><span class="prod-number">[24]</span></td><td><a class="sym" href="#prod-Typedef">Typedef</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"typedef" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> ";"</span></td></tr></table>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               demonstrates the use of <a class="dfnref" href="#dfn-typedef">typedefs</a>
@@ -4653,7 +4653,7 @@ Gizmo implements MoreFunctionality;</pre>
 
           <table class="grammar"><tr id="proddef-ImplementsStatement"><td><span class="prod-number">[25]</span></td><td><a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "implements" <a class="sym" href="#prod-identifier">identifier</a> ";"</span></td></tr></table>
 
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               defines two <a class="dfnref" href="#dfn-interface">interfaces</a>, stating
@@ -5497,7 +5497,7 @@ interface Person {
               is the concatenation of the type name of the inner type <var>T</var> and
               the string “OrNull”.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 For example, a type that allows the values <span class="idlvalue">true</span>,
                 <span class="idlvalue">false</span> and <span class="idlvalue">null</span>
@@ -6150,7 +6150,7 @@ interface Person {
           handled by the caller, then it is taken to end the algorithm and propagate out
           to its caller, and so on.
         </p>
-        <div class="example"><div class="exampleHeader">Example</div>
+        <div class="example">
           <p>
             Consider the following algorithm:
           </p>
@@ -6205,7 +6205,7 @@ interface Person {
             of all initial objects in a given global environment <span class="rfc2119">MUST</span> come from
             that same global environment.
           </p>
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               In an HTML user agent, multiple global environments can exist when
               multiple frames or windows are created.  Each frame or window will have
@@ -7456,7 +7456,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </li>
               </ol>
             </div>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-interface">interface</a> defines
                 an <a class="dfnref" href="#dfn-attribute">attribute</a> of a sequence
@@ -8178,7 +8178,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <a class="xattr" href="#Clamp">[Clamp]</a> entails.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
@@ -8255,7 +8255,7 @@ context.setColorClamped(-1, 255, 257);</pre>
               for an interface is to be implemented.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following IDL defines two interfaces.  The second has the
                 <a class="xattr" href="#Constructor">[Constructor]</a> extended
@@ -8332,7 +8332,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
               <a class="xattr" href="#EnforceRange">[EnforceRange]</a> entails.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
@@ -8490,7 +8490,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               for the specific requirements that the use of
               <a class="xattr" href="#Exposed">[Exposed]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p><a class="xattr" href="#Exposed">[Exposed]</a>
               is intended to be used to control whether interfaces or individual interface
               members are available for use only in workers, only in the <span class="idltype">Window</span>,
@@ -8564,7 +8564,7 @@ interface Node {
               is intended for use on the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> as defined
               in HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2).
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>In the following example, the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> is defined
               with the <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
@@ -8739,7 +8739,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               for the requirements relating to the location of properties
               corresponding to <a class="dfnref" href="#dfn-interface-member">interface members</a>.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> is intended
@@ -8824,7 +8824,7 @@ interface Window {
               specific requirements that the use of <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
               entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines two <a class="dfnref" href="#dfn-interface">interfaces</a>
@@ -8943,7 +8943,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
               is to be implemented.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following IDL fragment defines an interface that uses the
                 <a class="xattr" href="#LenientSetter">[LenientSetter]</a> extended
@@ -8999,7 +8999,7 @@ example.y = 1;</pre>
               <a class="xattr" href="#LenientThis">[LenientThis]</a>
               is to be implemented.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following IDL fragment defines an interface that uses the
                 <a class="xattr" href="#LenientThis">[LenientThis]</a> extended
@@ -9075,7 +9075,7 @@ Example.prototype.y;</pre>
               are to be implemented.
             </p>
 
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following IDL defines an interface that uses the
                 <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended
@@ -9130,7 +9130,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               is an <a href="#idl-interface">interface type</a> or
               a <a class="dfnref" href="#dfn-promise-type">promise type</a>.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 As an example, this extended attribute is suitable for use on
                 the <a href="http://dom.spec.whatwg.org/#dom-document-createelement">createElement</a>
@@ -9199,7 +9199,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               for the specific requirements that the use of
               <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL
                   fragment</a> defines two interfaces, one whose interface object
@@ -9271,7 +9271,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
               for the specific requirements that the use of
               <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines two <a class="dfnref" href="#dfn-interface">interfaces</a>,
@@ -9494,7 +9494,7 @@ Node implements EventTarget;</x:codeblock>
               <a class="xattr" href="#PutForwards">[PutForwards]</a>
               is to be implemented.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines interfaces for names and people.
                 The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended
@@ -9572,7 +9572,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
               for the specific requirements that the use of
               <a class="xattr" href="#Replaceable">[Replaceable]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines an <a class="dfnref" href="#dfn-interface">interface</a>
@@ -9638,7 +9638,7 @@ counter.value;                                           // Evaluates to 3.</pre
               whose type is an <a href="#idl-interface">interface type</a>
               or <a class="idltype" href="#idl-object">object</a>.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 As an example, this extended attribute is suitable for use on
                 the <a href="http://dom.spec.whatwg.org/#dom-document-implementation">implementation</a>
@@ -9734,7 +9734,7 @@ counter.value;                                           // Evaluates to 3.</pre
               <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface
               that does specify <a class="xattr" href="#SecureContext">[SecureContext]</a>.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface
               with one <a class="dfnref" href="#dfn-operation">operation</a> that is executable from all
               contexts, and two which are executable only from secure contexts.</p>
@@ -9786,7 +9786,7 @@ counter.value;                                           // Evaluates to 3.</pre
               for the specific requirements that the use of
               <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
                 attribute whose type is a <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>-annotated
@@ -9871,7 +9871,7 @@ manager.handler2;            // Evaluates to null.</pre>
               for the specific requirements that the use of
               <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
                 attribute with the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
@@ -9987,7 +9987,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               for the specific requirements that the use of
               <a class="xattr" href="#Unforgeable">[Unforgeable]</a> entails.
             </p>
-            <div class="example"><div class="exampleHeader">Example</div>
+            <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
                 an interface that has two <a class="dfnref" href="#dfn-attribute">attributes</a>,
@@ -14259,7 +14259,7 @@ try {
             <span class="rfc2119">MUST</span> propagate to the caller, and if
             not caught there, to its caller, and so on.
           </p>
-          <div class="example"><div class="exampleHeader">Example</div>
+          <div class="example">
             <p>
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               defines two <a class="dfnref" href="#dfn-interface">interfaces</a>

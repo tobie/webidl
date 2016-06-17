@@ -257,13 +257,6 @@
   
   <xsl:template match='h:div[@id="toc"]' />
 
-  <xsl:template match='h:div[@class="example"]'>
-    <div>
-      <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='exampleHeader'>Example</div>
-      <xsl:apply-templates select='node()'/>
-    </div>
-  </xsl:template>
   
   <xsl:template name='markdown-note-issue-advisement'>
     <xsl:text>    </xsl:text>
