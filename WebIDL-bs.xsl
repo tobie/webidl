@@ -254,6 +254,9 @@
   
   <xsl:template match='h:div[@id="toc"] | h:head' />
 
+  <xsl:template match='h:body'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
   
   <xsl:template name='markdown-note-issue-advisement'>
     <xsl:text>    </xsl:text>
