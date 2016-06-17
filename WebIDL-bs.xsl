@@ -297,21 +297,6 @@
     </xsl:for-each>
   </xsl:template>
 
-  <!--
-  <xsl:template match='h:tr'>
-    <xsl:copy>
-      <xsl:attribute name='class'>
-        <xsl:value-of select='@class'/>
-        <xsl:if test='@class'><xsl:text> </xsl:text></xsl:if>
-        <xsl:choose>
-          <xsl:when test='count(preceding-sibling::h:tr) mod 2 = 0'>odd</xsl:when>
-          <xsl:otherwise>even</xsl:otherwise>
-        </xsl:choose>
-      </xsl:attribute>
-      <xsl:copy-of select='node()[not(self::class)]'/>
-    </xsl:copy>
-  </xsl:template>
-  -->
 
   <xsl:template match='x:codeblock'>
     <xsl:variable name='lang'>
