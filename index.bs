@@ -143,7 +143,7 @@
               (Each grammar rule is assigned a number for reference, shown on the left.)</li>
             <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
             <li>Non-normative examples: <div class="example"><div class="exampleHeader">Example</div><p>This is an example.</p></div></li>
-            <li>Normative warnings: <div class="warning"><p>This is a warning.</p></div></li>
+            <li>Normative warnings: <div class="advisement"><p>This is a warning.</p></div></li>
             <li>Code blocks: <pre class="idl example">// This is an IDL code block.
 interface Example {
   attribute long something;
@@ -702,7 +702,7 @@ interface B : A {
             <a class="dfnref" href="#dfn-static-operation">static operations</a> <span class="rfc2119">MUST NOT</span>
             be defined on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
           </p>
-          <div class="warning">
+          <div class="advisement">
             <p>
               Specification authors <span class="rfc2119">SHOULD NOT</span> define
               <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>
@@ -5823,7 +5823,7 @@ interface Person {
               With a reference to the buffer source’s bytes, specification prose can get or set individual
               byte values using that reference.
             </p>
-            <div class="warning">
+            <div class="advisement">
               <p>
                 Extreme care must be taken when writing specification text that gets a reference
                 to the bytes held by a buffer source, as the underyling data can easily be changed
@@ -7618,9 +7618,9 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>Let <var>resolve</var> be the original value of <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.resolve.
-                
+                <div class="issue">
                   <p>ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.</p>
-                
+                </div>
               </li>
               <li>Let <var>promise</var> be the result of calling <var>resolve</var> with <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>
                 as the <span class="esvalue">this</span> value and <var>V</var> as the single argument value.</li>
@@ -8907,7 +8907,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               accessor property.  This results in erroneous assignments to the property
               in strict mode to be ignored rather than causing an exception to be thrown.
             </p>
-            <div class="warning">
+            <div class="advisement">
               <p>
                 Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#LenientThis" class="xattr">[LenientSetter]</a>
                 unless required for compatibility reasons.  Pages have been observed
@@ -11947,11 +11947,11 @@ interface
                     <p>The <var>callbackWrapper</var> function simply calls the incoming <var>callbackFn</var>
                       with <var>object</var> as the third argument rather than its internal [[BackingMap]] or [[BackingSet]] object.</p>
                   </div>
-                  
+                  <div class="issue">
                     <p>Can the script author observe that <var>callbackWrapper</var> might be a new function
                       every time forEach is called?  What's the best way of specifying that there's only
                       one function that has captured an environment?</p>
-                  
+                  </div>
                 </li>
                 <li>Let <var>forEach</var> be the result of calling the [[Get]] internal method of
                   <var>backing</var> with “forEach” and <var>backing</var> as arguments.</li>

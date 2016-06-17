@@ -257,12 +257,6 @@
   
   <xsl:template match='h:div[@id="toc"]' />
 
-  <xsl:template match='h:div[@class="ednote"]'>
-      <xsl:apply-templates select='node()'/>
-  </xsl:template>
-
-
-
   <xsl:template match='h:div[@class="example"]'>
     <div>
       <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
@@ -271,7 +265,7 @@
     </div>
   </xsl:template>
   
-  <xsl:template match='h:div[not(parent::h:li)][@class="note" or @class="warning" or @class="ednote"][count(h:p)=1][not(not(h:p))]'>
+  <xsl:template name='markdown-note-issue-advisement'>
     <xsl:text>    </xsl:text>
     <xsl:choose>
       <xsl:when test='@class="note"'>
@@ -297,6 +291,27 @@
     </xsl:for-each>
   </xsl:template>
 
+  <xsl:template name="wrapped-note-issue-advisement">
+    <xsl:variable name='class'>
+      <xsl:choose>
+        <xsl:when test='@class="warning"'>advisement</xsl:when>
+        <xsl:when test='@class="ednote"'>issue</xsl:when>
+        <xsl:otherwise><xsl:value-of select='@class'/></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <div class='{$class}'><xsl:apply-templates select='node()'/></div>
+  </xsl:template>
+  
+  <xsl:template match='h:div[@class="note" or @class="warning" or @class="ednote"]'>
+    <xsl:choose>
+      <xsl:when test='.[parent::h:li] or .[count(h:p)&gt;1] or .[not(h:p)]'>
+        <xsl:call-template name="wrapped-note-issue-advisement"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="markdown-note-issue-advisement"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 
   <xsl:template match='x:codeblock'>
     <xsl:variable name='lang'>
