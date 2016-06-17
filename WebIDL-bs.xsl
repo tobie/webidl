@@ -314,23 +314,17 @@
   -->
 
   <xsl:template match='x:codeblock'>
-    <div class='block'>
-      <div class='blockTitleDiv'>
-        <span class='blockTitle'>
-          <xsl:choose>
-            <xsl:when test='@language="idl"'>IDL</xsl:when>
-            <xsl:when test='@language="es"'>ECMAScript</xsl:when>
-            <xsl:when test='@language="java"'>Java</xsl:when>
-            <xsl:when test='@language="c"'>C</xsl:when>
-            <xsl:when test='@language="html"'>HTML</xsl:when>
-            <xsl:otherwise>@@</xsl:otherwise>
-          </xsl:choose>
-        </span>
-      </div>
-      <div class='blockContent'>
-        <pre class='code'><code class='{@language}-code'><xsl:apply-templates select='node()'/></code></pre>
-      </div>
-    </div>
+    <xsl:variable name='lang'>
+      <xsl:choose>
+        <xsl:when test='@language="idl"'>idl</xsl:when>
+        <xsl:when test='@language="es"'>js</xsl:when>
+        <xsl:when test='@language="java"'>java</xsl:when>
+        <xsl:when test='@language="c"'>c</xsl:when>
+        <xsl:when test='@language="html"'>html</xsl:when>
+        <xsl:otherwise></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <pre class='{$lang}'><xsl:apply-templates select='node()'/></pre>
   </xsl:template>
 
   <xsl:template match='x:grammar'>
