@@ -324,8 +324,16 @@
         <xsl:otherwise></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <pre class='{$lang}'><xsl:apply-templates select='node()'/></pre>
+    <xsl:choose>
+      <xsl:when test='@language="idl" and not(ancestor::*[@class="example"])'>
+          <pre class='{$lang} example'><xsl:apply-templates select='node()'/></pre>
+      </xsl:when>
+      <xsl:otherwise>
+          <pre class='{$lang}'><xsl:apply-templates select='node()'/></pre>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
+  
   <xsl:template match='h:span[@class="comment"]'>
       <xsl:apply-templates select='node()'/>
   </xsl:template>

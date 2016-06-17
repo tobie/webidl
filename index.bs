@@ -144,7 +144,7 @@
             <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
             <li>Non-normative examples: <div class="example"><div class="exampleHeader">Example</div><p>This is an example.</p></div></li>
             <li>Normative warnings: <div class="warning"><p>This is a warning.</p></div></li>
-            <li>Code blocks: <pre class="idl">// This is an IDL code block.
+            <li>Code blocks: <pre class="idl example">// This is an IDL code block.
 interface Example {
   attribute long something;
 };</pre>
@@ -745,7 +745,7 @@ interface B : A {
             <p>
               For example, instead of this:
             </p>
-            <pre class="idl">callback interface Options {
+            <pre class="idl example">callback interface Options {
   attribute DOMString? option1;
   attribute DOMString? option2;
   attribute long? option3;
@@ -763,7 +763,7 @@ a.doTask("something", { option1: "banana", option3: 100 });</pre>
             <p>
               instead write the following:
             </p>
-            <pre class="idl">dictionary Options {
+            <pre class="idl example">dictionary Options {
   DOMString? option1;
   DOMString? option2;
   long? option3;
@@ -1135,7 +1135,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 on which the <a class="dfnref" href="#dfn-constant">constants</a> are declared.
                 For example, with the following IDL:
               </p>
-              <pre class="idl">interface A {
+              <pre class="idl example">interface A {
   const short rambaldi = 47;
 };</pre>
               <p>
@@ -2553,7 +2553,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                 <p>
                   In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:
                 </p>
-                <pre class="idl">interface A {
+                <pre class="idl example">interface A {
   getter DOMString toWord(unsigned long index);
 };</pre>
                 <p>
@@ -2831,7 +2831,7 @@ window.alert(Circle.triangulationCount);</pre>
                 For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span>
                 are disallowed:
               </p>
-              <pre class="idl">interface A {
+              <pre class="idl example">interface A {
   void f();
 };
 
@@ -3942,7 +3942,7 @@ partial dictionary <em>SomeDictionary</em> {
           </p>
           <div class="note">
             <p>For example, with the following definitions:</p>
-            <pre class="idl">dictionary B : A {
+            <pre class="idl example">dictionary B : A {
   long b;
   long a;
 };
@@ -3973,7 +3973,7 @@ partial dictionary A {
               the dictionary members are fetched.  For example, consider the
               following additional interface:
             </p>
-            <pre class="idl">interface Something {
+            <pre class="idl example">interface Something {
   void f(A a);
 };</pre>
             <p>
@@ -4603,13 +4603,13 @@ interface Widget {
               is a <a class="dfnref" href="#dfn-supplemental-interface">supplemental interface</a>.
               For example, if author 1 writes:
             </p>
-            <pre class="idl">interface Window { ... };
+            <pre class="idl example">interface Window { ... };
 interface SomeFunctionality { ... };
 Window implements SomeFunctionality;</pre>
             <p>
               and author 2 later writes:
             </p>
-            <pre class="idl">interface Gizmo { ... };
+            <pre class="idl example">interface Gizmo { ... };
 interface MoreFunctionality { ... };
 SomeFunctionality implements MoreFunctionality;
 Gizmo implements SomeFunctionality;</pre>
@@ -4623,7 +4623,7 @@ Gizmo implements SomeFunctionality;</pre>
             <p>
               Better in this case would be for author 2 to write:
             </p>
-            <pre class="idl">interface Gizmo { ... };
+            <pre class="idl example">interface Gizmo { ... };
 interface MoreFunctionality { ... };
 Gizmo implements SomeFunctionality;
 Gizmo implements MoreFunctionality;</pre>
@@ -10057,7 +10057,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             </p>
             <div class="note">
               <p>For example, with the following IDL:</p>
-              <pre class="idl">interface Thing {
+              <pre class="idl example">interface Thing {
   void f();
   [Unscopable] g();
 };</pre>
@@ -10911,7 +10911,7 @@ with (thing) {
                 <a class="dfnref" href="#dfn-supplemental-interface">non-supplemental interface</a>.
                 For example, with the following IDL:
               </p>
-              <pre class="idl">[NoInterfaceObject]
+              <pre class="idl example">[NoInterfaceObject]
 interface Foo {
 };
 
@@ -11885,7 +11885,7 @@ interface
                 this <a class="dfnref" href="#dfn-operation">operation</a> instead of the
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>:
               </p>
-              <pre class="idl">void forEach(Function callback, optional any thisArg);</pre>
+              <pre class="idl example">void forEach(Function callback, optional any thisArg);</pre>
               <p>
                 with the following prose definition:
               </p>
@@ -12822,7 +12822,7 @@ interface
             <p>
               For example, consider the following IDL:
             </p>
-            <pre class="idl">interface A {
+            <pre class="idl example">interface A {
   void f();
 };
 
@@ -14206,7 +14206,7 @@ C implements A;</pre>
               where that <span class="estype">Function</span> object originated.
               For example, consider the IDL:
             </p>
-            <pre class="idl">interface A {
+            <pre class="idl example">interface A {
 
   /**
    * Calls computeSquareRoot on m, passing x as its argument.
@@ -14321,7 +14321,7 @@ d.type = et;
         <div id="common-ArrayBufferView" class="section">
           <h3>ArrayBufferView</h3>
 
-          <pre class="idl">typedef (Int8Array or Int16Array or Int32Array or
+          <pre class="idl example">typedef (Int8Array or Int16Array or Int32Array or
          Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
          Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" data-dfn-type="typedef">ArrayBufferView</dfn>;</pre>
           <p>
@@ -14333,7 +14333,7 @@ d.type = et;
         <div id="common-BufferSource" class="section">
           <h3>BufferSource</h3>
 
-          <pre class="idl">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" data-dfn-type="typedef">BufferSource</dfn>;</pre>
+          <pre class="idl example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" data-dfn-type="typedef">BufferSource</dfn>;</pre>
           <p>
             The <span class="idltype">BufferSource</span> typedef is used to represent objects
             that are either themselves an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> or which
@@ -14344,7 +14344,7 @@ d.type = et;
         <div id="common-DOMTimeStamp" class="section">
           <h3>DOMTimeStamp</h3>
 
-          <pre class="idl">typedef unsigned long long <dfn id="DOMTimeStamp" data-dfn-type="typedef">DOMTimeStamp</dfn>;</pre>
+          <pre class="idl example">typedef unsigned long long <dfn id="DOMTimeStamp" data-dfn-type="typedef">DOMTimeStamp</dfn>;</pre>
           <p>
             The <span class="idltype">DOMTimeStamp</span> type is used for representing
             a number of milliseconds, either as an absolute time (relative to some epoch)
@@ -14356,7 +14356,7 @@ d.type = et;
         <div id="common-Function" class="section">
           <h3>Function</h3>
 
-          <pre class="idl">callback <dfn id="Function" data-dfn-type="callback">Function</dfn> = any (any... arguments);</pre>
+          <pre class="idl example">callback <dfn id="Function" data-dfn-type="callback">Function</dfn> = any (any... arguments);</pre>
           <p>
             The <span class="idltype">Function</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values with no restriction on what arguments
@@ -14367,7 +14367,7 @@ d.type = et;
         <div id="common-Function" class="section">
           <h3>VoidFunction</h3>
 
-          <pre class="idl">callback <dfn id="VoidFunction" data-dfn-type="callback">VoidFunction</dfn> = void ();</pre>
+          <pre class="idl example">callback <dfn id="VoidFunction" data-dfn-type="callback">VoidFunction</dfn> = void ();</pre>
           <p>
             The <span class="idltype">VoidFunction</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values that take no arguments and do not
