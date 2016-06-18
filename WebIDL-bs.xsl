@@ -269,9 +269,7 @@
         <xsl:value-of select='parent::h:div[@class="section"]/@id' />
       </xsl:attribute>
       <xsl:if test="@data-dfn-type">
-        <xsl:attribute name="dfn-type">
-          <xsl:value-of select='@data-dfn-type' />
-        </xsl:attribute>
+        <xsl:attribute name="{@data-dfn-type}" />
       </xsl:if>
       <xsl:if test="@data-lt and text() != @data-lt">
         <xsl:attribute name="lt">
