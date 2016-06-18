@@ -181,7 +181,7 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
           The following conformance classes are defined by this specification:
         
         <dl>
-          <dt><dfn data-export="" id="dfn-conforming-set-of-idl-fragments">conforming set of IDL fragments</dfn></dt>
+          <dt><dfn id="dfn-conforming-set-of-idl-fragments" export="">conforming set of IDL fragments</dfn></dt>
           <dd>
             
               A set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a> is considered
@@ -192,7 +192,7 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
               criteria in this specification that apply to IDL fragments.
             
           </dd>
-          <dt><dfn data-export="" id="dfn-conforming-implementation">conforming implementation</dfn></dt>
+          <dt><dfn id="dfn-conforming-implementation" export="">conforming implementation</dfn></dt>
           <dd>
             
               A user agent is considered to be a
@@ -204,7 +204,7 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
               bindings that the user agent supports.
             
           </dd>
-          <dt><dfn data-export="" id="dfn-conforming-ecmascript-implementation">conforming ECMAScript implementation</dfn></dt>
+          <dt><dfn id="dfn-conforming-ecmascript-implementation" export="">conforming ECMAScript implementation</dfn></dt>
           <dd>
             
               A user agent is considered to be a
@@ -225,7 +225,7 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
         
           This section describes a language, <em>Web IDL</em>, which can be used to define
           interfaces for APIs in the Web platform.  A specification that defines Web APIs
-          can include one or more <dfn data-export="" data-lt="IDL fragment" id="dfn-idl-fragment">IDL fragments</dfn> that
+          can include one or more <dfn id="dfn-idl-fragment" export="" lt="IDL fragment">IDL fragments</dfn> that
           describe the interfaces (the state and behavior that objects can exhibit)
           for the APIs defined by that specification.
           An <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is
@@ -339,11 +339,11 @@ interface GraphicalWindow {
             <a class="dfnref" href="#dfn-partial-dictionary">partial dictionary definition</a>,
             <a class="dfnref" href="#dfn-enumeration">enumeration</a>,
             <a class="dfnref" href="#dfn-callback-function">callback function</a> and
-            <a class="dfnref" href="#dfn-typedef">typedef</a> (together called <dfn data-export="" data-lt="named definition" id="dfn-named-definition">named definitions</dfn>)
+            <a class="dfnref" href="#dfn-typedef">typedef</a> (together called <dfn id="dfn-named-definition" export="" lt="named definition">named definitions</dfn>)
             and every <a class="dfnref" href="#dfn-constant">constant</a>,
             <a class="dfnref" href="#dfn-attribute">attribute</a>,
             and <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> has an
-            <dfn data-export="" id="dfn-identifier">identifier</dfn>, as do some
+            <dfn id="dfn-identifier" export="">identifier</dfn>, as do some
             <a class="dfnref" href="#dfn-operation">operations</a>.
             The identifier is determined by an
             <a class="sym" href="#prod-identifier">identifier</a> token somewhere
@@ -460,7 +460,7 @@ dictionary <i>identifier</i> {
             IDL constructs <span class="rfc2119">MUST NOT</span> be “constructor”,
             “toString”, “toJSON”,
             or begin with a <span class="char">U+005F LOW LINE ("_")</span> character.  These
-            are known as <dfn data-export="" id="dfn-reserved-identifier">reserved identifiers</dfn>.
+            are known as <dfn id="dfn-reserved-identifier" export="">reserved identifiers</dfn>.
           
               Note: Further restrictions on identifier names for particular constructs may be made
             in later sections.
@@ -548,7 +548,7 @@ interface TextField {
             <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a> are used to
             describe object oriented systems.  In such systems, objects are entities
             that have identity and which are encapsulations of state and behavior.
-            An <dfn data-export="" id="dfn-interface">interface</dfn> is a definition (matching
+            An <dfn id="dfn-interface" export="">interface</dfn> is a definition (matching
             <a class="sym" href="#prod-Interface">Interface</a> or
             <span class="sym">"callback"</span> <a class="sym" href="#prod-Interface">Interface</a>) that declares some
             state and behavior that an object implementing that interface will expose.
@@ -558,7 +558,7 @@ interface TextField {
 };</pre>
           
             An interface is a specification of a set of
-            <dfn data-export="" data-lt="interface member" id="dfn-interface-member">interface members</dfn>
+            <dfn id="dfn-interface-member" export="" lt="interface member">interface members</dfn>
             (matching <a class="sym" href="#prod-InterfaceMembers">InterfaceMembers</a>),
             which are the <a class="dfnref" href="#dfn-constant">constants</a>,
             <a class="dfnref" href="#dfn-attribute">attributes</a>,
@@ -579,7 +579,7 @@ interface TextField {
           
           
           
-            An interface can be defined to <dfn data-export="" data-dfn-for="interface" id="dfn-inherit">inherit</dfn> from another interface.
+            An interface can be defined to <dfn id="dfn-inherit" for="interface" export="">inherit</dfn> from another interface.
             If the identifier of the interface is followed by a
             <span class="char">U+003A COLON (":")</span> character
             and an <a class="dfnref" href="#dfn-identifier">identifier</a>,
@@ -635,7 +635,7 @@ interface B : A {
             
           </div>
           
-            The <dfn data-export="" id="dfn-inherited-interfaces">inherited interfaces</dfn> of
+            The <dfn id="dfn-inherited-interfaces" export="">inherited interfaces</dfn> of
             a given interface <var>A</var> is the set of all interfaces that <var>A</var>
             inherits from, directly or indirectly.  If <var>A</var> does not <a class="dfnref" href="#dfn-inherit">inherit</a>
             from another interface, then the set is empty.  Otherwise, the set
@@ -676,7 +676,7 @@ interface B : A {
 };</pre>
 
           
-            A <dfn data-export="" id="dfn-callback-interface">callback interface</dfn> is
+            A <dfn id="dfn-callback-interface" export="">callback interface</dfn> is
             an <a class="dfnref" href="#dfn-interface">interface</a>
             that uses the <code>callback</code> keyword at the start of
             its definition.  Callback interfaces are ones that can be
@@ -776,7 +776,7 @@ interface A {
 
           
             The IDL for interfaces can be split into multiple parts by using
-            <dfn data-export="" id="dfn-partial-interface">partial interface</dfn> definitions
+            <dfn id="dfn-partial-interface" export="">partial interface</dfn> definitions
             (matching <span class="sym">"partial"</span> <a class="sym" href="#prod-PartialInterface">PartialInterface</a>).
             The <a class="dfnref" href="#dfn-identifier">identifier</a> of a partial
             interface definition <span class="rfc2119">MUST</span> be the same
@@ -964,7 +964,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             <h4 id="idl-constants">Constants</h4>
 
             
-              A <dfn data-export="" id="dfn-constant">constant</dfn> is a declaration (matching
+              A <dfn id="dfn-constant" export="">constant</dfn> is a declaration (matching
               <a class="sym" href="#prod-Const">Const</a>) used to bind a constant value to a name.
               Constants can appear on <a class="dfnref" href="#dfn-interface">interfaces</a>.
             
@@ -1177,7 +1177,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             <h4 id="idl-attributes">Attributes</h4>
 
             
-              An <dfn data-export="" id="dfn-attribute">attribute</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
+              An <dfn id="dfn-attribute" export="">attribute</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
               (matching
               <span class="sym">"inherit"</span> <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
               <span class="sym">"static"</span> <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
@@ -1198,7 +1198,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             </ol>
             
               If an attribute has no <code>static</code> keyword, then it declares a
-              <dfn data-export="" id="dfn-regular-attribute">regular attribute</dfn>.  Otherwise,
+              <dfn id="dfn-regular-attribute" export="">regular attribute</dfn>.  Otherwise,
               it declares a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             
             
@@ -1231,7 +1231,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 as one of its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
             </ul>
             
-              The attribute is <dfn data-export="" id="dfn-read-only">read only</dfn> if the
+              The attribute is <dfn id="dfn-read-only" export="">read only</dfn> if the
               <code>readonly</code> keyword is used before the <code>attribute</code> keyword.
               An object that implements the interface on which a read only attribute
               is defined will not allow assignment to that attribute.  It is language
@@ -1242,7 +1242,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             
               A <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>
               that is not <a class="dfnref" href="#dfn-read-only">read only</a>
-              can be declared to <dfn data-export="" id="dfn-inherit-getter">inherit its getter</dfn>
+              can be declared to <dfn id="dfn-inherit-getter" export="">inherit its getter</dfn>
               from an ancestor interface.  This can be used to make a read only attribute
               in an ancestor interface be writable on a derived interface.  An attribute
               <a class="dfnref" href="#dfn-inherit-getter">inherits its getter</a> if
@@ -1367,7 +1367,7 @@ interface Person : Animal {
             <h4 id="idl-operations">Operations</h4>
 
             
-              An <dfn data-export="" id="dfn-operation">operation</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
+              An <dfn id="dfn-operation" export="">operation</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
               (matching <span class="sym">"static"</span> <a class="sym" href="#prod-OperationRest">OperationRest</a>,
               <span class="sym">"stringifier"</span> <a class="sym" href="#prod-OperationRest">OperationRest</a>,
               <span class="sym">"serializer"</span> <a class="sym" href="#prod-OperationRest">OperationRest</a>,
@@ -1394,7 +1394,7 @@ interface Person : Animal {
             </ol>
             
               If an operation has an identifier but no <code>static</code>
-              keyword, then it declares a <dfn data-export="" id="dfn-regular-operation">regular operation</dfn>.
+              keyword, then it declares a <dfn id="dfn-regular-operation" export="">regular operation</dfn>.
               If the operation has one or more
               <a class="dfnref" href="#dfn-special-keyword">special keywords</a>
               used in its declaration (that is, any keyword matching
@@ -1432,7 +1432,7 @@ interface Person : Animal {
               defined on the same <a class="dfnref" href="#dfn-interface">interface</a>.
             
             
-              The <dfn data-export="" id="dfn-return-type">return type</dfn> of the operation is given
+              The <dfn id="dfn-return-type" export="">return type</dfn> of the operation is given
               by the type (matching <a class="sym" href="#prod-ReturnType">ReturnType</a>)
               that appears before the operation’s optional <a class="dfnref" href="#dfn-identifier">identifier</a>.
               A return type of <code id="idl-void">void</code> indicates that the operation returns no value.
@@ -1499,7 +1499,7 @@ interface Button {
             </div>
 
             
-              An operation is considered to be <dfn data-export="" id="dfn-variadic">variadic</dfn>
+              An operation is considered to be <dfn id="dfn-variadic" export="">variadic</dfn>
               if the final argument uses the <code>...</code> token just
               after the argument type.  Declaring an operation to be variadic indicates that
               the operation can be invoked with any number of arguments after that final argument.
@@ -1548,7 +1548,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             </div>
 
             
-              An argument is considered to be an <dfn data-export="" id="dfn-optional-argument">optional argument</dfn>
+              An argument is considered to be an <dfn id="dfn-optional-argument" export="">optional argument</dfn>
               if it is declared with the <code>optional</code> keyword.
               The final argument of a <a class="dfnref" href="#dfn-variadic">variadic</a> operation
               is also considered to be an optional argument. Declaring an argument
@@ -1560,7 +1560,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i>);</pre>
 
             
-              Optional arguments can also have a <dfn data-export="" data-dfn-for="optional argument" id="dfn-optional-argument-default-value">default value</dfn>
+              Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" for="optional argument" export="">default value</dfn>
               specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
               and a value (matching <a class="sym" href="#prod-DefaultValue">DefaultValue</a>),
               then that gives the optional argument its <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>.
@@ -1753,11 +1753,11 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             <h4 id="idl-special-operations">Special operations</h4>
 
             
-              A <dfn data-export="" id="dfn-special-operation">special operation</dfn> is a
+              A <dfn id="dfn-special-operation" export="">special operation</dfn> is a
               declaration of a certain kind of special behavior on objects implementing
               the interface on which the special operation declarations appear.
               Special operations are declared by using one or more
-              <dfn data-export="" id="dfn-special-keyword">special keywords</dfn>
+              <dfn id="dfn-special-keyword" export="">special keywords</dfn>
               in an operation declaration.
             
             
@@ -1772,33 +1772,33 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                 <th>Purpose</th>
               </tr>
               <tr>
-                <td><dfn data-export="" data-lt="getter" id="dfn-getter">Getters</dfn></td>
+                <td><dfn id="dfn-getter" export="" lt="getter">Getters</dfn></td>
                 <td><code>getter</code></td>
                 <td>Defines behavior for when an object is indexed for property retrieval.</td>
               </tr>
               <tr>
-                <td><dfn data-export="" data-lt="setter" id="dfn-setter">Setters</dfn></td>
+                <td><dfn id="dfn-setter" export="" lt="setter">Setters</dfn></td>
                 <td><code>setter</code></td>
                 <td>Defines behavior for when an object is indexed for property
                 assignment or creation.</td>
               </tr>
               <tr>
-                <td><dfn data-export="" data-lt="deleter" id="dfn-deleter">Deleters</dfn></td>
+                <td><dfn id="dfn-deleter" export="" lt="deleter">Deleters</dfn></td>
                 <td><code>deleter</code></td>
                 <td>Defines behavior for when an object is indexed for property deletion.</td>
               </tr>
               <tr>
-                <td><dfn data-export="" data-lt="legacy" id="dfn-legacy-caller">Legacy callers</dfn></td>
+                <td><dfn id="dfn-legacy-caller" export="" lt="legacy">Legacy callers</dfn></td>
                 <td><code>legacycaller</code></td>
                 <td>Defines behavior for when an object is called as if it were a function.</td>
               </tr>
               <tr>
-                <td><dfn data-export="" data-lt="stringifier" id="dfn-stringifier">Stringifiers</dfn></td>
+                <td><dfn id="dfn-stringifier" export="" lt="stringifier">Stringifiers</dfn></td>
                 <td><code>stringifier</code></td>
                 <td>Defines how an object is converted into a <a class="idltype" href="#idl-DOMString">DOMString</a>.</td>
               </tr>
               <tr>
-                <td><dfn data-export="" data-lt="serializer" id="dfn-serializer">Serializers</dfn></td>
+                <td><dfn id="dfn-serializer" export="" lt="serializer">Serializers</dfn></td>
                 <td><code>serializer</code></td>
                 <td>Defines how an object is converted into a serialized form.</td>
               </tr>
@@ -1905,14 +1905,14 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
               Getters and setters come in two varieties: ones that
               take a <a class="idltype" href="#idl-DOMString">DOMString</a> as a property name,
               known as
-              <dfn data-export="" data-lt="named property getter" id="dfn-named-property-getter">named property getters</dfn> and
-              <dfn data-export="" data-lt="named property setter" id="dfn-named-property-setter">named property setters</dfn>,
+              <dfn id="dfn-named-property-getter" export="" lt="named property getter">named property getters</dfn> and
+              <dfn id="dfn-named-property-setter" export="" lt="named property setter">named property setters</dfn>,
               and ones that take an <a class="idltype" href="#idl-unsigned-long">unsigned long</a>
               as a property index, known as
-              <dfn data-export="" data-lt="indexed property getter" id="dfn-indexed-property-getter">indexed property getters</dfn> and
-              <dfn data-export="" data-lt="indexed property setter" id="dfn-indexed-property-setter">indexed property setters</dfn>.
+              <dfn id="dfn-indexed-property-getter" export="" lt="indexed property getter">indexed property getters</dfn> and
+              <dfn id="dfn-indexed-property-setter" export="" lt="indexed property setter">indexed property setters</dfn>.
               There is only one variety of deleter:
-              <dfn data-export="" data-lt="named property deleter" id="dfn-named-property-deleter">named property deleters</dfn>.
+              <dfn id="dfn-named-property-deleter" export="" lt="named property deleter">named property deleters</dfn>.
               See [[#idl-indexed-properties]]
               and [[#idl-named-properties]]
               for details.
@@ -2018,7 +2018,7 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
                 If an operation used to declare a stringifier does not have an
                 <a class="dfnref" href="#dfn-identifier">identifier</a>, then prose
                 accompanying the interface <span class="rfc2119">MUST</span> define
-                the <dfn data-export="" id="dfn-stringification-behavior">stringification behavior</dfn>
+                the <dfn id="dfn-stringification-behavior" export="">stringification behavior</dfn>
                 of the interface.  If the operation does have an identifier,
                 then the object is converted to a string by invoking the
                 operation to obtain the string.
@@ -2138,9 +2138,9 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
               
                 Prose accompanying an interface that declares a serializer in this
                 way <span class="rfc2119">MUST</span> define the
-                <dfn data-export="" id="dfn-serialization-behavior">serialization behavior</dfn>
+                <dfn id="dfn-serialization-behavior" export="">serialization behavior</dfn>
                 of the interface.  Serialization behavior is defined as returning
-                a <dfn data-export="" id="dfn-serialized-value">serialized value</dfn> of one of the following types:
+                a <dfn id="dfn-serialized-value" export="">serialized value</dfn> of one of the following types:
               
               <ul>
                 <li>a <em>map</em> of key–value pairs, where the keys are
@@ -2170,7 +2170,7 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
                 can also be specified directly in IDL, rather than separately as prose.
                 This is done by following the <code>serializer</code> keyword with
                 a <span class="char">U+003D EQUALS SIGN ("=")</span> character and
-                a <dfn data-export="" id="dfn-serialization-pattern">serialization pattern</dfn>,
+                a <dfn id="dfn-serialization-pattern" export="">serialization pattern</dfn>,
                 which can take one of the following six forms:
               
               <ul>
@@ -2323,8 +2323,8 @@ serializer = { inherit, attribute };</pre>
                   can influence the serialization that <code>JSON.stringify</code> can produce.
                 
 
-              The list of <dfn data-export="" data-lt="serializable type" id="dfn-serializable-type">serializable types</dfn> and how they are
-              <dfn data-export="" data-lt="converted to a serialized value|converted to serialized values" id="dfn-convert-to-serialized-value">converted to serialized values</dfn> is as follows:
+              The list of <dfn id="dfn-serializable-type" export="" lt="serializable type">serializable types</dfn> and how they are
+              <dfn id="dfn-convert-to-serialized-value" export="" lt="converted to a serialized value|converted to serialized values">converted to serialized values</dfn> is as follows:
               <dl class="switch">
                 <dt><a class="idltype" href="#idl-long-long">long long</a></dt>
                 <dd>converted by choosing the closest equivalent <a class="idltype" href="#idl-double">double</a> value
@@ -2495,13 +2495,13 @@ JSON.stringify(txn);</pre>
               
                 An <a class="dfnref" href="#dfn-interface">interface</a> that defines
                 an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>
-                is said to <dfn data-export="" id="dfn-support-indexed-properties">support indexed properties</dfn>.
+                is said to <dfn id="dfn-support-indexed-properties" export="">support indexed properties</dfn>.
               
               
                 If an interface <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a>,
                 then the interface definition <span class="rfc2119">MUST</span> be accompanied by
                 a description of what indices the object can be indexed with at
-                any given time. These indices are called the <dfn data-export="" id="dfn-supported-property-indices">supported property indices</dfn>.
+                any given time. These indices are called the <dfn id="dfn-supported-property-indices" export="">supported property indices</dfn>.
               
               
                 Indexed property getters <span class="rfc2119">MUST</span>
@@ -2525,7 +2525,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                   is the value that would be returned by invoking the operation, passing
                   the index as its only argument.  If the operation used to declare the indexed property getter
                   did not have an identifier, then the interface definition must be accompanied
-                  by a description of how to <dfn data-export="" id="dfn-determine-the-value-of-an-indexed-property">determine the value of an indexed property</dfn>
+                  by a description of how to <dfn id="dfn-determine-the-value-of-an-indexed-property" export="">determine the value of an indexed property</dfn>
                   for a given index.
                 </li>
                 <li>
@@ -2535,8 +2535,8 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                   is the same as if the operation is invoked, passing
                   the index as the first argument and the value as the second argument.  If the operation used to declare the indexed property setter
                   did not have an identifier, then the interface definition must be accompanied
-                  by a description of how to <dfn data-export="" id="dfn-set-the-value-of-an-existing-indexed-property">set the value of an existing indexed property</dfn>
-                  and how to <dfn data-export="" id="dfn-set-the-value-of-a-new-indexed-property">set the value of a new indexed property</dfn>
+                  by a description of how to <dfn id="dfn-set-the-value-of-an-existing-indexed-property" export="">set the value of an existing indexed property</dfn>
+                  and how to <dfn id="dfn-set-the-value-of-a-new-indexed-property" export="">set the value of a new indexed property</dfn>
                   for a given property index and value.
                 </li>
               </ul>
@@ -2661,14 +2661,14 @@ delete map.cake;  // If a named property named "cake" exists, then the "cake"
               
                 An <a class="dfnref" href="#dfn-interface">interface</a> that defines
                 a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>
-                is said to <dfn data-export="" id="dfn-support-named-properties">support named properties</dfn>.
+                is said to <dfn id="dfn-support-named-properties" export="">support named properties</dfn>.
               
               
                 If an interface <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
                 then the interface definition <span class="rfc2119">MUST</span> be accompanied by
                 a description of the ordered set of names that can be used to index the object
                 at any given time.  These names are called the
-                <dfn data-export="" id="dfn-supported-property-names">supported property names</dfn>.
+                <dfn id="dfn-supported-property-names" export="">supported property names</dfn>.
               
               
                 Named property getters and deleters <span class="rfc2119">MUST</span>
@@ -2694,7 +2694,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                   is the value that would be returned by invoking the operation, passing
                   the name as its only argument.  If the operation used to declare the named property getter
                   did not have an identifier, then the interface definition must be accompanied
-                  by a description of how to <dfn data-export="" id="dfn-determine-the-value-of-a-named-property">determine the value of a named property</dfn>
+                  by a description of how to <dfn id="dfn-determine-the-value-of-a-named-property" export="">determine the value of a named property</dfn>
                   for a given property name.
                 </li>
                 <li>
@@ -2704,8 +2704,8 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                   is the same as if the operation is invoked, passing
                   the name as the first argument and the value as the second argument.  If the operation used to declare the named property setter
                   did not have an identifier, then the interface definition must be accompanied
-                  by a description of how to <dfn data-export="" id="dfn-set-the-value-of-an-existing-named-property">set the value of an existing named property</dfn>
-                  and how to <dfn data-export="" id="dfn-set-the-value-of-a-new-named-property">set the value of a new named property</dfn>
+                  by a description of how to <dfn id="dfn-set-the-value-of-an-existing-named-property" export="">set the value of an existing named property</dfn>
+                  and how to <dfn id="dfn-set-the-value-of-a-new-named-property" export="">set the value of a new named property</dfn>
                   for a given property name and value.
                 </li>
                 <li>
@@ -2715,7 +2715,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                   is the same as if the operation is invoked, passing
                   the name as the only argument.  If the operation used to declare the named property deleter
                   did not have an identifier, then the interface definition must be accompanied
-                  by a description of how to <dfn data-export="" id="dfn-delete-an-existing-named-property">delete an existing named property</dfn>
+                  by a description of how to <dfn id="dfn-delete-an-existing-named-property" export="">delete an existing named property</dfn>
                   for a given property name.
                 </li>
               </ul>
@@ -2736,8 +2736,8 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
             <h4 id="idl-static-attributes-and-operations">Static attributes and operations</h4>
 
             
-              <dfn data-export="" id="dfn-static-attribute">Static attributes</dfn> and
-              <dfn data-export="" id="dfn-static-operation">static operations</dfn> are ones that
+              <dfn id="dfn-static-attribute" export="">Static attributes</dfn> and
+              <dfn id="dfn-static-operation" export="">static operations</dfn> are ones that
               are not associated with a particular instance of the
               <a class="dfnref" href="#dfn-interface">interface</a>
               on which it is declared, and is instead associated with the interface
@@ -2807,7 +2807,7 @@ window.alert(Circle.triangulationCount);</pre>
               has an <a class="dfnref" href="#dfn-identifier">identifier</a>
               that is the same as the identifier of another operation on that
               interface of the same kind (regular or static), then the operation is said to be
-              <dfn data-export="" id="dfn-overloaded">overloaded</dfn>.  When the identifier
+              <dfn id="dfn-overloaded" export="">overloaded</dfn>.  When the identifier
               of an overloaded operation is used to invoke one of the
               operations on an object that implements the interface, the
               number and types of the arguments passed to the operation
@@ -2850,7 +2850,7 @@ partial interface A {
                 so there is no need to also disallow overloading for constructors.
             </div>
             
-              An <dfn data-export="" id="dfn-effective-overload-set">effective overload set</dfn>
+              An <dfn id="dfn-effective-overload-set" export="">effective overload set</dfn>
               represents the allowable invocations for a particular
               <a class="dfnref" href="#dfn-operation">operation</a>,
               constructor (specified with <a class="xattr" href="#Constructor">[Constructor]</a>
@@ -2912,7 +2912,7 @@ partial interface A {
               if it is for constructors or named constructors, then <var>callable</var> is an
               extended attribute; and if it is for callback functions, then <var>callable</var>
               is the callback function itself.  In all cases, <var>type list</var> is a list
-              of IDL types, and <var>optionality list</var> is a list of three possible <dfn data-export="" id="dfn-optionality-value">optionality values</dfn> –
+              of IDL types, and <var>optionality list</var> is a list of three possible <dfn id="dfn-optionality-value" export="">optionality values</dfn> –
               “required”, “optional” or “variadic” – indicating whether
               the argument at a given index was declared as being <a class="dfnref" href="#dfn-optional-argument">optional</a>
               or corresponds to a <a class="dfnref" href="#dfn-variadic">variadic</a> argument.
@@ -3096,7 +3096,7 @@ partial interface A {
             </ul>
             -->
             
-              Two types are <dfn data-export="" id="dfn-distinguishable">distinguishable</dfn> if
+              Two types are <dfn id="dfn-distinguishable" export="">distinguishable</dfn> if
               at most one of the two <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
               or is a <a href="#idl-dictionary">dictionary type</a>,
               and at least one of the following three conditions is true:
@@ -3339,7 +3339,7 @@ partial interface A {
               <li>there is only one such index <var>i</var>-->.<!--</li>
             </ol>
             <p>-->
-              The lowest such index is termed the <dfn data-export="" id="dfn-distinguishing-argument-index">distinguishing argument index</dfn>
+              The lowest such index is termed the <dfn id="dfn-distinguishing-argument-index" export="">distinguishing argument index</dfn>
               for the entries of the effective overload set with the given type list length.
             
             <div class="example">
@@ -3441,7 +3441,7 @@ interface C {
 
             
               An <a class="dfnref" href="#dfn-interface">interface</a> can be declared to be
-              <dfn data-export="" id="dfn-iterable">iterable</dfn> by using an <dfn data-export="" id="dfn-iterable-declaration">iterable declaration</dfn>
+              <dfn id="dfn-iterable" export="">iterable</dfn> by using an <dfn id="dfn-iterable-declaration" export="">iterable declaration</dfn>
               (matching <a class="sym" href="#prod-Iterable">Iterable</a>) in the body of the interface.
             
             <pre class="syntax">iterable&lt;<i>value-type</i>&gt;;
@@ -3455,10 +3455,10 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               properties on its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.
             
               If a single type parameter is given, then the interface has a
-              <dfn data-export="" id="dfn-value-iterator">value iterator</dfn> and provides
+              <dfn id="dfn-value-iterator" export="">value iterator</dfn> and provides
               values of the specified type.
               If two type parameters are given, then the interface has a
-              <dfn data-export="" id="dfn-pair-iterator">pair iterator</dfn> and provides
+              <dfn id="dfn-pair-iterator" export="">pair iterator</dfn> and provides
               value pairs, where the first value is a key and the second is the
               value associated with the key.
             
@@ -3481,7 +3481,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               Prose accompanying an interface with a
               <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>
               <span class="rfc2119">MUST</span> define what the list of
-              <dfn data-export="" id="dfn-value-pairs-to-iterate-over">value pairs to iterate over</dfn>
+              <dfn id="dfn-value-pairs-to-iterate-over" export="">value pairs to iterate over</dfn>
               is.
             
             <div class="note">
@@ -3616,7 +3616,7 @@ for (let session of sm) {
 
             
               An <a class="dfnref" href="#dfn-interface">interface</a> can be declared to be
-              <dfn data-export="" id="dfn-maplike">maplike</dfn> by using a <dfn data-export="" id="dfn-maplike-declaration">maplike declaration</dfn>
+              <dfn id="dfn-maplike" export="">maplike</dfn> by using a <dfn id="dfn-maplike-declaration" export="">maplike declaration</dfn>
               (matching <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> or
               <span class="sym">"readonly"</span> <a class="sym" href="#prod-MaplikeRest">MaplikeRest</a>) in the body of the interface.
             
@@ -3624,7 +3624,7 @@ for (let session of sm) {
 maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             
               Objects implementing an interface that is declared to be maplike
-              represent an ordered list of key–value pairs known as its <dfn data-export="" id="dfn-map-entries">map entries</dfn>.
+              represent an ordered list of key–value pairs known as its <dfn id="dfn-map-entries" export="">map entries</dfn>.
               The types used for the keys and values are given in the angle
               brackets of the maplike declaration.  Keys are required to be unique.
             
@@ -3695,7 +3695,7 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
 
             
               An <a class="dfnref" href="#dfn-interface">interface</a> can be declared to be
-              <dfn data-export="" id="dfn-setlike">setlike</dfn> by using a <dfn data-export="" id="dfn-setlike-declaration">setlike declaration</dfn>
+              <dfn id="dfn-setlike" export="">setlike</dfn> by using a <dfn id="dfn-setlike-declaration" export="">setlike declaration</dfn>
               (matching <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a> or
               <span class="sym">"readonly"</span> <a class="sym" href="#prod-SetlikeRest">SetlikeRest</a>) in the body of the interface.
             
@@ -3703,7 +3703,7 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
 setlike&lt;<i>type</i>&gt;;</pre>
             
               Objects implementing an interface that is declared to be setlike
-              represent an ordered list of values known as its <dfn data-export="" id="dfn-set-entries">set entries</dfn>.
+              represent an ordered list of values known as its <dfn id="dfn-set-entries" export="">set entries</dfn>.
               The type of the values is given in the angle
               brackets of the setlike declaration.  Values are required to be unique.
             
@@ -3773,10 +3773,10 @@ setlike&lt;<i>type</i>&gt;;</pre>
           <h3 id="idl-dictionaries">Dictionaries</h3>
 
           
-            A <dfn data-export="" id="dfn-dictionary">dictionary</dfn> is a definition (matching
+            A <dfn id="dfn-dictionary" export="">dictionary</dfn> is a definition (matching
             <a class="sym" href="#prod-Dictionary">Dictionary</a>)
             used to define an associative array data type with a fixed, ordered set of key–value pairs,
-            termed <dfn data-export="" id="dfn-dictionary-member">dictionary members</dfn>,
+            termed <dfn id="dfn-dictionary-member" export="">dictionary members</dfn>,
             where keys are strings and values are of a particular type specified in the definition.
           
           <pre class="syntax">dictionary <i>identifier</i> {
@@ -3788,7 +3788,7 @@ setlike&lt;<i>type</i>&gt;;</pre>
             Similarly, any dictionary returned from a platform object will be a copy and modifications made to it will not be visible to the platform object.
           
           
-            A dictionary can be defined to <dfn data-export="" data-dfn-for="dictionary" id="dfn-inherit-dictionary">inherit</dfn> from another dictionary.
+            A dictionary can be defined to <dfn id="dfn-inherit-dictionary" for="dictionary" export="">inherit</dfn> from another dictionary.
             If the identifier of the dictionary is followed by a colon and a <a class="dfnref" href="#dfn-identifier">identifier</a>,
             then that identifier identifies the inherited dictionary.  The identifier
             <span class="rfc2119">MUST</span> identify a dictionary.
@@ -3807,7 +3807,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
   <i>dictionary-members…</i>
 };</pre>
           
-            The <dfn data-export="" id="dfn-inherited-dictionaries">inherited dictionaries</dfn> of
+            The <dfn id="dfn-inherited-dictionaries" export="">inherited dictionaries</dfn> of
             a given dictionary <var>D</var> is the set of all dictionaries that <var>D</var>
             inherits from, directly or indirectly.  If <var>D</var> does not <a class="dfnref" href="#dfn-inherit-dictionary">inherit</a>
             from another dictionary, then the set is empty.  Otherwise, the set
@@ -3821,8 +3821,8 @@ dictionary <i>Derived</i> : <em>Base</em> {
             On a given dictionary value, the presence of each dictionary member
             is optional, unless that member is specified as required.
             When specified in the dictionary value, a dictionary member is said to be
-            <dfn data-export="" id="dfn-present">present</dfn>, otherwise it is <a class="dfnref" href="#dfn-present">not present</a>.
-            Dictionary members can also optionally have a <dfn data-export="" data-dfn-for="dictionary member" id="dfn-dictionary-member-default-value">default value</dfn>, which is
+            <dfn id="dfn-present" export="">present</dfn>, otherwise it is <a class="dfnref" href="#dfn-present">not present</a>.
+            Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" for="dictionary member" export="">default value</dfn>, which is
             the value to use for the dictionary member when passing a value to a
             <a class="dfnref" href="#dfn-platform-object">platform object</a> that does
             not have a specified value.  Dictionary members with default values are
@@ -3886,7 +3886,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
           
             If the type of the dictionary member is preceded by the
             <code>required</code> keyword, the member is considered a
-            <dfn data-export="" id="required-dictionary-member">required dictionary member</dfn>
+            <dfn id="required-dictionary-member" export="">required dictionary member</dfn>
             and must be present on the dictionary.  A
             <a class="dfnref" href="#required-dictionary-member">required dictionary
             member</a> <span class="rfc2119">MUST NOT</span> have a default value.
@@ -3914,7 +3914,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
           </ul>
           
             As with interfaces, the IDL for dictionaries can be split into multiple parts
-            by using <dfn data-export="" id="dfn-partial-dictionary">partial dictionary</dfn> definitions
+            by using <dfn id="dfn-partial-dictionary" export="">partial dictionary</dfn> definitions
             (matching <span class="sym">"partial"</span> <a class="sym" href="#prod-Dictionary">Dictionary</a>).
             The <a class="dfnref" href="#dfn-identifier">identifier</a> of a partial
             dictionary definition <span class="rfc2119">MUST</span> be the same as the
@@ -4066,30 +4066,30 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
           <h3 id="idl-exceptions">Exceptions</h3>
 
           
-            An <dfn data-export="" id="dfn-exception">exception</dfn> is a type of object that
+            An <dfn id="dfn-exception" export="">exception</dfn> is a type of object that
             represents an error and which can be thrown or treated as a first
             class value by implementations.  Web IDL does not allow exceptions
             to be defined, but instead has a number of pre-defined exceptions
             that specifications can reference and throw in their definition of
             operations, attributes, and so on.  Exceptions have an
-            <dfn data-export="" data-dfn-for="exception" id="dfn-exception-error-name">error name</dfn>,
+            <dfn id="dfn-exception-error-name" for="exception" export="">error name</dfn>,
             a <a class="idltype" href="#idl-DOMString">DOMString</a>,
             which is the type of error the exception represents, and a
-            <dfn data-export="" data-dfn-for="exception" id="dfn-exception-message">message</dfn>, which is an optional,
+            <dfn id="dfn-exception-message" for="exception" export="">message</dfn>, which is an optional,
             user agent-defined value that provides human readable details of the error.
           
           
             There are two kinds of exceptions available to be thrown from specifications.
-            The first is a <dfn data-export="" id="dfn-simple-exception">simple exception</dfn>, which
+            The first is a <dfn id="dfn-simple-exception" export="">simple exception</dfn>, which
             is identified by one of the following names:
           
           <ul>
-            <li><a class="idltype" href="#idl-Error"><dfn data-export="" data-dfn-type="interface">Error</dfn></a></li>
-            <li><span class="idltype"><dfn data-export="" data-dfn-type="interface">EvalError</dfn></span></li>
-            <li><span class="idltype"><dfn data-export="" data-dfn-type="interface">RangeError</dfn></span></li>
-            <li><span class="idltype"><dfn data-export="" data-dfn-type="interface">ReferenceError</dfn></span></li>
-            <li><span class="idltype"><dfn data-export="" data-dfn-type="interface">TypeError</dfn></span></li>
-            <li><span class="idltype"><dfn data-export="" data-dfn-type="interface">URIError</dfn></span></li>
+            <li><a class="idltype" href="#idl-Error"><dfn interface="" export="">Error</dfn></a></li>
+            <li><span class="idltype"><dfn interface="" export="">EvalError</dfn></span></li>
+            <li><span class="idltype"><dfn interface="" export="">RangeError</dfn></span></li>
+            <li><span class="idltype"><dfn interface="" export="">ReferenceError</dfn></span></li>
+            <li><span class="idltype"><dfn interface="" export="">TypeError</dfn></span></li>
+            <li><span class="idltype"><dfn interface="" export="">URIError</dfn></span></li>
           </ul>
           
             These correspond to all of the <a class="external" href="https://tc39.github.io/ecma262/#sec-error-objects">ECMAScript error objects</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 19.5) (apart from
@@ -4101,7 +4101,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             ECMAScript specification.
           
           
-            The second kind of exception is a <dfn data-export="" data-dfn-type="interface" id="dfn-DOMException">DOMException</dfn>,
+            The second kind of exception is a <dfn id="dfn-DOMException" interface="" export="">DOMException</dfn>,
             which is an exception that encapsulates a name and an optional integer code,
             for compatibility with historically defined exceptions in the DOM.
           
@@ -4125,9 +4125,9 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             to be of type <a class="idltype" href="#idl-Error">Error</a>.
           
           
-            Exceptions can be <dfn data-export="" data-dfn-for="exception" id="dfn-create-exception">created</dfn> by providing its
+            Exceptions can be <dfn id="dfn-create-exception" for="exception" export="">created</dfn> by providing its
             <a class="dfnref" href="#dfn-exception-error-name">error name</a>.
-            Exceptions can also be <dfn data-export="" data-dfn-for="exception" data-lt="throw|thrown" id="dfn-throw">thrown</dfn>, by providing the
+            Exceptions can also be <dfn id="dfn-throw" for="exception" export="" lt="throw|thrown">thrown</dfn>, by providing the
             same details required to <a class="dfnref" href="#dfn-create-exception">create</a> one.
           
           
@@ -4168,7 +4168,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <h4 id="idl-DOMException-error-names">Error names</h4>
 
             
-              The <dfn data-export="" id="dfn-error-names-table">error names table</dfn> below lists all the allowed error names
+              The <dfn id="dfn-error-names-table" export="">error names table</dfn> below lists all the allowed error names
               for <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>, a description,
               and legacy code values.
             
@@ -4181,175 +4181,175 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               </thead>
               <tbody>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="indexsizeerror"><code>IndexSizeError</code></dfn>"</td>
+                  <td>"<dfn id="indexsizeerror" exception="" export=""><code>IndexSizeError</code></dfn>"</td>
                   <td>The index is not in the allowed range.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-index_size_err" title="dom-DOMException-INDEX_SIZE_ERR"><code>INDEX_SIZE_ERR</code></dfn> (1)</td>
+                  <td><dfn id="dom-domexception-index_size_err" for="DOMException" const="" export=""><code>INDEX_SIZE_ERR</code></dfn> (1)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="hierarchyrequesterror"><code>HierarchyRequestError</code></dfn>"</td>
+                  <td>"<dfn id="hierarchyrequesterror" exception="" export=""><code>HierarchyRequestError</code></dfn>"</td>
                   <td>The operation would yield an incorrect <a href="https://dom.spec.whatwg.org/#concept-node-tree" title="concept-node-tree">node tree</a>.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-hierarchy_request_err" title="dom-DOMException-HIERARCHY_REQUEST_ERR"><code>HIERARCHY_REQUEST_ERR</code></dfn> (3)</td>
+                  <td><dfn id="dom-domexception-hierarchy_request_err" for="DOMException" const="" export=""><code>HIERARCHY_REQUEST_ERR</code></dfn> (3)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="wrongdocumenterror"><code>WrongDocumentError</code></dfn>"</td>
+                  <td>"<dfn id="wrongdocumenterror" exception="" export=""><code>WrongDocumentError</code></dfn>"</td>
                   <td>The object is in the wrong <a href="https://dom.spec.whatwg.org/#concept-document" title="concept-document">document</a>.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-wrong_document_err" title="dom-DOMException-WRONG_DOCUMENT_ERR"><code>WRONG_DOCUMENT_ERR</code></dfn> (4)</td>
+                  <td><dfn id="dom-domexception-wrong_document_err" for="DOMException" const="" export=""><code>WRONG_DOCUMENT_ERR</code></dfn> (4)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="invalidcharactererror"><code>InvalidCharacterError</code></dfn>"</td>
+                  <td>"<dfn id="invalidcharactererror" exception="" export=""><code>InvalidCharacterError</code></dfn>"</td>
                   <td>The string contains invalid characters.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-invalid_character_err" title="dom-DOMException-INVALID_CHARACTER_ERR"><code>INVALID_CHARACTER_ERR</code></dfn> (5)</td>
+                  <td><dfn id="dom-domexception-invalid_character_err" for="DOMException" const="" export=""><code>INVALID_CHARACTER_ERR</code></dfn> (5)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="nomodificationallowederror"><code>NoModificationAllowedError</code></dfn>"</td>
+                  <td>"<dfn id="nomodificationallowederror" exception="" export=""><code>NoModificationAllowedError</code></dfn>"</td>
                   <td>The object can not be modified.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-no_modification_allowed_err" title="dom-DOMException-NO_MODIFICATION_ALLOWED_ERR"><code>NO_MODIFICATION_ALLOWED_ERR</code></dfn> (7)</td>
+                  <td><dfn id="dom-domexception-no_modification_allowed_err" for="DOMException" const="" export=""><code>NO_MODIFICATION_ALLOWED_ERR</code></dfn> (7)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="notfounderror"><code>NotFoundError</code></dfn>"</td>
+                  <td>"<dfn id="notfounderror" exception="" export=""><code>NotFoundError</code></dfn>"</td>
                   <td>The object can not be found here.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-not_found_err" title="dom-DOMException-NOT_FOUND_ERR"><code>NOT_FOUND_ERR</code></dfn> (8)</td>
+                  <td><dfn id="dom-domexception-not_found_err" for="DOMException" const="" export=""><code>NOT_FOUND_ERR</code></dfn> (8)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="notsupportederror"><code>NotSupportedError</code></dfn>"</td>
+                  <td>"<dfn id="notsupportederror" exception="" export=""><code>NotSupportedError</code></dfn>"</td>
                   <td>The operation is not supported.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-not_supported_err" title="dom-DOMException-NOT_SUPPORTED_ERR"><code>NOT_SUPPORTED_ERR</code></dfn> (9)</td>
+                  <td><dfn id="dom-domexception-not_supported_err" for="DOMException" const="" export=""><code>NOT_SUPPORTED_ERR</code></dfn> (9)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="inuseattributeerror"><code>InUseAttributeError</code></dfn>"</td>
+                  <td>"<dfn id="inuseattributeerror" exception="" export=""><code>InUseAttributeError</code></dfn>"</td>
                   <td>The attribute is in use.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-inuse_attribute_err" title="dom-DOMException-INUSE_ATTRIBUTE_ERR"><code>INUSE_ATTRIBUTE_ERR</code></dfn> (10)</td>
+                  <td><dfn id="dom-domexception-inuse_attribute_err" for="DOMException" const="" export=""><code>INUSE_ATTRIBUTE_ERR</code></dfn> (10)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="invalidstateerror"><code>InvalidStateError</code></dfn>"</td>
+                  <td>"<dfn id="invalidstateerror" exception="" export=""><code>InvalidStateError</code></dfn>"</td>
                   <td>The object is in an invalid state.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-invalid_state_err" title="dom-DOMException-INVALID_STATE_ERR"><code>INVALID_STATE_ERR</code></dfn> (11)</td>
+                  <td><dfn id="dom-domexception-invalid_state_err" for="DOMException" const="" export=""><code>INVALID_STATE_ERR</code></dfn> (11)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="syntaxerror"><code>SyntaxError</code></dfn>"</td>
+                  <td>"<dfn id="syntaxerror" exception="" export=""><code>SyntaxError</code></dfn>"</td>
                   <td>The string did not match the expected pattern.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-syntax_err" title="dom-DOMException-SYNTAX_ERR"><code>SYNTAX_ERR</code></dfn> (12)</td>
+                  <td><dfn id="dom-domexception-syntax_err" for="DOMException" const="" export=""><code>SYNTAX_ERR</code></dfn> (12)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="invalidmodificationerror"><code>InvalidModificationError</code></dfn>"</td>
+                  <td>"<dfn id="invalidmodificationerror" exception="" export=""><code>InvalidModificationError</code></dfn>"</td>
                   <td>The object can not be modified in this way.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-invalid_modification_err" title="dom-DOMException-INVALID_MODIFICATION_ERR"><code>INVALID_MODIFICATION_ERR</code></dfn> (13)</td>
+                  <td><dfn id="dom-domexception-invalid_modification_err" for="DOMException" const="" export=""><code>INVALID_MODIFICATION_ERR</code></dfn> (13)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="namespaceerror"><code>NamespaceError</code></dfn>"</td>
+                  <td>"<dfn id="namespaceerror" exception="" export=""><code>NamespaceError</code></dfn>"</td>
                   <td>The operation is not allowed by <cite>Namespaces in XML</cite>. <a href="#ref-XMLNS">[XMLNS]</a></td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-namespace_err" title="dom-DOMException-NAMESPACE_ERR"><code>NAMESPACE_ERR</code></dfn> (14)</td>
+                  <td><dfn id="dom-domexception-namespace_err" for="DOMException" const="" export=""><code>NAMESPACE_ERR</code></dfn> (14)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="invalidaccesserror"><code>InvalidAccessError</code></dfn>"</td>
+                  <td>"<dfn id="invalidaccesserror" exception="" export=""><code>InvalidAccessError</code></dfn>"</td>
                   <td>The object does not support the operation or argument.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-invalid_access_err" title="dom-DOMException-INVALID_ACCESS_ERR"><code>INVALID_ACCESS_ERR</code></dfn> (15)</td>
+                  <td><dfn id="dom-domexception-invalid_access_err" for="DOMException" const="" export=""><code>INVALID_ACCESS_ERR</code></dfn> (15)</td>
                 </tr>
                 <tr>
                   <!-- XHR -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="securityerror"><code>SecurityError</code></dfn>"</td>
+                  <td>"<dfn id="securityerror" exception="" export=""><code>SecurityError</code></dfn>"</td>
                   <td>The operation is insecure.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-security_err" title="dom-DOMException-SECURITY_ERR"><code>SECURITY_ERR</code></dfn> (18)</td>
+                  <td><dfn id="dom-domexception-security_err" for="DOMException" const="" export=""><code>SECURITY_ERR</code></dfn> (18)</td>
                 </tr>
                 <tr>
                   <!-- XHR -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="networkerror"><code>NetworkError</code></dfn>"</td>
+                  <td>"<dfn id="networkerror" exception="" export=""><code>NetworkError</code></dfn>"</td>
                   <td>A network error occurred.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-network_err" title="dom-DOMException-NETWORK_ERR"><code>NETWORK_ERR</code></dfn> (19)</td>
+                  <td><dfn id="dom-domexception-network_err" for="DOMException" const="" export=""><code>NETWORK_ERR</code></dfn> (19)</td>
                 </tr>
                 <tr>
                   <!-- XHR -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="aborterror"><code>AbortError</code></dfn>"</td>
+                  <td>"<dfn id="aborterror" exception="" export=""><code>AbortError</code></dfn>"</td>
                   <td>The operation was aborted.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-abort_err" title="dom-DOMException-ABORT_ERR"><code>ABORT_ERR</code></dfn> (20)</td>
+                  <td><dfn id="dom-domexception-abort_err" for="DOMException" const="" export=""><code>ABORT_ERR</code></dfn> (20)</td>
                 </tr>
                 <tr>
                   <!-- Workers -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="urlmismatcherror"><code>URLMismatchError</code></dfn>"</td>
+                  <td>"<dfn id="urlmismatcherror" exception="" export=""><code>URLMismatchError</code></dfn>"</td>
                   <td>The given URL does not match another URL.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-url_mismatch_err" title="dom-DOMException-URL_MISMATCH_ERR"><code>URL_MISMATCH_ERR</code></dfn> (21)</td>
+                  <td><dfn id="dom-domexception-url_mismatch_err" for="DOMException" const="" export=""><code>URL_MISMATCH_ERR</code></dfn> (21)</td>
                 </tr>
                 <tr>
                   <!-- HTML -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="quotaexceedederror"><code>QuotaExceededError</code></dfn>"</td>
+                  <td>"<dfn id="quotaexceedederror" exception="" export=""><code>QuotaExceededError</code></dfn>"</td>
                   <td>The quota has been exceeded.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-quota_exceeded_err" title="dom-DOMException-QUOTA_EXCEEDED_ERR"><code>QUOTA_EXCEEDED_ERR</code></dfn> (22)</td>
+                  <td><dfn id="dom-domexception-quota_exceeded_err" for="DOMException" const="" export=""><code>QUOTA_EXCEEDED_ERR</code></dfn> (22)</td>
                 </tr>
                 <tr>
                   <!-- XHR -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="timeouterror"><code>TimeoutError</code></dfn>"</td>
+                  <td>"<dfn id="timeouterror" exception="" export=""><code>TimeoutError</code></dfn>"</td>
                   <td>The operation timed out.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-timeout_err" title="dom-DOMException-TIMEOUT_ERR"><code>TIMEOUT_ERR</code></dfn> (23)</td>
+                  <td><dfn id="dom-domexception-timeout_err" for="DOMException" const="" export=""><code>TIMEOUT_ERR</code></dfn> (23)</td>
                 </tr>
                 <tr>
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="invalidnodetypeerror"><code>InvalidNodeTypeError</code></dfn>"</td>
+                  <td>"<dfn id="invalidnodetypeerror" exception="" export=""><code>InvalidNodeTypeError</code></dfn>"</td>
                   <td>The supplied node is incorrect or has an incorrect ancestor for this operation.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-invalid_node_type_err" title="dom-DOMException-INVALID_NODE_TYPE_ERR"><code>INVALID_NODE_TYPE_ERR</code></dfn> (24)</td>
+                  <td><dfn id="dom-domexception-invalid_node_type_err" for="DOMException" const="" export=""><code>INVALID_NODE_TYPE_ERR</code></dfn> (24)</td>
                 </tr>
                 <tr>
                   <!-- HTML -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="datacloneerror"><code>DataCloneError</code></dfn>"</td>
+                  <td>"<dfn id="datacloneerror" exception="" export=""><code>DataCloneError</code></dfn>"</td>
                   <td>The object can not be cloned.</td>
-                  <td><dfn data-export="" data-dfn-type="const" data-dfn-for="DOMException" id="dom-domexception-data_clone_err" title="dom-DOMException-DATA_CLONE_ERR"><code>DATA_CLONE_ERR</code></dfn> (25)</td>
+                  <td><dfn id="dom-domexception-data_clone_err" for="DOMException" const="" export=""><code>DATA_CLONE_ERR</code></dfn> (25)</td>
                 </tr>
                 <tr>
                   <!-- Encoding -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="encodingerror"><code>EncodingError</code></dfn>"</td>
+                  <td>"<dfn id="encodingerror" exception="" export=""><code>EncodingError</code></dfn>"</td>
                   <td>The encoding operation (either encoded or decoding) failed.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- File API -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="notreadableerror"><code>NotReadableError</code></dfn>"</td>
+                  <td>"<dfn id="notreadableerror" exception="" export=""><code>NotReadableError</code></dfn>"</td>
                   <td>The I/O read operation failed.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Indexed DB / Web Crypto -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="unknownerror"><code>UnknownError</code></dfn>"</td>
+                  <td>"<dfn id="unknownerror" exception="" export=""><code>UnknownError</code></dfn>"</td>
                   <td>The operation failed for an unknown transient reason (e.g. out of memory).</td>
                   <!-- The operation failed for reasons unrelated to the database itself and not covered by any other errors. -->
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Indexed DB -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="constrainterror"><code>ConstraintError</code></dfn>"</td>
+                  <td>"<dfn id="constrainterror" exception="" export=""><code>ConstraintError</code></dfn>"</td>
                   <td>A mutation operation in a transaction failed because a constraint was not satisfied.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Indexed DB / Web Crypto -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="dataerror"><code>DataError</code></dfn>"</td>
+                  <td>"<dfn id="dataerror" exception="" export=""><code>DataError</code></dfn>"</td>
                   <td>Provided data is inadequate.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Indexed DB -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="transactioninactiveerror"><code>TransactionInactiveError</code></dfn>"</td>
+                  <td>"<dfn id="transactioninactiveerror" exception="" export=""><code>TransactionInactiveError</code></dfn>"</td>
                   <td>A request was placed against a transaction which is currently not active, or which is finished.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Indexed DB -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="readonlyerror"><code>ReadOnlyError</code></dfn>"</td>
+                  <td>"<dfn id="readonlyerror" exception="" export=""><code>ReadOnlyError</code></dfn>"</td>
                   <td>The mutating operation was attempted in a "readonly" transaction.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Indexed DB -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="versionerror"><code>VersionError</code></dfn>"</td>
+                  <td>"<dfn id="versionerror" exception="" export=""><code>VersionError</code></dfn>"</td>
                   <td>An attempt was made to open a database using a lower version than the existing version.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- Web Crypto -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="operationerror"><code>OperationError</code></dfn>"</td>
+                  <td>"<dfn id="operationerror" exception="" export=""><code>OperationError</code></dfn>"</td>
                   <td>The operation failed for an operation-specific reason.</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <!-- HTML -->
-                  <td>"<dfn data-export="" data-dfn-type="exception" id="notallowederror"><code>NotAllowedError</code></dfn>"</td>
+                  <td>"<dfn id="notallowederror" exception="" export=""><code>NotAllowedError</code></dfn>"</td>
                   <td>The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.</td>
                   <td>—</td>
                 </tr>
@@ -4362,7 +4362,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
           <h3 id="idl-enums">Enumerations</h3>
 
           
-            An <dfn data-export="" id="dfn-enumeration">enumeration</dfn> is a definition (matching
+            An <dfn id="dfn-enumeration" export="">enumeration</dfn> is a definition (matching
             <a class="sym" href="#prod-Enum">Enum</a>) used to declare a type
             whose valid values are a set of predefined strings.  Enumerations
             can be used to restrict the possible
@@ -4372,7 +4372,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
           
           <pre class="syntax">enum <i>identifier</i> { <i>enumeration-values…</i> };</pre>
           
-            The <dfn data-export="" data-lt="enumeration value" id="dfn-enumeration-value">enumeration values</dfn> are specified
+            The <dfn id="dfn-enumeration-value" export="" lt="enumeration value">enumeration values</dfn> are specified
             as a comma-separated list of <a class="sym" href="#prod-string">string</a> literals.
             The list of <a class="dfnref" href="#dfn-enumeration-value">enumeration values</a>
             <span class="rfc2119">MUST NOT</span> include duplicates.
@@ -4449,7 +4449,7 @@ meal.type == "noodles";              // Evaluates to true.</pre>
             platform object provided functions.  Should we rename “callback functions” to
             just “functions” to make it clear that they can be used for both purposes?
           
-            A <dfn data-export="" id="dfn-callback-function">callback function</dfn> is a definition (matching
+            A <dfn id="dfn-callback-function" export="">callback function</dfn> is a definition (matching
             <span class="sym">"callback"</span> <a class="sym" href="#prod-CallbackRest">CallbackRest</a>) used to declare a function type.
           
           <pre class="syntax">callback <i>identifier</i> = <i>return-type</i> (<i>arguments…</i>);</pre>
@@ -4501,7 +4501,7 @@ ops.performOperation(function(status) {
           <h3 id="idl-typedefs">Typedefs</h3>
 
           
-            A <dfn data-export="" id="dfn-typedef">typedef</dfn> is a definition (matching
+            A <dfn id="dfn-typedef" export="">typedef</dfn> is a definition (matching
             <a class="sym" href="#prod-Typedef">Typedef</a>)
             used to declare a new name for a type.  This new name is not exposed
             by language bindings; it is purely used as a shorthand for referencing
@@ -4551,7 +4551,7 @@ interface Widget {
           <h3 id="idl-implements-statements">Implements statements</h3>
 
           
-            An <dfn data-export="" id="dfn-implements-statement">implements statement</dfn> is a definition
+            An <dfn id="dfn-implements-statement" export="">implements statement</dfn> is a definition
             (matching <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a>)
             used to declare that all objects implementing an interface <var>A</var>
             (identified by the first <a class="dfnref" href="#dfn-identifier">identifier</a>)
@@ -4585,7 +4585,7 @@ interface Widget {
           
           
             Interfaces that a given object implements are partitioned into those that are considered
-            <dfn data-export="" data-lt="supplemental interface" id="dfn-supplemental-interface">supplemental interfaces</dfn> and those that are not.
+            <dfn id="dfn-supplemental-interface" export="" lt="supplemental interface">supplemental interfaces</dfn> and those that are not.
             An interface <var>A</var> is considered to be a
             <a class="dfnref" href="#dfn-supplemental-interface">supplemental interface</a> of an object
             <var>O</var> if:
@@ -4629,7 +4629,7 @@ Gizmo implements SomeFunctionality;
 Gizmo implements MoreFunctionality;</pre>
           </div>
           
-            The <dfn data-export="" id="dfn-consequential-interfaces">consequential interfaces</dfn> of an interface
+            The <dfn id="dfn-consequential-interfaces" export="">consequential interfaces</dfn> of an interface
             <var>A</var> are:
           
           <ul>
@@ -4691,8 +4691,8 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
 
           
             In a given implementation of a set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>,
-            an object can be described as being a <dfn data-export="" id="dfn-platform-object">platform object</dfn>, a
-            <dfn data-export="" id="dfn-user-object">user object</dfn>, or neither.  There are two kinds of
+            an object can be described as being a <dfn id="dfn-platform-object" export="">platform object</dfn>, a
+            <dfn id="dfn-user-object" export="">user object</dfn>, or neither.  There are two kinds of
             object that are considered to be platform objects:
           
           <ul>
@@ -4813,7 +4813,7 @@ interface Person {
             of that type are represented.
           
           
-            The following types are known as <dfn data-export="" id="dfn-integer-type">integer types</dfn>:
+            The following types are known as <dfn id="dfn-integer-type" export="">integer types</dfn>:
             <a class="idltype" href="#idl-byte">byte</a>,
             <a class="idltype" href="#idl-octet">octet</a>,
             <a class="idltype" href="#idl-short">short</a>,
@@ -4824,7 +4824,7 @@ interface Person {
             <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>.
           
           
-            The following types are known as <dfn data-export="" id="dfn-numeric-type">numeric types</dfn>:
+            The following types are known as <dfn id="dfn-numeric-type" export="">numeric types</dfn>:
             the <a class="dfnref" href="#dfn-integer-type">integer types</a>,
             <a class="idltype" href="#idl-float">float</a>,
             <a class="idltype" href="#idl-unrestricted-float">unresticted float</a>,
@@ -4832,20 +4832,20 @@ interface Person {
             <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>.
           
           
-            The <dfn data-export="" id="dfn-primitive-type">primitive types</dfn> are
+            The <dfn id="dfn-primitive-type" export="">primitive types</dfn> are
             <a class="idltype" href="#idl-boolean">boolean</a> and the <a class="dfnref" href="#dfn-numeric-type">numeric types</a>.
           
           
-            The <dfn data-export="" id="dfn-string-type">string types</dfn> are
+            The <dfn id="dfn-string-type" export="">string types</dfn> are
             <a class="idltype" href="#idl-DOMString">DOMString</a>, all <a href="#idl-enumeration">enumeration types</a>,
             <a class="idltype" href="#idl-ByteString">ByteString</a> and <a class="idltype" href="#idl-USVString">USVString</a>.
           
           
-            The <dfn data-export="" id="dfn-exception-type">exception types</dfn> are
+            The <dfn id="dfn-exception-type" export="">exception types</dfn> are
             <a class="idltype" href="#idl-Error">Error</a> and <a class="idltype" href="#idl-DOMException">DOMException</a>.
           
           
-            The <dfn data-export="" id="dfn-typed-array-type">typed array types</dfn> are
+            The <dfn id="dfn-typed-array-type" export="">typed array types</dfn> are
             <a class="idltype" href="#idl-Int8Array">Int8Array</a>,
             <a class="idltype" href="#idl-Int16Array">Int16Array</a>,
             <a class="idltype" href="#idl-Int32Array">Int32Array</a>,
@@ -4857,7 +4857,7 @@ interface Person {
             <a class="idltype" href="#idl-Float64Array">Float64Array</a>.
           
           
-            The <dfn data-export="" id="dfn-buffer-source-type">buffer source types</dfn>
+            The <dfn id="dfn-buffer-source-type" export="">buffer source types</dfn>
             are <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>,
             <a class="idltype" href="#idl-DataView">DataView</a>,
             and the <a class="dfnref" href="#dfn-typed-array-type">typed array types</a>.
@@ -4866,10 +4866,10 @@ interface Person {
             The <a class="idltype" href="#idl-object">object</a> type,
             all <a class="dfnref" href="#idl-interface">interface types</a>
             and the <a class="dfnref" href="#dfn-exception-type">exception types</a>
-            are known as <dfn data-export="" id="dfn-object-type">object types</dfn>.
+            are known as <dfn id="dfn-object-type" export="">object types</dfn>.
           
           
-            Every type has a <dfn data-export="" id="dfn-type-name">type name</dfn>, which
+            Every type has a <dfn id="dfn-type-name" export="">type name</dfn>, which
             is a string, not necessarily unique, that identifies the type.
             Each sub-section below defines what the type name is for each
             type.
@@ -4919,7 +4919,7 @@ interface Person {
              ε</span></td></tr></table>
 
           
-            <h4 oldids="dom-any" id="idl-any" dfn-type="interface">any</h4>
+            <h4 oldids="dom-any" id="idl-any" interface="">any</h4>
 
             
               The <a class="idltype" href="#idl-any">any</a> type is the union of all other possible
@@ -4938,14 +4938,14 @@ interface Person {
             
             
               The particular type of an <a class="idltype" href="#idl-any">any</a>
-              value is known as its <dfn data-export="" id="dfn-specific-type">specific type</dfn>.
+              value is known as its <dfn id="dfn-specific-type" export="">specific type</dfn>.
               (Values of <a href="#idl-union">union types</a> also have
               <a class="dfnref" href="#dfn-specific-type">specific types</a>.)
             
           
 
           
-            <h4 oldids="dom-boolean" id="idl-boolean" dfn-type="interface">boolean</h4>
+            <h4 oldids="dom-boolean" id="idl-boolean" interface="">boolean</h4>
 
             
               The <a class="idltype" href="#idl-boolean">boolean</a> type has two values:
@@ -4963,7 +4963,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-byte" id="idl-byte" dfn-type="interface">byte</h4>
+            <h4 oldids="dom-byte" id="idl-byte" interface="">byte</h4>
 
             
               The <a class="idltype" href="#idl-byte">byte</a> type is a signed integer
@@ -4981,7 +4981,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-octet" id="idl-octet" dfn-type="interface">octet</h4>
+            <h4 oldids="dom-octet" id="idl-octet" interface="">octet</h4>
 
             
               The <a class="idltype" href="#idl-octet">octet</a> type is an unsigned integer
@@ -4999,7 +4999,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-short" id="idl-short" dfn-type="interface">short</h4>
+            <h4 oldids="dom-short" id="idl-short" interface="">short</h4>
 
             
               The <a class="idltype" href="#idl-short">short</a> type is a signed integer
@@ -5017,7 +5017,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-unsignedshort" id="idl-unsigned-short" dfn-type="interface">unsigned short</h4>
+            <h4 oldids="dom-unsignedshort" id="idl-unsigned-short" interface="">unsigned short</h4>
 
             
               The <a class="idltype" href="#idl-unsigned-short">unsigned short</a> type is an unsigned integer
@@ -5035,7 +5035,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-long" id="idl-long" dfn-type="interface">long</h4>
+            <h4 oldids="dom-long" id="idl-long" interface="">long</h4>
 
             
               The <a class="idltype" href="#idl-long">long</a> type is a signed integer
@@ -5053,7 +5053,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-unsignedlong" id="idl-unsigned-long" dfn-type="interface">unsigned long</h4>
+            <h4 oldids="dom-unsignedlong" id="idl-unsigned-long" interface="">unsigned long</h4>
 
             
               The <a class="idltype" href="#idl-unsigned-long">unsigned long</a> type is an unsigned integer
@@ -5071,7 +5071,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-longlong" id="idl-long-long" dfn-type="interface">long long</h4>
+            <h4 oldids="dom-longlong" id="idl-long-long" interface="">long long</h4>
 
             
               The <a class="idltype" href="#idl-long-long">long long</a> type is a signed integer
@@ -5089,7 +5089,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-unsignedlonglong" id="idl-unsigned-long-long" dfn-type="interface">unsigned long long</h4>
+            <h4 oldids="dom-unsignedlonglong" id="idl-unsigned-long-long" interface="">unsigned long long</h4>
 
             
               The <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> type is an unsigned integer
@@ -5107,7 +5107,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-float" id="idl-float" dfn-type="interface">float</h4>
+            <h4 oldids="dom-float" id="idl-float" interface="">float</h4>
 
             
               The <a class="idltype" href="#idl-float">float</a> type is a floating point numeric
@@ -5132,7 +5132,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" dfn-type="interface">unrestricted float</h4>
+            <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" interface="">unrestricted float</h4>
 
             
               The <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is a floating point numeric
@@ -5151,7 +5151,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-double" id="idl-double" dfn-type="interface">double</h4>
+            <h4 oldids="dom-double" id="idl-double" interface="">double</h4>
 
             
               The <a class="idltype" href="#idl-double">double</a> type is a floating point numeric
@@ -5170,7 +5170,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-unrestricteddouble" id="idl-unrestricted-double" dfn-type="interface">unrestricted double</h4>
+            <h4 oldids="dom-unrestricteddouble" id="idl-unrestricted-double" interface="">unrestricted double</h4>
 
             
               The <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is a floating point numeric
@@ -5189,7 +5189,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-DOMString" id="idl-DOMString" dfn-type="interface">DOMString</h4>
+            <h4 oldids="dom-DOMString" id="idl-DOMString" interface="">DOMString</h4>
 
             
               The <a class="idltype" href="#idl-DOMString">DOMString</a> type
@@ -5218,7 +5218,7 @@ interface Person {
               <a class="external" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> given a particular sequence of
               <a class="dfnref" href="#dfn-code-unit">code units</a>.
               The following algorithm defines a way to
-              <dfn data-export="" data-lt="obtain Unicode|convert to a sequence of Unicode scalar values" id="dfn-obtain-unicode">convert a DOMString to a sequence of Unicode scalar values</dfn>:
+              <dfn id="dfn-obtain-unicode" export="" lt="obtain Unicode|convert to a sequence of Unicode scalar values">convert a DOMString to a sequence of Unicode scalar values</dfn>:
             
             <ol class="algorithm">
               <li>Let <var>S</var> be the <a class="idltype" href="#idl-DOMString">DOMString</a> value.</li>
@@ -5279,7 +5279,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-ByteString" id="idl-ByteString" dfn-type="interface">ByteString</h4>
+            <h4 oldids="dom-ByteString" id="idl-ByteString" interface="">ByteString</h4>
 
             
               The <a class="idltype" href="#idl-ByteString">ByteString</a> type
@@ -5311,7 +5311,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-USVString" id="idl-USVString" dfn-type="interface">USVString</h4>
+            <h4 oldids="dom-USVString" id="idl-USVString" interface="">USVString</h4>
 
             
               The <a class="idltype" href="#idl-USVString">USVString</a> type
@@ -5341,7 +5341,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-object" id="idl-object" dfn-type="interface">object</h4>
+            <h4 oldids="dom-object" id="idl-object" interface="">object</h4>
 
             
               The <a class="idltype" href="#idl-object">object</a> type corresponds to the set of
@@ -5374,7 +5374,7 @@ interface Person {
             
               For non-callback interfaces, an IDL value of the interface type is represented just
               by an object reference.  For <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>, an IDL value of the interface type
-              is represented by a tuple of an object reference and a <dfn data-export="" id="dfn-callback-context">callback context</dfn>.
+              is represented by a tuple of an object reference and a <dfn id="dfn-callback-context" export="">callback context</dfn>.
               The <a class="dfnref" href="#dfn-callback-context">callback context</a> is a language
               binding specific value, and is used to store information about the execution context at
               the time the language binding specific object reference is converted to an IDL value.
@@ -5473,8 +5473,8 @@ interface Person {
             <h4 id="idl-nullable-type">Nullable types — <var>T</var>?</h4>
 
             
-              A <dfn data-export="" id="dfn-nullable-type">nullable type</dfn> is an IDL type constructed
-              from an existing type (called the <dfn data-export="" id="dfn-inner-type">inner type</dfn>),
+              A <dfn id="dfn-nullable-type" export="">nullable type</dfn> is an IDL type constructed
+              from an existing type (called the <dfn id="dfn-inner-type" export="">inner type</dfn>),
               which just allows the additional value <span class="idlvalue">null</span>
               to be a member of its set of values.  <a class="dfnref" href="#dfn-nullable-type">Nullable types</a>
               are represented in IDL by placing a <span class="char">U+003F QUESTION MARK ("?")</span>
@@ -5522,7 +5522,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-sequence" id="idl-sequence" dfn-type="interface" lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;<var>T</var>&gt;</h4>
+            <h4 oldids="dom-sequence" id="idl-sequence" interface="" lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;<var>T</var>&gt;</h4>
 
             
               The <a class="idltype" href="#idl-sequence">sequence&lt;<var>T</var>&gt;</a>
@@ -5560,10 +5560,10 @@ interface Person {
           
 
           
-            <h4 oldids="dom-promise" id="idl-promise" dfn-type="interface" lt="Promise|Promise&lt;T&gt;">Promise types — Promise&lt;<var>T</var>&gt;</h4>
+            <h4 oldids="dom-promise" id="idl-promise" interface="" lt="Promise|Promise&lt;T&gt;">Promise types — Promise&lt;<var>T</var>&gt;</h4>
 
             
-              A <dfn data-export="" id="dfn-promise-type">promise type</dfn> is a parameterized type
+              A <dfn id="dfn-promise-type" export="">promise type</dfn> is a parameterized type
               whose values are references to objects that “is used as a place holder
               for the eventual results of a deferred (and possibly asynchronous) computation
               result of an asynchronous operation” <a href="#ref-ECMA-262">[ECMA-262]</a>.
@@ -5584,13 +5584,13 @@ interface Person {
             <h4 id="idl-union">Union types</h4>
 
             
-              A <dfn data-export="" id="dfn-union-type">union type</dfn> is a type whose set of values
+              A <dfn id="dfn-union-type" export="">union type</dfn> is a type whose set of values
               is the union of those in two or more other types.  Union types (matching
               <a class="sym" href="#prod-UnionType">UnionType</a>)
               are written as a series of types separated by the <code>or</code> keyword
               with a set of surrounding parentheses.
               The types which comprise the union type are known as the
-              union’s <dfn data-export="" data-dfn-for="union" id="dfn-union-member-type">member types</dfn>.
+              union’s <dfn id="dfn-union-member-type" for="union" export="">member types</dfn>.
             
             <div class="note">
               
@@ -5616,7 +5616,7 @@ interface Person {
               that matches the value.
             
             
-              The <dfn data-export="" data-dfn-for="union" id="dfn-flattened-union-member-types">flattened member types</dfn>
+              The <dfn id="dfn-flattened-union-member-types" for="union" export="">flattened member types</dfn>
               of a <a class="dfnref" href="#dfn-union-type">union type</a> is a set of types
               determined as follows:
             
@@ -5644,7 +5644,7 @@ interface Person {
                 <code>sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;</code>.
               
             
-              The <dfn data-export="" id="dfn-number-of-nullable-member-types">number of nullable member types</dfn>
+              The <dfn id="dfn-number-of-nullable-member-types" export="">number of nullable member types</dfn>
               of a <a class="dfnref" href="#dfn-union-type">union type</a> is an integer
               determined as follows:
             
@@ -5681,7 +5681,7 @@ interface Person {
               <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>.
             
             
-              A type <dfn data-export="" id="dfn-includes-a-nullable-type">includes a nullable type</dfn> if:
+              A type <dfn id="dfn-includes-a-nullable-type" export="">includes a nullable type</dfn> if:
             
             <ul>
               <li>the type is a <a class="dfnref" href="#dfn-nullable-type">nullable type</a>, or</li>
@@ -5722,7 +5722,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-RegExp" id="idl-RegExp" dfn-type="interface">RegExp</h4>
+            <h4 oldids="dom-RegExp" id="idl-RegExp" interface="">RegExp</h4>
 
             
               The <a class="idltype" href="#idl-RegExp">RegExp</a> type is a type
@@ -5741,7 +5741,7 @@ interface Person {
           
 
           
-            <h4 oldids="dom-Error" id="idl-Error" dfn-type="interface">Error</h4>
+            <h4 oldids="dom-Error" id="idl-Error" interface="">Error</h4>
 
             The <a class="idltype" href="#idl-Error">Error</a> type corresponds to the
               set of all possible non-null references to exception objects, including
@@ -5804,7 +5804,7 @@ interface Person {
             </table>
                 Note: These types all correspond to classes defined in ECMAScript.
             
-              To <dfn data-export="" data-dfn-for="ArrayBuffer" id="dfn-detach">detach</dfn> an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>
+              To <dfn id="dfn-detach" for="ArrayBuffer" export="">detach</dfn> an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>
               is to set its buffer pointer to <span class="idlvalue">null</span>.
             
             
@@ -5818,8 +5818,8 @@ interface Person {
               At the specification prose level, IDL <a class="dfnref" href="#dfn-buffer-source-type">buffer source types</a>
               are simply references to objects.  To inspect or manipulate the bytes inside the buffer,
               specification prose <span class="rfc2119">MUST</span> first either
-              <dfn data-export="" data-lt="get a reference to the buffer source" id="dfn-get-buffer-source-reference">get a reference to the bytes held by the buffer source</dfn>
-              or <dfn data-export="" data-lt="get a copy of the buffer source" id="dfn-get-buffer-source-copy">get a copy of the bytes held by the buffer source</dfn>.
+              <dfn id="dfn-get-buffer-source-reference" export="" lt="get a reference to the buffer source">get a reference to the bytes held by the buffer source</dfn>
+              or <dfn id="dfn-get-buffer-source-copy" export="" lt="get a copy of the buffer source">get a copy of the bytes held by the buffer source</dfn>.
               With a reference to the buffer source’s bytes, specification prose can get or set individual
               byte values using that reference.
             
@@ -5861,10 +5861,10 @@ interface Person {
           
 
           
-            <h4 oldids="dom-FrozenArray" id="idl-frozen-array" dfn-type="interface" lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
+            <h4 oldids="dom-FrozenArray" id="idl-frozen-array" interface="" lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
 
             
-              A <dfn data-export="" id="dfn-frozen-array-type">frozen array type</dfn> is a parameterized
+              A <dfn id="dfn-frozen-array-type" export="">frozen array type</dfn> is a parameterized
               type whose values are references to objects that hold a fixed length array
               of unmodifiable values.  The values in the array are of type <var>T</var>.
             
@@ -5888,7 +5888,7 @@ interface Person {
           <h3 id="idl-extended-attributes">Extended attributes</h3>
 
           
-            An <dfn data-export="" id="dfn-extended-attribute">extended attribute</dfn> is an annotation
+            An <dfn id="dfn-extended-attribute" export="">extended attribute</dfn> is an annotation
             that can appear on
             <!--a class='dfnref' href='#dfn-definition'-->definitions<!--/a-->,
             <a class="dfnref" href="#dfn-interface-member">interface members</a>,
@@ -5922,7 +5922,7 @@ interface Person {
                 <a class="sym" href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a>
               </td>
               <td>
-                <dfn data-export="" data-dfn-for="extended attribute" id="dfn-xattr-no-arguments">takes no arguments</dfn>
+                <dfn id="dfn-xattr-no-arguments" for="extended attribute" export="">takes no arguments</dfn>
               </td>
               <td>
                 <code>[Replaceable]</code>
@@ -5933,7 +5933,7 @@ interface Person {
                 <a class="sym" href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a>
               </td>
               <td>
-                <dfn data-export="" data-dfn-for="extended attribute" id="dfn-xattr-argument-list">takes an argument list</dfn>
+                <dfn id="dfn-xattr-argument-list" for="extended attribute" export="">takes an argument list</dfn>
               </td>
               <td>
                 <code>[Constructor(double x, double y)]</code>
@@ -5944,7 +5944,7 @@ interface Person {
                 <a class="sym" href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a>
               </td>
               <td>
-                <dfn data-export="" data-dfn-for="extended attribute" id="dfn-xattr-named-argument-list">takes a named argument list</dfn>
+                <dfn id="dfn-xattr-named-argument-list" for="extended attribute" export="">takes a named argument list</dfn>
               </td>
               <td>
                 <code>[NamedConstructor=Image(DOMString src)]</code>
@@ -5955,7 +5955,7 @@ interface Person {
                 <a class="sym" href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a>
               </td>
               <td>
-                <dfn data-export="" data-dfn-for="extended attribute" id="dfn-xattr-identifier">takes an identifier</dfn>
+                <dfn id="dfn-xattr-identifier" for="extended attribute" export="">takes an identifier</dfn>
               </td>
               <td>
                 <code>[PutForwards=name]</code>
@@ -5966,7 +5966,7 @@ interface Person {
                 <a class="sym" href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a>
               </td>
               <td>
-                <dfn data-export="" data-dfn-for="extended attribute" id="dfn-xattr-identifier-list">takes an identifier list</dfn>
+                <dfn id="dfn-xattr-identifier-list" for="extended attribute" export="">takes an identifier list</dfn>
               </td>
               <td>
                 <code>[Exposed=(Window,Worker)]</code>
@@ -6101,7 +6101,7 @@ interface Person {
           of objects defined in this section is the <span class="esvalue">Object</span> prototype object.
         
         
-          Some objects described in this section are defined to have a <dfn data-export="" id="dfn-class-string">class string</dfn>,
+          Some objects described in this section are defined to have a <dfn id="dfn-class-string" export="">class string</dfn>,
           which is the string to include in the string returned from Object.prototype.toString.
           If an object has a class string, then the object <span class="rfc2119">MUST</span>,
           at the time it is created, have a property whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol
@@ -6111,7 +6111,7 @@ interface Person {
             All <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
             and configurable.
         
-          If an object is defined to be a <dfn data-export="" id="dfn-function-object">function object</dfn>, then
+          If an object is defined to be a <dfn id="dfn-function-object" export="">function object</dfn>, then
           it has characteristics as follows:
         
         <ul>
@@ -6175,7 +6175,7 @@ interface Person {
             <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>,
             there will exist a number of ECMAScript objects that correspond to
             definitions in those <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>.
-            These objects are termed the <dfn data-export="" id="dfn-initial-object">initial objects</dfn>,
+            These objects are termed the <dfn id="dfn-initial-object" export="">initial objects</dfn>,
             and comprise the following:
           
           <ul>
@@ -6228,7 +6228,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 &lt;/script&gt;</pre>
           </div>
           
-            Unless otherwise specified, each ECMAScript global environment <dfn data-export="" data-dfn-for="ECMAScript global environment" id="dfn-expose">exposes</dfn>
+            Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" for="ECMAScript global environment" export="">exposes</dfn>
             all <a class="dfnref" href="#dfn-interface">interfaces</a>
             that the implementation supports.  If a given ECMAScript global environment does not
             expose an interface, then the requirements given in
@@ -6242,7 +6242,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 
           
             Although at the time of this writing the ECMAScript specification does not reflect this,
-            every ECMAScript object must have an <dfn data-export="" id="dfn-associated-realm">associated <a class="external external" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a></dfn>. The mechanisms
+            every ECMAScript object must have an <dfn id="dfn-associated-realm" export="">associated <a class="external external" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a></dfn>. The mechanisms
             for associating objects with Realms are, for now, underspecified. However, we note that
             in the case of <a class="dfnref" href="#dfn-platform-object">platform objects</a>, the
             associated Realm is equal to the object's <a class="external external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-realm">relevant Realm</a>, and
@@ -6261,9 +6261,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
           
             Each sub-section below describes how values of a given IDL type are represented
             in ECMAScript.  For each IDL type, it is described how ECMAScript values are
-            <dfn data-export="" data-lt="converted to an IDL value|converted to IDL values" id="dfn-convert-ecmascript-to-idl-value">converted to an IDL value</dfn>
+            <dfn id="dfn-convert-ecmascript-to-idl-value" export="" lt="converted to an IDL value|converted to IDL values">converted to an IDL value</dfn>
             when passed to a <a class="dfnref" href="#dfn-platform-object">platform object</a> expecting that type, and how IDL values
-            of that type are <dfn data-export="" data-lt="converted to an ECMAScript value|converted to ECMAScript values" id="dfn-convert-idl-to-ecmascript-value">converted to ECMAScript values</dfn>
+            of that type are <dfn id="dfn-convert-idl-to-ecmascript-value" export="" lt="converted to an ECMAScript value|converted to ECMAScript values">converted to ECMAScript values</dfn>
             when returned from a platform object.
           
 
@@ -7634,7 +7634,7 @@ alert(b[4]);    // This would alert "50".</pre>
               IDL <a href="#idl-promise">promise type</a> represents.
             </p>
             
-              One can <dfn data-export="" data-lt="upon settling" id="dfn-perform-steps-once-promise-is-settled">perform some steps once a promise is settled</dfn>.
+              One can <dfn id="dfn-perform-steps-once-promise-is-settled" export="" lt="upon settling">perform some steps once a promise is settled</dfn>.
               There can be one or two sets of steps to perform, covering when the promise is fulfilled, rejected, or both.
               When a specification says to perform some steps once a promise is settled, the following steps
               <span class="rfc2119">MUST</span> be followed:
@@ -8098,7 +8098,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 from <var>values</var>.</li>
             </ol>
             
-              To <dfn data-export="" id="dfn-create-frozen-array">create a frozen array</dfn> from a sequence
+              To <dfn id="dfn-create-frozen-array" export="">create a frozen array</dfn> from a sequence
               of values of type <var>T</var>, follow these steps:
             
             <ol class="algorithm">
@@ -8391,7 +8391,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
             
               Every construct that the <a class="xattr" href="#Exposed">[Exposed]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
-              can be specified on has an <dfn data-export="" id="dfn-exposure-set">exposure set</dfn>,
+              can be specified on has an <dfn id="dfn-exposure-set" export="">exposure set</dfn>,
               which is a set of <a class="dfnref" href="#dfn-interface">interfaces</a>
               defining which global environments the construct can be used in.
               The <a class="dfnref" href="#dfn-exposure-set">exposure set</a>
@@ -8463,7 +8463,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
             
               An <a class="dfnref" href="#dfn-interface">interface</a> or
               <a class="dfnref" href="#dfn-interface-member">interface member</a>
-              is <dfn data-export="" id="dfn-exposed">exposed</dfn> in a given ECMAScript global environment if
+              is <dfn id="dfn-exposed" export="">exposed</dfn> in a given ECMAScript global environment if
               the ECMAScript global object implements an interface that is in the
               interface or interface member's
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a>,
@@ -8710,7 +8710,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               is declared with an identifier list argument, then those identifiers are the interface’s
-              <dfn data-export="" id="dfn-global-name">global names</dfn>; otherwise, the interface has
+              <dfn id="dfn-global-name" export="">global names</dfn>; otherwise, the interface has
               a single global name, which is the interface's identifier.
             
                 Note: The identifier argument list exists so that more than one global interface can
@@ -8724,7 +8724,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               interface.  The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               extended attribute <span class="rfc2119">MUST</span> be declared on
               at most one interface.  The interface <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
-              is declared on, if any, is known as the <dfn data-export="" id="dfn-primary-global-interface">primary global interface</dfn>.
+              is declared on, if any, is known as the <dfn id="dfn-primary-global-interface" export="">primary global interface</dfn>.
             
             
               See [[#named-properties-object]],
@@ -9684,7 +9684,7 @@ counter.value;                                           // Evaluates to 3.</pre
             
               Whether a construct that the <a class="xattr" href="#SecureContext">[SecureContext]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
-              can be specified on is <dfn data-export="" id="dfn-available-only-in-secure-contexts">available only in secure contexts</dfn>
+              can be specified on is <dfn id="dfn-available-only-in-secure-contexts" export="">available only in secure contexts</dfn>
               is defined as follows:
             
             <ul>
@@ -9934,7 +9934,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               that implement the interface, rather than on the prototype.
             
             
-              An attribute or operation is said to be <dfn data-export="" id="dfn-unforgeable-on-an-interface">unforgeable</dfn>
+              An attribute or operation is said to be <dfn id="dfn-unforgeable-on-an-interface" export="">unforgeable</dfn>
               on a given interface <var>A</var> if any of the following are true:
             
             <ul>
@@ -10077,7 +10077,7 @@ with (thing) {
 
           
             Certain algorithms in the sections below are defined to
-            <dfn data-export="" id="dfn-perform-a-security-check">perform a security check</dfn> on a given
+            <dfn id="dfn-perform-a-security-check" export="">perform a security check</dfn> on a given
             object.  This check is used to determine whether a given
             <a class="dfnref" href="#dfn-operation">operation</a> invocation or
             <a class="dfnref" href="#dfn-attribute">attribute</a> access should be
@@ -10106,7 +10106,7 @@ with (thing) {
 
           
             In order to define how overloaded function invocations are resolved, the
-            <dfn data-export="" id="dfn-overload-resolution-algorithm">overload resolution algorithm</dfn>
+            <dfn id="dfn-overload-resolution-algorithm" export="">overload resolution algorithm</dfn>
             is defined.  Its input is an <a class="dfnref" href="#dfn-effective-overload-set">effective overload set</a>,
             <var>S</var>, and a list of ECMAScript values, <var>arg</var><sub>0..<var>n</var>−1</sub>.
             Its output is a pair consisting of the <a class="dfnref" href="#dfn-operation">operation</a> or
@@ -10544,7 +10544,7 @@ with (thing) {
             a corresponding property <span class="rfc2119">MUST</span> exist on the
             ECMAScript environment's global object.
             The name of the property is the <a class="dfnref" href="#dfn-identifier">identifier</a> of the interface,
-            and its value is an object called the <dfn data-export="" id="dfn-interface-object">interface object</dfn>.
+            and its value is an object called the <dfn id="dfn-interface-object" export="">interface object</dfn>.
           
           
             The property has the attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
@@ -10558,7 +10558,7 @@ with (thing) {
             exist on the ECMAScript global object.  The name of the property is the
             <a class="sym" href="#prod-identifier">identifier</a> that occurs directly after the
             “<span class="sym">=</span>”, and its value is an object called a
-            <dfn data-export="" id="dfn-named-constructor">named constructor</dfn>, which allows
+            <dfn id="dfn-named-constructor" export="">named constructor</dfn>, which allows
             construction of objects that implement the interface.  The property has the
             attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
             The characteristics of a named constructor are described in
@@ -10601,7 +10601,7 @@ with (thing) {
               An interface object for a non-callback interface <span class="rfc2119">MUST</span> have a property named “prototype”
               with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
-              whose value is an object called the <dfn data-export="" id="dfn-interface-prototype-object">interface prototype object</dfn>.  This object has properties
+              whose value is an object called the <dfn id="dfn-interface-prototype-object" export="">interface prototype object</dfn>.  This object has properties
               that correspond to the <a class="dfnref" href="#dfn-regular-attribute">regular attributes</a> and
               <a class="dfnref" href="#dfn-regular-operation">regular operations</a> defined on the interface,
               and is described in more detail in
@@ -10973,7 +10973,7 @@ partial interface Window {
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               that <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
               there <span class="rfc2119">MUST</span> exist an object known as the
-              <dfn data-export="" id="dfn-named-properties-object">named properties object</dfn> for that
+              <dfn id="dfn-named-properties-object" export="">named properties object</dfn> for that
               interface.
             
             
@@ -11217,7 +11217,7 @@ interface
                 </ul>
               </li>
               <li>
-                The <dfn data-export="" id="dfn-attribute-getter">attribute getter</dfn> is a <span class="estype">Function</span>
+                The <dfn id="dfn-attribute-getter" export="">attribute getter</dfn> is a <span class="estype">Function</span>
                 object whose behavior when invoked is as follows:
                 <ol class="algorithm">
                   <li>Let <var>idlValue</var> be an IDL value determined as follows.</li>
@@ -11277,7 +11277,7 @@ interface
                   concatenation of “get ” and the identifier of the attribute.
               </li>
               <li>
-                The <dfn data-export="" id="dfn-attribute-setter">attribute setter</dfn> is <span class="esvalue">undefined</span>
+                The <dfn id="dfn-attribute-setter" export="">attribute setter</dfn> is <span class="esvalue">undefined</span>
                 if the attribute is declared <code>readonly</code> and does not have a
                 <a class="xattr" href="#LenientThis">[LenientThis]</a>, <a class="xattr" href="#PutForwards">[PutForwards]</a> or
                 <a class="xattr" href="#Replaceable">[Replaceable]</a>
@@ -11677,7 +11677,7 @@ interface
               The value of the <span class="estype">Function</span> object’s “name”
                 property is the <span class="estype">String</span> value “toJSON”.
               
-                The following steps define how to <dfn data-export="" id="dfn-convert-serialized-value-to-ecmascript-value">convert a serialized value to an ECMAScript value</dfn>:
+                The following steps define how to <dfn id="dfn-convert-serialized-value-to-ecmascript-value" export="">convert a serialized value to an ECMAScript value</dfn>:
               
               <ol class="algorithm">
                 <li>Let <var>S</var> be the <a class="dfnref" href="#dfn-serialized-value">serialized value</a>.</li>
@@ -12125,7 +12125,7 @@ interface
               <h5 id="es-default-iterator-object">Default iterator objects</h5>
 
               
-                A <dfn data-export="" id="dfn-default-iterator-object">default iterator object</dfn> for a given
+                A <dfn id="dfn-default-iterator-object" export="">default iterator object</dfn> for a given
                 <a class="dfnref" href="#dfn-interface">interface</a>, target and iteration kind
                 is an object whose internal [[Prototype]] property is the
                 <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
@@ -12164,7 +12164,7 @@ interface
               <h5 id="es-iterator-prototype-object">Iterator prototype object</h5>
 
               
-                The <dfn data-export="" id="dfn-iterator-prototype-object">iterator prototype object</dfn>
+                The <dfn id="dfn-iterator-prototype-object" export="">iterator prototype object</dfn>
                 for a given <a class="dfnref" href="#dfn-interface">interface</a>
                 is an object that exists for every interface that has a
                 <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>.  It serves as the
@@ -12273,7 +12273,7 @@ interface
 
             
               Some of the properties below are defined to have a <a class="dfnref" href="#dfn-function-object">function object</a> value
-              that <dfn data-export="" id="dfn-forwards-to-the-internal-map-object">forwards to the internal map object</dfn>
+              that <dfn id="dfn-forwards-to-the-internal-map-object" export="">forwards to the internal map object</dfn>
               for a given function name.  Such functions behave as follows when invoked:
             
             <ol class="algorithm">
@@ -12306,7 +12306,7 @@ interface
               
               <ul>
                 <li>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>,
-                  where <var>G</var> is the interface’s <dfn data-export="" id="dfn-map-size-getter">map size getter</dfn>,
+                  where <var>G</var> is the interface’s <dfn id="dfn-map-size-getter" export="">map size getter</dfn>,
                   defined below.</li>
                 <li>The <a class="dfnref" href="#dfn-map-size-getter">map size getter</a> is
                   a <span class="estype">Function</span> object whose
@@ -12531,7 +12531,7 @@ interface
 
             
               Some of the properties below are defined to have a <a class="dfnref" href="#dfn-function-object">function object</a> value
-              that <dfn data-export="" id="dfn-forwards-to-the-internal-set-object">forwards to the internal set object</dfn>
+              that <dfn id="dfn-forwards-to-the-internal-set-object" export="">forwards to the internal set object</dfn>
               for a given function name.  Such functions behave as follows when invoked:
             
             <ol class="algorithm">
@@ -12564,7 +12564,7 @@ interface
               
               <ul>
                 <li>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>,
-                  where <var>G</var> is the interface’s <dfn data-export="" id="dfn-set-size-getter">set size getter</dfn>,
+                  where <var>G</var> is the interface’s <dfn id="dfn-set-size-getter" export="">set size getter</dfn>,
                   defined below.</li>
                 <li>The <a class="dfnref" href="#dfn-set-size-getter">set size getter</a> is
                   a <span class="estype">Function</span> object whose
@@ -12749,7 +12749,7 @@ interface
             
 
             
-              To <dfn data-export="" id="add-map-elements-from-iterable">add map elements from an iterable</dfn> <var>iterable</var> to
+              To <dfn id="add-map-elements-from-iterable" export="">add map elements from an iterable</dfn> <var>iterable</var> to
               an object <var>destination</var> with adder method name <var>adder</var>, perform the following steps:
             
             <ol class="algorithm">
@@ -12860,7 +12860,7 @@ C implements A;</pre>
             object is associated with.
           
           
-            The <dfn data-export="" id="dfn-primary-interface">primary interface</dfn> of a platform object
+            The <dfn id="dfn-primary-interface" export="">primary interface</dfn> of a platform object
             that implements one or more interfaces is the most-derived <a class="dfnref" href="#dfn-supplemental-interface">non-supplemental interface</a>
             that it implements.  The value of the internal <span class="prop">[[Prototype]]</span>
             property of the platform object is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
@@ -12869,7 +12869,7 @@ C implements A;</pre>
           
           
             The global environment that a given <a class="dfnref" href="#dfn-platform-object">platform object</a>
-            is associated with can <dfn data-export="" data-dfn-for="global environment" id="dfn-change-global-environment">change</dfn> after it has been created.  When
+            is associated with can <dfn id="dfn-change-global-environment" for="global environment" export="">change</dfn> after it has been created.  When
             the global environment associated with a platform object is changed, its internal
             <span class="prop">[[Prototype]]</span> property <span class="rfc2119">MUST</span> be immediately
             updated to be the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
@@ -13023,7 +13023,7 @@ C implements A;</pre>
                 <li>Return the <span class="esvalue">this</span> value.</li>
               </ol>
               This <span class="estype">Function</span> object is the
-              <dfn data-export="" id="dfn-default-unforgeable-valueOf-function">default unforgeable valueOf function</dfn>.
+              <dfn id="dfn-default-unforgeable-valueOf-function" export="">default unforgeable valueOf function</dfn>.
             </li>
             <li>The value of the <span class="estype">Function</span> object’s “length”
               property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</li>
@@ -13090,7 +13090,7 @@ C implements A;</pre>
 
             
               The name of each property that appears to exist due to an object supporting indexed properties
-              is an <dfn data-export="" id="dfn-array-index-property-name">array index property name</dfn>, which is a property
+              is an <dfn id="dfn-array-index-property-name" export="">array index property name</dfn>, which is a property
               name <var>P</var> such that <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>P</var>) is String
               and for which the following algorithm returns <span class="esvalue">true</span>:
             
@@ -13117,7 +13117,7 @@ C implements A;</pre>
             </div>
             -->
             
-              A property name is an <dfn data-export="" id="dfn-unforgeable-property-name">unforgeable property name</dfn> on a
+              A property name is an <dfn id="dfn-unforgeable-property-name" export="">unforgeable property name</dfn> on a
               given platform object if the object implements an <a class="dfnref" href="#dfn-interface">interface</a> that
               has an <a class="dfnref" href="#dfn-interface-member">interface member</a> with that identifier
               and that interface member is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on any of
@@ -13128,7 +13128,7 @@ C implements A;</pre>
               on that object.
             
             
-              The <dfn data-export="" id="dfn-named-property-visibility">named property visibility algorithm</dfn> is used to determine if
+              The <dfn id="dfn-named-property-visibility" export="">named property visibility algorithm</dfn> is used to determine if
               a given named property is exposed on an object.  Some named properties are not exposed on an object
               depending on whether the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> was used.  The algorithm
@@ -13271,7 +13271,7 @@ C implements A;</pre>
           
             <h4 id="invoking-indexed-setter">Invoking a platform object indexed property setter</h4>
             
-              To <dfn data-export="" data-lt="invoke the indexed property setter" id="invoke-indexed-setter">invoke an indexed property
+              To <dfn id="invoke-indexed-setter" export="" lt="invoke the indexed property setter">invoke an indexed property
               setter</dfn> with property name <var>P</var> and ECMAScript value
               <var>V</var>, the following steps <span class="rfc2119">MUST</span> be performed:
             
@@ -13299,7 +13299,7 @@ C implements A;</pre>
           
             <h4 id="invoking-named-setter">Invoking a platform object named property setter</h4>
             
-              To <dfn data-export="" data-lt="invoke the named property setter" id="invoke-named-setter">invoke a named property
+              To <dfn id="invoke-named-setter" export="" lt="invoke the named property setter">invoke a named property
               setter</dfn> with property name <var>P</var> and ECMAScript value
               <var>V</var>, the following steps <span class="rfc2119">MUST</span> be performed:
             
@@ -13632,7 +13632,7 @@ C implements A;</pre>
           
 
           
-            A <dfn data-export="" id="dfn-single-operation-callback-interface">single operation callback interface</dfn> is
+            A <dfn id="dfn-single-operation-callback-interface" export="">single operation callback interface</dfn> is
             a <a class="dfnref" href="#dfn-callback-interface">callback interface</a> that:
           
           <ul>
@@ -13646,7 +13646,7 @@ C implements A;</pre>
             To <dfn>call a user object's operation</dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value <var>value</var>,
             sometimes-optional operation name <var>opName</var>, list of argument values
             <var>arg</var><sub>0..<var>n</var>−1</sub> each of which is either an IDL value or the
-            special value “missing” (representing a missing optional argument), and optional <dfn data-export="" id="dfn-callback-this-value">callback this value</dfn>
+            special value “missing” (representing a missing optional argument), and optional <dfn id="dfn-callback-this-value" export="">callback this value</dfn>
             <var>thisArg</var>, perform the following steps. These steps will either return an IDL
             value or throw an exception.
           
@@ -13768,7 +13768,7 @@ C implements A;</pre>
           </ol>
 
           
-            To <dfn data-export="">get a user object's attribute value</dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value <var>object</var>
+            To <dfn export="">get a user object's attribute value</dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value <var>object</var>
             and attribute name <var>attributeName</var>, perform the following steps. These steps
             will either return an IDL value or throw an exception.
           
@@ -13821,7 +13821,7 @@ C implements A;</pre>
           </ol>
 
           
-            To <dfn data-export="">set a user object's attribute value</dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value
+            To <dfn export="">set a user object's attribute value</dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value
             <var>object</var>, attribute name <var>attributeName</var>, and IDL value
             <var>value</var>, perform the following steps. These steps will not return anything, but
             could throw an exception.
@@ -13877,7 +13877,7 @@ C implements A;</pre>
           
 
           
-            To <dfn data-export="">invoke</dfn> a <a class="dfnref" href="#idl-callback-function">callback function type</a> value <var>callable</var> with
+            To <dfn export="">invoke</dfn> a <a class="dfnref" href="#idl-callback-function">callback function type</a> value <var>callable</var> with
             a list of arguments <var>arg</var><sub>0..<var>n</var>−1</sub>, each of which is either
             an IDL value or the special value “missing” (representing a missing optional argument),
             and with optional <a class="dfnref" href="#dfn-callback-this-value">callback this
@@ -13994,7 +13994,7 @@ C implements A;</pre>
           
             There <span class="rfc2119">MUST</span> exist a property on the ECMAScript global object
             whose name is “DOMException” and value is an object called the
-            <dfn data-export="" data-dfn-for="DOMException" id="dfn-DOMException-constructor-object">DOMException constructor object</dfn>,
+            <dfn id="dfn-DOMException-constructor-object" for="DOMException" export="">DOMException constructor object</dfn>,
             which provides access to legacy DOMException code constants and allows construction of
             DOMException instances.
             The property has the attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
@@ -14017,7 +14017,7 @@ C implements A;</pre>
               The DOMException constructor object <span class="rfc2119">MUST</span> also have a property named
               “prototype” with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
-              whose value is an object called the <dfn data-export="" data-dfn-for="DOMException" id="dfn-DOMException-prototype-object">DOMException prototype object</dfn>.
+              whose value is an object called the <dfn id="dfn-DOMException-prototype-object" for="DOMException" export="">DOMException prototype object</dfn>.
               This object also provides access to the legacy code values.
             
 
@@ -14120,7 +14120,7 @@ C implements A;</pre>
           <h3 id="es-creating-throwing-exceptions">Creating and throwing exceptions</h3>
 
           
-            First, we define the <dfn data-export="" id="dfn-current-global-environment">current global environment</dfn>
+            First, we define the <dfn id="dfn-current-global-environment" export="">current global environment</dfn>
             as the result of running the following algorithm:
           
           <ol class="algorithm">
@@ -14331,7 +14331,7 @@ d.type = et;
 
           <pre class="idl example">typedef (Int8Array or Int16Array or Int32Array or
          Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
-         Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" data-dfn-type="typedef">ArrayBufferView</dfn>;</pre>
+         Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef="">ArrayBufferView</dfn>;</pre>
           
             The <span class="idltype">ArrayBufferView</span> typedef is used to represent
             objects that provide a view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.
@@ -14341,7 +14341,7 @@ d.type = et;
         
           <h3 id="common-BufferSource">BufferSource</h3>
 
-          <pre class="idl example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" data-dfn-type="typedef">BufferSource</dfn>;</pre>
+          <pre class="idl example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
           
             The <span class="idltype">BufferSource</span> typedef is used to represent objects
             that are either themselves an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> or which
@@ -14352,7 +14352,7 @@ d.type = et;
         
           <h3 id="common-DOMTimeStamp">DOMTimeStamp</h3>
 
-          <pre class="idl example">typedef unsigned long long <dfn id="DOMTimeStamp" data-dfn-type="typedef">DOMTimeStamp</dfn>;</pre>
+          <pre class="idl example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef="">DOMTimeStamp</dfn>;</pre>
           
             The <span class="idltype">DOMTimeStamp</span> type is used for representing
             a number of milliseconds, either as an absolute time (relative to some epoch)
@@ -14364,7 +14364,7 @@ d.type = et;
         
           <h3 id="common-Function">Function</h3>
 
-          <pre class="idl example">callback <dfn id="Function" data-dfn-type="callback">Function</dfn> = any (any... arguments);</pre>
+          <pre class="idl example">callback <dfn id="Function" callback="">Function</dfn> = any (any... arguments);</pre>
           
             The <span class="idltype">Function</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values with no restriction on what arguments
@@ -14375,7 +14375,7 @@ d.type = et;
         
           <h3 id="common-Function">VoidFunction</h3>
 
-          <pre class="idl example">callback <dfn id="VoidFunction" data-dfn-type="callback">VoidFunction</dfn> = void ();</pre>
+          <pre class="idl example">callback <dfn id="VoidFunction" callback="">VoidFunction</dfn> = void ();</pre>
           
             The <span class="idltype">VoidFunction</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values that take no arguments and do not

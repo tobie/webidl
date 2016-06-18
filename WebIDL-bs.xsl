@@ -258,6 +258,33 @@
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
+  <xsl:template match='h:dfn'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:if test="@id">
+        <xsl:attribute name="id">
+          <xsl:value-of select='@id' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@data-dfn-for">
+        <xsl:attribute name="for">
+          <xsl:value-of select='@data-dfn-for' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@data-dfn-type">
+        <xsl:attribute name='{@data-dfn-type}' />
+      </xsl:if>
+      <xsl:if test="@data-export">
+        <xsl:attribute name="export" />
+      </xsl:if>
+      <xsl:if test="@data-lt and text() != @data-lt">
+        <xsl:attribute name="lt">
+          <xsl:value-of select='@data-lt' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
   <xsl:template match='*[matches(name(), "h[1-6]")][parent::h:div[@class="section"][@id]]'>
     <xsl:copy copy-namespaces="no">
       <xsl:if test="@id">
