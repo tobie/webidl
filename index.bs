@@ -162,16 +162,16 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
           examples, notes and sections marked as being informative.
         
         
-          The keywords “<span class="rfc2119">MUST</span>”,
-          “<span class="rfc2119">MUST NOT</span>”,
-          “<span class="rfc2119">REQUIRED</span>”,
-          “<span class="rfc2119">SHALL</span>”,
-          “<span class="rfc2119">SHALL NOT</span>”,
-          “<span class="rfc2119">SHOULD</span>”,
-          “<span class="rfc2119">SHOULD NOT</span>”,
-          “<span class="rfc2119">RECOMMENDED</span>”,
-          “<span class="rfc2119">MAY</span>” and
-          “<span class="rfc2119">OPTIONAL</span>” in this document are to be
+          The keywords “must”,
+          “must not”,
+          “required”,
+          “shall”,
+          “shall not”,
+          “should”,
+          “should not”,
+          “recommended”,
+          “may” and
+          “optional” in this document are to be
           interpreted as described in
           <cite><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to
               Indicate Requirement Levels</a></cite>
@@ -187,8 +187,8 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
               A set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a> is considered
               to be a <a class="dfnref" href="#dfn-conforming-set-of-idl-fragments">conforming
                 set of IDL fragments</a> if, taken together, they satisfy all of the
-              <span class="rfc2119">MUST</span>-,
-              <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
+              must-,
+              required- and shall-level
               criteria in this specification that apply to IDL fragments.
             
           </dd>
@@ -198,8 +198,8 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
               A user agent is considered to be a
               <a class="dfnref" href="#dfn-conforming-implementation">conforming implementation</a>
               relative to a <a class="dfnref" href="#dfn-conforming-set-of-idl-fragments">conforming
-                set of IDL fragments</a> if it satisfies all of the <span class="rfc2119">MUST</span>-,
-              <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
+                set of IDL fragments</a> if it satisfies all of the must-,
+              required- and shall-level
               criteria in this specification that apply to implementations for all language
               bindings that the user agent supports.
             
@@ -210,8 +210,8 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
               A user agent is considered to be a
               <a class="dfnref" href="#dfn-conforming-ecmascript-implementation">conforming ECMAScript implementation</a>
               relative to a <a class="dfnref" href="#dfn-conforming-set-of-idl-fragments">conforming
-                set of IDL fragments</a> if it satisfies all of the <span class="rfc2119">MUST</span>-,
-              <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
+                set of IDL fragments</a> if it satisfies all of the must-,
+              required- and shall-level
               criteria in this specification that apply to implementations for the ECMAScript
               language binding.
             
@@ -457,7 +457,7 @@ dictionary <i>identifier</i> {
           
           
             The <a class="dfnref" href="#dfn-identifier">identifier</a> of any of the abovementioned
-            IDL constructs <span class="rfc2119">MUST NOT</span> be “constructor”,
+            IDL constructs must not be “constructor”,
             “toString”, “toJSON”,
             or begin with a <span class="char">U+005F LOW LINE ("_")</span> character.  These
             are known as <dfn id="dfn-reserved-identifier" export="">reserved identifiers</dfn>.
@@ -473,7 +473,7 @@ dictionary <i>identifier</i> {
             <a class="dfnref" href="#dfn-enumeration">enumeration</a>,
             <a class="dfnref" href="#dfn-callback-function">callback function</a> and
             <a class="dfnref" href="#dfn-typedef">typedef</a>
-            <span class="rfc2119">MUST NOT</span>
+            must not
             be the same as the identifier of any other
             <a class="dfnref" href="#dfn-interface">interface</a>,
             <a class="dfnref" href="#dfn-dictionary">dictionary</a>,
@@ -643,7 +643,7 @@ interface B : A {
             from and all of |B|’s <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>.
           
           
-            An interface <span class="rfc2119">MUST NOT</span> be declared such that
+            An interface must not be declared such that
             its inheritance hierarchy has a cycle.  That is, an interface
             |A| cannot inherit from itself, nor can it inherit from another
             interface |B| that inherits from |A|, and so on.
@@ -691,24 +691,24 @@ interface B : A {
               Note: See also the similarly named <a class="dfnref" href="#dfn-callback-function">callback function</a> definition.
           
             <a class="dfnref" href="#dfn-callback-interface">Callback interfaces</a>
-            <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a>
-            from any non-callback interfaces, and non-callback interfaces <span class="rfc2119">MUST NOT</span>
+            must not <a class="dfnref" href="#dfn-inherit">inherit</a>
+            from any non-callback interfaces, and non-callback interfaces must not
             inherit from any callback interfaces.
-            Callback interfaces <span class="rfc2119">MUST NOT</span> have any
+            Callback interfaces must not have any
             <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>.
           
           
             <a class="dfnref" href="#dfn-static-attribute">Static attributes</a> and
-            <a class="dfnref" href="#dfn-static-operation">static operations</a> <span class="rfc2119">MUST NOT</span>
+            <a class="dfnref" href="#dfn-static-operation">static operations</a> must not
             be defined on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
           
           <div class="advisement">
             
-              Specification authors <span class="rfc2119">SHOULD NOT</span> define
+              Specification authors should not define
               <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>
               that have only a single <a class="dfnref" href="#dfn-operation">operation</a>,
               unless required to describe the requirements of existing APIs.
-              Instead, a <a class="dfnref" href="#dfn-callback-function">callback function</a> <span class="rfc2119">SHOULD</span> be used.
+              Instead, a <a class="dfnref" href="#dfn-callback-function">callback function</a> should be used.
             
             
               The definition of <span class="idltype">EventListener</span> as a
@@ -779,7 +779,7 @@ interface A {
             <dfn id="dfn-partial-interface" export="">partial interface</dfn> definitions
             (matching <span class="sym">"partial"</span> <a class="sym" href="#prod-PartialInterface">PartialInterface</a>).
             The <a class="dfnref" href="#dfn-identifier">identifier</a> of a partial
-            interface definition <span class="rfc2119">MUST</span> be the same
+            interface definition must be the same
             as the identifier of an interface definition.  All of
             the members that appear on each of the partial interfaces are considered to be
             members of the interface itself.
@@ -806,7 +806,7 @@ partial interface <em>SomeInterface</em> {
           
             <a class="dfnref" href="#dfn-extended-attribute">Extended attributes</a> can be specified on
             <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions, with some
-            limitations.  The following extended attributes <span class="rfc2119">MUST NOT</span>
+            limitations.  The following extended attributes must not
             be specified on partial interface definitions:
             <a class="xattr" href="#Constructor">[Constructor]</a>,
             <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>,
@@ -979,10 +979,10 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             
               The <a class="dfnref" href="#dfn-identifier">identifier</a> of a
               <a class="dfnref" href="#dfn-constant">constant</a>
-              <span class="rfc2119">MUST NOT</span> be the same as the identifier
+              must not be the same as the identifier
               of another <a class="dfnref" href="#dfn-interface-member">interface member</a>
               defined on the same interface.
-              The identifier also <span class="rfc2119">MUST NOT</span>
+              The identifier also must not
               be “length”, “name” or “prototype”.
             
                 Note: These three names are the names of properties that exist on all
@@ -990,11 +990,11 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               
             
               The type of a constant (matching <a class="sym" href="#prod-ConstType">ConstType</a>)
-              <span class="rfc2119">MUST NOT</span> be any type other than
+              must not be any type other than
               a <a class="dfnref" href="#dfn-primitive-type">primitive type</a>
               or a <a class="dfnref" href="#dfn-nullable-type">nullable</a> primitive type.
               If an <a class="dfnref" href="#dfn-identifier">identifier</a> is used,
-              it <span class="rfc2119">MUST</span> reference a <a class="dfnref" href="#dfn-typedef">typedef</a>
+              it must reference a <a class="dfnref" href="#dfn-typedef">typedef</a>
               whose type is a primitive type or a nullable primitive type.
             
             
@@ -1045,7 +1045,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             
               The type of an <a class="sym" href="#prod-integer">integer</a> token is the same
               as the type of the constant, dictionary member or optional argument it is being used as the value of.
-              The value of the <a class="sym" href="#prod-integer">integer</a> token <span class="rfc2119">MUST NOT</span>
+              The value of the <a class="sym" href="#prod-integer">integer</a> token must not
               lie outside the valid range of values for its type, as given in
               [[#idl-types]] below.
             
@@ -1099,10 +1099,10 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             
               The type of a <a class="sym" href="#prod-float">float</a> token is the same
               as the type of the constant, dictionary member or optional argument it is being used as the value of.  The value of the
-              <a class="sym" href="#prod-float">float</a> token <span class="rfc2119">MUST NOT</span>
+              <a class="sym" href="#prod-float">float</a> token must not
               lie outside the valid range of values for its type, as given in
               [[#idl-types]] below.
-              Also, <code>Infinity</code>, <code>-Infinity</code> and <code>NaN</code> <span class="rfc2119">MUST NOT</span>
+              Also, <code>Infinity</code>, <code>-Infinity</code> and <code>NaN</code> must not
               be used as the value of a <a class="idltype" href="#idl-float">float</a>
               or <a class="idltype" href="#idl-double">double</a>.
             
@@ -1115,7 +1115,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             
             
               If |VT| is the type of the value assigned to a constant, and |DT|
-              is the type of the constant, dictionary member or optional argument itself, then these types <span class="rfc2119">MUST</span>
+              is the type of the constant, dictionary member or optional argument itself, then these types must
               be compatible, which is the case if |DT| and |VT| are identical,
               or |DT| is a <a class="dfnref" href="#dfn-nullable-type">nullable type</a>
               whose <a class="dfnref" href="#dfn-inner-type">inner type</a> is |VT|.
@@ -1204,10 +1204,10 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             
               The <a class="dfnref" href="#dfn-identifier">identifier</a> of an
               <a class="dfnref" href="#dfn-attribute">attribute</a>
-              <span class="rfc2119">MUST NOT</span> be the same as the identifier
+              must not be the same as the identifier
               of another <a class="dfnref" href="#dfn-interface-member">interface member</a>
               defined on the same <a class="dfnref" href="#dfn-interface">interface</a>.
-              The identifier of a static attribute <span class="rfc2119">MUST NOT</span>
+              The identifier of a static attribute must not
               be “prototype”.
             
             
@@ -1215,12 +1215,12 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               that appears after the <code>attribute</code> keyword.
               If the <a class="sym" href="#prod-Type">Type</a> is an
               <a class="dfnref" href="#dfn-identifier">identifier</a> or an identifier followed by <code>?</code>,
-              then the identifier <span class="rfc2119">MUST</span>
+              then the identifier must
               identify an interface, <a class="dfnref" href="#dfn-enumeration">enumeration</a>,
               <a class="dfnref" href="#dfn-callback-function">callback function</a> or <a class="dfnref" href="#dfn-typedef">typedef</a>.
             
             
-              The type of the attribute, after resolving typedefs, <span class="rfc2119">MUST NOT</span> be a
+              The type of the attribute, after resolving typedefs, must not be a
               <a class="dfnref" href="#dfn-nullable-type">nullable</a> or non-nullable version of any of the following types:
             
             <ul>
@@ -1250,9 +1250,9 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               The read only attribute from which the attribute inherits its getter
               is the attribute with the same identifier on the closest ancestor interface
               of the one on which the inheriting attribute is defined.  The attribute
-              whose getter is being inherited <span class="rfc2119">MUST</span> be
+              whose getter is being inherited must be
               of the same type as the inheriting attribute, and <code>inherit</code>
-              <span class="rfc2119">MUST NOT</span> appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
+              must not appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
               attribute or a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             
             <pre class="syntax">interface <i>Ancestor</i> {
@@ -1407,7 +1407,7 @@ interface Person : Animal {
             
             
               If an operation has no identifier,
-              then it <span class="rfc2119">MUST</span>
+              then it must
               be declared to be a special operation using one of the
               special keywords.
             
@@ -1415,11 +1415,11 @@ interface Person : Animal {
               The identifier of a
               <a class="dfnref" href="#dfn-regular-operation">regular operation</a>
               or <a class="dfnref" href="#dfn-static-operation">static operation</a>
-              <span class="rfc2119">MUST NOT</span> be the same as the identifier
+              must not be the same as the identifier
               of a <a class="dfnref" href="#dfn-constant">constant</a> or
               <a class="dfnref" href="#dfn-attribute">attribute</a>
               defined on the same <a class="dfnref" href="#dfn-interface">interface</a>.
-              The identifier of a static operation <span class="rfc2119">MUST NOT</span>
+              The identifier of a static operation must not
               be “prototype”.
             
                 Note: The identifier can be the same as that of another operation on the
@@ -1427,7 +1427,7 @@ interface Person : Animal {
               
             
               The <a class="dfnref" href="#dfn-identifier">identifier</a> of a <a class="dfnref" href="#dfn-static-operation">static operation</a>
-              also <span class="rfc2119">MUST NOT</span> be the same as the identifier
+              also must not be the same as the identifier
               of a <a class="dfnref" href="#dfn-regular-operation">regular operation</a>
               defined on the same <a class="dfnref" href="#dfn-interface">interface</a>.
             
@@ -1438,7 +1438,7 @@ interface Person : Animal {
               A return type of <code id="idl-void">void</code> indicates that the operation returns no value.
               If the return type is an
               <a class="dfnref" href="#dfn-identifier">identifier</a> followed by <code>?</code>,
-              then the identifier <span class="rfc2119">MUST</span>
+              then the identifier must
               identify an interface, dictionary, <a class="dfnref" href="#dfn-enumeration">enumeration</a>,
               <a class="dfnref" href="#dfn-callback-function">callback function</a> or <a class="dfnref" href="#dfn-typedef">typedef</a>.
             
@@ -1454,16 +1454,16 @@ interface Person : Animal {
             
               If the <a class="sym" href="#prod-Type">Type</a> of an operation argument is an identifier
               followed by <code>?</code>,
-              then the identifier <span class="rfc2119">MUST</span> identify an interface,
+              then the identifier must identify an interface,
               <a class="dfnref" href="#dfn-enumeration">enumeration</a>, <a class="dfnref" href="#dfn-callback-function">callback function</a>
               or <a class="dfnref" href="#dfn-typedef">typedef</a>.
               If the operation argument type is an <a class="dfnref" href="#dfn-identifier">identifier</a>
-              not followed by <code>?</code>, then the identifier <span class="rfc2119">MUST</span>
+              not followed by <code>?</code>, then the identifier must
               identify any one of those definitions or a <a class="dfnref" href="#dfn-dictionary">dictionary</a>.
             
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i> <i>identifier</i>, …);</pre>
             
-              The identifier of each argument <span class="rfc2119">MUST NOT</span> be the same
+              The identifier of each argument must not be the same
               as the identifier of another argument in the same operation declaration.
             
             
@@ -1505,7 +1505,7 @@ interface Button {
               the operation can be invoked with any number of arguments after that final argument.
               Those extra implied formal arguments are of the same type as the final explicit
               argument in the operation declaration.  The final argument can also be omitted
-              when invoking the operation.  An argument <span class="rfc2119">MUST NOT</span>
+              when invoking the operation.  An argument must not
               be declared with the <code>...</code> token unless it
               is the final argument in the operation’s argument list.
             
@@ -1554,7 +1554,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               is also considered to be an optional argument. Declaring an argument
               to be optional indicates that the argument value can be omitted
               when the operation is invoked.  The final argument in an
-              operation <span class="rfc2119">MUST NOT</span> explicitly be declared to be
+              operation must not explicitly be declared to be
               optional if the operation is <a class="dfnref" href="#dfn-variadic">variadic</a>.
             
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i>);</pre>
@@ -1565,7 +1565,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               and a value (matching <a class="sym" href="#prod-DefaultValue">DefaultValue</a>),
               then that gives the optional argument its <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>.
               The implicitly optional final argument of a <a class="dfnref" href="#dfn-variadic">variadic</a>
-              operation <span class="rfc2119">MUST NOT</span> have a default value specified.
+              operation must not have a default value specified.
               The default value is the value to be assumed when the operation is called with the
               corresponding argument omitted.
             
@@ -1582,7 +1582,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               and that dictionary type and its ancestors have no <a class="dfnref" href="#required-dictionary-member">required members</a>,
               and the argument is either the final argument or is followed only by
               <a class="dfnref" href="#dfn-optional-argument">optional arguments</a>, then
-              the argument <span class="rfc2119">MUST</span> be specified as optional.
+              the argument must be specified as optional.
               Such arguments are always considered to have a
               <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a> of an empty dictionary,
               unless otherwise specified.
@@ -1632,7 +1632,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             
               If the type of the <a class="dfnref" href="#dfn-optional-argument">optional argument</a>
               is an <a class="dfnref" href="#dfn-enumeration">enumeration</a>, then its
-              <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a> if specified <span class="rfc2119">MUST</span>
+              <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a> if specified must
               be one of the <a class="dfnref" href="#dfn-enumeration-value">enumeration’s values</a>.
             
             
@@ -1640,7 +1640,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               two token value <code>[]</code>, which represents an empty sequence
               value.  The type of this value is the same the type of the optional
               argument it is being used as the default value of.  That type
-              <span class="rfc2119">MUST</span> be a
+              must be a
               <a href="#idl-sequence">sequence type</a> or a
               <a class="dfnref" href="#dfn-nullable-type">nullable type</a>.
             
@@ -1898,7 +1898,7 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
             </p>
             -->
             
-              A given <a class="dfnref" href="#dfn-special-keyword">special keyword</a> <span class="rfc2119">MUST NOT</span>
+              A given <a class="dfnref" href="#dfn-special-keyword">special keyword</a> must not
               appear twice on an operation.
             
             
@@ -1919,7 +1919,7 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
             
             
               On a given <a class="dfnref" href="#dfn-interface">interface</a>,
-              there <span class="rfc2119">MUST</span> exist at most one
+              there must exist at most one
               stringifier, at most one serializer, at most one
               <a class="dfnref" href="#dfn-named-property-deleter">named property deleter</a>,
               and at most one of each variety of getter and setter.
@@ -1928,18 +1928,18 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
             
             
               If an interface has a setter of a given variety,
-              then it <span class="rfc2119">MUST</span> also have a getter of that
+              then it must also have a getter of that
               variety.  If it has a <a class="dfnref" href="#dfn-named-property-deleter">named property deleter</a>,
-              then it <span class="rfc2119">MUST</span> also have a
+              then it must also have a
               <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>.
             
             
-              Special operations declared using operations <span class="rfc2119">MUST NOT</span>
+              Special operations declared using operations must not
               be <a class="dfnref" href="#dfn-variadic">variadic</a> nor have any
               <a class="dfnref" href="#dfn-optional-argument">optional arguments</a>.
             
             
-              Special operations <span class="rfc2119">MUST NOT</span> be declared on
+              Special operations must not be declared on
               <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>.
             
             
@@ -1967,12 +1967,12 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
                 as if it were a function.
               
               
-                Legacy callers <span class="rfc2119">MUST NOT</span> be defined to return a
+                Legacy callers must not be defined to return a
                 <a href="#idl-promise">promise type</a>.
               
                   Advisement: Legacy callers are universally recognised as an undesirable feature.  They exist
                   only so that legacy Web platform features can be specified.  Legacy callers
-                  <span class="rfc2119">SHOULD NOT</span> be used in specifications unless required to
+                  should not be used in specifications unless required to
                   specify the behavior of legacy APIs, and even then this should be discussed on
                   the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                   mailing list before proceeding.
@@ -2017,14 +2017,14 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
               
                 If an operation used to declare a stringifier does not have an
                 <a class="dfnref" href="#dfn-identifier">identifier</a>, then prose
-                accompanying the interface <span class="rfc2119">MUST</span> define
+                accompanying the interface must define
                 the <dfn id="dfn-stringification-behavior" export="">stringification behavior</dfn>
                 of the interface.  If the operation does have an identifier,
                 then the object is converted to a string by invoking the
                 operation to obtain the string.
               
               
-                Stringifiers declared with operations <span class="rfc2119">MUST</span>
+                Stringifiers declared with operations must
                 be declared to take zero arguments and return a <a class="idltype" href="#idl-DOMString">DOMString</a>.
               
               
@@ -2048,9 +2048,9 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
                 can also be placed on an <a class="dfnref" href="#dfn-attribute">attribute</a>.
                 In this case, the string to convert the object to is the
                 value of the attribute.  The <code>stringifier</code> keyword
-                <span class="rfc2119">MUST NOT</span> be placed on an attribute unless
+                must not be placed on an attribute unless
                 it is declared to be of type <a class="idltype" href="#idl-DOMString">DOMString</a> or <a class="idltype" href="#idl-USVString">USVString</a>.
-                It also <span class="rfc2119">MUST NOT</span> be placed on
+                It also must not be placed on
                 a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
               
               <pre class="syntax">stringifier attribute DOMString <i>identifier</i>;</pre>
@@ -2137,7 +2137,7 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
               <pre class="syntax">serializer;</pre>
               
                 Prose accompanying an interface that declares a serializer in this
-                way <span class="rfc2119">MUST</span> define the
+                way must define the
                 <dfn id="dfn-serialization-behavior" export="">serialization behavior</dfn>
                 of the interface.  Serialization behavior is defined as returning
                 a <dfn id="dfn-serialized-value" export="">serialized value</dfn> of one of the following types:
@@ -2179,10 +2179,10 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
                   attributes from an inherited interface:
                   <pre class="syntax">serializer = { <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
 serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };</pre>
-                  Each identifier <span class="rfc2119">MUST</span> be the identifier of an attribute declared
-                  on the interface.  The identified attributes all <span class="rfc2119">MUST</span> have a
+                  Each identifier must be the identifier of an attribute declared
+                  on the interface.  The identified attributes all must have a
                   <a class="dfnref" href="#dfn-serializable-type">serializable type</a>.
-                  The <code>inherit</code> keyword <span class="rfc2119">MUST NOT</span> be used unless
+                  The <code>inherit</code> keyword must not be used unless
                   the interface inherits from another that defines a serializer, and the closest such interface
                   defines its serializer using this <a class="dfnref" href="#dfn-serialization-pattern">serialization pattern</a>
                   form or the following form (i.e. <code>{ attribute }</code>).
@@ -2211,7 +2211,7 @@ serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>
                   attributes from an inherited interface:
                   <pre class="syntax">serializer = { attribute };
 serializer = { inherit, attribute };</pre>
-                  The <code>inherit</code> keyword <span class="rfc2119">MUST NOT</span> be used unless
+                  The <code>inherit</code> keyword must not be used unless
                   the interface inherits from another that defines a serializer, and the closest such interface
                   defines its serializer using this <a class="dfnref" href="#dfn-serialization-pattern">serialization pattern</a>
                   form or the previous form.
@@ -2239,7 +2239,7 @@ serializer = { inherit, attribute };</pre>
                 <li>
                   A map with entries corresponding to the named properties:
                   <pre class="syntax">serializer = { getter };</pre>
-                  This form <span class="rfc2119">MUST NOT</span> be used unless the interface or one it
+                  This form must not be used unless the interface or one it
                   inherits from supports named properties and the return type of the named property getter
                   is a serializable type.
                   The <a class="dfnref" href="#dfn-serialization-behavior">serialization behavior</a> for this
@@ -2260,8 +2260,8 @@ serializer = { inherit, attribute };</pre>
                 <li>
                   A list of value of zero or more attributes on the interface:
                   <pre class="syntax">serializer = [ <i>attribute-identifier</i>, <i>attribute-identifier</i>, … ];</pre>
-                  Each identifier <span class="rfc2119">MUST</span> be the identifier of an attribute declared
-                  on the interface.  The identified attributes all <span class="rfc2119">MUST</span> have a
+                  Each identifier must be the identifier of an attribute declared
+                  on the interface.  The identified attributes all must have a
                   <a class="dfnref" href="#dfn-serializable-type">serializable type</a>.
                   The <a class="dfnref" href="#dfn-serialization-behavior">serialization behavior</a> for this
                   form of serialization pattern is as follows:
@@ -2281,7 +2281,7 @@ serializer = { inherit, attribute };</pre>
                 <li>
                   A list with entries corresponding to the indexed properties:
                   <pre class="syntax">serializer = [ getter ];</pre>
-                  This form <span class="rfc2119">MUST NOT</span> be used unless the interface or one it
+                  This form must not be used unless the interface or one it
                   inherits from supports indexed properties and the return type of the indexed property getter
                   is a serializable type.
                   The <a class="dfnref" href="#dfn-serialization-behavior">serialization behavior</a> for this
@@ -2305,8 +2305,8 @@ serializer = { inherit, attribute };</pre>
                 <li>
                   A single attribute:
                   <pre class="syntax">serializer = <i>attribute-identifier</i>;</pre>
-                  The identifier <span class="rfc2119">MUST</span> be the identifier of an attribute declared
-                  on the interface, and this attribute <span class="rfc2119">MUST</span> have a
+                  The identifier must be the identifier of an attribute declared
+                  on the interface, and this attribute must have a
                   <a class="dfnref" href="#dfn-serializable-type">serializable type</a>.
                   The <a class="dfnref" href="#dfn-serialization-behavior">serialization behavior</a> for this
                   form of serialization pattern is as follows:
@@ -2376,7 +2376,7 @@ serializer = { inherit, attribute };</pre>
               
               <pre class="syntax">serializer <i>type</i> <i>identifier</i>();</pre>
               
-                Serializers declared with operations <span class="rfc2119">MUST</span>
+                Serializers declared with operations must
                 be declared to take zero arguments and return a <a class="dfnref" href="#dfn-serializable-type">serializable type</a>.
               
               
@@ -2499,14 +2499,14 @@ JSON.stringify(txn);</pre>
               
               
                 If an interface <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a>,
-                then the interface definition <span class="rfc2119">MUST</span> be accompanied by
+                then the interface definition must be accompanied by
                 a description of what indices the object can be indexed with at
                 any given time. These indices are called the <dfn id="dfn-supported-property-indices" export="">supported property indices</dfn>.
               
               
-                Indexed property getters <span class="rfc2119">MUST</span>
+                Indexed property getters must
                 be declared to take a single <a class="idltype" href="#idl-unsigned-long">unsigned long</a> argument.
-                Indexed property setters <span class="rfc2119">MUST</span>
+                Indexed property setters must
                 be declared to take two arguments, where the first is an <a class="idltype" href="#idl-unsigned-long">unsigned long</a>.
               
               <pre class="syntax">getter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>);
@@ -2665,15 +2665,15 @@ delete map.cake;  // If a named property named "cake" exists, then the "cake"
               
               
                 If an interface <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
-                then the interface definition <span class="rfc2119">MUST</span> be accompanied by
+                then the interface definition must be accompanied by
                 a description of the ordered set of names that can be used to index the object
                 at any given time.  These names are called the
                 <dfn id="dfn-supported-property-names" export="">supported property names</dfn>.
               
               
-                Named property getters and deleters <span class="rfc2119">MUST</span>
+                Named property getters and deleters must
                 be declared to take a single <a class="idltype" href="#idl-DOMString">DOMString</a> argument.
-                Named property setters <span class="rfc2119">MUST</span>
+                Named property setters must
                 be declared to take two arguments, where the first is a <a class="idltype" href="#idl-DOMString">DOMString</a>.
               
               <pre class="syntax">getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
@@ -2750,7 +2750,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
               to an instance of the interface.
             
             
-              Static attributes and operations <span class="rfc2119">MUST NOT</span> be
+              Static attributes and operations must not be
               declared on <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>.
             
 
@@ -2823,7 +2823,7 @@ window.alert(Circle.triangulationCount);</pre>
             
             
               <a class="dfnref" href="#dfn-operation">Operations</a> and <a class="dfnref" href="#dfn-legacy-caller">legacy callers</a>
-              <span class="rfc2119">MUST NOT</span> be overloaded across <a class="dfnref" href="#dfn-interface">interface</a>
+              must not be overloaded across <a class="dfnref" href="#dfn-interface">interface</a>
               and <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions.
             
             <div class="note">
@@ -3330,7 +3330,7 @@ partial interface A {
             
               If there is more than one entry in an <a class="dfnref" href="#dfn-effective-overload-set">effective overload set</a>
               that has a given type list length, then for those entries there
-              <span class="rfc2119">MUST</span> be an index |i| such
+              must be an index |i| such
               that for each pair of entries the types at index |i| are
               <a class="dfnref" href="#dfn-distinguishable">distinguishable</a><!--, and either:
             </p>
@@ -3366,8 +3366,8 @@ partial interface A {
               In addition, for each index |j|, where |j| is less than the
               <a class="dfnref" href="#dfn-distinguishing-argument-index">distinguishing argument index</a>
               for a given type list length, the types at index |j| in
-              all of the entries’ type lists <span class="rfc2119">MUST</span> be the same
-              and the booleans in the corresponding list indicating argument optionality <span class="rfc2119">MUST</span>
+              all of the entries’ type lists must be the same
+              and the booleans in the corresponding list indicating argument optionality must
               be the same.
             
             <div class="example">
@@ -3464,23 +3464,23 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             
             
               A <a class="dfnref" href="#dfn-value-iterator">value iterator</a>
-              <span class="rfc2119">MUST</span> only be declared on an interface
+              must only be declared on an interface
               that <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a>
               and has an <a class="dfnref" href="#dfn-integer-type">integer-typed</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a> named “length”.
               The value-type of the <a class="dfnref" href="#dfn-value-iterator">value iterator</a>
-              <span class="rfc2119">MUST</span> be the same as the type returned by
+              must be the same as the type returned by
               the <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>.
               A <a class="dfnref" href="#dfn-value-iterator">value iterator</a> is implicitly
               defined to iterate over the object’s indexed properties.
             
             
               A <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>
-              <span class="rfc2119">MUST NOT</span> be declared on an interface
+              must not be declared on an interface
               that <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a>.
               Prose accompanying an interface with a
               <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>
-              <span class="rfc2119">MUST</span> define what the list of
+              must define what the list of
               <dfn id="dfn-value-pairs-to-iterate-over" export="">value pairs to iterate over</dfn>
               is.
             
@@ -3511,7 +3511,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
                 the iterator objects returned by “entries”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> are
                 actual <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>.
             
-              Interfaces with iterable declarations <span class="rfc2119">MUST NOT</span>
+              Interfaces with iterable declarations must not
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
               named “entries”, “keys” or “values”,
               or have any <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
@@ -3580,18 +3580,18 @@ for (let session of sm) {
             </div>
 
             
-              An interface <span class="rfc2119">MUST NOT</span> have more than one
+              An interface must not have more than one
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>.
               The <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               and <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
               interfaces of an interface with an
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
-              <span class="rfc2119">MUST NOT</span> also have an
+              must not also have an
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>.
               An interface with an <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
               and its <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               and <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
-              interfaces <span class="rfc2119">MUST NOT</span> have a
+              interfaces must not have a
               <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a> or
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.
             
@@ -3650,13 +3650,13 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
                 “set” methods.
               
             
-              Maplike interfaces <span class="rfc2119">MUST NOT</span>
+              Maplike interfaces must not
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
               named “entries”, “forEach”, “get”, “has”, “keys”, “size”, or “values”,
               or have any <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               or <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
               interfaces that have interface members with these names.
-              Read–write maplike interfaces <span class="rfc2119">MUST NOT</span>
+              Read–write maplike interfaces must not
               have any <a class="dfnref" href="#dfn-attribute">attributes</a>
               or <a class="dfnref" href="#dfn-constant">constants</a> named
               “clear”, “delete”, or “set”, or have any <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
@@ -3668,15 +3668,15 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
                 added to the interface prototype object in the ECMAScript language binding.
                 This allows the default behavior of these operations to be overridden.
             
-              An interface <span class="rfc2119">MUST NOT</span> have more than one
+              An interface must not have more than one
               <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.
               The <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               and <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
-              interfaces of a maplike interface <span class="rfc2119">MUST NOT</span>
+              interfaces of a maplike interface must not
               also have a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.
               A maplike interface and its <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               and <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
-              interfaces <span class="rfc2119">MUST NOT</span> have an
+              interfaces must not have an
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a> or
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.
             
@@ -3728,13 +3728,13 @@ setlike&lt;<i>type</i>&gt;;</pre>
                 For read–write setlikes, it also includes “add”, “clear”, and “delete” methods.
               
             
-              Setlike interfaces <span class="rfc2119">MUST NOT</span>
+              Setlike interfaces must not
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
               named “entries”, “forEach”, “has”, “keys”, “size”, or “values”,
               or have any <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               or <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
               interfaces that have interface members with these names..
-              Read–write setlike interfaces <span class="rfc2119">MUST NOT</span>
+              Read–write setlike interfaces must not
               have any <a class="dfnref" href="#dfn-attribute">attributes</a>
               or <a class="dfnref" href="#dfn-constant">constants</a> named
               “add”, “clear”, or “delete”, or have any <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
@@ -3746,15 +3746,15 @@ setlike&lt;<i>type</i>&gt;;</pre>
                 added to the interface prototype object in the ECMAScript language binding.
                 This allows the default behavior of these operations to be overridden.
             
-              An interface <span class="rfc2119">MUST NOT</span> have more than one
+              An interface must not have more than one
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.
               The <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               and <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
-              interfaces of a setlike interface <span class="rfc2119">MUST NOT</span>
+              interfaces of a setlike interface must not
               also have a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.
               A setlike interface and its <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
               and <a class="dfnref" href="#dfn-consequential-interfaces">consequential</a>
-              interfaces <span class="rfc2119">MUST NOT</span> have an
+              interfaces must not have an
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a> or
               <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.
             
@@ -3791,10 +3791,10 @@ setlike&lt;<i>type</i>&gt;;</pre>
             A dictionary can be defined to <dfn id="dfn-inherit-dictionary" for="dictionary" export="">inherit</dfn> from another dictionary.
             If the identifier of the dictionary is followed by a colon and a <a class="dfnref" href="#dfn-identifier">identifier</a>,
             then that identifier identifies the inherited dictionary.  The identifier
-            <span class="rfc2119">MUST</span> identify a dictionary.
+            must identify a dictionary.
           
           
-            A dictionary <span class="rfc2119">MUST NOT</span> be declared such that
+            A dictionary must not be declared such that
             its inheritance hierarchy has a cycle.  That is, a dictionary
             |A| cannot inherit from itself, nor can it inherit from another
             dictionary |B| that inherits from |A|, and so on.
@@ -3846,11 +3846,11 @@ dictionary <i>Derived</i> : <em>Base</em> {
             If the <a class="sym" href="#prod-Type">Type</a>
             is an <a class="dfnref" href="#dfn-identifier">identifier</a>
             followed by <code>?</code>, then the identifier
-            <span class="rfc2119">MUST</span> identify an
+            must identify an
             interface, <a class="dfnref" href="#dfn-enumeration">enumeration</a>,
             <a class="dfnref" href="#dfn-callback-function">callback function</a> or <a class="dfnref" href="#dfn-typedef">typedef</a>.
             If the dictionary member type is an identifier
-            not followed by <code>?</code>, then the identifier <span class="rfc2119">MUST</span>
+            not followed by <code>?</code>, then the identifier must
             identify any one of those definitions or a <a class="dfnref" href="#dfn-dictionary">dictionary</a>.
           
           <pre class="syntax">dictionary <i>identifier</i> {
@@ -3880,7 +3880,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
           
             If the type of the <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
             is an <a class="dfnref" href="#dfn-enumeration">enumeration</a>, then its
-            <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a> if specified <span class="rfc2119">MUST</span>
+            <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a> if specified must
             be one of the <a class="dfnref" href="#dfn-enumeration-value">enumeration’s values</a>.
           
           
@@ -3889,13 +3889,13 @@ dictionary <i>Derived</i> : <em>Base</em> {
             <dfn id="required-dictionary-member" export="">required dictionary member</dfn>
             and must be present on the dictionary.  A
             <a class="dfnref" href="#required-dictionary-member">required dictionary
-            member</a> <span class="rfc2119">MUST NOT</span> have a default value.
+            member</a> must not have a default value.
           
           <pre class="syntax">dictionary <i>identifier</i> {
   required <i>type</i> <i>identifier</i>;
 };</pre>
           
-            The type of a dictionary member <span class="rfc2119">MUST NOT</span> include
+            The type of a dictionary member must not include
             the dictionary it appears on.  A type includes a dictionary |D|
             if at least one of the following is true:
           
@@ -3917,7 +3917,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
             by using <dfn id="dfn-partial-dictionary" export="">partial dictionary</dfn> definitions
             (matching <span class="sym">"partial"</span> <a class="sym" href="#prod-Dictionary">Dictionary</a>).
             The <a class="dfnref" href="#dfn-identifier">identifier</a> of a partial
-            dictionary definition <span class="rfc2119">MUST</span> be the same as the
+            dictionary definition must be the same as the
             identifier of a dictionary definition.  All of the members that appear on each
             of the partial dictionary definitions are considered to be members of
             the dictionary itself.
@@ -3995,12 +3995,12 @@ something.f(dict);</pre>
             
           </div>
           
-            The identifier of a dictionary member <span class="rfc2119">MUST NOT</span> be
+            The identifier of a dictionary member must not be
             the same as that of another dictionary member defined on the dictionary or
             on that dictionary’s <a class="dfnref" href="#dfn-inherited-dictionaries">inherited dictionaries</a>.
           
           
-            Dictionaries <span class="rfc2119">MUST NOT</span> be used as the type of an
+            Dictionaries must not be used as the type of an
             <a class="dfnref" href="#dfn-attribute">attribute</a> or
             <a class="dfnref" href="#dfn-constant">constant</a>.
           
@@ -4110,7 +4110,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             the <a class="dfnref" href="#dfn-exception-error-name">error name</a> is the name
             of the exception.
             For a <a class="dfnref" href="#dfn-DOMException">DOMException</a>,
-            the <a class="dfnref" href="#dfn-exception-error-name">error name</a> <span class="rfc2119">MUST</span>
+            the <a class="dfnref" href="#dfn-exception-error-name">error name</a> must
             be one of the names listed in the <a class="dfnref" href="#dfn-error-names-table">error names table</a>
             below.  The table also indicates the <a class="dfnref" href="#dfn-DOMException">DOMException</a>'s integer code
             for that error name, if it has one.
@@ -4375,7 +4375,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             The <dfn id="dfn-enumeration-value" export="" lt="enumeration value">enumeration values</dfn> are specified
             as a comma-separated list of <a class="sym" href="#prod-string">string</a> literals.
             The list of <a class="dfnref" href="#dfn-enumeration-value">enumeration values</a>
-            <span class="rfc2119">MUST NOT</span> include duplicates.
+            must not include duplicates.
           
               Advisement: It is strongly suggested that enumeration values be all lowercase,
               and that multiple words be separated using dashes or not be
@@ -4462,7 +4462,7 @@ meal.type == "noodles";              // Evaluates to true.</pre>
             sign gives the signature of the callback function type.
           
           
-            <a class="dfnref" href="#dfn-callback-function">Callback functions</a> <span class="rfc2119">MUST NOT</span>
+            <a class="dfnref" href="#dfn-callback-function">Callback functions</a> must not
             be used as the type of a <a class="dfnref" href="#dfn-constant">constant</a>.
           
           
@@ -4515,7 +4515,7 @@ ops.performOperation(function(status) {
             type gives the name.
           
           
-            The <a class="sym" href="#prod-Type">Type</a> <span class="rfc2119">MUST NOT</span>
+            The <a class="sym" href="#prod-Type">Type</a> must not
             identify the same or another <a class="dfnref" href="#dfn-typedef">typedef</a>.
           
           
@@ -4555,7 +4555,7 @@ interface Widget {
             (matching <a class="sym" href="#prod-ImplementsStatement">ImplementsStatement</a>)
             used to declare that all objects implementing an interface |A|
             (identified by the first <a class="dfnref" href="#dfn-identifier">identifier</a>)
-            <span class="rfc2119">MUST</span> additionally implement interface |B|
+            must additionally implement interface |B|
             (identified by the second identifier), including all other interfaces that
             |B| inherits from.
           
@@ -4567,21 +4567,21 @@ interface Widget {
             |A| do additionally implement interface |C|.
           
           
-            The two <a class="dfnref" href="#dfn-identifier">identifiers</a> <span class="rfc2119">MUST</span>
+            The two <a class="dfnref" href="#dfn-identifier">identifiers</a> must
             identify two different interfaces.
           
           
             The interface identified on the left-hand side of an implements statement
-            <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a>
+            must not <a class="dfnref" href="#dfn-inherit">inherit</a>
             from the interface identifier on the right-hand side, and vice versa.  Both identified
-            interfaces also <span class="rfc2119">MUST NOT</span> be
+            interfaces also must not be
             <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>.
           
           
             If each <a class="dfnref" href="#dfn-implements-statement">implements statement</a> is
             considered to be an edge in a directed graph, from a node representing the interface
             on the left-hand side of the statement to a node representing the interface on the
-            right-hand side, then this graph <span class="rfc2119">MUST NOT</span> have any cycles.
+            right-hand side, then this graph must not have any cycles.
           
           
             Interfaces that a given object implements are partitioned into those that are considered
@@ -4639,7 +4639,7 @@ Gizmo implements MoreFunctionality;</pre>
               where |C| is a consequential interface of |A|.</li>
           </ul>
           
-            For a given interface, there <span class="rfc2119">MUST NOT</span>
+            For a given interface, there must not
             be any member defined on any of its consequential interfaces
             whose identifier is the same as any other member defined on any
             of those consequential interfaces or on the original interface itself.
@@ -5124,7 +5124,7 @@ interface Person {
               <a class="idltype" href="#idl-float">float</a> type is “Float”.
             
                 Advisement: Unless there are specific reasons to use a 32 bit floating point type,
-                specifications <span class="rfc2119">SHOULD</span> use
+                specifications should use
                 <a class="idltype" href="#idl-double">double</a> rather than <a class="idltype" href="#idl-float">float</a>,
                 since the set of values that a <a class="idltype" href="#idl-double">double</a> can
                 represent more closely matches an ECMAScript <span class="estype">Number</span>.
@@ -5295,16 +5295,16 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-ByteString">ByteString</a> type is “ByteString”.
             
-                Advisement: Specifications <span class="rfc2119">SHOULD</span> only use
+                Advisement: Specifications should only use
                 <a class="idltype" href="#idl-ByteString">ByteString</a> for interfacing with protocols
                 that use bytes and strings interchangably, such as HTTP.  In general,
-                strings <span class="rfc2119">SHOULD</span> be represented with
+                strings should be represented with
                 <a class="idltype" href="#idl-DOMString">DOMString</a> values, even if it is expected
                 that values of the string will always be in ASCII or some
                 8 bit character encoding.  <a href="#idl-sequence">Sequences</a>,
                 <a href="#idl-frozen-array">frozen arrays</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a>
                 with <a class="idltype" href="#idl-octet">octet</a> or <a class="idltype" href="#idl-byte">byte</a>
-                elements <span class="rfc2119">SHOULD</span> be used for holding
+                elements should be used for holding
                 8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
                 <a href="#ref-TYPEDARRAYS">[TYPEDARRAYS]</a>
               
@@ -5330,7 +5330,7 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-USVString">USVString</a> type is “USVString”.
             
-                Advisement: Specifications <span class="rfc2119">SHOULD</span> only use
+                Advisement: Specifications should only use
                 <a class="idltype" href="#idl-USVString">USVString</a> for APIs that perform
                 text processing and need a string of Unicode
                 scalar values to operate on.  Most APIs that use strings
@@ -5478,7 +5478,7 @@ interface Person {
               which just allows the additional value <span class="idlvalue">null</span>
               to be a member of its set of values.  <a class="dfnref" href="#dfn-nullable-type">Nullable types</a>
               are represented in IDL by placing a <span class="char">U+003F QUESTION MARK ("?")</span>
-              character after an existing type.  The inner type <span class="rfc2119">MUST NOT</span>
+              character after an existing type.  The inner type must not
               be <a class="idltype" href="#idl-any">any</a>,
               another nullable type, or a <a class="dfnref" href="#dfn-union-type">union type</a>
               that itself has <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
@@ -5541,7 +5541,7 @@ interface Person {
               There is no way to represent a constant sequence value in IDL.
             
             
-              Sequences <span class="rfc2119">MUST NOT</span> be used as the
+              Sequences must not be used as the
               type of an <a class="dfnref" href="#dfn-attribute">attribute</a> or
               <a class="dfnref" href="#dfn-constant">constant</a>.
             
@@ -5670,13 +5670,13 @@ interface Person {
               <li>Return |n|.</li>
             </ol>
             
-              The <a class="idltype" href="#idl-any">any</a> type <span class="rfc2119">MUST NOT</span>
+              The <a class="idltype" href="#idl-any">any</a> type must not
               be used as a <a class="dfnref" href="#dfn-union-member-type">union member type</a>.
             
             
               The <a class="dfnref" href="#dfn-number-of-nullable-member-types">number of nullable member types</a>
-              of a <a class="dfnref" href="#dfn-union-type">union type</a> <span class="rfc2119">MUST</span>
-              be 0 or 1, and if it is 1 then the union type <span class="rfc2119">MUST</span> also not have
+              of a <a class="dfnref" href="#dfn-union-type">union type</a> must
+              be 0 or 1, and if it is 1 then the union type must also not have
               a <a class="dfnref" href="#idl-dictionary">dictionary type</a> in its
               <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>.
             
@@ -5691,7 +5691,7 @@ interface Person {
             
               Each pair of <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>
               in a <a class="dfnref" href="#dfn-union-type">union type</a>, |T| and |U|,
-              <span class="rfc2119">MUST</span> be <a class="dfnref" href="#dfn-distinguishable">distinguishable</a>.
+              must be <a class="dfnref" href="#dfn-distinguishable">distinguishable</a>.
             
             
               <a class="dfnref" href="#dfn-union-type">Union type</a> constant values
@@ -5817,7 +5817,7 @@ interface Person {
             
               At the specification prose level, IDL <a class="dfnref" href="#dfn-buffer-source-type">buffer source types</a>
               are simply references to objects.  To inspect or manipulate the bytes inside the buffer,
-              specification prose <span class="rfc2119">MUST</span> first either
+              specification prose must first either
               <dfn id="dfn-get-buffer-source-reference" export="" lt="get a reference to the buffer source">get a reference to the bytes held by the buffer source</dfn>
               or <dfn id="dfn-get-buffer-source-copy" export="" lt="get a copy of the buffer source">get a copy of the bytes held by the buffer source</dfn>.
               With a reference to the buffer source’s bytes, specification prose can get or set individual
@@ -6081,13 +6081,13 @@ interface Person {
           <span class="prop">[[HasInstance]]</span>.
         
         
-          Other specifications <span class="rfc2119">MAY</span> override the definitions
+          Other specifications may override the definitions
           of any internal method of a <a class="dfnref" href="#dfn-platform-object">platform object</a>
           that is an instance of an <a class="dfnref" href="#dfn-interface">interface</a>.
         
             Advisement: As overriding internal ECMAScript object methods is a low level operation and
             can result in objects that behave differently from ordinary objects,
-            this facility <span class="rfc2119">SHOULD NOT</span> be used unless necessary
+            this facility should not be used unless necessary
             for security or compatibility.  The expectation is that this will be used
             for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
             and possibly WindowProxy objects</a>.
@@ -6103,7 +6103,7 @@ interface Person {
         
           Some objects described in this section are defined to have a <dfn id="dfn-class-string" export="">class string</dfn>,
           which is the string to include in the string returned from Object.prototype.toString.
-          If an object has a class string, then the object <span class="rfc2119">MUST</span>,
+          If an object has a class string, then the object must,
           at the time it is created, have a property whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol
           and whose value is the specified string.
         
@@ -6198,11 +6198,11 @@ interface Person {
           </ul>
           
             Each <a class="external" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 8.2)
-            <span class="rfc2119">MUST</span> have its own unique set of each of
+            must have its own unique set of each of
             the <a class="dfnref" href="#dfn-initial-object">initial objects</a>, created
             before control enters any ECMAScript execution context associated with the
             environment, but after the global object for that environment is created.  The <span class="prop">[[Prototype]]</span>s
-            of all initial objects in a given global environment <span class="rfc2119">MUST</span> come from
+            of all initial objects in a given global environment must come from
             that same global environment.
           
           <div class="example">
@@ -6344,13 +6344,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               in IDL is as the <a class="dfnref" href="#dfn-return-type">return type</a> of an
               <a class="dfnref" href="#dfn-operation">operation</a>.  Functions on <a class="dfnref" href="#dfn-platform-object">platform objects</a>
               that implement an operation whose IDL specifies a
-              <a class="idltype" href="#idl-void">void</a> return type <span class="rfc2119">MUST</span> return the
+              <a class="idltype" href="#idl-void">void</a> return type must return the
               <span class="esvalue">undefined</span> value.
             
             
               ECMAScript functions that implement an operation whose IDL
               specifies a <a class="idltype" href="#idl-void">void</a> return type
-              <span class="rfc2119">MAY</span> return any value, which will be discarded.
+              may return any value, which will be discarded.
             
           
 
@@ -7637,7 +7637,7 @@ alert(b[4]);    // This would alert "50".</pre>
               One can <dfn id="dfn-perform-steps-once-promise-is-settled" export="" lt="upon settling">perform some steps once a promise is settled</dfn>.
               There can be one or two sets of steps to perform, covering when the promise is fulfilled, rejected, or both.
               When a specification says to perform some steps once a promise is settled, the following steps
-              <span class="rfc2119">MUST</span> be followed:
+              must be followed:
             
             <ol class="algorithm">
               <li>Let |promise| be the promise object of type <a class="idltype" href="#idl-promise">Promise&lt;|T|&gt;</a>.</li>
@@ -8043,7 +8043,7 @@ alert(b[4]);    // This would alert "50".</pre>
               When <a class="dfnref" href="#dfn-get-buffer-source-reference">getting a reference to</a>
               or <a class="dfnref" href="#dfn-get-buffer-source-copy">getting a copy of the bytes held by a buffer source</a>
               that is an ECMAScript <span class="estype">ArrayBuffer</span>, <span class="estype">DataView</span>
-              or typed array object, these steps <span class="rfc2119">MUST</span> be followed:
+              or typed array object, these steps must be followed:
             
             <ol class="algorithm">
               <li>Let |O| be the ECMAScript object that is the buffer source.</li>
@@ -8068,7 +8068,7 @@ alert(b[4]);    // This would alert "50".</pre>
             </ol>
             
               To <a class="dfnref" href="#dfn-detach">detach</a> an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>,
-              these steps <span class="rfc2119">MUST</span> be followed:
+              these steps must be followed:
             
             <ol class="algorithm">
               <li>Let |O| be the ECMAScript object that is the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.</li>
@@ -8160,14 +8160,14 @@ alert(b[4]);    // This would alert "50".</pre>
             
             
               The <a class="xattr" href="#Clamp">[Clamp]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
+              must not appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
               attribute, or an attribute, operation argument or dictionary member
-              that is not of an integer type.  It also <span class="rfc2119">MUST NOT</span>
+              that is not of an integer type.  It also must not
               be used in conjunction with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a>
               extended attribute.
             
@@ -8225,7 +8225,7 @@ context.setColorClamped(-1, 255, 257);</pre>
             
             
               The <a class="xattr" href="#Constructor">[Constructor]</a>
-              extended attribute <span class="rfc2119">MUST</span> either
+              extended attribute must either
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a> or
               <a class="dfnref" href="#dfn-xattr-argument-list">take an argument list</a>.
               The bare form, <code>[Constructor]</code>, has the same meaning as
@@ -8235,7 +8235,7 @@ context.setColorClamped(-1, 255, 257);</pre>
               the interface by passing the specified arguments.
             
             
-              The prose definition of a constructor <span class="rfc2119">MUST</span>
+              The prose definition of a constructor must
               either return an IDL value of a type corresponding to the interface
               the <a class="xattr" href="#Constructor">[Constructor]</a>
               extended attribute appears on, or throw an exception.
@@ -8247,7 +8247,7 @@ context.setColorClamped(-1, 255, 257);</pre>
             
             
               The <a class="xattr" href="#Constructor">[Constructor]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be used on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
+              must not be used on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             
             
               See [[#es-interface-call]]
@@ -8313,15 +8313,15 @@ var z = new NodeList();    // This would throw a TypeError, since no
             
             
               The <a class="xattr" href="#EnforceRange">[EnforceRange]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
+              must not appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
               attribute, a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>,
               or an attribute, operation argument or dictionary member
-              that is not of an integer type.  It also <span class="rfc2119">MUST NOT</span>
+              that is not of an integer type.  It also must not
               be used in conjunction with the <a class="xattr" href="#Clamp">[Clamp]</a>
               extended attribute.
             
@@ -8382,10 +8382,10 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
             
               The <a class="xattr" href="#Exposed">[Exposed]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
-              <span class="rfc2119">MUST</span> either
+              must either
               <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a> or
               <a class="dfnref" href="#dfn-xattr-identifier-list">take an identifier list</a>.
-              Each of the identifiers mentioned <span class="rfc2119">MUST</span> be
+              Each of the identifiers mentioned must be
               a <a class="dfnref" href="#dfn-global-name">global name</a>.
             
             
@@ -8430,23 +8430,23 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
             
               If <a class="xattr" href="#Exposed">[Exposed]</a> appears on an
               <a class="dfnref" href="#dfn-overloaded">overloaded</a> <a class="dfnref" href="#dfn-operation">operation</a>,
-              then it <span class="rfc2119">MUST</span> appear identically on all overloads.
+              then it must appear identically on all overloads.
             
             
               The <a class="xattr" href="#Exposed">[Exposed]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be specified on both an interface
+              must not be specified on both an interface
               member and a partial interface definition the interface member is declared on.
             
             
               If <a class="xattr" href="#Exposed">[Exposed]</a> appears on both an interface
               and one of its interface members, then the interface member's
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a>
-              <span class="rfc2119">MUST</span> be a subset of the interface's
+              must be a subset of the interface's
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a>.
             
             
               An interface's <a class="dfnref" href="#dfn-exposure-set">exposure set</a>
-              <span class="rfc2119">MUST</span> be a subset of the
+              must be a subset of the
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a> of all
               of the interface's <a class="dfnref" href="#dfn-consequential-interfaces">consequential
               interfaces</a>.
@@ -8456,7 +8456,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               <a class="dfnref" href="#dfn-inherit">inherits</a> from another interface
               |Y| then the
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a> of
-              |X| <span class="rfc2119">MUST</span> be a subset of the
+              |X| must be a subset of the
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a> of
               |Y|.
             
@@ -8551,7 +8551,7 @@ interface Node {
             
             
               The <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
@@ -8649,23 +8649,23 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               is used on an <a class="dfnref" href="#dfn-interface">interface</a>, then:
             
             <ul>
-              <li>The interface <span class="rfc2119">MUST NOT</span> define a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>.</li>
-              <li>The interface <span class="rfc2119">MUST NOT</span> also be declared with the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+              <li>The interface must not define a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>.</li>
+              <li>The interface must not also be declared with the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
                 extended attribute.</li>
-              <li>The interface <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface with the
+              <li>The interface must not <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface with the
                 <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a> extended attribute.</li>
-              <li>Any other interface <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a> from it.</li>
+              <li>Any other interface must not <a class="dfnref" href="#dfn-inherit">inherit</a> from it.</li>
             </ul>
             
               If <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> is specified on
               a <a class="dfnref" href="#dfn-partial-interface">partial interface</a>
-              definition, then that partial interface definition <span class="rfc2119">MUST</span>
+              definition, then that partial interface definition must
               be the part of the interface definition that defines
               the <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>.
             
             
               The <a class="xattr" href="#Global">[Global]</a> and <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
-              <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> <span class="rfc2119">MUST NOT</span>
+              <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> must not
               be used on an <a class="dfnref" href="#dfn-interface">interface</a> that can have more
               than one object implementing it in the same ECMAScript global environment.
             
@@ -8677,11 +8677,11 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               If an interface is declared with the <a class="xattr" href="#Global">[Global]</a> or
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, then
-              there <span class="rfc2119">MUST NOT</span> be more than one
+              there must not be more than one
               <a class="dfnref" href="#dfn-interface-member">interface member</a> across
               the interface and its <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>
               with the same <a class="dfnref" href="#dfn-identifier">identifier</a>.
-              There also <span class="rfc2119">MUST NOT</span> be more than
+              There also must not be more than
               one <a class="dfnref" href="#dfn-stringifier">stringifier</a>,
               more than one <a class="dfnref" href="#dfn-serializer">serializer</a>,
               or more than one <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
@@ -8701,7 +8701,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
             
               The <a class="xattr" href="#Global">[Global]</a> and
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
-              extended attributes <span class="rfc2119">MUST</span> either
+              extended attributes must either
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>
               or <a class="dfnref" href="#dfn-xattr-identifier-list">take an identifier list</a>.
             
@@ -8720,9 +8720,9 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               The <a class="xattr" href="#Global">[Global]</a> and
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
-              <span class="rfc2119">MUST NOT</span> be declared on the same
+              must not be declared on the same
               interface.  The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
-              extended attribute <span class="rfc2119">MUST</span> be declared on
+              extended attribute must be declared on
               at most one interface.  The interface <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               is declared on, if any, is known as the <dfn id="dfn-primary-global-interface" export="">primary global interface</dfn>.
             
@@ -8807,8 +8807,8 @@ interface Window {
             
             
               The <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> extended attribute
-              <span class="rfc2119">MUST</span> <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
-              It <span class="rfc2119">MUST NOT</span> be used on an interface that
+              must <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
+              It must not be used on an interface that
               has any <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>.
             
                 Note: Interfaces using <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> will
@@ -8878,15 +8878,15 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             
             
               The <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>
-              and <span class="rfc2119">MUST NOT</span> appear on an interface
+              and must not appear on an interface
               that does not define a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>.
             
             
               If the <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
               extended attribute is specified on an interface, then it applies to all its derived interfaces and
-              <span class="rfc2119">MUST NOT</span> be specified on any of them.
+              must not be specified on any of them.
             
             
               See [[#property-enumeration]]
@@ -8909,7 +8909,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             
             <div class="advisement">
               
-                Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#LenientThis" class="xattr">[LenientSetter]</a>
+                Specifications should not use <a href="#LenientThis" class="xattr">[LenientSetter]</a>
                 unless required for compatibility reasons.  Pages have been observed
                 where authors have attempted to polyfill an IDL attribute by assigning
                 to the property, but have accidentally done so even if the property
@@ -8926,15 +8926,15 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             </div>
             
               The <a class="xattr" href="#LenientThis">[LenientThis]</a> extended attribute
-              <span class="rfc2119">MUST</span>
+              must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
-              It <span class="rfc2119">MUST NOT</span> be used on anything other than
+              It must not be used on anything other than
               a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>.
             
             
               An attribute with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> also be declared
+              extended attribute must not also be declared
               with the <a class="xattr" href="#PutForwards">[PutForwards]</a>
               or <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attributes.
             
@@ -8983,12 +8983,12 @@ example.y = 1;</pre>
             
             
               The <a class="xattr" href="#LenientThis">[LenientThis]</a> extended attribute
-              <span class="rfc2119">MUST</span>
+              must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
-              It <span class="rfc2119">MUST NOT</span> be used on a
+              It must not be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             
-                Advisement: Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#LenientThis" class="xattr">[LenientThis]</a>
+                Advisement: Specifications should not use <a href="#LenientThis" class="xattr">[LenientThis]</a>
                 unless required for compatibility reasons.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
@@ -9046,7 +9046,7 @@ Example.prototype.y;</pre>
             
             
               The <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
-              extended attribute <span class="rfc2119">MUST</span> either
+              extended attribute must either
               <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a> or
               <a class="dfnref" href="#dfn-xattr-named-argument-list">take a named argument list</a>.
               The first form, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>]</code>, has the same meaning as
@@ -9057,17 +9057,17 @@ Example.prototype.y;</pre>
               that is the value of the aforementioned property.
             
             
-              The identifier used for the named constructor <span class="rfc2119">MUST NOT</span>
+              The identifier used for the named constructor must not
               be the same as that used by an <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
-              extended attribute on another interface, <span class="rfc2119">MUST NOT</span>
+              extended attribute on another interface, must not
               be the same as an identifier of an interface
               that has an <a class="dfnref" href="#dfn-interface-object">interface object</a>,
-              and <span class="rfc2119">MUST NOT</span> be one of the
+              and must not be one of the
               <a class="dfnref" href="#dfn-reserved-identifier">reserved identifiers</a>.
             
             
               The <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be used on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
+              must not be used on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             
             
               See [[#named-constructors]]
@@ -9113,16 +9113,16 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               <a class="dfnref" href="#dfn-operation">operation</a>,
               then it indicates that when calling the operation,
               a reference to a newly created object
-              <span class="rfc2119">MUST</span> always be returned.
+              must always be returned.
             
             
               The <a class="xattr" href="#NewObject">[NewObject]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#NewObject">[NewObject]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span>
+              extended attribute must not
               be used on anything other than a <a class="dfnref" href="#dfn-regular-operation">regular</a>
               or <a class="dfnref" href="#dfn-static-operation">static</a>
               <a class="dfnref" href="#dfn-operation">operation</a>
@@ -9158,7 +9158,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               will not exist for the interface in the ECMAScript binding.
             
                 Advisement: The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
-                <span class="rfc2119">SHOULD NOT</span> be used on interfaces that are not
+                should not be used on interfaces that are not
                 solely used as <a class="dfnref" href="#dfn-supplemental-interface">supplemental</a> interfaces,
                 unless there are clear Web compatibility reasons for doing so.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
@@ -9167,30 +9167,30 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               
             
               The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
-              <span class="rfc2119">MUST</span> <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
+              must <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               If the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
               is specified on an interface, then the <a class="xattr" href="#Constructor">[Constructor]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> also be specified on that interface.
+              extended attribute must not also be specified on that interface.
               A <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended attribute is fine,
               however.
             
             
               The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be specified on an interface that has any
+              must not be specified on an interface that has any
               <a class="dfnref" href="#dfn-static-operation">static operations</a> defined on it.
             
             
               The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be specified on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>
+              must not be specified on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>
               unless it has a <a class="dfnref" href="#dfn-constant">constant</a> declared on it.
               This is because callback interfaces without constants never have
               <a class="dfnref" href="#dfn-interface-object">interface objects</a>.
             
             
               An interface that does not have the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended
-              attribute specified <span class="rfc2119">MUST NOT</span> inherit
+              attribute specified must not inherit
               from an interface that has the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended
               attribute specified.
             
@@ -9253,15 +9253,15 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
             
             
               The <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>
-              and <span class="rfc2119">MUST NOT</span> appear on an interface
+              and must not appear on an interface
               that does not define a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>
               or that also is declared with the <a class="xattr" href="#Global">[Global]</a>
               or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               extended attribute.  If the extended attribute is specified on
               a <a class="dfnref" href="#dfn-partial-interface">partial interface</a>
-              definition, then that partial interface definition <span class="rfc2119">MUST</span>
+              definition, then that partial interface definition must
               be the part of the interface definition that defines
               the <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>.
             
@@ -9424,7 +9424,7 @@ Node implements EventTarget;</x:codeblock>
             
             
               The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended
-              attribute <span class="rfc2119">MUST</span> <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a>.
+              attribute must <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a>.
               Assuming that:
             
             <ul>
@@ -9447,7 +9447,7 @@ Node implements EventTarget;</x:codeblock>
               </li>
             </ul>
             
-              then there <span class="rfc2119">MUST</span> be another
+              then there must be another
               <a class="dfnref" href="#dfn-attribute">attribute</a> |B|
               declared on |J| whose <a class="dfnref" href="#dfn-identifier">identifier</a>
               is |N|.  Assignment of a value to the attribute |A|
@@ -9461,7 +9461,7 @@ Node implements EventTarget;</x:codeblock>
               chained.  That is, an attribute with the <a class="xattr" href="#PutForwards">[PutForwards]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               can refer to an attribute that itself has that extended attribute.
-              There <span class="rfc2119">MUST NOT</span> exist a cycle in a
+              There must not exist a cycle in a
               chain of forwarded assignments.  A cycle exists if, when following
               the chain of forwarded assignments, a particular attribute on
               an <a class="dfnref" href="#dfn-interface">interface</a> is
@@ -9469,24 +9469,24 @@ Node implements EventTarget;</x:codeblock>
             
             
               An attribute with the <a class="xattr" href="#PutForwards">[PutForwards]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> also be declared
+              extended attribute must not also be declared
               with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a> or
               <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attributes.
             
             
               The <a class="xattr" href="#PutForwards">[PutForwards]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> be used
+              extended attribute must not be used
               on an <a class="dfnref" href="#dfn-attribute">attribute</a> that
               is not <a class="dfnref" href="#dfn-read-only">read only</a>.
             
             
               The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be used on a
+              must not be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             
             
               The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be used on an attribute declared on
+              must not be used on an attribute declared on
               a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             
             
@@ -9542,29 +9542,29 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
             
             
               The <a class="xattr" href="#Replaceable">[Replaceable]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               An attribute with the <a class="xattr" href="#Replaceable">[Replaceable]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> also be declared
+              extended attribute must not also be declared
               with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a> or
               <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attributes.
             
             
               The <a class="xattr" href="#Replaceable">[Replaceable]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> be used
+              extended attribute must not be used
               on an <a class="dfnref" href="#dfn-attribute">attribute</a> that
               is not <a class="dfnref" href="#dfn-read-only">read only</a>.
             
             
               The <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be used on a
+              must not be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             
             
               The <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be used on an attribute declared on
+              must not be used on an attribute declared on
               a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             
             
@@ -9622,17 +9622,17 @@ counter.value;                                           // Evaluates to 3.</pre
               appears on a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>, then it
               indicates that when getting the value of the attribute on a given
-              object, the same value <span class="rfc2119">MUST</span> always
+              object, the same value must always
               be returned.
             
             
               The <a class="xattr" href="#SameObject">[SameObject]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#SameObject">[SameObject]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span>
+              extended attribute must not
               be used on anything other than a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>
               whose type is an <a href="#idl-interface">interface type</a>
@@ -9670,12 +9670,12 @@ counter.value;                                           // Evaluates to 3.</pre
             
             
               The <a class="xattr" href="#SecureContext">[SecureContext]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#SecureContext">[SecureContext]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span>
+              extended attribute must not
               be used on anything other than an
               <a class="dfnref" href="#dfn-interface">interface</a>,
               <a class="dfnref" href="#dfn-partial-interface">partial interface</a>, or
@@ -9721,17 +9721,17 @@ counter.value;                                           // Evaluates to 3.</pre
             
               If <a class="xattr" href="#SecureContext">[SecureContext]</a> appears on an
               <a class="dfnref" href="#dfn-overloaded">overloaded</a> <a class="dfnref" href="#dfn-operation">operation</a>,
-              then it <span class="rfc2119">MUST</span> appear on all overloads.
+              then it must appear on all overloads.
             
             
               The <a class="xattr" href="#SecureContext">[SecureContext]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be specified on both an interface
+              must not be specified on both an interface
               member and the interface or partial interface definition the
               interface member is declared on.
             
             
               An interface without the <a class="xattr" href="#SecureContext">[SecureContext]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface
+              must not <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface
               that does specify <a class="xattr" href="#SecureContext">[SecureContext]</a>.
             
             <div class="example">
@@ -9769,7 +9769,7 @@ counter.value;                                           // Evaluates to 3.</pre
               that is not an object will be converted to
               the <span class="idlvalue">null</span> value.
             
-                Advisement: Specifications <span class="rfc2119">SHOULD NOT</span> use <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
+                Advisement: Specifications should not use <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
                 unless required to specify the behavior of legacy APIs or for consistency with these
                 APIs.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
@@ -9850,12 +9850,12 @@ manager.handler2;            // Evaluates to null.</pre>
             
             
               The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
-              extended attribute <span class="rfc2119">MUST</span> <a class="dfnref" href="#dfn-xattr-identifier">take the identifier</a>
+              extended attribute must <a class="dfnref" href="#dfn-xattr-identifier">take the identifier</a>
               <code>EmptyString</code>.
             
             
               The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute
-              <span class="rfc2119">MUST NOT</span> be specified on an operation argument,
+              must not be specified on an operation argument,
               attribute or operation return value whose type is not <a class="idltype" href="#idl-DOMString">DOMString</a>.
             
                 Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
@@ -9863,7 +9863,7 @@ manager.handler2;            // Evaluates to null.</pre>
               is a valid value of that type.
             
               The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute
-              also <span class="rfc2119">MUST NOT</span> be specified on an operation on
+              also must not be specified on an operation on
               a non-callback interface.
             
             
@@ -9954,17 +9954,17 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             </ul>
             
               The <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> appear on
+              extended attribute must not appear on
               anything other than an <a class="dfnref" href="#dfn-attribute">attribute</a>,
               non-<a class="dfnref" href="#dfn-static-operation">static</a> <a class="dfnref" href="#dfn-operation">operation</a>
               or an <a class="dfnref" href="#dfn-interface">interface</a>.  If it does
               appear on an <a class="dfnref" href="#dfn-operation">operation</a>, then
-              it <span class="rfc2119">MUST</span> appear on all operations with
+              it must appear on all operations with
               the same <a class="dfnref" href="#dfn-identifier">identifier</a> on that interface.
             
             
@@ -9973,7 +9973,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>
               of another interface |B|, then |B| and all of its
               <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>
-              <span class="rfc2119">MUST NOT</span> have a non-static attribute or
+              must not have a non-static attribute or
               <a class="dfnref" href="#dfn-regular-operation">regular operation</a> with the same
               <a class="dfnref" href="#dfn-identifier">identifier</a> as |X|.
             
@@ -10041,12 +10041,12 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             
             
               The <a class="xattr" href="#Unscopable">[Unscopable]</a>
-              extended attribute <span class="rfc2119">MUST</span>
+              extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             
             
               The <a class="xattr" href="#Unscopable">[Unscopable]</a>
-              extended attribute <span class="rfc2119">MUST NOT</span> appear on
+              extended attribute must not appear on
               anything other than a <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>
               or <a class="dfnref" href="#dfn-regular-operation">regular operation</a>.
             
@@ -10541,7 +10541,7 @@ with (thing) {
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
           </ul>
           
-            a corresponding property <span class="rfc2119">MUST</span> exist on the
+            a corresponding property must exist on the
             ECMAScript environment's global object.
             The name of the property is the <a class="dfnref" href="#dfn-identifier">identifier</a> of the interface,
             and its value is an object called the <dfn id="dfn-interface-object" export="">interface object</dfn>.
@@ -10554,7 +10554,7 @@ with (thing) {
 
           
             In addition, for every <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
-            extended attribute on an <a class="dfnref" href="#dfn-exposed">exposed</a> interface, a corresponding property <span class="rfc2119">MUST</span>
+            extended attribute on an <a class="dfnref" href="#dfn-exposed">exposed</a> interface, a corresponding property must
             exist on the ECMAScript global object.  The name of the property is the
             <a class="sym" href="#prod-identifier">identifier</a> that occurs directly after the
             “<span class="sym">=</span>”, and its value is an object called a
@@ -10598,7 +10598,7 @@ with (thing) {
               </li>
             </ol>
             
-              An interface object for a non-callback interface <span class="rfc2119">MUST</span> have a property named “prototype”
+              An interface object for a non-callback interface must have a property named “prototype”
               with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
               whose value is an object called the <dfn id="dfn-interface-prototype-object" export="">interface prototype object</dfn>.  This object has properties
@@ -10613,7 +10613,7 @@ with (thing) {
                 such an interface object.
             
               The internal <span class="esprop">[[Prototype]]</span> property
-              of an interface object for a callback interface <span class="rfc2119">MUST</span> be
+              of an interface object for a callback interface must be
               the Object.prototype object.
             
                 Note: Remember that interface objects for callback interfaces only exist if they have
@@ -10688,14 +10688,14 @@ with (thing) {
               
                 If the internal <span class="prop">[[Call]]</span> method
                 of the <a class="dfnref" href="#dfn-interface-object">interface object</a>
-                returns normally, then it <span class="rfc2119">MUST</span>
+                returns normally, then it must
                 return an object that implements interface |I|.
-                This object also <span class="rfc2119">MUST</span> be
+                This object also must be
                 associated with the ECMAScript global environment associated
                 with the interface object.
               
               
-                Interface objects for non-callback interfaces <span class="rfc2119">MUST</span> have a property named “length”
+                Interface objects for non-callback interfaces must have a property named “length”
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 whose value is a <span class="estype">Number</span>.
                 If the <a class="xattr" href="#Constructor">[Constructor]</a>
@@ -10720,7 +10720,7 @@ with (thing) {
                 </li>
               </ol>
               
-                All interface objects <span class="rfc2119">MUST</span> have a
+                All interface objects must have a
                 property named “name” with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 whose value is the identifier of the corresponding interface.
               
@@ -10732,7 +10732,7 @@ with (thing) {
               
                 The internal <span class="prop">[[HasInstance]]</span> method of every
                 <a class="dfnref" href="#dfn-interface-object">interface object</a>
-                |A| <span class="rfc2119">MUST</span> behave as follows,
+                |A| must behave as follows,
                 assuming |V| is the object
                 argument passed to <span class="prop">[[HasInstance]]</span>:
               
@@ -10765,7 +10765,7 @@ with (thing) {
               <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               with a given <a class="dfnref" href="#dfn-identifier">identifier</a>
               is a <a class="dfnref" href="#dfn-function-object">function object</a>.
-              It <span class="rfc2119">MUST</span> have a <span class="prop">[[Call]]</span>
+              It must have a <span class="prop">[[Call]]</span>
               internal property, which allows construction of objects that
               implement the interface on which the
               <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
@@ -10805,14 +10805,14 @@ with (thing) {
             
               If the internal <span class="prop">[[Call]]</span> method
               of the <a class="dfnref" href="#dfn-named-constructor">named constructor</a>
-              returns normally, then it <span class="rfc2119">MUST</span>
+              returns normally, then it must
               return an object that implements interface |I|.
-              This object also <span class="rfc2119">MUST</span> be
+              This object also must be
               associated with the ECMAScript global environment associated
               with the <a class="dfnref" href="#dfn-named-constructor">named constructor</a>.
             
             
-              A named constructor <span class="rfc2119">MUST</span> have a property named “length”
+              A named constructor must have a property named “length”
               with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
               whose value is a <span class="estype">Number</span> determined as follows:
             
@@ -10830,12 +10830,12 @@ with (thing) {
               </li>
             </ol>
             
-              A named constructor <span class="rfc2119">MUST</span> have a property named “name”
+              A named constructor must have a property named “name”
               with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
               whose value is the identifier used for the named constructor.
             
             
-              A named constructor <span class="rfc2119">MUST</span> also have a property named
+              A named constructor must also have a property named
               “prototype” with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
               whose value is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
@@ -10850,7 +10850,7 @@ with (thing) {
             <h4 id="interface-prototype-object">Interface prototype object</h4>
 
             
-              There <span class="rfc2119">MUST</span> exist an
+              There must exist an
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype
                 object</a> for every non-callback <a class="dfnref" href="#dfn-interface">interface</a>
               defined, regardless of whether the interface was declared with the
@@ -10872,7 +10872,7 @@ with (thing) {
             
               If the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
               extended attribute was not specified on the interface, then
-              the interface prototype object <span class="rfc2119">MUST</span>
+              the interface prototype object must
               also have a property named “constructor” with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span> whose value
               is a reference to the interface object for the interface.
@@ -10880,7 +10880,7 @@ with (thing) {
 
             
               The <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-              for a given interface |A| <span class="rfc2119">MUST</span> have an internal
+              for a given interface |A| must have an internal
               <span class="prop">[[Prototype]]</span> property whose value is returned from
               the following steps:
             
@@ -10941,7 +10941,7 @@ partial interface Window {
               If the interface or any of its <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>
               has any <a class="dfnref" href="#dfn-interface-member">interface member</a> declared with
               the <a class="xattr" href="#Unscopable">[Unscopable]</a> extended attribute,
-              then there <span class="rfc2119">MUST</span> be a property on the
+              then there must be a property on the
               interface prototype object whose name is the <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@unscopables</a> symbol
               and whose value is an object created as follows:
             
@@ -10972,13 +10972,13 @@ partial interface Window {
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               that <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
-              there <span class="rfc2119">MUST</span> exist an object known as the
+              there must exist an object known as the
               <dfn id="dfn-named-properties-object" export="">named properties object</dfn> for that
               interface.
             
             
               The <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
-              for a given interface |A| <span class="rfc2119">MUST</span> have an internal
+              for a given interface |A| must have an internal
               <span class="prop">[[Prototype]]</span> property whose value is returned from
               the following steps:
             
@@ -11004,7 +11004,7 @@ partial interface Window {
               
                 The internal <span class="prop">[[GetOwnProperty]]</span> method of every
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
-                <span class="rfc2119">MUST</span> behave as follows when called with object |O|
+                must behave as follows when called with object |O|
                 and property name |P|:
               
 
@@ -11055,7 +11055,7 @@ partial interface Window {
               
                 The internal <span class="prop">[[DefineOwnProperty]]</span> method of every
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
-                <span class="rfc2119">MUST</span> behave as follows when called with object |O|
+                must behave as follows when called with object |O|
                 and property name |P|.
                 The term <span id="Reject">“Reject”</span> is used in the same sense as that defined in ECMA-262, namely, to mean “If |Throw| is
                 <span class="esvalue">true</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a> exception,
@@ -11073,7 +11073,7 @@ partial interface Window {
               
                 The internal <span class="prop">[[Delete]]</span> method of every
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
-                <span class="rfc2119">MUST</span> behave as follows when called with object |O| and
+                must behave as follows when called with object |O| and
                 property name |P|.
               
 
@@ -11146,7 +11146,7 @@ interface
               For each <a class="dfnref" href="#dfn-exposed">exposed</a>
               <a class="dfnref" href="#dfn-constant">constant</a> defined on
               an <a class="dfnref" href="#dfn-interface">interface</a> |A|, there
-              <span class="rfc2119">MUST</span> be a corresponding property.
+              must be a corresponding property.
               The property has the following characteristics:
             
             <ul>
@@ -11168,7 +11168,7 @@ interface
               <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
             </ul>
             
-              In addition, a property with the same characteristics <span class="rfc2119">MUST</span>
+              In addition, a property with the same characteristics must
               exist on the <a class="dfnref" href="#dfn-interface-object">interface object</a>, if
               that object exists.
             
@@ -11183,7 +11183,7 @@ interface
               <a class="dfnref" href="#dfn-interface">interface</a>, whether it
               was declared on the interface itself or one of its
               <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>,
-              there <span class="rfc2119">MUST</span> exist a corresponding property.
+              there must exist a corresponding property.
               The characteristics of this property are as follows:
             
             <ul>
@@ -11381,7 +11381,7 @@ interface
               For each unique <a class="dfnref" href="#dfn-identifier">identifier</a>
               of an <a class="dfnref" href="#dfn-exposed">exposed</a> <a class="dfnref" href="#dfn-operation">operation</a>
               defined on the <a class="dfnref" href="#dfn-interface">interface</a>, there
-              <span class="rfc2119">MUST</span> exist a corresponding property,
+              must exist a corresponding property,
               unless the <a class="dfnref" href="#dfn-effective-overload-set">effective overload set</a>
               for that <a class="dfnref" href="#dfn-identifier">identifier</a> and <a class="dfnref" href="#dfn-operation">operation</a>
               and with an argument count of 0 has no entries.
@@ -11549,7 +11549,7 @@ interface
                 If the <a class="dfnref" href="#dfn-interface">interface</a>
                 has an <a class="dfnref" href="#dfn-exposed">exposed</a>
                 <a class="dfnref" href="#dfn-stringifier">stringifier</a>, then
-                there <span class="rfc2119">MUST</span> exist a property with
+                there must exist a property with
                 the following characteristics:
               
               <ul>
@@ -11613,7 +11613,7 @@ interface
                 If the <a class="dfnref" href="#dfn-interface">interface</a>
                 has an <a class="dfnref" href="#dfn-exposed">exposed</a>
                 <a class="dfnref" href="#dfn-serializer">serializer</a>, then
-                a property <span class="rfc2119">MUST</span> exist
+                a property must exist
                 whose name is “toJSON”,
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a
@@ -11634,7 +11634,7 @@ interface
               </ul>
               
                 The property’s <span class="estype">Function</span> object, when invoked,
-                <span class="rfc2119">MUST</span> behave as follows:
+                must behave as follows:
               
               <ol class="algorithm">
                 <li>Let |O| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
@@ -11748,7 +11748,7 @@ interface
                 <li>a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a></li>
               </ul>
               
-                then a property <span class="rfc2119">MUST</span> exist
+                then a property must exist
                 whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> symbol,
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
@@ -11773,7 +11773,7 @@ interface
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
                 then the <span class="estype">Function</span>, when invoked,
-                <span class="rfc2119">MUST</span> behave as follows:
+                must behave as follows:
               
               <ol class="algorithm">
                 <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
@@ -11799,7 +11799,7 @@ interface
                 If the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>
                 or <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>,
                 then the <span class="estype">Function</span> object that is the value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property,
-                when invoked, <span class="rfc2119">MUST</span> behave as follows:
+                when invoked, must behave as follows:
               
               <ol class="algorithm">
                 <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
@@ -11856,7 +11856,7 @@ interface
                 <li>a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a></li>
               </ul>
               
-                then a property named “forEach” <span class="rfc2119">MUST</span> exist
+                then a property named “forEach” must exist
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
@@ -11880,7 +11880,7 @@ interface
               
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
-                then the <span class="estype">Function</span> <span class="rfc2119">MUST</span>
+                then the <span class="estype">Function</span> must
                 have the same behavior as one that would exist assuming the interface had
                 this <a class="dfnref" href="#dfn-operation">operation</a> instead of the
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>:
@@ -11911,7 +11911,7 @@ interface
                 If the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>
                 or <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>
                 then the <span class="estype">Function</span>, when invoked,
-                <span class="rfc2119">MUST</span> behave as follows:
+                must behave as follows:
               
               <ol class="algorithm">
                 <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
@@ -11978,7 +11978,7 @@ interface
               
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
-                then a property named “entries” <span class="rfc2119">MUST</span> exist
+                then a property named “entries” must exist
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
@@ -12013,7 +12013,7 @@ interface
               
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
-                then a property named “keys” <span class="rfc2119">MUST</span> exist
+                then a property named “keys” must exist
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
@@ -12037,7 +12037,7 @@ interface
               
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
-                then the <span class="estype">Function</span>, when invoked, <span class="rfc2119">MUST</span> behave as follows:
+                then the <span class="estype">Function</span>, when invoked, must behave as follows:
               
               <ol class="algorithm">
                 <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
@@ -12069,7 +12069,7 @@ interface
               
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
-                then a property named “values” <span class="rfc2119">MUST</span> exist
+                then a property named “values” must exist
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
@@ -12095,7 +12095,7 @@ interface
 
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
-                then the <span class="estype">Function</span>, when invoked, <span class="rfc2119">MUST</span> behave as follows:
+                then the <span class="estype">Function</span>, when invoked, must behave as follows:
               
               <ol class="algorithm">
                 <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
@@ -12173,11 +12173,11 @@ interface
               
               
                 The internal [[Prototype]] property of an <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
-                <span class="rfc2119">MUST</span> be <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                must be <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
               
               
                 An <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
-                <span class="rfc2119">MUST</span> have a property named “next” with
+                must have a property named “next” with
                 attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>
                 that behaves as follows:
@@ -12257,7 +12257,7 @@ interface
             
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               that has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>
-              <span class="rfc2119">MUST</span> have a [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
+              must have a [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
               initially set to a newly created <span class="estype">Map</span> object.
               This <span class="estype">Map</span> object’s [[MapData]] internal slot is
               the object’s <a class="dfnref" href="#dfn-map-entries">map entries</a>.
@@ -12300,7 +12300,7 @@ interface
               <h5 id="es-map-size">size</h5>
 
               
-                There <span class="rfc2119">MUST</span> exist a property named “size” on
+                There must exist a property named “size” on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with the following characteristics:
               
@@ -12336,7 +12336,7 @@ interface
               <h5 id="es-map-entries">entries</h5>
 
               
-                A property named “entries” <span class="rfc2119">MUST</span> exist on
+                A property named “entries” must exist on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
@@ -12348,7 +12348,7 @@ interface
               <h5 id="es-map-keys-values">keys and values</h5>
 
               
-                For both of “keys” and “values”, there <span class="rfc2119">MUST</span> exist a property with that name on
+                For both of “keys” and “values”, there must exist a property with that name on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with the following characteristics:
               
@@ -12364,7 +12364,7 @@ interface
               <h5 id="es-map-get-has">get and has</h5>
 
               
-                For both of “get” and “has”, there <span class="rfc2119">MUST</span> exist a property with that name on
+                For both of “get” and “has”, there must exist a property with that name on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with the following characteristics:
               
@@ -12408,7 +12408,7 @@ interface
                 with identifier “clear”, and
                 |A| was declared with a read–write maplike declaration,
                 then a property named “clear” and the following characteristics
-                <span class="rfc2119">MUST</span> exist on |A|’s
+                must exist on |A|’s
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
@@ -12429,7 +12429,7 @@ interface
                 with identifier “delete”, and
                 |A| was declared with a read–write maplike declaration,
                 then a property named “delete” and the following characteristics
-                <span class="rfc2119">MUST</span> exist on |A|’s
+                must exist on |A|’s
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
@@ -12471,7 +12471,7 @@ interface
                 with identifier “set”, and
                 |A| was declared with a read–write maplike declaration,
                 then a property named “set” and the following characteristics
-                <span class="rfc2119">MUST</span> exist on |A|’s
+                must exist on |A|’s
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
@@ -12515,7 +12515,7 @@ interface
             
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               that has a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>
-              <span class="rfc2119">MUST</span> have a [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
+              must have a [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
               initially set to a newly created <span class="estype">Set</span> object.
               This <span class="estype">Set</span> object’s [[SetData]] internal slot is
               the object’s <a class="dfnref" href="#dfn-set-entries">set entries</a>.
@@ -12558,7 +12558,7 @@ interface
               <h5 id="es-set-size">size</h5>
 
               
-                There <span class="rfc2119">MUST</span> exist a property named “size” on
+                There must exist a property named “size” on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with the following characteristics:
               
@@ -12594,7 +12594,7 @@ interface
               <h5 id="es-set-values">values</h5>
 
               
-                A property named “values” <span class="rfc2119">MUST</span> exist on
+                A property named “values” must exist on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
@@ -12606,7 +12606,7 @@ interface
               <h5 id="es-set-entries-keys">entries and keys</h5>
 
               
-                For both of “entries” and “keys”, there <span class="rfc2119">MUST</span> exist a property with that name on
+                For both of “entries” and “keys”, there must exist a property with that name on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with the following characteristics:
               
@@ -12622,7 +12622,7 @@ interface
               <h5 id="es-set-has">has</h5>
 
               
-                There <span class="rfc2119">MUST</span> exist a property with named “has” on
+                There must exist a property with named “has” on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with the following characteristics:
               
@@ -12670,7 +12670,7 @@ interface
               </ul>
               
                 then a property with that name and the following characteristics
-                <span class="rfc2119">MUST</span> exist on |A|’s
+                must exist on |A|’s
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
@@ -12726,7 +12726,7 @@ interface
                 with a matching identifier, and
                 |A| was declared with a read–write setlike declaration,
                 then a property named “clear” and the following characteristics
-                <span class="rfc2119">MUST</span> exist on |A|’s
+                must exist on |A|’s
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
@@ -12792,7 +12792,7 @@ interface
 
           
             The <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-            of an interface |A| <span class="rfc2119">MUST</span> have a copy of
+            of an interface |A| must have a copy of
             each property that corresponds to one of the
             <a class="dfnref" href="#dfn-constant">constants</a>,
             <a class="dfnref" href="#dfn-attribute">attributes</a>,
@@ -12803,9 +12803,9 @@ interface
             that exist on all of the interface prototype objects of |A|’s
             <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>.
             For operations, where the property is a data property with a <span class="estype">Function</span>
-            object value, each copy of the property <span class="rfc2119">MUST</span> have
+            object value, each copy of the property must have
             distinct <span class="estype">Function</span> objects.  For attributes, each
-            copy of the accessor property <span class="rfc2119">MUST</span> have
+            copy of the accessor property must have
             distinct <span class="estype">Function</span> objects for their getters,
             and similarly with their setters.
           
@@ -12871,7 +12871,7 @@ C implements A;</pre>
             The global environment that a given <a class="dfnref" href="#dfn-platform-object">platform object</a>
             is associated with can <dfn id="dfn-change-global-environment" for="global environment" export="">change</dfn> after it has been created.  When
             the global environment associated with a platform object is changed, its internal
-            <span class="prop">[[Prototype]]</span> property <span class="rfc2119">MUST</span> be immediately
+            <span class="prop">[[Prototype]]</span> property must be immediately
             updated to be the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
             of the <a class="dfnref" href="#dfn-primary-interface">primary interface</a>
             from the <a class="dfnref" href="#dfn-platform-object">platform object</a>’s newly associated global environment.
@@ -12986,7 +12986,7 @@ C implements A;</pre>
             Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
             interface and which does not have a <a class="dfnref" href="#dfn-stringifier">stringifier</a>
             that is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on any of the
-            interfaces it implements <span class="rfc2119">MUST</span> have a property with the
+            interfaces it implements must have a property with the
             following characteristics:
           
           <ul>
@@ -12999,7 +12999,7 @@ C implements A;</pre>
             Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
             interface and which does not have a <a class="dfnref" href="#dfn-serializer">serializer</a>
             that is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on any of the
-            interfaces it implements <span class="rfc2119">MUST</span> have a property with the
+            interfaces it implements must have a property with the
             following characteristics:
           
           <ul>
@@ -13010,7 +13010,7 @@ C implements A;</pre>
 
           
             Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
-            interface <span class="rfc2119">MUST</span> have a property with the
+            interface must have a property with the
             following characteristics:
           
           <ul>
@@ -13034,7 +13034,7 @@ C implements A;</pre>
           
             The <a class="dfnref" href="#dfn-class-string">class string</a> of
             a platform object that implements one or more interfaces
-            <span class="rfc2119">MUST</span> be the <a class="dfnref" href="#dfn-identifier">identifier</a> of
+            must be the <a class="dfnref" href="#dfn-identifier">identifier</a> of
             the <a class="dfnref" href="#dfn-primary-interface">primary interface</a>
             of the platform object.
           
@@ -13080,11 +13080,11 @@ C implements A;</pre>
             
               Platform objects implementing an interface that supports indexed or named properties cannot be fixed; if <code>Object.freeze</code>, <code>Object.seal</code>
               or <code>Object.preventExtensions</code> is called on one of these objects, the function
-              <span class="rfc2119">MUST</span> <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
+              must <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
               Similarly, an <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               that exposes named properties due to the use of <a class="xattr" href="#Global">[Global]</a> or
               <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
-              also <span class="rfc2119">MUST</span> <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>
+              also must <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>
               if one of the three functions above is called on it.
             
 
@@ -13255,7 +13255,7 @@ C implements A;</pre>
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
-              <span class="rfc2119">MUST</span> behave as follows when called with property name |P|:
+              must behave as follows when called with property name |P|:
             
 
             <ol class="algorithm">
@@ -13273,7 +13273,7 @@ C implements A;</pre>
             
               To <dfn id="invoke-indexed-setter" export="" lt="invoke the indexed property setter">invoke an indexed property
               setter</dfn> with property name |P| and ECMAScript value
-              |V|, the following steps <span class="rfc2119">MUST</span> be performed:
+              |V|, the following steps must be performed:
             
             <ol class="algorithm">
               <li>Let |index| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(|P|).</li>
@@ -13301,7 +13301,7 @@ C implements A;</pre>
             
               To <dfn id="invoke-named-setter" export="" lt="invoke the named property setter">invoke a named property
               setter</dfn> with property name |P| and ECMAScript value
-              |V|, the following steps <span class="rfc2119">MUST</span> be performed:
+              |V|, the following steps must be performed:
             
             <ol class="algorithm">
               <li>Let |creating| be true if |P| is not a <a class="dfnref" href="#dfn-supported-property-names">supported property name</a>, and false otherwise.</li>
@@ -13331,7 +13331,7 @@ C implements A;</pre>
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
-              <span class="rfc2119">MUST</span> behave as follows when called
+              must behave as follows when called
               with property name |P|, value |V|, and
               ECMAScript language value |Receiver|:
             
@@ -13390,7 +13390,7 @@ C implements A;</pre>
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
-              <span class="rfc2119">MUST</span> behave as follows when called with property name |P|,
+              must behave as follows when called with property name |P|,
               Property Descriptor |Desc| and boolean flag |Throw|.
             
 
@@ -13475,7 +13475,7 @@ C implements A;</pre>
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
-              <span class="rfc2119">MUST</span> behave as follows when called with property name |P|.
+              must behave as follows when called with property name |P|.
             
 
             <ol class="algorithm">
@@ -13534,7 +13534,7 @@ C implements A;</pre>
               The internal <span class="prop">[[Call]]</span> method of every
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               |I| with at least one <a class="dfnref" href="#dfn-legacy-caller">legacy caller</a>
-              <span class="rfc2119">MUST</span> behave as follows, assuming
+              must behave as follows, assuming
               |arg|<sub>0..|n|−1</sub> is the list of argument
               values passed to <span class="prop">[[Call]]</span>:
             
@@ -13565,7 +13565,7 @@ C implements A;</pre>
               However, if a platform object implements an interface that
               <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>, then
-              properties on the object <span class="rfc2119">MUST</span> be
+              properties on the object must be
               enumerated in the following order:
             
             <ol>
@@ -13992,7 +13992,7 @@ C implements A;</pre>
           <h3 id="es-exceptions">Exceptions</h3>
 
           
-            There <span class="rfc2119">MUST</span> exist a property on the ECMAScript global object
+            There must exist a property on the ECMAScript global object
             whose name is “DOMException” and value is an object called the
             <dfn id="dfn-DOMException-constructor-object" for="DOMException" export="">DOMException constructor object</dfn>,
             which provides access to legacy DOMException code constants and allows construction of
@@ -14004,17 +14004,17 @@ C implements A;</pre>
             <h4 id="es-DOMException-constructor-object">DOMException constructor object</h4>
 
             
-              The DOMException constructor object <span class="rfc2119">MUST</span> be a <a class="dfnref" href="#dfn-function-object">function object</a>
+              The DOMException constructor object must be a <a class="dfnref" href="#dfn-function-object">function object</a>
               but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
             
             
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
-              there <span class="rfc2119">MUST</span> be a property on the DOMException constructor object
+              there must be a property on the DOMException constructor object
               whose name and value are as indicated in the table.  The property has
               attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.
             
             
-              The DOMException constructor object <span class="rfc2119">MUST</span> also have a property named
+              The DOMException constructor object must also have a property named
               “prototype” with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
               whose value is an object called the <dfn id="dfn-DOMException-prototype-object" for="DOMException" export="">DOMException prototype object</dfn>.
@@ -14052,7 +14052,7 @@ C implements A;</pre>
             <h4 id="es-DOMException-prototype-object">DOMException prototype object</h4>
 
             
-              The DOMException prototype object <span class="rfc2119">MUST</span>
+              The DOMException prototype object must
               have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
             
             
@@ -14061,14 +14061,14 @@ C implements A;</pre>
               is “DOMExceptionPrototype”.
             
             
-              There <span class="rfc2119">MUST</span> be a property named “constructor”
+              There must be a property named “constructor”
               on the DOMException prototype object with attributes
               <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
               and whose value is the <a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor object</a>.
             
             
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
-              there <span class="rfc2119">MUST</span> be a property on the DOMException prototype object
+              there must be a property on the DOMException prototype object
               whose name and value are as indicated in the table.  The property has
               attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.
             
@@ -14092,19 +14092,19 @@ C implements A;</pre>
             as the <a class="dfnref" href="#dfn-initial-object">initial objects</a> are.
             When an exception object is created by calling the <a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor object</a>,
             either normally or as part of a <code>new</code> expression, then the global environment
-            of the newly created object is associated with <span class="rfc2119">MUST</span> be the same as for the
+            of the newly created object is associated with must be the same as for the
             <a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor object</a> itself.
           
           
             The value of the internal <span class="prop">[[Prototype]]</span>
             property of a <a class="dfnref" href="#dfn-DOMException">DOMException</a>
-            object <span class="rfc2119">MUST</span> be the <a class="dfnref" href="#dfn-DOMException-prototype-object">DOMException prototype object</a>
+            object must be the <a class="dfnref" href="#dfn-DOMException-prototype-object">DOMException prototype object</a>
             from the global environment the exception object is associated with.
           
           
             The <a class="dfnref" href="#dfn-class-string">class string</a>
             of a <a class="dfnref" href="#dfn-DOMException">DOMException</a> object
-            <span class="rfc2119">MUST</span> be “DOMException”.
+            must be “DOMException”.
           
               Note: The intention is for DOMException objects to be just like the other
             various native <span class="estype">Error</span> objects that the
@@ -14164,7 +14164,7 @@ C implements A;</pre>
             |E| is to be <a class="dfnref" href="#dfn-create-exception">created</a>,
             with <a class="dfnref" href="#dfn-exception-error-name">error name</a> |N| and
             optional user agent-defined message |M|,
-            the following steps <span class="rfc2119">MUST</span> be followed:
+            the following steps must be followed:
           
           <ol class="algorithm">
             <li>If |M| was not specified, let |M| be <span class="esvalue">undefined</span>. Otherwise, let it be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |M| to a <span class="estype">String</span> value.</li>
@@ -14198,7 +14198,7 @@ C implements A;</pre>
             |E| is to be <a class="dfnref" href="#dfn-throw">thrown</a>,
             with <a class="dfnref" href="#dfn-exception-error-name">error name</a> |N| and
             optional user agent-defined message |M|,
-            the following steps <span class="rfc2119">MUST</span> be followed:
+            the following steps must be followed:
           
           <ol class="algorithm">
             <li>Let |O| be the result of <a class="dfnref" href="#dfn-create-exception">creating</a>
@@ -14250,7 +14250,7 @@ try {
           </div>
           
             Any requirements in this document to throw an instance of an ECMAScript built-in
-            <span class="estype">Error</span> <span class="rfc2119">MUST</span> use
+            <span class="estype">Error</span> must use
             the built-in from the <a class="dfnref" href="#dfn-current-global-environment">current global environment</a>.
           
         
@@ -14264,7 +14264,7 @@ try {
             an ECMAScript <span class="esvalue">Function</span> is invoked due
             to requirements in this section and that <span class="esvalue">Function</span>
             ends due to an exception being thrown, that exception
-            <span class="rfc2119">MUST</span> propagate to the caller, and if
+            must propagate to the caller, and if
             not caught there, to its caller, and so on.
           
           <div class="example">
@@ -14323,7 +14323,7 @@ d.type = et;
         
           This section specifies some common definitions that all
           <a class="dfnref" href="#dfn-conforming-implementation">conforming implementations</a>
-          <span class="rfc2119">MUST</span> support.
+          must support.
         
 
         
@@ -14592,11 +14592,11 @@ d.type = et;
         
           The tokenizer operates on a sequence of Unicode characters
           <a href="#ref-UNICODE">[UNICODE]</a>.
-          When tokenizing, the longest possible match <span class="rfc2119">MUST</span> be used.  For example, if the input
+          When tokenizing, the longest possible match must be used.  For example, if the input
           text is “<span class="input">a1</span>”, it is tokenized as a single <span class="sym">identifier</span>,
           and not as a separate <span class="sym">identifier</span> and <span class="sym">integer</span>.
           If the longest possible match could match one of the above named terminal symbols or
-          one of the quoted terminal symbols from the grammar, it <span class="rfc2119">MUST</span> be tokenized as the quoted
+          one of the quoted terminal symbols from the grammar, it must be tokenized as the quoted
           terminal symbol.  Thus, the input text “<span class="input">long</span>” is tokenized as the quoted terminal symbol
           <span class="sym">"long"</span> rather than an <span class="sym">identifier</span> called “long”,
           and “<span class="input">.</span>” is tokenized as the quoted terminal symbol
