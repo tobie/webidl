@@ -81,8 +81,8 @@
     
 
     <div id="sections">
-      <div id="introduction" class="section">
-        <h2>Introduction</h2>
+      
+        <h2 id="introduction">Introduction</h2>
 
         <p class="norm">This section is informative.</p>
 
@@ -114,8 +114,8 @@
           for ECMAScript Edition 6 are given.
         </p>
 
-        <div id="conventions" class="section">
-          <h3>Typographic conventions</h3>
+        
+          <h3 id="conventions">Typographic conventions</h3>
 
           <p>
             The following typographic conventions are used in this document:
@@ -151,11 +151,11 @@ interface Example {
 <pre class="js">// This is an ECMAScript code block.
 window.onload = function() { window.alert("loaded"); };</pre></li>
           </ul>
-        </div>
-      </div>
+        
+      
 
-      <div id="conformance" class="section">
-        <h2>Conformance</h2>
+      
+        <h2 id="conformance">Conformance</h2>
 
         <p>
           Everything in this specification is normative except for diagrams,
@@ -217,10 +217,10 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
             </p>
           </dd>
         </dl>
-      </div>
+      
 
-      <div id="idl" class="section">
-        <h2>Interface definition language</h2>
+      
+        <h2 id="idl">Interface definition language</h2>
 
         <p>
           This section describes a language, <em>Web IDL</em>, which can be used to define
@@ -329,8 +329,8 @@ interface GraphicalWindow {
           </p>
         </div>
 
-        <div id="idl-names" class="section">
-          <h3>Names</h3>
+        
+          <h3 id="idl-names">Names</h3>
 
           <p>
             Every <a class="dfnref" href="#dfn-interface">interface</a>,
@@ -539,10 +539,10 @@ interface TextField {
               to obtain the attribute’s <a class="dfnref" href="#dfn-identifier">identifier</a>.
             </p>
           </div>
-        </div>
+        
 
-        <div id="idl-interfaces" class="section">
-          <h3>Interfaces</h3>
+        
+          <h3 id="idl-interfaces">Interfaces</h3>
 
           <p>
             <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a> are used to
@@ -960,8 +960,8 @@ var newNode = {
 node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
           </div>
 
-          <div id="idl-constants" class="section">
-            <h4>Constants</h4>
+          
+            <h4 id="idl-constants">Constants</h4>
 
             <p>
               A <dfn data-export="" id="dfn-constant">constant</dfn> is a declaration (matching
@@ -1171,10 +1171,10 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
   const double AVOGADRO = 6.022e23;
 };</pre>
             </div>
-          </div>
+          
 
-          <div id="idl-attributes" class="section">
-            <h4>Attributes</h4>
+          
+            <h4 id="idl-attributes">Attributes</h4>
 
             <p>
               An <dfn data-export="" id="dfn-attribute">attribute</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
@@ -1361,10 +1361,10 @@ interface Person : Animal {
   readonly attribute DOMString petName getraises (NoSuchPet);
 -->};</pre>
             </div>
-          </div>
+          
 
-          <div id="idl-operations" class="section">
-            <h4>Operations</h4>
+          
+            <h4 id="idl-operations">Operations</h4>
 
             <p>
               An <dfn data-export="" id="dfn-operation">operation</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
@@ -1747,10 +1747,10 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
              "unrestricted"
           </span></td></tr><tr id="proddef-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#prod-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br/> |
              "void"</span></td></tr></table>
-          </div>
+          
 
-          <div id="idl-special-operations" class="section">
-            <h4>Special operations</h4>
+          
+            <h4 id="idl-special-operations">Special operations</h4>
 
             <p>
               A <dfn data-export="" id="dfn-special-operation">special operation</dfn> is a
@@ -1948,8 +1948,8 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
               special operation is invoked for that operation.
             </p>
 
-            <div id="idl-legacy-callers" class="section">
-              <h5>Legacy callers</h5>
+            
+              <h5 id="idl-legacy-callers">Legacy callers</h5>
 
               <p>
                 When an <a class="dfnref" href="#dfn-interface">interface</a> has one or more
@@ -1999,10 +1999,10 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
 f.compute(3);                   // This evaluates to 12.
 f(3);                           // This also evaluates to 12.</pre>
               </div>
-            </div>
+            
 
-            <div id="idl-stringifiers" class="section">
-              <h5>Stringifiers</h5>
+            
+              <h5 id="idl-stringifiers">Stringifiers</h5>
 
               <p>
                 When an <a class="dfnref" href="#dfn-interface">interface</a> has a
@@ -2123,10 +2123,10 @@ s.givenName = 'Alan';
 
 var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
               </div>
-            </div>
+            
 
-            <div id="idl-serializers" class="section">
-              <h5>Serializers</h5>
+            
+              <h5 id="idl-serializers">Serializers</h5>
 
               <p>
                 When an <a class="dfnref" href="#dfn-interface">interface</a> has a
@@ -2487,10 +2487,10 @@ txn.toJSON();
 // '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'
 JSON.stringify(txn);</pre>
               </div>
-            </div>
+            
 
-            <div id="idl-indexed-properties" class="section">
-              <h5>Indexed properties</h5>
+            
+              <h5 id="idl-indexed-properties">Indexed properties</h5>
 
               <p>
                 An <a class="dfnref" href="#dfn-interface">interface</a> that defines
@@ -2653,10 +2653,10 @@ delete map.cake;  // If a named property named "cake" exists, then the "cake"
                   //
                   //   map.remove("cake")
 </pre></div>
-            </div>
+            
 
-            <div id="idl-named-properties" class="section">
-              <h5>Named properties</h5>
+            
+              <h5 id="idl-named-properties">Named properties</h5>
 
               <p>
                 An <a class="dfnref" href="#dfn-interface">interface</a> that defines
@@ -2729,11 +2729,11 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                   does not necessarily elicit the same behavior as invoking the operation with that name; the behavior
                   is language binding specific.
                 
-            </div>
-          </div>
+            
+          
 
-          <div id="idl-static-attributes-and-operations" class="section">
-            <h4>Static attributes and operations</h4>
+          
+            <h4 id="idl-static-attributes-and-operations">Static attributes and operations</h4>
 
             <p>
               <dfn data-export="" id="dfn-static-attribute">Static attributes</dfn> and
@@ -2795,10 +2795,10 @@ var triangulationPoint = Circle.triangulate(circles[0], circles[1], circles[2]);
 window.alert(Circle.triangulationCount);</pre>
               
             </div>
-          </div>
+          
 
-          <div id="idl-overloading" class="section">
-            <h4>Overloading</h4>
+          
+            <h4 id="idl-overloading">Overloading</h4>
 
             <p>
               If a <a class="dfnref" href="#dfn-regular-operation">regular operation</a>
@@ -3434,10 +3434,10 @@ interface C {
               </p>
             </div>
             -->
-          </div>
+          
 
-          <div id="idl-iterable" class="section">
-            <h4>Iterable declarations</h4>
+          
+            <h4 id="idl-iterable">Iterable declarations</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-interface">interface</a> can be declared to be
@@ -3609,10 +3609,10 @@ for (let session of sm) {
 
             <table class="grammar"><tr id="proddef-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#prod-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="proddef-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#prod-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br/> |
              ε</span></td></tr></table>
-          </div>
+          
 
-          <div id="idl-maplike" class="section">
-            <h4>Maplike declarations</h4>
+          
+            <h4 id="idl-maplike">Maplike declarations</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-interface">interface</a> can be declared to be
@@ -3688,10 +3688,10 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               defined in this specification are applicable to <a class="dfnref" href="#dfn-maplike-declaration">maplike declarations</a>.
             </p>
                 Issue: Add example.
-          </div>
+          
 
-          <div id="idl-setlike" class="section">
-            <h4>Setlike declarations</h4>
+          
+            <h4 id="idl-setlike">Setlike declarations</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-interface">interface</a> can be declared to be
@@ -3766,11 +3766,11 @@ setlike&lt;<i>type</i>&gt;;</pre>
               defined in this specification are applicable to <a class="dfnref" href="#dfn-setlike-declaration">setlike declarations</a>.
             </p>
                 Issue: Add example.
-          </div>
-        </div>
+          
+        
 
-        <div id="idl-dictionaries" class="section">
-          <h3>Dictionaries</h3>
+        
+          <h3 id="idl-dictionaries">Dictionaries</h3>
 
           <p>
             A <dfn data-export="" id="dfn-dictionary">dictionary</dfn> is a definition (matching
@@ -4060,10 +4060,10 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               their non-presence.
             </p>
           </div>
-        </div>
+        
 
-        <div id="idl-exceptions" class="section">
-          <h3>Exceptions</h3>
+        
+          <h3 id="idl-exceptions">Exceptions</h3>
 
           <p>
             An <dfn data-export="" id="dfn-exception">exception</dfn> is a type of object that
@@ -4164,8 +4164,8 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             </blockquote>
           </div>
 
-          <div id="idl-DOMException-error-names" class="section">
-            <h4>Error names</h4>
+          
+            <h4 id="idl-DOMException-error-names">Error names</h4>
 
             <p>
               The <dfn data-export="" id="dfn-error-names-table">error names table</dfn> below lists all the allowed error names
@@ -4355,11 +4355,11 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
+          
+        
 
-        <div id="idl-enums" class="section">
-          <h3>Enumerations</h3>
+        
+          <h3 id="idl-enums">Enumerations</h3>
 
           <p>
             An <dfn data-export="" id="dfn-enumeration">enumeration</dfn> is a definition (matching
@@ -4440,10 +4440,10 @@ meal.type = "noodles";               // Attribute assigned as normal.
 meal.type = "dumplings";             // Attribute assignment ignored.
 meal.type == "noodles";              // Evaluates to true.</pre>
           </div>
-        </div>
+        
 
-        <div id="idl-callback-functions" class="section">
-          <h3>Callback functions</h3>
+        
+          <h3 id="idl-callback-functions">Callback functions</h3>
 
               Issue: The “Custom DOM Elements” spec wants to use callback function types for
             platform object provided functions.  Should we rename “callback functions” to
@@ -4495,10 +4495,10 @@ ops.performOperation(function(status) {
   window.alert("Operation finished, status is " + status + ".");
 });</pre>
           </div>
-        </div>
+        
 
-        <div id="idl-typedefs" class="section">
-          <h3>Typedefs</h3>
+        
+          <h3 id="idl-typedefs">Typedefs</h3>
 
           <p>
             A <dfn data-export="" id="dfn-typedef">typedef</dfn> is a definition (matching
@@ -4545,10 +4545,10 @@ interface Widget {
   boolean allPointsWithinBounds(Points ps);
 };</pre>
           </div>
-        </div>
+        
 
-        <div id="idl-implements-statements" class="section">
-          <h3>Implements statements</h3>
+        
+          <h3 id="idl-implements-statements">Implements statements</h3>
 
           <p>
             An <dfn data-export="" id="dfn-implements-statement">implements statement</dfn> is a definition
@@ -4684,10 +4684,10 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               objects implement <span class="idltype">Entry</span>.
             </p>
           </div>
-        </div>
+        
 
-        <div id="idl-objects" class="section">
-          <h3>Objects implementing interfaces</h3>
+        
+          <h3 id="idl-objects">Objects implementing interfaces</h3>
 
           <p>
             In a given implementation of a set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>,
@@ -4742,7 +4742,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             in response in such a case (such as throwing an exception).
           </p>
           -->
-        </div>
+        
 
         <!--
         <div id='idl-valuetypes' class='section'>
@@ -4804,8 +4804,8 @@ interface Person {
         </div>
         -->
 
-        <div id="idl-types" class="section">
-          <h3>Types</h3>
+        
+          <h3 id="idl-types">Types</h3>
 
           <p>
             This section lists the types supported by Web IDL, the set of values
@@ -4918,8 +4918,8 @@ interface Person {
              ε</span></td></tr><tr id="proddef-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#prod-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="proddef-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#prod-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br/> |
              ε</span></td></tr></table>
 
-          <div id="idl-any" class="section">
-            <h4 data-dfn-type="interface" data-lt="any" id="dom-any">any</h4>
+          
+            <h4 oldids="dom-any" id="idl-any" dfn-type="interface">any</h4>
 
             <p>
               The <a class="idltype" href="#idl-any">any</a> type is the union of all other possible
@@ -4942,10 +4942,10 @@ interface Person {
               (Values of <a href="#idl-union">union types</a> also have
               <a class="dfnref" href="#dfn-specific-type">specific types</a>.)
             </p>
-          </div>
+          
 
-          <div id="idl-boolean" class="section">
-            <h4 data-dfn-type="interface" data-lt="boolean" id="dom-boolean">boolean</h4>
+          
+            <h4 oldids="dom-boolean" id="idl-boolean" dfn-type="interface">boolean</h4>
 
             <p>
               The <a class="idltype" href="#idl-boolean">boolean</a> type has two values:
@@ -4960,10 +4960,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-boolean">boolean</a> type is “Boolean”.
             </p>
-          </div>
+          
 
-          <div id="idl-byte" class="section">
-            <h4 data-dfn-type="interface" data-lt="byte" id="dom-byte">byte</h4>
+          
+            <h4 oldids="dom-byte" id="idl-byte" dfn-type="interface">byte</h4>
 
             <p>
               The <a class="idltype" href="#idl-byte">byte</a> type is a signed integer
@@ -4978,10 +4978,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-byte">byte</a> type is “Byte”.
             </p>
-          </div>
+          
 
-          <div id="idl-octet" class="section">
-            <h4 data-dfn-type="interface" data-lt="octet" id="dom-octet">octet</h4>
+          
+            <h4 oldids="dom-octet" id="idl-octet" dfn-type="interface">octet</h4>
 
             <p>
               The <a class="idltype" href="#idl-octet">octet</a> type is an unsigned integer
@@ -4996,10 +4996,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-octet">octet</a> type is “Octet”.
             </p>
-          </div>
+          
 
-          <div id="idl-short" class="section">
-            <h4 data-dfn-type="interface" data-lt="short" id="dom-short">short</h4>
+          
+            <h4 oldids="dom-short" id="idl-short" dfn-type="interface">short</h4>
 
             <p>
               The <a class="idltype" href="#idl-short">short</a> type is a signed integer
@@ -5014,10 +5014,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-short">short</a> type is “Short”.
             </p>
-          </div>
+          
 
-          <div id="idl-unsigned-short" class="section">
-            <h4 data-dfn-type="interface" data-lt="unsigned short" id="dom-unsignedshort">unsigned short</h4>
+          
+            <h4 oldids="dom-unsignedshort" id="idl-unsigned-short" dfn-type="interface">unsigned short</h4>
 
             <p>
               The <a class="idltype" href="#idl-unsigned-short">unsigned short</a> type is an unsigned integer
@@ -5032,10 +5032,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-unsigned-short">unsigned short</a> type is “UnsignedShort”.
             </p>
-          </div>
+          
 
-          <div id="idl-long" class="section">
-            <h4 data-dfn-type="interface" data-lt="long" id="dom-long">long</h4>
+          
+            <h4 oldids="dom-long" id="idl-long" dfn-type="interface">long</h4>
 
             <p>
               The <a class="idltype" href="#idl-long">long</a> type is a signed integer
@@ -5050,10 +5050,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-long">long</a> type is “Long”.
             </p>
-          </div>
+          
 
-          <div id="idl-unsigned-long" class="section">
-            <h4 data-dfn-type="interface" data-lt="unsigned long" id="dom-unsignedlong">unsigned long</h4>
+          
+            <h4 oldids="dom-unsignedlong" id="idl-unsigned-long" dfn-type="interface">unsigned long</h4>
 
             <p>
               The <a class="idltype" href="#idl-unsigned-long">unsigned long</a> type is an unsigned integer
@@ -5068,10 +5068,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-unsigned-long">unsigned long</a> type is “UnsignedLong”.
             </p>
-          </div>
+          
 
-          <div id="idl-long-long" class="section">
-            <h4 data-dfn-type="interface" data-lt="long long" id="dom-longlong">long long</h4>
+          
+            <h4 oldids="dom-longlong" id="idl-long-long" dfn-type="interface">long long</h4>
 
             <p>
               The <a class="idltype" href="#idl-long-long">long long</a> type is a signed integer
@@ -5086,10 +5086,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-long-long">long long</a> type is “LongLong”.
             </p>
-          </div>
+          
 
-          <div id="idl-unsigned-long-long" class="section">
-            <h4 data-dfn-type="interface" data-lt="unsigned long long" id="dom-unsignedlonglong">unsigned long long</h4>
+          
+            <h4 oldids="dom-unsignedlonglong" id="idl-unsigned-long-long" dfn-type="interface">unsigned long long</h4>
 
             <p>
               The <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> type is an unsigned integer
@@ -5104,10 +5104,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> type is “UnsignedLongLong”.
             </p>
-          </div>
+          
 
-          <div id="idl-float" class="section">
-            <h4 data-dfn-type="interface" data-lt="float" id="dom-float">float</h4>
+          
+            <h4 oldids="dom-float" id="idl-float" dfn-type="interface">float</h4>
 
             <p>
               The <a class="idltype" href="#idl-float">float</a> type is a floating point numeric
@@ -5129,10 +5129,10 @@ interface Person {
                 since the set of values that a <a class="idltype" href="#idl-double">double</a> can
                 represent more closely matches an ECMAScript <span class="estype">Number</span>.
               
-          </div>
+          
 
-          <div id="idl-unrestricted-float" class="section">
-            <h4 data-dfn-type="interface" data-lt="unrestricted float" id="dom-unrestrictedfloat">unrestricted float</h4>
+          
+            <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" dfn-type="interface">unrestricted float</h4>
 
             <p>
               The <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is a floating point numeric
@@ -5148,10 +5148,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is “UnrestrictedFloat”.
             </p>
-          </div>
+          
 
-          <div id="idl-double" class="section">
-            <h4 data-dfn-type="interface" data-lt="double" id="dom-double">double</h4>
+          
+            <h4 oldids="dom-double" id="idl-double" dfn-type="interface">double</h4>
 
             <p>
               The <a class="idltype" href="#idl-double">double</a> type is a floating point numeric
@@ -5167,10 +5167,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-double">double</a> type is “Double”.
             </p>
-          </div>
+          
 
-          <div id="idl-unrestricted-double" class="section">
-            <h4 data-dfn-type="interface" data-lt="unrestricted double" id="dom-unrestricteddouble">unrestricted double</h4>
+          
+            <h4 oldids="dom-unrestricteddouble" id="idl-unrestricted-double" dfn-type="interface">unrestricted double</h4>
 
             <p>
               The <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is a floating point numeric
@@ -5186,10 +5186,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is “UnrestrictedDouble”.
             </p>
-          </div>
+          
 
-          <div id="idl-DOMString" class="section">
-            <h4 data-dfn-type="interface" data-lt="DOMString" id="dom-DOMString">DOMString</h4>
+          
+            <h4 oldids="dom-DOMString" id="idl-DOMString" dfn-type="interface">DOMString</h4>
 
             <p>
               The <a class="idltype" href="#idl-DOMString">DOMString</a> type
@@ -5276,10 +5276,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-DOMString">DOMString</a> type is “String”.
             </p>
-          </div>
+          
 
-          <div id="idl-ByteString" class="section">
-            <h4 data-dfn-type="interface" data-lt="ByteString" id="dom-ByteString">ByteString</h4>
+          
+            <h4 oldids="dom-ByteString" id="idl-ByteString" dfn-type="interface">ByteString</h4>
 
             <p>
               The <a class="idltype" href="#idl-ByteString">ByteString</a> type
@@ -5308,10 +5308,10 @@ interface Person {
                 8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
                 <a href="#ref-TYPEDARRAYS">[TYPEDARRAYS]</a>
               
-          </div>
+          
 
-          <div id="idl-USVString" class="section">
-            <h4 data-dfn-type="interface" data-lt="USVString" id="dom-USVString">USVString</h4>
+          
+            <h4 oldids="dom-USVString" id="idl-USVString" dfn-type="interface">USVString</h4>
 
             <p>
               The <a class="idltype" href="#idl-USVString">USVString</a> type
@@ -5338,10 +5338,10 @@ interface Person {
                 which does not make any interpretations of the <a class="dfnref" href="#dfn-code-unit">code units</a>
                 in the string.  When in doubt, use <a class="idltype" href="#idl-DOMString">DOMString</a>.
               
-          </div>
+          
 
-          <div id="idl-object" class="section">
-            <h4 data-dfn-type="interface" data-lt="object" id="dom-object">object</h4>
+          
+            <h4 oldids="dom-object" id="idl-object" dfn-type="interface">object</h4>
 
             <p>
               The <a class="idltype" href="#idl-object">object</a> type corresponds to the set of
@@ -5360,10 +5360,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-object">object</a> type is “Object”.
             </p>
-          </div>
+          
 
-          <div id="idl-interface" class="section">
-            <h4>Interface types</h4>
+          
+            <h4 id="idl-interface">Interface types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that
@@ -5398,10 +5398,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of an interface type
               is the <a class="dfnref" href="#dfn-identifier">identifier</a> of the interface.
             </p>
-          </div>
+          
 
-          <div id="idl-dictionary" class="section">
-            <h4>Dictionary types</h4>
+          
+            <h4 id="idl-dictionary">Dictionary types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that
@@ -5416,10 +5416,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of a dictionary type
               is the <a class="dfnref" href="#dfn-identifier">identifier</a> of the dictionary.
             </p>
-          </div>
+          
 
-          <div id="idl-enumeration" class="section">
-            <h4>Enumeration types</h4>
+          
+            <h4 id="idl-enumeration">Enumeration types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that
@@ -5439,10 +5439,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of an enumeration type
               is the <a class="dfnref" href="#dfn-identifier">identifier</a> of the enumeration.
             </p>
-          </div>
+          
 
-          <div id="idl-callback-function" class="section">
-            <h4>Callback function types</h4>
+          
+            <h4 id="idl-callback-function">Callback function types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that identifies
@@ -5467,10 +5467,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of a callback function type
               is the <a class="dfnref" href="#dfn-identifier">identifier</a> of the callback function.
             </p>
-          </div>
+          
 
-          <div id="idl-nullable-type" class="section">
-            <h4>Nullable types — <var>T</var>?</h4>
+          
+            <h4 id="idl-nullable-type">Nullable types — <var>T</var>?</h4>
 
             <p>
               A <dfn data-export="" id="dfn-nullable-type">nullable type</dfn> is an IDL type constructed
@@ -5519,10 +5519,10 @@ interface Person {
   // ...
 };</pre>
             </div>
-          </div>
+          
 
-          <div id="idl-sequence" class="section">
-            <h4 data-dfn-type="interface" id="dom-sequence" data-lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;<var>T</var>&gt;</h4>
+          
+            <h4 oldids="dom-sequence" id="idl-sequence" dfn-type="interface" lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;<var>T</var>&gt;</h4>
 
             <p>
               The <a class="idltype" href="#idl-sequence">sequence&lt;<var>T</var>&gt;</a>
@@ -5557,10 +5557,10 @@ interface Person {
               is the concatenation of the type name for <var>T</var> and
               the string “Sequence”.
             </p>
-          </div>
+          
 
-          <div id="idl-promise" class="section">
-            <h4 data-dfn-type="interface" id="dom-promise" data-lt="Promise|Promise&lt;T&gt;">Promise types — Promise&lt;<var>T</var>&gt;</h4>
+          
+            <h4 oldids="dom-promise" id="idl-promise" dfn-type="interface" lt="Promise|Promise&lt;T&gt;">Promise types — Promise&lt;<var>T</var>&gt;</h4>
 
             <p>
               A <dfn data-export="" id="dfn-promise-type">promise type</dfn> is a parameterized type
@@ -5578,10 +5578,10 @@ interface Person {
               is the concatenation of the type name for <var>T</var> and
               the string “Promise”.
             </p>
-          </div>
+          
 
-          <div id="idl-union" class="section">
-            <h4>Union types</h4>
+          
+            <h4 id="idl-union">Union types</h4>
 
             <p>
               A <dfn data-export="" id="dfn-union-type">union type</dfn> is a type whose set of values
@@ -5719,10 +5719,10 @@ interface Person {
              "DOMException" <a class="sym" href="#prod-Null">Null</a> <br/> |
              <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br/> |
              "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
-          </div>
+          
 
-          <div id="idl-RegExp" class="section">
-            <h4 data-dfn-type="interface" data-lt="RegExp" id="dom-RegExp">RegExp</h4>
+          
+            <h4 oldids="dom-RegExp" id="idl-RegExp" dfn-type="interface">RegExp</h4>
 
             <p>
               The <a class="idltype" href="#idl-RegExp">RegExp</a> type is a type
@@ -5738,10 +5738,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-RegExp">RegExp</a> type is “RegExp”.
             </p>
-          </div>
+          
 
-          <div id="idl-Error" class="section">
-            <h4 data-dfn-type="interface" data-lt="Error" id="dom-Error">Error</h4>
+          
+            <h4 oldids="dom-Error" id="idl-Error" dfn-type="interface">Error</h4>
 
             <p>The <a class="idltype" href="#idl-Error">Error</a> type corresponds to the
               set of all possible non-null references to exception objects, including
@@ -5755,10 +5755,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-Error">Error</a> type is “Error”.
             </p>
-          </div>
+          
 
-          <div id="idl-DOMException" class="section">
-            <h4>DOMException</h4>
+          
+            <h4 id="idl-DOMException">DOMException</h4>
 
             <p>The <a class="idltype" href="#idl-DOMException">DOMException</a> type corresponds to the
               set of all possible non-null references to objects
@@ -5771,10 +5771,10 @@ interface Person {
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
               <a class="idltype" href="#idl-DOMException">DOMException</a> type is “DOMException”.
             </p>
-          </div>
+          
 
-          <div id="idl-buffer-source-types" class="section">
-            <h4>Buffer source types</h4>
+          
+            <h4 id="idl-buffer-source-types">Buffer source types</h4>
 
             <p>
               There are a number of types that correspond to sets of all possible non-null
@@ -5858,10 +5858,10 @@ interface Person {
                 Note: See [[#es-buffer-source-types]] below for
                 how interacting with buffer source types works in the ECMAScript language binding.
                 Issue: We should include an example of specification text that uses these types and terms.
-          </div>
+          
 
-          <div id="idl-frozen-array" class="section">
-            <h4 data-dfn-type="interface" id="dom-FrozenArray" data-lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
+          
+            <h4 oldids="dom-FrozenArray" id="idl-frozen-array" dfn-type="interface" lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
 
             <p>
               A <dfn data-export="" id="dfn-frozen-array-type">frozen array type</dfn> is a parameterized
@@ -5881,11 +5881,11 @@ interface Person {
               type is the concatenation of the type name for <var>T</var> and the string
               “Array”.
             </p>
-          </div>
-        </div>
+          
+        
 
-        <div id="idl-extended-attributes" class="section">
-          <h3>Extended attributes</h3>
+        
+          <h3 id="idl-extended-attributes">Extended attributes</h3>
 
           <p>
             An <dfn data-export="" id="dfn-extended-attribute">extended attribute</dfn> is an annotation
@@ -6056,11 +6056,11 @@ interface Person {
              ","</span></td></tr><tr id="proddef-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#prod-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
              ε</span></td></tr><tr id="proddef-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
 
-        </div>
-      </div>
+        
+      
 
-      <div id="ecmascript-binding" class="section">
-        <h2>ECMAScript binding</h2>
+      
+        <h2 id="ecmascript-binding">ECMAScript binding</h2>
 
         <p>
           This section describes how definitions written with the IDL defined in
@@ -6168,8 +6168,8 @@ interface Person {
           </p>
         </div>
 
-        <div id="es-environment" class="section">
-          <h3>ECMAScript environment</h3>
+        
+          <h3 id="es-environment">ECMAScript environment</h3>
           <p>
             In an ECMAScript implementation of a given set of
             <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>,
@@ -6250,10 +6250,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             the associated Realm is equal to the value of the function object's [[Realm]] internal
             slot.
           </p>
-        </div>
+        
 
-        <div id="es-type-mapping" class="section">
-          <h3>ECMAScript type mapping</h3>
+        
+          <h3 id="es-type-mapping">ECMAScript type mapping</h3>
 
           <p>
             This section describes how types in the IDL map to types in ECMAScript.
@@ -6267,8 +6267,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             when returned from a platform object.
           </p>
 
-          <div id="es-any" class="section">
-            <h4>any</h4>
+          
+            <h4 id="es-any">any</h4>
 
             <p>
               Since the IDL <a class="idltype" href="#idl-any">any</a> type
@@ -6334,10 +6334,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               of the IDL <a class="idltype" href="#idl-any">any</a> value
               as described in the remainder of this section are performed.
             </p>
-          </div>
+          
 
-          <div id="es-void" class="section">
-            <h4>void</h4>
+          
+            <h4 id="es-void">void</h4>
 
             <p>
               The only place that the <a class="idltype" href="#idl-void">void</a> type may appear
@@ -6352,10 +6352,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               specifies a <a class="idltype" href="#idl-void">void</a> return type
               <span class="rfc2119">MAY</span> return any value, which will be discarded.
             </p>
-          </div>
+          
 
-          <div id="es-boolean" class="section">
-            <h4>boolean</h4>
+          
+            <h4 id="es-boolean">boolean</h4>
 
             <p id="es-to-boolean">
               An ECMAScript value <var>V</var> is
@@ -6374,10 +6374,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value <span class="idlvalue">false</span> is converted to the ECMAScript
               <span class="esvalue">false</span> value.
             </p>
-          </div>
+          
 
-          <div id="es-byte" class="section">
-            <h4>byte</h4>
+          
+            <h4 id="es-byte">byte</h4>
 
             <p id="es-to-byte">
               An ECMAScript value <var>V</var> is
@@ -6427,10 +6427,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               the same numeric value as the IDL <a class="idltype" href="#idl-byte">byte</a> value.
               The <span class="estype">Number</span> value will be an integer in the range [−128, 127].
             </p>
-          </div>
+          
 
-          <div id="es-octet" class="section">
-            <h4>octet</h4>
+          
+            <h4 id="es-octet">octet</h4>
 
             <p id="es-to-octet">
               An ECMAScript value <var>V</var> is
@@ -6480,10 +6480,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <a class="idltype" href="#idl-octet">octet</a> value.
               The <span class="estype">Number</span> value will be an integer in the range [0, 255].
             </p>
-          </div>
+          
 
-          <div id="es-short" class="section">
-            <h4>short</h4>
+          
+            <h4 id="es-short">short</h4>
 
             <p id="es-to-short">
               An ECMAScript value <var>V</var> is
@@ -6534,10 +6534,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <a class="idltype" href="#idl-short">short</a> value.
               The <span class="estype">Number</span> value will be an integer in the range [−32768, 32767].
             </p>
-          </div>
+          
 
-          <div id="es-unsigned-short" class="section">
-            <h4>unsigned short</h4>
+          
+            <h4 id="es-unsigned-short">unsigned short</h4>
 
             <p id="es-to-unsigned-short">
               An ECMAScript value <var>V</var> is
@@ -6585,10 +6585,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value.
               The <span class="estype">Number</span> value will be an integer in the range [0, 65535].
             </p>
-          </div>
+          
 
-          <div id="es-long" class="section">
-            <h4>long</h4>
+          
+            <h4 id="es-long">long</h4>
 
             <p id="es-to-long">
               An ECMAScript value <var>V</var> is
@@ -6636,10 +6636,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <a class="idltype" href="#idl-long">long</a> value.
               The <span class="estype">Number</span> value will be an integer in the range [−2147483648, 2147483647].
             </p>
-          </div>
+          
 
-          <div id="es-unsigned-long" class="section">
-            <h4>unsigned long</h4>
+          
+            <h4 id="es-unsigned-long">unsigned long</h4>
 
             <p id="es-to-unsigned-long">
               An ECMAScript value <var>V</var> is
@@ -6687,10 +6687,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value.
               The <span class="estype">Number</span> value will be an integer in the range [0, 4294967295].
             </p>
-          </div>
+          
 
-          <div id="es-long-long" class="section">
-            <h4>long long</h4>
+          
+            <h4 id="es-long-long">long long</h4>
 
             <p id="es-to-long-long">
               An ECMAScript value <var>V</var> is
@@ -6745,10 +6745,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               will be able to represent exactly the same value as the
               <a class="idltype" href="#idl-long-long">long long</a>.
             </p>
-          </div>
+          
 
-          <div id="es-unsigned-long-long" class="section">
-            <h4>unsigned long long</h4>
+          
+            <h4 id="es-unsigned-long-long">unsigned long long</h4>
 
             <p id="es-to-unsigned-long-long">
               An ECMAScript value <var>V</var> is
@@ -6802,10 +6802,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               represent exactly the same value as the
               <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>.
             </p>
-          </div>
+          
 
-          <div id="es-float" class="section">
-            <h4>float</h4>
+          
+            <h4 id="es-float">float</h4>
 
             <p id="es-to-float">
               An ECMAScript value <var>V</var> is
@@ -6845,10 +6845,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is the <span class="estype">Number</span> value that represents the same numeric value as the IDL
               <a class="idltype" href="#idl-float">float</a> value.
             </p>
-          </div>
+          
 
-          <div id="es-unrestricted-float" class="section">
-            <h4>unrestricted float</h4>
+          
+            <h4 id="es-unrestricted-float">unrestricted float</h4>
 
             <p id="es-to-unrestricted-float">
               An ECMAScript value <var>V</var> is
@@ -6905,10 +6905,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value.
               </li>
             </ul>
-          </div>
+          
 
-          <div id="es-double" class="section">
-            <h4>double</h4>
+          
+            <h4 id="es-double">double</h4>
 
             <p id="es-to-double">
               An ECMAScript value <var>V</var> is
@@ -6931,10 +6931,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is the <span class="estype">Number</span> value that represents the
               same numeric value as the IDL <a class="idltype" href="#idl-double">double</a> value.
             </p>
-          </div>
+          
 
-          <div id="es-unrestricted-double" class="section">
-            <h4>unrestricted double</h4>
+          
+            <h4 id="es-unrestricted-double">unrestricted double</h4>
 
             <p id="es-to-unrestricted-double">
               An ECMAScript value <var>V</var> is
@@ -6971,10 +6971,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value.
               </li>
             </ul>
-          </div>
+          
 
-          <div id="es-DOMString" class="section">
-            <h4>DOMString</h4>
+          
+            <h4 id="es-DOMString">DOMString</h4>
 
             <p id="es-to-DOMString">
               An ECMAScript value <var>V</var> is
@@ -7017,10 +7017,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> that the
               IDL <a class="idltype" href="#idl-DOMString">DOMString</a> represents.
             </p>
-          </div>
+          
 
-          <div id="es-ByteString" class="section">
-            <h4>ByteString</h4>
+          
+            <h4 id="es-ByteString">ByteString</h4>
 
             <p id="es-to-ByteString">
               An ECMAScript value <var>V</var> is
@@ -7044,10 +7044,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               and the value of each element of which is the value of the corresponding element
               of the <a class="idltype" href="#idl-ByteString">ByteString</a>.
             </p>
-          </div>
+          
 
-          <div id="es-USVString" class="section">
-            <h4>USVString</h4>
+          
+            <h4 id="es-USVString">USVString</h4>
 
             <p id="es-to-USVString">
               An ECMAScript value <var>V</var> is
@@ -7071,10 +7071,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Let <var>string</var> be the sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> that results from encoding <var>scalarValues</var> in UTF-16.</li>
               <li>Return the <span class="estype">String</span> value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> as <var>string</var>.</li>
             </ol>
-          </div>
+          
 
-          <div id="es-object" class="section">
-            <h4>object</h4>
+          
+            <h4 id="es-object">object</h4>
 
             <p>
               IDL <a class="idltype" href="#idl-object">object</a>
@@ -7096,10 +7096,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
               IDL <a class="idltype" href="#idl-object">object</a> represents.
             </p>
-          </div>
+          
 
-          <div id="es-interface" class="section">
-            <h4>Interface types</h4>
+          
+            <h4 id="es-interface">Interface types</h4>
 
             <p>
               IDL <a href="#idl-interface">interface type</a>
@@ -7130,10 +7130,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value that represents a reference to the same object that the IDL
               <a href="#idl-interface">interface type</a> value represents.
             </p>
-          </div>
+          
 
-          <div id="es-dictionary" class="section">
-            <h4>Dictionary types</h4>
+          
+            <h4 id="es-dictionary">Dictionary types</h4>
 
             <p>
               IDL <a href="#idl-dictionary">dictionary type</a> values are represented
@@ -7225,10 +7225,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>Return <var>O</var>.</li>
             </ol>
-          </div>
+          
 
-          <div id="es-enumeration" class="section">
-            <h4>Enumeration types</h4>
+          
+            <h4 id="es-enumeration">Enumeration types</h4>
 
             <p>
               IDL <a href="#idl-enumeration">enumeration types</a> are represented by ECMAScript <span class="estype">String</span>
@@ -7252,10 +7252,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> as
               the <a class="dfnref" href="#dfn-enumeration-value">enumeration value</a>.
             </p>
-          </div>
+          
 
-          <div id="es-callback-function" class="section">
-            <h4>Callback function types</h4>
+          
+            <h4 id="es-callback-function">Callback function types</h4>
 
             <p>
               IDL <a href="#idl-callback-function">callback function types</a> are represented by ECMAScript <span class="estype">Function</span>
@@ -7288,10 +7288,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value to an ECMAScript value is a reference to the same object
               that the IDL <a href="#idl-callback-function">callback function type</a> value represents.
             </p>
-          </div>
+          
 
-          <div id="es-nullable-type" class="section">
-            <h4>Nullable types — <var>T</var>?</h4>
+          
+            <h4 id="es-nullable-type">Nullable types — <var>T</var>?</h4>
 
             <p>
               IDL <a class="dfnref" href="#dfn-nullable-type">nullable type</a> values are represented
@@ -7344,10 +7344,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 to the <a class="dfnref" href="#dfn-inner-type">inner IDL type</a> <span class="idltype"><var>T</var></span>.
               </li>
             </ul>
-          </div>
+          
 
-          <div id="es-sequence" class="section">
-            <h4>Sequences — sequence&lt;<var>T</var>&gt;</h4>
+          
+            <h4 id="es-sequence">Sequences — sequence&lt;<var>T</var>&gt;</h4>
 
             <p>
               IDL <a class="idltype" href="#idl-sequence">sequence&lt;<var>T</var>&gt;</a> values are represented by
@@ -7411,8 +7411,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return <var>A</var>.</li>
             </ol>
 
-            <div id="create-sequence-from-iterable" class="section">
-              <h5>Creating a sequence from an iterable</h5>
+            
+              <h5 id="create-sequence-from-iterable">Creating a sequence from an iterable</h5>
               <p>
                 To create an IDL value of type <a class="idltype" href="#idl-sequence">sequence&lt;<var>T</var>&gt;</a> given an
                 iterable <var>iterable</var> and an iterator getter
@@ -7455,7 +7455,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ol>
                 </li>
               </ol>
-            </div>
+            
             <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-interface">interface</a> defines
@@ -7601,10 +7601,10 @@ alert(b[4]);    // This would alert "50".</pre>
               </div>
             </div>
             -->
-          </div>
+          
 
-          <div id="es-promise" class="section">
-            <h4>Promise types — Promise&lt;<var>T</var>&gt;</h4>
+          
+            <h4 id="es-promise">Promise types — Promise&lt;<var>T</var>&gt;</h4>
 
             <p>
               IDL <a href="#idl-promise">promise type</a> values are
@@ -7679,10 +7679,10 @@ alert(b[4]);    // This would alert "50".</pre>
                 as its two arguments.</li>
             </ol>
                 Issue: Include an example of how to write spec text using this term.
-          </div>
+          
 
-          <div id="es-union" class="section">
-            <h4>Union types</h4>
+          
+            <h4 id="es-union">Union types</h4>
 
             <p>
               IDL <a href="#idl-union">union type</a> values are
@@ -7889,10 +7889,10 @@ alert(b[4]);    // This would alert "50".</pre>
               </li>
             </ol>
             [[]]
-          </div>
+          
 
-          <div id="es-RegExp" class="section">
-            <h4>RegExp</h4>
+          
+            <h4 id="es-RegExp">RegExp</h4>
 
             <p>
               IDL <a class="idltype" href="#idl-RegExp">RegExp</a> values are represented by
@@ -7923,10 +7923,10 @@ alert(b[4]);    // This would alert "50".</pre>
               value is the <span class="estype">RegExp</span> value that represents a reference to the same object that the
               IDL <a class="idltype" href="#idl-RegExp">RegExp</a> represents.
             </p>
-          </div>
+          
 
-          <div id="es-Error" class="section">
-            <h4>Error</h4>
+          
+            <h4 id="es-Error">Error</h4>
 
             <p>
               IDL <a class="idltype" href="#idl-Error">Error</a> values are represented
@@ -7950,10 +7950,10 @@ alert(b[4]);    // This would alert "50".</pre>
               value is the <span class="estype">Error</span> value that represents a reference to the same object that the
               IDL <a class="idltype" href="#idl-Error">Error</a> represents.
             </p>
-          </div>
+          
 
-          <div id="es-DOMException" class="section">
-            <h4>DOMException</h4>
+          
+            <h4 id="es-DOMException">DOMException</h4>
 
             <p>
               IDL <a class="idltype" href="#idl-DOMException">DOMException</a> values are represented
@@ -7976,10 +7976,10 @@ alert(b[4]);    // This would alert "50".</pre>
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
               IDL <a class="idltype" href="#idl-DOMException">DOMException</a> represents.
             </p>
-          </div>
+          
 
-          <div id="es-buffer-source-types" class="section">
-            <h4>Buffer source types</h4>
+          
+            <h4 id="es-buffer-source-types">Buffer source types</h4>
 
             <p>
               Values of the IDL <a class="dfnref" href="#dfn-buffer-source-type">buffer source types</a>
@@ -8074,10 +8074,10 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Let <var>O</var> be the ECMAScript object that is the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.</li>
               <li><a class="external" href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">DetachArrayBuffer</a>(<var>O</var>).</li>
             </ol>
-          </div>
+          
 
-          <div id="es-frozen-array" class="section">
-            <h4>Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
+          
+            <h4 id="es-frozen-array">Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
 
             <p>
               Values of frozen array types are represented by frozen ECMAScript
@@ -8115,8 +8115,8 @@ alert(b[4]);    // This would alert "50".</pre>
               to the same object that the IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> represents.
             </p>
 
-            <div id="create-frozen-array-from-iterable" class="section">
-              <h5>Creating a frozen array from an iterable</h5>
+            
+              <h5 id="create-frozen-array-from-iterable">Creating a frozen array from an iterable</h5>
               <p>
                 To create an IDL value of type <a class="idltype" href="#idl-sequence">FrozenArray&lt;<var>T</var>&gt;</a> given an
                 iterable <var>iterable</var> and an iterator getter
@@ -8130,12 +8130,12 @@ alert(b[4]);    // This would alert "50".</pre>
                 <li>Return the result of <a class="dfnref" href="#dfn-create-frozen-array">creating a frozen
                     array</a> from <var>values</var>.</li>
               </ol>
-            </div>
-          </div>
-        </div>
+            
+          
+        
 
-        <div id="es-extended-attributes" class="section">
-          <h3>ECMAScript-specific extended attributes</h3>
+        
+          <h3 id="es-extended-attributes">ECMAScript-specific extended attributes</h3>
 
           <p>
             This section defines a number of
@@ -8143,8 +8143,8 @@ alert(b[4]);    // This would alert "50".</pre>
             whose presence affects only the ECMAScript binding.
           </p>
 
-          <div id="Clamp" class="section">
-            <h4>[Clamp]</h4>
+          
+            <h4 id="Clamp">[Clamp]</h4>
 
             <p>
               If the <a class="xattr" href="#Clamp">[Clamp]</a>
@@ -8206,10 +8206,10 @@ context.setColor(-1, 255, 257);
 // This is equivalent to calling setColorClamped(0, 255, 255).
 context.setColorClamped(-1, 255, 257);</pre>
             </div>
-          </div>
+          
 
-          <div id="Constructor" class="section">
-            <h4>[Constructor]</h4>
+          
+            <h4 id="Constructor">[Constructor]</h4>
 
             <p>
               If the <a class="xattr" href="#Constructor">[Constructor]</a>
@@ -8293,10 +8293,10 @@ var y = new Circle(1.25);  // This also creates a Circle object, this time using
 var z = new NodeList();    // This would throw a TypeError, since no
                            // [Constructor] is declared.</pre>
             </div>
-          </div>
+          
 
-          <div id="EnforceRange" class="section">
-            <h4>[EnforceRange]</h4>
+          
+            <h4 id="EnforceRange">[EnforceRange]</h4>
 
             <p>
               If the <a class="xattr" href="#EnforceRange">[EnforceRange]</a>
@@ -8365,10 +8365,10 @@ context.setColorEnforcedRange(-0.9, 255, 255.2);
 // rounding the first and third argument values are out of range.
 context.setColorEnforcedRange(-1, 255, 256);</pre>
             </div>
-          </div>
+          
 
-          <div id="Exposed" class="section">
-            <h4>[Exposed]</h4>
+          
+            <h4 id="Exposed">[Exposed]</h4>
             <p>
               If the <a class="xattr" href="#Exposed">[Exposed]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -8534,10 +8534,10 @@ interface Node {
   ...
 };</pre>
             </div>
-          </div>
+          
 
-          <div id="ImplicitThis" class="section">
-            <h4>[ImplicitThis]</h4>
+          
+            <h4 id="ImplicitThis">[ImplicitThis]</h4>
             <p>
               If the <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -8588,10 +8588,10 @@ alert.call(null, "hello");  // As does passing null explicitly as the this value
 // The following will throw a TypeError.
 Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
             </div>
-          </div>
+          
 
-          <div id="Global" class="section">
-            <h4 id="PrimaryGlobal">[Global] and [PrimaryGlobal]</h4>
+          
+            <h4 oldids="PrimaryGlobal" id="Global">[Global] and [PrimaryGlobal]</h4>
 
             <p>
               If the <a class="xattr" href="#Global">[Global]</a>
@@ -8788,10 +8788,10 @@ interface Window {
   def;                              // Evaluates to undefined.
 &lt;/script&gt;</pre>
             </div>
-          </div>
+          
 
-          <div id="LegacyArrayClass" class="section">
-            <h4>[LegacyArrayClass]</h4>
+          
+            <h4 id="LegacyArrayClass">[LegacyArrayClass]</h4>
 
             <p>
               If the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
@@ -8863,11 +8863,11 @@ list.unshift({ });         // Insert an item at index 0.</pre>
                   themselves</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 22.1.3).
               </p>
             </div>
-          </div>
+          
 
 
-          <div id="LegacyUnenumerableNamedProperties" class="section">
-            <h4>[LegacyUnenumerableNamedProperties]</h4>
+          
+            <h4 id="LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</h4>
 
             <p>
               If the <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
@@ -8894,10 +8894,10 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
               entails.
             </p>
-          </div>
+          
 
-          <div id="LenientSetter" class="section">
-            <h4>[LenientSetter]</h4>
+          
+            <h4 id="LenientSetter">[LenientSetter]</h4>
             <p>
               If the <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -8968,10 +8968,10 @@ example.x = 1;
 // Throws a TypeError, since we are in strict mode and there is no setter.
 example.y = 1;</pre>
             </div>
-          </div>
+          
 
-          <div id="LenientThis" class="section">
-            <h4>[LenientThis]</h4>
+          
+            <h4 id="LenientThis">[LenientThis]</h4>
             <p>
               If the <a class="xattr" href="#LenientThis">[LenientThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -9030,10 +9030,10 @@ Example.prototype.x;
 // Throws a TypeError, since Example.prototype is not an Example object.
 Example.prototype.y;</pre>
             </div>
-          </div>
+          
 
-          <div id="NamedConstructor" class="section">
-            <h4>[NamedConstructor]</h4>
+          
+            <h4 id="NamedConstructor">[NamedConstructor]</h4>
             <p>
               If the <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -9100,10 +9100,10 @@ var a1 = new Audio();           // Creates a new object that implements
 var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
                                 // one-argument constructor.</pre>
             </div>
-          </div>
+          
 
-          <div id="NewObject" class="section">
-            <h4>[NewObject]</h4>
+          
+            <h4 id="NewObject">[NewObject]</h4>
 
             <p>
               If the <a class="xattr" href="#NewObject">[NewObject]</a>
@@ -9144,10 +9144,10 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
   ...
 };</pre>
             </div>
-          </div>
+          
 
-          <div id="NoInterfaceObject" class="section">
-            <h4>[NoInterfaceObject]</h4>
+          
+            <h4 id="NoInterfaceObject">[NoInterfaceObject]</h4>
 
             <p>
               If the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
@@ -9231,10 +9231,10 @@ typeof Query;                          // evaluates to "undefined"
 var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
 </pre>
             </div>
-          </div>
+          
 
-          <div id="OverrideBuiltins" class="section">
-            <h4>[OverrideBuiltins]</h4>
+          
+            <h4 id="OverrideBuiltins">[OverrideBuiltins]</h4>
 
             <p>
               If the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
@@ -9323,7 +9323,7 @@ map2.length;
 // a property in map2's prototype chain.
 map2.toString;</pre>
             </div>
-          </div>
+          
 
           <!--
           <div id='PrototypeRoot' class='section'>
@@ -9408,8 +9408,8 @@ Node implements EventTarget;</x:codeblock>
           </div>
           -->
 
-          <div id="PutForwards" class="section">
-            <h4>[PutForwards]</h4>
+          
+            <h4 id="PutForwards">[PutForwards]</h4>
 
             <p>
               If the <a class="xattr" href="#PutForwards">[PutForwards]</a>
@@ -9523,10 +9523,10 @@ interface Person {
 p.name = 'John Citizen';       // This statement...
 p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
             </div>
-          </div>
+          
 
-          <div id="Replaceable" class="section">
-            <h4>[Replaceable]</h4>
+          
+            <h4 id="Replaceable">[Replaceable]</h4>
 
             <p>
               If the <a class="xattr" href="#Replaceable">[Replaceable]</a>
@@ -9611,10 +9611,10 @@ counter.value;                                           // Evaluates to 'a'.
 delete counter.value;                                    // Reveals the original property.
 counter.value;                                           // Evaluates to 3.</pre>
             </div>
-          </div>
+          
 
-          <div id="SameObject" class="section">
-            <h4>[SameObject]</h4>
+          
+            <h4 id="SameObject">[SameObject]</h4>
 
             <p>
               If the <a class="xattr" href="#SameObject">[SameObject]</a>
@@ -9652,10 +9652,10 @@ counter.value;                                           // Evaluates to 3.</pre
   ...
 };</pre>
             </div>
-          </div>
+          
 
-          <div id="SecureContext" class="section">
-            <h4>[SecureContext]</h4>
+          
+            <h4 id="SecureContext">[SecureContext]</h4>
 
             <p>
               If the <a class="xattr" href="#SecureContext">[SecureContext]</a>
@@ -9754,10 +9754,10 @@ counter.value;                                           // Evaluates to 3.</pre
 };</pre>
 
             </div>
-          </div>
+          
 
-          <div id="TreatNonObjectAsNull" class="section">
-            <h4>[TreatNonObjectAsNull]</h4>
+          
+            <h4 id="TreatNonObjectAsNull">[TreatNonObjectAsNull]</h4>
 
             <p>
               If the <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>
@@ -9824,10 +9824,10 @@ manager.handler2;            // Evaluates to the function.
 manager.handler2 = 123;
 manager.handler2;            // Evaluates to null.</pre>
             </div>
-          </div>
+          
 
-          <div id="TreatNullAs" class="section">
-            <h4>[TreatNullAs]</h4>
+          
+            <h4 id="TreatNullAs">[TreatNullAs]</h4>
 
             <p>
               If the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
@@ -9902,10 +9902,10 @@ d.owner = null;           // This assigns the string "" to the .owner property.
 d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
                           // function.</pre>
             </div>
-          </div>
+          
 
-          <div id="Unforgeable" class="section">
-            <h4>[Unforgeable]</h4>
+          
+            <h4 id="Unforgeable">[Unforgeable]</h4>
 
             <p>
               If the <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
@@ -10020,10 +10020,10 @@ Object.defineProperty(System.prototype, "loginTime", { value: forgedLoginTime })
 
 system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             </div>
-          </div>
+          
 
-          <div id="Unscopable" class="section">
-            <h4>[Unscopable]</h4>
+          
+            <h4 id="Unscopable">[Unscopable]</h4>
 
             <p>
               If the <a class="xattr" href="#Unscopable">[Unscopable]</a>
@@ -10069,11 +10069,11 @@ with (thing) {
   g;                     // Throws a ReferenceError.
 }</pre>
             </div>
-          </div>
-        </div>
+          
+        
 
-        <div id="es-security" class="section">
-          <h3>Security</h3>
+        
+          <h3 id="es-security">Security</h3>
 
           <p>
             Certain algorithms in the sections below are defined to
@@ -10099,10 +10099,10 @@ with (thing) {
               Note: The expectation is that the HTML specification defines how a
             security check is performed, and that it will either throw an
             appropriate exception or return normally. <a href="#ref-HTML">[HTML]</a>
-        </div>
+        
 
-        <div id="es-overloads" class="section">
-          <h3>Overload resolution algorithm</h3>
+        
+          <h3 id="es-overloads">Overload resolution algorithm</h3>
 
           <p>
             In order to define how overloaded function invocations are resolved, the
@@ -10523,10 +10523,10 @@ with (thing) {
               The <span class="esvalue">undefined</span> value is converted to the type
               of variadic argument as would be done for a non-optional argument.</p>
           </div>
-        </div>
+        
 
-        <div id="es-interfaces" class="section">
-          <h3>Interfaces</h3>
+        
+          <h3 id="es-interfaces">Interfaces</h3>
 
           <p>
             For every <a class="dfnref" href="#dfn-interface">interface</a> that
@@ -10566,8 +10566,8 @@ with (thing) {
             below.
           </p>
 
-          <div id="interface-object" class="section">
-            <h4>Interface object</h4>
+          
+            <h4 id="interface-object">Interface object</h4>
 
             <p>
               The interface object for a given non-callback <a class="dfnref" href="#dfn-interface">interface</a>
@@ -10620,8 +10620,8 @@ with (thing) {
               <a class="dfnref" href="#dfn-constant">constants</a> declared on them;
               when they do exist, they are not <a class="dfnref" href="#dfn-function-object">function objects</a>.
 
-            <div id="es-interface-call" class="section">
-              <h5>Interface object [[Call]] method</h5>
+            
+              <h5 id="es-interface-call">Interface object [[Call]] method</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> is declared with a
@@ -10724,10 +10724,10 @@ with (thing) {
                 property named “name” with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
                 whose value is the identifier of the corresponding interface.
               </p>
-            </div>
+            
 
-            <div id="es-interface-hasinstance" class="section">
-              <h5>Interface object [[HasInstance]] method</h5>
+            
+              <h5 id="es-interface-hasinstance">Interface object [[HasInstance]] method</h5>
 
               <p>
                 The internal <span class="prop">[[HasInstance]]</span> method of every
@@ -10752,11 +10752,11 @@ with (thing) {
                   </ol>
                 </li>
               </ol>
-            </div>
-          </div>
+            
+          
 
-          <div id="named-constructors" class="section">
-            <h4>Named constructors</h4>
+          
+            <h4 id="named-constructors">Named constructors</h4>
 
             <p>
               A <a class="dfnref" href="#dfn-named-constructor">named constructor</a>
@@ -10844,10 +10844,10 @@ with (thing) {
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears.
             </p>
-          </div>
+          
 
-          <div id="interface-prototype-object" class="section">
-            <h4>Interface prototype object</h4>
+          
+            <h4 id="interface-prototype-object">Interface prototype object</h4>
 
             <p>
               There <span class="rfc2119">MUST</span> exist an
@@ -10961,10 +10961,10 @@ partial interface Window {
               <a class="dfnref" href="#dfn-identifier">identifier</a> and the string
               “Prototype”.
             </p>
-          </div>
+          
 
-          <div id="named-properties-object" class="section">
-            <h4>Named properties object</h4>
+          
+            <h4 id="named-properties-object">Named properties object</h4>
 
             <p>
               For every <a class="dfnref" href="#dfn-interface">interface</a> declared with the
@@ -10998,8 +10998,8 @@ partial interface Window {
               “Properties”.
             </p>
 
-            <div id="named-properties-object-getownproperty" class="section">
-              <h5>Named properties object [[GetOwnProperty]] method</h5>
+            
+              <h5 id="named-properties-object-getownproperty">Named properties object [[GetOwnProperty]] method</h5>
 
               <p>
                 The internal <span class="prop">[[GetOwnProperty]]</span> method of every
@@ -11047,10 +11047,10 @@ partial interface Window {
 
                 <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
               </ol>
-            </div>
+            
 
-            <div id="named-properties-object-defineownproperty" class="section">
-              <h5>Named properties object [[DefineOwnProperty]] method</h5>
+            
+              <h5 id="named-properties-object-defineownproperty">Named properties object [[DefineOwnProperty]] method</h5>
 
               <p>
                 The internal <span class="prop">[[DefineOwnProperty]]</span> method of every
@@ -11065,10 +11065,10 @@ partial interface Window {
               <ol class="algorithm">
                 <li><a href="#Reject">Reject</a>.</li>
               </ol>
-            </div>
+            
 
-            <div id="named-properties-object-delete" class="section">
-              <h5>Named properties object [[Delete]] method</h5>
+            
+              <h5 id="named-properties-object-delete">Named properties object [[Delete]] method</h5>
 
               <p>
                 The internal <span class="prop">[[Delete]]</span> method of every
@@ -11080,8 +11080,8 @@ partial interface Window {
               <ol class="algorithm">
                 <li>Return <span class="esvalue">false</span>.</li>
               </ol>
-            </div>
-          </div>
+            
+          
 
           <!--
           <div id='mixin-prototype' class='section'>
@@ -11139,8 +11139,8 @@ interface
           </div>
           -->
 
-          <div id="es-constants" class="section">
-            <h4>Constants</h4>
+          
+            <h4 id="es-constants">Constants</h4>
 
             <p>
               For each <a class="dfnref" href="#dfn-exposed">exposed</a>
@@ -11172,10 +11172,10 @@ interface
               exist on the <a class="dfnref" href="#dfn-interface-object">interface object</a>, if
               that object exists.
             </p>
-          </div>
+          
 
-          <div id="es-attributes" class="section">
-            <h4>Attributes</h4>
+          
+            <h4 id="es-attributes">Attributes</h4>
 
             <p>
               For each <a class="dfnref" href="#dfn-exposed">exposed</a>
@@ -11372,10 +11372,10 @@ interface
                 When in strict mode, such an assignment will result in a <span class="estype">TypeError</span>
                 being thrown.  When not in strict mode, the assignment attempt will be ignored.
               
-          </div>
+          
 
-          <div id="es-operations" class="section">
-            <h4>Operations</h4>
+          
+            <h4 id="es-operations">Operations</h4>
 
             <p>
               For each unique <a class="dfnref" href="#dfn-identifier">identifier</a>
@@ -11542,8 +11542,8 @@ interface
                 identifier of the operation.</li>
             </ul>
 
-            <div id="es-stringifier" class="section">
-              <h5>Stringifiers</h5>
+            
+              <h5 id="es-stringifier">Stringifiers</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a>
@@ -11604,10 +11604,10 @@ interface
                 <li>The value of the <span class="estype">Function</span> object’s “name”
                   property is the <span class="estype">String</span> value “toString”.</li>
               </ul>
-            </div>
+            
 
-            <div id="es-serializer" class="section">
-              <h5>Serializers</h5>
+            
+              <h5 id="es-serializer">Serializers</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a>
@@ -11725,14 +11725,14 @@ interface
                   </dl>
                 </li>
               </ol>
-            </div>
-          </div>
+            
+          
 
-          <div id="es-iterators" class="section">
-            <h4>Common iterator behavior</h4>
+          
+            <h4 id="es-iterators">Common iterator behavior</h4>
 
-            <div id="es-iterator" class="section">
-              <h5>@@iterator</h5>
+            
+              <h5 id="es-iterator">@@iterator</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a>
@@ -11841,10 +11841,10 @@ interface
               declaration</a> and the <span class="estype">String</span> “values”
               if the interface has a
               <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</p>
-            </div>
+            
 
-            <div id="es-forEach" class="section">
-              <h5>forEach</h5>
+            
+              <h5 id="es-forEach">forEach</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a>
@@ -11966,14 +11966,14 @@ interface
               </p>
               <p>The value of the <span class="estype">Function</span> object’s “name”
                 property is the <span class="estype">String</span> value “forEach”.</p>
-            </div>
-          </div>
+            
+          
 
-          <div id="es-iterable" class="section">
-            <h4>Iterable declarations</h4>
+          
+            <h4 id="es-iterable">Iterable declarations</h4>
 
-            <div id="es-iterable-entries" class="section">
-              <h5>entries</h5>
+            
+              <h5 id="es-iterable-entries">entries</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
@@ -12005,10 +12005,10 @@ interface
                 then the <span class="estype">Function</span> object is
                 the value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
               </p>
-            </div>
+            
 
-            <div id="es-iterable-keys" class="section">
-              <h5>keys</h5>
+            
+              <h5 id="es-iterable-keys">keys</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
@@ -12061,10 +12061,10 @@ interface
               </ol>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys”.</p>
-            </div>
+            
 
-            <div id="es-iterable-values" class="section">
-              <h5>values</h5>
+            
+              <h5 id="es-iterable-values">values</h5>
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
@@ -12119,10 +12119,10 @@ interface
               </ol>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “values”.</p>
-            </div>
+            
 
-            <div id="es-default-iterator-object" class="section">
-              <h5>Default iterator objects</h5>
+            
+              <h5 id="es-default-iterator-object">Default iterator objects</h5>
 
               <p>
                 A <dfn data-export="" id="dfn-default-iterator-object">default iterator object</dfn> for a given
@@ -12158,10 +12158,10 @@ interface
                 of the <a class="dfnref" href="#dfn-interface">interface</a> and
                 the string “ Iterator”.
               </p>
-            </div>
+            
 
-            <div id="es-iterator-prototype-object" class="section">
-              <h5>Iterator prototype object</h5>
+            
+              <h5 id="es-iterator-prototype-object">Iterator prototype object</h5>
 
               <p>
                 The <dfn data-export="" id="dfn-iterator-prototype-object">iterator prototype object</dfn>
@@ -12248,11 +12248,11 @@ interface
                 of the <a class="dfnref" href="#dfn-interface">interface</a> and
                 the string “Iterator”.
               </p>
-            </div>
-          </div>
+            
+          
 
-          <div id="es-maplike" class="section">
-            <h4>Maplike declarations</h4>
+          
+            <h4 id="es-maplike">Maplike declarations</h4>
 
             <p>
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
@@ -12296,8 +12296,8 @@ interface
               <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>map</var> as <var>thisArg</var> and <var>arguments</var> as <var>argumentsList</var>.</li>
             </ol>
 
-            <div id="es-map-size" class="section">
-              <h5>size</h5>
+            
+              <h5 id="es-map-size">size</h5>
 
               <p>
                 There <span class="rfc2119">MUST</span> exist a property named “size” on
@@ -12330,10 +12330,10 @@ interface
                   <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.</p>
                 </li>
               </ul>
-            </div>
+            
 
-            <div id="es-map-entries" class="section">
-              <h5>entries</h5>
+            
+              <h5 id="es-map-entries">entries</h5>
 
               <p>
                 A property named “entries” <span class="rfc2119">MUST</span> exist on
@@ -12342,10 +12342,10 @@ interface
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
                 the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
               </p>
-            </div>
+            
 
-            <div id="es-map-keys-values" class="section">
-              <h5>keys and values</h5>
+            
+              <h5 id="es-map-keys-values">keys and values</h5>
 
               <p>
                 For both of “keys” and “values”, there <span class="rfc2119">MUST</span> exist a property with that name on
@@ -12358,10 +12358,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys” or “values”, correspondingly.</p>
-            </div>
+            
 
-            <div id="es-map-get-has" class="section">
-              <h5>get and has</h5>
+            
+              <h5 id="es-map-get-has">get and has</h5>
 
               <p>
                 For both of “get” and “has”, there <span class="rfc2119">MUST</span> exist a property with that name on
@@ -12396,10 +12396,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “get” or “has”, correspondingly.</p>
-            </div>
+            
 
-            <div id="es-map-clear" class="section">
-              <h5>clear</h5>
+            
+              <h5 id="es-map-clear">clear</h5>
 
               <p>
                 If <var>A</var> and <var>A</var>’s
@@ -12417,10 +12417,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
-            </div>
+            
 
-            <div id="es-map-delete" class="section">
-              <h5>delete</h5>
+            
+              <h5 id="es-map-delete">delete</h5>
 
               <p>
                 If <var>A</var> and <var>A</var>’s
@@ -12459,10 +12459,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “delete”.</p>
-            </div>
+            
 
-            <div id="es-map-set" class="section">
-              <h5>set</h5>
+            
+              <h5 id="es-map-set">set</h5>
 
               <p>
                 If <var>A</var> and <var>A</var>’s
@@ -12506,11 +12506,11 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">2</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “set”.</p>
-            </div>
-          </div>
+            
+          
 
-          <div id="es-setlike" class="section">
-            <h4>Setlike declarations</h4>
+          
+            <h4 id="es-setlike">Setlike declarations</h4>
 
             <p>
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
@@ -12554,8 +12554,8 @@ interface
               <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>set</var> as <var>thisArg</var> and <var>arguments</var> as <var>argumentsList</var>.</li>
             </ol>
 
-            <div id="es-set-size" class="section">
-              <h5>size</h5>
+            
+              <h5 id="es-set-size">size</h5>
 
               <p>
                 There <span class="rfc2119">MUST</span> exist a property named “size” on
@@ -12588,10 +12588,10 @@ interface
                   <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.</p>
                 </li>
               </ul>
-            </div>
+            
 
-            <div id="es-set-values" class="section">
-              <h5>values</h5>
+            
+              <h5 id="es-set-values">values</h5>
 
               <p>
                 A property named “values” <span class="rfc2119">MUST</span> exist on
@@ -12600,10 +12600,10 @@ interface
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
                 the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
               </p>
-            </div>
+            
 
-            <div id="es-set-entries-keys" class="section">
-              <h5>entries and keys</h5>
+            
+              <h5 id="es-set-entries-keys">entries and keys</h5>
 
               <p>
                 For both of “entries” and “keys”, there <span class="rfc2119">MUST</span> exist a property with that name on
@@ -12616,10 +12616,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “entries” or “keys”, correspondingly.</p>
-            </div>
+            
 
-            <div id="es-set-has" class="section">
-              <h5>has</h5>
+            
+              <h5 id="es-set-has">has</h5>
 
               <p>
                 There <span class="rfc2119">MUST</span> exist a property with named “has” on
@@ -12653,10 +12653,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is a <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “has”.</p>
-            </div>
+            
 
-            <div id="es-add-delete" class="section">
-              <h5>add and delete</h5>
+            
+              <h5 id="es-add-delete">add and delete</h5>
 
               <p>
                 For both of “add” and “delete”, if:
@@ -12714,10 +12714,10 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “add” or “delete”, correspondingly.</p>
-            </div>
+            
 
-            <div id="es-set-clear" class="section">
-              <h5>clear</h5>
+            
+              <h5 id="es-set-clear">clear</h5>
 
               <p>
                 If <var>A</var> and <var>A</var>’s
@@ -12735,11 +12735,11 @@ interface
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
-            </div>
-          </div>
+            
+          
 
-          <div id="initializing-objects-from-iterables" class="section">
-            <h4>Initializing objects from iterables</h4>
+          
+            <h4 id="initializing-objects-from-iterables">Initializing objects from iterables</h4>
 
             <p>
               Some objects, which are attempting to emulate map- and set-like interfaces, will want to accept iterables
@@ -12784,11 +12784,11 @@ interface
                 </ol>
               </li>
             </ol>
-          </div>
-        </div>
+          
+        
 
-        <div id="es-implements-statements" class="section">
-          <h3>Implements statements</h3>
+        
+          <h3 id="es-implements-statements">Implements statements</h3>
 
           <p>
             The <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
@@ -12847,10 +12847,10 @@ C implements A;</pre>
               and this is handled in [[#es-attributes]].
             </p>
           </div>
-        </div>
+        
 
-        <div id="es-platform-objects" class="section">
-          <h3>Platform objects implementing interfaces</h3>
+        
+          <h3 id="es-platform-objects">Platform objects implementing interfaces</h3>
 
           <p>
             Every <a class="dfnref" href="#dfn-platform-object">platform object</a> is associated with a global environment, just
@@ -13039,8 +13039,8 @@ C implements A;</pre>
             of the platform object.
           </p>
 
-          <div id="indexed-and-named-properties" class="section">
-            <h4>Indexed and named properties</h4>
+          
+            <h4 id="indexed-and-named-properties">Indexed and named properties</h4>
 
             <p>
               If a <a class="dfnref" href="#dfn-platform-object">platform object</a> implements an <a class="dfnref" href="#dfn-interface">interface</a> that
@@ -13158,10 +13158,10 @@ C implements A;</pre>
             </ol>
                 Note: This should ensure that for objects with named properties, property resolution is done in the following order:
             [[]]
-          </div>
+          
 
-          <div id="getownproperty-guts" class="section">
-            <h4>The PlatformObjectGetOwnProperty abstract operation</h4>
+          
+            <h4 id="getownproperty-guts">The PlatformObjectGetOwnProperty abstract operation</h4>
 
             <p>
               The <span class="prop">PlatformObjectGetOwnProperty</span>
@@ -13237,10 +13237,10 @@ C implements A;</pre>
 
               <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
             </ol>
-          </div>
+          
 
-          <div id="getownproperty" class="section">
-            <h4>Platform object [[GetOwnProperty]] method</h4>
+          
+            <h4 id="getownproperty">Platform object [[GetOwnProperty]] method</h4>
 
             <p>
               The internal <span class="prop">[[GetOwnProperty]]</span> method of every
@@ -13258,10 +13258,10 @@ C implements A;</pre>
                 arguments.
               </li>
             </ol>
-          </div>
+          
 
-          <div id="invoking-indexed-setter" class="section">
-            <h4>Invoking a platform object indexed property setter</h4>
+          
+            <h4 id="invoking-indexed-setter">Invoking a platform object indexed property setter</h4>
             <p>
               To <dfn data-export="" data-lt="invoke the indexed property setter" id="invoke-indexed-setter">invoke an indexed property
               setter</dfn> with property name <var>P</var> and ECMAScript value
@@ -13286,10 +13286,10 @@ C implements A;</pre>
               <li>Otherwise, <var>operation</var> was defined with an identifier.  Perform the steps listed in the description of
               <var>operation</var> with <var>index</var> and <var>value</var> as the two argument values.</li>
             </ol>
-          </div>
+          
 
-          <div id="invoking-named-setter" class="section">
-            <h4>Invoking a platform object named property setter</h4>
+          
+            <h4 id="invoking-named-setter">Invoking a platform object named property setter</h4>
             <p>
               To <dfn data-export="" data-lt="invoke the named property setter" id="invoke-named-setter">invoke a named property
               setter</dfn> with property name <var>P</var> and ECMAScript value
@@ -13313,10 +13313,10 @@ C implements A;</pre>
               <li>Otherwise, <var>operation</var> was defined with an identifier.  Perform the steps listed in the description of
               <var>operation</var> with <var>index</var> and <var>value</var> as the two argument values.</li>
             </ol>
-          </div>
+          
 
-          <div id="platformobjectset" class="section">
-            <h4>Platform object [[Set]] method</h4>
+          
+            <h4 id="platformobjectset">Platform object [[Set]] method</h4>
 
             <p>
               The internal <span class="prop">[[Set]]</span> method of every
@@ -13372,10 +13372,10 @@ C implements A;</pre>
                 Perform steps 3-11 of the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.9).
               </li>
             </ol>
-          </div>
+          
 
-          <div id="defineownproperty" class="section">
-            <h4>Platform object [[DefineOwnProperty]] method</h4>
+          
+            <h4 id="defineownproperty">Platform object [[DefineOwnProperty]] method</h4>
 
             <p>
               The internal <span class="prop">[[DefineOwnProperty]]</span> method of every
@@ -13457,10 +13457,10 @@ C implements A;</pre>
                 then set <var>Desc</var>.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
               <li>Call the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.6) on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
             </ol>
-          </div>
+          
 
-          <div id="delete" class="section">
-            <h4>Platform object [[Delete]] method</h4>
+          
+            <h4 id="delete">Platform object [[Delete]] method</h4>
 
             <p>
               The internal <span class="prop">[[Delete]]</span> method of every
@@ -13517,10 +13517,10 @@ C implements A;</pre>
               </li>
               <li>Return <span class="esvalue">true</span>.</li>
             </ol>
-          </div>
+          
 
-          <div id="call" class="section">
-            <h4>Platform object [[Call]] method</h4>
+          
+            <h4 id="call">Platform object [[Call]] method</h4>
 
             <p>
               The internal <span class="prop">[[Call]]</span> method of every
@@ -13545,10 +13545,10 @@ C implements A;</pre>
                 <var>operation</var> is declared to return (or <span class="esvalue">undefined</span>
                 if <var>operation</var> is declared to return <a class="idltype" href="#idl-void">void</a>).</li>
             </ol>
-          </div>
+          
 
-          <div id="property-enumeration" class="section">
-            <h4>Property enumeration</h4>
+          
+            <h4 id="property-enumeration">Property enumeration</h4>
 
             <p>
               This document does not define a complete property enumeration order
@@ -13574,11 +13574,11 @@ C implements A;</pre>
               in no defined order.</li>
             </ol>
                 Note: Future versions of the ECMAScript specification may define a total order for property enumeration.
-          </div>
-        </div>
+          
+        
 
-        <div id="es-user-objects" class="section">
-          <h3>User objects implementing callback interfaces</h3>
+        
+          <h3 id="es-user-objects">User objects implementing callback interfaces</h3>
 
           <p>
             As described in [[#idl-objects]],
@@ -13855,10 +13855,10 @@ C implements A;</pre>
               </ol>
             </li>
           </ol>
-        </div>
+        
 
-        <div id="es-invoking-callback-functions" class="section">
-          <h3>Invoking callback functions</h3>
+        
+          <h3 id="es-invoking-callback-functions">Invoking callback functions</h3>
 
           <p>
             An ECMAScript <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a> object that is being
@@ -13978,10 +13978,10 @@ C implements A;</pre>
               </ol>
             </li>
           </ol>
-        </div>
+        
 
-        <div id="es-exceptions" class="section">
-          <h3>Exceptions</h3>
+        
+          <h3 id="es-exceptions">Exceptions</h3>
 
           <p>
             There <span class="rfc2119">MUST</span> exist a property on the ECMAScript global object
@@ -13992,8 +13992,8 @@ C implements A;</pre>
             The property has the attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
           </p>
 
-          <div id="es-DOMException-constructor-object" class="section">
-            <h4>DOMException constructor object</h4>
+          
+            <h4 id="es-DOMException-constructor-object">DOMException constructor object</h4>
 
             <p>
               The DOMException constructor object <span class="rfc2119">MUST</span> be a <a class="dfnref" href="#dfn-function-object">function object</a>
@@ -14013,8 +14013,8 @@ C implements A;</pre>
               This object also provides access to the legacy code values.
             </p>
 
-            <div id="es-DOMException-call" class="section">
-              <h5>DOMException(message, name)</h5>
+            
+              <h5 id="es-DOMException-call">DOMException(message, name)</h5>
 
               <p>When the DOMException function is called with arguments <var>message</var> and <var>name</var>, the following steps are taken:</p>
 
@@ -14037,11 +14037,11 @@ C implements A;</pre>
                 </li>
                 <li>Return <var>O</var>.</li>
               </ol>
-            </div>
-          </div>
+            
+          
 
-          <div id="es-DOMException-prototype-object" class="section">
-            <h4>DOMException prototype object</h4>
+          
+            <h4 id="es-DOMException-prototype-object">DOMException prototype object</h4>
 
             <p>
               The DOMException prototype object <span class="rfc2119">MUST</span>
@@ -14064,11 +14064,11 @@ C implements A;</pre>
               whose name and value are as indicated in the table.  The property has
               attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.
             </p>
-          </div>
-        </div>
+          
+        
 
-        <div id="es-exception-objects" class="section">
-          <h3>Exception objects</h3>
+        
+          <h3 id="es-exception-objects">Exception objects</h3>
 
           <p>
             <a class="dfnref" href="#dfn-simple-exception">Simple exceptions</a> are represented
@@ -14106,10 +14106,10 @@ C implements A;</pre>
             <span class="estype">Error</span> objects, exposing for example
             stack traces or error line numbers, then these ought to be exposed
             on exception objects too.
-        </div>
+        
 
-        <div id="es-creating-throwing-exceptions" class="section">
-          <h3>Creating and throwing exceptions</h3>
+        
+          <h3 id="es-creating-throwing-exceptions">Creating and throwing exceptions</h3>
 
           <p>
             First, we define the <dfn data-export="" id="dfn-current-global-environment">current global environment</dfn>
@@ -14245,10 +14245,10 @@ try {
             <span class="estype">Error</span> <span class="rfc2119">MUST</span> use
             the built-in from the <a class="dfnref" href="#dfn-current-global-environment">current global environment</a>.
           </p>
-        </div>
+        
 
-        <div id="es-handling-exceptions" class="section">
-          <h3>Handling exceptions</h3>
+        
+          <h3 id="es-handling-exceptions">Handling exceptions</h3>
 
           <p>
             None of the algorithms or processing requirements in the
@@ -14306,11 +14306,11 @@ d.type = et;
 // "valueOf" property on the ExceptionThrower object.  The exception
 // propagates out of this block of code.</pre>
           </div>
-        </div>
-      </div>
+        
+      
 
-      <div id="common" class="section">
-        <h2>Common definitions</h2>
+      
+        <h2 id="common">Common definitions</h2>
 
         <p>
           This section specifies some common definitions that all
@@ -14318,8 +14318,8 @@ d.type = et;
           <span class="rfc2119">MUST</span> support.
         </p>
 
-        <div id="common-ArrayBufferView" class="section">
-          <h3>ArrayBufferView</h3>
+        
+          <h3 id="common-ArrayBufferView">ArrayBufferView</h3>
 
           <pre class="idl example">typedef (Int8Array or Int16Array or Int32Array or
          Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
@@ -14328,10 +14328,10 @@ d.type = et;
             The <span class="idltype">ArrayBufferView</span> typedef is used to represent
             objects that provide a view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.
           </p>
-        </div>
+        
 
-        <div id="common-BufferSource" class="section">
-          <h3>BufferSource</h3>
+        
+          <h3 id="common-BufferSource">BufferSource</h3>
 
           <pre class="idl example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" data-dfn-type="typedef">BufferSource</dfn>;</pre>
           <p>
@@ -14339,10 +14339,10 @@ d.type = et;
             that are either themselves an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> or which
             provide a view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.
           </p>
-        </div>
+        
 
-        <div id="common-DOMTimeStamp" class="section">
-          <h3>DOMTimeStamp</h3>
+        
+          <h3 id="common-DOMTimeStamp">DOMTimeStamp</h3>
 
           <pre class="idl example">typedef unsigned long long <dfn id="DOMTimeStamp" data-dfn-type="typedef">DOMTimeStamp</dfn>;</pre>
           <p>
@@ -14351,10 +14351,10 @@ d.type = et;
             or as a relative amount of time.  Specifications that use this type will need
             to define how the number of milliseconds is to be interpreted.
           </p>
-        </div>
+        
 
-        <div id="common-Function" class="section">
-          <h3>Function</h3>
+        
+          <h3 id="common-Function">Function</h3>
 
           <pre class="idl example">callback <dfn id="Function" data-dfn-type="callback">Function</dfn> = any (any... arguments);</pre>
           <p>
@@ -14362,10 +14362,10 @@ d.type = et;
             type is used for representing function values with no restriction on what arguments
             are passed to it or what kind of value is returned from it.
           </p>
-        </div>
+        
 
-        <div id="common-Function" class="section">
-          <h3>VoidFunction</h3>
+        
+          <h3 id="common-Function">VoidFunction</h3>
 
           <pre class="idl example">callback <dfn id="VoidFunction" data-dfn-type="callback">VoidFunction</dfn> = void ();</pre>
           <p>
@@ -14373,11 +14373,11 @@ d.type = et;
             type is used for representing function values that take no arguments and do not
             return any value.
           </p>
-        </div>
-      </div>
+        
+      
 
-      <div id="extensibility" class="section">
-        <h2>Extensibility</h2>
+      
+        <h2 id="extensibility">Extensibility</h2>
 
         <p class="norm">This section is informative.</p>
 
@@ -14398,10 +14398,10 @@ d.type = et;
           Extensions to any other aspect of the IDL language are
           strongly discouraged.
         </p>
-      </div>
+      
 
-      <div id="referencing" class="section">
-        <h2>Referencing this specification</h2>
+      
+        <h2 id="referencing">Referencing this specification</h2>
 
         <p class="norm">This section is informative.</p>
 
@@ -14435,10 +14435,10 @@ d.type = et;
             “Web IDL” specification. <a class="placeholder" href="data:,">[WEBIDL]</a>
           </p>
         </blockquote>
-      </div>
+      
 
-      <div id="acknowledgements" class="section">
-        <h2>Acknowledgements</h2>
+      
+        <h2 id="acknowledgements">Acknowledgements</h2>
 
         <p class="norm">This section is informative.</p>
 
@@ -14520,12 +14520,12 @@ d.type = et;
           Special thanks also go to Sam Weinig for maintaining this document
           while the editor was unavailable to do so.
         </p>
-      </div>
+      
     </div>
 
     <div id="appendices">
-      <div id="idl-grammar" class="section">
-        <h2>IDL grammar</h2>
+      
+        <h2 id="idl-grammar">IDL grammar</h2>
 
         <p>
           This section defines an LL(1) grammar whose start symbol,
@@ -14839,13 +14839,13 @@ d.type = et;
           [[#idl-extended-attributes]]
           for the syntaxes that are used by these extended attributes.
         </p>
-      </div>
+      
 
-      <div id="references" class="section">
-        <h2>References</h2>
+      
+        <h2 id="references">References</h2>
 
-        <div id="normative-references" class="section">
-          <h3>Normative references</h3>
+        
+          <h3 id="normative-references">Normative references</h3>
 
           <dl>
             <dt id="ref-ECMA-262">[ECMA-262]</dt>
@@ -14903,10 +14903,10 @@ d.type = et;
               <span class="print"><br/>Available at http://www.unicode.org/versions/Unicode6.0.0/.</span>
             </dd>
           </dl>
-        </div>
+        
 
-        <div id="informative-references" class="section">
-          <h3>Informative references</h3>
+        
+          <h3 id="informative-references">Informative references</h3>
 
           <dl>
             <dt id="ref-DOM">[DOM]</dt>
@@ -14947,8 +14947,8 @@ d.type = et;
               <span class="print"><br/>Available at http://www.w3.org/TR/2009/REC-xml-names-20091208/.</span>
             </dd>
           </dl>
-        </div>
-      </div>
+        
+      
 
       <!--
       <div id='cr-exit' class='section'>
@@ -15022,8 +15022,8 @@ d.type = et;
       </div>
       -->
 
-      <div id="changes" class="section">
-        <h2>Changes</h2>
+      
+        <h2 id="changes">Changes</h2>
 
         <p class="norm">This section is informative.</p>
 
@@ -15677,7 +15677,7 @@ d.type = et;
             </ul>
           </dd>
         </dl>
-      </div>
+      
     </div>
   
 </html>

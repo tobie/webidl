@@ -258,6 +258,34 @@
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
+  <xsl:template match='*[matches(name(), "h[1-6]")][parent::h:div[@class="section"][@id]]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:if test="@id">
+        <xsl:attribute name="oldids">
+          <xsl:value-of select='@id' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:attribute name="id">
+        <xsl:value-of select='parent::h:div[@class="section"]/@id' />
+      </xsl:attribute>
+      <xsl:if test="@data-dfn-type">
+        <xsl:attribute name="dfn-type">
+          <xsl:value-of select='@data-dfn-type' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@data-lt and text() != @data-lt">
+        <xsl:attribute name="lt">
+          <xsl:value-of select='@data-lt' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:div[@class="section"]'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
   <xsl:template name='markdown-note-issue-advisement'>
     <xsl:text>    </xsl:text>
     <xsl:choose>
