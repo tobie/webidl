@@ -282,7 +282,7 @@
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match='h:div[@class="section"]'>
+  <xsl:template match='h:div[@class="section"] | h:p[not(@id)][not(@class)] | h:body'>
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
