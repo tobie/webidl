@@ -285,6 +285,10 @@
     </xsl:copy>
   </xsl:template>
   
+  <xsl:template match='h:var'>
+    <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
+  </xsl:template>
+  
   <xsl:template match='*[matches(name(), "h[1-6]")][parent::h:div[@class="section"][@id]]'>
     <xsl:copy copy-namespaces="no">
       <xsl:if test="@id">
