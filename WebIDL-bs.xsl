@@ -290,6 +290,10 @@ TR: </xsl:text>
     <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
   </xsl:template>
   
+  <xsl:template match='text()'>
+    <xsl:value-of select='replace(., "\[\[", "\\[[")' />
+  </xsl:template>
+  
   <xsl:template match='h:span[@class="rfc2119"]'>
     <xsl:value-of select='lower-case(text())'/>
   </xsl:template>

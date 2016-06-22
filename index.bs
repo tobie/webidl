@@ -5794,12 +5794,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           ECMA-262 <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots">sections 9.1</a> and
           <a class="external" href="https://tc39.github.io/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist">9.3.1</a> unless otherwise specified, in which case one or
           more of the following are redefined in accordance with the rules for exotic objects:
-          <span class="prop">[[Call]]</span>,
-          <span class="prop">[[Set]]</span>,
-          <span class="prop">[[DefineOwnProperty]]</span>,
-          <span class="prop">[[GetOwnProperty]]</span>,
-          <span class="prop">[[Delete]]</span> and
-          <span class="prop">[[HasInstance]]</span>.
+          <span class="prop">\[[Call]]</span>,
+          <span class="prop">\[[Set]]</span>,
+          <span class="prop">\[[DefineOwnProperty]]</span>,
+          <span class="prop">\[[GetOwnProperty]]</span>,
+          <span class="prop">\[[Delete]]</span> and
+          <span class="prop">\[[HasInstance]]</span>.
         
         
           Other specifications may override the definitions
@@ -5814,11 +5814,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             and possibly WindowProxy objects</a>.
           
         
-          Unless otherwise specified, the <span class="prop">[[Extensible]]</span> internal property
+          Unless otherwise specified, the <span class="prop">\[[Extensible]]</span> internal property
           of objects defined in this section has the value <span class="esvalue">true</span>.
         
         
-          Unless otherwise specified, the <span class="prop">[[Prototype]]</span> internal property
+          Unless otherwise specified, the <span class="prop">\[[Prototype]]</span> internal property
           of objects defined in this section is the <span class="esvalue">Object</span> prototype object.
         
         
@@ -5836,10 +5836,10 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           it has characteristics as follows:
         
         <ul>
-          <li>Its <span class="prop">[[Prototype]]</span> internal property is
+          <li>Its <span class="prop">\[[Prototype]]</span> internal property is
           <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> unless otherwise specified.</li>
-          <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
-          <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
+          <li>Its <span class="prop">\[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
+          <li>Its <span class="prop">\[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
         </ul>
             Issue: The list above needs updating for the latest ES6 draft.
@@ -5922,7 +5922,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             must have its own unique set of each of
             the <a class="dfnref" href="#dfn-initial-object">initial objects</a>, created
             before control enters any ECMAScript execution context associated with the
-            environment, but after the global object for that environment is created.  The <span class="prop">[[Prototype]]</span>s
+            environment, but after the global object for that environment is created.  The <span class="prop">\[[Prototype]]</span>s
             of all initial objects in a given global environment must come from
             that same global environment.
           
@@ -5968,7 +5968,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             in the case of <a class="dfnref" href="#dfn-platform-object">platform objects</a>, the
             associated Realm is equal to the object's <a class="external external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-realm">relevant Realm</a>, and
             for non-exotic function objects (i.e. not callable proxies, and not bound functions)
-            the associated Realm is equal to the value of the function object's [[Realm]] internal
+            the associated Realm is equal to the value of the function object's \[[Realm]] internal
             slot.
           
         
@@ -6884,7 +6884,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                           <dt>Null</dt>
                           <dd>|value| is <span class="esvalue">undefined</span>.</dd>
                           <dt>anything else</dt>
-                          <dd>|value| is the result of calling the <span class="prop">[[Get]]</span> internal method on |V| with property name |key|.</dd>
+                          <dd>|value| is the result of calling the <span class="prop">\[[Get]]</span> internal method on |V| with property name |key|.</dd>
                         </dl>
                       </li>
                       <li>If |value| is not <span class="esvalue">undefined</span>, then:
@@ -7320,7 +7320,7 @@ alert(b[4]);    // This would alert "50".</pre>
                     with |reason| as the rejection reason.</li>
                 </ol>
               </li>
-              <li>Let |then| be the result of calling the internal <span class="prop">[[Get]]</span> method of |promise| with property name “then”.</li>
+              <li>Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.</li>
               <li>If |then| is not <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the result of calling |then| with |promise| as the <span class="esvalue">this</span> value and |onFulfilled| and |onRejected|
                 as its two arguments.</li>
@@ -7389,7 +7389,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is a native <span class="estype">Error</span> object (that is, it has an [[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>), then:
+                If |V| is a native <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>), then:
                 <ol>
                   <li>If |types| includes <a class="idltype" href="#idl-Error">Error</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7399,7 +7399,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is an object with an [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+                If |V| is an object with an \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
                 <ol>
                   <li>If |types| includes <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7409,7 +7409,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is an object with a [[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+                If |V| is an object with a \[[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
                 <ol>
                   <li>If |types| includes <a class="idltype" href="#idl-DataView">DataView</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7419,10 +7419,10 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is an object with a [[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+                If |V| is an object with a \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
                 <ol>
                   <li>If |types| includes a <a class="dfnref" href="#dfn-typed-array-type">typed array type</a>
-                    whose name is the value of |V|’s [[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then return the
+                    whose name is the value of |V|’s \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that type.</li>
                   <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
@@ -7588,7 +7588,7 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have an [[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                or |V| does not have an \[[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-Error">Error</a> value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="Error-to-es">
@@ -7640,7 +7640,7 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have an [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+                or |V| does not have an \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
                 or <a class="external" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(|V|) is true,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
               </li>
@@ -7654,7 +7654,7 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have a [[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+                or |V| does not have a \[[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-DataView">DataView</a> value that is a reference to the same object as |V|.</li>
             </ol>
@@ -7675,7 +7675,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <ol class="algorithm">
               <li>Let |T| be the IDL type |V| is being converted to.</li>
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have a [[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>
+                or |V| does not have a \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>
                 with a value equal to the name of |T|,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL value of type |T| that is a reference to the same object as |V|.</li>
@@ -7697,19 +7697,19 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Initialize |arrayBuffer| to |O|.</li>
               <li>Initialize |offset| to 0.</li>
               <li>Initialize |length| to 0.</li>
-              <li>If |O| has a [[ViewedArrayBuffer]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+              <li>If |O| has a \[[ViewedArrayBuffer]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
                 <ol>
-                  <li>Set |arrayBuffer| to the value of |O|’s [[ViewedArrayBuffer]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                  <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                   <li>If |arrayBuffer| is <span class="esvalue">undefined</span>, then
                     <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |offset| to the value of |O|’s [[ByteOffset]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-                  <li>Set |length| to the value of |O|’s [[ByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                  <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                  <li>Set |length| to the value of |O|’s \[[ByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                 </ol>
               </li>
-              <li>Otherwise, set |length| to the value of |O|’s [[ArrayBufferByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Otherwise, set |length| to the value of |O|’s \[[ArrayBufferByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(|O|), then
                 <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Let |data| be the value of |O|’s [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Let |data| be the value of |O|’s \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
               <li>Return a reference to or copy of (as required) the |length| bytes in |data|
                 starting at byte offset |offset|.</li>
             </ol>
@@ -7863,7 +7863,7 @@ context.setColorClamped(-1, 255, 257);</pre>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>, it indicates that
               the <a class="dfnref" href="#dfn-interface-object">interface object</a> for this interface
-              will have an <span class="prop">[[Construct]]</span> internal method,
+              will have an <span class="prop">\[[Construct]]</span> internal method,
               allowing objects implementing the interface to be constructed.
             
             
@@ -7922,12 +7922,12 @@ interface Circle {
 };</pre>
               
                 An ECMAScript implementation supporting these interfaces would
-                have a <span class="prop">[[Construct]]</span> property on the
+                have a <span class="prop">\[[Construct]]</span> property on the
                 <span class="idltype">Circle</span> interface object which would
                 return a new object that implements the interface.  It would take
                 either zero or one argument.  The
                 <span class="idltype">NodeList</span> interface object would not
-                have a <span class="prop">[[Construct]]</span> property.
+                have a <span class="prop">\[[Construct]]</span> property.
               
               <pre class="js">var x = new Circle();      // The uses the zero-argument constructor to create a
                            // reference to a platform object that implements the
@@ -8444,7 +8444,7 @@ interface Window {
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>
               that is not defined to <a class="dfnref" href="#dfn-inherit">inherit</a>
-              from another, it indicates that the internal <span class="prop">[[Prototype]]</span>
+              from another, it indicates that the internal <span class="prop">\[[Prototype]]</span>
               property of its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               will be the <span class="estype">Array</span> prototype object rather than
               the <span class="estype">Object</span> prototype object.  This allows
@@ -9795,7 +9795,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an <span class="estype">Error</span> object (that is, it has an [[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>) and
+                  Otherwise: if |V| is an <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>) and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li><a class="idltype" href="#idl-Error">Error</a></li>
@@ -9808,7 +9808,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an object with an [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
+                  Otherwise: if |V| is an object with an \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li><a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a></li>
@@ -9821,7 +9821,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an object with a [[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
+                  Otherwise: if |V| is an object with a \[[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li><a class="idltype" href="#idl-DataView">DataView</a></li>
@@ -9834,11 +9834,11 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an object with a [[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
+                  Otherwise: if |V| is an object with a \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-typed-array-type">typed array type</a> whose name
-                      is equal to the value of |V|’s [[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a></li>
+                      is equal to the value of |V|’s \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a></li>
                     <li><a class="idltype" href="#idl-object">object</a></li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
@@ -10111,7 +10111,7 @@ with (thing) {
             and its value is an object called the <dfn id="dfn-interface-object" export="">interface object</dfn>.
           
           
-            The property has the attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
+            The property has the attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
             The characteristics of an interface object are described in [[#interface-object]].
           
 
@@ -10123,7 +10123,7 @@ with (thing) {
             “<span class="sym">=</span>”, and its value is an object called a
             <dfn id="dfn-named-constructor" export="">named constructor</dfn>, which allows
             construction of objects that implement the interface.  The property has the
-            attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
+            attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
             The characteristics of a named constructor are described in
             [[#named-constructors]].
           
@@ -10142,26 +10142,26 @@ with (thing) {
               [[#es-operations]].
             
             
-              The <span class="prop">[[Prototype]]</span> internal property of
+              The <span class="prop">\[[Prototype]]</span> internal property of
               an interface object for a non-callback interface is determined as
               follows:
             
             <ol>
               <li>
                 If the interface inherits from some other interface, the value
-                of <span class="prop">[[Prototype]]</span> is the interface
+                of <span class="prop">\[[Prototype]]</span> is the interface
                 object for that other interface.
               </li>
               <li>
                 If the interface doesn't inherit from any other interface,
-                the value of <span class="prop">[[Prototype]]</span> is
+                the value of <span class="prop">\[[Prototype]]</span> is
                 <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a>.
               </li>
             </ol>
             
               An interface object for a non-callback interface must have a property named “prototype”
               with attributes
-              <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
               whose value is an object called the <dfn id="dfn-interface-prototype-object" export="">interface prototype object</dfn>.  This object has properties
               that correspond to the <a class="dfnref" href="#dfn-regular-attribute">regular attributes</a> and
               <a class="dfnref" href="#dfn-regular-operation">regular operations</a> defined on the interface,
@@ -10172,7 +10172,7 @@ with (thing) {
                 <span class="esvalue">"function"</span> when applied to
                 such an interface object.
             
-              The internal <span class="esprop">[[Prototype]]</span> property
+              The internal <span class="esprop">\[[Prototype]]</span> property
               of an interface object for a callback interface must be
               the Object.prototype object.
             
@@ -10181,7 +10181,7 @@ with (thing) {
               when they do exist, they are not <a class="dfnref" href="#dfn-function-object">function objects</a>.
 
             
-              <h5 id="es-interface-call">Interface object [[Call]] method</h5>
+              <h5 id="es-interface-call">Interface object \[[Call]] method</h5>
 
               
                 If the <a class="dfnref" href="#dfn-interface">interface</a> is declared with a
@@ -10194,7 +10194,7 @@ with (thing) {
                 
                 
               
-                The internal <span class="prop">[[Call]]</span> method
+                The internal <span class="prop">\[[Call]]</span> method
                 of the interface object behaves as follows, assuming
                 |arg|<sub>0..|n|−1</sub> is the list
                 of argument values passed to the constructor, and |I|
@@ -10232,7 +10232,7 @@ with (thing) {
                 </li>
               </ol>
               
-                If the internal <span class="prop">[[Call]]</span> method
+                If the internal <span class="prop">\[[Call]]</span> method
                 of the <a class="dfnref" href="#dfn-interface-object">interface object</a>
                 returns normally, then it must
                 return an object that implements interface |I|.
@@ -10242,7 +10242,7 @@ with (thing) {
               
               
                 Interface objects for non-callback interfaces must have a property named “length”
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 whose value is a <span class="estype">Number</span>.
                 If the <a class="xattr" href="#Constructor">[Constructor]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -10267,31 +10267,31 @@ with (thing) {
               </ol>
               
                 All interface objects must have a
-                property named “name” with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                property named “name” with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 whose value is the identifier of the corresponding interface.
               
             
 
             
-              <h5 id="es-interface-hasinstance">Interface object [[HasInstance]] method</h5>
+              <h5 id="es-interface-hasinstance">Interface object \[[HasInstance]] method</h5>
 
               
-                The internal <span class="prop">[[HasInstance]]</span> method of every
+                The internal <span class="prop">\[[HasInstance]]</span> method of every
                 <a class="dfnref" href="#dfn-interface-object">interface object</a>
                 |A| must behave as follows,
                 assuming |V| is the object
-                argument passed to <span class="prop">[[HasInstance]]</span>:
+                argument passed to <span class="prop">\[[HasInstance]]</span>:
               
               <ol class="algorithm">
                 <li>If |V| is not an object, return <span class="esvalue">false</span>.</li>
-                <li>Let |O| be the result of calling the <span class="prop">[[Get]]</span> method of |A| with property name “prototype”.</li>
+                <li>Let |O| be the result of calling the <span class="prop">\[[Get]]</span> method of |A| with property name “prototype”.</li>
                 <li>If |O| is not an object, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a> exception.</li>
                 <li>If |V| is a platform object that implements the
                   interface for which |O| is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>,
                   return <span class="esvalue">true</span>.</li>
                 <li>Repeat:
                   <ol>
-                    <li>Set |V| to the value of the <span class="prop">[[Prototype]]</span> internal property of |V|.</li>
+                    <li>Set |V| to the value of the <span class="prop">\[[Prototype]]</span> internal property of |V|.</li>
                     <li>If |V| is <span class="esvalue">null</span>, return <span class="esvalue">false</span>.</li>
                     <li>If |O| and |V| refer to the same object,
                       return <span class="esvalue">true</span>.</li>
@@ -10311,7 +10311,7 @@ with (thing) {
               <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               with a given <a class="dfnref" href="#dfn-identifier">identifier</a>
               is a <a class="dfnref" href="#dfn-function-object">function object</a>.
-              It must have a <span class="prop">[[Call]]</span>
+              It must have a <span class="prop">\[[Call]]</span>
               internal property, which allows construction of objects that
               implement the interface on which the
               <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
@@ -10349,7 +10349,7 @@ with (thing) {
               </li>
             </ol>
             
-              If the internal <span class="prop">[[Call]]</span> method
+              If the internal <span class="prop">\[[Call]]</span> method
               of the <a class="dfnref" href="#dfn-named-constructor">named constructor</a>
               returns normally, then it must
               return an object that implements interface |I|.
@@ -10359,7 +10359,7 @@ with (thing) {
             
             
               A named constructor must have a property named “length”
-              with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+              with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
               whose value is a <span class="estype">Number</span> determined as follows:
             
             <ol class="algorithm">
@@ -10377,13 +10377,13 @@ with (thing) {
             </ol>
             
               A named constructor must have a property named “name”
-              with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+              with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
               whose value is the identifier used for the named constructor.
             
             
               A named constructor must also have a property named
               “prototype” with attributes
-              <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
               whose value is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the <a class="dfnref" href="#dfn-interface">interface</a> on which the
               <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
@@ -10420,14 +10420,14 @@ with (thing) {
               extended attribute was not specified on the interface, then
               the interface prototype object must
               also have a property named “constructor” with attributes
-              <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span> whose value
+              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span> whose value
               is a reference to the interface object for the interface.
             
 
             
               The <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for a given interface |A| must have an internal
-              <span class="prop">[[Prototype]]</span> property whose value is returned from
+              <span class="prop">\[[Prototype]]</span> property whose value is returned from
               the following steps:
             
             <ol class="algorithm">
@@ -10468,7 +10468,7 @@ partial interface Window {
                 the <a class="dfnref" href="#dfn-interface-object">interface object</a>
                 (since it does not exist as <code>window.Foo</code>).  However, an instance
                 of <span class="idltype">Foo</span> can expose the interface prototype
-                object by gettings its internal <span class="prop">[[Prototype]]</span>
+                object by gettings its internal <span class="prop">\[[Prototype]]</span>
                 property value – <code>Object.getPrototypeOf(window.foo)</code> in
                 this example.
               
@@ -10477,7 +10477,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-supplemental-interface">supplemental interface</a>,
                 then there will be no way to access its interface prototype object, since no
                 object will have the interface prototype object as its internal
-                <span class="prop">[[Prototype]]</span> property value.  In such cases,
+                <span class="prop">\[[Prototype]]</span> property value.  In such cases,
                 it is an acceptable optimization for this object not to exist.
               
             </div>
@@ -10524,7 +10524,7 @@ partial interface Window {
             
               The <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
               for a given interface |A| must have an internal
-              <span class="prop">[[Prototype]]</span> property whose value is returned from
+              <span class="prop">\[[Prototype]]</span> property whose value is returned from
               the following steps:
             
             <ol class="algorithm">
@@ -10544,10 +10544,10 @@ partial interface Window {
             
 
             
-              <h5 id="named-properties-object-getownproperty">Named properties object [[GetOwnProperty]] method</h5>
+              <h5 id="named-properties-object-getownproperty">Named properties object \[[GetOwnProperty]] method</h5>
 
               
-                The internal <span class="prop">[[GetOwnProperty]]</span> method of every
+                The internal <span class="prop">\[[GetOwnProperty]]</span> method of every
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
                 must behave as follows when called with object |O|
                 and property name |P|:
@@ -10577,28 +10577,28 @@ partial interface Window {
                       of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
                     <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
-                    <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
+                    <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                       |value| to an ECMAScript value.</li>
                     <li>If |A| implements an interface with the
                       <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
                       <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                      then set |desc|.<span class="prop">[[Enumerable]]</span> to <span class="esvalue">false</span>,
+                      then set |desc|.<span class="prop">\[[Enumerable]]</span> to <span class="esvalue">false</span>,
                       otherwise set it to <span class="esvalue">true</span>.</li>
-                    <li>Set |desc|.<span class="prop">[[Writable]]</span> to <span class="esvalue">true</span> and
-                      |desc|.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                    <li>Set |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span> and
+                      |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
                     <li>Return |desc|.</li>
                   </ol>
                 </li>
 
-                <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
+                <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">\[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
               </ol>
             
 
             
-              <h5 id="named-properties-object-defineownproperty">Named properties object [[DefineOwnProperty]] method</h5>
+              <h5 id="named-properties-object-defineownproperty">Named properties object \[[DefineOwnProperty]] method</h5>
 
               
-                The internal <span class="prop">[[DefineOwnProperty]]</span> method of every
+                The internal <span class="prop">\[[DefineOwnProperty]]</span> method of every
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
                 must behave as follows when called with object |O|
                 and property name |P|.
@@ -10613,10 +10613,10 @@ partial interface Window {
             
 
             
-              <h5 id="named-properties-object-delete">Named properties object [[Delete]] method</h5>
+              <h5 id="named-properties-object-delete">Named properties object \[[Delete]] method</h5>
 
               
-                The internal <span class="prop">[[Delete]]</span> method of every
+                The internal <span class="prop">\[[Delete]]</span> method of every
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
                 must behave as follows when called with object |O| and
                 property name |P|.
@@ -10656,7 +10656,7 @@ partial interface Window {
                 </ul>
               </li>
               <li>The value of the property is that which is obtained by <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> the <a class="dfnref" href="#dfn-constant">constant</a>’s IDL value to an ECMAScript value.</li>
-              <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+              <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
             </ul>
             
               In addition, a property with the same characteristics must
@@ -10698,7 +10698,7 @@ partial interface Window {
                 </ul>
               </li>
               <li>
-                The property has attributes <span class="descriptor">{ [[Get]]: |G|, [[Set]]: |S|, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: |configurable| }</span>,
+                The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Set]]: |S|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |configurable| }</span>,
                 where:
                 <ul>
                   <li>|configurable| is <span class="esvalue">false</span> if the attribute was
@@ -10815,11 +10815,11 @@ partial interface Window {
                       <li>If the attribute is declared with a <a class="xattr" href="#PutForwards">[PutForwards]</a>
                         extended attribute, then:
                         <ol>
-                          <li>Let |Q| be the result of calling the <span class="prop">[[Get]]</span> method
+                          <li>Let |Q| be the result of calling the <span class="prop">\[[Get]]</span> method
                             on |O| using the identifier of the attribute as the property name.</li>
                           <li>If |Q| is not an object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                           <li>Let |A| be the attribute identified by the <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute.</li>
-                          <li>Call the <span class="prop">[[Put]]</span> method on |Q|
+                          <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
                             using the identifier of |A| as the property name and |V| as the value.</li>
                           <li>Return <span class="esvalue">undefined</span>.</li>
                         </ol>
@@ -10900,7 +10900,7 @@ partial interface Window {
               </li>
               <li>
                 The property has attributes
-                <span class="descriptor">{ [[Writable]]: |B|, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: |B| }</span>,
+                <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |B| }</span>,
                 where |B| is <span class="esvalue">false</span> if the operation is
                 <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on the interface,
                 and <span class="esvalue">true</span> otherwise.
@@ -11050,7 +11050,7 @@ partial interface Window {
                   or if the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
                   then the property exists on every object that implements the interface.
                   Otherwise, the property exists on the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: |B|, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: |B| }</span>,
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |B| }</span>,
                   where |B| is <span class="esvalue">false</span> if the stringifier is
                   <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on the interface,
                   and <span class="esvalue">true</span> otherwise.</li>
@@ -11106,7 +11106,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-serializer">serializer</a>, then
                 a property must exist
                 whose name is “toJSON”,
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a
                 <span class="estype">Function</span> object.
               
@@ -11241,7 +11241,7 @@ partial interface Window {
               
                 then a property must exist
                 whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> symbol,
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
               
@@ -11310,13 +11310,13 @@ partial interface Window {
                   then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>If the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>, then:
                   <ol>
-                    <li>Let |backing| be the value of the [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|.</li>
+                    <li>Let |backing| be the value of the \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|.</li>
                     <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-createmapiterator">CreateMapIterator</a>(|backing|, <code>"key+value"</code>).</li>
                   </ol>
                 </li>
                 <li>Otherwise:
                   <ol>
-                    <li>Let |backing| be the value of the [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|.</li>
+                    <li>Let |backing| be the value of the \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|.</li>
                     <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-createsetiterator">CreateSetIterator</a>(|backing|, <code>"value"</code>).</li>
                   </ol>
                 </li>
@@ -11348,7 +11348,7 @@ partial interface Window {
               </ul>
               
                 then a property named “forEach” must exist
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
               
@@ -11424,19 +11424,19 @@ partial interface Window {
                 <li>Let |callbackFn| be the value of the first argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
                 <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|callbackFn|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>Let |thisArg| be the value of the second argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
-                <li>Let |backing| be the value of the [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|,
+                <li>Let |backing| be the value of the \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|,
                   if the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>,
-                  or the [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object| otherwise.</li>
+                  or the \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object| otherwise.</li>
                 <li>Let |callbackWrapper| be a <span class="estype">Function</span> that, when invoked, behaves as follows:
                   <ol>
                     <li>Let |v| and |k| be the first two arguments passed to the function.</li>
                     <li>Let |thisArg| be the <span class="esvalue">this</span> value.</li>
-                    <li>Call the [[Call]] internal method of |callbackFn| with |thisArg| as |thisArgument|
+                    <li>Call the \[[Call]] internal method of |callbackFn| with |thisArg| as |thisArgument|
                       and |v|, |k| and |object| as |argumentsList|.</li>
                   </ol>
                   <div class="note">
                     The |callbackWrapper| function simply calls the incoming |callbackFn|
-                      with |object| as the third argument rather than its internal [[BackingMap]] or [[BackingSet]] object.
+                      with |object| as the third argument rather than its internal \[[BackingMap]] or \[[BackingSet]] object.
                   </div>
                   <div class="issue">
                     Can the script author observe that |callbackWrapper| might be a new function
@@ -11444,10 +11444,10 @@ partial interface Window {
                       one function that has captured an environment?
                   </div>
                 </li>
-                <li>Let |forEach| be the result of calling the [[Get]] internal method of
+                <li>Let |forEach| be the result of calling the \[[Get]] internal method of
                   |backing| with “forEach” and |backing| as arguments.</li>
                 <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|forEach|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                <li>Call the [[Call]] internal method of |forEach| with |backing| as |thisArgument|
+                <li>Call the \[[Call]] internal method of |forEach| with |backing| as |thisArgument|
                   and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
                 <li>Return <span class="esvalue">undefined</span>.</li>
               </ol>
@@ -11470,7 +11470,7 @@ partial interface Window {
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “entries” must exist
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
               
@@ -11505,7 +11505,7 @@ partial interface Window {
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “keys” must exist
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
               
@@ -11561,7 +11561,7 @@ partial interface Window {
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “values” must exist
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               
               
@@ -11618,7 +11618,7 @@ partial interface Window {
               
                 A <dfn id="dfn-default-iterator-object" export="">default iterator object</dfn> for a given
                 <a class="dfnref" href="#dfn-interface">interface</a>, target and iteration kind
-                is an object whose internal [[Prototype]] property is the
+                is an object whose internal \[[Prototype]] property is the
                 <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
                 for the <a class="dfnref" href="#dfn-interface">interface</a>.
               
@@ -11663,13 +11663,13 @@ partial interface Window {
                 for the interface.
               
               
-                The internal [[Prototype]] property of an <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
+                The internal \[[Prototype]] property of an <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
                 must be <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a>.
               
               
                 An <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
                 must have a property named “next” with
-                attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>
                 that behaves as follows:
               
@@ -11748,9 +11748,9 @@ partial interface Window {
             
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               that has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>
-              must have a [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
+              must have a \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
               initially set to a newly created <span class="estype">Map</span> object.
-              This <span class="estype">Map</span> object’s [[MapData]] internal slot is
+              This <span class="estype">Map</span> object’s \[[MapData]] internal slot is
               the object’s <a class="dfnref" href="#dfn-map-entries">map entries</a>.
             
 
@@ -11781,10 +11781,10 @@ partial interface Window {
                 </ul>
               </li>
               <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-              <li>Let |function| be the result of calling the [[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
+              <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the result of calling the [[Call]] internal method of |function| with |map| as |thisArg| and |arguments| as |argumentsList|.</li>
+              <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |arguments| as |argumentsList|.</li>
             </ol>
 
             
@@ -11796,7 +11796,7 @@ partial interface Window {
                 with the following characteristics:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Get]]: |G|, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>,
+                <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>,
                   where |G| is the interface’s <dfn id="dfn-map-size-getter" export="">map size getter</dfn>,
                   defined below.</li>
                 <li>The <a class="dfnref" href="#dfn-map-size-getter">map size getter</a> is
@@ -11814,8 +11814,8 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-                    <li>Return the result of calling the [[Get]] internal method of |map| passing “size” and |map| as arguments.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Return the result of calling the \[[Get]] internal method of |map| passing “size” and |map| as arguments.</li>
                   </ol>
                   The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
                   The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.
@@ -11829,7 +11829,7 @@ partial interface Window {
               
                 A property named “entries” must exist on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
                 the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
               
@@ -11844,7 +11844,7 @@ partial interface Window {
                 with the following characteristics:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-map-object">forwards that name to the internal map object</a>.</li>
               </ul>
               The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
@@ -11860,7 +11860,7 @@ partial interface Window {
                 with the following characteristics:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
                     <li>Let |O| be the <span class="esvalue">this</span> value.</li>
@@ -11875,13 +11875,13 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                     <li>Let |keyType| be the key type specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
-                    <li>Let |function| be the result of calling the [[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
+                    <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |keyIDL| to an ECMAScript value.</li>
-                    <li>Return the result of calling the [[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
+                    <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
                 </li>
               </ul>
@@ -11903,7 +11903,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-map-object">forwards “clear” to the internal map object</a>.</li>
               </ul>
               The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
@@ -11924,7 +11924,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
                     <li>Let |O| be the <span class="esvalue">this</span> value.</li>
@@ -11938,13 +11938,13 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                     <li>Let |keyType| be the key type specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
-                    <li>Let |function| be the result of calling the [[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
+                    <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |keyIDL| to an ECMAScript value.</li>
-                    <li>Return the result of calling the [[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
+                    <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
                 </li>
               </ul>
@@ -11966,7 +11966,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
                     <li>Let |O| be the <span class="esvalue">this</span> value.</li>
@@ -11980,16 +11980,16 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s [[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                     <li>Let |keyType| and |valueType| be the key and value types specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
-                    <li>Let |function| be the result of calling the [[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
+                    <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |valueArg| be the second argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |valueIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |valueArg| to an IDL value of type |valueType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |valueIDL| to an ECMAScript value.</li>
-                    <li>Let |result| be the result of calling the [[Call]] internal method of |function| with |map| as |thisArg| and |key| and |value| as |argumentsList|.</li>
+                    <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |key| and |value| as |argumentsList|.</li>
                     <li>Assert: |result| is not an abrupt completion.</li>
                     <li>Return |O|.</li>
                   </ol>
@@ -12006,9 +12006,9 @@ partial interface Window {
             
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               that has a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>
-              must have a [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
+              must have a \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
               initially set to a newly created <span class="estype">Set</span> object.
-              This <span class="estype">Set</span> object’s [[SetData]] internal slot is
+              This <span class="estype">Set</span> object’s \[[SetData]] internal slot is
               the object’s <a class="dfnref" href="#dfn-set-entries">set entries</a>.
             
 
@@ -12039,10 +12039,10 @@ partial interface Window {
                 </ul>
               </li>
               <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-              <li>Let |function| be the result of calling the [[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
+              <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the result of calling the [[Call]] internal method of |function| with |set| as |thisArg| and |arguments| as |argumentsList|.</li>
+              <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and |arguments| as |argumentsList|.</li>
             </ol>
 
             
@@ -12054,7 +12054,7 @@ partial interface Window {
                 with the following characteristics:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Get]]: |G|, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>,
+                <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>,
                   where |G| is the interface’s <dfn id="dfn-set-size-getter" export="">set size getter</dfn>,
                   defined below.</li>
                 <li>The <a class="dfnref" href="#dfn-set-size-getter">set size getter</a> is
@@ -12072,8 +12072,8 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-                    <li>Return the result of calling the [[Get]] internal method of |set| passing “size” and |set| as arguments.</li>
+                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Return the result of calling the \[[Get]] internal method of |set| passing “size” and |set| as arguments.</li>
                   </ol>
                   The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
                   The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.
@@ -12087,7 +12087,7 @@ partial interface Window {
               
                 A property named “values” must exist on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-                with attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
                 the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
               
@@ -12102,7 +12102,7 @@ partial interface Window {
                 with the following characteristics:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-set-object">forwards that name to the internal set object</a>.</li>
               </ul>
               The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
@@ -12118,7 +12118,7 @@ partial interface Window {
                 with the following characteristics:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
                     <li>Let |O| be the <span class="esvalue">this</span> value.</li>
@@ -12132,13 +12132,13 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                     <li>Let |type| be the value type specified in the <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</li>
-                    <li>Let |function| be the result of calling the [[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
+                    <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |arg| to an IDL value of type |type|.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |idlValue| to an ECMAScript value.</li>
-                    <li>Return the result of calling the [[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
+                    <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                   </ol>
                 </li>
               </ul>
@@ -12165,7 +12165,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
                     <li>Let |O| be the <span class="esvalue">this</span> value.</li>
@@ -12180,13 +12180,13 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s [[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
                     <li>Let |type| be the value type specified in the <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</li>
-                    <li>Let |function| be the result of calling the [[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
+                    <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |arg| to an IDL value of type |type|.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |idlValue| to an ECMAScript value.</li>
-                    <li>Let |result| be the result of calling the [[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
+                    <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                     <li>Assert: |result| is not an abrupt completion.</li>
                     <li>
                       If |name| is "delete", then:
@@ -12221,7 +12221,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               
               <ul>
-                <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-set-object">forwards “clear” to the internal set object</a>.</li>
               </ul>
               The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
@@ -12269,7 +12269,7 @@ partial interface Window {
                   <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|k|).</li>
                   <li>Let |v| be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(|nextItem|, <code>'1'</code>).</li>
                   <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|v|).</li>
-                  <li>Let |status| be the result of calling the [[Call]] internal method of |adder| with |destination| as
+                  <li>Let |status| be the result of calling the \[[Call]] internal method of |adder| with |destination| as
                       |thisArgument| and (|k|, |v|) as |argumentsList|.</li>
                   <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|status|).</li>
                 </ol>
@@ -12353,7 +12353,7 @@ C implements A;</pre>
           
             The <dfn id="dfn-primary-interface" export="">primary interface</dfn> of a platform object
             that implements one or more interfaces is the most-derived <a class="dfnref" href="#dfn-supplemental-interface">non-supplemental interface</a>
-            that it implements.  The value of the internal <span class="prop">[[Prototype]]</span>
+            that it implements.  The value of the internal <span class="prop">\[[Prototype]]</span>
             property of the platform object is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
             of the <a class="dfnref" href="#dfn-primary-interface">primary interface</a>
             from the <a class="dfnref" href="#dfn-platform-object">platform object</a>’s associated global environment.
@@ -12362,7 +12362,7 @@ C implements A;</pre>
             The global environment that a given <a class="dfnref" href="#dfn-platform-object">platform object</a>
             is associated with can <dfn id="dfn-change-global-environment" for="global environment" export="">change</dfn> after it has been created.  When
             the global environment associated with a platform object is changed, its internal
-            <span class="prop">[[Prototype]]</span> property must be immediately
+            <span class="prop">\[[Prototype]]</span> property must be immediately
             updated to be the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
             of the <a class="dfnref" href="#dfn-primary-interface">primary interface</a>
             from the <a class="dfnref" href="#dfn-platform-object">platform object</a>’s newly associated global environment.
@@ -12379,7 +12379,7 @@ C implements A;</pre>
           
           <ul>
             <li>The name of the property is “toString”.</li>
-            <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
             <li>The value of the property is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</li>
           </ul>
 
@@ -12392,7 +12392,7 @@ C implements A;</pre>
           
           <ul>
             <li>The name of the property is “toJSON”.</li>
-            <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
             <li>The value of the property is <span class="esvalue">undefined</span>.</li>
           </ul>
 
@@ -12403,7 +12403,7 @@ C implements A;</pre>
           
           <ul>
             <li>The name of the property is “valueOf”.</li>
-            <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
             <li>
               The value of the property is a <span class="estype">Function</span> object whose behavior
               is as follows:
@@ -12437,7 +12437,7 @@ C implements A;</pre>
               the object will appear to have additional properties that correspond to the
               object’s indexed and named properties.  These properties are not “real” own
               properties on the object, but are made to look like they are by being exposed
-              by the <span class="prop">[[GetOwnProperty]]</span> internal method.
+              by the <span class="prop">\[[GetOwnProperty]]</span> internal method.
             
             
               However, when the <a class="xattr" href="#Global">[Global]</a> or
@@ -12520,12 +12520,12 @@ C implements A;</pre>
               <li>If |O| implements an interface that has the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, then return true.</li>
               <li>If |O| has an own property named |P|, then return false.</li>
-              <li>Initialize |prototype| to be the value of the internal <span class="prop">[[Prototype]]</span> property of |O|.</li>
+              <li>Initialize |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |O|.</li>
               <li>While |prototype| is not null:
                 <ol>
                   <li>If |prototype| is not a <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>,
                     and |prototype| has an own property named |P|, then return false.</li>
-                  <li>Set |prototype| to be the value of the internal <span class="prop">[[Prototype]]</span> property of |prototype|.</li>
+                  <li>Set |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |prototype|.</li>
                 </ol>
               </li>
               <li>Return true.</li>
@@ -12533,11 +12533,11 @@ C implements A;</pre>
                 Note: This should ensure that for objects with named properties, property resolution is done in the following order:
             
               Support for <a class="dfnref" href="#dfn-getter">getters</a> is
-              handled by the <a href="#getownproperty">platform object [[GetOwnProperty]] method</a>
+              handled by the <a href="#getownproperty">platform object \[[GetOwnProperty]] method</a>
               defined in section , and
               for <a class="dfnref" href="#dfn-setter">setters</a>
-              by the <a href="#defineownproperty">platform object [[DefineOwnProperty]] method</a>
-              defined in section  and the <a href="#platformobjectset">platform object [[Set]] method</a>
+              by the <a href="#defineownproperty">platform object \[[DefineOwnProperty]] method</a>
+              defined in section  and the <a href="#platformobjectset">platform object \[[Set]] method</a>
               defined in section .
             
           
@@ -12571,12 +12571,12 @@ C implements A;</pre>
                         of performing the steps listed in the description of |operation| with |index| as the only argument value.</li>
 
                       <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
-                      <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
+                      <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                         |value| to an ECMAScript value.</li>
                       <li>If |O| implements an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then set
-                        |desc|.<span class="prop">[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
+                        |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
                         <span class="esvalue">false</span>.</li>
-                      <li>Set |desc|.<span class="prop">[[Enumerable]]</span> and |desc|.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                      <li>Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
                       <li>Return |desc|.</li>
                     </ol>
                   </li>
@@ -12600,30 +12600,30 @@ C implements A;</pre>
                     of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
                   <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
-                  <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
+                  <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     |value| to an ECMAScript value.</li>
                   <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then set
-                    |desc|.<span class="prop">[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
+                    |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
                     <span class="esvalue">false</span>.</li>
                   <li>If |O| implements an interface with the
                     <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
                     <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                    then set |desc|.<span class="prop">[[Enumerable]]</span> to <span class="esvalue">false</span>,
+                    then set |desc|.<span class="prop">\[[Enumerable]]</span> to <span class="esvalue">false</span>,
                     otherwise set it to <span class="esvalue">true</span>.</li>
-                  <li>Set |desc|.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                  <li>Set |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
                   <li>Return |desc|.</li>
                 </ol>
               </li>
 
-              <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
+              <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">\[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
             </ol>
           
 
           
-            <h4 id="getownproperty">Platform object [[GetOwnProperty]] method</h4>
+            <h4 id="getownproperty">Platform object \[[GetOwnProperty]] method</h4>
 
             
-              The internal <span class="prop">[[GetOwnProperty]]</span> method of every
+              The internal <span class="prop">\[[GetOwnProperty]]</span> method of every
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
@@ -12696,10 +12696,10 @@ C implements A;</pre>
           
 
           
-            <h4 id="platformobjectset">Platform object [[Set]] method</h4>
+            <h4 id="platformobjectset">Platform object \[[Set]] method</h4>
 
             
-              The internal <span class="prop">[[Set]]</span> method of every
+              The internal <span class="prop">\[[Set]]</span> method of every
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
@@ -12749,16 +12749,16 @@ C implements A;</pre>
                 arguments.
               </li>
               <li>
-                Perform steps 3-11 of the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a>.
+                Perform steps 3-11 of the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default \[[Set]] internal method</a>.
               </li>
             </ol>
           
 
           
-            <h4 id="defineownproperty">Platform object [[DefineOwnProperty]] method</h4>
+            <h4 id="defineownproperty">Platform object \[[DefineOwnProperty]] method</h4>
 
             
-              The internal <span class="prop">[[DefineOwnProperty]]</span> method of every
+              The internal <span class="prop">\[[DefineOwnProperty]]</span> method of every
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
@@ -12774,7 +12774,7 @@ C implements A;</pre>
                   <li>If the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
                   <li>If |O| does not implement an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then <a href="#Reject">Reject</a>.</li>
                   <li><a href="#invoking-indexed-setter">Invoke the indexed
-                  property setter</a> with |P| and |Desc|.<span class="prop">[[Value]]</span>.</li>
+                  property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.</li>
                   <li>Return <span class="esvalue">true</span>.</li>
                 </ol>
               </li>
@@ -12799,7 +12799,7 @@ C implements A;</pre>
                           <li>
                             <a href="#invoking-named-setter">Invoke the named
                           property setter</a> with |P| and
-                          |Desc|.<span class="prop">[[Value]]</span>.
+                          |Desc|.<span class="prop">\[[Value]]</span>.
                           </li>
                           <li>Return <span class="esvalue">true</span>.</li>
                         </ol>
@@ -12811,16 +12811,16 @@ C implements A;</pre>
 
               <li>If |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
                 <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                then set |Desc|.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
-              <li>Call the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
+                then set |Desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+              <li>Call the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">\[[DefineOwnProperty]]</span> internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
             </ol>
           
 
           
-            <h4 id="delete">Platform object [[Delete]] method</h4>
+            <h4 id="delete">Platform object \[[Delete]] method</h4>
 
             
-              The internal <span class="prop">[[Delete]]</span> method of every
+              The internal <span class="prop">\[[Delete]]</span> method of every
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               which <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed</a> or
               <a class="dfnref" href="#dfn-support-named-properties">named properties</a>
@@ -12877,15 +12877,15 @@ C implements A;</pre>
           
 
           
-            <h4 id="call">Platform object [[Call]] method</h4>
+            <h4 id="call">Platform object \[[Call]] method</h4>
 
             
-              The internal <span class="prop">[[Call]]</span> method of every
+              The internal <span class="prop">\[[Call]]</span> method of every
               <a class="dfnref" href="#dfn-platform-object">platform object</a> |O| that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               |I| with at least one <a class="dfnref" href="#dfn-legacy-caller">legacy caller</a>
               must behave as follows, assuming
               |arg|<sub>0..|n|−1</sub> is the list of argument
-              values passed to <span class="prop">[[Call]]</span>:
+              values passed to <span class="prop">\[[Call]]</span>:
             
             <ol class="algorithm">
               <li>Initialize |S| to the <a class="dfnref" href="#dfn-effective-overload-set">effective overload set</a>
@@ -12957,7 +12957,7 @@ C implements A;</pre>
                 the callable object itself.</li>
                 <li>Otherwise, the object is not <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>.
                 The implementation of the operation (or set of overloaded operations) is
-                the result of invoking the internal <span class="prop">[[Get]]</span> method
+                the result of invoking the internal <span class="prop">\[[Get]]</span> method
                 on the object with a property name that is the <a class="dfnref" href="#dfn-identifier">identifier</a>
                 of the operation.</li>
               </ul>
@@ -12967,7 +12967,7 @@ C implements A;</pre>
               Any object that is not a native
               <span class="estype">RegExp</span> object is considered to implement the interface.
               For each operation declared on the interface with a given <a class="dfnref" href="#dfn-identifier">identifier</a>, the implementation
-              is the result of invoking <span class="prop">[[Get]]</span> on the object with a
+              is the result of invoking <span class="prop">\[[Get]]</span> on the object with a
               property name that is that identifier.
             </li>
           </ul>
@@ -13031,7 +13031,7 @@ C implements A;</pre>
                     <li>If |getResult| is an abrupt completion, set |completion|
                     to |getResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
-                    <li>Set |X| to |getResult|.[[Value]].</li>
+                    <li>Set |X| to |getResult|.\[[Value]].</li>
                   </ol>
                 </li>
               </ol>
@@ -13039,8 +13039,8 @@ C implements A;</pre>
 
 
             <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">!</a> <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|X|) is <span class="esvalue">false</span>,
-            then set |completion| to a new <a class="external" href="https://tc39.github.io/ecma262/#sec-completion-record-specification-type">Completion</a>{[[Type]]: throw, [[Value]]: a
-            newly created <span class="estype">TypeError</span> object, [[Target]]: empty}, and jump
+            then set |completion| to a new <a class="external" href="https://tc39.github.io/ecma262/#sec-completion-record-specification-type">Completion</a>{\[[Type]]: throw, \[[Value]]: a
+            newly created <span class="estype">TypeError</span> object, \[[Target]]: empty}, and jump
             to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
             <li>If |value|'s interface is not a <a class="dfnref" href="#dfn-single-operation-callback-interface">single operation callback interface</a>,
@@ -13070,7 +13070,7 @@ C implements A;</pre>
                     <li>If |convertResult| is an abrupt completion, set |completion|
                     to |convertResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
-                    <li>Append |convertResult|.[[Value]] to |esArgs|.</li>
+                    <li>Append |convertResult|.\[[Value]] to |esArgs|.</li>
 
                     <li>Set |count| to |i| + 1.</li>
                   </ol>
@@ -13089,7 +13089,7 @@ C implements A;</pre>
             |callResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
             <li>Set |completion| to the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-            |callResult|.[[Value]] to an IDL value of the same type as the operation’s
+            |callResult|.\[[Value]] to an IDL value of the same type as the operation’s
             return type.</li>
 
             <li>
@@ -13108,7 +13108,7 @@ C implements A;</pre>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
                 <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <span class="esvalue">this</span> value and
-                |completion|.[[Value]] as the single argument value.</li>
+                |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                 |rejectedPromise| to the operation's return type.</li>
@@ -13140,7 +13140,7 @@ C implements A;</pre>
             |getResult| and jump to the step labeled <a href="#get-user-object-attribute-return"><i>return</i></a>.</li>
 
             <li>Set |completion| to the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-            |getResult|.[[Value]] to an IDL value of the same type as the attribute's
+            |getResult|.\[[Value]] to an IDL value of the same type as the attribute's
             type.</li>
 
             <li>
@@ -13161,7 +13161,7 @@ C implements A;</pre>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
                 <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <span class="esvalue">this</span> value and
-                |completion|.[[Value]] as the single argument value.</li>
+                |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                 |rejectedPromise| to the attribute's type.</li>
@@ -13195,7 +13195,7 @@ C implements A;</pre>
             |convertResult| and jump to the step labeled <a href="#set-user-object-attribute-return"><i>return</i></a>.</li>
 
             <li>Set |completion| to <a class="external" href="https://tc39.github.io/ecma262/#sec-set-o-p-v-throw">Set</a>(|O|, |attributeName|,
-            |convertResult|.[[Value]], <span class="esvalue">true</span>).</li>
+            |convertResult|.\[[Value]], <span class="esvalue">true</span>).</li>
 
             <li>
               <i id="set-user-object-attribute-return">Return:</i> at this
@@ -13289,7 +13289,7 @@ C implements A;</pre>
                     <li>If |convertResult| is an abrupt completion, set |completion|
                     to |convertResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
 
-                    <li>Append |convertResult|.[[Value]] to |esArgs|.</li>
+                    <li>Append |convertResult|.\[[Value]] to |esArgs|.</li>
 
                     <li>Set |count| to |i| + 1.</li>
                   </ol>
@@ -13308,7 +13308,7 @@ C implements A;</pre>
             |callResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
 
             <li>Set |completion| to the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-            |callResult|.[[Value]] to an IDL value of the same type as the operation’s
+            |callResult|.\[[Value]] to an IDL value of the same type as the operation’s
             return type.</li>
 
             <li>
@@ -13328,7 +13328,7 @@ C implements A;</pre>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
                 <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <span class="esvalue">this</span> value and
-                |completion|.[[Value]] as the single argument value.</li>
+                |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                 |rejectedPromise| to the callback function's return type.</li>
@@ -13346,7 +13346,7 @@ C implements A;</pre>
             <dfn id="dfn-DOMException-constructor-object" for="DOMException" export="">DOMException constructor object</dfn>,
             which provides access to legacy DOMException code constants and allows construction of
             DOMException instances.
-            The property has the attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>.
+            The property has the attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
           
 
           
@@ -13354,18 +13354,18 @@ C implements A;</pre>
 
             
               The DOMException constructor object must be a <a class="dfnref" href="#dfn-function-object">function object</a>
-              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a>.
+              but with a <span class="prop">\[[Prototype]]</span> value of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a>.
             
             
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
               there must be a property on the DOMException constructor object
               whose name and value are as indicated in the table.  The property has
-              attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.
+              attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.
             
             
               The DOMException constructor object must also have a property named
               “prototype” with attributes
-              <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
               whose value is an object called the <dfn id="dfn-DOMException-prototype-object" for="DOMException" export="">DOMException prototype object</dfn>.
               This object also provides access to the legacy code values.
             
@@ -13378,17 +13378,17 @@ C implements A;</pre>
               <ol class="algorithm">
                 <li>Let |F| be the active function object.</li>
                 <li>If NewTarget is <span class="esvalue">undefined</span>, let |newTarget| be |F|, else let |newTarget| be NewTarget.</li>
-                <li>Let |super| be |F|.[[GetPrototypeOf]]().</li>
+                <li>Let |super| be |F|.\[[GetPrototypeOf]]().</li>
                 <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|super|).</li>
                 <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-isconstructor">IsConstructor</a>(|super|) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
                 <li>Let |O| be <a class="external" href="https://tc39.github.io/ecma262/#sec-construct">Construct</a>(|super|, «|message|», |newTarget|).</li>
                 <li>If |name| is not <span class="esvalue">undefined</span>, then
                   <ol>
                     <li>Let |name| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|name|).</li>
-                    <li>Let |status| be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{[[Value]]: |name|, [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                    <li>Let |status| be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
                     <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|status|).</li>
                     <li>Let |code| be the legacy code indicated in the <a class="dfnref" href="#dfn-error-names-table">error names table</a> for error name |name|, or <span class="esvalue">0</span> if there is none.</li>
-                    <li>Let |status| be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{[[Value]]: |code|, [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                    <li>Let |status| be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
                     <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|status|).</li>
                   </ol>
                 </li>
@@ -13402,7 +13402,7 @@ C implements A;</pre>
 
             
               The DOMException prototype object must
-              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a>.
+              have an internal <span class="prop">\[[Prototype]]</span> property whose value is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a>.
             
             
               The <a class="dfnref" href="#dfn-class-string">class string</a> of the
@@ -13412,14 +13412,14 @@ C implements A;</pre>
             
               There must be a property named “constructor”
               on the DOMException prototype object with attributes
-              <span class="descriptor">{ [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
               and whose value is the <a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor object</a>.
             
             
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
               there must be a property on the DOMException prototype object
               whose name and value are as indicated in the table.  The property has
-              attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.
+              attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.
             
           
         
@@ -13445,7 +13445,7 @@ C implements A;</pre>
             <a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor object</a> itself.
           
           
-            The value of the internal <span class="prop">[[Prototype]]</span>
+            The value of the internal <span class="prop">\[[Prototype]]</span>
             property of a <a class="dfnref" href="#dfn-DOMException">DOMException</a>
             object must be the <a class="dfnref" href="#dfn-DOMException-prototype-object">DOMException prototype object</a>
             from the global environment the exception object is associated with.
@@ -13645,7 +13645,7 @@ try {
 } catch (e) {
   // The string "abc" is caught here, since as part of the conversion
   // from the native object to a string, the anonymous function
-  // was invoked, and none of the [[DefaultValue]], ToPrimitive or
+  // was invoked, and none of the \[[DefaultValue]], ToPrimitive or
   // ToString algorithms are defined to catch the exception.
 }
 
@@ -13653,13 +13653,13 @@ try {
   d.type = { toString: { } };
 } catch (e) {
   // An exception is caught here, since an attempt is made to invoke
-  // [[Call]] on the native object that is the value of toString
+  // \[[Call]] on the native object that is the value of toString
   // property.
 }
 
 d.type = et;
 // An uncaught NotSupportedError DOMException is thrown here, since the
-// [[DefaultValue]] algorithm attempts to get the value of the
+// \[[DefaultValue]] algorithm attempts to get the value of the
 // "valueOf" property on the ExceptionThrower object.  The exception
 // propagates out of this block of code.</pre>
           </div>
@@ -14468,7 +14468,7 @@ d.type = et;
               </li>
               <li>
                 
-                  Added a platform object [[Set]] internal method to handle
+                  Added a platform object \[[Set]] internal method to handle
                   named and indexed setters better.
                 
               </li>
@@ -14533,7 +14533,7 @@ d.type = et;
               <li>
                 
                   Add a term "unenumerable" to allow named properties to be exposed as
-                  properties with [[Enumerable]] set to false.
+                  properties with \[[Enumerable]] set to false.
                 
               </li>
               <li>
@@ -14579,7 +14579,7 @@ d.type = et;
               </li>
               <li>
                 
-                  Made stringifiers and serializers not use [[Get]] or [[Call]]
+                  Made stringifiers and serializers not use \[[Get]] or \[[Call]]
                   for the their attribute or operation delegated behavior.
                 
               </li>
@@ -14687,7 +14687,7 @@ d.type = et;
               </li>
               <li>
                 
-                  Added back a custom [[HasInstance]] on interface objects to allow objects
+                  Added back a custom \[[HasInstance]] on interface objects to allow objects
                   from other windows to be considered instanceof them.
                 
               </li>
@@ -14706,7 +14706,7 @@ d.type = et;
               </li>
               <li>
                 
-                  Fixed a bug in the user object definition where the internal [[Call]]
+                  Fixed a bug in the user object definition where the internal \[[Call]]
                   method would be treated as the implementation of an operation even if
                   the callback interface had more than one operation.
                 
@@ -14794,7 +14794,7 @@ d.type = et;
               </li>
               <li>
                 
-                  Require exception objects to have [[Class]] “Error” and suggest that they
+                  Require exception objects to have \[[Class]] “Error” and suggest that they
                   have any non-standard properties that native Error objects do.
                 
               </li>
