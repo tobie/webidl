@@ -13,6 +13,58 @@
   <xsl:variable name='id' select='/*/h:head/h:meta[@name="revision"]/@content'/>
   <xsl:variable name='rev' select='substring-before(substring-after(substring-after($id, " "), " "), " ")'/>
   <xsl:variable name='tocpi' />
+  
+<xsl:template match='processing-instruction("top")'>
+<xsl:text>
+</xsl:text>
+<pre class="metadata">
+<xsl:text>
+  Shortname: WebIDL
+  Level: 2
+  Status: ED
+  ED: https://heycam.github.io/webidl/
+  TR: </xsl:text>
+  <xsl:if test='$options/x:versions/x:latest/@href != ""'>
+    <xsl:value-of select='$options/x:versions/x:latest/@href'/>
+  </xsl:if>
+<xsl:text>
+</xsl:text>
+<xsl:if test='$options/x:versions/x:previous[@href!=""]'>
+  <xsl:if test='$options/x:versions/x:previous/@href != ""'>
+    <xsl:for-each select='$options/x:versions/x:previous/@href'>
+    <xsl:text>  Previous Version: </xsl:text><xsl:value-of select='.'/><xsl:text>
+</xsl:text>
+    </xsl:for-each>
+  </xsl:if>
+</xsl:if>
+  <xsl:for-each select='$options/x:editors/x:person'>
+    <xsl:text>  Editor: </xsl:text><xsl:value-of select='x:name'/>
+    <xsl:if test='x:affiliation'>
+      <xsl:text>, </xsl:text>
+      <xsl:value-of select='x:affiliation'/>
+      <xsl:if test='x:affiliation/@homepage'>
+        <xsl:text>, </xsl:text>
+        <xsl:value-of select='x:affiliation/@homepage'/>
+      </xsl:if>
+    </xsl:if>
+    <xsl:if test='@homepage'>
+      <xsl:text>, </xsl:text>
+      <xsl:value-of select='@homepage'/>
+    </xsl:if>
+    <xsl:if test='@email'>
+      <xsl:text>, </xsl:text>
+      <xsl:value-of select='@email'/>
+    </xsl:if>
+<xsl:text>
+</xsl:text>
+  </xsl:for-each>
+  <xsl:for-each select='tokenize(replace(//*[h:h2[text()="Abstract"]]/h:p, "^\s+|\s+$", ""), "\n")'>
+<xsl:text>  Abstract: </xsl:text><xsl:value-of select="normalize-space(.)" /><xsl:text>
+</xsl:text>
+    </xsl:for-each>
+</pre>
+  </xsl:template>
+
   <xsl:param name='now'>12340506<!--
     <xsl:value-of select='translate(substring-before(substring-after(substring-after(substring-after($id, " "), " "), " "), " "), "/", "")'/>-->
   </xsl:param>
