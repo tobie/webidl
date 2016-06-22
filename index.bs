@@ -1022,7 +1022,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             <ol class="algorithm">
               <li>Let |S| be the sequence of characters matched by the <a class="sym" href="#prod-float">float</a> token.</li>
               <li>Let |value| be the Mathematical Value that would be obtained if |S| were
-                parsed as an ECMAScript <a class="external" href="https://tc39.github.io/ecma262/#sec-literals-numeric-literals"><em>NumericLiteral</em></a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 11.8.3).</li>
+                parsed as an ECMAScript <a class="external" href="https://tc39.github.io/ecma262/#sec-literals-numeric-literals"><em>NumericLiteral</em></a>.</li>
               <li>
                 If the <a class="sym" href="#prod-float">float</a> token is being
                 used as the value for a <a class="idltype" href="#idl-float">float</a> or
@@ -3881,7 +3881,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <li><span class="idltype"><dfn interface="" export="">URIError</dfn></span></li>
           </ul>
           
-            These correspond to all of the <a class="external" href="https://tc39.github.io/ecma262/#sec-error-objects">ECMAScript error objects</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 19.5) (apart from
+            These correspond to all of the <a class="external" href="https://tc39.github.io/ecma262/#sec-error-objects">ECMAScript error objects</a> (apart from
             <span class="estype">SyntaxError</span>, which is deliberately omitted as
             it is for use only by the ECMAScript parser).
             The meaning of
@@ -5836,7 +5836,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
         
         <ul>
           <li>Its <span class="prop">[[Prototype]]</span> internal property is
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4) unless otherwise specified.</li>
+          <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> unless otherwise specified.</li>
           <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
           <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
@@ -6457,7 +6457,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-long-long">long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+              two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
               If the <a class="idltype" href="#idl-long-long">long long</a> is in the range
               [−2<sup>53</sup> + 1, 2<sup>53</sup> − 1], then the <span class="estype">Number</span>
               will be able to represent exactly the same value as the
@@ -6514,7 +6514,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+              two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
               If the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> is less than or equal to 2<sup>53</sup> − 1,
               then the <span class="estype">Number</span> will be able to
               represent exactly the same value as the
@@ -6543,7 +6543,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>
                 Let |y| be the number in |S| that is closest
                 to |x|, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+                <em>even significand</em> if there are two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -6585,7 +6585,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>
                 Let |y| be the number in |S| that is closest
                 to |x|, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+                <em>even significand</em> if there are two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -10154,7 +10154,7 @@ with (thing) {
               <li>
                 If the interface doesn't inherit from any other interface,
                 the value of <span class="prop">[[Prototype]]</span> is
-                <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a>.
               </li>
             </ol>
             
@@ -10441,8 +10441,8 @@ with (thing) {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
-              extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
-              <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.</li>
+              <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a>.
               ([[!ECMA-262]], section 15.2.4).</li>
             </ol>
             <div class="note">
@@ -10531,8 +10531,8 @@ partial interface Window {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
-              extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
-              <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
+              extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.</li>
+              <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a>.</li>
             </ol>
             
               The <a class="dfnref" href="#dfn-class-string">class string</a> of a
@@ -10575,7 +10575,7 @@ partial interface Window {
                     <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
                       of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
-                    <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                    <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
                     <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                       |value| to an ECMAScript value.</li>
                     <li>If |A| implements an interface with the
@@ -10589,7 +10589,7 @@ partial interface Window {
                   </ol>
                 </li>
 
-                <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on |O| passing |P| as the argument.</li>
+                <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
               </ol>
             
 
@@ -11258,7 +11258,7 @@ partial interface Window {
               </ul>
               
                 If the interface defines an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>,
-                then the <span class="estype">Function</span> object is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayProto_values%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                then the <span class="estype">Function</span> object is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayProto_values%</a>.
               
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
@@ -11366,7 +11366,7 @@ partial interface Window {
               
                 If the interface defines an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>,
                 then the <span class="estype">Function</span> object is
-                the initial value of the “forEach” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                the initial value of the “forEach” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.
               
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
@@ -11488,7 +11488,7 @@ partial interface Window {
               
                 If the interface has a <a class="dfnref" href="#dfn-value-iterator">value iterator</a>,
                 then the <span class="estype">Function</span> object is
-                the initial value of the “entries” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                the initial value of the “entries” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.
               
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
@@ -11523,7 +11523,7 @@ partial interface Window {
               
                 If the interface has a <a class="dfnref" href="#dfn-value-iterator">value iterator</a>,
                 then the <span class="estype">Function</span> object is
-                the initial value of the “keys” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                the initial value of the “keys” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.
               
               
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
@@ -11663,7 +11663,7 @@ partial interface Window {
               
               
                 The internal [[Prototype]] property of an <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
-                must be <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                must be <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a>.
               
               
                 An <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
@@ -12379,7 +12379,7 @@ C implements A;</pre>
           <ul>
             <li>The name of the property is “toString”.</li>
             <li>The property has attributes <span class="descriptor">{ [[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
-            <li>The value of the property is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjProto_toString%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4), the initial value of Object.prototype.toString.</li>
+            <li>The value of the property is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</li>
           </ul>
 
           
@@ -12569,7 +12569,7 @@ C implements A;</pre>
                       <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
                         of performing the steps listed in the description of |operation| with |index| as the only argument value.</li>
 
-                      <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                      <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
                       <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                         |value| to an ECMAScript value.</li>
                       <li>If |O| implements an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then set
@@ -12598,7 +12598,7 @@ C implements A;</pre>
                   <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
                     of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
-                  <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                  <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
                   <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     |value| to an ECMAScript value.</li>
                   <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then set
@@ -12614,7 +12614,7 @@ C implements A;</pre>
                 </ol>
               </li>
 
-              <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on |O| passing |P| as the argument.</li>
+              <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
             </ol>
           
 
@@ -12748,7 +12748,7 @@ C implements A;</pre>
                 arguments.
               </li>
               <li>
-                Perform steps 3-11 of the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.9).
+                Perform steps 3-11 of the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a>.
               </li>
             </ol>
           
@@ -12811,7 +12811,7 @@ C implements A;</pre>
               <li>If |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
                 <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 then set |Desc|.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
-              <li>Call the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.6) on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
+              <li>Call the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
             </ol>
           
 
@@ -13353,7 +13353,7 @@ C implements A;</pre>
 
             
               The DOMException constructor object must be a <a class="dfnref" href="#dfn-function-object">function object</a>
-              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a>.
             
             
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
@@ -13401,7 +13401,7 @@ C implements A;</pre>
 
             
               The DOMException prototype object must
-              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a>.
             
             
               The <a class="dfnref" href="#dfn-class-string">class string</a> of the
