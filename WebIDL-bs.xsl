@@ -305,10 +305,6 @@
   </xsl:template>
   
   <xsl:template match='h:div[@id="toc"] | h:head' />
-
-  <xsl:template match='h:body | h:div[@class="section"][not(@id)]'>
-    <xsl:apply-templates select='node()'/>
-  </xsl:template>
   
   <xsl:template match='h:dfn'>
     <xsl:copy copy-namespaces="no">
