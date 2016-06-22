@@ -373,7 +373,7 @@ TR: </xsl:text>
   <xsl:template match='x:codeblock'>
     <xsl:variable name='lang'>
       <xsl:choose>
-        <xsl:when test='@language="idl"'>idl</xsl:when>
+        <xsl:when test='@language="idl"'>idl-example</xsl:when>
         <xsl:when test='@language="es"'>js</xsl:when>
         <xsl:when test='@language="java"'>java</xsl:when>
         <xsl:when test='@language="c"'>c</xsl:when>
@@ -382,7 +382,7 @@ TR: </xsl:text>
       </xsl:choose>
     </xsl:variable>
     <xsl:choose>
-      <xsl:when test='@language="idl" and not(ancestor::*[@class="example"])'>
+      <xsl:when test='@language="idl-example" and not(ancestor::*[@class="example"])'>
           <pre class='{$lang} example'><xsl:apply-templates select='node()'/></pre>
       </xsl:when>
       <xsl:otherwise>

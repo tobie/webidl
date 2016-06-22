@@ -133,7 +133,7 @@ Ignored Vars: callback, op, ownDesc, exampleVariableName, target
             <li>Non-normative notes: <div class="note">This is a note.</div></li>
             <li>Non-normative examples: <div class="example">This is an example.</div></li>
             <li>Normative warnings: <div class="advisement">This is a warning.</div></li>
-            <li>Code blocks: <pre class="idl example">// This is an IDL code block.
+            <li>Code blocks: <pre class="idl-example">// This is an IDL code block.
 interface Example {
   attribute long something;
 };</pre>
@@ -266,7 +266,7 @@ interface <i>identifier</i> {
           
             The following is an example of an <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>.
           
-          <pre class="idl">interface Paint { };
+          <pre class="idl-example">interface Paint { };
 
 interface SolidColor : Paint {
   attribute double red;
@@ -476,7 +476,7 @@ dictionary <i>identifier</i> {
           
           <div class="example">
             Therefore, the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is valid:
-            <pre class="idl">interface B : A {
+            <pre class="idl-example">interface B : A {
   void f(SequenceOfLongs x);
 };
 
@@ -492,7 +492,7 @@ typedef sequence&lt;long&gt; SequenceOfLongs;</pre>
               demonstrates how <a class="dfnref" href="#dfn-identifier">identifiers</a>
               are given to definitions and <a class="dfnref" href="#dfn-interface-member">interface members</a>.
             
-            <pre class="idl">// Typedef identifier: "number"
+            <pre class="idl-example">// Typedef identifier: "number"
 typedef double number;
 
 // Interface identifier: "System"
@@ -593,7 +593,7 @@ interface TextField {
             
               Consider the following two interfaces.
             
-            <pre class="idl">interface A {
+            <pre class="idl-example">interface A {
   void f();
   void g();
 };
@@ -731,7 +731,7 @@ interface B : A {
             
               For example, instead of this:
             
-            <pre class="idl example">callback interface Options {
+            <pre class="idl-example">callback interface Options {
   attribute DOMString? option1;
   attribute DOMString? option2;
   attribute long? option3;
@@ -749,7 +749,7 @@ a.doTask("something", { option1: "banana", option3: 100 });</pre>
             
               instead write the following:
             
-            <pre class="idl example">dictionary Options {
+            <pre class="idl-example">dictionary Options {
   DOMString? option1;
   DOMString? option2;
   long? option3;
@@ -863,7 +863,7 @@ partial interface <em>SomeInterface</em> {
               inherit from <span class="idltype">Animal</span>.  Objects that implement
               either of those two interfaces will thus have a <code>name</code> attribute.
             
-            <pre class="idl">interface Animal {
+            <pre class="idl-example">interface Animal {
   attribute DOMString name;
 };
 
@@ -882,7 +882,7 @@ interface Dog : Animal {
               simplified versions of a few DOM <a class="dfnref" href="#dfn-interface">interfaces</a>, one of which
               is a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             
-            <pre class="idl">interface Node {
+            <pre class="idl-example">interface Node {
   readonly attribute DOMString nodeName;
   readonly attribute Node? parentNode;
   Node appendChild(Node newChild);
@@ -1100,7 +1100,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 on which the <a class="dfnref" href="#dfn-constant">constants</a> are declared.
                 For example, with the following IDL:
               
-              <pre class="idl example">interface A {
+              <pre class="idl-example">interface A {
   const short rambaldi = 47;
 };</pre>
               
@@ -1129,7 +1129,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 demonstrates how <a class="dfnref" href="#dfn-constant">constants</a>
                 of the above types can be defined.
               
-              <pre class="idl">interface Util {
+              <pre class="idl-example">interface Util {
   const boolean DEBUG = false;
   const octet LF = 10;
   const unsigned long BIT_MASK = 0x0000fc00;
@@ -1285,7 +1285,7 @@ interface <i>Derived</i> : <i>Ancestor</i> {
                 demonstrates how <a class="dfnref" href="#dfn-attribute">attributes</a>
                 can be declared on an <a class="dfnref" href="#dfn-interface">interface</a>:
               
-              <pre class="idl">interface Animal {
+              <pre class="idl-example">interface Animal {
 
   // A simple attribute that can be set to any string value.
   readonly attribute DOMString name;
@@ -1421,7 +1421,7 @@ interface Person : Animal {
                 demonstrates how <a class="dfnref" href="#dfn-regular-operation">regular operations</a>
                 can be declared on an <a class="dfnref" href="#dfn-interface">interface</a>:
               
-              <pre class="idl">interface Dimensions {
+              <pre class="idl-example">interface Dimensions {
   attribute unsigned long width;
   attribute unsigned long height;
 };
@@ -1465,7 +1465,7 @@ interface Button {
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has
                 two variadic operations:
               
-              <pre class="idl">interface IntegerSet {
+              <pre class="idl-example">interface IntegerSet {
   readonly attribute unsigned long cardinality;
 
   void union(long... ints);
@@ -1591,7 +1591,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                 with a single <a class="dfnref" href="#dfn-operation">operation</a>
                 that can be invoked with two different argument list lengths:
               
-              <pre class="idl">interface ColorCreator {
+              <pre class="idl-example">interface ColorCreator {
   object createColor(double v1, double v2, double v3, optional double alpha);
 };</pre>
               
@@ -1599,7 +1599,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                 that has two <a class="dfnref" href="#dfn-overloaded">overloaded</a>
                 <a class="dfnref" href="#dfn-operation">operations</a>:
               
-              <pre class="idl">interface ColorCreator {
+              <pre class="idl-example">interface ColorCreator {
   object createColor(double v1, double v2, double v3);
   object createColor(double v1, double v2, double v3, double alpha);
 };</pre>
@@ -1742,7 +1742,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             
             <div class="example">
               The following IDL fragment defines an interface with a getter and a setter:
-              <pre class="idl">interface Dictionary {
+              <pre class="idl-example">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
   getter double (DOMString propertyName);
@@ -1761,13 +1761,13 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             
             <div class="example">
               The following two interfaces are equivalent:
-              <pre class="idl">interface Dictionary {
+              <pre class="idl-example">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
   getter double getProperty(DOMString propertyName);
   setter void setProperty(DOMString propertyName, double propertyValue);
 };</pre>
-              <pre class="idl">interface Dictionary {
+              <pre class="idl-example">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
   double getProperty(DOMString propertyName);
@@ -1864,7 +1864,7 @@ legacycaller <i>return-type</i> (<i>arguments…</i>);</pre>
                   defines an <a class="dfnref" href="#dfn-interface">interface</a>
                   with a <a class="dfnref" href="#dfn-legacy-caller">legacy caller</a>.
                 
-                <pre class="idl">interface NumberQuadrupler {
+                <pre class="idl-example">interface NumberQuadrupler {
   // This operation simply returns four times the given number x.
   legacycaller double compute(double x);
 };</pre>
@@ -1915,10 +1915,10 @@ stringifier DOMString ();</pre>
               <pre class="syntax">stringifier;</pre>
               <div class="example">
                 The following two interfaces are equivalent:
-                <pre class="idl">interface A {
+                <pre class="idl-example">interface A {
   stringifier DOMString ();
 };</pre>
-                <pre class="idl">interface A {
+                <pre class="idl-example">interface A {
   stringifier;
 };</pre>
               </div>
@@ -1944,7 +1944,7 @@ stringifier DOMString ();</pre>
                   defines an interface that will stringify to the value of its
                   <span class="idlattr">name</span> attribute:
                 
-                <pre class="idl">[Constructor]
+                <pre class="idl-example">[Constructor]
 interface Student {
   attribute unsigned long id;
   stringifier attribute DOMString name;
@@ -1965,7 +1965,7 @@ var greeting = 'Hello, ' + s + '!';  // Now greeting == 'Hello, 周杰倫!'.</pr
                   defines an interface that has custom stringification behavior that is
                   not specified in the IDL itself.
                 
-                <pre class="idl">[Constructor]
+                <pre class="idl-example">[Constructor]
 interface Student {
   attribute unsigned long id;
   attribute DOMString? familyName;
@@ -2282,7 +2282,7 @@ serializer = { inherit, attribute };</pre>
                   an interface <span class="idltype">Transaction</span> that has a
                   <a class="dfnref" href="#dfn-serializer">serializer</a> defines in prose:
                 
-                <pre class="idl">interface Transaction {
+                <pre class="idl-example">interface Transaction {
   readonly attribute Account from;
   readonly attribute Account to;
   readonly attribute double amount;
@@ -2329,7 +2329,7 @@ interface Account {
                   could be used to avoid having to define the <a class="dfnref" href="#dfn-serialization-behavior">serialization behavior</a>
                   in prose:
                 
-                <pre class="idl">interface Transaction {
+                <pre class="idl-example">interface Transaction {
   readonly attribute Account from;
   readonly attribute Account to;
   readonly attribute double amount;
@@ -2431,7 +2431,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                 
                   In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:
                 
-                <pre class="idl example">interface A {
+                <pre class="idl-example">interface A {
   getter DOMString toWord(unsigned long index);
 };</pre>
                 
@@ -2456,7 +2456,7 @@ a[5];         // Evaluates to undefined, since there is no property "5".</pre>
                   <span class="idltype">OrderedMap</span> which allows
                   retrieving and setting values by name or by index number:
                 
-                <pre class="idl">interface OrderedMap {
+                <pre class="idl-example">interface OrderedMap {
   readonly attribute unsigned long size;
 
   getter any getByIndex(unsigned long index);
@@ -2641,7 +2641,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
                 <span class="idltype">Circle</span> that has a static
                 operation declared on it:
               
-              <pre class="idl">interface Point { /* ... */ };
+              <pre class="idl-example">interface Point { /* ... */ };
 
 interface Circle {
   attribute double cx;
@@ -2709,7 +2709,7 @@ window.alert(Circle.triangulationCount);</pre>
                 For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span>
                 are disallowed:
               
-              <pre class="idl example">interface A {
+              <pre class="idl-example">interface A {
   void f();
 };
 
@@ -2910,7 +2910,7 @@ partial interface A {
               
                For the following interface:
               
-              <pre class="idl">interface A {
+              <pre class="idl-example">interface A {
   /* f1 */ void f(DOMString a);
   /* f2 */ void f(Node a, DOMString b, double... c);
   /* f3 */ void f();
@@ -3187,7 +3187,7 @@ partial interface A {
               
                 The following use of overloading however is invalid:
               
-              <pre class="idl">interface B {
+              <pre class="idl-example">interface B {
   void f(DOMString x);
   void f(double x);
 };</pre>
@@ -3206,7 +3206,7 @@ partial interface A {
             
             <div class="example">
               The following is invalid:
-              <pre class="idl">interface B {
+              <pre class="idl-example">interface B {
   /* f1 */ void f(DOMString w);
   /* f2 */ void f(long w, double x, Node y, Node z);
   /* f3 */ void f(double w, double x, DOMString y, Node z);
@@ -3317,7 +3317,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             <div class="example">
               Consider the following interface <span class="idltype">SessionManager</span>, which allows access to
               a number of <span class="idltype">Session</span> objects:
-              <pre class="idl">interface SessionManager {
+              <pre class="idl-example">interface SessionManager {
   Session getSessionForUser(DOMString username);
   readonly attribute unsigned long sessionCount;
 
@@ -3732,7 +3732,7 @@ partial dictionary <em>SomeDictionary</em> {
           
           <div class="note">
             For example, with the following definitions:
-            <pre class="idl example">dictionary B : A {
+            <pre class="idl-example">dictionary B : A {
   long b;
   long a;
 };
@@ -3763,7 +3763,7 @@ partial dictionary A {
               the dictionary members are fetched.  For example, consider the
               following additional interface:
             
-            <pre class="idl example">interface Something {
+            <pre class="idl-example">interface Something {
   void f(A a);
 };</pre>
             
@@ -3819,7 +3819,7 @@ something.f(dict);</pre>
               constrained as to the order they are specified at the call site.  For example,
               consider the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>:
             
-            <pre class="idl">[Constructor]
+            <pre class="idl-example">[Constructor]
 interface Point {
   attribute double x;
   attribute double y;
@@ -4203,7 +4203,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               that is used as the type of an <a class="dfnref" href="#dfn-attribute">attribute</a>
               and an <a class="dfnref" href="#dfn-operation">operation</a> argument:
             
-            <pre class="idl">enum MealType { "rice", "noodles", "other" };
+            <pre class="idl-example">enum MealType { "rice", "noodles", "other" };
 
 interface Meal {
   attribute MealType type;
@@ -4269,7 +4269,7 @@ meal.type == "noodles";              // Evaluates to true.</pre>
               a <a class="dfnref" href="#dfn-callback-function">callback function</a> used for an API that
               invokes a user-defined function when an operation is complete.
             
-            <pre class="idl">callback AsyncOperationCallback = void (DOMString status);
+            <pre class="idl-example">callback AsyncOperationCallback = void (DOMString status);
 
 interface AsyncOperations {
   void performOperation(AsyncOperationCallback whenFinished);
@@ -4322,7 +4322,7 @@ ops.performOperation(function(status) {
               <a class="dfnref" href="#dfn-identifier">identifier</a> instead of a long
               <a href="#idl-sequence">sequence type</a>.
             
-            <pre class="idl">interface Point {
+            <pre class="idl-example">interface Point {
   attribute double x;
   attribute double y;
 };
@@ -4392,13 +4392,13 @@ interface Widget {
               is a <a class="dfnref" href="#dfn-supplemental-interface">supplemental interface</a>.
               For example, if author 1 writes:
             
-            <pre class="idl example">interface Window { ... };
+            <pre class="idl-example">interface Window { ... };
 interface SomeFunctionality { ... };
 Window implements SomeFunctionality;</pre>
             
               and author 2 later writes:
             
-            <pre class="idl example">interface Gizmo { ... };
+            <pre class="idl-example">interface Gizmo { ... };
 interface MoreFunctionality { ... };
 SomeFunctionality implements MoreFunctionality;
 Gizmo implements SomeFunctionality;</pre>
@@ -4412,7 +4412,7 @@ Gizmo implements SomeFunctionality;</pre>
             
               Better in this case would be for author 2 to write:
             
-            <pre class="idl example">interface Gizmo { ... };
+            <pre class="idl-example">interface Gizmo { ... };
 interface MoreFunctionality { ... };
 Gizmo implements SomeFunctionality;
 Gizmo implements MoreFunctionality;</pre>
@@ -4448,7 +4448,7 @@ Gizmo implements MoreFunctionality;</pre>
               defines two <a class="dfnref" href="#dfn-interface">interfaces</a>, stating
               that one interface is always implemented on objects implementing the other.
             
-            <pre class="idl">interface Entry {
+            <pre class="idl-example">interface Entry {
   readonly attribute unsigned short entryType;
   // ...
 };
@@ -5224,7 +5224,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 <span class="idlvalue">false</span> and <span class="idlvalue">null</span>
                 is written as <span class="idltype">boolean?</span>:
               
-              <pre class="idl">interface MyConstants {
+              <pre class="idl-example">interface MyConstants {
   const boolean? ARE_WE_THERE_YET = false;
 };</pre>
               
@@ -5234,7 +5234,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 value, and another whose value can be a reference to a <span class="idltype">Node</span>
                 object or the <span class="idlvalue">null</span> value:
               
-              <pre class="idl">interface Node {
+              <pre class="idl-example">interface Node {
   readonly attribute DOMString? namespaceURI;
   readonly attribute Node? parentNode;
   // ...
@@ -7182,7 +7182,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 type as well as an <a class="dfnref" href="#dfn-operation">operation</a>
                 with an argument of a sequence type.
               
-              <pre class="idl">interface Canvas {
+              <pre class="idl-example">interface Canvas {
 
   sequence&lt;DOMString&gt; getSupportedImageCodecs();
 
@@ -7833,7 +7833,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 on all three arguments, while the other does not:
               
-              <pre class="idl">interface GraphicsContext {
+              <pre class="idl-example">interface GraphicsContext {
   void setColor(octet red, octet green, octet blue);
   void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
 };</pre>
@@ -7907,7 +7907,7 @@ context.setColorClamped(-1, 255, 257);</pre>
                 <a class="xattr" href="#Constructor">[Constructor]</a> extended
                 attribute, while the first does not.
               
-              <pre class="idl">interface NodeList {
+              <pre class="idl-example">interface NodeList {
   Node item(unsigned long index);
   readonly attribute unsigned long length;
 };
@@ -7986,7 +7986,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
                 the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 on all three arguments, while the other does not:
               
-              <pre class="idl">interface GraphicsContext {
+              <pre class="idl-example">interface GraphicsContext {
   void setColor(octet red, octet green, octet blue);
   void setColorEnforcedRange([EnforceRange] octet red, [EnforceRange] octet green, [EnforceRange] octet blue);
 };</pre>
@@ -8142,7 +8142,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               members are available for use only in workers, only in the <span class="idltype">Window</span>,
               or in both.
               The following IDL fragment shows how that might be achieved:
-              <pre class="idl">[PrimaryGlobal]
+              <pre class="idl-example">[PrimaryGlobal]
 interface Window {
   ...
 };
@@ -8215,7 +8215,7 @@ interface Node {
               <a class="dfnref" href="#dfn-interface">interface</a> is defined
               with the <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.
-              <pre class="idl">[ImplicitThis]
+              <pre class="idl-example">[ImplicitThis]
 interface Window {
   ...
   attribute DOMString name;
@@ -8398,7 +8398,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 will result in them being replaced by the new value.  Variable declarations for
                 attributes will not create a property that replaces the existing one.
               
-              <pre class="idl">[PrimaryGlobal]
+              <pre class="idl-example">[PrimaryGlobal]
 interface Window {
   getter any (DOMString name);
   attribute DOMString name;
@@ -8476,7 +8476,7 @@ interface Window {
                 defines two <a class="dfnref" href="#dfn-interface">interfaces</a>
                 that use <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>.
               
-              <pre class="idl">[LegacyArrayClass]
+              <pre class="idl-example">[LegacyArrayClass]
 interface ItemList {
   attribute unsigned long length;
   getter object getItem(unsigned long index);
@@ -8595,7 +8595,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
                 <a class="xattr" href="#LenientSetter">[LenientSetter]</a> extended
                 attribute.
               
-              <pre class="idl">interface Example {
+              <pre class="idl-example">interface Example {
   [LenientSetter] readonly attribute DOMString x;
   readonly attribute DOMString y;
 };</pre>
@@ -8651,7 +8651,7 @@ example.y = 1;</pre>
                 <a class="xattr" href="#LenientThis">[LenientThis]</a> extended
                 attribute.
               
-              <pre class="idl">interface Example {
+              <pre class="idl-example">interface Example {
   [LenientThis] attribute DOMString x;
   attribute DOMString y;
 };</pre>
@@ -8726,7 +8726,7 @@ Example.prototype.y;</pre>
                 <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended
                 attribute.
               
-              <pre class="idl">[NamedConstructor=Audio,
+              <pre class="idl-example">[NamedConstructor=Audio,
  NamedConstructor=Audio(DOMString src)]
 interface HTMLAudioElement : HTMLMediaElement {
   // ...
@@ -8784,7 +8784,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
                 since a new object should always be returned when
                 it is called.
               
-              <pre class="idl">interface Document : Node {
+              <pre class="idl-example">interface Document : Node {
   [NewObject] Element createElement(DOMString localName);
   ...
 };</pre>
@@ -8850,7 +8850,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
                   fragment</a> defines two interfaces, one whose interface object
                 is exposed on the ECMAScript global object, and one whose isn’t:
               
-              <pre class="idl">interface Storage {
+              <pre class="idl-example">interface Storage {
   void addEntry(unsigned long key, any value);
 };
 
@@ -8923,7 +8923,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
                 one that has a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>
                 and one that does not.
               
-              <pre class="idl">interface StringMap {
+              <pre class="idl-example">interface StringMap {
   readonly attribute unsigned long length;
   getter DOMString lookup(DOMString key);
 };
@@ -9068,7 +9068,7 @@ map2.toString;</pre>
                 <span class="idlattr">full</span> attribute of the
                 <span class="idltype">Person</span> object:
               
-              <pre class="idl">interface Name {
+              <pre class="idl-example">interface Name {
   attribute DOMString full;
   attribute DOMString family;
   attribute DOMString given;
@@ -9144,7 +9144,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
                 that increments a counter, and an <a class="dfnref" href="#dfn-attribute">attribute</a>
                 that exposes the counter’s value, which is initially 0:
               
-              <pre class="idl">interface Counter {
+              <pre class="idl-example">interface Counter {
   [Replaceable] readonly attribute unsigned long value;
   void increment();
 };</pre>
@@ -9211,7 +9211,7 @@ counter.value;                                           // Evaluates to 3.</pre
                 since the same object is always returned for a given
                 <span class="idltype">Document</span> object.
               
-              <pre class="idl">interface Document : Node {
+              <pre class="idl-example">interface Document : Node {
   [SameObject] readonly attribute DOMImplementation implementation;
   ...
 };</pre>
@@ -9303,7 +9303,7 @@ counter.value;                                           // Evaluates to 3.</pre
               with one <a class="dfnref" href="#dfn-operation">operation</a> that is executable from all
               contexts, and two which are executable only from secure contexts.
 
-              <pre class="idl">interface PowerfulFeature {
+              <pre class="idl-example">interface PowerfulFeature {
   // This call will succeed in all contexts.
   Promise &lt;Result&gt; calculateNotSoSecretResult();
 
@@ -9357,7 +9357,7 @@ counter.value;                                           // Evaluates to 3.</pre
                 <a class="dfnref" href="#dfn-callback-function">callback function</a> and another whose type is a
                 <a class="dfnref" href="#dfn-callback-function">callback function</a> without the <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>:
               
-              <pre class="idl">callback OccurrenceHandler = void (DOMString details);
+              <pre class="idl-example">callback OccurrenceHandler = void (DOMString details);
 
 [TreatNonObjectAsNull]
 callback ErrorHandler = void (DOMString details);
@@ -9442,7 +9442,7 @@ manager.handler2;            // Evaluates to null.</pre>
                 extended attribute, and one operation with an argument that has
                 the extended attribute:
               
-              <pre class="idl">interface Dog {
+              <pre class="idl-example">interface Dog {
   attribute DOMString name;
   [TreatNullAs=EmptyString] attribute DOMString owner;
 
@@ -9557,7 +9557,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
                 an interface that has two <a class="dfnref" href="#dfn-attribute">attributes</a>,
                 one of which is designated as <a class="xattr" href="#Unforgeable">[Unforgeable]</a>:
               
-              <pre class="idl">interface System {
+              <pre class="idl-example">interface System {
   [Unforgeable] readonly attribute DOMString username;
   readonly attribute long long loginTime;
 };</pre>
@@ -9621,7 +9621,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             
             <div class="note">
               For example, with the following IDL:
-              <pre class="idl example">interface Thing {
+              <pre class="idl-example">interface Thing {
   void f();
   [Unscopable] g();
 };</pre>
@@ -10456,7 +10456,7 @@ with (thing) {
                 <a class="dfnref" href="#dfn-supplemental-interface">non-supplemental interface</a>.
                 For example, with the following IDL:
               
-              <pre class="idl example">[NoInterfaceObject]
+              <pre class="idl-example">[NoInterfaceObject]
 interface Foo {
 };
 
@@ -11376,7 +11376,7 @@ partial interface Window {
                 this <a class="dfnref" href="#dfn-operation">operation</a> instead of the
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>:
               
-              <pre class="idl example">void forEach(Function callback, optional any thisArg);</pre>
+              <pre class="idl-example">void forEach(Function callback, optional any thisArg);</pre>
               
                 with the following prose definition:
               
@@ -12313,7 +12313,7 @@ partial interface Window {
             
               For example, consider the following IDL:
             
-            <pre class="idl example">interface A {
+            <pre class="idl-example">interface A {
   void f();
 };
 
@@ -13563,7 +13563,7 @@ C implements A;</pre>
               where that <span class="estype">Function</span> object originated.
               For example, consider the IDL:
             
-            <pre class="idl example">interface A {
+            <pre class="idl-example">interface A {
 
   /**
    * Calls computeSquareRoot on m, passing x as its argument.
@@ -13625,7 +13625,7 @@ try {
               is defined to throw an exception whenever an attempt is made
               to get its value.
             
-            <pre class="idl">interface Dahut {
+            <pre class="idl-example">interface Dahut {
   attribute DOMString type;
 };
 
@@ -13678,7 +13678,7 @@ d.type = et;
         
           <h3 id="common-ArrayBufferView">ArrayBufferView</h3>
 
-          <pre class="idl example">typedef (Int8Array or Int16Array or Int32Array or
+          <pre class="idl-example">typedef (Int8Array or Int16Array or Int32Array or
          Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
          Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef="">ArrayBufferView</dfn>;</pre>
           
@@ -13690,7 +13690,7 @@ d.type = et;
         
           <h3 id="common-BufferSource">BufferSource</h3>
 
-          <pre class="idl example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
+          <pre class="idl-example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
           
             The <span class="idltype">BufferSource</span> typedef is used to represent objects
             that are either themselves an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> or which
@@ -13701,7 +13701,7 @@ d.type = et;
         
           <h3 id="common-DOMTimeStamp">DOMTimeStamp</h3>
 
-          <pre class="idl example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef="">DOMTimeStamp</dfn>;</pre>
+          <pre class="idl-example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef="">DOMTimeStamp</dfn>;</pre>
           
             The <span class="idltype">DOMTimeStamp</span> type is used for representing
             a number of milliseconds, either as an absolute time (relative to some epoch)
@@ -13713,7 +13713,7 @@ d.type = et;
         
           <h3 id="common-Function">Function</h3>
 
-          <pre class="idl example">callback <dfn id="Function" callback="">Function</dfn> = any (any... arguments);</pre>
+          <pre class="idl-example">callback <dfn id="Function" callback="">Function</dfn> = any (any... arguments);</pre>
           
             The <span class="idltype">Function</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values with no restriction on what arguments
@@ -13724,7 +13724,7 @@ d.type = et;
         
           <h3 id="common-Function">VoidFunction</h3>
 
-          <pre class="idl example">callback <dfn id="VoidFunction" callback="">VoidFunction</dfn> = void ();</pre>
+          <pre class="idl-example">callback <dfn id="VoidFunction" callback="">VoidFunction</dfn> = void ();</pre>
           
             The <span class="idltype">VoidFunction</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values that take no arguments and do not
