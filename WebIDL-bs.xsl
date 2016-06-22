@@ -632,9 +632,7 @@
 
   <xsl:template match='*'/>
 
-  <xsl:template match='comment()'>
-    <xsl:copy/>
-  </xsl:template>
+  <xsl:template match='comment()' />
 
   <xsl:template match='comment()[starts-with(., "JAVA")]' />
 </xsl:stylesheet>

@@ -1,11 +1,4 @@
-<!--
-  index.xml
-  Web IDL (Second Edition)
-
-  This is written in XHTML 1.0 Strict with an inline <options> element that
-  helps the WebIDL.xsl stylesheet process the document (generating a table
-  of contents, section numbers, certain processing instructions).
-  --><html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
   
 
   
@@ -41,13 +34,7 @@
   Abstract: are interoperable.
 </pre>
 
-    <!--
-    <div id='publication-warning'>
-      <strong>This document is in the process of being prepared to be published as a Candidate Recommendation.
-      Please note that it as yet has not been published as a CR and that this document
-      at dev.w3.org is still to be considered an unofficial draft.</strong> <br/> <button onclick="document.body.removeChild(this.parentNode)">Dismiss</button>
-    </div>
-    -->
+    
 
     
 
@@ -71,7 +58,7 @@
         <a href="https://github.com/heycam/webidl/commits/gh-pages/Overview.xml">older changes</a>.
       
       
-        <!--In addition to the issues marked by editorial notes in this document,-->
+        
         There is a <a href="https://www.w3.org/Bugs/Public/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=WebAppsWG&amp;component=WebIDL&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse%20same%20sort%20as%20last%20time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">bug tracker</a>
         for the specification.
       
@@ -296,11 +283,9 @@ interface GraphicalWindow {
 
   attribute Paint currentPaint;
 
-  void drawRectangle(double x, double y, double width, double height)<!--
-    raises(GraphicsException)-->;
+  void drawRectangle(double x, double y, double width, double height);
 
-  void drawText(double x, double y, DOMString text)<!--
-    raises(GraphicsException)-->;
+  void drawText(double x, double y, DOMString text);
 };</pre>
           
             Here, four <a class="dfnref" href="#dfn-interface">interfaces</a>
@@ -834,18 +819,7 @@ partial interface <em>SomeInterface</em> {
             The relevant language binding determines how interfaces correspond to constructs
             in the language.
           
-          <!--
-          <p>
-            An <dfn id='dfn-interface-forward-declaration'>interface forward declaration</dfn>
-            is a definition that matches the <a class='sym' href='#prod-Interface'>Interface</a> non-terminal
-            whose <a class='sym' href='#prod-InterfaceBody'>InterfaceBody</a> is empty
-            (that is, <a class='sym' href='#prod-InterfaceBody'>InterfaceBody</a> ⇒ ε).  A forward declaration
-            is used to introduce an interface name to allow for the definition of mutually
-            recursive interfaces, since scoped names
-            need to resolve to types that have been
-            <a class='dfnref' href='#dfn-declared-previously'>declared previously</a>.
-          </p>
-          -->
+          
 
           
             The following extended attributes are applicable to interfaces:
@@ -880,17 +854,7 @@ partial interface <em>SomeInterface</em> {
              ε</span></td></tr></table>
 
           <div class="example">
-            <!--
-            <p>
-              The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
-              demonstrates the use of an
-              <a class='dfnref' href='#dfn-interface-forward-declaration'>interface forward declaration</a>
-              to allow the definition of mutually referential <a class='dfnref' href='#dfn-interface'>interfaces</a>.
-              Both <span class='idltype'>Human</span> and <span class='idltype'>Dog</span>
-              inherit from <span class='idltype'>Animal</span>.  Objects that implement
-              either of those two interfaces will thus have a <code>name</code> attribute.
-            </p>
-            -->
+            
             
               The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               demonstrates the definition of two mutually referential <a class="dfnref" href="#dfn-interface">interfaces</a>.
@@ -1262,22 +1226,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
 interface <i>Derived</i> : <i>Ancestor</i> {
   inherit attribute <i>TheType</i> <i>theIdentifier</i>;
 };</pre>
-            <!--
-            <p>
-              The <a class='sym' href='#prod-GetRaises'>GetRaises</a> and
-              <a class='sym' href='#prod-SetRaises'>SetRaises</a> clauses are used
-              to declare the possible exceptions that can be thrown when retrieving
-              the value of and assigning a value to the attribute, respectively.
-              Each scoped name in the
-              <a class='sym' href='#prod-GetRaises'>GetRaises</a> and
-              <a class='sym' href='#prod-SetRaises'>SetRaises</a> clauses
-              <span class='rfc2119'>MUST</span> resolve to an <a class='dfnref' href='#dfn-exception'>exception</a>.
-            </p>
-            <pre class='syntax'>attribute <i>type</i> <i>identifier</i> getraises(<i>scoped-name</i>, <i>…</i>);
-attribute <i>type</i> <i>identifier</i> setraises(<i>scoped-name</i>, <i>…</i>);
-attribute <i>type</i> <i>identifier</i> getraises(<i>scoped-name</i>, <i>…</i>) setraises(<i>scoped-name</i>, <i>…</i>);
-attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name</i>, <i>…</i>);</pre>
-            -->
+            
             
               When the <code>stringifier</code> keyword is used
               in a <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>
@@ -1336,12 +1285,7 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
                 demonstrates how <a class="dfnref" href="#dfn-attribute">attributes</a>
                 can be declared on an <a class="dfnref" href="#dfn-interface">interface</a>:
               
-              <pre class="idl"><!--exception InvalidName {
-  DOMString reason;
-};
-
-exception NoSuchPet { };
--->interface Animal {
+              <pre class="idl">interface Animal {
 
   // A simple attribute that can be set to any string value.
   readonly attribute DOMString name;
@@ -1354,12 +1298,8 @@ interface Person : Animal {
 
   // An attribute whose getter behavior is inherited from Animal, and need not be
   // specified in the description of Person.
-  inherit attribute DOMString name<!-- setraises (InvalidName)-->;
-<!--
-  <span class='comment'>// An attribute whose value cannot be assigned to, and which can raise an</span>
-  <span class='comment'>// exception in some circumstances.</span>
-  readonly attribute DOMString petName getraises (NoSuchPet);
--->};</pre>
+  inherit attribute DOMString name;
+};</pre>
             </div>
           
 
@@ -1488,9 +1428,8 @@ interface Person : Animal {
 
 interface Button {
 
-  // An operation that takes no arguments and returns a boolean<!--, and could possibly</span>
-  <span class='comment'>// raise an exception-->.
-  boolean isMouseOver()<!-- raises (NoPointerDevice)-->;
+  // An operation that takes no arguments and returns a boolean.
+  boolean isMouseOver();
 
   // Overloaded operations.
   void setDimensions(Dimensions size);
@@ -1665,16 +1604,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
   object createColor(double v1, double v2, double v3, double alpha);
 };</pre>
             </div>
-            <!--
-            <p>
-              A <code>raises</code> clause (matching <a class='sym' href='#prod-Raises'>Raises</a>) is used
-              to declare the possible <a class='dfnref' href='#dfn-exception'>exceptions</a>
-              that can be thrown when invoking the operation.
-              Each scoped name in the <code>Raises</code> clause
-              <span class='rfc2119'>MUST</span> resolve to an exception.
-            </p>
-            <pre class='syntax'><i>return-type</i> <i>identifier</i>(<i>arguments</i>…) raises(<i>scoped-name</i>, …);</pre>
-            -->
+            
 
             <p id="callback-operation-exceptions">
               If an implementation attempts to invoke an
@@ -1822,53 +1752,9 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                 objects implementing <span class="idltype">Dictionary</span> will not
                 have that special behavior.  
             </div>
-            <!--
-            <p>
-              <a class='dfnref' href='#dfn-special-operation'>Special operations</a>
-              can be declared using an <a class='dfnref' href='#dfn-operation'>operation</a>
-              that has an <a class='dfnref' href='#dfn-identifier'>identifier</a>
-              and the <code>omittable</code> keyword to indicate that
-              in language bindings that do not support that kind of special operation,
-              the <a class='dfnref' href='#dfn-regular-operation'>regular operation</a>
-              is to be available on the object for use instead.  Such operations are
-              known as <dfn id='dfn-omittable'>omittable</dfn>.
-            </p>
-            <div class='example'>
-              <p>The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
-                declares <a class='dfnref' href='#dfn-special-operation'>special operations</a>
-                with <a class='dfnref' href='#dfn-identifier'>identifiers</a>
-                and using the <code>omittable</code> keyword:</p>
-              <x:codeblock language='idl'>interface Dictionary {
-  readonly attribute unsigned long propertyCount;
-
-  omittable getter float getProperty(DOMString propertyName);
-  omittable setter void setProperty(DOMString propertyName, float propertyValue);
-};</x:codeblock>
-              <p>In language bindings that do not support property getters and setters,
-                such as Java,
-                objects implementing <span class='idltype'>Dictionary</span> will have
-                <span class='idlident'>getProperty</span> and <span class='idlident'>setProperty</span>
-                operations available.  The corresponding Java interface would be:</p>
-              <x:codeblock language='java'>public interface Dictionary {
-
-  long getPropertyCount();
-  float getProperty(String propertyName);
-  void setProperty(String propertyName, float propertyValue);
-}</x:codeblock>
-              <p>
-                These operations will be omitted in language
-                bindings that do support property getters and setters, such as
-                ECMAScript, however.
-              </p>
-              <x:codeblock language='es'>var dictionary = getDictionary();  <span class='comment'>// Get an instance of Dictionary.</span>
-
-dictionary.getProperty;            <span class='comment'>// Actually invokes the property getter with property name "getProperty".</span>
-dictionary.x = 1;                  <span class='comment'>// Invokes the property setter with property name "x" and value 1.</span></x:codeblock>
-            </div>
-            -->
             
-              Defining a special operation <!--without using the <code>omittable</code> keyword
-              on an operation but giving the operation an--> with an <a class="dfnref" href="#dfn-identifier">identifier</a>
+            
+              Defining a special operation  with an <a class="dfnref" href="#dfn-identifier">identifier</a>
               is equivalent to separating the special operation out into its own
               declaration without an identifier.  This approach is allowed to
               simplify prose descriptions of an interface’s operations.
@@ -1891,12 +1777,7 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
   setter void (DOMString propertyName, double propertyValue);
 };</pre>
             </div>
-            <!--
-            <p>
-              The <code>omittable</code> keyword <span class='rfc2119'>MUST NOT</span>
-              appear on an operation that has no identifier.
-            </p>
-            -->
+            
             
               A given <a class="dfnref" href="#dfn-special-keyword">special keyword</a> must not
               appear twice on an operation.
@@ -1959,8 +1840,7 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
                 declared with the <code>legacycaller</code> keyword.
               
               <pre class="syntax">legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-legacycaller <i>return-type</i> (<i>arguments…</i>);<!--
-omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);--></pre>
+legacycaller <i>return-type</i> (<i>arguments…</i>);</pre>
               
                 If multiple legacy callers are specified on an interface, overload resolution
                 is used to determine which legacy caller is invoked when the object is called
@@ -2012,8 +1892,7 @@ f(3);                           // This also evaluates to 12.</pre>
                 declared with the <code>stringifier</code> keyword.
               
               <pre class="syntax">stringifier DOMString <i>identifier</i>();
-stringifier DOMString ();<!--
-omittable stringifier DOMString <i>identifier</i>();--></pre>
+stringifier DOMString ();</pre>
               
                 If an operation used to declare a stringifier does not have an
                 <a class="dfnref" href="#dfn-identifier">identifier</a>, then prose
@@ -2977,30 +2856,7 @@ partial interface A {
                   </dd>
                 </dl>
               </li>
-              <!--
-              <li>If the effective overload set is for regular operations, then:
-                <ol>
-                  <li>
-                    If the target language binding supports object indexing,
-                    then remove from <var>F</var> any operation that is declared
-                    to be an <a class='dfnref' href='#dfn-omittable'>omittable</a>
-                    <a class='dfnref' href='#dfn-getter'>getter</a>,
-                    <a class='dfnref' href='#dfn-setter'>setter</a> or
-                    <a class='dfnref' href='#dfn-deleter'>deleter</a>.
-                  </li>
-                  <li>
-                    If the target language binding supports object calling,
-                    then remove from <var>F</var> any operation that is declared
-                    to be an omittable <a class='dfnref' href='#dfn-legacy-caller'>caller</a>.
-                  </li>
-                  <li>
-                    If the target language binding supports object stringification,
-                    then remove from <var>F</var> any operation that is declared
-                    to be an omittable <a class='dfnref' href='#dfn-stringifier'>stringifier</a>.
-                  </li>
-                </ol>
-              </li>
-              -->
+              
               <li>
                 Let |maxarg| be the maximum number of arguments the operations, constructor extended attributes or callback functions in |F| are declared to take.
                 For <a class="dfnref" href="#dfn-variadic">variadic</a> operations and constructor extended attributes,
@@ -3079,22 +2935,7 @@ partial interface A {
                   &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)&gt; }
               </div>
             </div>
-            <!--
-            <p>
-              The following types are considered to be the <dfn id='dfn-exactly-matchable-types'>exactly matchable types</dfn>:
-            </p>
-            <ul>
-              <li><span class='idltype'>object</span></li>
-              <li><a href='#idl-interface'>interface types</a></li>
-              <li><a href='#idl-dictionary'>dictionary types</a></li>
-              <li><a href='#idl-sequence'>sequence types</a></li>
-              <li><a href='#idl-array'>array types</a></li>
-              <li><a class='dfnref' href='#dfn-nullable-type'>nullable</a> versions of the above types</li>
-              <li>nullable or non-nullable <a href='#idl-union'>union types</a> whose
-                <a class='dfnref' href='#dfn-flattened-union-member-types'>flattened member types</a>
-                include only the above types</li>
-            </ul>
-            -->
+            
             
               Two types are <dfn id="dfn-distinguishable" export="">distinguishable</dfn> if
               at most one of the two <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
@@ -3332,13 +3173,7 @@ partial interface A {
               that has a given type list length, then for those entries there
               must be an index |i| such
               that for each pair of entries the types at index |i| are
-              <a class="dfnref" href="#dfn-distinguishable">distinguishable</a><!--, and either:
-            </p>
-            <ol type='a'>
-              <li>all of the types at index <var>i</var> are <a class='dfnref' href='#dfn-exactly-matchable-types'>exactly matchable types</a>, or</li>
-              <li>there is only one such index <var>i</var>-->.<!--</li>
-            </ol>
-            <p>-->
+              <a class="dfnref" href="#dfn-distinguishable">distinguishable</a>.
               The lowest such index is termed the <dfn id="dfn-distinguishing-argument-index" export="">distinguishing argument index</dfn>
               for the entries of the effective overload set with the given type list length.
             
@@ -3394,46 +3229,7 @@ partial interface A {
                 the overloading is invalid.
               
             </div>
-            <!--
-            <div class='note'>
-              <p>
-                These restrictions on argument types reduce
-                the possibility of resolution ambiguity in
-                <a class='dfnref' href='#dfn-overloaded'>overloaded</a> operations
-                and constructors, but do not completely
-                eliminate it.  In the ECMAScript language binding, the
-                restrictions still can result in overloaded operation and constructor invocations
-                that cannot be distinguished solely based on the values passed to
-                the corresponding function.  For example, with the following
-                <a class='dfnref' href='#dfn-interface'>interfaces</a>:
-              </p>
-              <x:codeblock language='idl'>interface A {
-  <span class='comment'>// ...</span>
-};
-
-interface B {
-  <span class='comment'>// ...</span>
-};
-
-interface C {
-  void f(A? x);
-  void f(B? x);
-};</x:codeblock>
-              <p>
-                it is possible to pass an object that implements both <span class='idltype'>A</span>
-                and <span class='idltype'>B</span> to <code>f</code>.  Similarly,
-                passing <span class='esvalue'>null</span> to <code>f</code>
-                would also be ambiguous.  Since the ECMAScript
-                language binding provides no way to disambiguate such calls,
-                the interface description will need to
-                describe which operation is invoked in these cases.  (It is
-                acceptable not to describe this if there is no observable
-                difference in behavior for a particular choice of operation
-                or constructor to disambiguate the call, or if no object will
-                actually implement the two interfaces, for example.)
-              </p>
-            </div>
-            -->
+            
           
 
           
@@ -3600,12 +3396,7 @@ for (let session of sm) {
               <a class="xattr" href="#Exposed">[Exposed]</a>,
               <a class="xattr" href="#SecureContext">[SecureContext]</a>.
             
-            <!--
-            <p>
-              No <a class='dfnref' href='#dfn-extended-attribute'>extended attributes</a>
-              defined in this specification are applicable to <code>iterator object</code> declarations.
-            </p>
-            -->
+            
 
             <table class="grammar"><tr id="proddef-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#prod-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="proddef-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#prod-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br/> |
              ε</span></td></tr></table>
@@ -4246,37 +4037,37 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
                   <td><dfn id="dom-domexception-invalid_access_err" for="DOMException" const="" export=""><code>INVALID_ACCESS_ERR</code></dfn> (15)</td>
                 </tr>
                 <tr>
-                  <!-- XHR -->
+                  
                   <td>"<dfn id="securityerror" exception="" export=""><code>SecurityError</code></dfn>"</td>
                   <td>The operation is insecure.</td>
                   <td><dfn id="dom-domexception-security_err" for="DOMException" const="" export=""><code>SECURITY_ERR</code></dfn> (18)</td>
                 </tr>
                 <tr>
-                  <!-- XHR -->
+                  
                   <td>"<dfn id="networkerror" exception="" export=""><code>NetworkError</code></dfn>"</td>
                   <td>A network error occurred.</td>
                   <td><dfn id="dom-domexception-network_err" for="DOMException" const="" export=""><code>NETWORK_ERR</code></dfn> (19)</td>
                 </tr>
                 <tr>
-                  <!-- XHR -->
+                  
                   <td>"<dfn id="aborterror" exception="" export=""><code>AbortError</code></dfn>"</td>
                   <td>The operation was aborted.</td>
                   <td><dfn id="dom-domexception-abort_err" for="DOMException" const="" export=""><code>ABORT_ERR</code></dfn> (20)</td>
                 </tr>
                 <tr>
-                  <!-- Workers -->
+                  
                   <td>"<dfn id="urlmismatcherror" exception="" export=""><code>URLMismatchError</code></dfn>"</td>
                   <td>The given URL does not match another URL.</td>
                   <td><dfn id="dom-domexception-url_mismatch_err" for="DOMException" const="" export=""><code>URL_MISMATCH_ERR</code></dfn> (21)</td>
                 </tr>
                 <tr>
-                  <!-- HTML -->
+                  
                   <td>"<dfn id="quotaexceedederror" exception="" export=""><code>QuotaExceededError</code></dfn>"</td>
                   <td>The quota has been exceeded.</td>
                   <td><dfn id="dom-domexception-quota_exceeded_err" for="DOMException" const="" export=""><code>QUOTA_EXCEEDED_ERR</code></dfn> (22)</td>
                 </tr>
                 <tr>
-                  <!-- XHR -->
+                  
                   <td>"<dfn id="timeouterror" exception="" export=""><code>TimeoutError</code></dfn>"</td>
                   <td>The operation timed out.</td>
                   <td><dfn id="dom-domexception-timeout_err" for="DOMException" const="" export=""><code>TIMEOUT_ERR</code></dfn> (23)</td>
@@ -4287,68 +4078,68 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
                   <td><dfn id="dom-domexception-invalid_node_type_err" for="DOMException" const="" export=""><code>INVALID_NODE_TYPE_ERR</code></dfn> (24)</td>
                 </tr>
                 <tr>
-                  <!-- HTML -->
+                  
                   <td>"<dfn id="datacloneerror" exception="" export=""><code>DataCloneError</code></dfn>"</td>
                   <td>The object can not be cloned.</td>
                   <td><dfn id="dom-domexception-data_clone_err" for="DOMException" const="" export=""><code>DATA_CLONE_ERR</code></dfn> (25)</td>
                 </tr>
                 <tr>
-                  <!-- Encoding -->
+                  
                   <td>"<dfn id="encodingerror" exception="" export=""><code>EncodingError</code></dfn>"</td>
                   <td>The encoding operation (either encoded or decoding) failed.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- File API -->
+                  
                   <td>"<dfn id="notreadableerror" exception="" export=""><code>NotReadableError</code></dfn>"</td>
                   <td>The I/O read operation failed.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Indexed DB / Web Crypto -->
+                  
                   <td>"<dfn id="unknownerror" exception="" export=""><code>UnknownError</code></dfn>"</td>
                   <td>The operation failed for an unknown transient reason (e.g. out of memory).</td>
-                  <!-- The operation failed for reasons unrelated to the database itself and not covered by any other errors. -->
+                  
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Indexed DB -->
+                  
                   <td>"<dfn id="constrainterror" exception="" export=""><code>ConstraintError</code></dfn>"</td>
                   <td>A mutation operation in a transaction failed because a constraint was not satisfied.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Indexed DB / Web Crypto -->
+                  
                   <td>"<dfn id="dataerror" exception="" export=""><code>DataError</code></dfn>"</td>
                   <td>Provided data is inadequate.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Indexed DB -->
+                  
                   <td>"<dfn id="transactioninactiveerror" exception="" export=""><code>TransactionInactiveError</code></dfn>"</td>
                   <td>A request was placed against a transaction which is currently not active, or which is finished.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Indexed DB -->
+                  
                   <td>"<dfn id="readonlyerror" exception="" export=""><code>ReadOnlyError</code></dfn>"</td>
                   <td>The mutating operation was attempted in a "readonly" transaction.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Indexed DB -->
+                  
                   <td>"<dfn id="versionerror" exception="" export=""><code>VersionError</code></dfn>"</td>
                   <td>An attempt was made to open a database using a lower version than the existing version.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- Web Crypto -->
+                  
                   <td>"<dfn id="operationerror" exception="" export=""><code>OperationError</code></dfn>"</td>
                   <td>The operation failed for an operation-specific reason.</td>
                   <td>—</td>
                 </tr>
                 <tr>
-                  <!-- HTML -->
+                  
                   <td>"<dfn id="notallowederror" exception="" export=""><code>NotAllowedError</code></dfn>"</td>
                   <td>The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.</td>
                   <td>—</td>
@@ -4731,78 +4522,10 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             Note that user objects can only implement <a class="dfnref" href="#dfn-callback-interface">callback interfaces</a>
             and platform objects can only implement non-callback interfaces.
           
-          <!--
-          <p>
-            When a non-platform object is passed to a platform object expecting an object of a
-            particular interface, be it as an argument value in an operation invocation,
-            by assignment to an attribute, or through a dictionary member, and that
-            interface is not a callback interface, then
-            the object will not be considered to be one that implements that interface.
-            Language bindings define when this check is made and what happens
-            in response in such a case (such as throwing an exception).
-          </p>
-          -->
+          
         
 
-        <!--
-        <div id='idl-valuetypes' class='section'>
-          <h3>Valuetypes</h3>
-
-          <p>
-            Valuetypes in OMG IDL are used to define types similar to structs in C.
-            That is, they define composite types that can have zero or more
-            member variables that are passed by value.  OMG IDL valuetypes have the
-            additional feature of allowing <span class='idlvalue'>null</span> to
-            be passed in place of an object with those member variables.  An
-            OMG IDL boxed valuetype is a special case, where the valuetype has
-            a single member.
-          </p>
-          <p>
-            The IDL defined in this specification supports only
-            <dfn id='dfn-boxed-valuetype'>boxed valuetypes</dfn>, which are definitions
-            that match the <a class='sym' href='#prod-Valuetype'>Valuetype</a> non-terminal.
-            The <a class='dfnref' href='#dfn-identifier'>identifier</a> of the valuetype
-            is given by the <a class='sym' href='#prod-identifier'>identifier</a> terminal,
-            and the type being boxed is given by the
-            <a class='sym' href='#prod-BoxedType'>BoxedType</a> non-terminal.  If the
-            <a class='sym' href='#prod-BoxedType'>BoxedType</a> is a
-            <a class='sym' href='#prod-ScopedName'>ScopedName</a>, then it
-            <span class='rfc2119'>MUST</span> refer to a type that does not allow
-            <span class='idlvalue'>null</span> as a value (i.e.,
-            <a class='idltype' href='#idl-boolean'>boolean</a>,
-            <a class='idltype' href='#idl-octet'>octet</a>,
-            <a class='idltype' href='#idl-short'>short</a>,
-            <a class='idltype' href='#idl-unsigned-short'>unsigned short</a>,
-            <a class='idltype' href='#idl-unsigned-long'>unsigned long</a>,
-            <a class='idltype' href='#idl-long-long'>long long</a>,
-            <a class='idltype' href='#idl-unsigned-long-long'>unsigned long long</a>,
-            <a class='idltype' href='#idl-float'>float</a>,
-            <a class='idltype' href='#idl-double'>double</a> or
-            <a class='idltype' href='#idl-sequence'>sequence&lt;<var>T</var>></a>.
-          </p>
-          <p>
-            Boxed valuetypes are essentially used just for allowing a <span class='idlvalue'>null</span>
-            value to be used where normally a non-null value could only be used.
-          </p>
-
-          <div class='example'>
-            <p>
-              The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
-              demonstrates the use of <a class='dfnref' href='#dfn-boxed-valuetype'>boxed valuetypes</a>:
-            </p>
-            <x:codeblock language='idl'>valuetype OptionalFloat float;
-
-interface Person {
-
-  <span class='comment'>// This attribute can be a float or null.  In this case, null might be used</span>
-  <span class='comment'>// to represent the case where the height of the person is unknown.</span>
-  readonly attribute OptionalFloat height;
-};</x:codeblock>
-          </div>
-
-          <?productions grammar Valuetype ValuetypeRest?>
-        </div>
-        -->
+        
 
         
           <h3 id="idl-types">Types</h3>
@@ -5890,7 +5613,7 @@ interface Person {
           
             An <dfn id="dfn-extended-attribute" export="">extended attribute</dfn> is an annotation
             that can appear on
-            <!--a class='dfnref' href='#dfn-definition'-->definitions<!--/a-->,
+            definitions,
             <a class="dfnref" href="#dfn-interface-member">interface members</a>,
             <a class="dfnref" href="#dfn-dictionary-member">dictionary members</a>,
             and <a class="dfnref" href="#dfn-operation">operation</a> arguments, and
@@ -7528,79 +7251,7 @@ a[4] = 20;
 var b = canvas.getLastDrawnPolygon();
 alert(b[4]);    // This would alert "50".</pre>
             </div>
-            <!--
-            <div class='ignore'>
-              <p>
-                IDL <a class='idltype' href='#idl-sequence'>sequence&lt;<var>T</var>></a> values are represented by
-                ECMAScript <span class='estype'>Object</span> values with special properties.
-              </p>
-              <p>
-                Values <a class='dfnref' href='#dfn-pass-to-host-object'>passed to a host object</a> expecting a
-                <a class='idltype' href='#idl-sequence'>sequence&lt;<var>T</var>></a>
-                <span class='rfc2119'>MUST</span> be objects with a <span class='prop'>length</span> property whose
-                value, after being converted to a <span class='estype'>Number</span> by the
-                ToUint32 operator, is a non-negative integer that specifies the number
-                of elements in the sequence.  This number <span class='rfc2119'>MUST</span> also be equal
-                to the result of passing the original <span class='prop'>length</span> property value to the <a>ToNumber</a> algorithm.
-                Assigning to the <span class='prop'>length</span> property a non-negative
-                integer <span class='estype'>Number</span> <span class='rfc2119'>MUST</span> change the length of the sequence
-                to be the given number.  If the sequence is lengthened, new elements <span class='rfc2119'>MUST</span> be given
-                the value that the <span class='esvalue'>undefined</span> value is converted to
-                when handling it according to the rules in this section for the type <var>T</var>.
-                If the sequence is shortened, the values beyond the new length of the sequence
-                are lost.
-                The object representing the sequence <span class='rfc2119'>MUST</span> return the element in
-                the sequence at position <var>n</var> when its
-                <span class='prop'>[[Get]]</span> internal method is invoked with
-                <var>n</var> as its argument.
-              </p>
-              <p>
-                Note that an ECMAScript <span class='estype'>Array</span>
-                is an object that matches this description.  Implementations are free,
-                however, to use a host object to implement the sequence in the
-                interests of efficiency.
-              </p>
-              <p>
-                When the host object
-                gets an element of the sequence using the <span class='prop'>[[Get]]</span> method,
-                the returned value <span class='rfc2119'>MUST</span> first be handled according to
-                the rules in this section for the type <var>T</var>.
-              </p>
-              <p>
-                If a host object expecting a
-                <a class='idltype' href='#idl-sequence'>sequence&lt;<var>T</var>></a>
-                is passed a value which is not an object that conforms to the above rules
-                (for example, it does not have a <span class='prop'>length</span> property), then
-                a <span class='estype'>TypeError</span> exception <span class='rfc2119'>MUST</span> be thrown.
-              </p>
-              <p>
-                While sequences are passed by reference (being objects), it is
-                of course up to the interface designer whether, for example,
-                after assigning a sequence to a property on a host object
-                that same seqence object is returned when getting the property.
-                The behavior of storing sequences in the host object in this
-                manner should be made clear in prose describing the interface.
-              </p>
-              <!- p>
-                Sequences are passed by reference.  If a reference to a sequence
-                passed to a host object is kept (whether internally or as the
-                value of an attribute), and the passed sequence is not an ECMAScript
-                <span class='estype'>Array</span> object, the kept reference must
-                be a newly created ECMAScript <span class='estype'>Array</span> object
-                whose contents is the elements of the sequence.
-              </p>
-              <div class='ednote'>
-                <p>Change the above para according to comments in
-                  <a href='http://www.w3.org/mid/op.tumn9hy664w2qv@annevk-t60.oslo.opera.com'>this thread</a>.</p>
-              </div ->
-              <div class='ednote'>
-                <p>
-                  Should there be a way to declare a sequence whose length cannot be changed
-                  from script?
-                </p>
-              </div>
-            </div>
-            -->
+            
           
 
           
@@ -9325,88 +8976,7 @@ map2.toString;</pre>
             </div>
           
 
-          <!--
-          <div id='PrototypeRoot' class='section'>
-            <h4>[PrototypeRoot]</h4>
-
-            <div class='ednote'>
-              <p>Ian suggests that <span class='xattr'>[PrototypeRoot]</span> might not need to exist.
-                <a href='http://www.w3.org/mid/Pine.LNX.4.62.0906200730520.16244@hixie.dreamhostps.com'>(Mail.)</a></p>
-            </div>
-            <p>
-              If the <a class='xattr' href='#PrototypeRoot'>[PrototypeRoot]</a>
-              <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>
-              appears on an <a class='dfnref' href='#dfn-interface'>interface</a>
-              <var>A</var>, it indicates that it serves as the root of a prototype
-              ancestor hierarchy.  For any interface <var>B</var> that has
-              <var>A</var> as an ancestor, each interface in the inheritance
-              tree starting with an interface that <var>B</var> inherits from and
-              ending with <var>A</var> will be a
-              <a class='dfnref' href='#dfn-prototype-ancestor'>prototype ancestor</a>
-              of <var>B</var>.  It also plays a role in determining the value
-              of a host object’s internal <span class='prop'>[[Prototype]]</span>
-              property value when the object implements more than one interface.
-              See <a href='#interface-prototype-object'>section <?sref interface-prototype-object?></a>
-              and <a href='#host-objects'>section <?sref host-objects?></a> for details.
-            </p>
-            <p>
-              The <a class='xattr' href='#PrototypeRoot'>[PrototypeRoot]</a>
-              extended attribute <span class='rfc2119'>MUST</span> <a class='dfnref' href='#dfn-xattr-no-arguments'>take no arguments</a>,
-              and <span class='rfc2119'>MUST NOT</span> appear on an
-              <a class='dfnref' href='#dfn-interface'>interface</a> that
-              <a class='dfnref' href='#dfn-inherit'>inherits</a> from another
-              interface.  An interface inheritance hierarchy
-              <span class='rfc2119'>MUST NOT</span> have multiple paths from
-              one interface to another that has the
-              <a class='xattr' href='#PrototypeRoot'>[PrototypeRoot]</a>
-              extended attribute.
-            </p>
-            <div class='example'>
-              <p>
-                The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
-                defines a hierarchy of <a class='dfnref' href='#dfn-interface'>interfaces</a>
-                whose rootmost interface is annotated with the
-                <a class='xattr' href='#PrototypeRoot'>[PrototypeRoot]</a>
-                <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>.
-                Other interfaces are defined to be implemented on objects that
-                implement this prototype root interface, but properties for
-                these other interfaces will be made available in the prototype
-                chain through a <a class='dfnref' href='#dfn-mixin-prototype-object'>mixin prototype object</a>.
-              </p>
-              <x:codeblock language='idl'>[PrototypeRoot]
-interface Node {
-  readonly attribute unsigned short nodeType;
-};
-
-interface Element : Node {
-  void appendChild(Node n);
-  <span class='comment'>// ...</span>
-};
-
-interface HTMLElement : Element {
-  void focus();
-  <span class='comment'>// ...</span>
-};
-
-interface EventTarget {
-  void addEventListener(/* ... */);
-  <span class='comment'>// ...</span>
-};
-
-Node implements EventTarget;</x:codeblock>
-              <p>
-                An ECMAScript implementation implementing these interfaces would
-                have a prototype chain as follows, where <var>E</var> is an
-                instance of <span class='idltype'>HTMLElement</span>:
-              </p>
-              <div class='diagram'>
-                <object data='PrototypeRoot-example.svg' type='image/svg+xml' style='width: 37em; height: 45em' width='1' height='1'>
-                  <img src='PrototypeRoot-example.png' width='500' height='608' alt='The prototype of E is the mixin prototype object for E.  This mixin prototype object has an "addEventListener" property.  The prototype of the mixin prototype object is the HTMLElement prototype object, whose prototype is the Element prototype object, whose prototype is the Node prototype object, whose prototype is the Object prototype object.'/>
-                </object>
-              </div>
-            </div>
-          </div>
-          -->
+          
 
           
             <h4 id="PutForwards">[PutForwards]</h4>
@@ -10631,22 +10201,8 @@ with (thing) {
                 interface.  Interfaces that do not have a constructor will throw
                 an exception when called as a function.
               
-                <!--
-              <p>
-                then the interface object <span class='rfc2119'>MUST</span> have a
-                <span class='prop'>[[Call]]</span> internal property, which allows
-                construction of objects that implement the given interface.
-                -->
-                <!--  The behavior
-                of this <span class='prop'>[[Construct]]</span> method is not
-                necessarily the same as that described for <span class='estype'>Function</span> objects in
-                section 13.2.2 of the
-                <cite>ECMAScript Language Specification, 5th Edition</cite>
-                <a href='#ref-ECMA-262'>[ECMA-262]</a>, but it
-                <span class='rfc2119'>MUST</span> return an object that implements
-                the given interface if it returns normally (that is, if it does not
-                throw an exception).
-              </p>-->
+                
+                
               
                 The internal <span class="prop">[[Call]]</span> method
                 of the interface object behaves as follows, assuming
@@ -11083,61 +10639,7 @@ partial interface Window {
             
           
 
-          <!--
-          <div id='mixin-prototype' class='section'>
-            <h4>Mixin prototype objects</h4>
-
-            <p>
-              If an object implements any interfaces other than those as declared in the IDL,
-              then these interfaces are called <dfn id='dfn-mixin-interface'>mixin interfaces</dfn>
-              for the object.  The <dfn id='dfn-mixin-prototype-object'>mixin prototype object</dfn>
-              for a given object <var>O</var> is an object as follows:
-            </p>
-            <ul>
-              <li>
-                The object has properties that are the union of all properties that initially exist on <var>O</var>’s
-                <a class='dfnref' href='#dfn-mixin-interface'>mixin interfaces</a>’
-                <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype objects</a>.
-                If there are multiple properties with the same name,
-                then it is undefined which of those properties ends up on
-                the mixin prototype object.
-              </li>
-              <li>
-                The object’s internal <span class='prop'>[[Prototype]]</span> property
-                value is a reference to the <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>
-                for the most derived non-mixin interface that <var>O</var> implements,
-                or, if the object implements no non-mixin interfaces, a reference to the
-                <span class='estype'>Object</span> prototype object
-                (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 15.2.4).</li>
-            </ul>
-            <p>
-              If two objects have the same set of <a class='dfnref' href='#dfn-mixin-interface'>mixin interfaces</a>,
-              then their <a class='dfnref' href='#dfn-mixin-prototype-object'>mixin prototype objects</a>
-              <span class='rfc2119'>MUST</span> be the same object.
-            </p>
-
-            XXX unfinished example
-            <div class='example'>
-              <p>
-                The following example illustrates a case when a <a class='dfnref' href='#dfn-mixin-protoype-object'>mixin prototype object</a>
-                will exist.  Consider the following IDL:
-              </p>
-              <x:codeblock language='idl'>interface Animal {
-  DOMString latinName;
-};
-
-interface Human {
-  DOMString name;
-};
-
-interface LivingHuman {
-  unsigned short age;
-};
-
-interface
-            </div>
-          </div>
-          -->
+          
 
           
             <h4 id="es-constants">Constants</h4>
@@ -12876,111 +12378,8 @@ C implements A;</pre>
             of the <a class="dfnref" href="#dfn-primary-interface">primary interface</a>
             from the <a class="dfnref" href="#dfn-platform-object">platform object</a>’s newly associated global environment.
           
-          <!--
-          <p>
-            The value of the host object’s internal <span class='prop'>[[Prototype]]</span>
-            property is determined as follows:
-          </p>
-          <ul>
-            <li>
-              If the host object implements no <a class='dfnref' href='#dfn-interface'>interfaces</a>,
-              then its internal <span class='prop'>[[Prototype]]</span> property
-              value is a reference to the <span class='estype'>Object</span>
-              prototype object from the object’s associated global environment.
-            </li>
-            <li>
-              If the host object implements a single
-              <a class='dfnref' href='#dfn-interface'>interface</a>, then its
-              internal <span class='prop'>[[Prototype]]</span> property is a
-              reference to the
-              <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>
-              from the object’s associated global environment for that interface.
-            </li>
-            <li>
-              Otherwise, if the host object has a <a class='dfnref' href='#dfn-primary-prototype-interface'>primary prototype interface</a>
-              and implements no interfaces other than its primary
-              prototype interface and all of its ancestors, then the value of
-              the internal <span class='prop'>[[Prototype]]</span> property is
-              a reference to the
-              <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>
-              from the host object’s associated global environment
-              for the host object’s primary prototype interface.
-            </li>
-            <li>
-              Otherwise, the host object implements at least two
-              <a class='dfnref' href='#dfn-interface'>interfaces</a>, and has no
-              <a class='dfnref' href='#dfn-primary-prototype-interface'>primary prototype interface</a>
-              or implements some interfaces other than its primary prototype
-              interface and all of its ancestors.  The value of the
-              internal <span class='prop'>[[Prototype]]</span> property is
-              a reference to the <a class='dfnref' href='#dfn-host-object-mixin-prototype-object'>host object mixin prototype object</a>
-              for the host object (defined below).
-            </li>
-          </ul>
-          -->
-          <!--
-              of that interface.
-            determined as follows:
-          </p>
-          <ul>
-            <li>
-              If the host object implements a single
-              <a class='dfnref' href='#dfn-interface'>interface</a>, then the
-              value of the internal <span class='prop'>[[Class]]</span>
-              property <span class='rfc2119'>MUST</span> be the
-              <a class='dfnref' href='#dfn-identifier'>identifier</a>
-              of that interface.
-            </li>
-            <li>
-              Otherwise, if the host object has a
-              <a class='dfnref' href='#dfn-primary-prototype-interface'>primary prototype interface</a>,
-              then the value of the internal <span class='prop'>[[Class]]</span>
-              property <span class='rfc2119'>MUST</span> be the
-              identifier of that interface.
-            </li>
-            <li>
-              Otherwise, no particular value is required to be used for the
-              value of the internal <span class='prop'>[[Class]]</span>
-              property.
-            </li>
-          </ul>
-          <div class='ednote'>
-            <p>Should there be more restrictions on the <span class='prop'>[[Class]]</span>?
-              <a href='http://www.w3.org/mid/Pine.LNX.4.62.0903072358030.2690@hixie.dreamhostps.com'>(Mail.)</a></p>
-          </div>
-
-          <div id='host-object-mixin-prototype' class='section'>
-            <h4>Host object mixin prototype object</h4>
-
-            <p>
-              The <dfn id='dfn-host-object-mixin-prototype-object'>host object mixin prototype object</dfn>
-              for a given host object is an object as follows:
-            </p>
-            <ul>
-              <li>The object has properties that are the union of all
-                properties that exist on the <a class='dfnref' href='#dfn-interface'>interfaces</a>
-                that the host object implements and which are not the host object’s
-                <a class='dfnref' href='#dfn-primary-prototype-interface'>primary prototype interface</a>
-                or one of its ancestors.</li>
-              <li>The object’s internal <span class='prop'>[[Prototype]]</span> property value
-                is a reference to the <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>
-                for the host object’s <a class='dfnref' href='#dfn-primary-prototype-interface'>primary prototype interface</a>,
-                or, if the host object has no primary prototype interface, a reference to the
-                <span class='estype'>Object</span> prototype object.  The
-                prototype object chosen for the <span class='prop'>[[Prototype]]</span> property
-                value is the one from the host object’s associated global environment.</li>
-            </ul>
-            <p>
-              If two host objects implement the same set of
-              <a class='dfnref' href='#dfn-interface'>interfaces</a>,
-              have references to <a class='dfnref' href='#dfn-host-object-mixin-prototype-object'>host object mixin prototype objects</a>
-              as their internal <span class='prop'>[[Prototype]]</span> property values,
-              and are both associated with the same global environment,
-              then these host object mixin prototype objects
-              <span class='rfc2119'>MUST</span> be the same object.
-            </p>
-          </div>
-          -->
+          
+          
 
           
             Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
@@ -13101,21 +12500,7 @@ C implements A;</pre>
               <li>Return <span class="esvalue">true</span>.</li>
             </ol>
 
-            <!--
-            <p>
-              Specifications can state that certain named properties are <dfn id='dfn-resolved-before-prototype-properties'>resolved
-              before prototype properties</dfn>.  This means that such named properties will be resolved after real own
-              properties on the object (as with all non-<a class='xattr' href='#OverrideBuiltins'>[OverrideBuiltins]</a> named
-              properties), but before properties from the prototype chain.  Specifications <span class='rfc2119'>SHOULD NOT</span>
-              declare any named properties to be <a href='#dfn-resolved-before-prototype-properties'>resolved before prototype properties</a>
-              unless this is required to specify the behavior of legacy APIs.
-            </p>
-            <div class='note'>
-              <p>At the time of writing, the only known justifiable use of named properties that are
-              <a href='#dfn-resolved-before-prototype-properties'>resolved before prototype properties</a>
-              is the <span class='esvalue'>Window</span> interface defined in HTML5 (<a href='#ref-HTML5'>[HTML5]</a>, section 5.2).</p>
-            </div>
-            -->
+            
             
               A property name is an <dfn id="dfn-unforgeable-property-name" export="">unforgeable property name</dfn> on a
               given platform object if the object implements an <a class="dfnref" href="#dfn-interface">interface</a> that
@@ -13228,9 +12613,7 @@ C implements A;</pre>
                   <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
                   <li>Set |desc|.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     |value| to an ECMAScript value.</li>
-                  <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a><!-- and
-                    <var>O</var> does not implement an interface with the <a class='xattr' href='#Global'>[Global]</a> or <a class='xattr' href='#PrimaryGlobal'>[PrimaryGlobal]</a>
-                    <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>-->, then set
+                  <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then set
                     |desc|.<span class="prop">[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
                     <span class="esvalue">false</span>.</li>
                   <li>If |O| implements an interface with the
@@ -13415,31 +12798,8 @@ C implements A;</pre>
                 of |O|, then:
                 <ol>
                   <li>Let |creating| be true if |P| is not a <a class="dfnref" href="#dfn-supported-property-names">supported property name</a>, and false otherwise.</li>
-                  <!--
-                  <li>If <var>creating</var> is false and <var>O</var> implements an interface with the <a class='xattr' href='#Global'>[Global]</a> or <a class='xattr' href='#PrimaryGlobal'>[PrimaryGlobal]</a>
-                    <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>, then:
-                    <ol>
-                      <li>If the result of calling <a href='http://es5.github.com/#x8.10.1' class='dfnref external'>IsAccessorDescriptor</a>(<var>Desc</var>) is <span class='esvalue'>true</span>, then:
-                        <ol>
-                          <li>Create an own accessor property named <var>P</var> on <var>O</var> whose <span class='prop'>[[Get]]</span>,
-                            <span class='prop'>[[Set]]</span>, <span class='prop'>[[Enumerable]]</span> and <span class='prop'>[[Configurable]]</span>
-                            attribute values are described by <var>Desc</var>.  If the value of an attribute field of <var>Desc</var> is absent,
-                            the attribute of the newly created property is set to its default value (<a href='#ref-ECMA-262'>[ECMA-262]</a>, section 8.6.1).</li>
-                        </ol>
-                      </li>
-                      <li>Otherwise:
-                        <ol>
-                          <li>Create an own data property named <var>P</var> on <var>O</var> whose <span class='prop'>[[Value]]</span>,
-                            <span class='prop'>[[Writable]]</span>, <span class='prop'>[[Enumerable]]</span> and <span class='prop'>[[Configurable]]</span>
-                            attribute values are described by <var>Desc</var>.  If the value of an attribute field of <var>Desc</var> is absent,
-                            the attribute of the newly created property is set to its default value (<a href='#ref-ECMA-262'>[ECMA-262]</a>, section 8.6.1).</li>
-                        </ol>
-                      </li>
-                      <li>Return <span class='esvalue'>true</span>.</li>
-                    </ol>
-                  </li>
-                  -->
-                  <li><!--Otherwise, i-->If |O| implements an interface with the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+                  
+                  <li>If |O| implements an interface with the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
                     <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> or |O| does not have an own property
                     named |P|, then:
                     <ol>
@@ -14282,7 +13642,7 @@ try {
 
 interface ExceptionThrower {
   // This attribute always throws a NotSupportedError and never returns a value.
-  attribute long valueOf<!-- getraises(SomeException)-->;
+  attribute long valueOf;
 };</pre>
             
               Assuming an ECMAScript implementation supporting this interface,
@@ -14958,77 +14318,7 @@ d.type = et;
         
       
 
-      <!--
-      <div id='cr-exit' class='section'>
-        <h2>Candidate Recommendation exit criteria</h2>
-
-        <p class='norm'>This section is informative.</p>
-
-        <p>
-          In order for this document to progress along the W3C Recommendation track
-          to the next stage, Proposed Recommendation, a minimum of three months
-          must have elapsed since the publication of the Candidate Recommendation,
-          and there must be at least two independent, interoperable
-          implementations of each feature.  Each feature may be implemented by a different
-          set of products; there is no requirement that all features be implemented by
-          a single product.  We define independent, interopable and implementation,
-          similarly to the CSS Working Group’s definitions, as follows:
-        </p>
-        <dl>
-          <dt>independent</dt>
-          <dd>each implementation must be developed by a different
-          party and cannot share, reuse, or derive from code used by another
-          qualifying implementation. Sections of code that have no bearing
-          on the implementation of this specification are exempt from this
-          requirement.</dd>
-          <dt>interoperable</dt>
-          <dd>passing the respective test case(s) in the official Web IDL test suite.</dd>
-          <dt>implementation</dt>
-          <dd>a Web browser which:
-            <b>(1)</b> implements the specification as a <a href='#dfn-conforming-ecmascript-implementation'>conforming ECMAScript implementation</a>
-            of the set of IDL fragments from the official Web IDL test suite.
-            <b>(2)</b> is available to the general public. The implementation may be a
-            shipping product or other publicly available version (i.e., beta version,
-            preview release, or nightly build). Non-shipping product releases must have
-            implemented the feature(s) for a period of at least one month in order
-            to demonstrate stability.
-            <b>(3)</b> is not experimental (i.e., a version specifically designed to
-            pass the test suite and is not intended for normal usage going forward).</dd>
-        </dl>
-        <p>
-          The official Web IDL test suite will be based on IDL fragments from existing
-          Web specifications.  The Working Group will select this set of IDL fragments
-          as follows:
-        </p>
-        <ul>
-          <li>The set of IDL fragments must include at least two different uses of a given feature,
-            unless the feature exists to describe legacy features of the Web platform and there
-            is only one such use of the feature in Web specifications, in which case that single
-            use of the feature is sufficient.</li>
-          <li>If there is choice regarding which Web specifications to select an IDL
-            fragment from, the one that is considered more stable and more widely implemented
-            should be chosen.</li>
-          <li>The IDL fragments selected must be <a href='#dfn-conforming-idl-fragment'>conforming IDL fragments</a>.</li>
-        </ul>
-        <p>
-          The term <em>feature</em> is used loosely to enable the Working Group to judge how
-          detailed the test suite ought to be.
-        </p>
-        <p>
-          The following features of Web IDL are considered <em>at risk</em> and may be
-          dropped if they are not in use by any Web specification by the time the test
-          suite is otherwise complete:
-        </p>
-        <ul>
-          <li><a class='dfnref' href='#dfn-partial-dictionary'>partial dictionary definitions</a></li>
-          <li><a class='dfnref' href='#dfn-inherit-exception'>exception inheritance</a></li>
-          <li>the distinction between restricted and <a href='#idl-unrestricted-float'>unrestricted</a> floating point types</li>
-          <li>the <a class='xattr' href='#Clamp'>[Clamp]</a> extended attribute</li>
-          <li>the <a class='xattr' href='#EnforceRange'>[EnforceRange]</a> extended attribute</li>
-          <li>the <a class='xattr' href='#ImplicitThis'>[ImplicitThis]</a> extended attribute</li>
-        </ul>
-      </div>
-      -->
+      
 
       
         <h2 id="changes">Changes</h2>
@@ -15280,7 +14570,7 @@ d.type = et;
                   Added static attributes.
                 
               </li>
-              <!-- below are changes in v1 too -->
+              
               <li>
                 
                   Make it clear that an interface can't be exposed in a global
