@@ -444,8 +444,27 @@ TR: </xsl:text>
       <xsl:apply-templates select='node()'/>
   </xsl:template>
   
+  <xsl:template match='h:div[@id="references"]' />
+  <xsl:template match='h:a[starts-with(@href, "#ref-")]'>
+    <xsl:choose>
+      <xsl:when test='text()="[TYPEDARRAYS]"'>
+        <xsl:text>[[!TYPEDARRAY]]</xsl:text>
+      </xsl:when>
+      <xsl:when test='text()="[DOM3CORE]"'>
+        <xsl:text>[[DOM-LEVEL-3-CORE]]</xsl:text>
+      </xsl:when>
+      <xsl:when test='text()="[XMLNS]"'>
+        <xsl:text>[[XML-NAMES]]</xsl:text>
+      </xsl:when>
+      <xsl:when test='matches(text(), "\[(ECMA-262|IEEE\-754|PERLRE|RFC2119|RFC2781|RFC3629|SECURE\-CONTEXTS|UNICODE)\]")'>
+        <xsl:value-of select='replace(., "\[", "[[!")'/><xsl:text>]</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>[</xsl:text><xsl:value-of select='.'/><xsl:text>]</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
   
-
   <xsl:template match='x:grammar'>
     <table class='grammar'>
       <xsl:apply-templates select='x:prod'/>

@@ -78,7 +78,7 @@ Abstract: are interoperable.
           Technical reports published by the W3C that include programming
           language interfaces have typically been described using the
           Object Management Group’s Interface Definition Language (IDL)
-          <a href="#ref-OMGIDL">[OMGIDL]</a>.  The IDL provides a means to
+          [[OMGIDL]].  The IDL provides a means to
           describe these interfaces in a language independent manner.  Usually,
           additional language binding appendices are included in such
           documents which detail how the interfaces described with the IDL
@@ -163,7 +163,7 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
           interpreted as described in
           <cite><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to
               Indicate Requirement Levels</a></cite>
-          <a href="#ref-RFC2119">[RFC2119]</a>.
+          [[!RFC2119]].
         
         
           The following conformance classes are defined by this specification:
@@ -1036,7 +1036,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 the value of the <a class="sym" href="#prod-float">float</a> token
                 is the IEEE 754 double-precision floating point number closest to
                 |result|.
-                <a href="#ref-IEEE-754">[IEEE-754]</a>
+                [[!IEEE-754]]
               </li>
             </ol>
             
@@ -4029,7 +4029,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
                 </tr>
                 <tr>
                   <td>"<dfn id="namespaceerror" exception="" export=""><code>NamespaceError</code></dfn>"</td>
-                  <td>The operation is not allowed by <cite>Namespaces in XML</cite>. <a href="#ref-XMLNS">[XMLNS]</a></td>
+                  <td>The operation is not allowed by <cite>Namespaces in XML</cite>. [[XML-NAMES]]</td>
                   <td><dfn id="dom-domexception-namespace_err" for="DOMException" const="" export=""><code>NAMESPACE_ERR</code></dfn> (14)</td>
                 </tr>
                 <tr>
@@ -4836,7 +4836,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             
               The <a class="idltype" href="#idl-float">float</a> type is a floating point numeric
               type that corresponds to the set of finite single-precision 32 bit
-              IEEE 754 floating point numbers.  <a href="#ref-IEEE-754">[IEEE-754]</a>
+              IEEE 754 floating point numbers.  [[!IEEE-754]]
             
             
               <a class="idltype" href="#idl-float">float</a> constant values in IDL are
@@ -4861,7 +4861,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             
               The <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is a floating point numeric
               type that corresponds to the set of all possible single-precision 32 bit
-              IEEE 754 floating point numbers, finite and non-finite.  <a href="#ref-IEEE-754">[IEEE-754]</a>
+              IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
             
             
               <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> constant values in IDL are
@@ -4880,7 +4880,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             
               The <a class="idltype" href="#idl-double">double</a> type is a floating point numeric
               type that corresponds to the set of finite double-precision 64 bit
-              IEEE 754 floating point numbers.  <a href="#ref-IEEE-754">[IEEE-754]</a>
+              IEEE 754 floating point numbers.  [[!IEEE-754]]
             
             
               <a class="idltype" href="#idl-double">double</a> constant values in IDL are
@@ -4899,7 +4899,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             
               The <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is a floating point numeric
               type that corresponds to the set of all possible double-precision 64 bit
-              IEEE 754 floating point numbers, finite and non-finite.  <a href="#ref-IEEE-754">[IEEE-754]</a>
+              IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
             
             
               <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> constant values in IDL are
@@ -4918,12 +4918,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             
               The <a class="idltype" href="#idl-DOMString">DOMString</a> type
               corresponds to the set of all possible sequences of <a class="dfnref" href="#dfn-code-unit">code units</a>.
-              Such sequences are commonly interpreted as UTF-16 encoded strings <a href="#ref-RFC2781">[RFC2781]</a>
+              Such sequences are commonly interpreted as UTF-16 encoded strings [[!RFC2781]]
               although this is not required.
               While <a class="idltype" href="#idl-DOMString">DOMString</a> is defined to be an OMG IDL boxed
               <a class="idltype" href="#idl-sequence">sequence&lt;unsigned short&gt;</a>
               valuetype in <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#ID-C74D1578">DOM Level 3 Core</a></cite>
-              (<a href="#ref-DOM3CORE">[DOM3CORE]</a>, section 1.2.1),
+              ([[DOM-LEVEL-3-CORE]], section 1.2.1),
               this document defines <a class="idltype" href="#idl-DOMString">DOMString</a> to be an intrinsic type so as to avoid
               special casing that sequence type in various situations where a
               string is required.
@@ -5008,7 +5008,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             
               The <a class="idltype" href="#idl-ByteString">ByteString</a> type
               corresponds to the set of all possible sequences of bytes.
-              Such sequences might be interpreted as UTF-8 encoded strings <a href="#ref-RFC3629">[RFC3629]</a>
+              Such sequences might be interpreted as UTF-8 encoded strings [[!RFC3629]]
               or strings in some other 8-bit-per-code-unit encoding, although this is not required.
             
             
@@ -5030,7 +5030,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 with <a class="idltype" href="#idl-octet">octet</a> or <a class="idltype" href="#idl-byte">byte</a>
                 elements should be used for holding
                 8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
-                <a href="#ref-TYPEDARRAYS">[TYPEDARRAYS]</a>
+                [[!TYPEDARRAY]]
               
           
 
@@ -5106,7 +5106,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 Note: For ECMAScript objects, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-              <a href="#ref-HTML">[HTML]</a> at the time the <span class="estype">Object</span> value
+              [[HTML]] at the time the <span class="estype">Object</span> value
               is converted to an IDL callback interface type value.  See
               [[#es-interface]] below.
             
@@ -5180,7 +5180,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 Note: As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-              <a href="#ref-HTML">[HTML]</a> at the time an ECMAScript <span class="estype">Object</span> value
+              [[HTML]] at the time an ECMAScript <span class="estype">Object</span> value
               is converted to an IDL callback function type value.  See
               [[#es-callback-function]] below.
             
@@ -5290,7 +5290,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               A <dfn id="dfn-promise-type" export="">promise type</dfn> is a parameterized type
               whose values are references to objects that “is used as a place holder
               for the eventual results of a deferred (and possibly asynchronous) computation
-              result of an asynchronous operation” <a href="#ref-ECMA-262">[ECMA-262]</a>.
+              result of an asynchronous operation” [[!ECMA-262]].
               See <a href="https://tc39.github.io/ecma262/#sec-promise-objects">section 25.4</a>
               of the ECMAScript specification for details on the semantics of promise objects.
             
@@ -5790,7 +5790,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           This section describes how definitions written with the IDL defined in
           [[#idl]] correspond to particular constructs
           in ECMAScript, as defined by the <cite>ECMAScript Language Specification 6th Edition</cite>
-          <a href="#ref-ECMA-262">[ECMA-262]</a>.
+          [[!ECMA-262]].
         
         
           Objects defined in this section have internal properties as described in
@@ -5921,7 +5921,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <li><a class="dfnref" href="#dfn-named-properties-object">named properties objects</a></li>
           </ul>
           
-            Each <a class="external" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 8.2)
+            Each <a class="external" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> ([[!ECMA-262]], section 8.2)
             must have its own unique set of each of
             the <a class="dfnref" href="#dfn-initial-object">initial objects</a>, created
             before control enters any ECMAScript execution context associated with the
@@ -6582,7 +6582,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 <a href="#ref-IEEE-754">[IEEE-754]</a>.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
               <li>
                 Let |S| be the set of finite IEEE 754 single-precision floating
                 point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6668,7 +6668,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 <a href="#ref-IEEE-754">[IEEE-754]</a>.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
               <li>
                 Return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value
                 that has the same numeric value as |x|.
@@ -6844,7 +6844,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 [[#es-user-objects]],
                 then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. <a href="#ref-HTML">[HTML]</a></li>
+                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[HTML]]</li>
               <li><a href="#ecmascript-throw" class="dfnref external">Throw a <span class="esvalue">TypeError</span></a>.</li>
             </ol>
             <p id="interface-to-es">
@@ -7004,7 +7004,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               function type</a> value that represents a reference to the same
               object that |V| represents,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. <a href="#ref-HTML">[HTML]</a>.</li>
+                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[HTML]].</li>
             </ol>
             <p id="callback-function-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
@@ -8215,7 +8215,7 @@ interface Node {
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               is intended for use on the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> as defined
-              in HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2).
+              in HTML5 ([[HTML5]], section 5.2).
             <div class="example">
               In the following example, the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> is defined
@@ -8396,7 +8396,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> is intended
                 to be used by the <span class="idltype">Window</span> interface as defined in
-                HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2).  (<a class="xattr" href="#Global">[Global]</a>
+                HTML5 ([[HTML5]], section 5.2).  (<a class="xattr" href="#Global">[Global]</a>
                 is intended to be used by worker global interfaces.)
                 The <span class="idltype">Window</span> interface exposes frames as properties on the <span class="idltype">Window</span>
                 object.  Since the <span class="idltype">Window</span> object also serves as the
@@ -8512,7 +8512,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
                 mutating <span class="estype">Array</span> methods will generally not
                 succeed on objects implementing <span class="idltype">ImmutableItemList</span>.
                 The exact behavior depends on the definition of <a class="external" href="https://tc39.github.io/ecma262/#sec-properties-of-the-array-prototype-object">the <span class="estype">Array</span> methods
-                  themselves</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 22.1.3).
+                  themselves</a> ([[!ECMA-262]], section 22.1.3).
               
             </div>
           
@@ -8787,7 +8787,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
                 As an example, this extended attribute is suitable for use on
                 the <a href="http://dom.spec.whatwg.org/#dom-document-createelement">createElement</a>
                 operation on the <a href="http://dom.spec.whatwg.org/#document"><span class="idltype">Document</span></a>
-                interface (<a href="#ref-DOM">[DOM]</a>, section 6.5),
+                interface ([[DOM]], section 6.5),
                 since a new object should always be returned when
                 it is called.
               
@@ -9214,7 +9214,7 @@ counter.value;                                           // Evaluates to 3.</pre
                 As an example, this extended attribute is suitable for use on
                 the <a href="http://dom.spec.whatwg.org/#dom-document-implementation">implementation</a>
                 attribute on the <a href="http://dom.spec.whatwg.org/#document"><span class="idltype">Document</span></a>
-                interface (<a href="#ref-DOM">[DOM]</a>, section 6.5),
+                interface ([[DOM]], section 6.5),
                 since the same object is always returned for a given
                 <span class="idltype">Document</span> object.
               
@@ -9237,7 +9237,7 @@ counter.value;                                           // Evaluates to 3.</pre
               it indicates that the interface or interface member is exposed
               only within a
               <a href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a>
-              (<a href="#ref-SECURE-CONTEXTS">[SECURE-CONTEXTS]</a>, section 2).
+              ([[!SECURE-CONTEXTS]], section 2).
             
             
               The <a class="xattr" href="#SecureContext">[SecureContext]</a>
@@ -9349,7 +9349,7 @@ counter.value;                                           // Evaluates to 3.</pre
                 valid use of <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
                 is for the <a class="dfnref" href="#dfn-callback-function">callback functions</a> used as the type
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
-                (<a href="#ref-HTML5">[HTML5]</a>, section 6.1.6.1)
+                ([[HTML5]], section 6.1.6.1)
                 such as <code>onclick</code> and <code>onerror</code>.
               
             
@@ -9669,7 +9669,7 @@ with (thing) {
           </ol>
               Note: The expectation is that the HTML specification defines how a
             security check is performed, and that it will either throw an
-            appropriate exception or return normally. <a href="#ref-HTML">[HTML]</a>
+            appropriate exception or return normally. [[HTML]]
         
 
         
@@ -10456,7 +10456,7 @@ with (thing) {
               <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
               extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
               <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
-              (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 15.2.4).</li>
+              ([[!ECMA-262]], section 15.2.4).</li>
             </ol>
             <div class="note">
               
@@ -10571,7 +10571,7 @@ partial interface Window {
                 <li>Let |object| be the sole object from |O|’s ECMAScript global environment that implements |A|.
                   <div class="note">
                     For example, if the <a class="dfnref" href="#dfn-interface">interface</a> is the <span class="idltype">Window</span>
-                      interface as defined in HTML5 (<a href="#ref-HTML5">[HTML5]</a>, section 5.2), then the sole object
+                      interface as defined in HTML5 ([[HTML5]], section 5.2), then the sole object
                       will be this global environment’s window object.
                   </div>
                 </li>
@@ -13910,7 +13910,7 @@ d.type = et;
           are terminal symbols that are matched with the exact text between
           the quotes.  Symbols that begin with a lowercase letter are terminal
           symbols that are matched by the regular expressions (using Perl 5 regular
-          expression syntax <a href="#ref-PERLRE">[PERLRE]</a>) as follows:
+          expression syntax [[!PERLRE]]) as follows:
         
         <table class="grammar">
           <tr>
@@ -13952,7 +13952,7 @@ d.type = et;
 
         
           The tokenizer operates on a sequence of Unicode characters
-          <a href="#ref-UNICODE">[UNICODE]</a>.
+          [[!UNICODE]].
           When tokenizing, the longest possible match must be used.  For example, if the input
           text is “<span class="input">a1</span>”, it is tokenized as a single <span class="sym">identifier</span>,
           and not as a separate <span class="sym">identifier</span> and <span class="sym">integer</span>.
@@ -14210,113 +14210,6 @@ d.type = et;
         
       
 
-      
-        <h2 id="references">References</h2>
-
-        
-          <h3 id="normative-references">Normative references</h3>
-
-          <dl>
-            <dt id="ref-ECMA-262">[ECMA-262]</dt>
-            <dd>
-              <cite><a href="https://tc39.github.io/ecma262/">ECMAScript Language Specification</a></cite>.
-              Ecma International.
-              <span class="print"><br/>Available at https://tc39.github.io/ecma262/.</span>
-            </dd>
-            <dt id="ref-IEEE-754">[IEEE-754]</dt>
-            <dd>
-              <cite>IEEE Standard for Binary Floating-Point Arithmetic (ANSI/IEEE Std 754-1985)</cite>.
-              Institute of Electrical and Electronics Engineers, 1985.
-            </dd>
-            <dt id="ref-PERLRE">[PERLRE]</dt>
-            <dd>
-              <cite><a href="http://search.cpan.org/dist/perl/pod/perlre.pod">Perl regular expressions (Perl 5.8.8)</a></cite>.
-              The Perl Foundation, February 2006.
-              <span class="print"><br/>Available at http://www.perl.com/doc/manual/html/pod/perlre.html.</span>
-            </dd>
-            <dt id="ref-RFC2119">[RFC2119]</dt>
-            <dd>
-              <cite><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a></cite>,
-              S. Bradner.  IETF, March 1997.
-              <span class="print"><br/>Available at http://tools.ietf.org/html/rfc2119.</span>
-            </dd>
-            <dt id="ref-RFC2781">[RFC2781]</dt>
-            <dd>
-              <cite><a href="http://tools.ietf.org/html/rfc2781">UTF-16, an encoding of ISO 10646</a></cite>,
-              P. Hoffmann and F. Yergeau.  IETF, February 2000.
-              <span class="print"><br/>Available at http://tools.ietf.org/html/rfc2781.</span>
-            </dd>
-            <dt id="ref-RFC3629">[RFC3629]</dt>
-            <dd>
-              <cite><a href="http://tools.ietf.org/html/rfc3629">UTF-8, a transformation format of ISO 10646</a></cite>,
-              F. Yergeau.  IETF, November 2003.
-              <span class="print"><br/>Available at http://tools.ietf.org/html/rfc3629.</span>
-            </dd>
-            <dt id="ref-SECURE-CONTEXTS">[SECURE-CONTEXTS]</dt>
-            <dd>
-              <cite><a href="https://w3c.github.io/webappsec-secure-contexts/">Secure Contexts</a></cite>.
-              M. West and Y. Zhu, Editors.  World Wide Web Consortium, October 2015.
-              <span class="print"><br/>Available at https://w3c.github.io/webappsec-secure-contexts/.</span>
-            </dd>
-            <dt id="ref-TYPEDARRAYS">[TYPEDARRAYS]</dt>
-            <dd>
-              <cite><a href="https://www.khronos.org/registry/typedarray/specs/1.0/">Typed Array Specification</a></cite>,
-              V. Vukicevic and K. Russell, eds.  The Khronos Group, 08 February 2011.
-              <span class="print"><br/>Available at https://www.khronos.org/registry/typedarray/specs/1.0/.</span>
-            </dd>
-            <dt id="ref-UNICODE">[UNICODE]</dt>
-            <dd>
-              <cite><a href="http://www.unicode.org/standard/versions/">The Unicode Standard</a></cite>,
-              Version 6.0 or later.  The Unicode Consortium.  Mountain View, California, 2011.
-              ISBN 978-1-936213-01-6.
-              <span class="print"><br/>Available at http://www.unicode.org/versions/Unicode6.0.0/.</span>
-            </dd>
-          </dl>
-        
-
-        
-          <h3 id="informative-references">Informative references</h3>
-
-          <dl>
-            <dt id="ref-DOM">[DOM]</dt>
-            <dd>
-              <cite><a href="http://dom.spec.whatwg.org/">DOM Standard</a></cite>.
-              A. van Kesteren, A. Gregor and Ms2ger, Editors.  WHATWG, 22 July 2013.
-              <span class="print"><br/>Available at http://dom.spec.whatwg.org/.</span>
-            </dd>
-            <dt id="ref-DOM3CORE">[DOM3CORE]</dt>
-            <dd>
-              <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/">Document Object Model (DOM) Level 3 Core Specification</a></cite>.
-              A. Le Hors, et al., Editors.  World Wide Web Consortium, April 2004.
-              <span class="print"><br/>Available at http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/.</span>
-            </dd>
-            <dt id="ref-HTML5">[HTML5]</dt>
-            <dd>
-              <cite><a href="http://www.w3.org/TR/2011/WD-html5-20110525/">HTML5</a></cite>.
-              I. Hickson, Editor.  World Wide Web Consortium, May 2011.
-              <span class="print"><br/>Available at http://www.w3.org/TR/2011/WD-html5-20110525/.</span>
-            </dd>
-            <dt id="ref-OMGIDL">[OMGIDL]</dt>
-            <dd>
-              <cite><a href="http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf">CORBA 3.1 – OMG IDL Syntax and Semantics chapter</a></cite>.
-              Object Management Group, January 2008.
-              <span class="print"><br/>Available at http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf.</span>
-            </dd>
-            <dt id="ref-WEBIDL-JAVA">[WEBIDL-JAVA]</dt>
-            <dd>
-              <cite><a href="http://dev.w3.org/2006/webapi/WebIDL/java.html">Java langage binding for Web IDL</a></cite>.
-              World Wide Consortium, work in progress.
-              <span class="print"><br/>Available at http://dev.w3.org/2006/webapi/WebIDL/java.html.</span>
-            </dd>
-            <dt id="ref-XMLNS">[XMLNS]</dt>
-            <dd>
-              <cite class="w3crec"><a href="http://www.w3.org/TR/2009/REC-xml-names-20091208/">Namespaces in XML 1.0 (Third Edition)</a></cite>,
-              T. Bray, D. Hollander, A. Layman, R. Tobin, H. Thompson, eds.
-              World Wide Web Consortium, 8 December 2009.
-              <span class="print"><br/>Available at http://www.w3.org/TR/2009/REC-xml-names-20091208/.</span>
-            </dd>
-          </dl>
-        
       
 
       
