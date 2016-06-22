@@ -143,14 +143,13 @@ TR: </xsl:text>
   </xsl:template>
 
   <xsl:template match='processing-instruction("sdir")'>
-    <xsl:variable name='id' select='string(.)'/>
-    <xsl:choose>
-      <xsl:when test='preceding::h:div[@id=$id][@class="section"]'>above</xsl:when>
-      <xsl:when test='following::h:div[@id=$id][@class="section"]'>below</xsl:when>
-      <xsl:otherwise>@@</xsl:otherwise>
-    </xsl:choose>
+    <xsl:text></xsl:text>
   </xsl:template>
-
+  
+  <xsl:template match='*[processing-instruction("sdir")]/text()[following-sibling::processing-instruction("sdir")][last()]'>
+    <xsl:value-of select='replace(., "\s+$", "")'/>
+  </xsl:template>
+  
   <xsl:template match='processing-instruction("slink")'>
     <xsl:variable name='id' select='string(.)'/>
     <a href='#{$id}'>
