@@ -456,7 +456,7 @@ TR: </xsl:text>
       <xsl:when test='text()="[XMLNS]"'>
         <xsl:text>[[XML-NAMES]]</xsl:text>
       </xsl:when>
-      <xsl:when test='matches(text(), "\[(ECMA-262|IEEE\-754|PERLRE|RFC2119|RFC2781|RFC3629|SECURE\-CONTEXTS|UNICODE)\]")'>
+      <xsl:when test='matches(text(), "\[(ECMA-262|IEEE\-754|PERLRE|RFC2119|RFC2781|RFC3629|SECURE\-CONTEXTS|UNICODE|HTML)\]")'>
         <xsl:value-of select='replace(., "\[", "[[!")'/><xsl:text>]</xsl:text>
       </xsl:when>
       <xsl:otherwise>

@@ -5106,7 +5106,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 Note: For ECMAScript objects, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-              [[HTML]] at the time the <span class="estype">Object</span> value
+              [[!HTML]] at the time the <span class="estype">Object</span> value
               is converted to an IDL callback interface type value.  See
               [[#es-interface]] below.
             
@@ -5180,7 +5180,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
                 Note: As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-              [[HTML]] at the time an ECMAScript <span class="estype">Object</span> value
+              [[!HTML]] at the time an ECMAScript <span class="estype">Object</span> value
               is converted to an IDL callback function type value.  See
               [[#es-callback-function]] below.
             
@@ -6844,7 +6844,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 [[#es-user-objects]],
                 then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[HTML]]</li>
+                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[!HTML]]</li>
               <li><a href="#ecmascript-throw" class="dfnref external">Throw a <span class="esvalue">TypeError</span></a>.</li>
             </ol>
             <p id="interface-to-es">
@@ -7004,7 +7004,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               function type</a> value that represents a reference to the same
               object that |V| represents,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[HTML]].</li>
+                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[!HTML]].</li>
             </ol>
             <p id="callback-function-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
@@ -9669,7 +9669,7 @@ with (thing) {
           </ol>
               Note: The expectation is that the HTML specification defines how a
             security check is performed, and that it will either throw an
-            appropriate exception or return normally. [[HTML]]
+            appropriate exception or return normally. [[!HTML]]
         
 
         
