@@ -64,6 +64,8 @@ TR: </xsl:text>
 <xsl:text>Abstract: </xsl:text><xsl:value-of select="normalize-space(.)" /><xsl:text>
 </xsl:text>
     </xsl:for-each>
+<xsl:text>Ignored Vars: callback, op, ownDesc, exampleVariableName, target
+</xsl:text>
 </pre>
   </xsl:template>
 
