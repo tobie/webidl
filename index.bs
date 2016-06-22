@@ -13787,7 +13787,7 @@ d.type = et;
             The IDL fragment in Appendix A of this specification must, in conjunction
             with the IDL fragments defined in this specification's normative references,
             be interpreted as required for <em>conforming sets of IDL fragments</em>, as described in the
-            “Web IDL” specification. <a class="placeholder" href="data:,">[WEBIDL]</a>
+            “Web IDL” specification. \[WEBIDL]
           
         </blockquote>
         
@@ -13801,7 +13801,7 @@ d.type = et;
             A conforming FooML user agent must also be a
             <em>conforming implementation</em> of the IDL fragment in Appendix A
             of this specification, as described in the
-            “Web IDL” specification. <a class="placeholder" href="data:,">[WEBIDL]</a>
+            “Web IDL” specification. \[WEBIDL]
           
         </blockquote>
       

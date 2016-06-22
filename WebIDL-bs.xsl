@@ -465,6 +465,17 @@ TR: </xsl:text>
     </xsl:choose>
   </xsl:template>
   
+  <xsl:template match='h:a[@class="placeholder"]'>
+    <xsl:choose>
+      <xsl:when test='text()="[WEBIDL]"'>
+        <xsl:text>\[WEBIDL]</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>@@</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template> 
+  
   <xsl:template match='x:grammar'>
     <table class='grammar'>
       <xsl:apply-templates select='x:prod'/>
