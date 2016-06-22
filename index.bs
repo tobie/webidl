@@ -4,7 +4,7 @@
   
     
 <pre class="metadata">
-Title: 
+Title: Web IDL (Second Edition)
 Shortname: WebIDL
 Level: 2
 Status: ED

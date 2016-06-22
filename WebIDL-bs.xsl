@@ -19,7 +19,7 @@
 </xsl:text>
 <pre class="metadata">
 <xsl:text>
-Title: </xsl:text><xsl:value-of select='h:title'/>
+Title: </xsl:text><xsl:value-of select='//h:title'/>
 <xsl:text>
 Shortname: WebIDL
 Level: 2
