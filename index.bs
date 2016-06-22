@@ -50,36 +50,6 @@
     -->
 
     
-      <h2>Abstract</h2>
-      
-        This document defines an interface definition language, Web IDL,
-        that can be used to describe interfaces that are intended to be
-        implemented in web browsers.  Web IDL is an IDL variant with a
-        number of features that allow the behavior of common script objects in
-        the web platform to be specified more readily.  How interfaces
-        described with Web IDL correspond to constructs within ECMAScript
-        execution environments is also detailed in this document.
-        It is expected that this document acts
-        as a guide to implementors of already-published specifications,
-        and that newly published specifications reference this
-        document to ensure conforming implementations of interfaces
-        are interoperable.
-      
-
-      <!-- XXX
-        Things to consider that aren't in ednotes:
-          * Consistent linking to term definitions.
-          * Consistent capitalisation and naming of algorithm variables.
-
-        Potential V2 features:
-          * Parameterized interface types, for BlahLists
-            http://www.w3.org/mid/op.vr2r6waf64w2qv@anne-van-kesterens-macbook-pro.local
-        -->
-<!--
-      <?revision-note http://www.w3.org/Bugs/Public/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=WebAppsWG&amp;component=WebIDL&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Importance&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=?>
--->
-
-    
 
     
       <h2 id="sotd">Status of This Document</h2>

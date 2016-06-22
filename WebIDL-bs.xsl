@@ -367,6 +367,8 @@
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
+  <xsl:template match='h:div[@class="section"][h:h2[text()="Abstract"]]'/>
+  
   <xsl:template name='markdown-note-issue-advisement'>
     <xsl:text>    </xsl:text>
     <xsl:choose>
