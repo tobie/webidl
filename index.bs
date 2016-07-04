@@ -69,7 +69,7 @@ Ignored Vars: callback, op, ownDesc, exampleVariableName, target
 
     
 
-    <div id="sections">
+    
       
         <h2 id="introduction">Introduction</h2>
 
@@ -13878,7 +13878,7 @@ d.type = et;
           while the editor was unavailable to do so.
         
       
-    </div>
+    
 
     <div id="appendices">
       
