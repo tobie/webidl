@@ -320,7 +320,7 @@ TR: </xsl:text>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match='h:div[@class="section"] | h:p[not(@id)][not(@class)] | h:div[@id="sections"] | h:body'>
+  <xsl:template match='h:div[@class="section"] | h:div[@id="sections"] | h:body'>
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
