@@ -1118,7 +1118,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             <ol class="algorithm">
               <li>Let |S| be the sequence of characters matched by the <a class="sym" href="#prod-float">float</a> token.</li>
               <li>Let |value| be the Mathematical Value that would be obtained if |S| were
-                parsed as an ECMAScript <a class="external" href="https://tc39.github.io/ecma262/#sec-literals-numeric-literals"><em>NumericLiteral</em></a>.</li>
+                parsed as an ECMAScript <a>NumericLiteral</a>.</li>
               <li>
                 If the <a class="sym" href="#prod-float">float</a> token is being
                 used as the value for a <a class="idltype" href="#idl-float">float</a> or
@@ -1650,7 +1650,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                determined as follows:
             </p>
             <ol class="algorithm">
-              <li>Let |S| be the sequence of <a class="external" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> matched by the <a class="sym" href="#prod-string">string</a> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.</li>
+              <li>Let |S| be the sequence of <a>Unicode scalar values</a> matched by the <a class="sym" href="#prod-string">string</a> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.</li>
               <li>Depending on the type of the argument:
                 <dl class="switch">
                   <dt><a class="idltype" href="#idl-DOMString">DOMString</a></dt>
@@ -2316,7 +2316,7 @@ serializer = { inherit, attribute };</pre>
                 <dd>the equivalent <a class="idltype" href="#idl-DOMString">DOMString</a> value</dd>
                 <dt>a <a class="idltype" href="#idl-USVString">USVString</a></dt>
                 <dd>the <a class="idltype" href="#idl-DOMString">DOMString</a> produced by
-                encoding the given sequence of <a class="external" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> in
+                encoding the given sequence of <a>Unicode scalar values</a> in
                 UTF-16</dd>
                 <dt>a <a class="idltype" href="#idl-ByteString">ByteString</a></dt>
                 <dd>the equivalent <a class="idltype" href="#idl-DOMString">DOMString</a> value where each code unit has the same value as the corresponding byte value</dd>
@@ -3341,7 +3341,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               support being iterated over to obtain a sequence of values.
             </p>
                 Note: In the ECMAScript language binding, an interface that is iterable
-              will have “entries”, “forEach”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>
+              will have “entries”, “forEach”, “keys”, “values” and <a>@@iterator</a>
               properties on its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.
             <p>
               If a single type parameter is given, then the interface has a
@@ -3396,10 +3396,10 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>.
               </p>
             </div>
-                Note: This is how <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a> work.
+                Note: This is how <a>array iterator objects</a> work.
                 For interfaces that <a class="dfnref" href="#dfn-support-indexed-properties">support indexed properties</a>,
-                the iterator objects returned by “entries”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> are
-                actual <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>.
+                the iterator objects returned by “entries”, “keys”, “values” and <a>@@iterator</a> are
+                actual <a>array iterator objects</a>.
             <p>
               Interfaces with iterable declarations must not
               have any <a class="dfnref" href="#dfn-interface-member">interface members</a>
@@ -3441,7 +3441,7 @@ interface Session {
                 next value to be iterated over.  It has <code>values</code> and <code>entries</code>
                 methods that iterate over the indexes of the list of session objects
                 and [index, session object] pairs, respectively.  It also has
-                a <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> method that allows a <span class="idltype">SessionManager</span>
+                a <a>@@iterator</a> method that allows a <span class="idltype">SessionManager</span>
                 to be used in a <code>for..of</code> loop:
               </p>
               <pre class="js">// Get an instance of SessionManager.
@@ -3530,7 +3530,7 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
                 with the map entries is similar to that available on ECMAScript
                 <span class="estype">Map</span> objects.  If the <code>readonly</code>
                 keyword is used, this includes “entries”, “forEach”, “get”, “has”,
-                “keys”, “values”, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
+                “keys”, “values”, <a>@@iterator</a> methods and a “size” getter.
                 For read–write maplikes, it also includes “clear”, “delete” and
                 “set” methods.
               
@@ -3609,7 +3609,7 @@ setlike&lt;<i>type</i>&gt;;</pre>
                 with the set entries is similar to that available on ECMAScript
                 <span class="estype">Set</span> objects.  If the <code>readonly</code>
                 keyword is used, this includes “entries”, “forEach”, “has”,
-                “keys”, “values”, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
+                “keys”, “values”, <a>@@iterator</a> methods and a “size” getter.
                 For read–write setlikes, it also includes “add”, “clear”, and “delete” methods.
               
             <p>
@@ -3977,7 +3977,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <li><span class="idltype"><dfn interface="" export="">URIError</dfn></span></li>
           </ul>
           <p>
-            These correspond to all of the <a class="external" href="https://tc39.github.io/ecma262/#sec-error-objects">ECMAScript error objects</a> (apart from
+            These correspond to all of the <a>ECMAScript error objects</a> (apart from
             <span class="estype">SyntaxError</span>, which is deliberately omitted as
             it is for use only by the ECMAScript parser).
             The meaning of
@@ -5031,7 +5031,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               value to be a valid UTF-16 string.  For example, a <a class="idltype" href="#idl-DOMString">DOMString</a>
               value might include unmatched surrogate pair characters.  However, authors
               of specifications using Web IDL might want to obtain a sequence of
-              <a class="external" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> given a particular sequence of
+              <a>Unicode scalar values</a> given a particular sequence of
               <a class="dfnref" href="#dfn-code-unit">code units</a>.
               The following algorithm defines a way to
               <dfn id="dfn-obtain-unicode" export="" lt="obtain Unicode|convert to a sequence of Unicode scalar values">convert a DOMString to a sequence of Unicode scalar values</dfn>:
@@ -5132,7 +5132,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <p>
               The <a class="idltype" href="#idl-USVString">USVString</a> type
               corresponds to the set of all possible sequences of
-              <a class="external" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a>,
+              <a>Unicode scalar values</a>,
               which are all of the Unicode code points apart from the
               surrogate code points.
             </p>
@@ -5920,11 +5920,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           Some objects described in this section are defined to have a <dfn id="dfn-class-string" export="">class string</dfn>,
           which is the string to include in the string returned from Object.prototype.toString.
           If an object has a class string, then the object must,
-          at the time it is created, have a property whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol
+          at the time it is created, have a property whose name is the <a>@@toStringTag</a> symbol
           and whose value is the specified string.
         </p>
-            Issue: Should define whether <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
-            All <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
+            Issue: Should define whether <a>@@toStringTag</a> is writable, enumerable and configurable.
+            All <a>@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
             and configurable.
         <p>
           If an object is defined to be a <dfn id="dfn-function-object" export="">function object</dfn>, then
@@ -5932,7 +5932,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
         </p>
         <ul>
           <li>Its <span class="prop">\[[Prototype]]</span> internal property is
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> unless otherwise specified.</li>
+          <a>%FunctionPrototype%</a> unless otherwise specified.</li>
           <li>Its <span class="prop">\[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
           <li>Its <span class="prop">\[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
@@ -5942,15 +5942,15 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           Algorithms in this section use the conventions described in <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262
           section 5.2</a>, such as the use of steps and substeps, the use of mathematical
           operations, and so on.  The
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-toboolean">ToBoolean</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-touint16">ToUint16</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-toint32">ToInt32</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a>,
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-isaccessordescriptor">IsAccessorDescriptor</a> and
-          <a class="external" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a> abstract operations and the
+          <a>ToBoolean</a>,
+          <a>ToNumber</a>,
+          <a>ToUint16</a>,
+          <a>ToInt32</a>,
+          <a>ToUint32</a>,
+          <a>ToString</a>,
+          <a>ToObject</a>,
+          <a>IsAccessorDescriptor</a> and
+          <a>IsDataDescriptor</a> abstract operations and the
           <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type(|x|)</a>
           notation referenced in this section are defined in ECMA-262 sections 6 and 7.
         </p>
@@ -5972,11 +5972,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           </p>
           <ol class="algorithm">
             <li>Let |x| be the ECMAScript value passed in to this algorithm.</li>
-            <li>Let |y| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|x|).</li>
+            <li>Let |y| be the result of calling <a>ToString</a>(|x|).</li>
             <li>Return |y|.</li>
           </ol>
           <p>
-            Since <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a> can throw an exception (for example if passed the object
+            Since <a>ToString</a> can throw an exception (for example if passed the object
             <code>({ toString: function() { throw 1 } })</code>), and the exception is
             not handled in the above algorithm, if one is thrown then it causes this
             algorithm to end and for the exception to propagate out to its caller, if there
@@ -6058,10 +6058,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 
           <p>
             Although at the time of this writing the ECMAScript specification does not reflect this,
-            every ECMAScript object must have an <dfn id="dfn-associated-realm" export="">associated <a class="external external" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a></dfn>. The mechanisms
+            every ECMAScript object must have an <dfn id="dfn-associated-realm" export="">associated <a class="external">Realm</a></dfn>. The mechanisms
             for associating objects with Realms are, for now, underspecified. However, we note that
             in the case of <a class="dfnref" href="#dfn-platform-object">platform objects</a>, the
-            associated Realm is equal to the object's <a class="external external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-realm">relevant Realm</a>, and
+            associated Realm is equal to the object's <a class="external">relevant Realm</a>, and
             for non-exotic function objects (i.e. not callable proxies, and not bound functions)
             the associated Realm is equal to the value of the function object's \[[Realm]] internal
             slot.
@@ -6178,7 +6178,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |x| be the result of computing <a class="external" href="https://tc39.github.io/ecma262/#sec-toboolean">ToBoolean</a>(|V|).</li>
+              <li>Let |x| be the result of computing <a>ToBoolean</a>(|V|).</li>
               <li>Return the IDL <a class="idltype" href="#idl-boolean">boolean</a> value that is the one that represents the same truth value as the ECMAScript <span class="estype">Boolean</span> value |x|.</li>
             </ol>
             <p id="boolean-to-es">
@@ -6200,7 +6200,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6210,7 +6210,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>7</sup> or |x| &gt; 2<sup>7</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6229,8 +6229,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ol>
               </li>
               <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents 0.</li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
-              <li>Set |x| to |x| <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</li>
+              <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
+              <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
               <li>If |x| ≥ 2<sup>7</sup>, return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x| − 2<sup>8</sup>.
                 Otherwise, return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x|.</li>
             </ol>
@@ -6253,7 +6253,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6263,7 +6263,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>8</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6282,8 +6282,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ol>
               </li>
               <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents 0.</li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
-              <li>Set |x| to |x| <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</li>
+              <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
+              <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="octet-to-es">
@@ -6306,7 +6306,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6316,7 +6316,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>15</sup> or |x| &gt; 2<sup>15</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6335,8 +6335,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ol>
               </li>
               <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-short">short</a> value that represents 0.</li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
-              <li>Set |x| to |x| <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>16</sup>.</li>
+              <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
+              <li>Set |x| to |x| <a>modulo</a> 2<sup>16</sup>.</li>
               <li>If |x| ≥ 2<sup>15</sup>, return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x| − 2<sup>16</sup>.
                 Otherwise, return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x|.</li>
             </ol>
@@ -6360,7 +6360,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6370,7 +6370,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>16</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6388,7 +6388,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-touint16">ToUint16</a>(|x|).</li>
+              <li>Set |x| to <a>ToUint16</a>(|x|).</li>
               <li>Return the IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-short-to-es">
@@ -6411,7 +6411,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6421,7 +6421,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>31</sup> or |x| &gt; 2<sup>31</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-long">long</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6439,7 +6439,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL <a class="idltype" href="#idl-long">long</a> value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-toint32">ToInt32</a>(|x|).</li>
+              <li>Set |x| to <a>ToInt32</a>(|x|).</li>
               <li>Return the IDL <a class="idltype" href="#idl-long">long</a> value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="long-to-es">
@@ -6462,7 +6462,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6472,7 +6472,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>32</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6490,7 +6490,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(|x|).</li>
+              <li>Set |x| to <a>ToUint32</a>(|x|).</li>
               <li>Return the IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-long-to-es">
@@ -6513,7 +6513,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6523,7 +6523,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>53</sup> + 1 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6542,8 +6542,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ol>
               </li>
               <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents 0.</li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
-              <li>Set |x| to |x| <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>64</sup>.</li>
+              <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
+              <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
               <li>If |x| is greater than or equal to 2<sup>63</sup>, then set |x| to |x| − 2<sup>64</sup>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents the same numeric value as |x|.</li>
             </ol>
@@ -6553,7 +6553,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-long-long">long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
+              two <a>equally close values</a>.
               If the <a class="idltype" href="#idl-long-long">long long</a> is in the range
               [−2<sup>53</sup> + 1, 2<sup>53</sup> − 1], then the <span class="estype">Number</span>
               will be able to represent exactly the same value as the
@@ -6571,7 +6571,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Initialize |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
@@ -6581,7 +6581,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then:
                 <ol>
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
+                  <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents the same numeric value as |x|.</li>
                 </ol>
@@ -6600,8 +6600,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ol>
               </li>
               <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents 0.</li>
-              <li>Set |x| to <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(|x|) * <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(|x|)).</li>
-              <li>Set |x| to |x| <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>64</sup>.</li>
+              <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
+              <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-long-long-to-es">
@@ -6610,7 +6610,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
+              two <a>equally close values</a>.
               If the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> is less than or equal to 2<sup>53</sup> − 1,
               then the <span class="estype">Number</span> will be able to
               represent exactly the same value as the
@@ -6628,7 +6628,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Let |x| be <a>ToNumber</a>(|V|).</li>
               <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
                 <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>
@@ -6639,7 +6639,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>
                 Let |y| be the number in |S| that is closest
                 to |x|, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
+                <em>even significand</em> if there are two <a>equally close values</a>.
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -6671,7 +6671,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Let |x| be <a>ToNumber</a>(|V|).</li>
               <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
               <li>
                 Let |S| be the set of finite IEEE 754 single-precision floating
@@ -6681,7 +6681,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>
                 Let |y| be the number in |S| that is closest
                 to |x|, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
+                <em>even significand</em> if there are two <a>equally close values</a>.
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -6731,7 +6731,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Let |x| be <a>ToNumber</a>(|V|).</li>
               <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
                 <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>
@@ -6757,7 +6757,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(|V|).</li>
+              <li>Let |x| be <a>ToNumber</a>(|V|).</li>
               <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
               <li>
                 Return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value
@@ -6821,7 +6821,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then return the <a class="idltype" href="#idl-DOMString">DOMString</a>
                 value that represents the empty string.
               </li>
-              <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|V|).</li>
+              <li>Let |x| be <a>ToString</a>(|V|).</li>
               <li>Return the IDL <a class="idltype" href="#idl-DOMString">DOMString</a> value that represents the same sequence of code units as the one the ECMAScript <span class="estype">String</span> value |x| represents.</li>
             </ol>
             <p id="DOMString-to-es">
@@ -6843,8 +6843,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |x| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|V|).</li>
-              <li>If the value of any <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type">element</a>
+              <li>Let |x| be <a>ToString</a>(|V|).</li>
+              <li>If the value of any <a>element</a>
                 of |x| is greater than 255, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return an IDL <a class="idltype" href="#idl-ByteString">ByteString</a> value
                 whose length is the length of |x|, and where the value of each element is
@@ -6881,7 +6881,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               to an ECMAScript value by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |scalarValues| be the sequence of <a class="external" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> the <a class="idltype" href="#idl-USVString">USVString</a> represents.</li>
+              <li>Let |scalarValues| be the sequence of <a>Unicode scalar values</a> the <a class="idltype" href="#idl-USVString">USVString</a> represents.</li>
               <li>Let |string| be the sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> that results from encoding |scalarValues| in UTF-16.</li>
               <li>Return the <span class="estype">String</span> value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> as |string|.</li>
             </ol>
@@ -6901,7 +6901,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>Type</a>(|V|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-object">object</a> value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="object-to-es">
@@ -6927,7 +6927,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm (where |I| is the <a class="dfnref" href="#dfn-interface">interface</a>):
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>Type</a>(|V|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>If |V| is a <a class="dfnref" href="#dfn-platform-object">platform object</a> that implements |I|, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that platform object.</li>
               <li>If |V| is a <a class="dfnref" href="#dfn-user-object">user object</a>
                 that is considered to implement |I| according to the rules in
@@ -6961,7 +6961,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm (where |D| is the <a class="dfnref" href="#dfn-dictionary">dictionary</a>):
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Undefined, Null or Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>Type</a>(|V|) is not Undefined, Null or Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>If |V| is a native <span class="estype">RegExp</span> object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Let |dict| be an empty dictionary value of type |D|;
               every <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
@@ -6973,7 +6973,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>For each dictionary member |member| declared on |dictionary|, in lexicographical order:
                     <ol>
                       <li>Let |key| be the <a class="dfnref" href="#dfn-identifier">identifier</a> of |member|.</li>
-                      <li>Let |value| be an ECMAScript value, depending on <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|):
+                      <li>Let |value| be an ECMAScript value, depending on <a>Type</a>(|V|):
                         <dl class="switch">
                           <dt>Undefined</dt>
                           <dt>Null</dt>
@@ -7030,7 +7030,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                         <ol>
                           <li>Let |idlValue| be the value of |member| on |V|.</li>
                           <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
-                          <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|O|, |key|, |value|.</li>
+                          <li>Call <a>CreateDataProperty</a>(|O|, |key|, |value|.</li>
                         </ol>
                       </li>
                     </ol>
@@ -7055,7 +7055,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               value as follows (where |E| is the <a class="dfnref" href="#dfn-enumeration">enumeration</a>):
             </p>
             <ol class="algorithm">
-              <li>Let |S| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|V|).</li>
+              <li>Let |S| be the result of calling <a>ToString</a>(|V|).</li>
               <li>If |S| is not one of |E|’s <a class="dfnref" href="#dfn-enumeration-value">enumeration values</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the enumeration value of type |E| that is equal to |S|.</li>
             </ol>
@@ -7083,7 +7083,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|V|) is <span class="esvalue">false</span> and the conversion to an IDL value
+              <li>If the result of calling <a>IsCallable</a>(|V|) is <span class="esvalue">false</span> and the conversion to an IDL value
               is not being performed due
                 to |V| being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
                 whose type is a <a class="dfnref" href="#dfn-nullable-type">nullable</a>
@@ -7120,7 +7120,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>
-                If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object, and
+                If <a>Type</a>(|V|) is not Object, and
                 the conversion to an IDL value is being performed due
                 to |V| being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
                 whose type is a <a class="dfnref" href="#dfn-nullable-type">nullable</a>
@@ -7184,10 +7184,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>
                 Let |method| be the result of
-                <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(|V|, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>).
+                <a>GetMethod</a>(|V|, <a>@@iterator</a>).
               </li>
               <li>
-                <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|method|).
+                <a>ReturnIfAbrupt</a>(|method|).
               </li>
               <li>
                 If |method| is <span class="esvalue">undefined</span>,
@@ -7217,8 +7217,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Let |V| be the value in |S| at index |i|.</li>
                   <li>Let |E| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     |V| to an ECMAScript value.</li>
-                  <li>Let |P| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|i|).</li>
-                  <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|A|, |P|, |E|).</li>
+                  <li>Let |P| be the result of calling <a>ToString</a>(|i|).</li>
+                  <li>Call <a>CreateDataProperty</a>(|A|, |P|, |E|).</li>
                   <li>Set |i| to |i| + 1.</li>
                 </ol>
               </li>
@@ -7235,18 +7235,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <ol class="algorithm">
                 <li>
                   Let |iter| be
-                  <a class="external" href="https://tc39.github.io/ecma262/#sec-getiterator">GetIterator</a>(|iterable|, |method|).
+                  <a>GetIterator</a>(|iterable|, |method|).
                 </li>
                 <li>
-                  <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|iter|).
+                  <a>ReturnIfAbrupt</a>(|iter|).
                 </li>
                 <li>Initialize |i| to be 0.</li>
                 <li>Repeat
                 <ol>
                   <li>
-                    Let |next| be <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorstep">IteratorStep</a>(|iter|).
+                    Let |next| be <a>IteratorStep</a>(|iter|).
                   </li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|next|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|next|).</li>
                   <li>
                     If |next| is <span class="esvalue">false</span>,
                     then return an IDL sequence value of type
@@ -7257,9 +7257,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   </li>
                   <li>
                     Let |nextItem| be
-                    <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorvalue">IteratorValue</a>(|next|).
+                    <a>IteratorValue</a>(|next|).
                   </li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|nextItem|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|nextItem|).</li>
                   <li>
                     Initialize |S|<sub>|i|</sub> to the result of
                     <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7359,12 +7359,12 @@ alert(b[4]);    // This would alert "50".</pre>
               to an IDL <a class="idltype" href="#idl-promise">Promise&lt;|T|&gt;</a> value as follows:
             </p>
             <ol class="algorithm">
-              <li>Let |resolve| be the original value of <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.resolve.
+              <li>Let |resolve| be the original value of <a class="nocite">%Promise%</a>.resolve.
                 <div class="issue">
                   <p>ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.</p>
                 </div>
               </li>
-              <li>Let |promise| be the result of calling |resolve| with <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>
+              <li>Let |promise| be the result of calling |resolve| with <a class="nocite">%Promise%</a>
                 as the <span class="esvalue">this</span> value and |V| as the single argument value.</li>
               <li>Return the IDL <a href="#idl-promise">promise type</a> value that is a reference to the
                 same object as |promise|.</li>
@@ -7416,7 +7416,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.</li>
-              <li>If |then| is not <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If |then| is not <a>callable</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the result of calling |then| with |promise| as the <span class="esvalue">this</span> value and |onFulfilled| and |onRejected|
                 as its two arguments.</li>
             </ol>
@@ -7484,7 +7484,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is a native <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>), then:
+                If |V| is a native <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a>internal slot</a>), then:
                 <ol>
                   <li>If |types| includes <a class="idltype" href="#idl-Error">Error</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7494,7 +7494,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is an object with an \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+                If |V| is an object with an \[[ArrayBufferData]] <a>internal slot</a>, then:
                 <ol>
                   <li>If |types| includes <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7504,7 +7504,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is an object with a \[[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+                If |V| is an object with a \[[DataView]] <a>internal slot</a>, then:
                 <ol>
                   <li>If |types| includes <a class="idltype" href="#idl-DataView">DataView</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7514,10 +7514,10 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If |V| is an object with a \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+                If |V| is an object with a \[[TypedArrayName]] <a>internal slot</a>, then:
                 <ol>
                   <li>If |types| includes a <a class="dfnref" href="#dfn-typed-array-type">typed array type</a>
-                    whose name is the value of |V|’s \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then return the
+                    whose name is the value of |V|’s \[[TypedArrayName]] <a>internal slot</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that type.</li>
                   <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
@@ -7525,7 +7525,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </ol>
               </li>
               <li>
-                If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|V|) is true, then:
+                If <a>IsCallable</a>(|V|) is true, then:
                 <ol>
                   <li>If |types| includes a <a class="dfnref" href="#dfn-callback-function">callback function</a>
                     type, then return the result of
@@ -7544,10 +7544,10 @@ alert(b[4]);    // This would alert "50".</pre>
                     <ol>
                       <li>
                         Let |method| be the result of
-                        <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(|V|, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>).
+                        <a>GetMethod</a>(|V|, <a>@@iterator</a>).
                       </li>
                       <li>
-                        <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|method|).
+                        <a>ReturnIfAbrupt</a>(|method|).
                       </li>
                       <li>
                         If |method| is not
@@ -7564,10 +7564,10 @@ alert(b[4]);    // This would alert "50".</pre>
                     <ol>
                       <li>
                         Let |method| be the result of
-                        <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(|V|, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>).
+                        <a>GetMethod</a>(|V|, <a>@@iterator</a>).
                       </li>
                       <li>
-                        <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|method|).
+                        <a>ReturnIfAbrupt</a>(|method|).
                       </li>
                       <li>
                         If |method| is not
@@ -7647,7 +7647,7 @@ alert(b[4]);    // This would alert "50".</pre>
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
+              <li>If <a>Type</a>(|V|) is not Object,
                 or |V| is not a native <span class="estype">RegExp</span> object,
                 then set |V| to be a newly created <span class="estype">RegExp</span> object created as if by the
                 expression <code>new RegExp(|V|)</code>, where <code>RegExp</code> is the standard built-in constructor with that name
@@ -7682,8 +7682,8 @@ alert(b[4]);    // This would alert "50".</pre>
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have an \[[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>Type</a>(|V|) is not Object,
+                or |V| does not have an \[[ErrorData]] <a>internal slot</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-Error">Error</a> value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="Error-to-es">
@@ -7708,7 +7708,7 @@ alert(b[4]);    // This would alert "50".</pre>
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
+              <li>If <a>Type</a>(|V|) is not Object,
                 or |V| is not a platform object that represents a <a class="dfnref" href="#dfn-DOMException">DOMException</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-DOMException">DOMException</a> value that is a reference to the same object as |V|.</li>
             </ol>
@@ -7734,9 +7734,9 @@ alert(b[4]);    // This would alert "50".</pre>
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have an \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
-                or <a class="external" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(|V|) is true,
+              <li>If <a>Type</a>(|V|) is not Object,
+                or |V| does not have an \[[ArrayBufferData]] <a>internal slot</a>,
+                or <a>IsDetachedBuffer</a>(|V|) is true,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
               </li>
               <li>Return the IDL <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> value that is a reference to the same object as |V|.</li>
@@ -7748,8 +7748,8 @@ alert(b[4]);    // This would alert "50".</pre>
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have a \[[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+              <li>If <a>Type</a>(|V|) is not Object,
+                or |V| does not have a \[[DataView]] <a>internal slot</a>,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL <a class="idltype" href="#idl-DataView">DataView</a> value that is a reference to the same object as |V|.</li>
             </ol>
@@ -7769,8 +7769,8 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>Let |T| be the IDL type |V| is being converted to.</li>
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|V|) is not Object,
-                or |V| does not have a \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>
+              <li>If <a>Type</a>(|V|) is not Object,
+                or |V| does not have a \[[TypedArrayName]] <a>internal slot</a>
                 with a value equal to the name of |T|,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the IDL value of type |T| that is a reference to the same object as |V|.</li>
@@ -7792,19 +7792,19 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Initialize |arrayBuffer| to |O|.</li>
               <li>Initialize |offset| to 0.</li>
               <li>Initialize |length| to 0.</li>
-              <li>If |O| has a \[[ViewedArrayBuffer]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then:
+              <li>If |O| has a \[[ViewedArrayBuffer]] <a>internal slot</a>, then:
                 <ol>
-                  <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                  <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a>internal slot</a>.</li>
                   <li>If |arrayBuffer| is <span class="esvalue">undefined</span>, then
                     <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-                  <li>Set |length| to the value of |O|’s \[[ByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                  <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a>internal slot</a>.</li>
+                  <li>Set |length| to the value of |O|’s \[[ByteLength]] <a>internal slot</a>.</li>
                 </ol>
               </li>
-              <li>Otherwise, set |length| to the value of |O|’s \[[ArrayBufferByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(|O|), then
+              <li>Otherwise, set |length| to the value of |O|’s \[[ArrayBufferByteLength]] <a>internal slot</a>.</li>
+              <li>If <a>IsDetachedBuffer</a>(|O|), then
                 <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Let |data| be the value of |O|’s \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Let |data| be the value of |O|’s \[[ArrayBufferData]] <a>internal slot</a>.</li>
               <li>Return a reference to or copy of (as required) the |length| bytes in |data|
                 starting at byte offset |offset|.</li>
             </ol>
@@ -7814,7 +7814,7 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>Let |O| be the ECMAScript object that is the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.</li>
-              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">DetachArrayBuffer</a>(|O|).</li>
+              <li><a>DetachArrayBuffer</a>(|O|).</li>
             </ol>
           
 
@@ -7847,7 +7847,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Let |array| be the result of
                 <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                 the sequence of values to an ECMAScript value.</li>
-              <li>Perform <a class="external" href="https://tc39.github.io/ecma262/#sec-setintegritylevel">SetIntegrityLevel</a>(|array|, <code>"frozen"</code>).</li>
+              <li>Perform <a>SetIntegrityLevel</a>(|array|, <code>"frozen"</code>).</li>
               <li>Return |array|.</li>
             </ol>
             <p>
@@ -7898,7 +7898,7 @@ alert(b[4]);    // This would alert "50".</pre>
               it indicates that when an ECMAScript <span class="estype">Number</span> is
               converted to the IDL type, out of range values will be clamped to the range
               of valid values, rather than using the operators that use a modulo operation
-              (<a class="external" href="https://tc39.github.io/ecma262/#sec-toint32">ToInt32</a>, <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>, etc.).
+              (<a>ToInt32</a>, <a>ToUint32</a>, etc.).
             </p>
             <p>
               The <a class="xattr" href="#Clamp">[Clamp]</a>
@@ -8049,7 +8049,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
               it indicates that when an ECMAScript <span class="estype">Number</span> is
               converted to the IDL type, out of range values will cause an exception to
               be thrown, rather than converted to being a valid value using the operators that use a modulo operation
-              (<a class="external" href="https://tc39.github.io/ecma262/#sec-toint32">ToInt32</a>, <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>, etc.).  The <span class="estype">Number</span>
+              (<a>ToInt32</a>, <a>ToUint32</a>, etc.).  The <span class="estype">Number</span>
               will be rounded towards zero before being checked against its range.
             </p>
             <p>
@@ -8211,12 +8211,12 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               and either:
             </p>
             <ul>
-              <li>the <a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a> for the ECMAScript global object is a <a class="external" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a>; or</li>
+              <li>the <a>relevant settings object</a> for the ECMAScript global object is a <a>secure context</a>; or</li>
               <li>the interface or interface member is not <a class="dfnref" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</li>
             </ul>
-                Note: Since it is not possible for the <a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a>
+                Note: Since it is not possible for the <a>relevant settings object</a>
               for an ECMAScript global object to change whether it is a
-              <a class="external" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a> or not over time, an implementation's
+              <a>secure context</a> or not over time, an implementation's
               decision to create properties for an interface or interface member
               can be made once, at the time the
               <a class="dfnref" href="#dfn-initial-object">initial objects</a>
@@ -9696,7 +9696,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
               the property in a <code>with</code> statement.  This is achieved by
               including the property name on the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>’s
-              <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@unscopables</a> property’s value.
+              <a>@@unscopables</a> property’s value.
             </p>
             <p>
               The <a class="xattr" href="#Unscopable">[Unscopable]</a>
@@ -9890,7 +9890,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>) and
+                  Otherwise: if |V| is an <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a>internal slot</a>) and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li><a class="idltype" href="#idl-Error">Error</a></li>
@@ -9903,7 +9903,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an object with an \[[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
+                  Otherwise: if |V| is an object with an \[[ArrayBufferData]] <a>internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li><a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a></li>
@@ -9916,7 +9916,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an object with a \[[DataView]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
+                  Otherwise: if |V| is an object with a \[[DataView]] <a>internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li><a class="idltype" href="#idl-DataView">DataView</a></li>
@@ -9929,11 +9929,11 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if |V| is an object with a \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> and
+                  Otherwise: if |V| is an object with a \[[TypedArrayName]] <a>internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-typed-array-type">typed array type</a> whose name
-                      is equal to the value of |V|’s \[[TypedArrayName]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a></li>
+                      is equal to the value of |V|’s \[[TypedArrayName]] <a>internal slot</a></li>
                     <li><a class="idltype" href="#idl-object">object</a></li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
@@ -9943,7 +9943,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|V|) is true,
+                  Otherwise: if <a>IsCallable</a>(|V|) is true,
                   and there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-callback-function">callback function</a> type</li>
@@ -9972,10 +9972,10 @@ with (thing) {
                   <ol>
                     <li>
                       Let |method| be the result of
-                      <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(|V|, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>).
+                      <a>GetMethod</a>(|V|, <a>@@iterator</a>).
                     </li>
                     <li>
-                      <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|method|).
+                      <a>ReturnIfAbrupt</a>(|method|).
                     </li>
                   </ol>
                   |method| is not <span class="esvalue">undefined</span>, then remove from |S| all
@@ -10250,7 +10250,7 @@ with (thing) {
               <li>
                 If the interface doesn't inherit from any other interface,
                 the value of <span class="prop">\[[Prototype]]</span> is
-                <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a>.
+                <a>%FunctionPrototype%</a>.
               </li>
             </ol>
             <p>
@@ -10537,8 +10537,8 @@ with (thing) {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
-              extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.</li>
-              <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a>.
+              extended attribute, then return <a>%ArrayPrototype%</a>.</li>
+              <li>Otherwise, return <a>%ObjectPrototype%</a>.
               ([[!ECMA-262]], section 15.2.4).</li>
             </ol>
             <div class="note">
@@ -10582,14 +10582,14 @@ partial interface Window {
               has any <a class="dfnref" href="#dfn-interface-member">interface member</a> declared with
               the <a class="xattr" href="#Unscopable">[Unscopable]</a> extended attribute,
               then there must be a property on the
-              interface prototype object whose name is the <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@unscopables</a> symbol
+              interface prototype object whose name is the <a>@@unscopables</a> symbol
               and whose value is an object created as follows:
             </p>
             <ol class="algorithm">
               <li>Let |object| be a new object created as if by the expression <code>({})</code>.</li>
               <li>For each of the aforementioned <a class="dfnref" href="#dfn-interface-member">interface members</a>
                 declared with the <a class="xattr" href="#Unscopable">[Unscopable]</a> extended attribute,
-                call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|object|,
+                call <a>CreateDataProperty</a>(|object|,
                 the <a class="dfnref" href="#dfn-identifier">identifier</a> of the
                 interface member, <span class="esvalue">true</span>).</li>
               <li>Return |object|.</li>
@@ -10627,8 +10627,8 @@ partial interface Window {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
-              extended attribute, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.</li>
-              <li>Otherwise, return <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjectPrototype%</a>.</li>
+              extended attribute, then return <a>%ArrayPrototype%</a>.</li>
+              <li>Otherwise, return <a>%ObjectPrototype%</a>.</li>
             </ol>
             <p>
               The <a class="dfnref" href="#dfn-class-string">class string</a> of a
@@ -10671,7 +10671,7 @@ partial interface Window {
                     <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
                       of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
-                    <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
+                    <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
                     <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                       |value| to an ECMAScript value.</li>
                     <li>If |A| implements an interface with the
@@ -10685,7 +10685,7 @@ partial interface Window {
                   </ol>
                 </li>
 
-                <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">\[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
+                <li>Return the result of calling the <a>default \[[GetOwnProperty]] internal method</a> on |O| passing |P| as the argument.</li>
               </ol>
             
 
@@ -10900,7 +10900,7 @@ partial interface Window {
                         extended attribute, then:
                         <ol>
                           <li>Let |P| be the identifier of the attribute.</li>
-                          <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|O|, |P|, |V|).</li>
+                          <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
                           <li>Return <span class="esvalue">undefined</span>.</li>
                         </ol>
                       </li>
@@ -10925,7 +10925,7 @@ partial interface Window {
                     <ul>
                       <li>If the type of the attribute is an <a class="dfnref" href="#dfn-enumeration">enumeration</a>, then:
                         <ol>
-                          <li>Let |S| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|V|).</li>
+                          <li>Let |S| be the result of calling <a>ToString</a>(|V|).</li>
                           <li>If |S| is not one of the <a class="dfnref" href="#dfn-enumeration-value">enumeration’s values</a>, then return <span class="esvalue">undefined</span>.</li>
                           <li>The value of |idlValue| is the enumeration value equal to |S|.</li>
                         </ol>
@@ -11092,8 +11092,8 @@ partial interface Window {
                       <li>If the operation has a <a class="dfnref" href="#dfn-return-type">return type</a>
                         that is a <a href="#idl-promise">promise type</a>, then:
                         <ol>
-                          <li>Let |reject| be the initial value of <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.reject.</li>
-                          <li>Return the result of calling |reject| with <a class="nocite external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the
+                          <li>Let |reject| be the initial value of <a class="nocite">%Promise%</a>.reject.</li>
+                          <li>Return the result of calling |reject| with <a class="nocite">%Promise%</a> as the
                             <span class="esvalue">this</span> object and the exception as the single
                             argument value.</li>
                         </ol>
@@ -11152,7 +11152,7 @@ partial interface Window {
                 <li>
                   <p>The value of the property is a <span class="estype">Function</span> object, which behaves as follows:</p>
                   <ol class="algorithm">
-                    <li>Let |O| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -11223,7 +11223,7 @@ partial interface Window {
                 must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |O| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |O| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11278,7 +11278,7 @@ partial interface Window {
                             <li>Let |V| be the result of <a class="dfnref" href="#dfn-convert-serialized-value-to-ecmascript-value">converting</a>
                             the value of the entry to an ECMAScript value.</li>
                             <li>Let |P| be the entry’s key.</li>
-                            <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|O|, |P|, |V|).</li>
+                            <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
                           </ol>
                         </li>
                         <li>Return |O|.</li>
@@ -11293,8 +11293,8 @@ partial interface Window {
                           <ol>
                             <li>Let |V| be the result of <a class="dfnref" href="#dfn-convert-serialized-value-to-ecmascript-value">converting</a>
                             the value of the element in |S| at index |index| to an ECMAScript value.</li>
-                            <li>Let |P| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|index|).</li>
-                            <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|O|, |P|, |V|).</li>
+                            <li>Let |P| be <a>ToString</a>(|index|).</li>
+                            <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
                           </ol>
                         </li>
                         <li>Return |A|.</li>
@@ -11335,7 +11335,7 @@ partial interface Window {
               </ul>
               <p>
                 then a property must exist
-                whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> symbol,
+                whose name is the <a>@@iterator</a> symbol,
                 with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               </p>
@@ -11354,7 +11354,7 @@ partial interface Window {
               </ul>
               <p>
                 If the interface defines an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>,
-                then the <span class="estype">Function</span> object is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayProto_values%</a>.
+                then the <span class="estype">Function</span> object is <a>%ArrayProto_values%</a>.
               </p>
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
@@ -11362,7 +11362,7 @@ partial interface Window {
                 must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11384,11 +11384,11 @@ partial interface Window {
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>
                 or <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>,
-                then the <span class="estype">Function</span> object that is the value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property,
+                then the <span class="estype">Function</span> object that is the value of the <a>@@iterator</a> property,
                 when invoked, must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11405,22 +11405,22 @@ partial interface Window {
                   then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>If the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>, then:
                   <ol>
-                    <li>Let |backing| be the value of the \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|.</li>
-                    <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-createmapiterator">CreateMapIterator</a>(|backing|, <code>"key+value"</code>).</li>
+                    <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|.</li>
+                    <li>Return <a>CreateMapIterator</a>(|backing|, <code>"key+value"</code>).</li>
                   </ol>
                 </li>
                 <li>Otherwise:
                   <ol>
-                    <li>Let |backing| be the value of the \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|.</li>
-                    <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-createsetiterator">CreateSetIterator</a>(|backing|, <code>"value"</code>).</li>
+                    <li>Let |backing| be the value of the \[[BackingSet]] <a>internal slot</a> of |object|.</li>
+                    <li>Return <a>CreateSetIterator</a>(|backing|, <code>"value"</code>).</li>
                   </ol>
                 </li>
               </ol>
               <p>
-                The value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> <span class="estype">Function</span> object’s “length”
+                The value of the <a>@@iterator</a> <span class="estype">Function</span> object’s “length”
                 property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
               </p>
-              <p>The value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> <span class="estype">Function</span> object’s “name”
+              <p>The value of the <a>@@iterator</a> <span class="estype">Function</span> object’s “name”
               property is the <span class="estype">String</span> value “entries” if the interface has a
               <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a> or a
               <a class="dfnref" href="#dfn-maplike-declaration">maplike
@@ -11462,7 +11462,7 @@ partial interface Window {
               <p>
                 If the interface defines an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>,
                 then the <span class="estype">Function</span> object is
-                the initial value of the “forEach” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.
+                the initial value of the “forEach” data property of <a>%ArrayPrototype%</a>.
               </p>
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
@@ -11500,7 +11500,7 @@ partial interface Window {
                 must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11517,11 +11517,11 @@ partial interface Window {
                   that implements |interface|,
                   then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>Let |callbackFn| be the value of the first argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
-                <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|callbackFn|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                <li>If <a>IsCallable</a>(|callbackFn|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>Let |thisArg| be the value of the second argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
-                <li>Let |backing| be the value of the \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object|,
+                <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|,
                   if the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>,
-                  or the \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of |object| otherwise.</li>
+                  or the \[[BackingSet]] <a>internal slot</a> of |object| otherwise.</li>
                 <li>Let |callbackWrapper| be a <span class="estype">Function</span> that, when invoked, behaves as follows:
                   <ol>
                     <li>Let |v| and |k| be the first two arguments passed to the function.</li>
@@ -11541,7 +11541,7 @@ partial interface Window {
                 </li>
                 <li>Let |forEach| be the result of calling the \[[Get]] internal method of
                   |backing| with “forEach” and |backing| as arguments.</li>
-                <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|forEach|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                <li>If <a>IsCallable</a>(|forEach|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>Call the \[[Call]] internal method of |forEach| with |backing| as |thisArgument|
                   and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
                 <li>Return <span class="esvalue">undefined</span>.</li>
@@ -11584,12 +11584,12 @@ partial interface Window {
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-value-iterator">value iterator</a>,
                 then the <span class="estype">Function</span> object is
-                the initial value of the “entries” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.
+                the initial value of the “entries” data property of <a>%ArrayPrototype%</a>.
               </p>
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
                 then the <span class="estype">Function</span> object is
-                the value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
+                the value of the <a>@@iterator</a> property.
               </p>
             
 
@@ -11619,14 +11619,14 @@ partial interface Window {
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-value-iterator">value iterator</a>,
                 then the <span class="estype">Function</span> object is
-                the initial value of the “keys” data property of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.
+                the initial value of the “keys” data property of <a>%ArrayPrototype%</a>.
               </p>
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-pair-iterator">pair iterator</a>,
                 then the <span class="estype">Function</span>, when invoked, must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11676,7 +11676,7 @@ partial interface Window {
               <p>
                 If the interface has a <a class="dfnref" href="#dfn-value-iterator">value iterator</a>,
                 then the <span class="estype">Function</span> object is
-                the value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
+                the value of the <a>@@iterator</a> property.
               </p>
 
               <p>
@@ -11684,7 +11684,7 @@ partial interface Window {
                 then the <span class="estype">Function</span>, when invoked, must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11759,7 +11759,7 @@ partial interface Window {
               </p>
               <p>
                 The internal \[[Prototype]] property of an <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
-                must be <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a>.
+                must be <a>%IteratorPrototype%</a>.
               </p>
               <p>
                 An <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
@@ -11771,7 +11771,7 @@ partial interface Window {
               <ol class="algorithm">
                 <li>Let |interface| be the <a class="dfnref" href="#dfn-interface">interface</a> for which the
                   <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a> exists.</li>
-                <li>Let |object| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11789,7 +11789,7 @@ partial interface Window {
                 <li>Let |values| be the list of <a class="dfnref" href="#dfn-value-pairs-to-iterate-over">value pairs to iterate over</a>.</li>
                 <li>Let |len| be the length of |values|.</li>
                 <li>If |object|’s index is greater than or equal to |len|, then
-                  return <a class="external" href="https://tc39.github.io/ecma262/#sec-createiterresultobject">CreateIterResultObject</a>(<span class="esvalue">undefined</span>, <span class="esvalue">true</span>).</li>
+                  return <a>CreateIterResultObject</a>(<span class="esvalue">undefined</span>, <span class="esvalue">true</span>).</li>
                 <li>Let |pair| be the entry in |values| at index |index|.</li>
                 <li>Let |result| be a value determined by the value of |kind|:
                   <dl class="switch">
@@ -11816,15 +11816,15 @@ partial interface Window {
                         <li>Let |idlValue| be |pair|’s value.</li>
                         <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlKey| to an ECMAScript value.</li>
                         <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
-                        <li>Let |array| be the result of performing <a class="external" href="https://tc39.github.io/ecma262/#sec-arraycreate">ArrayCreate</a>(2).</li>
-                        <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|array|, "0", |key|).</li>
-                        <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(|array|, "1", |value|).</li>
+                        <li>Let |array| be the result of performing <a>ArrayCreate</a>(2).</li>
+                        <li>Call <a>CreateDataProperty</a>(|array|, "0", |key|).</li>
+                        <li>Call <a>CreateDataProperty</a>(|array|, "1", |value|).</li>
                         <li>|result| is |array|.</li>
                       </ol>
                     </dd>
                   </dl>
                 </li>
-                <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-createiterresultobject">CreateIterResultObject</a>(|result|, <span class="esvalue">false</span>).</li>
+                <li>Return <a>CreateIterResultObject</a>(|result|, <span class="esvalue">false</span>).</li>
               </ol>
               <p>
                 The <a class="dfnref" href="#dfn-class-string">class string</a> of an
@@ -11843,7 +11843,7 @@ partial interface Window {
             <p>
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               that has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>
-              must have a \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
+              must have a \[[BackingMap]] <a>internal slot</a>, which is
               initially set to a newly created <span class="estype">Map</span> object.
               This <span class="estype">Map</span> object’s \[[MapData]] internal slot is
               the object’s <a class="dfnref" href="#dfn-map-entries">map entries</a>.
@@ -11876,9 +11876,9 @@ partial interface Window {
                 </ul>
               </li>
               <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
               <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |arguments| as |argumentsList|.</li>
             </ol>
 
@@ -11909,7 +11909,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Return the result of calling the \[[Get]] internal method of |map| passing “size” and |map| as arguments.</li>
                   </ol>
                   <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
@@ -11926,7 +11926,7 @@ partial interface Window {
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
-                the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
+                the <a>@@iterator</a> property.
               </p>
             
 
@@ -11970,7 +11970,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Let |keyType| be the key type specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
@@ -12033,7 +12033,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Let |keyType| be the key type specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
@@ -12075,7 +12075,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Let |keyType| and |valueType| be the key and value types specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
@@ -12101,7 +12101,7 @@ partial interface Window {
             <p>
               Any object that implements an <a class="dfnref" href="#dfn-interface">interface</a>
               that has a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>
-              must have a \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, which is
+              must have a \[[BackingSet]] <a>internal slot</a>, which is
               initially set to a newly created <span class="estype">Set</span> object.
               This <span class="estype">Set</span> object’s \[[SetData]] internal slot is
               the object’s <a class="dfnref" href="#dfn-set-entries">set entries</a>.
@@ -12134,9 +12134,9 @@ partial interface Window {
                 </ul>
               </li>
               <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
               <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and |arguments| as |argumentsList|.</li>
             </ol>
 
@@ -12167,7 +12167,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
                     <li>Return the result of calling the \[[Get]] internal method of |set| passing “size” and |set| as arguments.</li>
                   </ol>
                   <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
@@ -12184,7 +12184,7 @@ partial interface Window {
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
-                the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
+                the <a>@@iterator</a> property.
               </p>
             
 
@@ -12227,7 +12227,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
                     <li>Let |type| be the value type specified in the <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
@@ -12275,7 +12275,7 @@ partial interface Window {
                       </ul>
                     </li>
                     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                    <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
                     <li>Let |type| be the value type specified in the <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
@@ -12339,34 +12339,34 @@ partial interface Window {
               an object |destination| with adder method name |adder|, perform the following steps:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|destination|) is not Object, then, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+              <li>If <a>Type</a>(|destination|) is not Object, then, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
               <li>If |iterable| is not present, let |iterable| be <span class="esvalue">undefined</span>.</li>
               <li>If |iterable| is either <span class="esvalue">undefined</span> or <span class="esvalue">null</span>, then let |iter| be <span class="esvalue">undefined</span>.</li>
               <li>Else,
                 <ol>
-                  <li>Let |adder| be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(|destination|, |adder|).</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|adder|).</li>
-                  <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|adder|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
-                  <li>Let |iter| be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-getiterator">GetIterator</a>(|iterable|).</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|iter|).</li>
+                  <li>Let |adder| be the result of <a>Get</a>(|destination|, |adder|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|adder|).</li>
+                  <li>If <a>IsCallable</a>(|adder|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+                  <li>Let |iter| be the result of <a>GetIterator</a>(|iterable|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|iter|).</li>
                 </ol>
               </li>
               <li>If |iter| is <span class="esvalue">undefined</span>, then return.</li>
               <li>Repeat
                 <ol>
-                  <li>Let |next| be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorstep">IteratorStep</a>(|iter|).</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|next|).</li>
-                  <li>If |next| is <span class="esvalue">false</span>, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-normalcompletion">NormalCompletion</a>(|destination|).</li>
-                  <li>Let |nextItem| be <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorvalue">IteratorValue</a>(|next|).</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|nextItem|).</li>
-                  <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|nextItem|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
-                  <li>Let |k| be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(|nextItem|, <code>'0'</code>).</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|k|).</li>
-                  <li>Let |v| be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(|nextItem|, <code>'1'</code>).</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|v|).</li>
+                  <li>Let |next| be the result of <a>IteratorStep</a>(|iter|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|next|).</li>
+                  <li>If |next| is <span class="esvalue">false</span>, then return <a>NormalCompletion</a>(|destination|).</li>
+                  <li>Let |nextItem| be <a>IteratorValue</a>(|next|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|nextItem|).</li>
+                  <li>If <a>Type</a>(|nextItem|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+                  <li>Let |k| be the result of <a>Get</a>(|nextItem|, <code>'0'</code>).</li>
+                  <li><a>ReturnIfAbrupt</a>(|k|).</li>
+                  <li>Let |v| be the result of <a>Get</a>(|nextItem|, <code>'1'</code>).</li>
+                  <li><a>ReturnIfAbrupt</a>(|v|).</li>
                   <li>Let |status| be the result of calling the \[[Call]] internal method of |adder| with |destination| as
                       |thisArgument| and (|k|, |v|) as |argumentsList|.</li>
-                  <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|status|).</li>
+                  <li><a>ReturnIfAbrupt</a>(|status|).</li>
                 </ol>
               </li>
             </ol>
@@ -12475,7 +12475,7 @@ C implements A;</pre>
           <ul>
             <li>The name of the property is “toString”.</li>
             <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
-            <li>The value of the property is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</li>
+            <li>The value of the property is <a>%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</li>
           </ul>
 
           <p>
@@ -12574,12 +12574,12 @@ C implements A;</pre>
             <p>
               The name of each property that appears to exist due to an object supporting indexed properties
               is an <dfn id="dfn-array-index-property-name" export="">array index property name</dfn>, which is a property
-              name |P| such that <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|P|) is String
+              name |P| such that <a>Type</a>(|P|) is String
               and for which the following algorithm returns <span class="esvalue">true</span>:
             </p>
             <ol class="algorithm">
-              <li>Let |i| be <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(|P|).</li>
-              <li>Let |s| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|i|).</li>
+              <li>Let |i| be <a>ToUint32</a>(|P|).</li>
+              <li>Let |s| be <a>ToString</a>(|i|).</li>
               <li>If |s| ≠ |P| or |i| = 2<sup>32</sup> − 1, then return <span class="esvalue">false</span>.</li>
               <li>Return <span class="esvalue">true</span>.</li>
             </ol>
@@ -12644,7 +12644,7 @@ C implements A;</pre>
                 If |O| <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a>
                 and |P| is an <a class="dfnref" href="#dfn-array-index-property-name">array index property name</a>, then:
                 <ol>
-                  <li>Let |index| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(|P|).</li>
+                  <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
                   <li>If |index| is a <a class="dfnref" href="#dfn-supported-property-indices">supported property index</a>, then:
                     <ol>
                       <li>Let |operation| be the operation used to declare the indexed property getter.</li>
@@ -12657,7 +12657,7 @@ C implements A;</pre>
                       <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
                         of performing the steps listed in the description of |operation| with |index| as the only argument value.</li>
 
-                      <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
+                      <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
                       <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                         |value| to an ECMAScript value.</li>
                       <li>If |O| implements an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then set
@@ -12686,7 +12686,7 @@ C implements A;</pre>
                   <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
                     of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
-                  <li>Let |desc| be a newly created <a class="external" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.</li>
+                  <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
                   <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     |value| to an ECMAScript value.</li>
                   <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then set
@@ -12702,7 +12702,7 @@ C implements A;</pre>
                 </ol>
               </li>
 
-              <li>Return the result of calling the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">\[[GetOwnProperty]]</span> internal method</a> on |O| passing |P| as the argument.</li>
+              <li>Return the result of calling the <a>default \[[GetOwnProperty]] internal method</a> on |O| passing |P| as the argument.</li>
             </ol>
           
 
@@ -12735,7 +12735,7 @@ C implements A;</pre>
               |V|, the following steps must be performed:
             </p>
             <ol class="algorithm">
-              <li>Let |index| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(|P|).</li>
+              <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
               <li>Let |creating| be true if |index| is not a <a class="dfnref" href="#dfn-supported-property-indices">supported property index</a>, and false otherwise.</li>
               <li>Let |operation| be the operation used to declare the indexed property setter.</li>
               <li>Let |T| be the type of the second argument of |operation|.</li>
@@ -12815,7 +12815,7 @@ C implements A;</pre>
 
                 <li>
                   If |O| <a class="dfnref" href="#dfn-support-named-properties">supports named
-                  properties</a>, <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(|P|) is String,
+                  properties</a>, <a>Type</a>(|P|) is String,
                   |P| is not an <a class="dfnref" href="#dfn-array-index-property-name">array index property
                   name</a>, and |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named
                   property setter</a>, then:
@@ -12836,7 +12836,7 @@ C implements A;</pre>
                 arguments.
               </li>
               <li>
-                Perform steps 3-11 of the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default \[[Set]] internal method</a>.
+                Perform steps 3-11 of the <a>default \[[Set]] internal method</a>.
               </li>
             </ol>
           
@@ -12858,7 +12858,7 @@ C implements A;</pre>
                 If |O| <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a> and
                 |P| is an <a class="dfnref" href="#dfn-array-index-property-name">array index property name</a>, then:
                 <ol>
-                  <li>If the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
+                  <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
                   <li>If |O| does not implement an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then <a href="#Reject">Reject</a>.</li>
                   <li><a href="#invoking-indexed-setter">Invoke the indexed
                   property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.</li>
@@ -12882,7 +12882,7 @@ C implements A;</pre>
                       <li>If |creating| is false and |O| does not implement an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then <a href="#Reject">Reject</a>.</li>
                       <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then:
                         <ol>
-                          <li>If the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
+                          <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
                           <li>
                             <a href="#invoking-named-setter">Invoke the named
                           property setter</a> with |P| and
@@ -12899,7 +12899,7 @@ C implements A;</pre>
               <li>If |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
                 <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 then set |Desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
-              <li>Call the <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">\[[DefineOwnProperty]]</span> internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
+              <li>Call the <a>default \[[DefineOwnProperty]] internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
             </ol>
           
 
@@ -12919,7 +12919,7 @@ C implements A;</pre>
                 If |O| <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a> and
                 |P| is an <a class="dfnref" href="#dfn-array-index-property-name">array index property name</a>, then:
                 <ol>
-                  <li>Let |index| be the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(|P|).</li>
+                  <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
                   <li>If |index| is not a <a class="dfnref" href="#dfn-supported-property-indices">supported property index</a>, then return <span class="esvalue">true</span>.</li>
                   <li>Return <span class="esvalue">false</span>.</li>
                 </ol>
@@ -13039,10 +13039,10 @@ C implements A;</pre>
               The implementation of the operation (or set of overloaded operations) is
               as follows:
               <ul>
-                <li>If the object is <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>,
+                <li>If the object is <a>callable</a>,
                 then the implementation of the operation (or set of overloaded operations) is
                 the callable object itself.</li>
-                <li>Otherwise, the object is not <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>.
+                <li>Otherwise, the object is not <a>callable</a>.
                 The implementation of the operation (or set of overloaded operations) is
                 the result of invoking the internal <span class="prop">\[[Get]]</span> method
                 on the object with a property name that is the <a class="dfnref" href="#dfn-identifier">identifier</a>
@@ -13099,20 +13099,20 @@ C implements A;</pre>
             <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
             object</a>.</li>
 
-            <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#prepare-to-run-script">Prepare to run script</a> with |settings|.</li>
+            <li><a>Prepare to run script</a> with |settings|.</li>
 
             <li>
               Determine the implementation of the operation, |X|:
 
               <ol>
                 <li>If |value|'s interface is a <a class="dfnref" href="#dfn-single-operation-callback-interface">single operation callback
-                interface</a> and <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">!</a> <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|O|) is true, then set
+                interface</a> and <a>!</a> <a>IsCallable</a>(|O|) is true, then set
                 |X| to |O|.</li>
 
                 <li>
                   Otherwise, |opName| must be supplied:
                   <ol>
-                    <li>Let |getResult| be <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(|O|,
+                    <li>Let |getResult| be <a>Get</a>(|O|,
                     |opName|).</li>
 
                     <li>If |getResult| is an abrupt completion, set |completion|
@@ -13125,13 +13125,13 @@ C implements A;</pre>
             </li>
 
 
-            <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">!</a> <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|X|) is <span class="esvalue">false</span>,
-            then set |completion| to a new <a class="external" href="https://tc39.github.io/ecma262/#sec-completion-record-specification-type">Completion</a>{\[[Type]]: throw, \[[Value]]: a
+            <li>If <a>!</a> <a>IsCallable</a>(|X|) is <span class="esvalue">false</span>,
+            then set |completion| to a new <a>Completion</a>{\[[Type]]: throw, \[[Value]]: a
             newly created <span class="estype">TypeError</span> object, \[[Target]]: empty}, and jump
             to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
             <li>If |value|'s interface is not a <a class="dfnref" href="#dfn-single-operation-callback-interface">single operation callback interface</a>,
-            or if <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">!</a> <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|O|) is <span class="esvalue">false</span>,
+            or if <a>!</a> <a>IsCallable</a>(|O|) is <span class="esvalue">false</span>,
             set |thisArg| to |O| (overriding the provided value).</li>
 
             <li>Let |esArgs| be an empty List of ECMAScript values.</li>
@@ -13169,7 +13169,7 @@ C implements A;</pre>
 
             <li>Truncate |esArgs| to have length |count|.</li>
 
-            <li>Let |callResult| be <a class="external" href="https://tc39.github.io/ecma262/#sec-call">Call</a>(|X|, |thisArg|,
+            <li>Let |callResult| be <a>Call</a>(|X|, |thisArg|,
             |esArgs|).</li>
 
             <li>If |callResult| is an abrupt completion, set |completion| to
@@ -13184,17 +13184,17 @@ C implements A;</pre>
               point |completion| will be set to an ECMAScript completion value.
 
               <ol>
-                <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-script">Clean up after running script</a> with |settings|.</li>
+                <li><a>Clean up after running script</a> with |settings|.</li>
 
                 <li>If |completion| is a normal completion, return
                 |completion|.</li>
 
                 <li>If |completion| is an abrupt completion and the operation has a <a class="dfnref" href="#dfn-return-type">return type</a> that is <em>not</em> a <a href="#idl-promise">promise type</a>, return |completion|.</li>
 
-                <li>Let |reject| be the initial value of <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.reject.</li>
+                <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <span class="esvalue">this</span> value and
+                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -13219,9 +13219,9 @@ C implements A;</pre>
             <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
             object</a>.</li>
 
-            <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#prepare-to-run-script">Prepare to run script</a> with |settings|.</li>
+            <li><a>Prepare to run script</a> with |settings|.</li>
 
-            <li>Let |getResult| be <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(|O|, |attributeName|).</li>
+            <li>Let |getResult| be <a>Get</a>(|O|, |attributeName|).</li>
 
             <li>If |getResult| is an abrupt completion, set |completion| to
             |getResult| and jump to the step labeled <a href="#get-user-object-attribute-return"><i>return</i></a>.</li>
@@ -13235,7 +13235,7 @@ C implements A;</pre>
               point |completion| will be set to an ECMAScript completion value.
 
               <ol>
-                <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-script">Clean up after running script</a> with |settings|.</li>
+                <li><a>Clean up after running script</a> with |settings|.</li>
 
                 <li>If |completion| is a normal completion, return
                 |completion|.</li>
@@ -13244,10 +13244,10 @@ C implements A;</pre>
                 <em>not</em> a <a href="#idl-promise">promise type</a>, return
                 |completion|.</li>
 
-                <li>Let |reject| be the initial value of <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.reject.</li>
+                <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <span class="esvalue">this</span> value and
+                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -13273,7 +13273,7 @@ C implements A;</pre>
             <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
             object</a>.</li>
 
-            <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#prepare-to-run-script">Prepare to run script</a> with |settings|.</li>
+            <li><a>Prepare to run script</a> with |settings|.</li>
 
             <li>Let |convertResult| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |value| to an
             ECMAScript value.</li>
@@ -13281,21 +13281,21 @@ C implements A;</pre>
             <li>If |convertResult| is an abrupt completion, set |completion| to
             |convertResult| and jump to the step labeled <a href="#set-user-object-attribute-return"><i>return</i></a>.</li>
 
-            <li>Set |completion| to <a class="external" href="https://tc39.github.io/ecma262/#sec-set-o-p-v-throw">Set</a>(|O|, |attributeName|,
+            <li>Set |completion| to <a>Set</a>(|O|, |attributeName|,
             |convertResult|.\[[Value]], <span class="esvalue">true</span>).</li>
 
             <li>
               <i id="set-user-object-attribute-return">Return:</i> at this
               point |completion| will be set to an ECMAScript completion value, which is
-              either an abrupt completion or a normal completion for the value <span class="esvalue">true</span> (as returned by <a class="external" href="https://tc39.github.io/ecma262/#sec-set-o-p-v-throw">Set</a>).
+              either an abrupt completion or a normal completion for the value <span class="esvalue">true</span> (as returned by <a>Set</a>).
 
               <ol>
-                <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-script">Clean up after running script</a> with |settings|.</li>
+                <li><a>Clean up after running script</a> with |settings|.</li>
 
                 <li>If |completion| is an abrupt completion, return
                 |completion|.</li>
 
-                <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-normalcompletion">NormalCompletion</a>(<a class="idltype" href="#idl-void">void</a>).</li>
+                <li>Return <a>NormalCompletion</a>(<a class="idltype" href="#idl-void">void</a>).</li>
               </ol>
             </li>
           </ol>
@@ -13305,7 +13305,7 @@ C implements A;</pre>
           <h3 id="es-invoking-callback-functions">Invoking callback functions</h3>
 
           <p>
-            An ECMAScript <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a> object that is being
+            An ECMAScript <a>callable</a> object that is being
             used as a <a class="dfnref" href="#dfn-callback-function">callback function</a> value is
             called in a manner similar to how <a class="dfnref" href="#dfn-operation">operations</a>
             on <a class="dfnref" href="#dfn-user-object">user objects</a> are called (as
@@ -13329,7 +13329,7 @@ C implements A;</pre>
             <li>Let |F| be the ECMAScript object corresponding to |value|.</li>
 
             <li>
-              If <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">!</a> <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(|F|) is <span class="esvalue">false</span>:
+              If <a>!</a> <a>IsCallable</a>(|F|) is <span class="esvalue">false</span>:
 
               <ol>
                 <li>
@@ -13351,7 +13351,7 @@ C implements A;</pre>
             <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
             object</a>.</li>
 
-            <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#prepare-to-run-script">Prepare to run script</a> with |settings|.</li>
+            <li><a>Prepare to run script</a> with |settings|.</li>
 
             <li>Let |esArgs| be an empty List of ECMAScript values.</li>
 
@@ -13388,7 +13388,7 @@ C implements A;</pre>
 
             <li>Truncate |esArgs| to have length |count|.</li>
 
-            <li>Let |callResult| be <a class="external" href="https://tc39.github.io/ecma262/#sec-call">Call</a>(|X|, |thisArg|,
+            <li>Let |callResult| be <a>Call</a>(|X|, |thisArg|,
             |esArgs|).</li>
 
             <li>If |callResult| is an abrupt completion, set |completion| to
@@ -13403,7 +13403,7 @@ C implements A;</pre>
               point |completion| will be set to an ECMAScript completion value.
 
               <ol>
-                <li><a class="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-script">Clean up after running script</a> with |settings|.</li>
+                <li><a>Clean up after running script</a> with |settings|.</li>
 
                 <li>If |completion| is a normal completion, return
                 |completion|.</li>
@@ -13411,10 +13411,10 @@ C implements A;</pre>
                 <li>If |completion| is an abrupt completion and the callback function has a
                 <a class="dfnref" href="#dfn-return-type">return type</a> that is <em>not</em> a <a href="#idl-promise">promise type</a>, return |completion|.</li>
 
-                <li>Let |reject| be the initial value of <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.reject.</li>
+                <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a class="external" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <span class="esvalue">this</span> value and
+                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -13441,7 +13441,7 @@ C implements A;</pre>
 
             <p>
               The DOMException constructor object must be a <a class="dfnref" href="#dfn-function-object">function object</a>
-              but with a <span class="prop">\[[Prototype]]</span> value of <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a>.
+              but with a <span class="prop">\[[Prototype]]</span> value of <a>%Error%</a>.
             </p>
             <p>
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
@@ -13466,17 +13466,17 @@ C implements A;</pre>
                 <li>Let |F| be the active function object.</li>
                 <li>If NewTarget is <span class="esvalue">undefined</span>, let |newTarget| be |F|, else let |newTarget| be NewTarget.</li>
                 <li>Let |super| be |F|.\[[GetPrototypeOf]]().</li>
-                <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|super|).</li>
-                <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-isconstructor">IsConstructor</a>(|super|) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
-                <li>Let |O| be <a class="external" href="https://tc39.github.io/ecma262/#sec-construct">Construct</a>(|super|, «|message|», |newTarget|).</li>
+                <li><a>ReturnIfAbrupt</a>(|super|).</li>
+                <li>If <a>IsConstructor</a>(|super|) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
+                <li>Let |O| be <a>Construct</a>(|super|, «|message|», |newTarget|).</li>
                 <li>If |name| is not <span class="esvalue">undefined</span>, then
                   <ol>
-                    <li>Let |name| be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(|name|).</li>
-                    <li>Let |status| be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
-                    <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|status|).</li>
+                    <li>Let |name| be <a>ToString</a>(|name|).</li>
+                    <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                    <li><a>ReturnIfAbrupt</a>(|status|).</li>
                     <li>Let |code| be the legacy code indicated in the <a class="dfnref" href="#dfn-error-names-table">error names table</a> for error name |name|, or <span class="esvalue">0</span> if there is none.</li>
-                    <li>Let |status| be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
-                    <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(|status|).</li>
+                    <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                    <li><a>ReturnIfAbrupt</a>(|status|).</li>
                   </ol>
                 </li>
                 <li>Return |O|.</li>
@@ -13489,7 +13489,7 @@ C implements A;</pre>
 
             <p>
               The DOMException prototype object must
-              have an internal <span class="prop">\[[Prototype]]</span> property whose value is <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a>.
+              have an internal <span class="prop">\[[Prototype]]</span> property whose value is <a>%ErrorPrototype%</a>.
             </p>
             <p>
               The <a class="dfnref" href="#dfn-class-string">class string</a> of the

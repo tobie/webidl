@@ -139,22 +139,19 @@ TR: </xsl:text>
 
   <xsl:template match='h:a[not(@href)]'>
     <xsl:variable name='name' select='string(.)'/>
-    <xsl:variable name='a-class' select='@class'/>
+    <xsl:variable name='escaped-name' select='replace($name, "\[\[", "\\[[")'/>
     <xsl:variable name='term' select='$options/x:links/x:term[@name=$name]'/>
     <xsl:if test='not($term)'>
       <xsl:message terminate='yes'>unknown term '<xsl:value-of select='$name'/>'</xsl:message>
     </xsl:if>
-    <xsl:variable name='term-class' select='$term/@class'/>
-    <xsl:variable name='final-class'>
-      <xsl:value-of select='$a-class'/>
-      <xsl:if test='$a-class and $term-class'>
-        <xsl:text> </xsl:text>
-      </xsl:if>
-      <xsl:value-of select='$term-class'/>
-    </xsl:variable>
-    <a class="{$final-class}" href='{$term/@href}'>
-      <xsl:apply-templates/>
-    </a>
+    <xsl:choose>
+      <xsl:when test='@class'>
+        <a class="{@class}"><xsl:value-of select='$escaped-name'/></a>
+      </xsl:when>
+      <xsl:otherwise>
+        <a><xsl:value-of select='$escaped-name'/></a>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match='processing-instruction("productions")'>
