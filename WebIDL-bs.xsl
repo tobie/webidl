@@ -67,6 +67,32 @@ TR: </xsl:text>
 <xsl:text>Ignored Vars: callback, op, ownDesc, exampleVariableName, target
 </xsl:text>
 </pre>
+<xsl:text>
+
+</xsl:text>
+<pre class="anchors">
+<xsl:text>
+</xsl:text>
+    <xsl:for-each-group select='$options/x:links/x:term' group-by='replace(@href, "#.*?$", "")'>
+<xsl:text>urlPrefix: </xsl:text><xsl:value-of select="current-grouping-key()"/>
+<xsl:text>
+    type: dfn
+</xsl:text>
+      <xsl:for-each select="current-group()">
+        <xsl:variable name='url' select='replace(@href, "^.*?#", "")'/>
+        <xsl:variable name='text' select='@name'/>
+        
+        <xsl:text>        text: </xsl:text>
+        <xsl:value-of select='$text' />
+        <xsl:if test='lower-case(replace($text, "\s+", "-")) != $url'>
+          <xsl:text>; url: </xsl:text>
+          <xsl:value-of select='$url' />
+        </xsl:if>
+        <xsl:text>
+</xsl:text>
+      </xsl:for-each>
+    </xsl:for-each-group>
+</pre>
   </xsl:template>
 
   <xsl:param name='now'>12340506<!--
