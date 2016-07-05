@@ -262,23 +262,7 @@ TR: </xsl:text>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match='h:div[@class="section"]/h:h2 | h:div[@class="section"]/h:h3 | h:div[@class="section"]/h:h4 | h:div[@class="section"]/h:h5 | h:div[@class="section"]/h:h6'>
-    <xsl:element name="{name()}" namespace="{namespace-uri()}">
-      <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <xsl:if test='$tocpi'>
-        <xsl:variable name='num'>
-          <xsl:call-template name='section-number'>
-            <xsl:with-param name='section' select='..'/>
-          </xsl:call-template>
-        </xsl:variable>
-        <xsl:if test='$num != ""'>
-          <xsl:value-of select='$num'/>
-          <xsl:text>. </xsl:text>
-        </xsl:if>
-      </xsl:if>
-      <xsl:apply-templates select='node()'/>
-    </xsl:element>
-  </xsl:template>
+
   
   <xsl:template match='h:div[@id="toc"] | h:head' />
   
