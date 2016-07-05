@@ -232,6 +232,7 @@ TR: </xsl:text>
       </xsl:attribute>
       <xsl:if test="@data-dfn-type">
         <xsl:attribute name="{@data-dfn-type}" />
+        <xsl:attribute name="dfn" />
       </xsl:if>
       <xsl:if test="@data-lt and text() != @data-lt">
         <xsl:attribute name="lt">
