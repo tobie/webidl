@@ -39,8 +39,9 @@ Ignored Vars: callback, op, ownDesc, exampleVariableName, target
 <pre class="anchors">
 urlPrefix: http://www.unicode.org/glossary/
     type: dfn
-        text: Unicode scalar value; url: unicode_scalar_value
-        text: Unicode scalar values; url: unicode_scalar_value
+        url: unicode_scalar_value
+            text: Unicode scalar value
+            text: Unicode scalar values
 urlPrefix: https://tc39.github.io/ecma262/
     type: dfn
         text: NumericLiteral; url: sec-literals-numeric-literals
@@ -55,24 +56,29 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: IsAccessorDescriptor; url: sec-isaccessordescriptor
         text: IsDataDescriptor; url: sec-isdatadescriptor
         text: Type; url: sec-ecmascript-data-types-and-values
-        text: sign; url: sec-algorithm-conventions
-        text: floor; url: sec-algorithm-conventions
-        text: abs; url: sec-algorithm-conventions
-        text: modulo; url: sec-algorithm-conventions
+        url: sec-algorithm-conventions
+            text: sign
+            text: floor
+            text: abs
+            text: modulo
+            text: !
+            text: ?
         text: element; url: sec-ecmascript-language-types-string-type
-        text: IsCallable; url: sec-iscallable
-        text: callable; url: sec-iscallable
-        text: %ArrayPrototype%; url: sec-well-known-intrinsic-objects
-        text: %ArrayProto_values%; url: sec-well-known-intrinsic-objects
-        text: %MapPrototype%; url: sec-well-known-intrinsic-objects
-        text: %ObjectPrototype%; url: sec-well-known-intrinsic-objects
-        text: %SetPrototype%; url: sec-well-known-intrinsic-objects
-        text: %Error%; url: sec-well-known-intrinsic-objects
-        text: %ErrorPrototype%; url: sec-well-known-intrinsic-objects
-        text: %FunctionPrototype%; url: sec-well-known-intrinsic-objects
-        text: %ObjProto_toString%; url: sec-well-known-intrinsic-objects
+        url: sec-iscallable
+            text: IsCallable
+            text: callable
+        url: sec-well-known-intrinsic-objects
+            text: %ArrayPrototype%
+            text: %ArrayProto_values%
+            text: %MapPrototype%
+            text: %ObjectPrototype%
+            text: %SetPrototype%
+            text: %Error%
+            text: %ErrorPrototype%
+            text: %FunctionPrototype%
+            text: %ObjProto_toString%
+            text: %IteratorPrototype%
         text: %Promise%; url: sec-promise-constructor
-        text: %IteratorPrototype%; url: sec-well-known-intrinsic-objects
         text: Property Descriptor; url: sec-property-descriptor-specification-type
         text: array index; url: sec-array-exotic-objects
         text: default [[GetOwnProperty]] internal method; url: sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p
@@ -87,8 +93,9 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: IteratorStep; url: sec-iteratorstep
         text: NormalCompletion; url: sec-normalcompletion
         text: IteratorValue; url: sec-iteratorvalue
-        text: @@iterator; url: sec-well-known-symbols
-        text: @@toStringTag; url: sec-well-known-symbols
+        url: sec-well-known-symbols
+            text: @@iterator
+            text: @@toStringTag
         text: CreateArrayIterator; url: sec-createarrayiterator
         text: CreateIterResultObject; url: sec-createiterresultobject
         text: CreateMapIterator; url: sec-createmapiterator
@@ -98,8 +105,9 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: DetachArrayBuffer; url: sec-detacharraybuffer
         text: IsDetachedBuffer; url: sec-isdetachedbuffer
         text: SetIntegrityLevel; url: sec-setintegritylevel
-        text: array iterator object; url: sec-array-iterator-objects
-        text: array iterator objects; url: sec-array-iterator-objects
+        url: sec-array-iterator-objects
+            text: array iterator object
+            text: array iterator objects
         text: Call; url: sec-call
         text: Get; url: sec-get-o-p
         text: Set; url: sec-set-o-p-v-throw
@@ -108,8 +116,6 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: DefinePropertyOrThrow; url: sec-definepropertyorthrow
         text: Realm; url: sec-code-realms
         text: Completion; url: sec-completion-record-specification-type
-        text: !; url: sec-algorithm-conventions
-        text: ?; url: sec-algorithm-conventions
 urlPrefix: http://www.ecma-international.org/ecma-262/6.0/
     type: dfn
         text: GetMethod; url: sec-getmethod

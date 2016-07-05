@@ -78,19 +78,34 @@ TR: </xsl:text>
 <xsl:text>
     type: dfn
 </xsl:text>
-      <xsl:for-each select="current-group()">
-        <xsl:variable name='url' select='replace(@href, "^.*?#", "")'/>
-        <xsl:variable name='text' select='@name'/>
-        
-        <xsl:text>        text: </xsl:text>
-        <xsl:value-of select='$text' />
-        <xsl:if test='lower-case(replace($text, "\s+", "-")) != $url'>
-          <xsl:text>; url: </xsl:text>
-          <xsl:value-of select='$url' />
-        </xsl:if>
-        <xsl:text>
+        <xsl:for-each-group select='current-group()' group-by='replace(@href, "^.*?#", "")'>
+          <xsl:choose>
+            <xsl:when test='count(current-group()) > 1'>
+              <xsl:text>        url: </xsl:text>
+              <xsl:value-of select="current-grouping-key()"/>
+              <xsl:text>
 </xsl:text>
-      </xsl:for-each>
+              <xsl:for-each select='current-group()'>
+                <xsl:text>            text: </xsl:text>
+                <xsl:value-of select='@name' />
+                <xsl:text>
+</xsl:text>
+              </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:variable name='url' select='replace(@href, "^.*?#", "")'/>
+              <xsl:variable name='text' select='@name'/>
+              <xsl:text>        text: </xsl:text>
+              <xsl:value-of select='$text' />
+              <xsl:if test='lower-case(replace($text, "\s+", "-")) != $url'>
+                <xsl:text>; url: </xsl:text>
+                <xsl:value-of select='$url' />
+              </xsl:if>
+              <xsl:text>
+</xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:for-each-group>
     </xsl:for-each-group>
 </pre>
   </xsl:template>
