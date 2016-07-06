@@ -124,7 +124,7 @@ TR: </xsl:text>
   <xsl:template match='h:span[@class="idltype"]'>
     <xsl:variable name='id' select='concat("idl-", translate(., " ", "-"))'/>
     <xsl:variable name='txt' select='string(.)'/>
-    <xsl:variable name='def' select='//*[@id=$id] | //*[@data-lt=$txt]'/>
+    <xsl:variable name='def' select='//*[@id=$id] | //*[@data-lt=$txt] | //*[matches(name(), "h[1-6]|dfn")][not(@class="idltype")][.=$txt]'/>
     <xsl:if test='@id and @id != id'>
       <xsl:message terminate='yes'>Unexpected id '<xsl:value-of select='@id'/>'</xsl:message>
     </xsl:if>

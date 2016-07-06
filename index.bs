@@ -4025,7 +4025,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <p>
               Here is are some examples of wording to use to create and throw exceptions.
               To throw a new <a class="dfnref" href="#dfn-simple-exception">simple exception</a> named
-              <span class="idltype">TypeError</span>:
+              {{TypeError}}:
             </p>
             <blockquote>
               <p><a class="dfnref" href="#dfn-throw">Throw</a> a TypeError.</p>
@@ -4033,7 +4033,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <p>
               To throw a new <a class="dfnref" href="#dfn-DOMException">DOMException</a> with
               <a class="dfnref" href="#dfn-exception-error-name">error name</a>
-              <span class="idltype">IndexSizeError</span>:
+              {{IndexSizeError}}:
             </p>
             <blockquote>
               <p><a class="dfnref" href="#dfn-throw">Throw</a> an IndexSizeError.</p>
@@ -4041,7 +4041,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <p>
               To create a new <a class="dfnref" href="#dfn-DOMException">DOMException</a> with
               <a class="dfnref" href="#dfn-exception-error-name">error name</a>
-              <span class="idltype">SyntaxError</span>:
+              {{SyntaxError}}:
             </p>
             <blockquote>
               <p>Let |object| be a newly <a class="dfnref" href="#dfn-create-exception">created</a> SyntaxError.</p>
@@ -5656,7 +5656,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <div class="note">
               <p>
                 When designing APIs that take a buffer, it is recommended to use the
-                <span class="idltype">BufferSource</span> typedef rather than {{ArrayBuffer}}
+                {{BufferSource}} typedef rather than {{ArrayBuffer}}
                 or any of the view types.
               </p>
               <p>
@@ -12421,7 +12421,7 @@ C implements A;</pre>
               Attempting to call <code>B.prototype.f</code> on an object that implements
               <span class="idltype">A</span> (but not <span class="idltype">B</span>) or one
               that implements <span class="idltype">C</span> will result in a
-              <span class="idltype">TypeError</span> being thrown.  However,
+              {{TypeError}} being thrown.  However,
               calling <code>A.prototype.f</code> on an object that implements
               <span class="idltype">B</span> or one that implements <span class="idltype">C</span>
               would succeed.  This is handled by the algorithm in [[#es-operations]]
@@ -13769,7 +13769,7 @@ d.type = et;
          Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
          Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef="">ArrayBufferView</dfn>;</pre>
           <p>
-            The <span class="idltype">ArrayBufferView</span> typedef is used to represent
+            The {{ArrayBufferView}} typedef is used to represent
             objects that provide a view on to an {{ArrayBuffer}}.
           </p>
         
@@ -13779,7 +13779,7 @@ d.type = et;
 
           <pre class="idl-example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
           <p>
-            The <span class="idltype">BufferSource</span> typedef is used to represent objects
+            The {{BufferSource}} typedef is used to represent objects
             that are either themselves an {{ArrayBuffer}} or which
             provide a view on to an {{ArrayBuffer}}.
           </p>
@@ -13790,7 +13790,7 @@ d.type = et;
 
           <pre class="idl-example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef="">DOMTimeStamp</dfn>;</pre>
           <p>
-            The <span class="idltype">DOMTimeStamp</span> type is used for representing
+            The {{DOMTimeStamp}} type is used for representing
             a number of milliseconds, either as an absolute time (relative to some epoch)
             or as a relative amount of time.  Specifications that use this type will need
             to define how the number of milliseconds is to be interpreted.
@@ -13802,7 +13802,7 @@ d.type = et;
 
           <pre class="idl-example">callback <dfn id="Function" callback="">Function</dfn> = any (any... arguments);</pre>
           <p>
-            The <span class="idltype">Function</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
+            The {{Function}} <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values with no restriction on what arguments
             are passed to it or what kind of value is returned from it.
           </p>
@@ -13813,7 +13813,7 @@ d.type = et;
 
           <pre class="idl-example">callback <dfn id="VoidFunction" callback="">VoidFunction</dfn> = void ();</pre>
           <p>
-            The <span class="idltype">VoidFunction</span> <a class="dfnref" href="#dfn-callback-function">callback function</a>
+            The {{VoidFunction}} <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values that take no arguments and do not
             return any value.
           </p>
