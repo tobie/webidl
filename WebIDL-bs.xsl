@@ -120,8 +120,16 @@ TR: </xsl:text>
       <xsl:apply-templates select='node()'/>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match='h:span[@class="idltype"][@id]'>
+    <dfn>
+      <xsl:attribute name='id'><xsl:value-of select='@id'/></xsl:attribute>
+      <xsl:attribute name='idl' />
+      <xsl:apply-templates select="node()"/>
+    </dfn>
+  </xsl:template>
 
-  <xsl:template match='h:span[@class="idltype"]'>
+  <xsl:template match='h:span[@class="idltype"][not(@id)]'>
     <xsl:variable name='id' select='concat("idl-", translate(., " ", "-"))'/>
     <xsl:variable name='txt' select='string(.)'/>
     <xsl:variable name='def' select='//*[@id=$id] | //*[@data-lt=$txt] | //*[matches(name(), "h[1-6]|dfn")][not(@class="idltype")][.=$txt]'/>
