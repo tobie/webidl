@@ -573,4 +573,28 @@ TR: </xsl:text>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-flattened-union-member-type"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#dfn-flattened-union-member-types</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-supported-indexed-properties"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#dfn-support-indexed-properties</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-convert-idl-to-ecmascript"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#dfn-convert-idl-to-ecmascript-value</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>

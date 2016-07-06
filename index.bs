@@ -5299,7 +5299,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               another nullable type, or a <a class="dfnref" href="#dfn-union-type">union type</a>
               that itself has <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
               or has a dictionary type as one of its
-              <a class="dfnref" href="#dfn-flattened-union-member-type">flattened member types</a>.
+              <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>.
             </p>
                 Note: Although dictionary types can in general be nullable, they cannot when used
               as the type of an operation argument or a dictionary member.
@@ -11729,7 +11729,7 @@ partial interface Window {
                   Note: Default iterator objects are only used for <a class="dfnref" href="#dfn-pair-iterator">pair iterators</a>;
                   <a class="dfnref" href="#dfn-value-iterator">value iterators</a>, as they are currently
                   restricted to iterating over an object’s
-                  <a class="dfnref" href="#dfn-supported-indexed-properties">supported indexed properties</a>,
+                  <a class="dfnref" href="#dfn-support-indexed-properties">supported indexed properties</a>,
                   use standard ECMAScript Array iterator objects.
                 
               <p>
@@ -11975,7 +11975,7 @@ partial interface Window {
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
-                    <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |keyIDL| to an ECMAScript value.</li>
+                    <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
                 </li>
@@ -12038,7 +12038,7 @@ partial interface Window {
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
-                    <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |keyIDL| to an ECMAScript value.</li>
+                    <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
                 </li>
@@ -12082,8 +12082,8 @@ partial interface Window {
                     <li>Let |valueArg| be the second argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |valueIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |valueArg| to an IDL value of type |valueType|.</li>
-                    <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |keyIDL| to an ECMAScript value.</li>
-                    <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |valueIDL| to an ECMAScript value.</li>
+                    <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
+                    <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |valueIDL| to an ECMAScript value.</li>
                     <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |key| and |value| as |argumentsList|.</li>
                     <li>Assert: |result| is not an abrupt completion.</li>
                     <li>Return |O|.</li>
@@ -12232,7 +12232,7 @@ partial interface Window {
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |arg| to an IDL value of type |type|.</li>
-                    <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |idlValue| to an ECMAScript value.</li>
+                    <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                   </ol>
                 </li>
@@ -12280,7 +12280,7 @@ partial interface Window {
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
                     <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |arg| to an IDL value of type |type|.</li>
-                    <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript">converting</a> |idlValue| to an ECMAScript value.</li>
+                    <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
                     <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                     <li>Assert: |result| is not an abrupt completion.</li>
                     <li>
