@@ -3969,7 +3969,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             is identified by one of the following names:
           </p>
           <ul>
-            <li><span class="idltype"><dfn interface="" export="">Error</dfn></span></li>
+            <li>{{Error}}</li>
             <li><span class="idltype"><dfn interface="" export="">EvalError</dfn></span></li>
             <li><span class="idltype"><dfn interface="" export="">RangeError</dfn></span></li>
             <li><span class="idltype"><dfn interface="" export="">ReferenceError</dfn></span></li>

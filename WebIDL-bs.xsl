@@ -130,16 +130,16 @@ TR: </xsl:text>
   </xsl:template>
 
   <xsl:template match='h:span[@class="idltype"][not(@id)]'>
-    <xsl:variable name='id' select='concat("idl-", translate(., " ", "-"))'/>
     <xsl:variable name='txt' select='string(.)'/>
-    <xsl:variable name='def' select='//*[@id=$id] | //*[@data-lt=$txt] | //*[matches(name(), "h[1-6]|dfn")][not(@class="idltype")][.=$txt]'/>
-    <xsl:if test='@id and @id != id'>
-      <xsl:message terminate='yes'>Unexpected id '<xsl:value-of select='@id'/>'</xsl:message>
-    </xsl:if>
+    <xsl:variable name='generatedid' select='concat("idl-", translate(., " ", "-"))'/>
+    <xsl:variable name='dfn' select='//h:dfn[.=$txt] | //*[@data-lt=$txt] | //*[@data-dfn-type][.=$txt] | //*[@id=$generatedid]'/>
     <xsl:choose>
-      <xsl:when test='$def and not(ancestor::h:a or child::h:dfn)'>
+      <xsl:when test='.[child::h:dfn[text()="Error"]]'>
+        <xsl:text>{{Error}}</xsl:text>
+      </xsl:when>
+      <xsl:when test='$dfn and not(ancestor::h:a or child::h:dfn)'>
         <xsl:text>{{</xsl:text>
-        <xsl:variable name='for' select='$def/@data-dfn-for'/>
+        <xsl:variable name='for' select='$dfn/@data-dfn-for'/>
         <xsl:if test="$for">
           <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
         </xsl:if>
