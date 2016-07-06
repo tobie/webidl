@@ -147,10 +147,6 @@ TR: </xsl:text>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match='h:a[@href^="#"][ancestor::*[@class="example"]]'>
-      <xsl:message terminate='no'><xsl:value-of select='@href'/></xsl:message>
-  </xsl:template>
-
   <xsl:template match='h:a[not(@href)]'>
     <xsl:variable name='name' select='string(.)'/>
     <xsl:variable name='escaped-name' select='replace($name, "\[\[", "\\[[")'/>
@@ -559,4 +555,12 @@ TR: </xsl:text>
   <xsl:template match='comment()' />
 
   <xsl:template match='comment()[starts-with(., "JAVA")]' />
+  
+  <xsl:template match='h:a[@href="#dfn-values-to-iterate-over"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>

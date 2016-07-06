@@ -3428,7 +3428,7 @@ interface Session {
               </p>
               <blockquote>
                 <p>
-                  The <a class="dfnref" href="#dfn-values-to-iterate-over">values to iterate over</a>
+                  The <a class="dfnref" href="#">values to iterate over</a>
                   are the open <span class="idltype">Session</span> objects
                   on the <span class="idltype">SessionManager</span> sorted by username.
                 </p>
