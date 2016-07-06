@@ -315,7 +315,9 @@ TR: </xsl:text>
         <xsl:when test='@language="java"'>java</xsl:when>
         <xsl:when test='@language="c"'>c</xsl:when>
         <xsl:when test='@language="html"'>html</xsl:when>
-        <xsl:otherwise>@@</xsl:otherwise>
+        <xsl:otherwise>
+          <xsl:message terminate='yes'>Unexpected codeblock language attribute '<xsl:value-of select='@language'/>'</xsl:message>
+        </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:choose>
@@ -359,7 +361,7 @@ TR: </xsl:text>
         <xsl:text>\[WEBIDL]</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:text>@@</xsl:text>
+        <xsl:message terminate='yes'>Unexpected placeholder link '<xsl:value-of select='.'/></xsl:message>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template> 
