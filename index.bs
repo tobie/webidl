@@ -1121,13 +1121,13 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 parsed as an ECMAScript <a>NumericLiteral</a>.</li>
               <li>
                 If the <a class="sym" href="#prod-float">float</a> token is being
-                used as the value for a <a class="idltype" href="#idl-float">float</a> or
-                <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a>, then
+                used as the value for a {{float}} or
+                {{unrestricted float}}, then
                 the value of the <a class="sym" href="#prod-float">float</a> token
                 is the IEEE 754 single-precision floating point number closest to
                 |result|.  Otherwise, the <a class="sym" href="#prod-float">float</a> token is being
-                used as the value for a <a class="idltype" href="#idl-double">double</a> or
-                <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>, and
+                used as the value for a {{double}} or
+                {{unrestricted double}}, and
                 the value of the <a class="sym" href="#prod-float">float</a> token
                 is the IEEE 754 double-precision floating point number closest to
                 |result|.
@@ -1143,17 +1143,17 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               value for:
             </p>
             <dl class="switch">
-              <dt>Type <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a>, constant value <code>Infinity</code></dt>
+              <dt>Type {{unrestricted float}}, constant value <code>Infinity</code></dt>
               <dd>The value is the IEEE 754 single-precision positive infinity value.</dd>
-              <dt>Type <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>, constant value <code>Infinity</code></dt>
+              <dt>Type {{unrestricted double}}, constant value <code>Infinity</code></dt>
               <dd>The value is the IEEE 754 double-precision positive infinity value.</dd>
-              <dt>Type <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a>, constant value <code>-Infinity</code></dt>
+              <dt>Type {{unrestricted float}}, constant value <code>-Infinity</code></dt>
               <dd>The value is the IEEE 754 single-precision negative infinity value.</dd>
-              <dt>Type <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>, constant value <code>-Infinity</code></dt>
+              <dt>Type {{unrestricted double}}, constant value <code>-Infinity</code></dt>
               <dd>The value is the IEEE 754 double-precision negative infinity value.</dd>
-              <dt>Type <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a>, constant value <code>NaN</code></dt>
+              <dt>Type {{unrestricted float}}, constant value <code>NaN</code></dt>
               <dd>The value is the IEEE 754 single-precision NaN value with the bit pattern 0x7fc00000.</dd>
-              <dt>Type <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>, constant value <code>NaN</code></dt>
+              <dt>Type {{unrestricted double}}, constant value <code>NaN</code></dt>
               <dd>The value is the IEEE 754 double-precision NaN value with the bit pattern 0x7ff8000000000000.</dd>
             </dl>
             <p>
@@ -1163,8 +1163,8 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               lie outside the valid range of values for its type, as given in
               [[#idl-types]].
               Also, <code>Infinity</code>, <code>-Infinity</code> and <code>NaN</code> must not
-              be used as the value of a <a class="idltype" href="#idl-float">float</a>
-              or <a class="idltype" href="#idl-double">double</a>.
+              be used as the value of a {{float}}
+              or {{double}}.
             </p>
             <p>
               The value of the <code>null</code> token is the special
@@ -1653,12 +1653,12 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               <li>Let |S| be the sequence of <a>Unicode scalar values</a> matched by the <a class="sym" href="#prod-string">string</a> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.</li>
               <li>Depending on the type of the argument:
                 <dl class="switch">
-                  <dt><a class="idltype" href="#idl-DOMString">DOMString</a></dt>
+                  <dt>{{DOMString}}</dt>
                   <dt>an <a class="dfnref" href="#dfn-enumeration">enumeration</a> type</dt>
                   <dd>The value of the <a class="sym" href="#prod-string">string</a> token is the sequence of 16 bit unsigned integer code units (hereafter referred to just as <dfn id="dfn-code-unit">code units</dfn>) corresponding to the UTF-16 encoding of |S|.</dd>
-                  <dt><a class="idltype" href="#idl-ByteString">ByteString</a></dt>
+                  <dt>{{ByteString}}</dt>
                   <dd>The value of the <a class="sym" href="#prod-string">string</a> token is the sequence of 8 bit unsigned integer code units corresponding to the UTF-8 encoding of |S|.</dd>
-                  <dt><a class="idltype" href="#idl-USVString">USVString</a></dt>
+                  <dt>{{USVString}}</dt>
                   <dd>The value of the <a class="sym" href="#prod-string">string</a> token is |S|.</dd>
                 </dl>
               </li>
@@ -1820,7 +1820,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               <tr>
                 <td><dfn id="dfn-stringifier" export="" lt="stringifier">Stringifiers</dfn></td>
                 <td><code>stringifier</code></td>
-                <td>Defines how an object is converted into a <a class="idltype" href="#idl-DOMString">DOMString</a>.</td>
+                <td>Defines how an object is converted into a {{DOMString}}.</td>
               </tr>
               <tr>
                 <td><dfn id="dfn-serializer" export="" lt="serializer">Serializers</dfn></td>
@@ -1879,11 +1879,11 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             </p>
             <p>
               Getters and setters come in two varieties: ones that
-              take a <a class="idltype" href="#idl-DOMString">DOMString</a> as a property name,
+              take a {{DOMString}} as a property name,
               known as
               <dfn id="dfn-named-property-getter" export="" lt="named property getter">named property getters</dfn> and
               <dfn id="dfn-named-property-setter" export="" lt="named property setter">named property setters</dfn>,
-              and ones that take an <a class="idltype" href="#idl-unsigned-long">unsigned long</a>
+              and ones that take an {{unsigned long}}
               as a property index, known as
               <dfn id="dfn-indexed-property-getter" export="" lt="indexed property getter">indexed property getters</dfn> and
               <dfn id="dfn-indexed-property-setter" export="" lt="indexed property setter">indexed property setters</dfn>.
@@ -1999,7 +1999,7 @@ stringifier DOMString ();</pre>
               </p>
               <p>
                 Stringifiers declared with operations must
-                be declared to take zero arguments and return a <a class="idltype" href="#idl-DOMString">DOMString</a>.
+                be declared to take zero arguments and return a {{DOMString}}.
               </p>
               <p>
                 As a shorthand, if the <code>stringifier</code> keyword
@@ -2023,7 +2023,7 @@ stringifier DOMString ();</pre>
                 In this case, the string to convert the object to is the
                 value of the attribute.  The <code>stringifier</code> keyword
                 must not be placed on an attribute unless
-                it is declared to be of type <a class="idltype" href="#idl-DOMString">DOMString</a> or <a class="idltype" href="#idl-USVString">USVString</a>.
+                it is declared to be of type {{DOMString}} or {{USVString}}.
                 It also must not be placed on
                 a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
               </p>
@@ -2118,12 +2118,12 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
               </p>
               <ul>
                 <li>a <em>map</em> of key–value pairs, where the keys are
-                  <a class="idltype" href="#idl-DOMString">DOMString</a> values (unique in the map) and the
+                  {{DOMString}} values (unique in the map) and the
                   values are <a class="dfnref" href="#dfn-serialized-value">serialized values</a></li>
                 <li>a <em>list</em> of <a class="dfnref" href="#dfn-serialized-value">serialized values</a></li>
-                <li>a <a class="idltype" href="#idl-DOMString">DOMString</a> value</li>
+                <li>a {{DOMString}} value</li>
                 <li>an <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value</li>
-                <li>a <a class="idltype" href="#idl-boolean">boolean</a> value</li>
+                <li>a {{boolean}} value</li>
                 <li>the <span class="idlvalue">null</span> value</li>
               </ul>
               <p>
@@ -2299,27 +2299,27 @@ serializer = { inherit, attribute };</pre>
               <p>The list of <dfn id="dfn-serializable-type" export="" lt="serializable type">serializable types</dfn> and how they are
               <dfn id="dfn-convert-to-serialized-value" export="" lt="converted to a serialized value|converted to serialized values">converted to serialized values</dfn> is as follows:</p>
               <dl class="switch">
-                <dt><a class="idltype" href="#idl-long-long">long long</a></dt>
+                <dt>{{long long}}</dt>
                 <dd>converted by choosing the closest equivalent <a class="idltype" href="#idl-double">double</a> value
                   (as when <a href="#es-long-long">converting a <span class="idltype">long long</span> to an ECMAScript <span class="estype">Number</span> value</a>)</dd>
-                <dt><a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a></dt>
+                <dt>{{unsigned long long}}</dt>
                 <dd>converted by choosing the closest equivalent <a class="idltype" href="#idl-double">double</a> value
                   (as when <a href="#es-unsigned-long-long">converting a <span class="idltype">unsigned long long</span> to an ECMAScript <span class="estype">Number</span> value</a>)</dd>
                 <dt>any other <a class="dfnref" href="#dfn-integer-type">integer type</a></dt>
-                <dt><a class="idltype" href="#idl-float">float</a></dt>
+                <dt>{{float}}</dt>
                 <dd>converted by choosing the equivalent <a class="idltype" href="#idl-double">double</a> value</dd>
-                <dt><a class="idltype" href="#idl-double">double</a></dt>
-                <dt><a class="idltype" href="#idl-boolean">boolean</a></dt>
-                <dt><a class="idltype" href="#idl-DOMString">DOMString</a></dt>
+                <dt>{{double}}</dt>
+                <dt>{{boolean}}</dt>
+                <dt>{{DOMString}}</dt>
                 <dd>the same value of the respective type</dd>
                 <dt>an <a class="dfnref" href="#dfn-enumeration">enumeration type</a></dt>
-                <dd>the equivalent <a class="idltype" href="#idl-DOMString">DOMString</a> value</dd>
-                <dt>a <a class="idltype" href="#idl-USVString">USVString</a></dt>
-                <dd>the <a class="idltype" href="#idl-DOMString">DOMString</a> produced by
+                <dd>the equivalent {{DOMString}} value</dd>
+                <dt>a {{USVString}}</dt>
+                <dd>the {{DOMString}} produced by
                 encoding the given sequence of <a>Unicode scalar values</a> in
                 UTF-16</dd>
-                <dt>a <a class="idltype" href="#idl-ByteString">ByteString</a></dt>
-                <dd>the equivalent <a class="idltype" href="#idl-DOMString">DOMString</a> value where each code unit has the same value as the corresponding byte value</dd>
+                <dt>a {{ByteString}}</dt>
+                <dd>the equivalent {{DOMString}} value where each code unit has the same value as the corresponding byte value</dd>
                 <dt>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> serializable type</dt>
                 <dd>converted to <span class="idltype">null</span> if that is its value,
                   otherwise converted as per its <a class="dfnref" href="#dfn-inner-type">inner type</a></dd>
@@ -2478,9 +2478,9 @@ JSON.stringify(txn);</pre>
               </p>
               <p>
                 Indexed property getters must
-                be declared to take a single <a class="idltype" href="#idl-unsigned-long">unsigned long</a> argument.
+                be declared to take a single {{unsigned long}} argument.
                 Indexed property setters must
-                be declared to take two arguments, where the first is an <a class="idltype" href="#idl-unsigned-long">unsigned long</a>.
+                be declared to take two arguments, where the first is an {{unsigned long}}.
               </p>
               <pre class="syntax">getter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>);
 setter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
@@ -2645,9 +2645,9 @@ delete map.cake;  // If a named property named "cake" exists, then the "cake"
               </p>
               <p>
                 Named property getters and deleters must
-                be declared to take a single <a class="idltype" href="#idl-DOMString">DOMString</a> argument.
+                be declared to take a single {{DOMString}} argument.
                 Named property setters must
-                be declared to take two arguments, where the first is a <a class="idltype" href="#idl-DOMString">DOMString</a>.
+                be declared to take two arguments, where the first is a {{DOMString}}.
               </p>
               <pre class="syntax">getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
 setter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
@@ -3287,8 +3287,8 @@ partial interface A {
   void f(double x);
 };</pre>
               <p>
-                since <a class="idltype" href="#idl-DOMString">DOMString</a> and
-                <a class="idltype" href="#idl-double">double</a> are not distinguishable.
+                since {{DOMString}} and
+                {{double}} are not distinguishable.
               </p>
             </div>
             <p>
@@ -3318,7 +3318,7 @@ partial interface A {
                 Looking at entries with type list length 4, the
                 <a class="dfnref" href="#dfn-distinguishing-argument-index">distinguishing argument index</a>
                 is 2, since <span class="idltype">Node</span> and
-                <a class="idltype" href="#idl-DOMString">DOMString</a> are <a class="dfnref" href="#dfn-distinguishable">distinguishable</a>.
+                {{DOMString}} are <a class="dfnref" href="#dfn-distinguishable">distinguishable</a>.
                 However, since the arguments in these two overloads at index 0 are different,
                 the overloading is invalid.
               </p>
@@ -3969,7 +3969,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             is identified by one of the following names:
           </p>
           <ul>
-            <li><a class="idltype" href="#idl-Error"><dfn interface="" export="">Error</dfn></a></li>
+            <li><span class="idltype"><dfn interface="" export="">Error</dfn></span></li>
             <li><span class="idltype"><dfn interface="" export="">EvalError</dfn></span></li>
             <li><span class="idltype"><dfn interface="" export="">RangeError</dfn></span></li>
             <li><span class="idltype"><dfn interface="" export="">ReferenceError</dfn></span></li>
@@ -4002,12 +4002,12 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
           </p>
           <p>
             There are two <a href="#idl-types">types</a> that can be used to refer to
-            exception objects: <a class="idltype" href="#idl-Error">Error</a>, which encompasses all exceptions,
-            and <a class="idltype" href="#idl-DOMException">DOMException</a> which includes just DOMException objects.
+            exception objects: {{Error}}, which encompasses all exceptions,
+            and {{DOMException}} which includes just DOMException objects.
             This allows for example an <a class="dfnref" href="#dfn-operation">operation</a>
             to be declared to have a <a class="dfnref" href="#dfn-DOMException">DOMException</a>
             <a class="dfnref" href="#dfn-return-type">return type</a> or an <a class="dfnref" href="#dfn-attribute">attribute</a>
-            to be of type <a class="idltype" href="#idl-Error">Error</a>.
+            to be of type {{Error}}.
           </p>
           <p>
             Exceptions can be <dfn id="dfn-create-exception" for="exception" export="">created</dfn> by providing its
@@ -4250,7 +4250,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <a class="sym" href="#prod-Enum">Enum</a>) used to declare a type
             whose valid values are a set of predefined strings.  Enumerations
             can be used to restrict the possible
-            <a class="idltype" href="#idl-DOMString">DOMString</a> values that can be assigned to an
+            {{DOMString}} values that can be assigned to an
             <a class="dfnref" href="#dfn-attribute">attribute</a> or passed to an
             <a class="dfnref" href="#dfn-operation">operation</a>.
           </p>
@@ -4649,33 +4649,33 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           </p>
           <p>
             The <dfn id="dfn-primitive-type" export="">primitive types</dfn> are
-            <a class="idltype" href="#idl-boolean">boolean</a> and the <a class="dfnref" href="#dfn-numeric-type">numeric types</a>.
+            {{boolean}} and the <a class="dfnref" href="#dfn-numeric-type">numeric types</a>.
           </p>
           <p>
             The <dfn id="dfn-string-type" export="">string types</dfn> are
-            <a class="idltype" href="#idl-DOMString">DOMString</a>, all <a href="#idl-enumeration">enumeration types</a>,
-            <a class="idltype" href="#idl-ByteString">ByteString</a> and <a class="idltype" href="#idl-USVString">USVString</a>.
+            {{DOMString}}, all <a href="#idl-enumeration">enumeration types</a>,
+            {{ByteString}} and {{USVString}}.
           </p>
           <p>
             The <dfn id="dfn-exception-type" export="">exception types</dfn> are
-            <a class="idltype" href="#idl-Error">Error</a> and <a class="idltype" href="#idl-DOMException">DOMException</a>.
+            {{Error}} and {{DOMException}}.
           </p>
           <p>
             The <dfn id="dfn-typed-array-type" export="">typed array types</dfn> are
-            <a class="idltype" href="#idl-Int8Array">Int8Array</a>,
-            <a class="idltype" href="#idl-Int16Array">Int16Array</a>,
-            <a class="idltype" href="#idl-Int32Array">Int32Array</a>,
-            <a class="idltype" href="#idl-Uint8Array">Uint8Array</a>,
-            <a class="idltype" href="#idl-Uint16Array">Uint16Array</a>,
-            <a class="idltype" href="#idl-Uint32Array">Uint32Array</a>,
-            <a class="idltype" href="#idl-Uint8ClampedArray">Uint8ClampedArray</a>,
-            <a class="idltype" href="#idl-Float32Array">Float32Array</a> and
-            <a class="idltype" href="#idl-Float64Array">Float64Array</a>.
+            {{Int8Array}},
+            {{Int16Array}},
+            {{Int32Array}},
+            {{Uint8Array}},
+            {{Uint16Array}},
+            {{Uint32Array}},
+            {{Uint8ClampedArray}},
+            {{Float32Array}} and
+            {{Float64Array}}.
           </p>
           <p>
             The <dfn id="dfn-buffer-source-type" export="">buffer source types</dfn>
-            are <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>,
-            <a class="idltype" href="#idl-DataView">DataView</a>,
+            are {{ArrayBuffer}},
+            {{DataView}},
             and the <a class="dfnref" href="#dfn-typed-array-type">typed array types</a>.
           </p>
           <p>
@@ -4774,7 +4774,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-boolean">boolean</a> type is “Boolean”.
+              {{boolean}} type is “Boolean”.
             </p>
           
 
@@ -4792,7 +4792,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-byte">byte</a> type is “Byte”.
+              {{byte}} type is “Byte”.
             </p>
           
 
@@ -4810,7 +4810,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-octet">octet</a> type is “Octet”.
+              {{octet}} type is “Octet”.
             </p>
           
 
@@ -4828,7 +4828,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-short">short</a> type is “Short”.
+              {{short}} type is “Short”.
             </p>
           
 
@@ -4846,7 +4846,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-unsigned-short">unsigned short</a> type is “UnsignedShort”.
+              {{unsigned short}} type is “UnsignedShort”.
             </p>
           
 
@@ -4864,7 +4864,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-long">long</a> type is “Long”.
+              {{long}} type is “Long”.
             </p>
           
 
@@ -4882,7 +4882,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-unsigned-long">unsigned long</a> type is “UnsignedLong”.
+              {{unsigned long}} type is “UnsignedLong”.
             </p>
           
 
@@ -4900,7 +4900,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-long-long">long long</a> type is “LongLong”.
+              {{long long}} type is “LongLong”.
             </p>
           
 
@@ -4918,7 +4918,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> type is “UnsignedLongLong”.
+              {{unsigned long long}} type is “UnsignedLongLong”.
             </p>
           
 
@@ -4937,12 +4937,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-float">float</a> type is “Float”.
+              {{float}} type is “Float”.
             </p>
                 Advisement: Unless there are specific reasons to use a 32 bit floating point type,
                 specifications should use
-                <a class="idltype" href="#idl-double">double</a> rather than <a class="idltype" href="#idl-float">float</a>,
-                since the set of values that a <a class="idltype" href="#idl-double">double</a> can
+                {{double}} rather than {{float}},
+                since the set of values that a {{double}} can
                 represent more closely matches an ECMAScript <span class="estype">Number</span>.
               
           
@@ -4962,7 +4962,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is “UnrestrictedFloat”.
+              {{unrestricted float}} type is “UnrestrictedFloat”.
             </p>
           
 
@@ -4981,7 +4981,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-double">double</a> type is “Double”.
+              {{double}} type is “Double”.
             </p>
           
 
@@ -5000,7 +5000,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is “UnrestrictedDouble”.
+              {{unrestricted double}} type is “UnrestrictedDouble”.
             </p>
           
 
@@ -5012,23 +5012,23 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               corresponds to the set of all possible sequences of <a class="dfnref" href="#dfn-code-unit">code units</a>.
               Such sequences are commonly interpreted as UTF-16 encoded strings [[!RFC2781]]
               although this is not required.
-              While <a class="idltype" href="#idl-DOMString">DOMString</a> is defined to be an OMG IDL boxed
+              While {{DOMString}} is defined to be an OMG IDL boxed
               <a class="idltype" href="#idl-sequence">sequence&lt;unsigned short&gt;</a>
               valuetype in <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#ID-C74D1578">DOM Level 3 Core</a></cite>
               ([[DOM-LEVEL-3-CORE]], section 1.2.1),
-              this document defines <a class="idltype" href="#idl-DOMString">DOMString</a> to be an intrinsic type so as to avoid
+              this document defines {{DOMString}} to be an intrinsic type so as to avoid
               special casing that sequence type in various situations where a
               string is required.
             </p>
                 Note: Note also that <span class="idlvalue">null</span>
-                is not a value of type <a class="idltype" href="#idl-DOMString">DOMString</a>.
+                is not a value of type {{DOMString}}.
                 To allow <span class="idlvalue">null</span>, a
-                <a href="#idl-nullable-type">nullable</a> <a class="idltype" href="#idl-DOMString">DOMString</a>,
+                <a href="#idl-nullable-type">nullable</a> {{DOMString}},
                 written as <code>DOMString?</code> in IDL, needs to be used.
               
             <p>
-              Nothing in this specification requires a <a class="idltype" href="#idl-DOMString">DOMString</a>
-              value to be a valid UTF-16 string.  For example, a <a class="idltype" href="#idl-DOMString">DOMString</a>
+              Nothing in this specification requires a {{DOMString}}
+              value to be a valid UTF-16 string.  For example, a {{DOMString}}
               value might include unmatched surrogate pair characters.  However, authors
               of specifications using Web IDL might want to obtain a sequence of
               <a>Unicode scalar values</a> given a particular sequence of
@@ -5037,7 +5037,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               <dfn id="dfn-obtain-unicode" export="" lt="obtain Unicode|convert to a sequence of Unicode scalar values">convert a DOMString to a sequence of Unicode scalar values</dfn>:
             </p>
             <ol class="algorithm">
-              <li>Let |S| be the <a class="idltype" href="#idl-DOMString">DOMString</a> value.</li>
+              <li>Let |S| be the {{DOMString}} value.</li>
               <li>Let |n| be the length of |S|.</li>
               <li>Initialize |i| to 0.</li>
               <li>Initialize |U| to be an empty sequence of Unicode characters.</li>
@@ -5084,13 +5084,13 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </ol>
             <p>
               There is no way to represent a constant <a class="idltype" href="#idl-DOMString">DOMString</a>
-              value in IDL, although <a class="idltype" href="#idl-DOMString">DOMString</a> <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
+              value in IDL, although {{DOMString}} <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
               and <a class="dfnref" href="#dfn-optional-argument">operation optional argument</a> default values
               can be specified using a <a class="sym" href="#prod-string">string</a> literal.
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-DOMString">DOMString</a> type is “String”.
+              {{DOMString}} type is “String”.
             </p>
           
 
@@ -5109,19 +5109,19 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-ByteString">ByteString</a> type is “ByteString”.
+              {{ByteString}} type is “ByteString”.
             </p>
                 Advisement: Specifications should only use
-                <a class="idltype" href="#idl-ByteString">ByteString</a> for interfacing with protocols
+                {{ByteString}} for interfacing with protocols
                 that use bytes and strings interchangably, such as HTTP.  In general,
                 strings should be represented with
-                <a class="idltype" href="#idl-DOMString">DOMString</a> values, even if it is expected
+                {{DOMString}} values, even if it is expected
                 that values of the string will always be in ASCII or some
                 8 bit character encoding.  <a href="#idl-sequence">Sequences</a>,
                 <a href="#idl-frozen-array">frozen arrays</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a>
-                with <a class="idltype" href="#idl-octet">octet</a> or <a class="idltype" href="#idl-byte">byte</a>
+                with {{octet}} or {{byte}}
                 elements should be used for holding
-                8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
+                8 bit data rather than {{ByteString}}.
                 [[!TYPEDARRAY]]
               
           
@@ -5138,21 +5138,21 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               There is no way to represent a constant <a class="idltype" href="#idl-USVString">USVString</a>
-              value in IDL, although <a class="idltype" href="#idl-USVString">USVString</a> <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
+              value in IDL, although {{USVString}} <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
               and <a class="dfnref" href="#dfn-optional-argument">operation optional argument</a> default values
               can be specified using a <a class="sym" href="#prod-string">string</a> literal.
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-USVString">USVString</a> type is “USVString”.
+              {{USVString}} type is “USVString”.
             </p>
                 Advisement: Specifications should only use
-                <a class="idltype" href="#idl-USVString">USVString</a> for APIs that perform
+                {{USVString}} for APIs that perform
                 text processing and need a string of Unicode
                 scalar values to operate on.  Most APIs that use strings
-                should instead be using <a class="idltype" href="#idl-DOMString">DOMString</a>,
+                should instead be using {{DOMString}},
                 which does not make any interpretations of the <a class="dfnref" href="#dfn-code-unit">code units</a>
-                in the string.  When in doubt, use <a class="idltype" href="#idl-DOMString">DOMString</a>.
+                in the string.  When in doubt, use {{DOMString}}.
               
           
 
@@ -5174,7 +5174,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-object">object</a> type is “Object”.
+              {{object}} type is “Object”.
             </p>
           
 
@@ -5242,11 +5242,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               identifies an <a class="dfnref" href="#dfn-enumeration">enumeration</a> is used to
               refer to a type whose values are the set of strings (sequences of
               <a class="dfnref" href="#dfn-code-unit">code units</a>, as with
-              <a class="idltype" href="#idl-DOMString">DOMString</a>) that are the
+              {{DOMString}}) that are the
               <a class="dfnref" href="#dfn-enumeration-value">enumeration’s values</a>.
             </p>
             <p>
-              Like <a class="idltype" href="#idl-DOMString">DOMString</a>, there is no way to represent a constant <a class="dfnref" href="#dfn-enumeration">enumeration</a>
+              Like {{DOMString}}, there is no way to represent a constant <a class="dfnref" href="#dfn-enumeration">enumeration</a>
               value in IDL, although enumeration-typed <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
               <a class="dfnref" href="#dfn-dictionary-member-default-value">default values</a> can be specified using a
               <a class="sym" href="#prod-string">string</a> literal.
@@ -5295,7 +5295,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               to be a member of its set of values.  <a class="dfnref" href="#dfn-nullable-type">Nullable types</a>
               are represented in IDL by placing a <span class="char">U+003F QUESTION MARK ("?")</span>
               character after an existing type.  The inner type must not
-              be <a class="idltype" href="#idl-any">any</a>,
+              be {{any}},
               another nullable type, or a <a class="dfnref" href="#dfn-union-type">union type</a>
               that itself has <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
               or has a dictionary type as one of its
@@ -5426,7 +5426,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               </p>
             </div>
             <p>
-              Like the <a class="idltype" href="#idl-any">any</a> type, values of
+              Like the {{any}} type, values of
               union types have a <a class="dfnref" href="#dfn-specific-type">specific type</a>,
               which is the particular <a class="dfnref" href="#dfn-union-member-type">member type</a>
               that matches the value.
@@ -5486,7 +5486,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               <li>Return |n|.</li>
             </ol>
             <p>
-              The <a class="idltype" href="#idl-any">any</a> type must not
+              The {{any}} type must not
               be used as a <a class="dfnref" href="#dfn-union-member-type">union member type</a>.
             </p>
             <p>
@@ -5552,7 +5552,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-RegExp">RegExp</a> type is “RegExp”.
+              {{RegExp}} type is “RegExp”.
             </p>
           
 
@@ -5569,7 +5569,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-Error">Error</a> type is “Error”.
+              {{Error}} type is “Error”.
             </p>
           
 
@@ -5585,7 +5585,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <p>
               The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-DOMException">DOMException</a> type is “DOMException”.
+              {{DOMException}} type is “DOMException”.
             </p>
           
 
@@ -5599,28 +5599,28 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </p>
             <table class="vert">
               <tr><th>Type</th><th>Kind of buffer</th></tr>
-              <tr><td><span id="idl-ArrayBuffer" class="idltype">ArrayBuffer</span></td><td>An object that holds a pointer (which may be null) to a buffer of a fixed number of bytes</td></tr>
-              <tr><td><span id="idl-DataView" class="idltype">DataView</span></td><td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that allows typed access to integers and floating point values stored at arbitrary offsets into the buffer</td></tr>
+              <tr><td>{{ArrayBuffer}}</td><td>An object that holds a pointer (which may be null) to a buffer of a fixed number of bytes</td></tr>
+              <tr><td>{{DataView}}</td><td>A view on to an {{ArrayBuffer}} that allows typed access to integers and floating point values stored at arbitrary offsets into the buffer</td></tr>
               <tr><td>
-                <span id="idl-Int8Array" class="idltype">Int8Array</span>,<br/>
-                <span id="idl-Int16Array" class="idltype">Int16Array</span>,<br/>
-                <span id="idl-Int32Array" class="idltype">Int32Array</span></td>
-                <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of two’s complement signed integers of the given size in bits</td></tr>
+                {{Int8Array}},<br/>
+                {{Int16Array}},<br/>
+                {{Int32Array}}</td>
+                <td>A view on to an {{ArrayBuffer}} that exposes it as an array of two’s complement signed integers of the given size in bits</td></tr>
               <tr><td>
-                <span id="idl-Uint8Array" class="idltype">Uint8Array</span>,<br/>
-                <span id="idl-Uint16Array" class="idltype">Uint16Array</span>,<br/>
-                <span id="idl-Uint32Array" class="idltype">Uint32Array</span></td>
-                <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of unsigned integers of the given size in bits</td></tr>
-              <tr><td><span id="idl-Uint8ClampedArray" class="idltype">Uint8ClampedArray</span></td>
-                <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of unsigned 8 bit integers with clamped conversions</td></tr>
+                {{Uint8Array}},<br/>
+                {{Uint16Array}},<br/>
+                {{Uint32Array}}</td>
+                <td>A view on to an {{ArrayBuffer}} that exposes it as an array of unsigned integers of the given size in bits</td></tr>
+              <tr><td>{{Uint8ClampedArray}}</td>
+                <td>A view on to an {{ArrayBuffer}} that exposes it as an array of unsigned 8 bit integers with clamped conversions</td></tr>
               <tr><td>
-                <span id="idl-Float32Array" class="idltype">Float32Array</span>,<br/>
-                <span id="idl-Float64Array" class="idltype">Float64Array</span></td>
-                <td>A view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> that exposes it as an array of IEEE 754 floating point numbers of the given size in bits</td></tr>
+                {{Float32Array}},<br/>
+                {{Float64Array}}</td>
+                <td>A view on to an {{ArrayBuffer}} that exposes it as an array of IEEE 754 floating point numbers of the given size in bits</td></tr>
             </table>
                 Note: These types all correspond to classes defined in ECMAScript.
             <p>
-              To <dfn id="dfn-detach" for="ArrayBuffer" export="">detach</dfn> an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>
+              To <dfn id="dfn-detach" for="ArrayBuffer" export="">detach</dfn> an {{ArrayBuffer}}
               is to set its buffer pointer to <span class="idlvalue">null</span>.
             </p>
             <p>
@@ -5656,19 +5656,19 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <div class="note">
               <p>
                 When designing APIs that take a buffer, it is recommended to use the
-                <span class="idltype">BufferSource</span> typedef rather than <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>
+                <span class="idltype">BufferSource</span> typedef rather than {{ArrayBuffer}}
                 or any of the view types.
               </p>
               <p>
                 When designing APIs that create and return a buffer, it is recommended
-                to use the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> type rather than
-                <a class="idltype" href="#idl-Uint8Array">Uint8Array</a>.
+                to use the {{ArrayBuffer}} type rather than
+                {{Uint8Array}}.
               </p>
             </div>
             <p>
               Attempting to <a class="dfnref" href="#dfn-get-buffer-source-reference">get a reference to</a> or
               <a class="dfnref" href="#dfn-get-buffer-source-copy">get a copy of the bytes held by a buffer source</a>
-              when the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> has been <a class="dfnref" href="#dfn-detach">detached</a>
+              when the {{ArrayBuffer}} has been <a class="dfnref" href="#dfn-detach">detached</a>
               will fail in a language binding-specific manner.
             </p>
                 Note: See [[#es-buffer-source-types]] below for
@@ -6092,7 +6092,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               ECMAScript value type.
             </p>
             <p id="es-to-any">
-              How to <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">convert an ECMAScript value</a> to an IDL <a class="idltype" href="#idl-any">any</a> value depends on the type of the
+              How to <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">convert an ECMAScript value</a> to an IDL {{any}} value depends on the type of the
               ECMAScript value:
             </p>
             <dl class="switch">
@@ -6174,7 +6174,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-boolean">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-boolean">boolean</a> value
+              to an IDL {{boolean}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6182,9 +6182,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL <a class="idltype" href="#idl-boolean">boolean</a> value that is the one that represents the same truth value as the ECMAScript <span class="estype">Boolean</span> value |x|.</li>
             </ol>
             <p id="boolean-to-es">
-              The IDL <a class="idltype" href="#idl-boolean">boolean</a> value <span class="idlvalue">true</span>
+              The IDL {{boolean}} value <span class="idlvalue">true</span>
               is <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a> to
-              the ECMAScript <span class="esvalue">true</span> value and the IDL <a class="idltype" href="#idl-boolean">boolean</a>
+              the ECMAScript <span class="esvalue">true</span> value and the IDL {{boolean}}
               value <span class="idlvalue">false</span> is converted to the ECMAScript
               <span class="esvalue">false</span> value.
             </p>
@@ -6196,7 +6196,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-byte">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-byte">byte</a> value
+              to an IDL {{byte}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6212,7 +6212,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>7</sup> or |x| &gt; 2<sup>7</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6225,20 +6225,20 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, −2<sup>7</sup>), 2<sup>7</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents 0.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{byte}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
-              <li>If |x| ≥ 2<sup>7</sup>, return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x| − 2<sup>8</sup>.
-                Otherwise, return the IDL <a class="idltype" href="#idl-byte">byte</a> value that represents the same numeric value as |x|.</li>
+              <li>If |x| ≥ 2<sup>7</sup>, return the IDL {{byte}} value that represents the same numeric value as |x| − 2<sup>8</sup>.
+                Otherwise, return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="byte-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-byte">byte</a> value to an ECMAScript
+              an IDL {{byte}} value to an ECMAScript
               value is a <span class="estype">Number</span> that represents
-              the same numeric value as the IDL <a class="idltype" href="#idl-byte">byte</a> value.
+              the same numeric value as the IDL {{byte}} value.
               The <span class="estype">Number</span> value will be an integer in the range [−128, 127].
             </p>
           
@@ -6249,7 +6249,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-octet">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-octet">octet</a> value
+              to an IDL {{octet}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6265,7 +6265,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>8</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6278,20 +6278,20 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, 0), 2<sup>8</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents 0.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{octet}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-octet">octet</a> value that represents the same numeric value as |x|.</li>
+              <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="octet-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-octet">octet</a> value to an ECMAScript
+              an IDL {{octet}} value to an ECMAScript
               value is a <span class="estype">Number</span> that represents
               the same numeric value as the IDL
-              <a class="idltype" href="#idl-octet">octet</a> value.
+              {{octet}} value.
               The <span class="estype">Number</span> value will be an integer in the range [0, 255].
             </p>
           
@@ -6302,7 +6302,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-short">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-short">short</a> value
+              to an IDL {{short}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6318,7 +6318,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>15</sup> or |x| &gt; 2<sup>15</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6331,21 +6331,21 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, −2<sup>15</sup>), 2<sup>15</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-short">short</a> value that represents 0.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{short}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>16</sup>.</li>
-              <li>If |x| ≥ 2<sup>15</sup>, return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x| − 2<sup>16</sup>.
-                Otherwise, return the IDL <a class="idltype" href="#idl-short">short</a> value that represents the same numeric value as |x|.</li>
+              <li>If |x| ≥ 2<sup>15</sup>, return the IDL {{short}} value that represents the same numeric value as |x| − 2<sup>16</sup>.
+                Otherwise, return the IDL {{short}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="short-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-short">short</a> value to an ECMAScript
+              an IDL {{short}} value to an ECMAScript
               value is a <span class="estype">Number</span> that represents the
               same numeric value as the IDL
-              <a class="idltype" href="#idl-short">short</a> value.
+              {{short}} value.
               The <span class="estype">Number</span> value will be an integer in the range [−32768, 32767].
             </p>
           
@@ -6356,7 +6356,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-unsigned-short">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value
+              to an IDL {{unsigned short}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6372,7 +6372,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>16</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6385,18 +6385,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, 0), 2<sup>16</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>Set |x| to <a>ToUint16</a>(|x|).</li>
-              <li>Return the IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value that represents the same numeric value as |x|.</li>
+              <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-short-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value to an ECMAScript
+              an IDL {{unsigned short}} value to an ECMAScript
               value is a <span class="estype">Number</span> that
               represents the same numeric value as the IDL
-              <a class="idltype" href="#idl-unsigned-short">unsigned short</a> value.
+              {{unsigned short}} value.
               The <span class="estype">Number</span> value will be an integer in the range [0, 65535].
             </p>
           
@@ -6407,7 +6407,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-long">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-long">long</a> value
+              to an IDL {{long}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6423,7 +6423,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>31</sup> or |x| &gt; 2<sup>31</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-long">long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6436,18 +6436,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, −2<sup>31</sup>), 2<sup>31</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-long">long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>Set |x| to <a>ToInt32</a>(|x|).</li>
-              <li>Return the IDL <a class="idltype" href="#idl-long">long</a> value that represents the same numeric value as |x|.</li>
+              <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="long-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-long">long</a> value to an ECMAScript
+              an IDL {{long}} value to an ECMAScript
               value is a <span class="estype">Number</span> that
               represents the same numeric value as the IDL
-              <a class="idltype" href="#idl-long">long</a> value.
+              {{long}} value.
               The <span class="estype">Number</span> value will be an integer in the range [−2147483648, 2147483647].
             </p>
           
@@ -6458,7 +6458,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-unsigned-long">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value
+              to an IDL {{unsigned long}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6474,7 +6474,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>32</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6487,18 +6487,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, 0), 2<sup>32</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>Set |x| to <a>ToUint32</a>(|x|).</li>
-              <li>Return the IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value that represents the same numeric value as |x|.</li>
+              <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-long-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value to an ECMAScript
+              an IDL {{unsigned long}} value to an ECMAScript
               value is a <span class="estype">Number</span> that
               represents the same numeric value as the IDL
-              <a class="idltype" href="#idl-unsigned-long">unsigned long</a> value.
+              {{unsigned long}} value.
               The <span class="estype">Number</span> value will be an integer in the range [0, 4294967295].
             </p>
           
@@ -6509,7 +6509,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-long-long">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-long-long">long long</a> value
+              to an IDL {{long long}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6525,7 +6525,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>53</sup> + 1 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6538,26 +6538,26 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, −2<sup>53</sup> + 1), 2<sup>53</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents 0.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{long long}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
               <li>If |x| is greater than or equal to 2<sup>63</sup>, then set |x| to |x| − 2<sup>64</sup>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-long-long">long long</a> value that represents the same numeric value as |x|.</li>
+              <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="long-long-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-long-long">long long</a> value to an ECMAScript
+              an IDL {{long long}} value to an ECMAScript
               value is a <span class="estype">Number</span> value that
-              represents the closest numeric value to the <a class="idltype" href="#idl-long-long">long long</a>,
+              represents the closest numeric value to the {{long long}},
               choosing the numeric value with an <em>even significand</em> if there are
               two <a>equally close values</a>.
-              If the <a class="idltype" href="#idl-long-long">long long</a> is in the range
+              If the {{long long}} is in the range
               [−2<sup>53</sup> + 1, 2<sup>53</sup> − 1], then the <span class="estype">Number</span>
               will be able to represent exactly the same value as the
-              <a class="idltype" href="#idl-long-long">long long</a>.
+              {{long long}}.
             </p>
           
 
@@ -6567,7 +6567,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-unsigned-long-long">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value
+              to an IDL {{unsigned long long}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6583,7 +6583,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
               <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
@@ -6596,25 +6596,25 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ol>
                   <li>Set |x| to min(max(|x|, 0), 2<sup>53</sup> − 1).</li>
                   <li>Round |x| to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</li>
-                  <li>Return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents the same numeric value as |x|.</li>
+                  <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents 0.</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{unsigned long long}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value that represents the same numeric value as |x|.</li>
+              <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-long-long-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> value to an ECMAScript
+              an IDL {{unsigned long long}} value to an ECMAScript
               value is a <span class="estype">Number</span> value that
-              represents the closest numeric value to the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>,
+              represents the closest numeric value to the {{unsigned long long}},
               choosing the numeric value with an <em>even significand</em> if there are
               two <a>equally close values</a>.
-              If the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> is less than or equal to 2<sup>53</sup> − 1,
+              If the {{unsigned long long}} is less than or equal to 2<sup>53</sup> − 1,
               then the <span class="estype">Number</span> will be able to
               represent exactly the same value as the
-              <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>.
+              {{unsigned long long}}.
             </p>
           
 
@@ -6624,7 +6624,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-float">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-float">float</a> value
+              to an IDL {{float}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6655,9 +6655,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </ol>
             <p id="float-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-float">float</a> value to an ECMAScript
+              an IDL {{float}} value to an ECMAScript
               value is the <span class="estype">Number</span> value that represents the same numeric value as the IDL
-              <a class="idltype" href="#idl-float">float</a> value.
+              {{float}} value.
             </p>
           
 
@@ -6667,12 +6667,12 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-unrestricted-float">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value
+              to an IDL {{unrestricted float}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL {{unrestricted float}} value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
               <li>
                 Let |S| be the set of finite IEEE 754 single-precision floating
                 point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6705,18 +6705,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               
             <p id="unrestricted-float-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value to an ECMAScript
+              an IDL {{unrestricted float}} value to an ECMAScript
               value is a <span class="estype">Number</span>:
             </p>
             <ul>
               <li>
-                If the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value is a NaN,
+                If the IDL {{unrestricted float}} value is a NaN,
                 then the <span class="estype">Number</span> value is <span class="esvalue">NaN</span>.
               </li>
               <li>
                 Otherwise, the <span class="estype">Number</span> value is
                 the one that represents the same numeric value as the IDL
-                <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value.
+                {{unrestricted float}} value.
               </li>
             </ul>
           
@@ -6727,7 +6727,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-double">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-double">double</a> value
+              to an IDL {{double}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6735,15 +6735,15 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
                 <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>
-                Return the IDL <a class="idltype" href="#idl-double">double</a> value
+                Return the IDL {{double}} value
                 that has the same numeric value as |x|.
               </li>
             </ol>
             <p id="double-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-double">double</a> value to an ECMAScript
+              an IDL {{double}} value to an ECMAScript
               value is the <span class="estype">Number</span> value that represents the
-              same numeric value as the IDL <a class="idltype" href="#idl-double">double</a> value.
+              same numeric value as the IDL {{double}} value.
             </p>
           
 
@@ -6753,14 +6753,14 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-unrestricted-double">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value
+              to an IDL {{unrestricted double}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
+              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL {{unrestricted double}} value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
               <li>
-                Return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value
+                Return the IDL {{unrestricted double}} value
                 that has the same numeric value as |x|.
               </li>
             </ol>
@@ -6771,18 +6771,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               
             <p id="unrestricted-double-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value to an ECMAScript
+              an IDL {{unrestricted double}} value to an ECMAScript
               value is a <span class="estype">Number</span>:
             </p>
             <ul>
               <li>
-                If the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value is a NaN,
+                If the IDL {{unrestricted double}} value is a NaN,
                 then the <span class="estype">Number</span> value is <span class="esvalue">NaN</span>.
               </li>
               <li>
                 Otherwise, the <span class="estype">Number</span> value is
                 the one that represents the same numeric value as the IDL
-                <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value.
+                {{unrestricted double}} value.
               </li>
             </ul>
           
@@ -6793,7 +6793,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-DOMString">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-DOMString">DOMString</a> value
+              to an IDL {{DOMString}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6818,7 +6818,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                     attribute annotated with <a class="xattr" href="#TreatNullAs">[TreatNullAs=EmptyString]</a>,
                   </li>
                 </ul>
-                then return the <a class="idltype" href="#idl-DOMString">DOMString</a>
+                then return the {{DOMString}}
                 value that represents the empty string.
               </li>
               <li>Let |x| be <a>ToString</a>(|V|).</li>
@@ -6826,10 +6826,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </ol>
             <p id="DOMString-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-DOMString">DOMString</a> value to an ECMAScript
+              an IDL {{DOMString}} value to an ECMAScript
               value is the <span class="estype">String</span>
               value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> that the
-              IDL <a class="idltype" href="#idl-DOMString">DOMString</a> represents.
+              IDL {{DOMString}} represents.
             </p>
           
 
@@ -6839,7 +6839,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-ByteString">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-ByteString">ByteString</a> value
+              to an IDL {{ByteString}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -6852,11 +6852,11 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </ol>
             <p id="ByteString-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-ByteString">ByteString</a> value to an ECMAScript
+              an IDL {{ByteString}} value to an ECMAScript
               value is a <span class="estype">String</span>
-              value whose length is the length of the <a class="idltype" href="#idl-ByteString">ByteString</a>,
+              value whose length is the length of the {{ByteString}},
               and the value of each element of which is the value of the corresponding element
-              of the <a class="idltype" href="#idl-ByteString">ByteString</a>.
+              of the {{ByteString}}.
             </p>
           
 
@@ -6866,22 +6866,22 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-USVString">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-USVString">USVString</a> value
+              to an IDL {{USVString}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
               <li>Let |string| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |V|
-                to a <a class="idltype" href="#idl-DOMString">DOMString</a>.</li>
+                to a {{DOMString}}.</li>
               <li>Return an IDL <a class="idltype" href="#idl-USVString">USVString</a> value
                 that is the result of <a class="dfnref" href="#dfn-obtain-unicode">converting |string| to a sequence of Unicode scalar values</a>.</li>
             </ol>
             <p id="USVString-to-es">
-              An IDL <a class="idltype" href="#idl-USVString">USVString</a> value is
+              An IDL {{USVString}} value is
               <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a>
               to an ECMAScript value by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |scalarValues| be the sequence of <a>Unicode scalar values</a> the <a class="idltype" href="#idl-USVString">USVString</a> represents.</li>
+              <li>Let |scalarValues| be the sequence of <a>Unicode scalar values</a> the {{USVString}} represents.</li>
               <li>Let |string| be the sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> that results from encoding |scalarValues| in UTF-16.</li>
               <li>Return the <span class="estype">String</span> value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit">code units</a> as |string|.</li>
             </ol>
@@ -6897,18 +6897,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-object">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-object">object</a> value
+              to an IDL {{object}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
               <li>If <a>Type</a>(|V|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-object">object</a> value that is a reference to the same object as |V|.</li>
+              <li>Return the IDL {{object}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="object-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-object">object</a> value to an ECMAScript
+              an IDL {{object}} value to an ECMAScript
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
-              IDL <a class="idltype" href="#idl-object">object</a> represents.
+              IDL {{object}} represents.
             </p>
           
 
@@ -7387,9 +7387,9 @@ alert(b[4]);    // This would alert "50".</pre>
                 Let |onFulfilled| be a new <a class="dfnref" href="#dfn-function-object">function object</a> whose
                 behavior when invoked is as follows:
                 <ol>
-                  <li>If |T| is <a class="idltype" href="#idl-void">void</a>, then:
+                  <li>If |T| is {{void}}, then:
                     <ol><li>Return the result of performing any steps that were required to be run if the promise was fulfilled.</li></ol></li>
-                  <li>Otherwise, |T| is a type other than <a class="idltype" href="#idl-void">void</a>:
+                  <li>Otherwise, |T| is a type other than {{void}}:
                     <ol>
                       <li>Let |V| be the first argument to |onFulfilled|.</li>
                       <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7408,7 +7408,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>Let |R| be the first argument to |onRejected|.</li>
                   <li>Let |reason| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    |R| to an IDL value of type <a class="idltype" href="#idl-any">any</a>.</li>
+                    |R| to an IDL value of type {{any}}.</li>
                   <li>If there are no steps that are required to be run if the promise was rejected, then
                     return <span class="esvalue">undefined</span>.</li>
                   <li>Otherwise, return the result of performing any steps that were required to be run if the promise was rejected,
@@ -7458,7 +7458,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>If |types| includes an <a href="#idl-interface">interface type</a> that |V|
                     implements, then return the IDL value that is a reference to the object |V|.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7468,7 +7468,7 @@ alert(b[4]);    // This would alert "50".</pre>
                   <li>If |types| includes <a class="idltype" href="#idl-RegExp">RegExp</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to <a class="idltype" href="#idl-RegExp">RegExp</a>.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7479,7 +7479,7 @@ alert(b[4]);    // This would alert "50".</pre>
                     <a class="idltype" href="#idl-Error">Error</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that type.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7489,27 +7489,27 @@ alert(b[4]);    // This would alert "50".</pre>
                   <li>If |types| includes <a class="idltype" href="#idl-Error">Error</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to <a class="idltype" href="#idl-Error">Error</a>.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
               <li>
                 If |V| is an object with an \[[ArrayBufferData]] <a>internal slot</a>, then:
                 <ol>
-                  <li>If |types| includes <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>, then return the
+                  <li>If |types| includes {{ArrayBuffer}}, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    |V| to <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                    |V| to {{ArrayBuffer}}.</li>
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
               <li>
                 If |V| is an object with a \[[DataView]] <a>internal slot</a>, then:
                 <ol>
-                  <li>If |types| includes <a class="idltype" href="#idl-DataView">DataView</a>, then return the
+                  <li>If |types| includes {{DataView}}, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    |V| to <a class="idltype" href="#idl-DataView">DataView</a>.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                    |V| to {{DataView}}.</li>
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7520,7 +7520,7 @@ alert(b[4]);    // This would alert "50".</pre>
                     whose name is the value of |V|’s \[[TypedArrayName]] <a>internal slot</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that type.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7531,7 +7531,7 @@ alert(b[4]);    // This would alert "50".</pre>
                     type, then return the result of
                     <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that callback function type.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7586,7 +7586,7 @@ alert(b[4]);    // This would alert "50".</pre>
                     type, then return the result of
                     <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that interface type.</li>
-                  <li>If |types| includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
+                  <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
               </li>
@@ -7594,9 +7594,9 @@ alert(b[4]);    // This would alert "50".</pre>
                 If |V| is a <span class="estype">Boolean</span> value, then:
                 <ol>
                   <li>
-                    If |types| includes a <a class="idltype" href="#idl-boolean">boolean</a>,
+                    If |types| includes a {{boolean}},
                     then return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    |V| to <a class="idltype" href="#idl-boolean">boolean</a>.
+                    |V| to {{boolean}}.
                   </li>
                 </ol>
               </li>
@@ -7622,9 +7622,9 @@ alert(b[4]);    // This would alert "50".</pre>
                 |V| to that <a class="dfnref" href="#dfn-numeric-type">numeric type</a>.
               </li>
               <li>
-                If |types| includes a <a class="idltype" href="#idl-boolean">boolean</a>,
+                If |types| includes a {{boolean}},
                 then return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                |V| to <a class="idltype" href="#idl-boolean">boolean</a>.
+                |V| to {{boolean}}.
               </li>
               <li>
                 <a href="#ecmascript-throw" class="dfnref external">Throw a <span class="estype">TypeError</span></a>.
@@ -7643,7 +7643,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <p id="es-to-RegExp">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-RegExp">RegExp</a> value
+              to an IDL {{RegExp}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -7657,13 +7657,13 @@ alert(b[4]);    // This would alert "50".</pre>
                     does not have valid regular expression syntax.</p>
                 </div>
               </li>
-              <li>Return the IDL <a class="idltype" href="#idl-RegExp">RegExp</a> value that is a reference to the same object as |V|.</li>
+              <li>Return the IDL {{RegExp}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="RegExp-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-RegExp">RegExp</a> value to an ECMAScript
+              an IDL {{RegExp}} value to an ECMAScript
               value is the <span class="estype">RegExp</span> value that represents a reference to the same object that the
-              IDL <a class="idltype" href="#idl-RegExp">RegExp</a> represents.
+              IDL {{RegExp}} represents.
             </p>
           
 
@@ -7684,13 +7684,13 @@ alert(b[4]);    // This would alert "50".</pre>
             <ol class="algorithm">
               <li>If <a>Type</a>(|V|) is not Object,
                 or |V| does not have an \[[ErrorData]] <a>internal slot</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-Error">Error</a> value that is a reference to the same object as |V|.</li>
+              <li>Return the IDL {{Error}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="Error-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-Error">Error</a> value to an ECMAScript
+              an IDL {{Error}} value to an ECMAScript
               value is the <span class="estype">Error</span> value that represents a reference to the same object that the
-              IDL <a class="idltype" href="#idl-Error">Error</a> represents.
+              IDL {{Error}} represents.
             </p>
           
 
@@ -7704,19 +7704,19 @@ alert(b[4]);    // This would alert "50".</pre>
             <p id="es-to-DOMException">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-DOMException">DOMException</a> value
+              to an IDL {{DOMException}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
               <li>If <a>Type</a>(|V|) is not Object,
                 or |V| is not a platform object that represents a <a class="dfnref" href="#dfn-DOMException">DOMException</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-DOMException">DOMException</a> value that is a reference to the same object as |V|.</li>
+              <li>Return the IDL {{DOMException}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="DOMException-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <a class="idltype" href="#idl-DOMException">DOMException</a> value to an ECMAScript
+              an IDL {{DOMException}} value to an ECMAScript
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
-              IDL <a class="idltype" href="#idl-DOMException">DOMException</a> represents.
+              IDL {{DOMException}} represents.
             </p>
           
 
@@ -7730,7 +7730,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <p id="es-to-buffer-source">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> value
+              to an IDL {{ArrayBuffer}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -7739,32 +7739,32 @@ alert(b[4]);    // This would alert "50".</pre>
                 or <a>IsDetachedBuffer</a>(|V|) is true,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
               </li>
-              <li>Return the IDL <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> value that is a reference to the same object as |V|.</li>
+              <li>Return the IDL {{ArrayBuffer}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="buffer-source-to-es">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-DataView">DataView</a> value
+              to an IDL {{DataView}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
               <li>If <a>Type</a>(|V|) is not Object,
                 or |V| does not have a \[[DataView]] <a>internal slot</a>,
                 then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-DataView">DataView</a> value that is a reference to the same object as |V|.</li>
+              <li>Return the IDL {{DataView}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p>
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-Int8Array">Int8Array</a>,
-              <a class="idltype" href="#idl-Int16Array">Int16Array</a>,
-              <a class="idltype" href="#idl-Int32Array">Int32Array</a>,
-              <a class="idltype" href="#idl-Uint8Array">Uint8Array</a>,
-              <a class="idltype" href="#idl-Uint16Array">Uint16Array</a>,
-              <a class="idltype" href="#idl-Uint32Array">Uint32Array</a>,
-              <a class="idltype" href="#idl-Uint8ClampedArray">Uint8ClampedArray</a>,
-              <a class="idltype" href="#idl-Float32Array">Float32Array</a> or
-              <a class="idltype" href="#idl-Float64Array">Float64Array</a> value
+              to an IDL {{Int8Array}},
+              {{Int16Array}},
+              {{Int32Array}},
+              {{Uint8Array}},
+              {{Uint16Array}},
+              {{Uint32Array}},
+              {{Uint8ClampedArray}},
+              {{Float32Array}} or
+              {{Float64Array}} value
               by running the following algorithm:
             </p>
             <ol class="algorithm">
@@ -7809,11 +7809,11 @@ alert(b[4]);    // This would alert "50".</pre>
                 starting at byte offset |offset|.</li>
             </ol>
             <p>
-              To <a class="dfnref" href="#dfn-detach">detach</a> an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>,
+              To <a class="dfnref" href="#dfn-detach">detach</a> an {{ArrayBuffer}},
               these steps must be followed:
             </p>
             <ol class="algorithm">
-              <li>Let |O| be the ECMAScript object that is the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.</li>
+              <li>Let |O| be the ECMAScript object that is the {{ArrayBuffer}}.</li>
               <li><a>DetachArrayBuffer</a>(|O|).</li>
             </ol>
           
@@ -7924,7 +7924,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <p>
                 In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
-                take three <a class="idltype" href="#idl-octet">octet</a> arguments; one uses
+                take three {{octet}} arguments; one uses
                 the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 on all three arguments, while the other does not:
               </p>
@@ -7935,7 +7935,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <p>
                 In an ECMAScript implementation of the IDL, a call to setColorClamped with
                 <span class="estype">Number</span> values that are out of range for an
-                <a class="idltype" href="#idl-octet">octet</a> are clamped to the range [0, 255].
+                {{octet}} are clamped to the range [0, 255].
               </p>
               <pre class="js">// Get an instance of GraphicsContext.
 var context = getGraphicsContext();
@@ -8077,7 +8077,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
               <p>
                 In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
-                take three <a class="idltype" href="#idl-octet">octet</a> arguments; one uses
+                take three {{octet}} arguments; one uses
                 the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 on all three arguments, while the other does not:
               </p>
@@ -8088,7 +8088,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
               <p>
                 In an ECMAScript implementation of the IDL, a call to setColorEnforcedRange with
                 <span class="estype">Number</span> values that are out of range for an
-                <a class="idltype" href="#idl-octet">octet</a> will result in an exception being
+                {{octet}} will result in an exception being
                 thrown.
               </p>
               <pre class="js">// Get an instance of GraphicsContext.
@@ -9295,7 +9295,7 @@ counter.value;                                           // Evaluates to 3.</pre
               be used on anything other than a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>
               whose type is an <a href="#idl-interface">interface type</a>
-              or <a class="idltype" href="#idl-object">object</a>.
+              or {{object}}.
             </p>
             <div class="example">
               <p>
@@ -9515,7 +9515,7 @@ manager.handler2;            // Evaluates to null.</pre>
             <p>
               The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute
               must not be specified on an operation argument,
-              attribute or operation return value whose type is not <a class="idltype" href="#idl-DOMString">DOMString</a>.
+              attribute or operation return value whose type is not {{DOMString}}.
             </p>
                 Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
               use <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>, since <span class="idlvalue">null</span>
@@ -9841,7 +9841,7 @@ with (thing) {
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>an <a href="#idl-interface">interface type</a> that |V| implements</li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or a <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9853,8 +9853,8 @@ with (thing) {
                   Otherwise: if |V| is a <span class="estype">RegExp</span> object and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-RegExp">RegExp</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{RegExp}}</li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9866,8 +9866,8 @@ with (thing) {
                   Otherwise: if |V| is a <span class="estype">RegExp</span> object and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-RegExp">RegExp</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{RegExp}}</li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9879,9 +9879,9 @@ with (thing) {
                   Otherwise: if |V| is a <a class="dfnref" href="#dfn-DOMException">DOMException</a> platform object and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-DOMException">DOMException</a></li>
-                    <li><a class="idltype" href="#idl-Error">Error</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{DOMException}}</li>
+                    <li>{{Error}}</li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9893,8 +9893,8 @@ with (thing) {
                   Otherwise: if |V| is an <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a>internal slot</a>) and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-Error">Error</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{Error}}</li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9906,8 +9906,8 @@ with (thing) {
                   Otherwise: if |V| is an object with an \[[ArrayBufferData]] <a>internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{ArrayBuffer}}</li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9919,8 +9919,8 @@ with (thing) {
                   Otherwise: if |V| is an object with a \[[DataView]] <a>internal slot</a> and
                   there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-DataView">DataView</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{DataView}}</li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9934,7 +9934,7 @@ with (thing) {
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-typed-array-type">typed array type</a> whose name
                       is equal to the value of |V|’s \[[TypedArrayName]] <a>internal slot</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9947,7 +9947,7 @@ with (thing) {
                   and there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-callback-function">callback function</a> type</li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -9989,7 +9989,7 @@ with (thing) {
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-callback-interface">callback interface</a> type</li>
                     <li>a <a href="#idl-dictionary">dictionary type</a></li>
-                    <li><a class="idltype" href="#idl-object">object</a></li>
+                    <li>{{object}}</li>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                        that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
@@ -10001,8 +10001,8 @@ with (thing) {
                   Otherwise: if |V| is a <span class="estype">Boolean</span> value,
                   and there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-boolean">boolean</a></li>
-                    <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> <a class="idltype" href="#idl-boolean">boolean</a></li>
+                    <li>{{boolean}}</li>
+                    <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> {{boolean}}</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                       that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
                   </ul>
@@ -10046,8 +10046,8 @@ with (thing) {
                 <li>
                   Otherwise: if there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
-                    <li><a class="idltype" href="#idl-boolean">boolean</a></li>
-                    <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> <a class="idltype" href="#idl-boolean">boolean</a></li>
+                    <li>{{boolean}}</li>
+                    <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> {{boolean}}</li>
                     <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                       that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
                   </ul>
@@ -10055,7 +10055,7 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if there is an entry in |S| that has <a class="idltype" href="#idl-any">any</a> at position |i|
+                  Otherwise: if there is an entry in |S| that has {{any}} at position |i|
                   of its type list,
                   then remove from |S| all other entries.
                 </li>
@@ -12945,7 +12945,7 @@ C implements A;</pre>
                   <li>Otherwise, |operation| was defined with an identifier:
                     <ol>
                       <li>Perform the steps listed in the description of |operation| with |P| as the only argument value.</li>
-                      <li>If |operation| was declared with a <a class="dfnref" href="#dfn-return-type">return type</a> of <a class="idltype" href="#idl-boolean">boolean</a>
+                      <li>If |operation| was declared with a <a class="dfnref" href="#dfn-return-type">return type</a> of {{boolean}}
                         and the steps returned <span class="idlvalue">false</span>, then <span class="esvalue">false</span>.</li>
                     </ol>
                   </li>
@@ -12987,7 +12987,7 @@ C implements A;</pre>
               <li>Return the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                 the return value from those actions to an ECMAScript value of the type
                 |operation| is declared to return (or <span class="esvalue">undefined</span>
-                if |operation| is declared to return <a class="idltype" href="#idl-void">void</a>).</li>
+                if |operation| is declared to return {{void}}).</li>
             </ol>
           
 
@@ -13295,7 +13295,7 @@ C implements A;</pre>
                 <li>If |completion| is an abrupt completion, return
                 |completion|.</li>
 
-                <li>Return <a>NormalCompletion</a>(<a class="idltype" href="#idl-void">void</a>).</li>
+                <li>Return <a>NormalCompletion</a>({{void}}).</li>
               </ol>
             </li>
           </ol>
@@ -13333,7 +13333,7 @@ C implements A;</pre>
 
               <ol>
                 <li>
-                  <p>If the callback function's return type is <a class="idltype" href="#idl-void">void</a>,
+                  <p>If the callback function's return type is {{void}},
                   return.</p>
 
                   <div class="note">
@@ -13770,7 +13770,7 @@ d.type = et;
          Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef="">ArrayBufferView</dfn>;</pre>
           <p>
             The <span class="idltype">ArrayBufferView</span> typedef is used to represent
-            objects that provide a view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.
+            objects that provide a view on to an {{ArrayBuffer}}.
           </p>
         
 
@@ -13780,8 +13780,8 @@ d.type = et;
           <pre class="idl-example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
           <p>
             The <span class="idltype">BufferSource</span> typedef is used to represent objects
-            that are either themselves an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> or which
-            provide a view on to an <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.
+            that are either themselves an {{ArrayBuffer}} or which
+            provide a view on to an {{ArrayBuffer}}.
           </p>
         
 
@@ -14400,7 +14400,7 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Allowed stringifier attributes to have type <a class="idltype" href="#idl-USVString">USVString</a>.
+                  Allowed stringifier attributes to have type {{USVString}}.
                 </p>
               </li>
               <li>
@@ -14417,13 +14417,13 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Added types for <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>, <a class="idltype" href="#idl-DataView">DataView</a>
+                  Added types for {{ArrayBuffer}}, {{DataView}}
                   and typed array objects.
                 </p>
               </li>
               <li>
                 <p>
-                  Added <a class="idltype" href="#idl-USVString">USVString</a> and allowed string literals in IDL to
+                  Added {{USVString}} and allowed string literals in IDL to
                   be used to give values for all string-typed optional argument and dictionary
                   member default values.
                 </p>
@@ -14436,8 +14436,8 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Removed IDL exceptions, baked in <a class="idltype" href="#idl-DOMException">DOMException</a>,
-                  and added <a class="idltype" href="#idl-Error">Error</a> and <a class="idltype" href="#idl-DOMException">DOMException</a>
+                  Removed IDL exceptions, baked in {{DOMException}},
+                  and added {{Error}} and {{DOMException}}
                   as types.
                 </p>
               </li>
@@ -14468,7 +14468,7 @@ d.type = et;
               <li>
                 <p>
                   Added grammar production for <span class="idltype">Promise&lt;|T|&gt;</span> types
-                  and allowed |T| to be <a class="idltype" href="#idl-void">void</a>.
+                  and allowed |T| to be {{void}}.
                 </p>
               </li>
               <li>
@@ -14529,7 +14529,7 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Added a <a class="idltype" href="#idl-ByteString">ByteString</a> type, for representing
+                  Added a {{ByteString}} type, for representing
                   8 bit strings without a particular encoding as ECMAScript
                   <span class="estype">String</span> values.
                 </p>
@@ -14707,9 +14707,9 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Split out <a class="idltype" href="#idl-boolean">boolean</a> from the other
-                  primitive types.  Made <a class="idltype" href="#idl-boolean">boolean</a>,
-                  numeric types and <a class="idltype" href="#idl-DOMString">DOMString</a> distinguishable.
+                  Split out {{boolean}} from the other
+                  primitive types.  Made {{boolean}},
+                  numeric types and {{DOMString}} distinguishable.
                 </p>
               </li>
               <li>
@@ -14751,7 +14751,7 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Fixed the <a class="idltype" href="#idl-long-long">long long</a> and <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>
+                  Fixed the {{long long}} and {{unsigned long long}}
                   conversion algorithms to correctly identify the range of contiguous,
                   exactly, uniquely representable integers you can get from a <span class="estype">Number</span>.
                 </p>
@@ -14781,8 +14781,8 @@ d.type = et;
               <li>
                 <p>
                   Fixed conversion of <span class="estype">Number</span> values
-                  to <a class="idltype" href="#idl-any">any</a> by using the
-                  conversion algorithm for <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>.
+                  to {{any}} by using the
+                  conversion algorithm for {{unrestricted double}}.
                 </p>
               </li>
               <li>
@@ -14928,8 +14928,8 @@ d.type = et;
               </li>
               <li>
                 <p>
-                  Added a warning to prefer the use of <a class="idltype" href="#idl-double">double</a>
-                  to <a class="idltype" href="#idl-float">float</a>, unless there are good
+                  Added a warning to prefer the use of {{double}}
+                  to {{float}}, unless there are good
                   reasons to choose the 32 bit type.
                 </p>
               </li>

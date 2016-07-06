@@ -123,10 +123,20 @@ TR: </xsl:text>
 
   <xsl:template match='h:span[@class="idltype"]'>
     <xsl:variable name='id' select='concat("idl-", translate(., " ", "-"))'/>
-    <xsl:variable name='def' select='//*[@id=$id]'/>
+    <xsl:variable name='txt' select='string(.)'/>
+    <xsl:variable name='def' select='//*[@id=$id] | //*[@data-lt=$txt]'/>
+    <xsl:if test='@id and @id != id'>
+      <xsl:message terminate='yes'>Unexpected id '<xsl:value-of select='@id'/>'</xsl:message>
+    </xsl:if>
     <xsl:choose>
-      <xsl:when test='not(ancestor::h:a) and not(@id) and $def'>
-        <a class='idltype' href='#{$id}'><xsl:apply-templates select='node()'/></a>
+      <xsl:when test='$def and not(ancestor::h:a or child::h:dfn)'>
+        <xsl:text>{{</xsl:text>
+        <xsl:variable name='for' select='$def/@data-dfn-for'/>
+        <xsl:if test="$for">
+          <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
+        </xsl:if>
+        <xsl:value-of select='$txt' />
+        <xsl:text>}}</xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <span>
@@ -135,6 +145,10 @@ TR: </xsl:text>
         </span>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match='h:a[@href^="#"][ancestor::*[@class="example"]]'>
+      <xsl:message terminate='no'><xsl:value-of select='@href'/></xsl:message>
   </xsl:template>
 
   <xsl:template match='h:a[not(@href)]'>
