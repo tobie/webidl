@@ -412,14 +412,8 @@ TR: </xsl:text>
     <tr id='prod-{@nt}'>
       <td><span class='prod-number'>[<xsl:value-of select='count(preceding-sibling::x:prod) + 1'/>]</span></td>
       <td>
-        <xsl:choose>
-          <xsl:when test='../@links="off"'>
-            <xsl:value-of select='@nt'/>
-          </xsl:when>
-          <xsl:otherwise>
-            <a class='sym' href='#proddef-{@nt}'><xsl:value-of select='@nt'/></a>
-          </xsl:otherwise>
-        </xsl:choose>
+        <xsl:value-of select='@nt'/>
+        
         <xsl:if test='@whitespace="explicit"'>
           <sub class='nt-attr'>explicit</sub>
         </xsl:if>
