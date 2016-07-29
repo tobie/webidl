@@ -1162,72 +1162,6 @@ Possible extra rowspan handling
             [data-md] > :last-child {
                 margin-bottom: 0;
             }</style>
-<style>/* style-counters */
-
-            body {
-                counter-reset: example figure issue;
-            }
-            .issue {
-                counter-increment: issue;
-            }
-            .issue:not(.no-marker)::before {
-                content: "Issue " counter(issue);
-            }
-
-            .example {
-                counter-increment: example;
-            }
-            .example:not(.no-marker)::before {
-                content: "Example " counter(example);
-            }
-            .invalid.example:not(.no-marker)::before,
-            .illegal.example:not(.no-marker)::before {
-                content: "Invalid Example" counter(example);
-            }
-
-            figcaption {
-                counter-increment: figure;
-            }
-            figcaption:not(.no-marker)::before {
-                content: "Figure " counter(figure);
-            }</style>
-<style>/* style-dfn-panel */
-
-        .dfn-panel {
-            position: absolute;
-            z-index: 35;
-            height: auto;
-            width: -webkit-fit-content;
-            width: fit-content;
-            max-width: 300px;
-            max-height: 500px;
-            overflow: auto;
-            padding: 0.5em 0.75em;
-            font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
-            background: #DDDDDD;
-            color: black;
-            border: outset 0.2em;
-        }
-        .dfn-panel:not(.on) { display: none; }
-        .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
-        .dfn-panel > b { display: block; }
-        .dfn-panel a { color: black; }
-        .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
-        .dfn-panel > b + b { margin-top: 0.25em; }
-        .dfn-panel ul { padding: 0; }
-        .dfn-panel li { list-style: inside; }
-        .dfn-panel.activated {
-            display: inline-block;
-            position: fixed;
-            left: .5em;
-            bottom: 2em;
-            margin: 0 auto;
-            max-width: calc(100vw - 1.5em - .4em - .5em);
-            max-height: 30vh;
-        }
-
-        .dfn-paneled { cursor: pointer; }
-        </style>
 <style>/* style-selflinks */
 
             .heading, .issue, .note, .example, li, dt {
@@ -1274,6 +1208,35 @@ Possible extra rowspan handling
             a.self-link::before            { content: "¶"; }
             .heading > a.self-link::before { content: "§"; }
             dfn > a.self-link::before      { content: "#"; }</style>
+<style>/* style-counters */
+
+            body {
+                counter-reset: example figure issue;
+            }
+            .issue {
+                counter-increment: issue;
+            }
+            .issue:not(.no-marker)::before {
+                content: "Issue " counter(issue);
+            }
+
+            .example {
+                counter-increment: example;
+            }
+            .example:not(.no-marker)::before {
+                content: "Example " counter(example);
+            }
+            .invalid.example:not(.no-marker)::before,
+            .illegal.example:not(.no-marker)::before {
+                content: "Invalid Example" counter(example);
+            }
+
+            figcaption {
+                counter-increment: figure;
+            }
+            figcaption:not(.no-marker)::before {
+                content: "Figure " counter(figure);
+            }</style>
 <style>/* style-autolinks */
 
             .css.css, .property.property, .descriptor.descriptor {
@@ -1336,6 +1299,101 @@ Possible extra rowspan handling
             [data-link-type=biblio] {
                 white-space: pre;
             }</style>
+<style>/* style-dfn-panel */
+
+        .dfn-panel {
+            position: absolute;
+            z-index: 35;
+            height: auto;
+            width: -webkit-fit-content;
+            width: fit-content;
+            max-width: 300px;
+            max-height: 500px;
+            overflow: auto;
+            padding: 0.5em 0.75em;
+            font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+            background: #DDDDDD;
+            color: black;
+            border: outset 0.2em;
+        }
+        .dfn-panel:not(.on) { display: none; }
+        .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+        .dfn-panel > b { display: block; }
+        .dfn-panel a { color: black; }
+        .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+        .dfn-panel > b + b { margin-top: 0.25em; }
+        .dfn-panel ul { padding: 0; }
+        .dfn-panel li { list-style: inside; }
+        .dfn-panel.activated {
+            display: inline-block;
+            position: fixed;
+            left: .5em;
+            bottom: 2em;
+            margin: 0 auto;
+            max-width: calc(100vw - 1.5em - .4em - .5em);
+            max-height: 30vh;
+        }
+
+        .dfn-paneled { cursor: pointer; }
+        </style>
+<style>/* style-syntax-highlighting */
+
+        .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
+        code.highlight { padding: .1em; border-radius: .3em; }
+        pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
+        .highlight .c { color: #708090 } /* Comment */
+        .highlight .k { color: #990055 } /* Keyword */
+        .highlight .l { color: #000000 } /* Literal */
+        .highlight .n { color: #0077aa } /* Name */
+        .highlight .o { color: #999999 } /* Operator */
+        .highlight .p { color: #999999 } /* Punctuation */
+        .highlight .cm { color: #708090 } /* Comment.Multiline */
+        .highlight .cp { color: #708090 } /* Comment.Preproc */
+        .highlight .c1 { color: #708090 } /* Comment.Single */
+        .highlight .cs { color: #708090 } /* Comment.Special */
+        .highlight .kc { color: #990055 } /* Keyword.Constant */
+        .highlight .kd { color: #990055 } /* Keyword.Declaration */
+        .highlight .kn { color: #990055 } /* Keyword.Namespace */
+        .highlight .kp { color: #990055 } /* Keyword.Pseudo */
+        .highlight .kr { color: #990055 } /* Keyword.Reserved */
+        .highlight .kt { color: #990055 } /* Keyword.Type */
+        .highlight .ld { color: #000000 } /* Literal.Date */
+        .highlight .m { color: #000000 } /* Literal.Number */
+        .highlight .s { color: #a67f59 } /* Literal.String */
+        .highlight .na { color: #0077aa } /* Name.Attribute */
+        .highlight .nc { color: #0077aa } /* Name.Class */
+        .highlight .no { color: #0077aa } /* Name.Constant */
+        .highlight .nd { color: #0077aa } /* Name.Decorator */
+        .highlight .ni { color: #0077aa } /* Name.Entity */
+        .highlight .ne { color: #0077aa } /* Name.Exception */
+        .highlight .nf { color: #0077aa } /* Name.Function */
+        .highlight .nl { color: #0077aa } /* Name.Label */
+        .highlight .nn { color: #0077aa } /* Name.Namespace */
+        .highlight .py { color: #0077aa } /* Name.Property */
+        .highlight .nt { color: #669900 } /* Name.Tag */
+        .highlight .nv { color: #222222 } /* Name.Variable */
+        .highlight .ow { color: #999999 } /* Operator.Word */
+        .highlight .mb { color: #000000 } /* Literal.Number.Bin */
+        .highlight .mf { color: #000000 } /* Literal.Number.Float */
+        .highlight .mh { color: #000000 } /* Literal.Number.Hex */
+        .highlight .mi { color: #000000 } /* Literal.Number.Integer */
+        .highlight .mo { color: #000000 } /* Literal.Number.Oct */
+        .highlight .sb { color: #a67f59 } /* Literal.String.Backtick */
+        .highlight .sc { color: #a67f59 } /* Literal.String.Char */
+        .highlight .sd { color: #a67f59 } /* Literal.String.Doc */
+        .highlight .s2 { color: #a67f59 } /* Literal.String.Double */
+        .highlight .se { color: #a67f59 } /* Literal.String.Escape */
+        .highlight .sh { color: #a67f59 } /* Literal.String.Heredoc */
+        .highlight .si { color: #a67f59 } /* Literal.String.Interpol */
+        .highlight .sx { color: #a67f59 } /* Literal.String.Other */
+        .highlight .sr { color: #a67f59 } /* Literal.String.Regex */
+        .highlight .s1 { color: #a67f59 } /* Literal.String.Single */
+        .highlight .ss { color: #a67f59 } /* Literal.String.Symbol */
+        .highlight .vc { color: #0077aa } /* Name.Variable.Class */
+        .highlight .vg { color: #0077aa } /* Name.Variable.Global */
+        .highlight .vi { color: #0077aa } /* Name.Variable.Instance */
+        .highlight .il { color: #000000 } /* Literal.Number.Integer.Long */
+        </style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
@@ -1757,11 +1815,12 @@ are interoperable.</p>
      </div>
     <li>
      Code blocks: 
-<pre class="idl-example">// This is an IDL code block.
+<pre class="idl-example example" id="example-dface6e3"><a class="self-link" href="#example-dface6e3"></a>// This is an IDL code block.
 interface Example {
   attribute long something;
 };</pre>
-<pre class="js">// This is an ECMAScript code block.window.onload = function() { window.alert("loaded"); };</pre>
+<pre class="highlight"><span class="c1">// This is an ECMAScript code block.window.onload = function() { window.alert("loaded"); };</span>
+</pre>
    </ul>
    <h2 class="heading settled" data-level="3" id="conformance"><span class="secno">3. </span><span class="content">Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <p> Everything in this specification is normative except for diagrams,
@@ -2148,7 +2207,7 @@ interface B : A {
     <p> Specification authors wanting to define APIs that take ECMAScript objects
               as “property bag” like function arguments are suggested to use <a href="#idl-dictionaries">dictionary types</a> rather than <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-5">callback interfaces</a>. </p>
     <p> For example, instead of this: </p>
-<pre class="idl-example">callback interface Options {  attribute DOMString? option1;
+<pre class="idl-example example" id="example-dfb7e11f"><a class="self-link" href="#example-dfb7e11f"></a>callback interface Options {  attribute DOMString? option1;
   attribute DOMString? option2;
   attribute long? option3;
 };
@@ -2157,10 +2216,11 @@ interface A {
   void doTask(DOMString type, Options options);
 };</pre>
     <p> to be used like this: </p>
-<pre class="js">var a = getA();  // Get an instance of A.
-a.doTask("something", { option1: "banana", option3: 100 });</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">getA</span><span class="p">();</span>  <span class="c1">// Get an instance of A.</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">doTask</span><span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">option1</span><span class="o">:</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="nx">option3</span><span class="o">:</span> <span class="mi">100</span> <span class="p">});</span>
+</pre>
     <p> instead write the following: </p>
-<pre class="idl-example">dictionary Options {  DOMString? option1;
+<pre class="idl-example example" id="example-4b1f7101"><a class="self-link" href="#example-4b1f7101"></a>dictionary Options {  DOMString? option1;
   DOMString? option2;
   long? option3;
 };
@@ -2268,8 +2328,8 @@ interface Dog : Animal {
   attribute Human? owner;
 };</pre>
    </div>
-   <div class="example" id="example-2c9e5025">
-    <a class="self-link" href="#example-2c9e5025"></a> 
+   <div class="example" id="example-c570b098">
+    <a class="self-link" href="#example-c570b098"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-13">IDL fragment</a> defines
               simplified versions of a few DOM <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-13">interfaces</a>, one of which
               is a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-6">callback interface</a>. </p>
@@ -2284,28 +2344,30 @@ callback interface EventListener {
 };</pre>
     <p> Since the <span class="idltype">EventListener</span> interface is annotated
               callback interface, <a class="dfnref" href="#dfn-user-object" id="ref-for-dfn-user-object-3">user objects</a> can implement it: </p>
-<pre class="js">var node = getNode();                                // Obtain an instance of Node.
-var listener = {
-  handleEvent: function(event) {
-    ...
-  }
-};
-node.addEventListener("click", listener);            // This works.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">getNode</span><span class="p">();</span>                                <span class="c1">// Obtain an instance of Node.</span>
+<span class="kd">var</span> <span class="nx">listener</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">handleEvent</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>            <span class="c1">// This works.</span>
 
-node.addEventListener("click", function() { ... });  // As does this.</pre>
+<span class="nx">node</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>  <span class="c1">// As does this.</span>
+</pre>
     <p> It is not possible for a user object to implement <span class="idltype">Node</span>, however: </p>
-<pre class="js">var node = getNode();  // Obtain an instance of Node.
-var newNode = {
-  nodeName: "span",
-  parentNode: null,
-  appendChild: function(newchild) {
-    ...
-  },
-  addEventListener: function(type, listener) {
-    ...
-  }
-};
-node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">getNode</span><span class="p">();</span>  <span class="c1">// Obtain an instance of Node.</span>
+<span class="kd">var</span> <span class="nx">newNode</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">nodeName</span><span class="o">:</span> <span class="s2">"span"</span><span class="p">,</span>
+  <span class="nx">parentNode</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">appendChild</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newchild</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">},</span>
+  <span class="nx">addEventListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newNode</span><span class="p">);</span>  <span class="c1">// This will throw a TypeError exception.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="4.2.1" id="idl-constants"><span class="secno">4.2.1. </span><span class="content">Constants</span><a class="self-link" href="#idl-constants"></a></h4>
    <p> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-constant">constant</dfn> is a declaration (matching <a class="sym" href="#prod-Const">Const</a>) used to bind a constant value to a name.
@@ -2416,7 +2478,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 through objects implementing the IDL <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-16">interfaces</a> on which the <a class="dfnref" href="#dfn-constant" id="ref-for-dfn-constant-9">constants</a> are declared.
                 For example, with the following IDL:</p>
     <p></p>
-<pre class="idl-example">interface A {  const short rambaldi = 47;
+<pre class="idl-example example" id="example-df5bb72f"><a class="self-link" href="#example-df5bb72f"></a>interface A {  const short rambaldi = 47;
 };</pre>
     <p> the constant value can be accessed in ECMAScript  either as <code>A.rambaldi</code> or <code>instanceOfA.rambaldi</code>. </p>
    </div>
@@ -2683,8 +2745,8 @@ interface Button {
 <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i><em>...</em> <i>identifier</i>);<i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);</pre>
    <p> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-10">Extended attributes</a> that <a class="dfnref" href="#dfn-xattr-argument-list" id="ref-for-dfn-xattr-argument-list-1">take an argument list</a> (<a class="xattr" href="#Constructor">[Constructor]</a> and <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>, of those
               defined in this specification) and <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-10">callback functions</a> are also considered to be <a class="dfnref" href="#dfn-variadic" id="ref-for-dfn-variadic-1">variadic</a> when the <code>...</code> token is used in their argument lists. </p>
-   <div class="example" id="example-8edc9746">
-    <a class="self-link" href="#example-8edc9746"></a> 
+   <div class="example" id="example-fcdbe9a2">
+    <a class="self-link" href="#example-fcdbe9a2"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-17">IDL fragment</a> defines an interface that has
                 two variadic operations: </p>
 <pre class="idl-example">interface IntegerSet {  readonly attribute unsigned long cardinality;
@@ -2694,9 +2756,10 @@ interface Button {
 };</pre>
     <p> In the ECMAScript binding, variadic operations are implemented by
                 functions that can accept the subsequent arguments: </p>
-<pre class="js">var s = getIntegerSet();  // Obtain an instance of IntegerSet.
-s.union();                // Passing no arguments corresponding to 'ints'.
-s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">getIntegerSet</span><span class="p">();</span>  <span class="c1">// Obtain an instance of IntegerSet.</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">union</span><span class="p">();</span>                <span class="c1">// Passing no arguments corresponding to 'ints'.</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">union</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>         <span class="c1">// Passing three arguments corresponding to 'ints'.</span>
+</pre>
     <p> A binding for a language that does not support variadic functions
                 might specify that an explicit array or list of integers be passed
                 to such an operation. </p>
@@ -3006,17 +3069,18 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                   should not be used in specifications unless required to
                   specify the behavior of legacy APIs, and even then this should be discussed on
                   the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. 
-   <div class="example" id="example-36e78b4b">
-    <a class="self-link" href="#example-36e78b4b"></a> 
+   <div class="example" id="example-d80159ea">
+    <a class="self-link" href="#example-d80159ea"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-19">IDL fragment</a> defines an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-29">interface</a> with a <a class="dfnref" href="#dfn-legacy-caller" id="ref-for-dfn-legacy-caller-2">legacy caller</a>. </p>
 <pre class="idl-example">interface NumberQuadrupler {  // This operation simply returns four times the given number x.
   legacycaller double compute(double x);
 };</pre>
     <p> An ECMAScript implementation supporting this interface would
                   allow a <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-2">platform object</a> that implements <span class="idltype">NumberQuadrupler</span> to be called as a function: </p>
-<pre class="js">var f = getNumberQuadrupler();  // Obtain an instance of NumberQuadrupler.
-f.compute(3);                   // This evaluates to 12.
-f(3);                           // This also evaluates to 12.</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">getNumberQuadrupler</span><span class="p">();</span>  <span class="c1">// Obtain an instance of NumberQuadrupler.</span>
+<span class="nx">f</span><span class="p">.</span><span class="nx">compute</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>                   <span class="c1">// This evaluates to 12.</span>
+<span class="nx">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>                           <span class="c1">// This also evaluates to 12.</span>
+</pre>
    </div>
    <h5 class="heading settled" data-level="4.2.4.2" id="idl-stringifiers"><span class="secno">4.2.4.2. </span><span class="content">Stringifiers</span><a class="self-link" href="#idl-stringifiers"></a></h5>
    <p> When an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-30">interface</a> has a <a class="dfnref" href="#dfn-stringifier" id="ref-for-dfn-stringifier-1">stringifier</a>, it indicates that objects that implement
@@ -3066,8 +3130,8 @@ f(3);                           // This also evaluates to 12.</pre>
       <td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br> | <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br> |
              ";"</span>
    </table>
-   <div class="example" id="example-6c9ad6c6">
-    <a class="self-link" href="#example-6c9ad6c6"></a> 
+   <div class="example" id="example-8b27a408">
+    <a class="self-link" href="#example-8b27a408"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-20">IDL fragment</a> defines an interface that will stringify to the value of its <span class="idlattr">name</span> attribute: </p>
 <pre class="idl-example">[Constructor]interface Student {
   attribute unsigned long id;
@@ -3076,10 +3140,11 @@ f(3);                           // This also evaluates to 12.</pre>
     <p> In the ECMAScript binding, using a <span class="idltype">Student</span> object in a context where a string is expected will result in the
                   value of the object’s “name” property being
                   used: </p>
-<pre class="js">var s = new Student();s.id = 12345678;
-s.name = '周杰倫';
+<pre class="highlight"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">();</span><span class="nx">s</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="mi">12345678</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'周杰倫'</span><span class="p">;</span>
 
-var greeting = 'Hello, ' + s + '!';  // Now greeting == 'Hello, 周杰倫!'.</pre>
+<span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">'Hello, '</span> <span class="o">+</span> <span class="nx">s</span> <span class="o">+</span> <span class="s1">'!'</span><span class="p">;</span>  <span class="c1">// Now greeting == 'Hello, 周杰倫!'.</span>
+</pre>
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-21">IDL fragment</a> defines an interface that has custom stringification behavior that is
                   not specified in the IDL itself. </p>
 <pre class="idl-example">[Constructor]interface Student {
@@ -3100,11 +3165,12 @@ var greeting = 'Hello, ' + s + '!';  // Now greeting == 'Hello, 周杰倫!'.</pr
                     the <span class="idlattr">familyName</span> attribute. </p>
     </blockquote>
     <p> An ECMAScript implementation of the IDL would behave as follows: </p>
-<pre class="js">var s = new Student();s.id = 12345679;
-s.familyName = 'Smithee';
-s.givenName = 'Alan';
+<pre class="highlight"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">();</span><span class="nx">s</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="mi">12345679</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">familyName</span> <span class="o">=</span> <span class="s1">'Smithee'</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">givenName</span> <span class="o">=</span> <span class="s1">'Alan'</span><span class="p">;</span>
 
-var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
+<span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">'Hi '</span> <span class="o">+</span> <span class="nx">s</span><span class="p">;</span>  <span class="c1">// Now greeting == 'Hi Alan Smithee'.</span>
+</pre>
    </div>
    <h5 class="heading settled" data-level="4.2.4.3" id="idl-serializers"><span class="secno">4.2.4.3. </span><span class="content">Serializers</span><a class="self-link" href="#idl-serializers"></a></h5>
    <p> When an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-31">interface</a> has a <a class="dfnref" href="#dfn-serializer" id="ref-for-dfn-serializer-1">serializer</a>, it indicates that objects provide
@@ -3345,8 +3411,8 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
       <td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br> |
              ε</span>
    </table>
-   <div class="example" id="example-28489d17">
-    <a class="self-link" href="#example-28489d17"></a> 
+   <div class="example" id="example-021e4297">
+    <a class="self-link" href="#example-021e4297"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-22">IDL fragment</a> defines
                   an interface <span class="idltype">Transaction</span> that has a <a class="dfnref" href="#dfn-serializer" id="ref-for-dfn-serializer-3">serializer</a> defines in prose: </p>
 <pre class="idl-example">interface Transaction {  readonly attribute Account from;
@@ -3398,20 +3464,21 @@ interface Account {
   serializer = number;
 };</pre>
     <p> In the ECMAScript language binding, there would exist a <code>toJSON</code> method on <span class="idltype">Transaction</span> objects: </p>
-<pre class="js">// Get an instance of Transaction.var txn = getTransaction();
+<pre class="highlight"><span class="c1">// Get an instance of Transaction.var txn = getTransaction();</span>
 
-// Evaluates to an object like this:
-// {
-//   from: 1234
-//   to: 5678
-//   amount: 110.75
-//   description: "dinner"
-// }
-txn.toJSON();
+<span class="c1">// Evaluates to an object like this:</span>
+<span class="c1">// {</span>
+<span class="c1">//   from: 1234</span>
+<span class="c1">//   to: 5678</span>
+<span class="c1">//   amount: 110.75</span>
+<span class="c1">//   description: "dinner"</span>
+<span class="c1">// }</span>
+<span class="nx">txn</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">();</span>
 
-// Evaluates to a string like this:
-// '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'
-JSON.stringify(txn);</pre>
+<span class="c1">// Evaluates to a string like this:</span>
+<span class="c1">// '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">txn</span><span class="p">);</span>
+</pre>
    </div>
    <h5 class="heading settled" data-level="4.2.4.4" id="idl-indexed-properties"><span class="secno">4.2.4.4. </span><span class="content">Indexed properties</span><a class="self-link" href="#idl-indexed-properties"></a></h5>
    <p> An <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-32">interface</a> that defines
@@ -3448,20 +3515,21 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                   then indexing an object with an integer that is not a <a class="dfnref" href="#dfn-supported-property-indices" id="ref-for-dfn-supported-property-indices-2">supported property index</a> does not necessarily elicit the same behavior as invoking the operation with that index.  The actual behavior in this
                   case is language binding specific. </p>
     <p> In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL: </p>
-<pre class="idl-example">interface A {  getter DOMString toWord(unsigned long index);
+<pre class="idl-example example" id="example-ff51086c"><a class="self-link" href="#example-ff51086c"></a>interface A {  getter DOMString toWord(unsigned long index);
 };</pre>
     <p> Assume that an object implementing <span class="idltype">A</span> has <a class="dfnref" href="#dfn-supported-property-indices" id="ref-for-dfn-supported-property-indices-3">supported property indices</a> in the range 0 ≤ <var>index</var> &lt; 2.  Also assume that toWord is defined to return
                   its argument converted into an English word.  The behavior when invoking the <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-14">operation</a> with an out of range index
                   is different from indexing the object directly: </p>
-<pre class="js">var a = getA();
-a.toWord(0);  // Evalautes to "zero".
-a[0];         // Also evaluates to "zero".
+<pre class="highlight"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">getA</span><span class="p">();</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">toWord</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// Evalautes to "zero".</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>         <span class="c1">// Also evaluates to "zero".</span>
 
-a.toWord(5);  // Evaluates to "five".
-a[5];         // Evaluates to undefined, since there is no property "5".</pre>
+<span class="nx">a</span><span class="p">.</span><span class="nx">toWord</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>  <span class="c1">// Evaluates to "five".</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>         <span class="c1">// Evaluates to undefined, since there is no property "5".</span>
+</pre>
    </div>
-   <div class="example" id="example-06afc408">
-    <a class="self-link" href="#example-06afc408"></a> 
+   <div class="example" id="example-76aa3611">
+    <a class="self-link" href="#example-76aa3611"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-23">IDL fragment</a> defines an interface <span class="idltype">OrderedMap</span> which allows
                   retrieving and setting values by name or by index number: </p>
 <pre class="idl-example">interface OrderedMap {  readonly attribute unsigned long size;
@@ -3492,39 +3560,39 @@ a[5];         // Evaluates to undefined, since there is no property "5".</pre>
                   These properties can then be used to interact
                   with the object in the same way as invoking the object’s
                   methods, as demonstrated below: </p>
-<pre class="js">// Assume map is a platform object implementing the OrderedMap interface.var map = getOrderedMap();
-var x, y;
+<pre class="highlight"><span class="c1">// Assume map is a platform object implementing the OrderedMap interface.var map = getOrderedMap();</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">;</span>
 
-x = map[0];       // If map.length > 0, then this is equivalent to:
-                  //
-                  //   x = map.getByIndex(0)
-                  //
-                  // since a property named "0" will have been placed on map.
-                  // Otherwise, x will be set to undefined, since there will be
-                  // no property named "0" on map.
+<span class="nx">x</span> <span class="o">=</span> <span class="nx">map</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>       <span class="c1">// If map.length > 0, then this is equivalent to:</span>
+                  <span class="c1">//</span>
+                  <span class="c1">//   x = map.getByIndex(0)</span>
+                  <span class="c1">//</span>
+                  <span class="c1">// since a property named "0" will have been placed on map.</span>
+                  <span class="c1">// Otherwise, x will be set to undefined, since there will be</span>
+                  <span class="c1">// no property named "0" on map.</span>
 
-map[1] = false;   // This will do the equivalent of:
-                  //
-                  //   map.setByIndex(1, false)
+<span class="nx">map</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>   <span class="c1">// This will do the equivalent of:</span>
+                  <span class="c1">//</span>
+                  <span class="c1">//   map.setByIndex(1, false)</span>
 
-y = map.apple;    // If there exists a named property named "apple", then this
-                  // will be equivalent to:
-                  //
-                  //   y = map.get('apple')
-                  //
-                  // since a property named "apple" will have been placed on
-                  // map.  Otherwise, y will be set to undefined, since there
-                  // will be no property named "apple" on map.
+<span class="nx">y</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">apple</span><span class="p">;</span>    <span class="c1">// If there exists a named property named "apple", then this</span>
+                  <span class="c1">// will be equivalent to:</span>
+                  <span class="c1">//</span>
+                  <span class="c1">//   y = map.get('apple')</span>
+                  <span class="c1">//</span>
+                  <span class="c1">// since a property named "apple" will have been placed on</span>
+                  <span class="c1">// map.  Otherwise, y will be set to undefined, since there</span>
+                  <span class="c1">// will be no property named "apple" on map.</span>
 
-map.berry = 123;  // This will do the equivalent of:
-                  //
-                  //   map.set('berry', 123)
+<span class="nx">map</span><span class="p">.</span><span class="nx">berry</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>  <span class="c1">// This will do the equivalent of:</span>
+                  <span class="c1">//</span>
+                  <span class="c1">//   map.set('berry', 123)</span>
 
-delete map.cake;  // If a named property named "cake" exists, then the "cake"
-                  // property will be deleted, and then the equivalent to the
-                  // following will be performed:
-                  //
-                  //   map.remove("cake")
+<span class="k">delete</span> <span class="nx">map</span><span class="p">.</span><span class="nx">cake</span><span class="p">;</span>  <span class="c1">// If a named property named "cake" exists, then the "cake"</span>
+                  <span class="c1">// property will be deleted, and then the equivalent to the</span>
+                  <span class="c1">// following will be performed:</span>
+                  <span class="c1">//</span>
+                  <span class="c1">//   map.remove("cake")</span>
 </pre>
    </div>
    <h5 class="heading settled" data-level="4.2.4.5" id="idl-named-properties"><span class="secno">4.2.4.5. </span><span class="content">Named properties</span><a class="self-link" href="#idl-named-properties"></a></h5>
@@ -3592,8 +3660,8 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
       <td class="prod-mid">→
       <td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br> | <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span>
    </table>
-   <div class="example" id="example-6fb7c5fd">
-    <a class="self-link" href="#example-6fb7c5fd"></a> 
+   <div class="example" id="example-0bcb5fc7">
+    <a class="self-link" href="#example-0bcb5fc7"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-24">IDL fragment</a> defines an interface <span class="idltype">Circle</span> that has a static
                 operation declared on it: </p>
 <pre class="idl-example">interface Point { /* ... */ };
@@ -3606,19 +3674,20 @@ interface Circle {
   static Point triangulate(Circle c1, Circle c2, Circle c3);
 };</pre>
     <p> In the ECMAScript language binding, the <span class="estype">Function</span> object for <code>triangulate</code> and the accessor property for <code>triangulationCount</code> will exist on the <a class="dfnref" href="#dfn-interface-object" id="ref-for-dfn-interface-object-1">interface object</a> for <span class="idltype">Circle</span>: </p>
-<pre class="js">var circles = getCircles();           // an Array of Circle objects
-typeof Circle.triangulate;            // Evaluates to "function"
-typeof Circle.triangulationCount;     // Evaluates to "number"
-Circle.prototype.triangulate;         // Evaluates to undefined
-Circle.prototype.triangulationCount;  // Also evaluates to undefined
-circles[0].triangulate;               // As does this
-circles[0].triangulationCount;        // And this
+<pre class="highlight"><span class="kd">var</span> <span class="nx">circles</span> <span class="o">=</span> <span class="nx">getCircles</span><span class="p">();</span>           <span class="c1">// an Array of Circle objects</span>
+<span class="k">typeof</span> <span class="nx">Circle</span><span class="p">.</span><span class="nx">triangulate</span><span class="p">;</span>            <span class="c1">// Evaluates to "function"</span>
+<span class="k">typeof</span> <span class="nx">Circle</span><span class="p">.</span><span class="nx">triangulationCount</span><span class="p">;</span>     <span class="c1">// Evaluates to "number"</span>
+<span class="nx">Circle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">triangulate</span><span class="p">;</span>         <span class="c1">// Evaluates to undefined</span>
+<span class="nx">Circle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">triangulationCount</span><span class="p">;</span>  <span class="c1">// Also evaluates to undefined</span>
+<span class="nx">circles</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">triangulate</span><span class="p">;</span>               <span class="c1">// As does this</span>
+<span class="nx">circles</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">triangulationCount</span><span class="p">;</span>        <span class="c1">// And this</span>
 
-// Call the static operation
-var triangulationPoint = Circle.triangulate(circles[0], circles[1], circles[2]);
+<span class="c1">// Call the static operation</span>
+<span class="kd">var</span> <span class="nx">triangulationPoint</span> <span class="o">=</span> <span class="nx">Circle</span><span class="p">.</span><span class="nx">triangulate</span><span class="p">(</span><span class="nx">circles</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">circles</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">circles</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
 
-// Find out how many triangulations we have done
-window.alert(Circle.triangulationCount);</pre>
+<span class="c1">// Find out how many triangulations we have done</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">Circle</span><span class="p">.</span><span class="nx">triangulationCount</span><span class="p">);</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="4.2.6" id="idl-overloading"><span class="secno">4.2.6. </span><span class="content">Overloading</span><a class="self-link" href="#idl-overloading"></a></h4>
    <p> If a <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-5">regular operation</a> or <a class="dfnref" href="#dfn-static-operation" id="ref-for-dfn-static-operation-5">static operation</a> defined on an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-35">interface</a> has an <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-29">identifier</a> that is the same as the identifier of another operation on that
@@ -3636,7 +3705,7 @@ window.alert(Circle.triangulationCount);</pre>
    <p> <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-17">Operations</a> and <a class="dfnref" href="#dfn-legacy-caller" id="ref-for-dfn-legacy-caller-4">legacy callers</a> must not be overloaded across <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-36">interface</a> and <a class="dfnref" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-6">partial interface</a> definitions. </p>
    <div class="note" role="note">
     <p> For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span> are disallowed: </p>
-<pre class="idl-example">interface A {  void f();
+<pre class="idl-example example" id="example-d6e1cca2"><a class="self-link" href="#example-d6e1cca2"></a>interface A {  void f();
 };
 
 partial interface A {
@@ -4073,8 +4142,8 @@ partial interface A {
    <p> Interfaces with iterable declarations must not
               have any <a class="dfnref" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a> named “entries”, “keys” or “values”,
               or have any <a class="dfnref" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-3">inherited</a> or <a class="dfnref" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-2">consequential</a> interfaces that have interface members with these names. </p>
-   <div class="example" id="example-dcb134ee">
-    <a class="self-link" href="#example-dcb134ee"></a> 
+   <div class="example" id="example-5da94c3d">
+    <a class="self-link" href="#example-5da94c3d"></a> 
     <p>Consider the following interface <span class="idltype">SessionManager</span>, which allows access to
               a number of <span class="idltype">Session</span> objects:</p>
 <pre class="idl-example">interface SessionManager {  Session getSessionForUser(DOMString username);
@@ -4097,28 +4166,29 @@ interface Session {
                 next value to be iterated over.  It has <code>values</code> and <code>entries</code> methods that iterate over the indexes of the list of session objects
                 and [index, session object] pairs, respectively.  It also has
                 a <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> method that allows a <span class="idltype">SessionManager</span> to be used in a <code>for..of</code> loop: </p>
-<pre class="js">// Get an instance of SessionManager.// Assume that it has sessions for two users, "anna" and "brian".
-var sm = getSessionManager();
+<pre class="highlight"><span class="c1">// Get an instance of SessionManager.// Assume that it has sessions for two users, "anna" and "brian".</span>
+<span class="kd">var</span> <span class="nx">sm</span> <span class="o">=</span> <span class="nx">getSessionManager</span><span class="p">();</span>
 
-typeof SessionManager.prototype.values;            // Evaluates to "function"
-var it = sm.values();                              // values() returns an iterator object
-String(it);                                        // Evaluates to "[object SessionManager Iterator]"
-typeof it.next;                                    // Evaluates to "function"
+<span class="k">typeof</span> <span class="nx">SessionManager</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">values</span><span class="p">;</span>            <span class="c1">// Evaluates to "function"</span>
+<span class="kd">var</span> <span class="nx">it</span> <span class="o">=</span> <span class="nx">sm</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>                              <span class="c1">// values() returns an iterator object</span>
+<span class="nb">String</span><span class="p">(</span><span class="nx">it</span><span class="p">);</span>                                        <span class="c1">// Evaluates to "[object SessionManager Iterator]"</span>
+<span class="k">typeof</span> <span class="nx">it</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>                                    <span class="c1">// Evaluates to "function"</span>
 
-// This loop will alert "anna" and then "brian".
-for (;;) {
-  let result = it.next();
-  if (result.done) {
-    break;
-  }
-  let session = result.value;
-  window.alert(session.username);
-}
+<span class="c1">// This loop will alert "anna" and then "brian".</span>
+<span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">it</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">let</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+<span class="p">}</span>
 
-// This loop will also alert "anna" and then "brian".
-for (let session of sm) {
-  window.alert(session.username);
-}</pre>
+<span class="c1">// This loop will also alert "anna" and then "brian".</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">session</span> <span class="nx">of</span> <span class="nx">sm</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
    </div>
    <p> An interface must not have more than one <a class="dfnref" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-1">iterable declaration</a>.
               The <a class="dfnref" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-4">inherited</a> and <a class="dfnref" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-3">consequential</a> interfaces of an interface with an <a class="dfnref" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-2">iterable declaration</a> must not also have an <a class="dfnref" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-3">iterable declaration</a>.
@@ -4356,7 +4426,7 @@ partial dictionary <em>SomeDictionary</em> {
             identifiers. </p>
    <div class="note" role="note">
     <p>For example, with the following definitions:</p>
-<pre class="idl-example">dictionary B : A {  long b;
+<pre class="idl-example example" id="example-33cd3f92"><a class="self-link" href="#example-33cd3f92"></a>dictionary B : A {  long b;
   long a;
 };
 
@@ -4381,16 +4451,17 @@ partial dictionary A {
               a dictionary value to a platform object depends on the order
               the dictionary members are fetched.  For example, consider the
               following additional interface: </p>
-<pre class="idl-example">interface Something {  void f(A a);
+<pre class="idl-example example" id="example-c08647c4"><a class="self-link" href="#example-c08647c4"></a>interface Something {  void f(A a);
 };</pre>
     <p> and this ECMAScript code: </p>
-<pre class="js">var something = getSomething();  // Get an instance of Something.var x = 0;
+<pre class="highlight"><span class="kd">var</span> <span class="nx">something</span> <span class="o">=</span> <span class="nx">getSomething</span><span class="p">();</span>  <span class="c1">// Get an instance of Something.var x = 0;</span>
 
-var dict = { };
-Object.defineProperty(dict, "d", { get: function() { return ++x; } });
-Object.defineProperty(dict, "c", { get: function() { return ++x; } });
+<span class="kd">var</span> <span class="nx">dict</span> <span class="o">=</span> <span class="p">{</span> <span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">dict</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">++</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">dict</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">++</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span> <span class="p">});</span>
 
-something.f(dict);</pre>
+<span class="nx">something</span><span class="p">.</span><span class="nx">f</span><span class="p">(</span><span class="nx">dict</span><span class="p">);</span>
+</pre>
     <p> The order that the dictionary members are fetched in determines
               what values they will be taken to have.  Since the order for <span class="idltype">A</span> is defined to be c then d,
               the value for c will be 1 and the value for d will be 2. </p>
@@ -4453,8 +4524,8 @@ something.f(dict);</pre>
       <td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br> |
              ε</span>
    </table>
-   <div class="example" id="example-b11dcdf1">
-    <a class="self-link" href="#example-b11dcdf1"></a> 
+   <div class="example" id="example-101212fb">
+    <a class="self-link" href="#example-101212fb"></a> 
     <p> One use of dictionary types is to allow a number of optional arguments to
               an <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-21">operation</a> without being
               constrained as to the order they are specified at the call site.  For example,
@@ -4474,10 +4545,11 @@ interface GraphicsContext {
   void drawRectangle(double width, double height, optional PaintOptions options);
 };</pre>
     <p> In an ECMAScript implementation of the IDL, an <span class="estype">Object</span> can be passed in for the optional <span class="idltype">PaintOptions</span> dictionary: </p>
-<pre class="js">// Get an instance of GraphicsContext.var ctx = getGraphicsContext();
+<pre class="highlight"><span class="c1">// Get an instance of GraphicsContext.var ctx = getGraphicsContext();</span>
 
-// Draw a rectangle.
-ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) });</pre>
+<span class="c1">// Draw a rectangle.</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">drawRectangle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="nx">fillPattern</span><span class="o">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">});</span>
+</pre>
     <p> Both fillPattern and strokePattern are given <a class="dfnref" href="#dfn-dictionary-member-default-value" id="ref-for-dfn-dictionary-member-default-value-7">default values</a>,
               so if they are omitted, the definition of drawRectangle can assume that they
               have the given default values and not include explicit wording to handle
@@ -4732,8 +4804,8 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
       <td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a> <br> |
              ε</span>
    </table>
-   <div class="example" id="example-1fa23522">
-    <a class="self-link" href="#example-1fa23522"></a> 
+   <div class="example" id="example-32e01956">
+    <a class="self-link" href="#example-32e01956"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-26">IDL fragment</a> defines an <a class="dfnref" href="#dfn-enumeration" id="ref-for-dfn-enumeration-13">enumeration</a> that is used as the type of an <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-19">attribute</a> and an <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-26">operation</a> argument: </p>
 <pre class="idl-example">enum MealType { "rice", "noodles", "other" };
 interface Meal {
@@ -4745,17 +4817,18 @@ interface Meal {
     <p> An ECMAScript implementation would restrict the strings that can be
               assigned to the type property or passed to the initializeMeal function
               to those identified in the <a class="dfnref" href="#dfn-enumeration" id="ref-for-dfn-enumeration-14">enumeration</a>. </p>
-<pre class="js">var meal = getMeal();                // Get an instance of Meal.
-meal.initialize("rice", 200);        // Operation invoked as normal.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">meal</span> <span class="o">=</span> <span class="nx">getMeal</span><span class="p">();</span>                <span class="c1">// Get an instance of Meal.</span>
+<span class="nx">meal</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="s2">"rice"</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>        <span class="c1">// Operation invoked as normal.</span>
 
-try {
-  meal.initialize("sandwich", 100);  // Throws a TypeError.
-} catch (e) {
-}
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">meal</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="s2">"sandwich"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>  <span class="c1">// Throws a TypeError.</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 
-meal.type = "noodles";               // Attribute assigned as normal.
-meal.type = "dumplings";             // Attribute assignment ignored.
-meal.type == "noodles";              // Evaluates to true.</pre>
+<span class="nx">meal</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"noodles"</span><span class="p">;</span>               <span class="c1">// Attribute assigned as normal.</span>
+<span class="nx">meal</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"dumplings"</span><span class="p">;</span>             <span class="c1">// Attribute assignment ignored.</span>
+<span class="nx">meal</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">"noodles"</span><span class="p">;</span>              <span class="c1">// Evaluates to true.</span>
+</pre>
    </div>
    <h3 class="heading settled" data-level="4.6" id="idl-callback-functions"><span class="secno">4.6. </span><span class="content">Callback functions</span><a class="self-link" href="#idl-callback-functions"></a></h3>
    <p class="issue" id="issue-f0917bbd"><a class="self-link" href="#issue-f0917bbd"></a> The “Custom DOM Elements” spec wants to use callback function types for
@@ -4788,8 +4861,8 @@ meal.type == "noodles";              // Evaluates to true.</pre>
       <td class="prod-mid">→
       <td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ReturnType">ReturnType</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")" ";"</span>
    </table>
-   <div class="example" id="example-d98ca0d4">
-    <a class="self-link" href="#example-d98ca0d4"></a> 
+   <div class="example" id="example-409be0f1">
+    <a class="self-link" href="#example-409be0f1"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-27">IDL fragment</a> defines
               a <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-16">callback function</a> used for an API that
               invokes a user-defined function when an operation is complete. </p>
@@ -4799,10 +4872,11 @@ interface AsyncOperations {
 };</pre>
     <p> In the ECMAScript language binding, a <span class="estype">Function</span> object is
               passed as the operation argument. </p>
-<pre class="js">var ops = getAsyncOperations();  // Get an instance of AsyncOperations.
-ops.performOperation(function(status) {
-  window.alert("Operation finished, status is " + status + ".");
-});</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">ops</span> <span class="o">=</span> <span class="nx">getAsyncOperations</span><span class="p">();</span>  <span class="c1">// Get an instance of AsyncOperations.</span>
+<span class="nx">ops</span><span class="p">.</span><span class="nx">performOperation</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Operation finished, status is "</span> <span class="o">+</span> <span class="nx">status</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">);</span>
+<span class="p">});</span>
+</pre>
    </div>
    <h3 class="heading settled" data-level="4.7" id="idl-typedefs"><span class="secno">4.7. </span><span class="content">Typedefs</span><a class="self-link" href="#idl-typedefs"></a></h3>
    <p> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-typedef">typedef</dfn> is a definition (matching <a class="sym" href="#prod-Typedef">Typedef</a>)
@@ -4863,17 +4937,17 @@ interface Widget {
     <p> Specification authors are discouraged from writing <a class="dfnref" href="#dfn-implements-statement" id="ref-for-dfn-implements-statement-4">implements statements</a> where the <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-47">interface</a> on the left-hand side
               is a <a class="dfnref" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-3">supplemental interface</a>.
               For example, if author 1 writes: </p>
-<pre class="idl-example">interface Window { ... };interface SomeFunctionality { ... };
+<pre class="idl-example example" id="example-1af64671"><a class="self-link" href="#example-1af64671"></a>interface Window { ... };interface SomeFunctionality { ... };
 Window implements SomeFunctionality;</pre>
     <p> and author 2 later writes: </p>
-<pre class="idl-example">interface Gizmo { ... };interface MoreFunctionality { ... };
+<pre class="idl-example example" id="example-eea66cd3"><a class="self-link" href="#example-eea66cd3"></a>interface Gizmo { ... };interface MoreFunctionality { ... };
 SomeFunctionality implements MoreFunctionality;
 Gizmo implements SomeFunctionality;</pre>
     <p> then it might be the case that author 2 is unaware of exactly which
               interfaces already are used on the left-hand side of an <code>implements SomeFunctionality</code> statement, and so has
               required more objects implement <span class="idltype">MoreFunctionality</span> than he or she expected. </p>
     <p> Better in this case would be for author 2 to write: </p>
-<pre class="idl-example">interface Gizmo { ... };interface MoreFunctionality { ... };
+<pre class="idl-example example" id="example-75ded70e"><a class="self-link" href="#example-75ded70e"></a>interface Gizmo { ... };interface MoreFunctionality { ... };
 Gizmo implements SomeFunctionality;
 Gizmo implements MoreFunctionality;</pre>
    </div>
@@ -4898,8 +4972,8 @@ Gizmo implements MoreFunctionality;</pre>
       <td class="prod-mid">→
       <td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "implements" <a class="sym" href="#prod-identifier">identifier</a> ";"</span>
    </table>
-   <div class="example" id="example-d276e308">
-    <a class="self-link" href="#example-d276e308"></a> 
+   <div class="example" id="example-aef2b157">
+    <a class="self-link" href="#example-aef2b157"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-29">IDL fragment</a> defines two <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-48">interfaces</a>, stating
               that one interface is always implemented on objects implementing the other. </p>
 <pre class="idl-example">interface Entry {  readonly attribute unsigned short entryType;
@@ -4916,7 +4990,8 @@ interface Observable {
 Entry implements Observable;</pre>
     <p> An ECMAScript implementation would thus have an “addEventListener”
               property in the prototype chain of every <span class="idltype">Entry</span>: </p>
-<pre class="js">var e = getEntry();          // Obtain an instance of Entry.typeof e.addEventListener;  // Evaluates to "function".</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">getEntry</span><span class="p">();</span>          <span class="c1">// Obtain an instance of Entry.typeof e.addEventListener;  // Evaluates to "function".</span>
+</pre>
     <p> Note that it is not the case that all <span class="idltype">Observable</span> objects implement <span class="idltype">Entry</span>. </p>
    </div>
    <h3 class="heading settled" data-level="4.9" id="idl-objects"><span class="secno">4.9. </span><span class="content">Objects implementing interfaces</span><a class="self-link" href="#idl-objects"></a></h3>
@@ -5806,25 +5881,26 @@ Entry implements Observable;</pre>
             environment, but after the global object for that environment is created.  The <span class="prop">[[Prototype]]</span>s
             of all initial objects in a given global environment must come from
             that same global environment. </p>
-   <div class="example" id="example-c2d144c5">
-    <a class="self-link" href="#example-c2d144c5"></a> 
+   <div class="example" id="example-376e381b">
+    <a class="self-link" href="#example-376e381b"></a> 
     <p> In an HTML user agent, multiple global environments can exist when
               multiple frames or windows are created.  Each frame or window will have
               its own set of <a class="dfnref" href="#dfn-initial-object" id="ref-for-dfn-initial-object-2">initial objects</a>,
               which the following HTML document demonstrates: </p>
-<pre class="html">&lt;!DOCTYPE html>&lt;title>Different global environments&lt;/title>
-&lt;iframe id=a>&lt;/iframe>
-&lt;script>
-var iframe = document.getElementById("a");
-var w = iframe.contentWindow;              // The global object in the frame
+<pre class="highlight"><span class="cp">&lt;!DOCTYPE html></span><span class="nt">&lt;title></span>Different global environments<span class="nt">&lt;/title></span>
+<span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">a</span><span class="nt">>&lt;/iframe></span>
+<span class="nt">&lt;script></span>
+<span class="kd">var</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">w</span> <span class="o">=</span> <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>              <span class="c1">// The global object in the frame</span>
 
-Object == w.Object;                        // Evaluates to false, per ECMA-262
-Node == w.Node;                            // Evaluates to false
-iframe instanceof w.Node;                  // Evaluates to false
-iframe instanceof w.Object;                // Evaluates to false
-iframe.appendChild instanceof Function;    // Evaluates to true
-iframe.appendChild instanceof w.Function;  // Evaluates to false
-&lt;/script></pre>
+<span class="nb">Object</span> <span class="o">==</span> <span class="nx">w</span><span class="p">.</span><span class="nb">Object</span><span class="p">;</span>                        <span class="c1">// Evaluates to false, per ECMA-262</span>
+<span class="nx">Node</span> <span class="o">==</span> <span class="nx">w</span><span class="p">.</span><span class="nx">Node</span><span class="p">;</span>                            <span class="c1">// Evaluates to false</span>
+<span class="nx">iframe</span> <span class="k">instanceof</span> <span class="nx">w</span><span class="p">.</span><span class="nx">Node</span><span class="p">;</span>                  <span class="c1">// Evaluates to false</span>
+<span class="nx">iframe</span> <span class="k">instanceof</span> <span class="nx">w</span><span class="p">.</span><span class="nb">Object</span><span class="p">;</span>                <span class="c1">// Evaluates to false</span>
+<span class="nx">iframe</span><span class="p">.</span><span class="nx">appendChild</span> <span class="k">instanceof</span> <span class="nb">Function</span><span class="p">;</span>    <span class="c1">// Evaluates to true</span>
+<span class="nx">iframe</span><span class="p">.</span><span class="nx">appendChild</span> <span class="k">instanceof</span> <span class="nx">w</span><span class="p">.</span><span class="nb">Function</span><span class="p">;</span>  <span class="c1">// Evaluates to false</span>
+<span class="nt">&lt;/script></span>
+</pre>
    </div>
    <p> Unless otherwise specified, each ECMAScript global environment <dfn class="dfn-paneled" data-dfn-for="ECMAScript global environment" data-dfn-type="dfn" data-export="" id="dfn-expose">exposes</dfn> all <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-53">interfaces</a> that the implementation supports.  If a given ECMAScript global environment does not
             expose an interface, then the requirements given in <a href="#es-interfaces">§5.6 Interfaces</a> are
@@ -6546,8 +6622,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
       <li>Set <var>i</var> to <var>i</var> + 1.
      </ol>
    </ol>
-   <div class="example" id="example-af4bdf41">
-    <a class="self-link" href="#example-af4bdf41"></a> 
+   <div class="example" id="example-c40d0a4b">
+    <a class="self-link" href="#example-c40d0a4b"></a> 
     <p> The following <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-55">interface</a> defines
                 an <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-43">attribute</a> of a sequence
                 type as well as an <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-48">operation</a> with an argument of a sequence type. </p>
@@ -6565,47 +6641,48 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 returned, and whenever an <span class="estype">Array</span> is
                 passed to <code>drawPolygon</code> no reference
                 will be kept after the call completes. </p>
-<pre class="js">// Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()
-// returns a sequence with two DOMString values: "image/png" and "image/svg+xml".
-var canvas = getCanvas();
+<pre class="highlight"><span class="c1">// Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()</span>
+<span class="c1">// returns a sequence with two DOMString values: "image/png" and "image/svg+xml".</span>
+<span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">getCanvas</span><span class="p">();</span>
 
-// An Array object of length 2.
-var supportedImageCodecs = canvas.getSupportedImageCodecs();
+<span class="c1">// An Array object of length 2.</span>
+<span class="kd">var</span> <span class="nx">supportedImageCodecs</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getSupportedImageCodecs</span><span class="p">();</span>
 
-// Evaluates to "image/png".
-supportedImageCodecs[0];
+<span class="c1">// Evaluates to "image/png".</span>
+<span class="nx">supportedImageCodecs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 
-// Each time canvas.getSupportedImageCodecs() is called, it returns a
-// new Array object.  Thus modifying the returned Array will not
-// affect the value returned from a subsequent call to the function.
-supportedImageCodecs[0] = "image/jpeg";
+<span class="c1">// Each time canvas.getSupportedImageCodecs() is called, it returns a</span>
+<span class="c1">// new Array object.  Thus modifying the returned Array will not</span>
+<span class="c1">// affect the value returned from a subsequent call to the function.</span>
+<span class="nx">supportedImageCodecs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"image/jpeg"</span><span class="p">;</span>
 
-// Evaluates to "image/png".
-canvas.getSupportedImageCodecs()[0];
+<span class="c1">// Evaluates to "image/png".</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">getSupportedImageCodecs</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
 
-// This evaluates to false, since a new Array object is returned each call.
-canvas.getSupportedImageCodecs() == canvas.getSupportedImageCodecs();
+<span class="c1">// This evaluates to false, since a new Array object is returned each call.</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">getSupportedImageCodecs</span><span class="p">()</span> <span class="o">==</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getSupportedImageCodecs</span><span class="p">();</span>
 
 
-// An Array of Numbers...
-var a = [0, 0, 100, 0, 50, 62.5];
+<span class="c1">// An Array of Numbers...</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mf">62.5</span><span class="p">];</span>
 
-// ...can be passed to a platform object expecting a sequence&lt;double>.
-canvas.drawPolygon(a);
+<span class="c1">// ...can be passed to a platform object expecting a sequence&lt;double>.</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPolygon</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
 
-// Each element will be converted to a double by first calling ToNumber().
-// So the following call is equivalent to the previous one, except that
-// "hi" will be alerted before drawPolygon() returns.
-a = [false, '',
-     { valueOf: function() { alert('hi'); return 100; } }, 0,
-     '50', new Number(62.5)];
-canvas.drawPolygon(s);
+<span class="c1">// Each element will be converted to a double by first calling ToNumber().</span>
+<span class="c1">// So the following call is equivalent to the previous one, except that</span>
+<span class="c1">// "hi" will be alerted before drawPolygon() returns.</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="kc">false</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span>
+     <span class="p">{</span> <span class="nx">valueOf</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">'hi'</span><span class="p">);</span> <span class="k">return</span> <span class="mi">100</span><span class="p">;</span> <span class="p">}</span> <span class="p">},</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">'50'</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="mf">62.5</span><span class="p">)];</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPolygon</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
 
-// Modifying an Array that was passed to drawPolygon() is guaranteed not to
-// have an effect on the Canvas, since the Array is effectively passed by value.
-a[4] = 20;
-var b = canvas.getLastDrawnPolygon();
-alert(b[4]);    // This would alert "50".</pre>
+<span class="c1">// Modifying an Array that was passed to drawPolygon() is guaranteed not to</span>
+<span class="c1">// have an effect on the Canvas, since the Array is effectively passed by value.</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getLastDrawnPolygon</span><span class="p">();</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>    <span class="c1">// This would alert "50".</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.2.26" id="es-promise"><span class="secno">5.2.26. </span><span class="content">Promise types — Promise&lt;<var>T</var>></span><a class="self-link" href="#es-promise"></a></h4>
    <p> IDL <a href="#idl-promise" id="ref-for-idl-promise-2">promise type</a> values are
@@ -6934,8 +7011,8 @@ alert(b[4]);    // This would alert "50".</pre>
               be used in conjunction with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute. </p>
    <p> See the rules for converting ECMAScript values to the various IDL integer
               types in <a href="#es-type-mapping">§5.2 ECMAScript type mapping</a> for the specific requirements that the use of <a class="xattr" href="#Clamp">[Clamp]</a> entails. </p>
-   <div class="example" id="example-b9323018">
-    <a class="self-link" href="#example-b9323018"></a> 
+   <div class="example" id="example-c3ee162a">
+    <a class="self-link" href="#example-c3ee162a"></a> 
     <p> In the following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-34">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-50">operations</a> are declared that
                 take three <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-octet">octet</a></code> arguments; one uses
@@ -6944,15 +7021,16 @@ alert(b[4]);    // This would alert "50".</pre>
   void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
 };</pre>
     <p> In an ECMAScript implementation of the IDL, a call to setColorClamped with <span class="estype">Number</span> values that are out of range for an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-octet">octet</a></code> are clamped to the range [0, 255]. </p>
-<pre class="js">// Get an instance of GraphicsContext.var context = getGraphicsContext();
+<pre class="highlight"><span class="c1">// Get an instance of GraphicsContext.var context = getGraphicsContext();</span>
 
-// Calling the non-[Clamp] version uses ToUint8 to coerce the Numbers to octets.
-// This is equivalent to calling setColor(255, 255, 1).
-context.setColor(-1, 255, 257);
+<span class="c1">// Calling the non-[Clamp] version uses ToUint8 to coerce the Numbers to octets.</span>
+<span class="c1">// This is equivalent to calling setColor(255, 255, 1).</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">setColor</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">257</span><span class="p">);</span>
 
-// Call setColorClamped with some out of range values.
-// This is equivalent to calling setColorClamped(0, 255, 255).
-context.setColorClamped(-1, 255, 257);</pre>
+<span class="c1">// Call setColorClamped with some out of range values.</span>
+<span class="c1">// This is equivalent to calling setColorClamped(0, 255, 255).</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">setColorClamped</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">257</span><span class="p">);</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.2" id="Constructor"><span class="secno">5.3.2. </span><span class="content">[Constructor]</span><a class="self-link" href="#Constructor"></a></h4>
    <p> If the <a class="xattr" href="#Constructor">[Constructor]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-41">extended attribute</a> appears on an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-56">interface</a>, it indicates that
@@ -6974,8 +7052,8 @@ context.setColorClamped(-1, 255, 257);</pre>
               must not be used on a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-18">callback interface</a>. </p>
    <p> See <a href="#es-interface-call">§5.6.1.1 Interface object [[Call]] method</a> for details on how a constructor
               for an interface is to be implemented. </p>
-   <div class="example" id="example-4fdcfaa3">
-    <a class="self-link" href="#example-4fdcfaa3"></a> 
+   <div class="example" id="example-d6eb16e2">
+    <a class="self-link" href="#example-d6eb16e2"></a> 
     <p> The following IDL defines two interfaces.  The second has the <a class="xattr" href="#Constructor">[Constructor]</a> extended
                 attribute, while the first does not. </p>
 <pre class="idl-example">interface NodeList {  Node item(unsigned long index);
@@ -6995,14 +7073,15 @@ interface Circle {
                 return a new object that implements the interface.  It would take
                 either zero or one argument.  The <span class="idltype">NodeList</span> interface object would not
                 have a <span class="prop">[[Construct]]</span> property. </p>
-<pre class="js">var x = new Circle();      // The uses the zero-argument constructor to create a                           // reference to a platform object that implements the
-                           // Circle interface.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">();</span>      <span class="c1">// The uses the zero-argument constructor to create a                           // reference to a platform object that implements the</span>
+                           <span class="c1">// Circle interface.</span>
 
-var y = new Circle(1.25);  // This also creates a Circle object, this time using
-                           // the one-argument constructor.
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">(</span><span class="mf">1.25</span><span class="p">);</span>  <span class="c1">// This also creates a Circle object, this time using</span>
+                           <span class="c1">// the one-argument constructor.</span>
 
-var z = new NodeList();    // This would throw a TypeError, since no
-                           // [Constructor] is declared.</pre>
+<span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NodeList</span><span class="p">();</span>    <span class="c1">// This would throw a TypeError, since no</span>
+                           <span class="c1">// [Constructor] is declared.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.3" id="EnforceRange"><span class="secno">5.3.3. </span><span class="content">[EnforceRange]</span><a class="self-link" href="#EnforceRange"></a></h4>
    <p> If the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-42">extended attribute</a> appears on an <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-51">operation</a> argument,
@@ -7019,8 +7098,8 @@ var z = new NodeList();    // This would throw a TypeError, since no
               be used in conjunction with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute. </p>
    <p> See the rules for converting ECMAScript values to the various IDL integer
               types in <a href="#es-type-mapping">§5.2 ECMAScript type mapping</a> for the specific requirements that the use of <a class="xattr" href="#EnforceRange">[EnforceRange]</a> entails. </p>
-   <div class="example" id="example-7d9b0253">
-    <a class="self-link" href="#example-7d9b0253"></a> 
+   <div class="example" id="example-92876a10">
+    <a class="self-link" href="#example-92876a10"></a> 
     <p> In the following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-35">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-52">operations</a> are declared that
                 take three <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-octet">octet</a></code> arguments; one uses
@@ -7030,19 +7109,20 @@ var z = new NodeList();    // This would throw a TypeError, since no
 };</pre>
     <p> In an ECMAScript implementation of the IDL, a call to setColorEnforcedRange with <span class="estype">Number</span> values that are out of range for an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-octet">octet</a></code> will result in an exception being
                 thrown. </p>
-<pre class="js">// Get an instance of GraphicsContext.var context = getGraphicsContext();
+<pre class="highlight"><span class="c1">// Get an instance of GraphicsContext.var context = getGraphicsContext();</span>
 
-// Calling the non-[EnforceRange] version uses ToUint8 to coerce the Numbers to octets.
-// This is equivalent to calling setColor(255, 255, 1).
-context.setColor(-1, 255, 257);
+<span class="c1">// Calling the non-[EnforceRange] version uses ToUint8 to coerce the Numbers to octets.</span>
+<span class="c1">// This is equivalent to calling setColor(255, 255, 1).</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">setColor</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">257</span><span class="p">);</span>
 
-// When setColorEnforcedRange is called, Numbers are rounded towards zero.
-// This is equivalent to calling setColor(0, 255, 255).
-context.setColorEnforcedRange(-0.9, 255, 255.2);
+<span class="c1">// When setColorEnforcedRange is called, Numbers are rounded towards zero.</span>
+<span class="c1">// This is equivalent to calling setColor(0, 255, 255).</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">setColorEnforcedRange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">255.2</span><span class="p">);</span>
 
-// The following will cause a TypeError to be thrown, since even after
-// rounding the first and third argument values are out of range.
-context.setColorEnforcedRange(-1, 255, 256);</pre>
+<span class="c1">// The following will cause a TypeError to be thrown, since even after</span>
+<span class="c1">// rounding the first and third argument values are out of range.</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">setColorEnforcedRange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.4" id="Exposed"><span class="secno">5.3.4. </span><span class="content">[Exposed]</span><a class="self-link" href="#Exposed"></a></h4>
    <p> If the <a class="xattr" href="#Exposed">[Exposed]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-44">extended attribute</a> appears on an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-57">interface</a>, <a class="dfnref" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-8">partial interface</a>, or
@@ -7152,8 +7232,8 @@ interface Node {
    <p> See <a href="#es-operations">§5.6.7 Operations</a> for the specific requirements that the use of <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> entails. </p>
     Note: The <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-50">extended attribute</a> is intended for use on the <span class="idltype">Window</span> <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-61">interface</a> as defined
               in HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2). 
-   <div class="example" id="example-42a786d3">
-    <a class="self-link" href="#example-42a786d3"></a> 
+   <div class="example" id="example-850cc41f">
+    <a class="self-link" href="#example-850cc41f"></a> 
     <p>In the following example, the <span class="idltype">Window</span> <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-62">interface</a> is defined
               with the <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-51">extended attribute</a>.</p>
 <pre class="idl-example">[ImplicitThis]interface Window {
@@ -7164,14 +7244,15 @@ interface Node {
     <p>Since the <span class="idltype">Window</span> object is used as
               the ECMAScript global object, calls to its functions can be made
               without an explicit object, even in strict mode:</p>
-<pre class="js">"use strict";
-window.alert("hello");      // Calling alert with an explicit window object works.
-alert("hello");             // This also works, even though we are in strict mode.
-alert.call(null, "hello");  // As does passing null explicitly as the this value.
+<pre class="highlight"><span class="s2">"use strict"</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span>      <span class="c1">// Calling alert with an explicit window object works.</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span>             <span class="c1">// This also works, even though we are in strict mode.</span>
+<span class="nx">alert</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="s2">"hello"</span><span class="p">);</span>  <span class="c1">// As does passing null explicitly as the this value.</span>
 
-// This does not apply to getters for attributes on the interface, though.
-// The following will throw a TypeError.
-Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
+<span class="c1">// This does not apply to getters for attributes on the interface, though.</span>
+<span class="c1">// The following will throw a TypeError.</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">Window</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">).</span><span class="nx">get</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.6" id="Global"><span class="secno">5.3.6. </span><span class="content">[Global] and [PrimaryGlobal]</span><span id="PrimaryGlobal"></span><a class="self-link" href="#Global"></a></h4>
    <p> If the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-52">extended attribute</a> appears on an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-63">interface</a>,
@@ -7194,10 +7275,11 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
     <p> Placing properties corresponding to interface members on
                 the object itself will mean that common feature detection
                 methods like the following will work: </p>
-<pre class="js">var indexedDB = window.indexedDB || window.webkitIndexedDB ||                window.mozIndexedDB || window.msIndexedDB;
+<pre class="highlight"><span class="kd">var</span> <span class="nx">indexedDB</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">indexedDB</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">webkitIndexedDB</span> <span class="o">||</span>                <span class="nb">window</span><span class="p">.</span><span class="nx">mozIndexedDB</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">msIndexedDB</span><span class="p">;</span>
 
-var requestAnimationFrame = window.requestAnimationFrame ||
-                            window.mozRequestAnimationFrame || ...;</pre>
+<span class="kd">var</span> <span class="nx">requestAnimationFrame</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span> <span class="o">||</span>
+                            <span class="nb">window</span><span class="p">.</span><span class="nx">mozRequestAnimationFrame</span> <span class="o">||</span> <span class="p">...;</span>
+</pre>
     <p> Because of the way variable declarations are handled in
                 ECMAScript, the code above would result in the <code>window.indexedDB</code> and <code>window.requestAnimationFrame</code> evaluating
                 to <code>undefined</code>, as the shadowing variable
@@ -7245,8 +7327,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
    <p> See <a href="#named-properties-object">§5.6.4 Named properties object</a>, <a href="#getownproperty">§5.8.3 Platform object [[GetOwnProperty]] method</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of <a class="xattr" href="#Global">[Global]</a> and <a class="xattr" href="#Global">[PrimaryGlobal]</a> entails for named properties,
               and <a href="#es-constants">§5.6.5 Constants</a>, <a href="#es-attributes">§5.6.6 Attributes</a> and <a href="#es-operations">§5.6.7 Operations</a> for the requirements relating to the location of properties
               corresponding to <a class="dfnref" href="#dfn-interface-member" id="ref-for-dfn-interface-member-15">interface members</a>. </p>
-   <div class="example" id="example-98b54ec7">
-    <a class="self-link" href="#example-98b54ec7"></a> 
+   <div class="example" id="example-eba58378">
+    <a class="self-link" href="#example-eba58378"></a> 
     <p> The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-59">extended attribute</a> is intended
                 to be used by the <span class="idltype">Window</span> interface as defined in
                 HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).  (<a class="xattr" href="#Global">[Global]</a> is intended to be used by worker global interfaces.)
@@ -7262,28 +7344,29 @@ var requestAnimationFrame = window.requestAnimationFrame ||
     <p> The following HTML document illustrates how the named properties on the <span class="idltype">Window</span> object can be shadowed, and how
                 the property for an attribute will not be replaced when declaring
                 a variable of the same name: </p>
-<pre class="html">&lt;!DOCTYPE html>&lt;title>Variable declarations and assignments on Window&lt;/title>
-&lt;iframe name=abc>&lt;/iframe>
-&lt;!-- Shadowing named properties -->
-&lt;script>
-  window.abc;    // Evaluates to the iframe’s Window object.
-  abc = 1;       // Shadows the named property.
-  window.abc;    // Evaluates to 1.
-&lt;/script>
+<pre class="highlight"><span class="cp">&lt;!DOCTYPE html></span><span class="nt">&lt;title></span>Variable declarations and assignments on Window<span class="nt">&lt;/title></span>
+<span class="nt">&lt;iframe</span> <span class="na">name=</span><span class="s">abc</span><span class="nt">>&lt;/iframe></span>
+<span class="c">&lt;!-- Shadowing named properties --></span>
+<span class="nt">&lt;script></span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">abc</span><span class="p">;</span>    <span class="c1">// Evaluates to the iframe’s Window object.</span>
+  <span class="nx">abc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>       <span class="c1">// Shadows the named property.</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">abc</span><span class="p">;</span>    <span class="c1">// Evaluates to 1.</span>
+<span class="nt">&lt;/script></span>
 
-&lt;!-- Preserving properties for IDL attributes -->
-&lt;script>
-  Window.prototype.def = 2;         // Places a property on the prototype.
-  window.hasOwnProperty("length");  // Evaluates to true.
-  length;                           // Evaluates to 1.
-  def;                              // Evaluates to 2.
-&lt;/script>
-&lt;script>
-  var length;                       // Variable declaration leaves existing property.
-  length;                           // Evaluates to 1.
-  var def;                          // Variable declaration creates shadowing property.
-  def;                              // Evaluates to undefined.
-&lt;/script></pre>
+<span class="c">&lt;!-- Preserving properties for IDL attributes --></span>
+<span class="nt">&lt;script></span>
+  <span class="nx">Window</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">def</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>         <span class="c1">// Places a property on the prototype.</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"length"</span><span class="p">);</span>  <span class="c1">// Evaluates to true.</span>
+  <span class="nx">length</span><span class="p">;</span>                           <span class="c1">// Evaluates to 1.</span>
+  <span class="nx">def</span><span class="p">;</span>                              <span class="c1">// Evaluates to 2.</span>
+<span class="nt">&lt;/script></span>
+<span class="nt">&lt;script></span>
+  <span class="kd">var</span> <span class="nx">length</span><span class="p">;</span>                       <span class="c1">// Variable declaration leaves existing property.</span>
+  <span class="nx">length</span><span class="p">;</span>                           <span class="c1">// Evaluates to 1.</span>
+  <span class="kd">var</span> <span class="nx">def</span><span class="p">;</span>                          <span class="c1">// Variable declaration creates shadowing property.</span>
+  <span class="nx">def</span><span class="p">;</span>                              <span class="c1">// Evaluates to undefined.</span>
+<span class="nt">&lt;/script></span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.7" id="LegacyArrayClass"><span class="secno">5.3.7. </span><span class="content">[LegacyArrayClass]</span><a class="self-link" href="#LegacyArrayClass"></a></h4>
    <p> If the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-60">extended attribute</a> appears on an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-67">interface</a> that is not defined to <a class="dfnref" href="#dfn-inherit" id="ref-for-dfn-inherit-10">inherit</a> from another, it indicates that the internal <span class="prop">[[Prototype]]</span> property of its <a class="dfnref" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-5">interface prototype object</a> will be the <span class="estype">Array</span> prototype object rather than
@@ -7299,8 +7382,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 which would provide access to the array elements. 
    <p> See <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a> for the
               specific requirements that the use of <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> entails. </p>
-   <div class="example" id="example-5d42ed00">
-    <a class="self-link" href="#example-5d42ed00"></a> 
+   <div class="example" id="example-f1e04f88">
+    <a class="self-link" href="#example-f1e04f88"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-36">IDL fragment</a> defines two <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-68">interfaces</a> that use <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>. </p>
 <pre class="idl-example">[LegacyArrayClass]interface ItemList {
   attribute unsigned long length;
@@ -7316,10 +7399,11 @@ interface ImmutableItemList {
     <p> In an ECMAScript implementation of the above two interfaces,
                 with appropriate definitions for getItem, setItem and removeItem, <span class="estype">Array</span> methods to inspect and
                 modify the array-like object can be used. </p>
-<pre class="js">var list = getItemList();  // Obtain an instance of ItemList.
-list.concat();             // Clone the ItemList into an Array.
-list.pop();                // Remove an item from the ItemList.
-list.unshift({ });         // Insert an item at index 0.</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">getItemList</span><span class="p">();</span>  <span class="c1">// Obtain an instance of ItemList.</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">();</span>             <span class="c1">// Clone the ItemList into an Array.</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>                <span class="c1">// Remove an item from the ItemList.</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">unshift</span><span class="p">({</span> <span class="p">});</span>         <span class="c1">// Insert an item at index 0.</span>
+</pre>
     <p> <span class="idltype">ImmutableItemList</span> has a read only
                 length <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-46">attribute</a> and no indexed property <a class="dfnref" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-3">setter</a>.  The
                 mutating <span class="estype">Array</span> methods will generally not
@@ -7357,8 +7441,8 @@ list.unshift({ });         // Insert an item at index 0.</pre>
    <p> An attribute with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a> extended attribute must not also be declared
               with the <a class="xattr" href="#PutForwards">[PutForwards]</a> or <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attributes. </p>
    <p> See the <a href="#es-attributes">Attributes</a> section for how <a class="xattr" href="#LenientSetter">[LenientSetter]</a> is to be implemented. </p>
-   <div class="example" id="example-aa947dca">
-    <a class="self-link" href="#example-aa947dca"></a> 
+   <div class="example" id="example-c6ff22f0">
+    <a class="self-link" href="#example-c6ff22f0"></a> 
     <p> The following IDL fragment defines an interface that uses the <a class="xattr" href="#LenientSetter">[LenientSetter]</a> extended
                 attribute. </p>
 <pre class="idl-example">interface Example {  [LenientSetter] readonly attribute DOMString x;
@@ -7367,14 +7451,15 @@ list.unshift({ });         // Insert an item at index 0.</pre>
     <p> An ECMAScript implementation that supports this interface will
                 have a setter on the accessor property that correspond to x,
                 which allows any assignment to be ignored in strict mode. </p>
-<pre class="js">"use strict";
-var example = getExample();  // Get an instance of Example.
+<pre class="highlight"><span class="s2">"use strict"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">getExample</span><span class="p">();</span>  <span class="c1">// Get an instance of Example.</span>
 
-// Fine; while we are in strict mode, there is a setter that is a no-op.
-example.x = 1;
+<span class="c1">// Fine; while we are in strict mode, there is a setter that is a no-op.</span>
+<span class="nx">example</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-// Throws a TypeError, since we are in strict mode and there is no setter.
-example.y = 1;</pre>
+<span class="c1">// Throws a TypeError, since we are in strict mode and there is no setter.</span>
+<span class="nx">example</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.10" id="LenientThis"><span class="secno">5.3.10. </span><span class="content">[LenientThis]</span><a class="self-link" href="#LenientThis"></a></h4>
    <p> If the <a class="xattr" href="#LenientThis">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-63">extended attribute</a> appears on a <a class="dfnref" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-7">regular attribute</a>,
@@ -7387,8 +7472,8 @@ example.y = 1;</pre>
     Advisement: Specifications should not use <a class="xattr" href="#LenientThis">[LenientThis]</a> unless required for compatibility reasons.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. 
    <p> See the <a href="#es-attributes">Attributes</a> section for how <a class="xattr" href="#LenientThis">[LenientThis]</a> is to be implemented. </p>
-   <div class="example" id="example-ca8ad3fd">
-    <a class="self-link" href="#example-ca8ad3fd"></a> 
+   <div class="example" id="example-12aacca5">
+    <a class="self-link" href="#example-12aacca5"></a> 
     <p> The following IDL fragment defines an interface that uses the <a class="xattr" href="#LenientThis">[LenientThis]</a> extended
                 attribute. </p>
 <pre class="idl-example">interface Example {  [LenientThis] attribute DOMString x;
@@ -7397,19 +7482,20 @@ example.y = 1;</pre>
     <p> An ECMAScript implementation that supports this interface will
                 allow the getter and setter of the accessor property that corresponds
                 to x to be invoked with something other than an <span class="idltype">Example</span> object. </p>
-<pre class="js">var example = getExample();  // Get an instance of Example.var obj = { };
+<pre class="highlight"><span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">getExample</span><span class="p">();</span>  <span class="c1">// Get an instance of Example.var obj = { };</span>
 
-// Fine.
-example.x;
+<span class="c1">// Fine.</span>
+<span class="nx">example</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
 
-// Ignored, since the this value is not an Example object and [LenientThis] is used.
-Object.getOwnPropertyDescriptor(Example.prototype, "x").get.call(obj);
+<span class="c1">// Ignored, since the this value is not an Example object and [LenientThis] is used.</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">Example</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">).</span><span class="nx">get</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 
-// Also ignored, since Example.prototype is not an Example object and [LenientThis] is used.
-Example.prototype.x;
+<span class="c1">// Also ignored, since Example.prototype is not an Example object and [LenientThis] is used.</span>
+<span class="nx">Example</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
 
-// Throws a TypeError, since Example.prototype is not an Example object.
-Example.prototype.y;</pre>
+<span class="c1">// Throws a TypeError, since Example.prototype is not an Example object.</span>
+<span class="nx">Example</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.11" id="NamedConstructor"><span class="secno">5.3.11. </span><span class="content">[NamedConstructor]</span><a class="self-link" href="#NamedConstructor"></a></h4>
    <p> If the <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-64">extended attribute</a> appears on an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-71">interface</a>,
@@ -7433,8 +7519,8 @@ Example.prototype.y;</pre>
               must not be used on a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-19">callback interface</a>. </p>
    <p> See <a href="#named-constructors">§5.6.2 Named constructors</a> for details on how named constructors
               are to be implemented. </p>
-   <div class="example" id="example-ce9e0949">
-    <a class="self-link" href="#example-ce9e0949"></a> 
+   <div class="example" id="example-6e5db554">
+    <a class="self-link" href="#example-6e5db554"></a> 
     <p> The following IDL defines an interface that uses the <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended
                 attribute. </p>
 <pre class="idl-example">[NamedConstructor=Audio, NamedConstructor=Audio(DOMString src)]
@@ -7443,13 +7529,14 @@ interface HTMLAudioElement : HTMLMediaElement {
 };</pre>
     <p> An ECMAScript implementation that supports this interface will
                 allow the construction of <span class="estype">HTMLAudioElement</span> objects using the <span class="estype">Audio</span> constructor. </p>
-<pre class="js">typeof Audio;                   // Evaluates to 'function'.
-var a1 = new Audio();           // Creates a new object that implements
-                                // HTMLAudioElement, using the zero-argument
-                                // constructor.
+<pre class="highlight"><span class="k">typeof</span> <span class="nx">Audio</span><span class="p">;</span>                   <span class="c1">// Evaluates to 'function'.</span>
+<span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Audio</span><span class="p">();</span>           <span class="c1">// Creates a new object that implements</span>
+                                <span class="c1">// HTMLAudioElement, using the zero-argument</span>
+                                <span class="c1">// constructor.</span>
 
-var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
-                                // one-argument constructor.</pre>
+<span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Audio</span><span class="p">(</span><span class="s1">'a.flac'</span><span class="p">);</span>   <span class="c1">// Creates an HTMLAudioElement using the</span>
+                                <span class="c1">// one-argument constructor.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.12" id="NewObject"><span class="secno">5.3.12. </span><span class="content">[NewObject]</span><a class="self-link" href="#NewObject"></a></h4>
    <p> If the <a class="xattr" href="#NewObject">[NewObject]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-65">extended attribute</a> appears on a <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-8">regular</a> or <a class="dfnref" href="#dfn-static-operation" id="ref-for-dfn-static-operation-7">static</a> <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-55">operation</a>,
@@ -7494,8 +7581,8 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               from an interface that has the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended
               attribute specified. </p>
    <p> See <a href="#es-interfaces">§5.6 Interfaces</a> for the specific requirements that the use of <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> entails. </p>
-   <div class="example" id="example-3faa7a04">
-    <a class="self-link" href="#example-3faa7a04"></a> 
+   <div class="example" id="example-95e2e85e">
+    <a class="self-link" href="#example-95e2e85e"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-37">IDL
                   fragment</a> defines two interfaces, one whose interface object
                 is exposed on the ECMAScript global object, and one whose isn’t: </p>
@@ -7509,16 +7596,16 @@ interface Query {
     <p> An ECMAScript implementation of the above IDL would allow
                 manipulation of <span class="idltype">Storage</span>’s
                 prototype, but not <span class="idltype">Query</span>’s. </p>
-<pre class="js">typeof Storage;                        // evaluates to "object"
-// Add some tracing alert() call to Storage.addEntry.
-var fn = Storage.prototype.addEntry;
-Storage.prototype.addEntry = function(key, value) {
-  alert('Calling addEntry()');
-  return fn.call(this, key, value);
-};
+<pre class="highlight"><span class="k">typeof</span> <span class="nx">Storage</span><span class="p">;</span>                        <span class="c1">// evaluates to "object"</span>
+<span class="c1">// Add some tracing alert() call to Storage.addEntry.</span>
+<span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="nx">Storage</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addEntry</span><span class="p">;</span>
+<span class="nx">Storage</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addEntry</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s1">'Calling addEntry()'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">};</span>
 
-typeof Query;                          // evaluates to "undefined"
-var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
+<span class="k">typeof</span> <span class="nx">Query</span><span class="p">;</span>                          <span class="c1">// evaluates to "undefined"</span>
+<span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="nx">Query</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">lookupEntry</span><span class="p">;</span>  <span class="c1">// exception, Query isn’t defined</span>
 </pre>
    </div>
    <h4 class="heading settled" data-level="5.3.14" id="OverrideBuiltins"><span class="secno">5.3.14. </span><span class="content">[OverrideBuiltins]</span><a class="self-link" href="#OverrideBuiltins"></a></h4>
@@ -7538,8 +7625,8 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
               be the part of the interface definition that defines
               the <a class="dfnref" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-8">named property getter</a>. </p>
    <p> See <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a> entails. </p>
-   <div class="example" id="example-d0c1d849">
-    <a class="self-link" href="#example-d0c1d849"></a> 
+   <div class="example" id="example-3495ce70">
+    <a class="self-link" href="#example-3495ce70"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-38">IDL fragment</a> defines two <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-74">interfaces</a>,
                 one that has a <a class="dfnref" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-9">named property getter</a> and one that does not. </p>
 <pre class="idl-example">interface StringMap {  readonly attribute unsigned long length;
@@ -7554,34 +7641,35 @@ interface StringMap2 {
     <p> In an ECMAScript implementation of these two interfaces,
                 getting certain properties on objects implementing
                 the interfaces will result in different values: </p>
-<pre class="js">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and// "toString" as supported property names.
-var map1 = getStringMap();
+<pre class="highlight"><span class="c1">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and// "toString" as supported property names.</span>
+<span class="kd">var</span> <span class="nx">map1</span> <span class="o">=</span> <span class="nx">getStringMap</span><span class="p">();</span>
 
-// This invokes the named property getter.
-map1.abc;
+<span class="c1">// This invokes the named property getter.</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nx">abc</span><span class="p">;</span>
 
-// This fetches the "length" property on the object that corresponds to the
-// length attribute.
-map1.length;
+<span class="c1">// This fetches the "length" property on the object that corresponds to the</span>
+<span class="c1">// length attribute.</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 
-// This fetches the "toString" property from the object’s prototype chain.
-map1.toString;
+<span class="c1">// This fetches the "toString" property from the object’s prototype chain.</span>
+<span class="nx">map1</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
 
 
-// Obtain an instance of StringMap2.  Assume that it also has "abc", "length"
-// and "toString" as supported property names.
-var map2 = getStringMap2();
+<span class="c1">// Obtain an instance of StringMap2.  Assume that it also has "abc", "length"</span>
+<span class="c1">// and "toString" as supported property names.</span>
+<span class="kd">var</span> <span class="nx">map2</span> <span class="o">=</span> <span class="nx">getStringMap2</span><span class="p">();</span>
 
-// This invokes the named property getter.
-map2.abc;
+<span class="c1">// This invokes the named property getter.</span>
+<span class="nx">map2</span><span class="p">.</span><span class="nx">abc</span><span class="p">;</span>
 
-// This also invokes the named property getter, despite the fact that the "length"
-// property on the object corresponds to the length attribute.
-map2.length;
+<span class="c1">// This also invokes the named property getter, despite the fact that the "length"</span>
+<span class="c1">// property on the object corresponds to the length attribute.</span>
+<span class="nx">map2</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 
-// This too invokes the named property getter, despite the fact that "toString" is
-// a property in map2’s prototype chain.
-map2.toString;</pre>
+<span class="c1">// This too invokes the named property getter, despite the fact that "toString" is</span>
+<span class="c1">// a property in map2’s prototype chain.</span>
+<span class="nx">map2</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.15" id="PutForwards"><span class="secno">5.3.15. </span><span class="content">[PutForwards]</span><a class="self-link" href="#PutForwards"></a></h4>
    <p> If the <a class="xattr" href="#PutForwards">[PutForwards]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-68">extended attribute</a> appears on a <a class="dfnref" href="#dfn-read-only" id="ref-for-dfn-read-only-8">read only</a> <a class="dfnref" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-8">regular attribute</a> declaration whose type is
@@ -7619,8 +7707,8 @@ map2.toString;</pre>
               must not be used on an attribute declared on
               a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-21">callback interface</a>. </p>
    <p> See the <a href="#es-attributes">Attributes</a> section for how <a class="xattr" href="#PutForwards">[PutForwards]</a> is to be implemented. </p>
-   <div class="example" id="example-1db91141">
-    <a class="self-link" href="#example-1db91141"></a> 
+   <div class="example" id="example-0bacd8d9">
+    <a class="self-link" href="#example-0bacd8d9"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-39">IDL fragment</a> defines interfaces for names and people.
                 The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended
                 attribute is used on the <span class="idlattr">name</span> attribute
@@ -7637,9 +7725,10 @@ interface Person {
 };</pre>
     <p> In the ECMAScript binding, this would allow assignments to the
                 “name” property: </p>
-<pre class="js">var p = getPerson();           // Obtain an instance of Person.
-p.name = 'John Citizen';       // This statement...
-p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">getPerson</span><span class="p">();</span>           <span class="c1">// Obtain an instance of Person.</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'John Citizen'</span><span class="p">;</span>       <span class="c1">// This statement...</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">full</span> <span class="o">=</span> <span class="s1">'John Citizen'</span><span class="p">;</span>  <span class="c1">// ...has the same behavior as this one.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.16" id="Replaceable"><span class="secno">5.3.16. </span><span class="content">[Replaceable]</span><a class="self-link" href="#Replaceable"></a></h4>
    <p> If the <a class="xattr" href="#Replaceable">[Replaceable]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-70">extended attribute</a> appears on a <a class="dfnref" href="#dfn-read-only" id="ref-for-dfn-read-only-10">read only</a> <a class="dfnref" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-9">regular attribute</a>,
@@ -7660,33 +7749,34 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
               must not be used on an attribute declared on
               a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-22">callback interface</a>. </p>
    <p> See <a href="#es-attributes">§5.6.6 Attributes</a> for the specific requirements that the use of <a class="xattr" href="#Replaceable">[Replaceable]</a> entails. </p>
-   <div class="example" id="example-3faccbb3">
-    <a class="self-link" href="#example-3faccbb3"></a> 
+   <div class="example" id="example-dd980cf6">
+    <a class="self-link" href="#example-dd980cf6"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-40">IDL fragment</a> defines an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-77">interface</a> with an <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-57">operation</a> that increments a counter, and an <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-52">attribute</a> that exposes the counter’s value, which is initially 0: </p>
 <pre class="idl-example">interface Counter {  [Replaceable] readonly attribute unsigned long value;
   void increment();
 };</pre>
     <p> Assigning to the “value” property
                 on a <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-16">platform object</a> implementing <span class="idltype">Counter</span> will shadow the property that corresponds to the <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-53">attribute</a>: </p>
-<pre class="js">var counter = getCounter();                              // Obtain an instance of Counter.counter.value;                                           // Evaluates to 0.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="nx">getCounter</span><span class="p">();</span>                              <span class="c1">// Obtain an instance of Counter.counter.value;                                           // Evaluates to 0.</span>
 
-counter.hasOwnProperty("value");                         // Evaluates to false.
-Object.getPrototypeOf(counter).hasOwnProperty("value");  // Evaluates to true.
+<span class="nx">counter</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"value"</span><span class="p">);</span>                         <span class="c1">// Evaluates to false.</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">counter</span><span class="p">).</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"value"</span><span class="p">);</span>  <span class="c1">// Evaluates to true.</span>
 
-counter.increment();
-counter.increment();
-counter.value;                                           // Evaluates to 2.
+<span class="nx">counter</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>                                           <span class="c1">// Evaluates to 2.</span>
 
-counter.value = 'a';                                     // Shadows the property with one that is unrelated
-                                                         // to Counter::value.
+<span class="nx">counter</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>                                     <span class="c1">// Shadows the property with one that is unrelated</span>
+                                                         <span class="c1">// to Counter::value.</span>
 
-counter.hasOwnProperty("value");                         // Evaluates to true.
+<span class="nx">counter</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"value"</span><span class="p">);</span>                         <span class="c1">// Evaluates to true.</span>
 
-counter.increment();
-counter.value;                                           // Evaluates to 'a'.
+<span class="nx">counter</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>                                           <span class="c1">// Evaluates to 'a'.</span>
 
-delete counter.value;                                    // Reveals the original property.
-counter.value;                                           // Evaluates to 3.</pre>
+<span class="k">delete</span> <span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>                                    <span class="c1">// Reveals the original property.</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>                                           <span class="c1">// Evaluates to 3.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.17" id="SameObject"><span class="secno">5.3.17. </span><span class="content">[SameObject]</span><a class="self-link" href="#SameObject"></a></h4>
    <p> If the <a class="xattr" href="#SameObject">[SameObject]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-71">extended attribute</a> appears on a <a class="dfnref" href="#dfn-read-only" id="ref-for-dfn-read-only-12">read only</a> <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-54">attribute</a>, then it
@@ -7769,8 +7859,8 @@ counter.value;                                           // Evaluates to 3.</pre
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a> (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 6.1.6.1)
                 such as <code>onclick</code> and <code>onerror</code>. 
    <p> See <a href="#es-nullable-type">§5.2.24 Nullable types — T?</a> for the specific requirements that the use of <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a> entails. </p>
-   <div class="example" id="example-4156f5fc">
-    <a class="self-link" href="#example-4156f5fc"></a> 
+   <div class="example" id="example-f5e79f10">
+    <a class="self-link" href="#example-f5e79f10"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-42">IDL fragment</a> defines an interface that has one
                 attribute whose type is a <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>-annotated <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-25">callback function</a> and another whose type is a <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-26">callback function</a> without the <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-77">extended attribute</a>: </p>
 <pre class="idl-example">callback OccurrenceHandler = void (DOMString details);
@@ -7785,20 +7875,21 @@ interface Manager {
                 an object (such as a <span class="estype">Number</span> value)
                 to handler1 will have different behavior from that when assigning
                 to handler2: </p>
-<pre class="js">var manager = getManager();  // Get an instance of Manager.
-manager.handler1 = function() { };
-manager.handler1;            // Evaluates to the function.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">manager</span> <span class="o">=</span> <span class="nx">getManager</span><span class="p">();</span>  <span class="c1">// Get an instance of Manager.</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">handler1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">};</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">handler1</span><span class="p">;</span>            <span class="c1">// Evaluates to the function.</span>
 
-try {
-  manager.handler1 = 123;    // Throws a TypeError.
-} catch (e) {
-}
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">manager</span><span class="p">.</span><span class="nx">handler1</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>    <span class="c1">// Throws a TypeError.</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 
-manager.handler2 = function() { };
-manager.handler2;            // Evaluates to the function.
+<span class="nx">manager</span><span class="p">.</span><span class="nx">handler2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">};</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">handler2</span><span class="p">;</span>            <span class="c1">// Evaluates to the function.</span>
 
-manager.handler2 = 123;
-manager.handler2;            // Evaluates to null.</pre>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">handler2</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">handler2</span><span class="p">;</span>            <span class="c1">// Evaluates to null.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.20" id="TreatNullAs"><span class="secno">5.3.20. </span><span class="content">[TreatNullAs]</span><a class="self-link" href="#TreatNullAs"></a></h4>
    <p> If the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-78">extended attribute</a> appears on an <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-57">attribute</a> or <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-60">operation</a> argument whose type is <a class="idltype" href="#idl-DOMString" id="ref-for-idl-DOMString-7">DOMString</a>,
@@ -7822,8 +7913,8 @@ manager.handler2;            // Evaluates to null.</pre>
               also must not be specified on an operation on
               a non-callback interface. </p>
    <p> See <a href="#es-DOMString">§5.2.16 DOMString</a> for the specific requirements that the use of <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> entails. </p>
-   <div class="example" id="example-b70f8922">
-    <a class="self-link" href="#example-b70f8922"></a> 
+   <div class="example" id="example-c733bef1">
+    <a class="self-link" href="#example-c733bef1"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-43">IDL fragment</a> defines an interface that has one
                 attribute with the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute, and one operation with an argument that has
                 the extended attribute: </p>
@@ -7836,15 +7927,16 @@ manager.handler2;            // Evaluates to null.</pre>
                 assigned to the “owner” property or passed as the
                 argument to the <code>isMemberOfBreed</code> function
                 to the empty string rather than <code>"null"</code>: </p>
-<pre class="js">var d = getDog();         // Assume d is a platform object implementing the Dog                          // interface.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">getDog</span><span class="p">();</span>         <span class="c1">// Assume d is a platform object implementing the Dog                          // interface.</span>
 
-d.name = null;            // This assigns the string "null" to the .name
-                          // property.
+<span class="nx">d</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>            <span class="c1">// This assigns the string "null" to the .name</span>
+                          <span class="c1">// property.</span>
 
-d.owner = null;           // This assigns the string "" to the .owner property.
+<span class="nx">d</span><span class="p">.</span><span class="nx">owner</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>           <span class="c1">// This assigns the string "" to the .owner property.</span>
 
-d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
-                          // function.</pre>
+<span class="nx">d</span><span class="p">.</span><span class="nx">isMemberOfBreed</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>  <span class="c1">// This passes the string "" to the isMemberOfBreed</span>
+                          <span class="c1">// function.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.21" id="Unforgeable"><span class="secno">5.3.21. </span><span class="content">[Unforgeable]</span><a class="self-link" href="#Unforgeable"></a></h4>
    <p> If the <a class="xattr" href="#Unforgeable">[Unforgeable]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-79">extended attribute</a> appears on a non-<a class="dfnref" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-10">static</a> <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-58">attribute</a> or non-<a class="dfnref" href="#dfn-static-operation" id="ref-for-dfn-static-operation-10">static</a> <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-61">operations</a>, it indicates
@@ -7879,8 +7971,8 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
    <p> If an attribute or operation <var>X</var> is <a class="dfnref" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-1">unforgeable</a> on an interface <var>A</var>, and <var>A</var> is one of the <a class="dfnref" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-15">inherited interfaces</a> of another interface <var>B</var>, then <var>B</var> and all of its <a class="dfnref" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-20">consequential interfaces</a> must not have a non-static attribute or <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-10">regular operation</a> with the same <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-54">identifier</a> as <var>X</var>. </p>
     Note: For example, the following is disallowed: 
    <p> See <a href="#es-attributes">§5.6.6 Attributes</a>, <a href="#es-operations">§5.6.7 Operations</a>, <a href="#es-platform-objects">§5.8 Platform objects implementing interfaces</a>, <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of <a class="xattr" href="#Unforgeable">[Unforgeable]</a> entails. </p>
-   <div class="example" id="example-d9f4c630">
-    <a class="self-link" href="#example-d9f4c630"></a> 
+   <div class="example" id="example-803038ca">
+    <a class="self-link" href="#example-803038ca"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-44">IDL fragment</a> defines
                 an interface that has two <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-61">attributes</a>,
                 one of which is designated as <a class="xattr" href="#Unforgeable">[Unforgeable]</a>: </p>
@@ -7889,23 +7981,24 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
 };</pre>
     <p> In an ECMAScript implementation of the interface, the username attribute will be exposed as a non-configurable property on the
                 object itself: </p>
-<pre class="js">var system = getSystem();                      // Get an instance of System.
-system.hasOwnProperty("username");             // Evaluates to true.
-system.hasOwnProperty("loginTime");            // Evaluates to false.
-System.prototype.hasOwnProperty("username");   // Evaluates to false.
-System.prototype.hasOwnProperty("loginTime");  // Evaluates to true.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">system</span> <span class="o">=</span> <span class="nx">getSystem</span><span class="p">();</span>                      <span class="c1">// Get an instance of System.</span>
+<span class="nx">system</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"username"</span><span class="p">);</span>             <span class="c1">// Evaluates to true.</span>
+<span class="nx">system</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"loginTime"</span><span class="p">);</span>            <span class="c1">// Evaluates to false.</span>
+<span class="nx">System</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"username"</span><span class="p">);</span>   <span class="c1">// Evaluates to false.</span>
+<span class="nx">System</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"loginTime"</span><span class="p">);</span>  <span class="c1">// Evaluates to true.</span>
 
-try {
-  // This call would fail, since the property is non-configurable.
-  Object.defineProperty(system, "username", { value: "administrator" });
-} catch (e) { }
+<span class="k">try</span> <span class="p">{</span>
+  <span class="c1">// This call would fail, since the property is non-configurable.</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">system</span><span class="p">,</span> <span class="s2">"username"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span><span class="o">:</span> <span class="s2">"administrator"</span> <span class="p">});</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
-// This defineProperty call would succeed, because System.prototype.loginTime
-// is configurable.
-var forgedLoginTime = 5;
-Object.defineProperty(System.prototype, "loginTime", { value: forgedLoginTime });
+<span class="c1">// This defineProperty call would succeed, because System.prototype.loginTime</span>
+<span class="c1">// is configurable.</span>
+<span class="kd">var</span> <span class="nx">forgedLoginTime</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="s2">"loginTime"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">forgedLoginTime</span> <span class="p">});</span>
 
-system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
+<span class="nx">system</span><span class="p">.</span><span class="nx">loginTime</span><span class="p">;</span>  <span class="c1">// So this now evaluates to forgedLoginTime.</span>
+</pre>
    </div>
    <h4 class="heading settled" data-level="5.3.22" id="Unscopable"><span class="secno">5.3.22. </span><span class="content">[Unscopable]</span><a class="self-link" href="#Unscopable"></a></h4>
    <p> If the <a class="xattr" href="#Unscopable">[Unscopable]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-84">extended attribute</a> appears on a <a class="dfnref" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-10">regular attribute</a> or <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-11">regular operation</a>, it
@@ -7921,15 +8014,16 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
    <p> See <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a> for the specific requirements that the use of <a class="xattr" href="#Unscopable">[Unscopable]</a> entails. </p>
    <div class="note" role="note">
     <p>For example, with the following IDL:</p>
-<pre class="idl-example">interface Thing {  void f();
+<pre class="idl-example example" id="example-ad24793e"><a class="self-link" href="#example-ad24793e"></a>interface Thing {  void f();
   [Unscopable] g();
 };</pre>
     <p>the “f” property an be referenced with a bare identifier
               in a <code>with</code> statement but the “g” property cannot:</p>
-<pre class="js">var thing = getThing();  // An instance of Thingwith (thing) {
-  f;                     // Evaluates to a Function object.
-  g;                     // Throws a ReferenceError.
-}</pre>
+<pre class="highlight"><span class="kd">var</span> <span class="nx">thing</span> <span class="o">=</span> <span class="nx">getThing</span><span class="p">();</span>  <span class="c1">// An instance of Thingwith (thing) {</span>
+  <span class="nx">f</span><span class="p">;</span>                     <span class="c1">// Evaluates to a Function object.</span>
+  <span class="nx">g</span><span class="p">;</span>                     <span class="c1">// Throws a ReferenceError.</span>
+<span class="p">}</span>
+</pre>
    </div>
    <h3 class="heading settled" data-level="5.4" id="es-security"><span class="secno">5.4. </span><span class="content">Security</span><a class="self-link" href="#es-security"></a></h3>
    <p> Certain algorithms in the sections below are defined to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-perform-a-security-check">perform a security check</dfn> on a given
@@ -8430,7 +8524,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
     <p> The <a class="dfnref" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-13">interface prototype object</a> of an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-94">interface</a> that is defined with
                 the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-95">extended attribute</a> will be accessible if the interface is used as a <a class="dfnref" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-5">non-supplemental interface</a>.
                 For example, with the following IDL: </p>
-<pre class="idl-example">[NoInterfaceObject]interface Foo {
+<pre class="idl-example example" id="example-bca1daed"><a class="self-link" href="#example-bca1daed"></a>[NoInterfaceObject]interface Foo {
 };
 
 partial interface Window {
@@ -9029,7 +9123,7 @@ partial interface Window {
                 then the <span class="estype">Function</span> must
                 have the same behavior as one that would exist assuming the interface had
                 this <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-76">operation</a> instead of the <a class="dfnref" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-12">iterable declaration</a>: </p>
-<pre class="idl-example">void forEach(Function callback, optional any thisArg);</pre>
+<pre class="idl-example example" id="example-c57cfe96"><a class="self-link" href="#example-c57cfe96"></a>void forEach(Function callback, optional any thisArg);</pre>
    <p> with the following prose definition: </p>
    <ol class="algorithm">
     <li>Let <var>O</var> be the <strong>this</strong> value.
@@ -9649,7 +9743,7 @@ partial interface Window {
               due to an implements statement, the <emu-val>this</emu-val> value is
               checked to ensure that it is an object that implements the <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-136">interface</a> corresponding to the <a class="dfnref" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-54">interface prototype object</a> that the property is on. </p>
     <p> For example, consider the following IDL: </p>
-<pre class="idl-example">interface A {  void f();
+<pre class="idl-example example" id="example-025ba1e0"><a class="self-link" href="#example-025ba1e0"></a>interface A {  void f();
 };
 
 interface B { };
@@ -10339,7 +10433,7 @@ C implements A;</pre>
               ones that are associated with the global environment
               where that <span class="estype">Function</span> object originated.
               For example, consider the IDL: </p>
-<pre class="idl-example">interface A {
+<pre class="idl-example example" id="example-08d90955"><a class="self-link" href="#example-08d90955"></a>interface A {
   /**
    * Calls computeSquareRoot on m, passing x as its argument.
    */
@@ -10356,18 +10450,19 @@ interface MathUtils {
     <p> If we pass a <span class="idltype">MathUtils</span> object from
               a different global environment to doComputation, then the exception
               thrown will be from that global environment: </p>
-<pre class="js">var a = getA();                           // An A object from this global environment.var m = otherWindow.getMathUtils();       // A MathUtils object from a different global environment.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">getA</span><span class="p">();</span>                           <span class="c1">// An A object from this global environment.var m = otherWindow.getMathUtils();       // A MathUtils object from a different global environment.</span>
 
-a instanceof Object;                      // Evaluates to true.
-m instanceof Object;                      // Evaluates to false.
-m instanceof otherWindow.Object;          // Evaluates to true.
+<span class="nx">a</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span>                      <span class="c1">// Evaluates to true.</span>
+<span class="nx">m</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span>                      <span class="c1">// Evaluates to false.</span>
+<span class="nx">m</span> <span class="k">instanceof</span> <span class="nx">otherWindow</span><span class="p">.</span><span class="nb">Object</span><span class="p">;</span>          <span class="c1">// Evaluates to true.</span>
 
-try {
-  a.doComputation(m, -1);
-} catch (e) {
-  e instanceof DOMException;              // Evaluates to false.
-  e instanceof otherWindow.DOMException;  // Evaluates to true.
-}</pre>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">a</span><span class="p">.</span><span class="nx">doComputation</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">e</span> <span class="k">instanceof</span> <span class="nx">DOMException</span><span class="p">;</span>              <span class="c1">// Evaluates to false.</span>
+  <span class="nx">e</span> <span class="k">instanceof</span> <span class="nx">otherWindow</span><span class="p">.</span><span class="nx">DOMException</span><span class="p">;</span>  <span class="c1">// Evaluates to true.</span>
+<span class="p">}</span>
+</pre>
    </div>
    <p> Any requirements in this document to throw an instance of an ECMAScript built-in <span class="estype">Error</span> must use
             the built-in from the <a class="dfnref" href="#dfn-current-global-environment" id="ref-for-dfn-current-global-environment-3">current global environment</a>. </p>
@@ -10378,8 +10473,8 @@ try {
             to requirements in this section and that <emu-val>Function</emu-val> ends due to an exception being thrown, that exception
             must propagate to the caller, and if
             not caught there, to its caller, and so on. </p>
-   <div class="example" id="example-672ab8c9">
-    <a class="self-link" href="#example-672ab8c9"></a> 
+   <div class="example" id="example-c66dcb29">
+    <a class="self-link" href="#example-c66dcb29"></a> 
     <p> The following <a class="dfnref" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-45">IDL fragment</a> defines two <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-154">interfaces</a> and an <a class="dfnref" href="#dfn-exception" id="ref-for-dfn-exception-1">exception</a>.
               The <code>valueOf</code> attribute on <span class="idltype">ExceptionThrower</span> is defined to throw an exception whenever an attempt is made
               to get its value. </p>
@@ -10392,55 +10487,56 @@ interface ExceptionThrower {
 };</pre>
     <p> Assuming an ECMAScript implementation supporting this interface,
               the following code demonstrates how exceptions are handled: </p>
-<pre class="js">var d = getDahut();              // Obtain an instance of Dahut.var et = getExceptionThrower();  // Obtain an instance of ExceptionThrower.
+<pre class="highlight"><span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">getDahut</span><span class="p">();</span>              <span class="c1">// Obtain an instance of Dahut.var et = getExceptionThrower();  // Obtain an instance of ExceptionThrower.</span>
 
-try {
-  d.type = { toString: function() { throw "abc"; } };
-} catch (e) {
-  // The string "abc" is caught here, since as part of the conversion
-  // from the native object to a string, the anonymous function
-  // was invoked, and none of the \[[DefaultValue]], ToPrimitive or
-  // ToString algorithms are defined to catch the exception.
-}
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">d</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">toString</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">throw</span> <span class="s2">"abc"</span><span class="p">;</span> <span class="p">}</span> <span class="p">};</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// The string "abc" is caught here, since as part of the conversion</span>
+  <span class="c1">// from the native object to a string, the anonymous function</span>
+  <span class="c1">// was invoked, and none of the \[[DefaultValue]], ToPrimitive or</span>
+  <span class="c1">// ToString algorithms are defined to catch the exception.</span>
+<span class="p">}</span>
 
-try {
-  d.type = { toString: { } };
-} catch (e) {
-  // An exception is caught here, since an attempt is made to invoke
-  // \[[Call]] on the native object that is the value of toString
-  // property.
-}
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">d</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">toString</span><span class="o">:</span> <span class="p">{</span> <span class="p">}</span> <span class="p">};</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// An exception is caught here, since an attempt is made to invoke</span>
+  <span class="c1">// \[[Call]] on the native object that is the value of toString</span>
+  <span class="c1">// property.</span>
+<span class="p">}</span>
 
-d.type = et;
-// An uncaught NotSupportedError DOMException is thrown here, since the
-// \[[DefaultValue]] algorithm attempts to get the value of the
-// "valueOf" property on the ExceptionThrower object.  The exception
-// propagates out of this block of code.</pre>
+<span class="nx">d</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">et</span><span class="p">;</span>
+<span class="c1">// An uncaught NotSupportedError DOMException is thrown here, since the</span>
+<span class="c1">// \[[DefaultValue]] algorithm attempts to get the value of the</span>
+<span class="c1">// "valueOf" property on the ExceptionThrower object.  The exception</span>
+<span class="c1">// propagates out of this block of code.</span>
+</pre>
    </div>
    <h2 class="heading settled" data-level="6" id="common"><span class="secno">6. </span><span class="content">Common definitions</span><a class="self-link" href="#common"></a></h2>
    <p> This section specifies some common definitions that all <a class="dfnref" href="#dfn-conforming-implementation" id="ref-for-dfn-conforming-implementation-2">conforming implementations</a> must support. </p>
    <h3 class="heading settled" data-level="6.1" id="common-ArrayBufferView"><span class="secno">6.1. </span><span class="content">ArrayBufferView</span><a class="self-link" href="#common-ArrayBufferView"></a></h3>
-<pre class="idl-example">typedef (Int8Array or Int16Array or Int32Array orUint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
+<pre class="idl-example example" id="example-75cd0f58"><a class="self-link" href="#example-75cd0f58"></a>typedef (Int8Array or Int16Array or Int32Array orUint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
 Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="ArrayBufferView">ArrayBufferView</dfn>;</pre>
    <p> The <code class="idl"><a data-link-type="idl" href="#ArrayBufferView" id="ref-for-ArrayBufferView-1">ArrayBufferView</a></code> typedef is used to represent
             objects that provide a view on to an <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code>. </p>
    <h3 class="heading settled" data-level="6.2" id="common-BufferSource"><span class="secno">6.2. </span><span class="content">BufferSource</span><a class="self-link" href="#common-BufferSource"></a></h3>
-<pre class="idl-example">typedef (ArrayBufferView or ArrayBuffer) <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="BufferSource">BufferSource</dfn>;</pre>
+<pre class="idl-example example" id="example-25e02dcf"><a class="self-link" href="#example-25e02dcf"></a>typedef (ArrayBufferView or ArrayBuffer) <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="BufferSource">BufferSource</dfn>;</pre>
    <p> The <code class="idl"><a data-link-type="idl" href="#BufferSource" id="ref-for-BufferSource-2">BufferSource</a></code> typedef is used to represent objects
             that are either themselves an <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code> or which
             provide a view on to an <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code>. </p>
    <h3 class="heading settled" data-level="6.3" id="common-DOMTimeStamp"><span class="secno">6.3. </span><span class="content">DOMTimeStamp</span><a class="self-link" href="#common-DOMTimeStamp"></a></h3>
-<pre class="idl-example">typedef unsigned long long <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="DOMTimeStamp">DOMTimeStamp</dfn>;</pre>
+<pre class="idl-example example" id="example-f968e26b"><a class="self-link" href="#example-f968e26b"></a>typedef unsigned long long <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="DOMTimeStamp">DOMTimeStamp</dfn>;</pre>
    <p> The <code class="idl"><a data-link-type="idl" href="#DOMTimeStamp" id="ref-for-DOMTimeStamp-1">DOMTimeStamp</a></code> type is used for representing
             a number of milliseconds, either as an absolute time (relative to some epoch)
             or as a relative amount of time.  Specifications that use this type will need
             to define how the number of milliseconds is to be interpreted. </p>
    <h3 class="heading settled" data-level="6.4" id="common-Function"><span class="secno">6.4. </span><span class="content">Function</span><a class="self-link" href="#common-Function"></a></h3>
-<pre class="idl-example">callback <dfn class="dfn-paneled idl-code" data-dfn-type="callback" data-export="" id="Function">Function</dfn> = any (any... arguments);</pre>
+<pre class="idl-example example" id="example-4d679d72"><a class="self-link" href="#example-4d679d72"></a>callback <dfn class="dfn-paneled idl-code" data-dfn-type="callback" data-export="" id="Function">Function</dfn> = any (any... arguments);</pre>
    <p> The <code class="idl"><a data-link-type="idl" href="#Function" id="ref-for-Function-1">Function</a></code> <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-29">callback function</a> type is used for representing function values with no restriction on what arguments
             are passed to it or what kind of value is returned from it. </p>
    <h3 class="heading settled" data-level="6.5" id="common-Function0"><span class="secno">6.5. </span><span class="content">VoidFunction</span><a class="self-link" href="#common-Function0"></a></h3>
-<pre class="idl-example">callback <dfn class="dfn-paneled idl-code" data-dfn-type="callback" data-export="" id="VoidFunction">VoidFunction</dfn> = void ();</pre>
+<pre class="idl-example example" id="example-0900dd4f"><a class="self-link" href="#example-0900dd4f"></a>callback <dfn class="dfn-paneled idl-code" data-dfn-type="callback" data-export="" id="VoidFunction">VoidFunction</dfn> = void ();</pre>
    <p> The <code class="idl"><a data-link-type="idl" href="#VoidFunction" id="ref-for-VoidFunction-1">VoidFunction</a></code> <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-30">callback function</a> type is used for representing function values that take no arguments and do not
             return any value. </p>
    <h2 class="heading settled" data-level="7" id="extensibility"><span class="secno">7. </span><span class="content">Extensibility</span><a class="self-link" href="#extensibility"></a></h2>

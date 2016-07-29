@@ -228,11 +228,11 @@ urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
             <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
             <li>Non-normative examples: <div class="example"><p>This is an example.</p></div></li>
             <li>Normative warnings: <div class="advisement"><p>This is a warning.</p></div></li>
-            <li>Code blocks: <pre class="idl-example">// This is an IDL code block.
+            <li>Code blocks: <pre class="idl-example example">// This is an IDL code block.
 interface Example {
   attribute long something;
 };</pre>
-<pre class="js">// This is an ECMAScript code block.
+<pre highlight="js">// This is an ECMAScript code block.
 window.onload = function() { window.alert("loaded"); };</pre></li>
           </ul>
         
@@ -826,7 +826,7 @@ interface B : A {
             <p>
               For example, instead of this:
             </p>
-            <pre class="idl-example">callback interface Options {
+            <pre class="idl-example example">callback interface Options {
   attribute DOMString? option1;
   attribute DOMString? option2;
   attribute long? option3;
@@ -838,13 +838,13 @@ interface A {
             <p>
               to be used like this:
             </p>
-            <pre class="js">var a = getA();  // Get an instance of A.
+            <pre highlight="js">var a = getA();  // Get an instance of A.
 
 a.doTask("something", { option1: "banana", option3: 100 });</pre>
             <p>
               instead write the following:
             </p>
-            <pre class="idl-example">dictionary Options {
+            <pre class="idl-example example">dictionary Options {
   DOMString? option1;
   DOMString? option2;
   long? option3;
@@ -992,7 +992,7 @@ callback interface EventListener {
               callback interface, <a class="dfnref" href="#dfn-user-object">user objects</a>
               can implement it:
             </p>
-            <pre class="js">var node = getNode();                                // Obtain an instance of Node.
+            <pre highlight="js">var node = getNode();                                // Obtain an instance of Node.
 
 var listener = {
   handleEvent: function(event) {
@@ -1005,7 +1005,7 @@ node.addEventListener("click", function() { ... });  // As does this.</pre>
             <p>
               It is not possible for a user object to implement <span class="idltype">Node</span>, however:
             </p>
-            <pre class="js">var node = getNode();  // Obtain an instance of Node.
+            <pre highlight="js">var node = getNode();  // Obtain an instance of Node.
 
 var newNode = {
   nodeName: "span",
@@ -1195,7 +1195,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
                 on which the <a class="dfnref" href="#dfn-constant">constants</a> are declared.
                 For example, with the following IDL:
               </p>
-              <pre class="idl-example">interface A {
+              <pre class="idl-example example">interface A {
   const short rambaldi = 47;
 };</pre>
               <p>
@@ -1570,7 +1570,7 @@ interface Button {
                 In the ECMAScript binding, variadic operations are implemented by
                 functions that can accept the subsequent arguments:
               </p>
-              <pre class="js">var s = getIntegerSet();  // Obtain an instance of IntegerSet.
+              <pre highlight="js">var s = getIntegerSet();  // Obtain an instance of IntegerSet.
 
 s.union();                // Passing no arguments corresponding to 'ints'.
 s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</pre>
@@ -1969,7 +1969,7 @@ legacycaller <i>return-type</i> (<i>arguments…</i>);</pre>
                   that implements <span class="idltype">NumberQuadrupler</span>
                   to be called as a function:
                 </p>
-                <pre class="js">var f = getNumberQuadrupler();  // Obtain an instance of NumberQuadrupler.
+                <pre highlight="js">var f = getNumberQuadrupler();  // Obtain an instance of NumberQuadrupler.
 
 f.compute(3);                   // This evaluates to 12.
 f(3);                           // This also evaluates to 12.</pre>
@@ -2050,7 +2050,7 @@ interface Student {
                   value of the object’s “name” property being
                   used:
                 </p>
-                <pre class="js">var s = new Student();
+                <pre highlight="js">var s = new Student();
 s.id = 12345678;
 s.name = '周杰倫';
 
@@ -2090,7 +2090,7 @@ interface Student {
                 <p>
                   An ECMAScript implementation of the IDL would behave as follows:
                 </p>
-                <pre class="js">var s = new Student();
+                <pre highlight="js">var s = new Student();
 s.id = 12345679;
 s.familyName = 'Smithee';
 s.givenName = 'Alan';
@@ -2444,7 +2444,7 @@ interface Account {
                   In the ECMAScript language binding, there would exist a <code>toJSON</code> method on
                   <span class="idltype">Transaction</span> objects:
                 </p>
-                <pre class="js">// Get an instance of Transaction.
+                <pre highlight="js">// Get an instance of Transaction.
 var txn = getTransaction();
 
 // Evaluates to an object like this:
@@ -2526,7 +2526,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                 <p>
                   In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:
                 </p>
-                <pre class="idl-example">interface A {
+                <pre class="idl-example example">interface A {
   getter DOMString toWord(unsigned long index);
 };</pre>
                 <p>
@@ -2536,7 +2536,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                   <a class="dfnref" href="#dfn-operation">operation</a> with an out of range index
                   is different from indexing the object directly:
                 </p>
-                <pre class="js">var a = getA();
+                <pre highlight="js">var a = getA();
 
 a.toWord(0);  // Evalautes to "zero".
 a[0];         // Also evaluates to "zero".
@@ -2591,7 +2591,7 @@ a[5];         // Evaluates to undefined, since there is no property "5".</pre>
                   with the object in the same way as invoking the object’s
                   methods, as demonstrated below:
                 </p>
-                <pre class="js">// Assume map is a platform object implementing the OrderedMap interface.
+                <pre highlight="js">// Assume map is a platform object implementing the OrderedMap interface.
 var map = getOrderedMap();
 var x, y;
 
@@ -2752,7 +2752,7 @@ interface Circle {
                 will exist on the <a class="dfnref" href="#dfn-interface-object">interface object</a>
                 for <span class="idltype">Circle</span>:
               </p>
-              <pre class="js">var circles = getCircles();           // an Array of Circle objects
+              <pre highlight="js">var circles = getCircles();           // an Array of Circle objects
 
 typeof Circle.triangulate;            // Evaluates to "function"
 typeof Circle.triangulationCount;     // Evaluates to "number"
@@ -2804,7 +2804,7 @@ window.alert(Circle.triangulationCount);</pre>
                 For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span>
                 are disallowed:
               </p>
-              <pre class="idl-example">interface A {
+              <pre class="idl-example example">interface A {
   void f();
 };
 
@@ -3444,7 +3444,7 @@ interface Session {
                 a <a>@@iterator</a> method that allows a <span class="idltype">SessionManager</span>
                 to be used in a <code>for..of</code> loop:
               </p>
-              <pre class="js">// Get an instance of SessionManager.
+              <pre highlight="js">// Get an instance of SessionManager.
 // Assume that it has sessions for two users, "anna" and "brian".
 var sm = getSessionManager();
 
@@ -3827,7 +3827,7 @@ partial dictionary <em>SomeDictionary</em> {
           </p>
           <div class="note">
             <p>For example, with the following definitions:</p>
-            <pre class="idl-example">dictionary B : A {
+            <pre class="idl-example example">dictionary B : A {
   long b;
   long a;
 };
@@ -3858,13 +3858,13 @@ partial dictionary A {
               the dictionary members are fetched.  For example, consider the
               following additional interface:
             </p>
-            <pre class="idl-example">interface Something {
+            <pre class="idl-example example">interface Something {
   void f(A a);
 };</pre>
             <p>
               and this ECMAScript code:
             </p>
-            <pre class="js">var something = getSomething();  // Get an instance of Something.
+            <pre highlight="js">var something = getSomething();  // Get an instance of Something.
 var x = 0;
 
 var dict = { };
@@ -3933,7 +3933,7 @@ interface GraphicsContext {
               In an ECMAScript implementation of the IDL, an <span class="estype">Object</span>
               can be passed in for the optional <span class="idltype">PaintOptions</span> dictionary:
             </p>
-            <pre class="js">// Get an instance of GraphicsContext.
+            <pre highlight="js">// Get an instance of GraphicsContext.
 var ctx = getGraphicsContext();
 
 // Draw a rectangle.
@@ -4311,7 +4311,7 @@ interface Meal {
               assigned to the type property or passed to the initializeMeal function
               to those identified in the <a class="dfnref" href="#dfn-enumeration">enumeration</a>.
             </p>
-            <pre class="js">var meal = getMeal();                // Get an instance of Meal.
+            <pre highlight="js">var meal = getMeal();                // Get an instance of Meal.
 
 meal.initialize("rice", 200);        // Operation invoked as normal.
 
@@ -4373,7 +4373,7 @@ interface AsyncOperations {
               In the ECMAScript language binding, a <span class="estype">Function</span> object is
               passed as the operation argument.
             </p>
-            <pre class="js">var ops = getAsyncOperations();  // Get an instance of AsyncOperations.
+            <pre highlight="js">var ops = getAsyncOperations();  // Get an instance of AsyncOperations.
 
 ops.performOperation(function(status) {
   window.alert("Operation finished, status is " + status + ".");
@@ -4487,13 +4487,13 @@ interface Widget {
               is a <a class="dfnref" href="#dfn-supplemental-interface">supplemental interface</a>.
               For example, if author 1 writes:
             </p>
-            <pre class="idl-example">interface Window { ... };
+            <pre class="idl-example example">interface Window { ... };
 interface SomeFunctionality { ... };
 Window implements SomeFunctionality;</pre>
             <p>
               and author 2 later writes:
             </p>
-            <pre class="idl-example">interface Gizmo { ... };
+            <pre class="idl-example example">interface Gizmo { ... };
 interface MoreFunctionality { ... };
 SomeFunctionality implements MoreFunctionality;
 Gizmo implements SomeFunctionality;</pre>
@@ -4507,7 +4507,7 @@ Gizmo implements SomeFunctionality;</pre>
             <p>
               Better in this case would be for author 2 to write:
             </p>
-            <pre class="idl-example">interface Gizmo { ... };
+            <pre class="idl-example example">interface Gizmo { ... };
 interface MoreFunctionality { ... };
 Gizmo implements SomeFunctionality;
 Gizmo implements MoreFunctionality;</pre>
@@ -4560,7 +4560,7 @@ Entry implements Observable;</pre>
               An ECMAScript implementation would thus have an “addEventListener”
               property in the prototype chain of every <span class="idltype">Entry</span>:
             </p>
-            <pre class="js">var e = getEntry();          // Obtain an instance of Entry.
+            <pre highlight="js">var e = getEntry();          // Obtain an instance of Entry.
 typeof e.addEventListener;  // Evaluates to "function".</pre>
             
             <p>
@@ -6028,7 +6028,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               its own set of <a class="dfnref" href="#dfn-initial-object">initial objects</a>,
               which the following HTML document demonstrates:
             </p>
-            <pre class="html">&lt;!DOCTYPE html&gt;
+            <pre highlight="html">&lt;!DOCTYPE html&gt;
 &lt;title&gt;Different global environments&lt;/title&gt;
 &lt;iframe id=a&gt;&lt;/iframe&gt;
 &lt;script&gt;
@@ -7299,7 +7299,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 passed to <code>drawPolygon</code> no reference
                 will be kept after the call completes.
               </p>
-              <pre class="js">
+              <pre highlight="js">
 // Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()
 // returns a sequence with two DOMString values: "image/png" and "image/svg+xml".
 var canvas = getCanvas();
@@ -7937,7 +7937,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <span class="estype">Number</span> values that are out of range for an
                 {{octet}} are clamped to the range [0, 255].
               </p>
-              <pre class="js">// Get an instance of GraphicsContext.
+              <pre highlight="js">// Get an instance of GraphicsContext.
 var context = getGraphicsContext();
 
 // Calling the non-[Clamp] version uses ToUint8 to coerce the Numbers to octets.
@@ -8024,7 +8024,7 @@ interface Circle {
                 <span class="idltype">NodeList</span> interface object would not
                 have a <span class="prop">\[[Construct]]</span> property.
               </p>
-              <pre class="js">var x = new Circle();      // The uses the zero-argument constructor to create a
+              <pre highlight="js">var x = new Circle();      // The uses the zero-argument constructor to create a
                            // reference to a platform object that implements the
                            // Circle interface.
 
@@ -8091,7 +8091,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
                 {{octet}} will result in an exception being
                 thrown.
               </p>
-              <pre class="js">// Get an instance of GraphicsContext.
+              <pre highlight="js">// Get an instance of GraphicsContext.
 var context = getGraphicsContext();
 
 // Calling the non-[EnforceRange] version uses ToUint8 to coerce the Numbers to octets.
@@ -8319,7 +8319,7 @@ interface Window {
               <p>Since the <span class="idltype">Window</span> object is used as
               the ECMAScript global object, calls to its functions can be made
               without an explicit object, even in strict mode:</p>
-            <pre class="js">"use strict";
+            <pre highlight="js">"use strict";
 
 window.alert("hello");      // Calling alert with an explicit window object works.
 alert("hello");             // This also works, even though we are in strict mode.
@@ -8369,7 +8369,7 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
                 the object itself will mean that common feature detection
                 methods like the following will work:
               </p>
-              <pre class="js">var indexedDB = window.indexedDB || window.webkitIndexedDB ||
+              <pre highlight="js">var indexedDB = window.indexedDB || window.webkitIndexedDB ||
                 window.mozIndexedDB || window.msIndexedDB;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
@@ -8505,7 +8505,7 @@ interface Window {
                 the property for an attribute will not be replaced when declaring
                 a variable of the same name:
               </p>
-              <pre class="html">&lt;!DOCTYPE html&gt;
+              <pre highlight="html">&lt;!DOCTYPE html&gt;
 &lt;title&gt;Variable declarations and assignments on Window&lt;/title&gt;
 &lt;iframe name=abc&gt;&lt;/iframe&gt;
 &lt;!-- Shadowing named properties --&gt;
@@ -8589,7 +8589,7 @@ interface ImmutableItemList {
                 <span class="estype">Array</span> methods to inspect and
                 modify the array-like object can be used.
               </p>
-              <pre class="js">var list = getItemList();  // Obtain an instance of ItemList.
+              <pre highlight="js">var list = getItemList();  // Obtain an instance of ItemList.
 
 list.concat();             // Clone the ItemList into an Array.
 list.pop();                // Remove an item from the ItemList.
@@ -8699,7 +8699,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
                 have a setter on the accessor property that correspond to x,
                 which allows any assignment to be ignored in strict mode.
               </p>
-              <pre class="js">"use strict";
+              <pre highlight="js">"use strict";
 
 var example = getExample();  // Get an instance of Example.
 
@@ -8756,7 +8756,7 @@ example.y = 1;</pre>
                 to x to be invoked with something other than an <span class="idltype">Example</span>
                 object.
               </p>
-              <pre class="js">var example = getExample();  // Get an instance of Example.
+              <pre highlight="js">var example = getExample();  // Get an instance of Example.
 var obj = { };
 
 // Fine.
@@ -8831,7 +8831,7 @@ interface HTMLAudioElement : HTMLMediaElement {
                 allow the construction of <span class="estype">HTMLAudioElement</span>
                 objects using the <span class="estype">Audio</span> constructor.
               </p>
-              <pre class="js">typeof Audio;                   // Evaluates to 'function'.
+              <pre highlight="js">typeof Audio;                   // Evaluates to 'function'.
 
 var a1 = new Audio();           // Creates a new object that implements
                                 // HTMLAudioElement, using the zero-argument
@@ -8958,7 +8958,7 @@ interface Query {
                 manipulation of <span class="idltype">Storage</span>’s
                 prototype, but not <span class="idltype">Query</span>’s.
               </p>
-              <pre class="js">typeof Storage;                        // evaluates to "object"
+              <pre highlight="js">typeof Storage;                        // evaluates to "object"
 
 // Add some tracing alert() call to Storage.addEntry.
 var fn = Storage.prototype.addEntry;
@@ -9033,7 +9033,7 @@ interface StringMap2 {
                 getting certain properties on objects implementing
                 the interfaces will result in different values:
               </p>
-              <pre class="js">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and
+              <pre highlight="js">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and
 // "toString" as supported property names.
 var map1 = getStringMap();
 
@@ -9177,7 +9177,7 @@ interface Person {
                 In the ECMAScript binding, this would allow assignments to the
                 “name” property:
               </p>
-              <pre class="js">var p = getPerson();           // Obtain an instance of Person.
+              <pre highlight="js">var p = getPerson();           // Obtain an instance of Person.
 
 p.name = 'John Citizen';       // This statement...
 p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
@@ -9249,7 +9249,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
                 will shadow the property that corresponds to the
                 <a class="dfnref" href="#dfn-attribute">attribute</a>:
               </p>
-              <pre class="js">var counter = getCounter();                              // Obtain an instance of Counter.
+              <pre highlight="js">var counter = getCounter();                              // Obtain an instance of Counter.
 counter.value;                                           // Evaluates to 0.
 
 counter.hasOwnProperty("value");                         // Evaluates to false.
@@ -9467,7 +9467,7 @@ interface Manager {
                 to handler1 will have different behavior from that when assigning
                 to handler2:
               </p>
-              <pre class="js">var manager = getManager();  // Get an instance of Manager.
+              <pre highlight="js">var manager = getManager();  // Get an instance of Manager.
 
 manager.handler1 = function() { };
 manager.handler1;            // Evaluates to the function.
@@ -9550,7 +9550,7 @@ manager.handler2;            // Evaluates to null.</pre>
                 argument to the <code>isMemberOfBreed</code> function
                 to the empty string rather than <code>"null"</code>:
               </p>
-              <pre class="js">var d = getDog();         // Assume d is a platform object implementing the Dog
+              <pre highlight="js">var d = getDog();         // Assume d is a platform object implementing the Dog
                           // interface.
 
 d.name = null;            // This assigns the string "null" to the .name
@@ -9660,7 +9660,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
                 In an ECMAScript implementation of the interface, the username attribute will be exposed as a non-configurable property on the
                 object itself:
               </p>
-              <pre class="js">var system = getSystem();                      // Get an instance of System.
+              <pre highlight="js">var system = getSystem();                      // Get an instance of System.
 
 system.hasOwnProperty("username");             // Evaluates to true.
 system.hasOwnProperty("loginTime");            // Evaluates to false.
@@ -9716,13 +9716,13 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             </p>
             <div class="note">
               <p>For example, with the following IDL:</p>
-              <pre class="idl-example">interface Thing {
+              <pre class="idl-example example">interface Thing {
   void f();
   [Unscopable] g();
 };</pre>
               <p>the “f” property an be referenced with a bare identifier
               in a <code>with</code> statement but the “g” property cannot:</p>
-              <pre class="js">var thing = getThing();  // An instance of Thing
+              <pre highlight="js">var thing = getThing();  // An instance of Thing
 with (thing) {
   f;                     // Evaluates to a Function object.
   g;                     // Throws a ReferenceError.
@@ -10551,7 +10551,7 @@ with (thing) {
                 <a class="dfnref" href="#dfn-supplemental-interface">non-supplemental interface</a>.
                 For example, with the following IDL:
               </p>
-              <pre class="idl-example">[NoInterfaceObject]
+              <pre class="idl-example example">[NoInterfaceObject]
 interface Foo {
 };
 
@@ -11471,7 +11471,7 @@ partial interface Window {
                 this <a class="dfnref" href="#dfn-operation">operation</a> instead of the
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>:
               </p>
-              <pre class="idl-example">void forEach(Function callback, optional any thisArg);</pre>
+              <pre class="idl-example example">void forEach(Function callback, optional any thisArg);</pre>
               <p>
                 with the following prose definition:
               </p>
@@ -12408,7 +12408,7 @@ partial interface Window {
             <p>
               For example, consider the following IDL:
             </p>
-            <pre class="idl-example">interface A {
+            <pre class="idl-example example">interface A {
   void f();
 };
 
@@ -13650,7 +13650,7 @@ C implements A;</pre>
               where that <span class="estype">Function</span> object originated.
               For example, consider the IDL:
             </p>
-            <pre class="idl-example">interface A {
+            <pre class="idl-example example">interface A {
 
   /**
    * Calls computeSquareRoot on m, passing x as its argument.
@@ -13670,7 +13670,7 @@ interface MathUtils {
               a different global environment to doComputation, then the exception
               thrown will be from that global environment:
             </p>
-            <pre class="js">var a = getA();                           // An A object from this global environment.
+            <pre highlight="js">var a = getA();                           // An A object from this global environment.
 var m = otherWindow.getMathUtils();       // A MathUtils object from a different global environment.
 
 a instanceof Object;                      // Evaluates to true.
@@ -13724,7 +13724,7 @@ interface ExceptionThrower {
               Assuming an ECMAScript implementation supporting this interface,
               the following code demonstrates how exceptions are handled:
             </p>
-            <pre class="js">var d = getDahut();              // Obtain an instance of Dahut.
+            <pre highlight="js">var d = getDahut();              // Obtain an instance of Dahut.
 var et = getExceptionThrower();  // Obtain an instance of ExceptionThrower.
 
 try {
@@ -13765,7 +13765,7 @@ d.type = et;
         
           <h3 id="common-ArrayBufferView">ArrayBufferView</h3>
 
-          <pre class="idl-example">typedef (Int8Array or Int16Array or Int32Array or
+          <pre class="idl-example example">typedef (Int8Array or Int16Array or Int32Array or
          Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
          Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef="">ArrayBufferView</dfn>;</pre>
           <p>
@@ -13777,7 +13777,7 @@ d.type = et;
         
           <h3 id="common-BufferSource">BufferSource</h3>
 
-          <pre class="idl-example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
+          <pre class="idl-example example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef="">BufferSource</dfn>;</pre>
           <p>
             The {{BufferSource}} typedef is used to represent objects
             that are either themselves an {{ArrayBuffer}} or which
@@ -13788,7 +13788,7 @@ d.type = et;
         
           <h3 id="common-DOMTimeStamp">DOMTimeStamp</h3>
 
-          <pre class="idl-example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef="">DOMTimeStamp</dfn>;</pre>
+          <pre class="idl-example example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef="">DOMTimeStamp</dfn>;</pre>
           <p>
             The {{DOMTimeStamp}} type is used for representing
             a number of milliseconds, either as an absolute time (relative to some epoch)
@@ -13800,7 +13800,7 @@ d.type = et;
         
           <h3 id="common-Function">Function</h3>
 
-          <pre class="idl-example">callback <dfn id="Function" callback="">Function</dfn> = any (any... arguments);</pre>
+          <pre class="idl-example example">callback <dfn id="Function" callback="">Function</dfn> = any (any... arguments);</pre>
           <p>
             The {{Function}} <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values with no restriction on what arguments
@@ -13811,7 +13811,7 @@ d.type = et;
         
           <h3 id="common-Function">VoidFunction</h3>
 
-          <pre class="idl-example">callback <dfn id="VoidFunction" callback="">VoidFunction</dfn> = void ();</pre>
+          <pre class="idl-example example">callback <dfn id="VoidFunction" callback="">VoidFunction</dfn> = void ();</pre>
           <p>
             The {{VoidFunction}} <a class="dfnref" href="#dfn-callback-function">callback function</a>
             type is used for representing function values that take no arguments and do not
