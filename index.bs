@@ -1607,7 +1607,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
                 Advisement: It is strongly suggested not to use <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>
                 of <span class="idlvalue">true</span> for <span class="estype">boolean</span>-typed arguments,
                 as this can be confusing for authors who might otherwise expect the default
-                conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
+                conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
               
             <p>
               If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
@@ -3719,7 +3719,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
               <span class="estype">boolean</span>-typed
               <a class="dfnref" href="#dfn-dictionary-member">dictionary members</a>,
               as this can be confusing for authors who might otherwise expect the default
-              conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
+              conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
             
           <p>
             Each <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> (matching
@@ -5910,11 +5910,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
         <p>
           Unless otherwise specified, the <span class="prop">\[[Extensible]]</span> internal property
-          of objects defined in this section has the value <span class="esvalue">true</span>.
+          of objects defined in this section has the value <emu-val>true</emu-val>.
         </p>
         <p>
           Unless otherwise specified, the <span class="prop">\[[Prototype]]</span> internal property
-          of objects defined in this section is the <span class="esvalue">Object</span> prototype object.
+          of objects defined in this section is the <emu-val>Object</emu-val> prototype object.
         </p>
         <p>
           Some objects described in this section are defined to have a <dfn id="dfn-class-string" export="">class string</dfn>,
@@ -6096,14 +6096,14 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               ECMAScript value:
             </p>
             <dl class="switch">
-              <dt>The <span class="esvalue">undefined</span> value</dt>
+              <dt>The <emu-val>undefined</emu-val> value</dt>
               <dd>
                 The IDL value is an
                 <a class="idltype" href="#idl-object">object</a> reference
                 to a special object that represents the ECMAScript
-                <span class="esvalue">undefined</span> value.
+                <emu-val>undefined</emu-val> value.
               </dd>
-              <dt>The <span class="esvalue">null</span> value</dt>
+              <dt>The <emu-val>null</emu-val> value</dt>
               <dd>
                 The IDL value is the <span class="idlvalue">null</span>
                 <a class="idltype" href="#idl-object">object?</a> reference.
@@ -6141,9 +6141,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               An IDL <a class="idltype" href="#idl-any">any</a> value is
               <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted to an ECMAScript value</a>
               as follows.  If the value is an <a class="idltype" href="#idl-object">object</a>
-              reference to a special object that represents an ECMAScript <span class="esvalue">undefined</span>
+              reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val>
               value, then it is converted to the ECMAScript
-              <span class="esvalue">undefined</span> value.  Otherwise,
+              <emu-val>undefined</emu-val> value.  Otherwise,
               the rules for converting the <a class="dfnref" href="#dfn-specific-type">specific type</a>
               of the IDL <a class="idltype" href="#idl-any">any</a> value
               as described in the remainder of this section are performed.
@@ -6159,7 +6159,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <a class="dfnref" href="#dfn-operation">operation</a>.  Functions on <a class="dfnref" href="#dfn-platform-object">platform objects</a>
               that implement an operation whose IDL specifies a
               <a class="idltype" href="#idl-void">void</a> return type must return the
-              <span class="esvalue">undefined</span> value.
+              <emu-val>undefined</emu-val> value.
             </p>
             <p>
               ECMAScript functions that implement an operation whose IDL
@@ -6184,9 +6184,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="boolean-to-es">
               The IDL {{boolean}} value <span class="idlvalue">true</span>
               is <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a> to
-              the ECMAScript <span class="esvalue">true</span> value and the IDL {{boolean}}
+              the ECMAScript <emu-val>true</emu-val> value and the IDL {{boolean}}
               value <span class="idlvalue">false</span> is converted to the ECMAScript
-              <span class="esvalue">false</span> value.
+              <emu-val>false</emu-val> value.
             </p>
           
 
@@ -6209,13 +6209,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>7</sup> or |x| &gt; 2<sup>7</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6228,7 +6228,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{byte}} value that represents 0.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{byte}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
               <li>If |x| ≥ 2<sup>7</sup>, return the IDL {{byte}} value that represents the same numeric value as |x| − 2<sup>8</sup>.
@@ -6262,13 +6262,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>8</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6281,7 +6281,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{octet}} value that represents 0.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{octet}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
               <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
@@ -6315,13 +6315,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>15</sup> or |x| &gt; 2<sup>15</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6334,7 +6334,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{short}} value that represents 0.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{short}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>16</sup>.</li>
               <li>If |x| ≥ 2<sup>15</sup>, return the IDL {{short}} value that represents the same numeric value as |x| − 2<sup>16</sup>.
@@ -6369,13 +6369,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>16</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6420,13 +6420,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>31</sup> or |x| &gt; 2<sup>31</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6471,13 +6471,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>32</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6522,13 +6522,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; −2<sup>53</sup> + 1 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6541,7 +6541,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{long long}} value that represents 0.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{long long}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
               <li>If |x| is greater than or equal to 2<sup>63</sup>, then set |x| to |x| − 2<sup>64</sup>.</li>
@@ -6580,13 +6580,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 </ul>
                 then:
                 <ol>
-                  <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                  <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
                   <li>If |x| &lt; 0 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
+              <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
                   <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
                   <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
@@ -6599,7 +6599,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
                 </ol>
               </li>
-              <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{unsigned long long}} value that represents 0.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{unsigned long long}} value that represents 0.</li>
               <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
               <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
               <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
@@ -6629,8 +6629,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
-                <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
+                <emu-val>−Infinity</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>
                 Let |S| be the set of finite IEEE 754 single-precision floating
                 point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6672,7 +6672,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL {{unrestricted float}} value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, then return the IDL {{unrestricted float}} value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
               <li>
                 Let |S| be the set of finite IEEE 754 single-precision floating
                 point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6698,7 +6698,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 Return |y|.
               </li>
             </ol>
-                Note: Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
+                Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
                 it must be canonicalized to a particular single precision IEEE 754 NaN value.  The NaN value
                 mentioned above is chosen simply because it is the quiet NaN with the lowest
                 value when its bit pattern is interpreted as an unsigned 32 bit integer.
@@ -6711,7 +6711,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <ul>
               <li>
                 If the IDL {{unrestricted float}} value is a NaN,
-                then the <span class="estype">Number</span> value is <span class="esvalue">NaN</span>.
+                then the <span class="estype">Number</span> value is <emu-val>NaN</emu-val>.
               </li>
               <li>
                 Otherwise, the <span class="estype">Number</span> value is
@@ -6732,8 +6732,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
-                <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
+                <emu-val>−Infinity</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>
                 Return the IDL {{double}} value
                 that has the same numeric value as |x|.
@@ -6758,13 +6758,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-              <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL {{unrestricted double}} value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
+              <li>If |x| is <emu-val>NaN</emu-val>, then return the IDL {{unrestricted double}} value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
               <li>
                 Return the IDL {{unrestricted double}} value
                 that has the same numeric value as |x|.
               </li>
             </ol>
-                Note: Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
+                Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
                 it must be canonicalized to a particular double precision IEEE 754 NaN value.  The NaN value
                 mentioned above is chosen simply because it is the quiet NaN with the lowest
                 value when its bit pattern is interpreted as an unsigned 64 bit integer.
@@ -6777,7 +6777,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <ul>
               <li>
                 If the IDL {{unrestricted double}} value is a NaN,
-                then the <span class="estype">Number</span> value is <span class="esvalue">NaN</span>.
+                then the <span class="estype">Number</span> value is <emu-val>NaN</emu-val>.
               </li>
               <li>
                 Otherwise, the <span class="estype">Number</span> value is
@@ -6797,7 +6797,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If |V| is <span class="esvalue">null</span>
+              <li>If |V| is <emu-val>null</emu-val>
                 and the conversion to an IDL value is being performed due
                 to any of the following:
                 <ul>
@@ -6935,7 +6935,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
                 as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[!HTML]]</li>
-              <li><a href="#ecmascript-throw" class="dfnref external">Throw a <span class="esvalue">TypeError</span></a>.</li>
+              <li><a href="#ecmascript-throw" class="dfnref external">Throw a <emu-val>TypeError</emu-val></a>.</li>
             </ol>
             <p id="interface-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
@@ -6977,18 +6977,18 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                         <dl class="switch">
                           <dt>Undefined</dt>
                           <dt>Null</dt>
-                          <dd>|value| is <span class="esvalue">undefined</span>.</dd>
+                          <dd>|value| is <emu-val>undefined</emu-val>.</dd>
                           <dt>anything else</dt>
                           <dd>|value| is the result of calling the <span class="prop">\[[Get]]</span> internal method on |V| with property name |key|.</dd>
                         </dl>
                       </li>
-                      <li>If |value| is not <span class="esvalue">undefined</span>, then:
+                      <li>If |value| is not <emu-val>undefined</emu-val>, then:
                         <ol>
                           <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |value| to an IDL value whose type is the type |member| is declared to be of.</li>
                           <li>Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be <a class="dfnref" href="#dfn-present">present</a>.</li>
                         </ol>
                       </li>
-                      <li>Otherwise, if |value| is <span class="esvalue">undefined</span> but the <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> has a <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a>, then:
+                      <li>Otherwise, if |value| is <emu-val>undefined</emu-val> but the <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> has a <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a>, then:
                         <ol>
                           <li>Let |idlValue| be the dictionary member’s default value.</li>
                           <li>Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be <a class="dfnref" href="#dfn-present">present</a>.</li>
@@ -6996,7 +6996,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                       </li>
                       <li>
                         Otherwise, if |value| is
-                        <span class="esvalue">undefined</span> and the
+                        <emu-val>undefined</emu-val> and the
                         <a class="dfnref" href="#dfn-dictionary-member">dictionary
                         member</a> is a
                         <a class="dfnref" href="#required-dictionary-member">required dictionary
@@ -7083,13 +7083,13 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>If the result of calling <a>IsCallable</a>(|V|) is <span class="esvalue">false</span> and the conversion to an IDL value
+              <li>If the result of calling <a>IsCallable</a>(|V|) is <emu-val>false</emu-val> and the conversion to an IDL value
               is not being performed due
                 to |V| being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
                 whose type is a <a class="dfnref" href="#dfn-nullable-type">nullable</a>
                 <a class="dfnref" href="#dfn-callback-function">callback function</a>
                 that is annotated with <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>,
-              then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a>.</li>
+              then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a>.</li>
               <li>Return the IDL <a href="#idl-callback-function">callback
               function type</a> value that represents a reference to the same
               object that |V| represents,
@@ -7110,7 +7110,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p>
               IDL <a class="dfnref" href="#dfn-nullable-type">nullable type</a> values are represented
               by values of either the ECMAScript type corresponding to the <a class="dfnref" href="#dfn-inner-type">inner IDL type</a>, or
-              the ECMAScript <span class="esvalue">null</span> value.
+              the ECMAScript <emu-val>null</emu-val> value.
             </p>
             <p id="es-to-nullable">
               An ECMAScript value |V| is
@@ -7131,7 +7131,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 value <span class="idlvalue">null</span>.
               </li>
               <li>
-                Otherwise, if |V| is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>, then return the IDL
+                Otherwise, if |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>, then return the IDL
                 <a class="dfnref" href="#dfn-nullable-type">nullable type</a> <span class="idltype">|T|?</span>
                 value <span class="idlvalue">null</span>.
               </li>
@@ -7149,7 +7149,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>
                 If the IDL <a class="dfnref" href="#dfn-nullable-type">nullable type</a> <span class="idltype">|T|?</span>
                 value is <span class="idlvalue">null</span>,
-                then the ECMAScript value is <span class="esvalue">null</span>.
+                then the ECMAScript value is <emu-val>null</emu-val>.
               </li>
               <li>
                 Otherwise, the ECMAScript value is the result of
@@ -7190,7 +7190,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <a>ReturnIfAbrupt</a>(|method|).
               </li>
               <li>
-                If |method| is <span class="esvalue">undefined</span>,
+                If |method| is <emu-val>undefined</emu-val>,
                 <a href="#ecmascript-throw" class="dfnref external">throw a
                 <span class="estype">TypeError</span></a>.
               </li>
@@ -7248,7 +7248,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   </li>
                   <li><a>ReturnIfAbrupt</a>(|next|).</li>
                   <li>
-                    If |next| is <span class="esvalue">false</span>,
+                    If |next| is <emu-val>false</emu-val>,
                     then return an IDL sequence value of type
                     <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a>
                     of length |i|, where the value of the element
@@ -7365,7 +7365,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 </div>
               </li>
               <li>Let |promise| be the result of calling |resolve| with <a class="nocite">%Promise%</a>
-                as the <span class="esvalue">this</span> value and |V| as the single argument value.</li>
+                as the <emu-val>this</emu-val> value and |V| as the single argument value.</li>
               <li>Return the IDL <a href="#idl-promise">promise type</a> value that is a reference to the
                 same object as |promise|.</li>
             </ol>
@@ -7395,7 +7395,7 @@ alert(b[4]);    // This would alert "50".</pre>
                       <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                         |V| to an IDL value of type |T|.</li>
                       <li>If there are no steps that are required to be run if the promise was fulfilled, then
-                        return <span class="esvalue">undefined</span>.</li>
+                        return <emu-val>undefined</emu-val>.</li>
                       <li>Otherwise, return the result of performing any steps that were required to be run if the promise was fulfilled,
                         with |value| as the promise’s value.</li>
                     </ol>
@@ -7410,14 +7410,14 @@ alert(b[4]);    // This would alert "50".</pre>
                   <li>Let |reason| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |R| to an IDL value of type {{any}}.</li>
                   <li>If there are no steps that are required to be run if the promise was rejected, then
-                    return <span class="esvalue">undefined</span>.</li>
+                    return <emu-val>undefined</emu-val>.</li>
                   <li>Otherwise, return the result of performing any steps that were required to be run if the promise was rejected,
                     with |reason| as the rejection reason.</li>
                 </ol>
               </li>
               <li>Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.</li>
               <li>If |then| is not <a>callable</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return the result of calling |then| with |promise| as the <span class="esvalue">this</span> value and |onFulfilled| and |onRejected|
+              <li>Return the result of calling |then| with |promise| as the <emu-val>this</emu-val> value and |onFulfilled| and |onRejected|
                 as its two arguments.</li>
             </ol>
                 Issue: Include an example of how to write spec text using this term.
@@ -7438,15 +7438,15 @@ alert(b[4]);    // This would alert "50".</pre>
             <ol class="algorithm">
               <li>If the <a class="dfnref" href="#dfn-union-type">union type</a>
                 <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a> and
-                |V| is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>,
+                |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
                 then return the IDL value <span class="idlvalue">null</span>.</li>
               <li>
                 Let |types| be the <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>
                 of the <a class="dfnref" href="#dfn-union-type">union type</a>.
               </li>
               <li>
-                If |V| is <span class="esvalue">null</span> or
-                <span class="esvalue">undefined</span>, and
+                If |V| is <emu-val>null</emu-val> or
+                <emu-val>undefined</emu-val>, and
                 |types| includes a
                 <a href="#idl-dictionary">dictionary type</a>, then return the
                 result of
@@ -7551,7 +7551,7 @@ alert(b[4]);    // This would alert "50".</pre>
                       </li>
                       <li>
                         If |method| is not
-                        <span class="esvalue">undefined</span>,
+                        <emu-val>undefined</emu-val>,
                         return the result of
                         <a class="dfnref" href="#create-sequence-from-iterable">creating a
                         sequence of that type from |V| and
@@ -7571,7 +7571,7 @@ alert(b[4]);    // This would alert "50".</pre>
                       </li>
                       <li>
                         If |method| is not
-                        <span class="esvalue">undefined</span>,
+                        <emu-val>undefined</emu-val>,
                         return the result of
                         <a class="dfnref" href="#create-frozen-array-from-iterable">creating a
                         frozen array of that type from |V| and
@@ -7795,7 +7795,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>If |O| has a \[[ViewedArrayBuffer]] <a>internal slot</a>, then:
                 <ol>
                   <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a>internal slot</a>.</li>
-                  <li>If |arrayBuffer| is <span class="esvalue">undefined</span>, then
+                  <li>If |arrayBuffer| is <emu-val>undefined</emu-val>, then
                     <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                   <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a>internal slot</a>.</li>
                   <li>Set |length| to the value of |O|’s \[[ByteLength]] <a>internal slot</a>.</li>
@@ -8285,9 +8285,9 @@ interface Node {
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that when a <span class="estype">Function</span> corresponding
               to one of the interface’s <a class="dfnref" href="#dfn-operation">operations</a>
-              is invoked with the <span class="esvalue">null</span> or <span class="esvalue">undefined</span>
-              value as the <span class="esvalue">this</span> value, that the ECMAScript global
-              object will be used as the <span class="esvalue">this</span> value instead.
+              is invoked with the <emu-val>null</emu-val> or <emu-val>undefined</emu-val>
+              value as the <emu-val>this</emu-val> value, that the ECMAScript global
+              object will be used as the <emu-val>this</emu-val> value instead.
               This is regardless of whether the calling code is in strict mode.
             </p>
             <p>
@@ -8718,7 +8718,7 @@ example.y = 1;</pre>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>,
               it indicates that invocations of the attribute’s getter or setter
-              with a <span class="esvalue">this</span> value that is not an
+              with a <emu-val>this</emu-val> value that is not an
               object that implements the <a class="dfnref" href="#dfn-interface">interface</a>
               on which the attribute appears will be ignored.
             </p>
@@ -9494,7 +9494,7 @@ manager.handler2;            // Evaluates to null.</pre>
               appears on an <a class="dfnref" href="#dfn-attribute">attribute</a>
               or <a class="dfnref" href="#dfn-operation">operation</a> argument whose type is
               <a class="idltype" href="#idl-DOMString">DOMString</a>,
-              it indicates that a <span class="esvalue">null</span> value
+              it indicates that a <emu-val>null</emu-val> value
               assigned to the attribute or passed as the operation argument will be
               handled differently from its default handling.  Instead of being stringified
               to “null”, which is the default,
@@ -9545,7 +9545,7 @@ manager.handler2;            // Evaluates to null.</pre>
 };</pre>
               <p>
                 An ECMAScript implementation implementing the <span class="idltype">Dog</span>
-                interface would convert a <span class="esvalue">null</span> value
+                interface would convert a <emu-val>null</emu-val> value
                 assigned to the “owner” property or passed as the
                 argument to the <code>isMemberOfBreed</code> function
                 to the empty string rather than <code>"null"</code>:
@@ -9784,7 +9784,7 @@ with (thing) {
 
             <li>
               Initialize |method| to
-              <span class="esvalue">undefined</span>.
+              <emu-val>undefined</emu-val>.
             </li>
 
             <li>If there is more than one entry in |S|, then set
@@ -9802,7 +9802,7 @@ with (thing) {
                   <div class="note"><p>All entries in |S| at this point have the same type and <a class="dfnref" href="#dfn-optionality-value">optionality value</a> at index |i|.</p></div>
                 </li>
                 <li>Let |optionality| be the value at index |i| in the list of <a class="dfnref" href="#dfn-optionality-value">optionality values</a> of any entry in |S|.</li>
-                <li>If |optionality| is “optional” and |V| is <span class="esvalue">undefined</span>, then:
+                <li>If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
                   <ol>
                     <li>If the argument at index |i| is declared with a <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>,
                       then append to |values| that default value.</li>
@@ -9820,11 +9820,11 @@ with (thing) {
                 <li>Let |V| be |arg|<sub>|i|</sub>.
                   <div class="note"><p>This is the argument that will be used to resolve which overload is selected.</p></div></li>
 
-                <li>If |V| is <span class="esvalue">undefined</span>, and there is an entry in |S|
+                <li>If |V| is <emu-val>undefined</emu-val>, and there is an entry in |S|
                   whose list of <a class="dfnref" href="#dfn-optionality-value">optionality values</a> has “optional” at index |i|,
                   then remove from |S| all other entries.</li>
 
-                <li>Otherwise: if |V| is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>,
+                <li>Otherwise: if |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
                   and there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a <a class="dfnref" href="#dfn-nullable-type">nullable type</a></li>
@@ -9978,7 +9978,7 @@ with (thing) {
                       <a>ReturnIfAbrupt</a>(|method|).
                     </li>
                   </ol>
-                  |method| is not <span class="esvalue">undefined</span>, then remove from |S| all
+                  |method| is not <emu-val>undefined</emu-val>, then remove from |S| all
                   other entries.
                 </li>
 
@@ -10071,7 +10071,7 @@ with (thing) {
               of the single entry in |S|.</li>
 
             <li>
-              If |i| = |d| and |method| is not <span class="esvalue">undefined</span>, then
+              If |i| = |d| and |method| is not <emu-val>undefined</emu-val>, then
               <ol>
                 <li>
                   Let |V| be |arg|<sub>|i|</sub>.
@@ -10106,7 +10106,7 @@ with (thing) {
                 <li>Let |V| be |arg|<sub>|i|</sub>.</li>
                 <li>Let |type| be the type at index |i| in the type list of the remaining entry in |S|.</li>
                 <li>Let |optionality| be the value at index |i| in the list of <a class="dfnref" href="#dfn-optionality-value">optionality values</a> of the remaining entry in |S|.</li>
-                <li>If |optionality| is “optional” and |V| is <span class="esvalue">undefined</span>, then:
+                <li>If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
                   <ol>
                     <li>If the argument at index |i| is declared with a <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>,
                       then append to |values| that default value.</li>
@@ -10161,7 +10161,7 @@ with (thing) {
               ECMAScript value that is passed in at the distinguishing argument
               index to determine which IDL type it may correspond to.
               This allows us to select the final overload that will
-              be invoked.  If the value passed in is <span class="esvalue">undefined</span>
+              be invoked.  If the value passed in is <emu-val>undefined</emu-val>
               and there is an overload with an optional argument at this position, then
               we will choose that overload.  If there is no valid overload for the type of
               value passed in here, then we throw a <span class="estype">TypeError</span>.
@@ -10174,12 +10174,12 @@ with (thing) {
               again ignoring any additional arguments that were ignored due to being passed
               after the last possible argument.</p>
             <p>When converting an optional argument’s ECMAScript value to its equivalent IDL value,
-              <span class="esvalue">undefined</span> will be converted into
+              <emu-val>undefined</emu-val> will be converted into
               the <a class="dfnref" href="#dfn-optional-argument-default-value">optional argument’s default value</a>,
               if it has one, or a special value “missing” otherwise.</p>
             <p>Optional arguments corresponding to a final, variadic argument do not treat
-              <span class="esvalue">undefined</span> as a special “missing” value, however.
-              The <span class="esvalue">undefined</span> value is converted to the type
+              <emu-val>undefined</emu-val> as a special “missing” value, however.
+              The <emu-val>undefined</emu-val> value is converted to the type
               of variadic argument as would be done for a non-optional argument.</p>
           </div>
         
@@ -10206,7 +10206,7 @@ with (thing) {
             and its value is an object called the <dfn id="dfn-interface-object" export="">interface object</dfn>.
           </p>
           <p>
-            The property has the attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
+            The property has the attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
             The characteristics of an interface object are described in [[#interface-object]].
           </p>
 
@@ -10218,7 +10218,7 @@ with (thing) {
             “<span class="sym">=</span>”, and its value is an object called a
             <dfn id="dfn-named-constructor" export="">named constructor</dfn>, which allows
             construction of objects that implement the interface.  The property has the
-            attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
+            attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
             The characteristics of a named constructor are described in
             [[#named-constructors]].
           </p>
@@ -10256,7 +10256,7 @@ with (thing) {
             <p>
               An interface object for a non-callback interface must have a property named “prototype”
               with attributes
-              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
               whose value is an object called the <dfn id="dfn-interface-prototype-object" export="">interface prototype object</dfn>.  This object has properties
               that correspond to the <a class="dfnref" href="#dfn-regular-attribute">regular attributes</a> and
               <a class="dfnref" href="#dfn-regular-operation">regular operations</a> defined on the interface,
@@ -10264,7 +10264,7 @@ with (thing) {
               [[#interface-prototype-object]].
             </p>
                 Note: Since an interface object for a non-callback interface is a <a class="dfnref" href="#dfn-function-object">function object</a> the <code>typeof</code> operator will return
-                <span class="esvalue">"function"</span> when applied to
+                <emu-val>"function"</emu-val> when applied to
                 such an interface object.
             <p>
               The internal <span class="esprop">\[[Prototype]]</span> property
@@ -10337,7 +10337,7 @@ with (thing) {
               </p>
               <p>
                 Interface objects for non-callback interfaces must have a property named “length”
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 whose value is a <span class="estype">Number</span>.
                 If the <a class="xattr" href="#Constructor">[Constructor]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -10362,7 +10362,7 @@ with (thing) {
               </ol>
               <p>
                 All interface objects must have a
-                property named “name” with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                property named “name” with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 whose value is the identifier of the corresponding interface.
               </p>
             
@@ -10378,18 +10378,18 @@ with (thing) {
                 argument passed to <span class="prop">\[[HasInstance]]</span>:
               </p>
               <ol class="algorithm">
-                <li>If |V| is not an object, return <span class="esvalue">false</span>.</li>
+                <li>If |V| is not an object, return <emu-val>false</emu-val>.</li>
                 <li>Let |O| be the result of calling the <span class="prop">\[[Get]]</span> method of |A| with property name “prototype”.</li>
                 <li>If |O| is not an object, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a> exception.</li>
                 <li>If |V| is a platform object that implements the
                   interface for which |O| is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>,
-                  return <span class="esvalue">true</span>.</li>
+                  return <emu-val>true</emu-val>.</li>
                 <li>Repeat:
                   <ol>
                     <li>Set |V| to the value of the <span class="prop">\[[Prototype]]</span> internal property of |V|.</li>
-                    <li>If |V| is <span class="esvalue">null</span>, return <span class="esvalue">false</span>.</li>
+                    <li>If |V| is <emu-val>null</emu-val>, return <emu-val>false</emu-val>.</li>
                     <li>If |O| and |V| refer to the same object,
-                      return <span class="esvalue">true</span>.</li>
+                      return <emu-val>true</emu-val>.</li>
                   </ol>
                 </li>
               </ol>
@@ -10454,7 +10454,7 @@ with (thing) {
             </p>
             <p>
               A named constructor must have a property named “length”
-              with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+              with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
               whose value is a <span class="estype">Number</span> determined as follows:
             </p>
             <ol class="algorithm">
@@ -10472,13 +10472,13 @@ with (thing) {
             </ol>
             <p>
               A named constructor must have a property named “name”
-              with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+              with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
               whose value is the identifier used for the named constructor.
             </p>
             <p>
               A named constructor must also have a property named
               “prototype” with attributes
-              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
               whose value is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the <a class="dfnref" href="#dfn-interface">interface</a> on which the
               <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
@@ -10515,7 +10515,7 @@ with (thing) {
               extended attribute was not specified on the interface, then
               the interface prototype object must
               also have a property named “constructor” with attributes
-              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span> whose value
+              <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span> whose value
               is a reference to the interface object for the interface.
             </p>
 
@@ -10591,7 +10591,7 @@ partial interface Window {
                 declared with the <a class="xattr" href="#Unscopable">[Unscopable]</a> extended attribute,
                 call <a>CreateDataProperty</a>(|object|,
                 the <a class="dfnref" href="#dfn-identifier">identifier</a> of the
-                interface member, <span class="esvalue">true</span>).</li>
+                interface member, <emu-val>true</emu-val>).</li>
               <li>Return |object|.</li>
             </ol>
             <p>
@@ -10677,10 +10677,10 @@ partial interface Window {
                     <li>If |A| implements an interface with the
                       <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
                       <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                      then set |desc|.<span class="prop">\[[Enumerable]]</span> to <span class="esvalue">false</span>,
-                      otherwise set it to <span class="esvalue">true</span>.</li>
-                    <li>Set |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span> and
-                      |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                      then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
+                      otherwise set it to <emu-val>true</emu-val>.</li>
+                    <li>Set |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val> and
+                      |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
                     <li>Return |desc|.</li>
                   </ol>
                 </li>
@@ -10698,8 +10698,8 @@ partial interface Window {
                 must behave as follows when called with object |O|
                 and property name |P|.
                 The term <span id="Reject">“Reject”</span> is used in the same sense as that defined in ECMA-262, namely, to mean “If |Throw| is
-                <span class="esvalue">true</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a> exception,
-                otherwise return <span class="esvalue">false</span>”.
+                <emu-val>true</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a> exception,
+                otherwise return <emu-val>false</emu-val>”.
               </p>
 
               <ol class="algorithm">
@@ -10718,7 +10718,7 @@ partial interface Window {
               </p>
 
               <ol class="algorithm">
-                <li>Return <span class="esvalue">false</span>.</li>
+                <li>Return <emu-val>false</emu-val>.</li>
               </ol>
             
           
@@ -10751,7 +10751,7 @@ partial interface Window {
                 </ul>
               </li>
               <li>The value of the property is that which is obtained by <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> the <a class="dfnref" href="#dfn-constant">constant</a>’s IDL value to an ECMAScript value.</li>
-              <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+              <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
             </ul>
             <p>
               In addition, a property with the same characteristics must
@@ -10793,11 +10793,11 @@ partial interface Window {
                 </ul>
               </li>
               <li>
-                The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Set]]: |S|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |configurable| }</span>,
+                The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Set]]: |S|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |configurable| }</span>,
                 where:
                 <ul>
-                  <li>|configurable| is <span class="esvalue">false</span> if the attribute was
-                    declared with the <a class="xattr" href="#Unforgeable">[Unforgeable]</a> extended attribute and <span class="esvalue">true</span> otherwise;</li>
+                  <li>|configurable| is <emu-val>false</emu-val> if the attribute was
+                    declared with the <a class="xattr" href="#Unforgeable">[Unforgeable]</a> extended attribute and <emu-val>true</emu-val> otherwise;</li>
                   <li>|G| is the <a class="dfnref" href="#dfn-attribute-getter">attribute getter</a>, defined below; and</li>
                   <li>|S| is the <a class="dfnref" href="#dfn-attribute-setter">attribute setter</a>, also defined below.</li>
                 </ul>
@@ -10834,7 +10834,7 @@ partial interface Window {
                         <ol>
                           <li>If the <a class="dfnref" href="#dfn-attribute">attribute</a> was specified with the
                             <a class="xattr" href="#LenientThis">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                            then return <span class="esvalue">undefined</span>.</li>
+                            then return <emu-val>undefined</emu-val>.</li>
                           <li>Otherwise, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                         </ol>
                       </li>
@@ -10857,13 +10857,13 @@ partial interface Window {
                   </li>
                 </ol>
                 <p>The value of the <span class="estype">Function</span> object’s “length”
-                  property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+                  property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
                 <p>The value of the <span class="estype">Function</span> object’s “name”
                   property is a <span class="estype">String</span> whose value is the
                   concatenation of “get ” and the identifier of the attribute.</p>
               </li>
               <li>
-                The <dfn id="dfn-attribute-setter" export="">attribute setter</dfn> is <span class="esvalue">undefined</span>
+                The <dfn id="dfn-attribute-setter" export="">attribute setter</dfn> is <emu-val>undefined</emu-val>
                 if the attribute is declared <code>readonly</code> and does not have a
                 <a class="xattr" href="#LenientThis">[LenientThis]</a>, <a class="xattr" href="#PutForwards">[PutForwards]</a> or
                 <a class="xattr" href="#Replaceable">[Replaceable]</a>
@@ -10889,10 +10889,10 @@ partial interface Window {
                           <li>the type “setter”.</li>
                         </ul>
                       </li>
-                      <li>Let |validThis| be <span class="esvalue">true</span> if |O| is a
+                      <li>Let |validThis| be <emu-val>true</emu-val> if |O| is a
                         <a class="dfnref" href="#dfn-platform-object">platform object</a> that implements |I|, or
-                        <span class="esvalue">false</span> otherwise.</li>
-                      <li>If |validThis| is <span class="esvalue">false</span> and the
+                        <emu-val>false</emu-val> otherwise.</li>
+                      <li>If |validThis| is <emu-val>false</emu-val> and the
                         <a class="dfnref" href="#dfn-attribute">attribute</a> was not specified with the
                         <a class="xattr" href="#LenientThis">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                         then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
@@ -10901,12 +10901,12 @@ partial interface Window {
                         <ol>
                           <li>Let |P| be the identifier of the attribute.</li>
                           <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
-                          <li>Return <span class="esvalue">undefined</span>.</li>
+                          <li>Return <emu-val>undefined</emu-val>.</li>
                         </ol>
                       </li>
-                      <li>If |validThis| is <span class="esvalue">false</span>, then return <span class="esvalue">undefined</span>.</li>
+                      <li>If |validThis| is <emu-val>false</emu-val>, then return <emu-val>undefined</emu-val>.</li>
                       <li>If the attribute is declared with a <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
-                        extended attribute, then return <span class="esvalue">undefined</span>.</li>
+                        extended attribute, then return <emu-val>undefined</emu-val>.</li>
                       <li>If the attribute is declared with a <a class="xattr" href="#PutForwards">[PutForwards]</a>
                         extended attribute, then:
                         <ol>
@@ -10916,7 +10916,7 @@ partial interface Window {
                           <li>Let |A| be the attribute identified by the <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute.</li>
                           <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
                             using the identifier of |A| as the property name and |V| as the value.</li>
-                          <li>Return <span class="esvalue">undefined</span>.</li>
+                          <li>Return <emu-val>undefined</emu-val>.</li>
                         </ol>
                       </li>
                     </ol>
@@ -10926,7 +10926,7 @@ partial interface Window {
                       <li>If the type of the attribute is an <a class="dfnref" href="#dfn-enumeration">enumeration</a>, then:
                         <ol>
                           <li>Let |S| be the result of calling <a>ToString</a>(|V|).</li>
-                          <li>If |S| is not one of the <a class="dfnref" href="#dfn-enumeration-value">enumeration’s values</a>, then return <span class="esvalue">undefined</span>.</li>
+                          <li>If |S| is not one of the <a class="dfnref" href="#dfn-enumeration-value">enumeration’s values</a>, then return <emu-val>undefined</emu-val>.</li>
                           <li>The value of |idlValue| is the enumeration value equal to |S|.</li>
                         </ol>
                       </li>
@@ -10938,10 +10938,10 @@ partial interface Window {
                     with |O| as the object and |idlValue| as the value.</li>
                   <li>Otherwise, the attribute is a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
                     Perform the actions listed in the description of the attribute that occur when setting with |idlValue| as the value.</li>
-                  <li>Return <span class="esvalue">undefined</span>.</li>
+                  <li>Return <emu-val>undefined</emu-val>.</li>
                 </ol>
                 <p>The value of the <span class="estype">Function</span> object’s “length”
-                  property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
+                  property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
                 <p>The value of the <span class="estype">Function</span> object’s “name”
                   property is a <span class="estype">String</span> whose value is the
                   concatenation of “set ” and the identifier of the attribute.</p>
@@ -10995,10 +10995,10 @@ partial interface Window {
               </li>
               <li>
                 The property has attributes
-                <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |B| }</span>,
-                where |B| is <span class="esvalue">false</span> if the operation is
+                <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
+                where |B| is <emu-val>false</emu-val> if the operation is
                 <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on the interface,
-                and <span class="esvalue">true</span> otherwise.
+                and <emu-val>true</emu-val> otherwise.
               </li>
               <li>
                 The value of the property is a <span class="estype">Function</span> object whose
@@ -11027,19 +11027,19 @@ partial interface Window {
                         Let |O| be a value determined as follows:
                         <ul>
                           <li>
-                            If the operation is a static operation, then |O| is <span class="esvalue">null</span>.
+                            If the operation is a static operation, then |O| is <emu-val>null</emu-val>.
                           </li>
                           <li>
                             Otherwise, if the <a class="dfnref" href="#dfn-interface">interface</a> on which the
                             <a class="dfnref" href="#dfn-operation">operation</a> appears has an
                             <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                            and the <span class="esvalue">this</span> value is <span class="esvalue">null</span>
-                            or <span class="esvalue">undefined</span>, then |O| is
+                            and the <emu-val>this</emu-val> value is <emu-val>null</emu-val>
+                            or <emu-val>undefined</emu-val>, then |O| is
                             the ECMAScript global object associated with the <span class="estype">Function</span> object.
                           </li>
                           <li>
-                            Otherwise, if the <span class="esvalue">this</span> value is not <span class="esvalue">null</span>,
-                            then |O| is the <span class="esvalue">this</span> value.
+                            Otherwise, if the <emu-val>this</emu-val> value is not <emu-val>null</emu-val>,
+                            then |O| is the <emu-val>this</emu-val> value.
                           </li>
                           <li>
                             Otherwise, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
@@ -11057,7 +11057,7 @@ partial interface Window {
                         </ul>
                       </li>
                       <li>
-                        If |O| is not <span class="esvalue">null</span> and is also not a <a class="dfnref" href="#dfn-platform-object">platform object</a>
+                        If |O| is not <emu-val>null</emu-val> and is also not a <a class="dfnref" href="#dfn-platform-object">platform object</a>
                         that implements interface |I|, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
                       </li>
                       <li>
@@ -11094,7 +11094,7 @@ partial interface Window {
                         <ol>
                           <li>Let |reject| be the initial value of <a class="nocite">%Promise%</a>.reject.</li>
                           <li>Return the result of calling |reject| with <a class="nocite">%Promise%</a> as the
-                            <span class="esvalue">this</span> object and the exception as the single
+                            <emu-val>this</emu-val> object and the exception as the single
                             argument value.</li>
                         </ol>
                       </li>
@@ -11145,14 +11145,14 @@ partial interface Window {
                   or if the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
                   then the property exists on every object that implements the interface.
                   Otherwise, the property exists on the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |B| }</span>,
-                  where |B| is <span class="esvalue">false</span> if the stringifier is
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
+                  where |B| is <emu-val>false</emu-val> if the stringifier is
                   <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on the interface,
-                  and <span class="esvalue">true</span> otherwise.</li>
+                  and <emu-val>true</emu-val> otherwise.</li>
                 <li>
                   <p>The value of the property is a <span class="estype">Function</span> object, which behaves as follows:</p>
                   <ol class="algorithm">
-                    <li>Let |O| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -11175,7 +11175,7 @@ partial interface Window {
                           with |O| as the object.</dd>
                         <dt>on an <a class="dfnref" href="#dfn-operation">operation</a> with an identifier</dt>
                         <dd>Set |V| to the result of performing the actions listed in the description
-                          of the operation, using |O| as the <span class="esvalue">this</span> value
+                          of the operation, using |O| as the <emu-val>this</emu-val> value
                           and passing no arguments.</dd>
                         <dt>on an <a class="dfnref" href="#dfn-operation">operation</a> with no identifier</dt>
                         <dd>Set |V| to the result of performing the <a class="dfnref" href="#dfn-stringification-behavior">stringification behavior</a>
@@ -11186,7 +11186,7 @@ partial interface Window {
                   </ol>
                 </li>
                 <li>The value of the <span class="estype">Function</span> object’s “length”
-                  property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</li>
+                  property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</li>
                 <li>The value of the <span class="estype">Function</span> object’s “name”
                   property is the <span class="estype">String</span> value “toString”.</li>
               </ul>
@@ -11201,7 +11201,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-serializer">serializer</a>, then
                 a property must exist
                 whose name is “toJSON”,
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a
                 <span class="estype">Function</span> object.
               </p>
@@ -11223,7 +11223,7 @@ partial interface Window {
                 must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |O| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |O| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11242,7 +11242,7 @@ partial interface Window {
                     <dd>
                       <ol class="algorithm">
                         <li>Return the result of performing the actions listed in the description of the
-                          operation, using |O| as the <span class="esvalue">this</span> value
+                          operation, using |O| as the <emu-val>this</emu-val> value
                           and passing no arguments.</li>
                       </ol>
                     </dd>
@@ -11259,7 +11259,7 @@ partial interface Window {
                 </li>
               </ol>
               <p>The value of the <span class="estype">Function</span> object’s “length”
-                property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+                property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name”
                 property is the <span class="estype">String</span> value “toJSON”.</p>
               <p>
@@ -11336,7 +11336,7 @@ partial interface Window {
               <p>
                 then a property must exist
                 whose name is the <a>@@iterator</a> symbol,
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               </p>
               <p>
@@ -11362,7 +11362,7 @@ partial interface Window {
                 must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11388,7 +11388,7 @@ partial interface Window {
                 when invoked, must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11418,7 +11418,7 @@ partial interface Window {
               </ol>
               <p>
                 The value of the <a>@@iterator</a> <span class="estype">Function</span> object’s “length”
-                property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
+                property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.
               </p>
               <p>The value of the <a>@@iterator</a> <span class="estype">Function</span> object’s “name”
               property is the <span class="estype">String</span> value “entries” if the interface has a
@@ -11443,7 +11443,7 @@ partial interface Window {
               </ul>
               <p>
                 then a property named “forEach” must exist
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               </p>
               <p>
@@ -11485,7 +11485,7 @@ partial interface Window {
                     <li>Let |key| be |pair|’s key.</li>
                     <li>Let |value| be |pair|’s value.</li>
                     <li><a href="#es-invoking-callback-functions">Invoke</a> |callback| with |thisArg|
-                      (or <span class="esvalue">undefined</span>, if the argument was not supplied)
+                      (or <emu-val>undefined</emu-val>, if the argument was not supplied)
                       as the <a class="dfnref" href="#dfn-callback-this-value">callback this value</a> and
                       |value|, |key| and |O| as its arguments.</li>
                     <li>Update |pairs| to the current list of <a class="dfnref" href="#dfn-value-pairs-to-iterate-over">value pairs to iterate over</a>.</li>
@@ -11500,7 +11500,7 @@ partial interface Window {
                 must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11516,16 +11516,16 @@ partial interface Window {
                 <li>If |object| is not a <a class="dfnref" href="#dfn-platform-object">platform object</a>
                   that implements |interface|,
                   then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                <li>Let |callbackFn| be the value of the first argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
-                <li>If <a>IsCallable</a>(|callbackFn|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                <li>Let |thisArg| be the value of the second argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
+                <li>Let |callbackFn| be the value of the first argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
+                <li>If <a>IsCallable</a>(|callbackFn|) is <emu-val>false</emu-val>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                <li>Let |thisArg| be the value of the second argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
                 <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|,
                   if the interface has a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>,
                   or the \[[BackingSet]] <a>internal slot</a> of |object| otherwise.</li>
                 <li>Let |callbackWrapper| be a <span class="estype">Function</span> that, when invoked, behaves as follows:
                   <ol>
                     <li>Let |v| and |k| be the first two arguments passed to the function.</li>
-                    <li>Let |thisArg| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |thisArg| be the <emu-val>this</emu-val> value.</li>
                     <li>Call the \[[Call]] internal method of |callbackFn| with |thisArg| as |thisArgument|
                       and |v|, |k| and |object| as |argumentsList|.</li>
                   </ol>
@@ -11541,14 +11541,14 @@ partial interface Window {
                 </li>
                 <li>Let |forEach| be the result of calling the \[[Get]] internal method of
                   |backing| with “forEach” and |backing| as arguments.</li>
-                <li>If <a>IsCallable</a>(|forEach|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                <li>If <a>IsCallable</a>(|forEach|) is <emu-val>false</emu-val>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                 <li>Call the \[[Call]] internal method of |forEach| with |backing| as |thisArgument|
                   and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
-                <li>Return <span class="esvalue">undefined</span>.</li>
+                <li>Return <emu-val>undefined</emu-val>.</li>
               </ol>
               <p>
                 The value of the <span class="estype">Function</span> object’s “length”
-                property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.
+                property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.
               </p>
               <p>The value of the <span class="estype">Function</span> object’s “name”
                 property is the <span class="estype">String</span> value “forEach”.</p>
@@ -11565,7 +11565,7 @@ partial interface Window {
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “entries” must exist
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               </p>
               <p>
@@ -11600,7 +11600,7 @@ partial interface Window {
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “keys” must exist
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               </p>
               <p>
@@ -11626,7 +11626,7 @@ partial interface Window {
                 then the <span class="estype">Function</span>, when invoked, must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11645,7 +11645,7 @@ partial interface Window {
                   for |interface| with |object| as its target and iterator kind “key”.</li>
                 <li>Return |iterator|.</li>
               </ol>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys”.</p>
             
 
@@ -11656,7 +11656,7 @@ partial interface Window {
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
                 <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “values” must exist
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               </p>
               <p>
@@ -11684,7 +11684,7 @@ partial interface Window {
                 then the <span class="estype">Function</span>, when invoked, must behave as follows:
               </p>
               <ol class="algorithm">
-                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11703,7 +11703,7 @@ partial interface Window {
                   for |interface| with |object| as its target and iterator kind “value”.</li>
                 <li>Return |iterator|.</li>
               </ol>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “values”.</p>
             
 
@@ -11764,14 +11764,14 @@ partial interface Window {
               <p>
                 An <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a>
                 must have a property named “next” with
-                attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>
                 that behaves as follows:
               </p>
               <ol class="algorithm">
                 <li>Let |interface| be the <a class="dfnref" href="#dfn-interface">interface</a> for which the
                   <a class="dfnref" href="#dfn-iterator-prototype-object">iterator prototype object</a> exists.</li>
-                <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
+                <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
                 <li>If |object| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                   then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                   <ul>
@@ -11789,7 +11789,7 @@ partial interface Window {
                 <li>Let |values| be the list of <a class="dfnref" href="#dfn-value-pairs-to-iterate-over">value pairs to iterate over</a>.</li>
                 <li>Let |len| be the length of |values|.</li>
                 <li>If |object|’s index is greater than or equal to |len|, then
-                  return <a>CreateIterResultObject</a>(<span class="esvalue">undefined</span>, <span class="esvalue">true</span>).</li>
+                  return <a>CreateIterResultObject</a>(<emu-val>undefined</emu-val>, <emu-val>true</emu-val>).</li>
                 <li>Let |pair| be the entry in |values| at index |index|.</li>
                 <li>Let |result| be a value determined by the value of |kind|:
                   <dl class="switch">
@@ -11824,7 +11824,7 @@ partial interface Window {
                     </dd>
                   </dl>
                 </li>
-                <li>Return <a>CreateIterResultObject</a>(|result|, <span class="esvalue">false</span>).</li>
+                <li>Return <a>CreateIterResultObject</a>(|result|, <emu-val>false</emu-val>).</li>
               </ol>
               <p>
                 The <a class="dfnref" href="#dfn-class-string">class string</a> of an
@@ -11863,7 +11863,7 @@ partial interface Window {
               for a given function name.  Such functions behave as follows when invoked:
             </p>
             <ol class="algorithm">
-              <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+              <li>Let |O| be the <emu-val>this</emu-val> value.</li>
               <li>Let |arguments| be the list of arguments passed to this function.</li>
               <li>Let |name| be the function name.</li>
               <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
@@ -11878,7 +11878,7 @@ partial interface Window {
               <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
               <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
-              <li>If <a>IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |arguments| as |argumentsList|.</li>
             </ol>
 
@@ -11891,14 +11891,14 @@ partial interface Window {
                 with the following characteristics:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>,
+                <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
                   where |G| is the interface’s <dfn id="dfn-map-size-getter" export="">map size getter</dfn>,
                   defined below.</li>
                 <li><p>The <a class="dfnref" href="#dfn-map-size-getter">map size getter</a> is
                   a <span class="estype">Function</span> object whose
                   behavior when invoked is as follows:</p>
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -11912,7 +11912,7 @@ partial interface Window {
                     <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Return the result of calling the \[[Get]] internal method of |map| passing “size” and |map| as arguments.</li>
                   </ol>
-                  <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+                  <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
                   <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.</p>
                 </li>
               </ul>
@@ -11924,7 +11924,7 @@ partial interface Window {
               <p>
                 A property named “entries” must exist on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
                 the <a>@@iterator</a> property.
               </p>
@@ -11939,10 +11939,10 @@ partial interface Window {
                 with the following characteristics:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-map-object">forwards that name to the internal map object</a>.</li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+              <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys” or “values”, correspondingly.</p>
             
 
@@ -11955,10 +11955,10 @@ partial interface Window {
                 with the following characteristics:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>Let |name| be the name of the property – “get” or “has”.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
@@ -11973,14 +11973,14 @@ partial interface Window {
                     <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Let |keyType| be the key type specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
-                    <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
+                    <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
                 </li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
+              <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “get” or “has”, correspondingly.</p>
             
 
@@ -11998,10 +11998,10 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-map-object">forwards “clear” to the internal map object</a>.</li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
             
 
@@ -12019,10 +12019,10 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -12036,14 +12036,14 @@ partial interface Window {
                     <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Let |keyType| be the key type specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
-                    <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
+                    <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
                 </li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “delete”.</p>
             
 
@@ -12061,10 +12061,10 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -12078,8 +12078,8 @@ partial interface Window {
                     <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
                     <li>Let |keyType| and |valueType| be the key and value types specified in the <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
-                    <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
-                    <li>Let |valueArg| be the second argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
+                    <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
+                    <li>Let |valueArg| be the second argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
                     <li>Let |keyIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |valueIDL| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |valueArg| to an IDL value of type |valueType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
@@ -12090,7 +12090,7 @@ partial interface Window {
                   </ol>
                 </li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">2</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>2</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “set”.</p>
             
           
@@ -12121,7 +12121,7 @@ partial interface Window {
               for a given function name.  Such functions behave as follows when invoked:
             </p>
             <ol class="algorithm">
-              <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+              <li>Let |O| be the <emu-val>this</emu-val> value.</li>
               <li>Let |arguments| be the list of arguments passed to this function.</li>
               <li>Let |name| be the function name.</li>
               <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
@@ -12136,7 +12136,7 @@ partial interface Window {
               <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
               <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
-              <li>If <a>IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and |arguments| as |argumentsList|.</li>
             </ol>
 
@@ -12149,14 +12149,14 @@ partial interface Window {
                 with the following characteristics:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>,
+                <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
                   where |G| is the interface’s <dfn id="dfn-set-size-getter" export="">set size getter</dfn>,
                   defined below.</li>
                 <li><p>The <a class="dfnref" href="#dfn-set-size-getter">set size getter</a> is
                   a <span class="estype">Function</span> object whose
                   behavior when invoked is as follows:</p>
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -12170,7 +12170,7 @@ partial interface Window {
                     <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
                     <li>Return the result of calling the \[[Get]] internal method of |set| passing “size” and |set| as arguments.</li>
                   </ol>
-                  <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+                  <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
                   <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.</p>
                 </li>
               </ul>
@@ -12182,7 +12182,7 @@ partial interface Window {
               <p>
                 A property named “values” must exist on
                 |A|’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-                with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+                with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of
                 the <a>@@iterator</a> property.
               </p>
@@ -12197,10 +12197,10 @@ partial interface Window {
                 with the following characteristics:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-set-object">forwards that name to the internal set object</a>.</li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+              <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “entries” or “keys”, correspondingly.</p>
             
 
@@ -12213,10 +12213,10 @@ partial interface Window {
                 with the following characteristics:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
                       <ul>
@@ -12230,14 +12230,14 @@ partial interface Window {
                     <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
                     <li>Let |type| be the value type specified in the <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
-                    <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
+                    <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
                     <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |arg| to an IDL value of type |type|.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                   </ol>
                 </li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is a <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is a <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “has”.</p>
             
 
@@ -12260,10 +12260,10 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
                   <ol class="algorithm">
-                    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
+                    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
                     <li>Let |name| be the name of the property – “add” or “delete”.</li>
                     <li>If |O| is a <a class="dfnref" href="#dfn-platform-object">platform object</a>,
                       then <a class="dfnref" href="#dfn-perform-a-security-check">perform a security check</a>, passing:
@@ -12278,7 +12278,7 @@ partial interface Window {
                     <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
                     <li>Let |type| be the value type specified in the <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a>.</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
-                    <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
+                    <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
                     <li>Let |idlValue| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |arg| to an IDL value of type |type|.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
                     <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
@@ -12298,7 +12298,7 @@ partial interface Window {
                   </ol>
                 </li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “add” or “delete”, correspondingly.</p>
             
 
@@ -12316,10 +12316,10 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>:
               </p>
               <ul>
-                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
+                <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
                 <li>The value of the property is a <span class="estype">Function</span> object that <a class="dfnref" href="#dfn-forwards-to-the-internal-set-object">forwards “clear” to the internal set object</a>.</li>
               </ul>
-              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
+              <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
             
           
@@ -12340,23 +12340,23 @@ partial interface Window {
             </p>
             <ol class="algorithm">
               <li>If <a>Type</a>(|destination|) is not Object, then, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
-              <li>If |iterable| is not present, let |iterable| be <span class="esvalue">undefined</span>.</li>
-              <li>If |iterable| is either <span class="esvalue">undefined</span> or <span class="esvalue">null</span>, then let |iter| be <span class="esvalue">undefined</span>.</li>
+              <li>If |iterable| is not present, let |iterable| be <emu-val>undefined</emu-val>.</li>
+              <li>If |iterable| is either <emu-val>undefined</emu-val> or <emu-val>null</emu-val>, then let |iter| be <emu-val>undefined</emu-val>.</li>
               <li>Else,
                 <ol>
                   <li>Let |adder| be the result of <a>Get</a>(|destination|, |adder|).</li>
                   <li><a>ReturnIfAbrupt</a>(|adder|).</li>
-                  <li>If <a>IsCallable</a>(|adder|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+                  <li>If <a>IsCallable</a>(|adder|) is <emu-val>false</emu-val>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
                   <li>Let |iter| be the result of <a>GetIterator</a>(|iterable|).</li>
                   <li><a>ReturnIfAbrupt</a>(|iter|).</li>
                 </ol>
               </li>
-              <li>If |iter| is <span class="esvalue">undefined</span>, then return.</li>
+              <li>If |iter| is <emu-val>undefined</emu-val>, then return.</li>
               <li>Repeat
                 <ol>
                   <li>Let |next| be the result of <a>IteratorStep</a>(|iter|).</li>
                   <li><a>ReturnIfAbrupt</a>(|next|).</li>
-                  <li>If |next| is <span class="esvalue">false</span>, then return <a>NormalCompletion</a>(|destination|).</li>
+                  <li>If |next| is <emu-val>false</emu-val>, then return <a>NormalCompletion</a>(|destination|).</li>
                   <li>Let |nextItem| be <a>IteratorValue</a>(|next|).</li>
                   <li><a>ReturnIfAbrupt</a>(|nextItem|).</li>
                   <li>If <a>Type</a>(|nextItem|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
@@ -12399,7 +12399,7 @@ partial interface Window {
             <p>
               When invoking an <a class="dfnref" href="#dfn-operation">operation</a> by calling
               a <span class="estype">Function</span> object that is the value of one of the copies that exists
-              due to an implements statement, the <span class="esvalue">this</span> value is
+              due to an implements statement, the <emu-val>this</emu-val> value is
               checked to ensure that it is an object that implements the
               <a class="dfnref" href="#dfn-interface">interface</a> corresponding to the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
@@ -12474,7 +12474,7 @@ C implements A;</pre>
           </p>
           <ul>
             <li>The name of the property is “toString”.</li>
-            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
             <li>The value of the property is <a>%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</li>
           </ul>
 
@@ -12487,8 +12487,8 @@ C implements A;</pre>
           </p>
           <ul>
             <li>The name of the property is “toJSON”.</li>
-            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
-            <li>The value of the property is <span class="esvalue">undefined</span>.</li>
+            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
+            <li>The value of the property is <emu-val>undefined</emu-val>.</li>
           </ul>
 
           <p>
@@ -12498,18 +12498,18 @@ C implements A;</pre>
           </p>
           <ul>
             <li>The name of the property is “valueOf”.</li>
-            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+            <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
             <li>
               The value of the property is a <span class="estype">Function</span> object whose behavior
               is as follows:
               <ol class="algorithm">
-                <li>Return the <span class="esvalue">this</span> value.</li>
+                <li>Return the <emu-val>this</emu-val> value.</li>
               </ol>
               This <span class="estype">Function</span> object is the
               <dfn id="dfn-default-unforgeable-valueOf-function" export="">default unforgeable valueOf function</dfn>.
             </li>
             <li>The value of the <span class="estype">Function</span> object’s “length”
-              property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</li>
+              property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</li>
             <li>The value of the <span class="estype">Function</span> object’s “name” property is the
               <span class="estype">String</span> value “valueOf”.</li>
           </ul>
@@ -12575,13 +12575,13 @@ C implements A;</pre>
               The name of each property that appears to exist due to an object supporting indexed properties
               is an <dfn id="dfn-array-index-property-name" export="">array index property name</dfn>, which is a property
               name |P| such that <a>Type</a>(|P|) is String
-              and for which the following algorithm returns <span class="esvalue">true</span>:
+              and for which the following algorithm returns <emu-val>true</emu-val>:
             </p>
             <ol class="algorithm">
               <li>Let |i| be <a>ToUint32</a>(|P|).</li>
               <li>Let |s| be <a>ToString</a>(|i|).</li>
-              <li>If |s| ≠ |P| or |i| = 2<sup>32</sup> − 1, then return <span class="esvalue">false</span>.</li>
-              <li>Return <span class="esvalue">true</span>.</li>
+              <li>If |s| ≠ |P| or |i| = 2<sup>32</sup> − 1, then return <emu-val>false</emu-val>.</li>
+              <li>Return <emu-val>true</emu-val>.</li>
             </ol>
 
             
@@ -12661,9 +12661,9 @@ C implements A;</pre>
                       <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                         |value| to an ECMAScript value.</li>
                       <li>If |O| implements an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then set
-                        |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
-                        <span class="esvalue">false</span>.</li>
-                      <li>Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                        |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
+                        <emu-val>false</emu-val>.</li>
+                      <li>Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
                       <li>Return |desc|.</li>
                     </ol>
                   </li>
@@ -12690,14 +12690,14 @@ C implements A;</pre>
                   <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     |value| to an ECMAScript value.</li>
                   <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then set
-                    |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
-                    <span class="esvalue">false</span>.</li>
+                    |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
+                    <emu-val>false</emu-val>.</li>
                   <li>If |O| implements an interface with the
                     <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
                     <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                    then set |desc|.<span class="prop">\[[Enumerable]]</span> to <span class="esvalue">false</span>,
-                    otherwise set it to <span class="esvalue">true</span>.</li>
-                  <li>Set |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                    then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
+                    otherwise set it to <emu-val>true</emu-val>.</li>
+                  <li>Set |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
                   <li>Return |desc|.</li>
                 </ol>
               </li>
@@ -12721,7 +12721,7 @@ C implements A;</pre>
               <li>
                 Return the result of invoking the <a class="dfnref" href="#getownproperty-guts">PlatformObjectGetOwnProperty</a>
                 abstract operation with
-                |O|, |P|, and <span class="esvalue">false</span> as
+                |O|, |P|, and <emu-val>false</emu-val> as
                 arguments.
               </li>
             </ol>
@@ -12809,7 +12809,7 @@ C implements A;</pre>
                       <a href="#invoking-indexed-setter">Invoke the indexed
                       property setter</a> with |P| and |V|.
                     </li>
-                    <li>Return <span class="esvalue">true</span>.</li>
+                    <li>Return <emu-val>true</emu-val>.</li>
                   </ol>
                 </li>
 
@@ -12824,7 +12824,7 @@ C implements A;</pre>
                       <a href="#invoking-named-setter">Invoke the named
                       property setter</a> with |P| and |V|.
                     </li>
-                    <li>Return <span class="esvalue">true</span>.</li>
+                    <li>Return <emu-val>true</emu-val>.</li>
                   </ol>
                 </li>
               </ol>
@@ -12832,7 +12832,7 @@ C implements A;</pre>
               <li>
                 Let |ownDesc| be the result of invoking the <a class="dfnref" href="#getownproperty-guts">PlatformObjectGetOwnProperty</a>
                 abstract operation with
-                |O|, |P|, and <span class="esvalue">true</span> as
+                |O|, |P|, and <emu-val>true</emu-val> as
                 arguments.
               </li>
               <li>
@@ -12858,11 +12858,11 @@ C implements A;</pre>
                 If |O| <a class="dfnref" href="#dfn-support-indexed-properties">supports indexed properties</a> and
                 |P| is an <a class="dfnref" href="#dfn-array-index-property-name">array index property name</a>, then:
                 <ol>
-                  <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
+                  <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.</li>
                   <li>If |O| does not implement an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then <a href="#Reject">Reject</a>.</li>
                   <li><a href="#invoking-indexed-setter">Invoke the indexed
                   property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.</li>
-                  <li>Return <span class="esvalue">true</span>.</li>
+                  <li>Return <emu-val>true</emu-val>.</li>
                 </ol>
               </li>
 
@@ -12882,13 +12882,13 @@ C implements A;</pre>
                       <li>If |creating| is false and |O| does not implement an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then <a href="#Reject">Reject</a>.</li>
                       <li>If |O| implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>, then:
                         <ol>
-                          <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
+                          <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.</li>
                           <li>
                             <a href="#invoking-named-setter">Invoke the named
                           property setter</a> with |P| and
                           |Desc|.<span class="prop">\[[Value]]</span>.
                           </li>
-                          <li>Return <span class="esvalue">true</span>.</li>
+                          <li>Return <emu-val>true</emu-val>.</li>
                         </ol>
                       </li>
                     </ol>
@@ -12898,7 +12898,7 @@ C implements A;</pre>
 
               <li>If |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
                 <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
-                then set |Desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
+                then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
               <li>Call the <a>default \[[DefineOwnProperty]] internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
             </ol>
           
@@ -12920,8 +12920,8 @@ C implements A;</pre>
                 |P| is an <a class="dfnref" href="#dfn-array-index-property-name">array index property name</a>, then:
                 <ol>
                   <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
-                  <li>If |index| is not a <a class="dfnref" href="#dfn-supported-property-indices">supported property index</a>, then return <span class="esvalue">true</span>.</li>
-                  <li>Return <span class="esvalue">false</span>.</li>
+                  <li>If |index| is not a <a class="dfnref" href="#dfn-supported-property-indices">supported property index</a>, then return <emu-val>true</emu-val>.</li>
+                  <li>Return <emu-val>false</emu-val>.</li>
                 </ol>
               </li>
 
@@ -12932,34 +12932,34 @@ C implements A;</pre>
                 and the result of calling the <a class="dfnref" href="#dfn-named-property-visibility">named property visibility algorithm</a>
                 with property name |P| and object |O| is true, then:
                 <ol>
-                  <li>If |O| does not implement an interface with a <a class="dfnref" href="#dfn-named-property-deleter">named property deleter</a>, then <span class="esvalue">false</span>.</li>
+                  <li>If |O| does not implement an interface with a <a class="dfnref" href="#dfn-named-property-deleter">named property deleter</a>, then <emu-val>false</emu-val>.</li>
                   <li>Let |operation| be the operation used to declare the named property deleter.</li>
                   <li>If |operation| was defined without an <a class="dfnref" href="#dfn-identifier">identifier</a>, then:
                     <ol>
                       <li>Perform the steps listed in the interface description to
                         <a class="dfnref" href="#dfn-delete-an-existing-named-property">delete an existing named property</a>
                         with |P| as the name.</li>
-                      <li>If the steps indicated that the deletion failed, then <span class="esvalue">false</span>.</li>
+                      <li>If the steps indicated that the deletion failed, then <emu-val>false</emu-val>.</li>
                     </ol>
                   </li>
                   <li>Otherwise, |operation| was defined with an identifier:
                     <ol>
                       <li>Perform the steps listed in the description of |operation| with |P| as the only argument value.</li>
                       <li>If |operation| was declared with a <a class="dfnref" href="#dfn-return-type">return type</a> of {{boolean}}
-                        and the steps returned <span class="idlvalue">false</span>, then <span class="esvalue">false</span>.</li>
+                        and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.</li>
                     </ol>
                   </li>
-                  <li>Return <span class="esvalue">true</span>.</li>
+                  <li>Return <emu-val>true</emu-val>.</li>
                 </ol>
               </li>
 
               <li>If |O| has an own property with name |P|, then:
                 <ol>
-                  <li>If the property is not configurable, then <span class="esvalue">false</span>.</li>
+                  <li>If the property is not configurable, then <emu-val>false</emu-val>.</li>
                   <li>Otherwise, remove the property from |O|.</li>
                 </ol>
               </li>
-              <li>Return <span class="esvalue">true</span>.</li>
+              <li>Return <emu-val>true</emu-val>.</li>
             </ol>
           
 
@@ -12986,7 +12986,7 @@ C implements A;</pre>
                 |values| as the argument values.</li>
               <li>Return the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                 the return value from those actions to an ECMAScript value of the type
-                |operation| is declared to return (or <span class="esvalue">undefined</span>
+                |operation| is declared to return (or <emu-val>undefined</emu-val>
                 if |operation| is declared to return {{void}}).</li>
             </ol>
           
@@ -13090,7 +13090,7 @@ C implements A;</pre>
           <ol class="algorithm">
             <li>Let |completion| be an uninitialized variable.</li>
 
-            <li>If |thisArg| was not given, let |thisArg| be <span class="esvalue">undefined</span>.</li>
+            <li>If |thisArg| was not given, let |thisArg| be <emu-val>undefined</emu-val>.</li>
 
             <li>Let |O| be the ECMAScript object corresponding to |value|.</li>
 
@@ -13125,13 +13125,13 @@ C implements A;</pre>
             </li>
 
 
-            <li>If <a>!</a> <a>IsCallable</a>(|X|) is <span class="esvalue">false</span>,
+            <li>If <a>!</a> <a>IsCallable</a>(|X|) is <emu-val>false</emu-val>,
             then set |completion| to a new <a>Completion</a>{\[[Type]]: throw, \[[Value]]: a
             newly created <span class="estype">TypeError</span> object, \[[Target]]: empty}, and jump
             to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
             <li>If |value|'s interface is not a <a class="dfnref" href="#dfn-single-operation-callback-interface">single operation callback interface</a>,
-            or if <a>!</a> <a>IsCallable</a>(|O|) is <span class="esvalue">false</span>,
+            or if <a>!</a> <a>IsCallable</a>(|O|) is <emu-val>false</emu-val>,
             set |thisArg| to |O| (overriding the provided value).</li>
 
             <li>Let |esArgs| be an empty List of ECMAScript values.</li>
@@ -13145,7 +13145,7 @@ C implements A;</pre>
 
               <ol>
                 <li>If |arg|<sub>|i|</sub> is the special value “missing”, then
-                append <span class="esvalue">undefined</span> to |esArgs|.</li>
+                append <emu-val>undefined</emu-val> to |esArgs|.</li>
 
                 <li>
                   Otherwise, |arg|<sub>|i|</sub> is an IDL value:
@@ -13194,7 +13194,7 @@ C implements A;</pre>
                 <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
+                <a>%Promise%</a> as the <emu-val>this</emu-val> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -13247,7 +13247,7 @@ C implements A;</pre>
                 <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
+                <a>%Promise%</a> as the <emu-val>this</emu-val> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -13282,12 +13282,12 @@ C implements A;</pre>
             |convertResult| and jump to the step labeled <a href="#set-user-object-attribute-return"><i>return</i></a>.</li>
 
             <li>Set |completion| to <a>Set</a>(|O|, |attributeName|,
-            |convertResult|.\[[Value]], <span class="esvalue">true</span>).</li>
+            |convertResult|.\[[Value]], <emu-val>true</emu-val>).</li>
 
             <li>
               <i id="set-user-object-attribute-return">Return:</i> at this
               point |completion| will be set to an ECMAScript completion value, which is
-              either an abrupt completion or a normal completion for the value <span class="esvalue">true</span> (as returned by <a>Set</a>).
+              either an abrupt completion or a normal completion for the value <emu-val>true</emu-val> (as returned by <a>Set</a>).
 
               <ol>
                 <li><a>Clean up after running script</a> with |settings|.</li>
@@ -13324,12 +13324,12 @@ C implements A;</pre>
           <ol class="algorithm">
             <li>Let |completion| be an uninitialized variable.</li>
 
-            <li>If |thisArg| was not given, let |thisArg| be <span class="esvalue">undefined</span>.</li>
+            <li>If |thisArg| was not given, let |thisArg| be <emu-val>undefined</emu-val>.</li>
 
             <li>Let |F| be the ECMAScript object corresponding to |value|.</li>
 
             <li>
-              If <a>!</a> <a>IsCallable</a>(|F|) is <span class="esvalue">false</span>:
+              If <a>!</a> <a>IsCallable</a>(|F|) is <emu-val>false</emu-val>:
 
               <ol>
                 <li>
@@ -13342,7 +13342,7 @@ C implements A;</pre>
                   </div>
                 </li>
 
-                <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> <span class="esvalue">undefined</span> to the callback function's return type.</li>
+                <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> <emu-val>undefined</emu-val> to the callback function's return type.</li>
               </ol>
             </li>
 
@@ -13364,7 +13364,7 @@ C implements A;</pre>
 
               <ol>
                 <li>If |arg|<sub>|i|</sub> is the special value “missing”, then
-                append <span class="esvalue">undefined</span> to |esArgs|.</li>
+                append <emu-val>undefined</emu-val> to |esArgs|.</li>
 
                 <li>
                   Otherwise, |arg|<sub>|i|</sub> is an IDL value:
@@ -13414,7 +13414,7 @@ C implements A;</pre>
                 <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
 
                 <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
+                <a>%Promise%</a> as the <emu-val>this</emu-val> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
                 <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -13433,7 +13433,7 @@ C implements A;</pre>
             <dfn id="dfn-DOMException-constructor-object" for="DOMException" export="">DOMException constructor object</dfn>,
             which provides access to legacy DOMException code constants and allows construction of
             DOMException instances.
-            The property has the attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
+            The property has the attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
           </p>
 
           
@@ -13447,12 +13447,12 @@ C implements A;</pre>
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
               there must be a property on the DOMException constructor object
               whose name and value are as indicated in the table.  The property has
-              attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.
+              attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.
             </p>
             <p>
               The DOMException constructor object must also have a property named
               “prototype” with attributes
-              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
               whose value is an object called the <dfn id="dfn-DOMException-prototype-object" for="DOMException" export="">DOMException prototype object</dfn>.
               This object also provides access to the legacy code values.
             </p>
@@ -13464,18 +13464,18 @@ C implements A;</pre>
 
               <ol class="algorithm">
                 <li>Let |F| be the active function object.</li>
-                <li>If NewTarget is <span class="esvalue">undefined</span>, let |newTarget| be |F|, else let |newTarget| be NewTarget.</li>
+                <li>If NewTarget is <emu-val>undefined</emu-val>, let |newTarget| be |F|, else let |newTarget| be NewTarget.</li>
                 <li>Let |super| be |F|.\[[GetPrototypeOf]]().</li>
                 <li><a>ReturnIfAbrupt</a>(|super|).</li>
-                <li>If <a>IsConstructor</a>(|super|) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
+                <li>If <a>IsConstructor</a>(|super|) is <emu-val>false</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li>
                 <li>Let |O| be <a>Construct</a>(|super|, «|message|», |newTarget|).</li>
-                <li>If |name| is not <span class="esvalue">undefined</span>, then
+                <li>If |name| is not <emu-val>undefined</emu-val>, then
                   <ol>
                     <li>Let |name| be <a>ToString</a>(|name|).</li>
-                    <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                    <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val>}</span>).</li>
                     <li><a>ReturnIfAbrupt</a>(|status|).</li>
-                    <li>Let |code| be the legacy code indicated in the <a class="dfnref" href="#dfn-error-names-table">error names table</a> for error name |name|, or <span class="esvalue">0</span> if there is none.</li>
-                    <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                    <li>Let |code| be the legacy code indicated in the <a class="dfnref" href="#dfn-error-names-table">error names table</a> for error name |name|, or <emu-val>0</emu-val> if there is none.</li>
+                    <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val>}</span>).</li>
                     <li><a>ReturnIfAbrupt</a>(|status|).</li>
                   </ol>
                 </li>
@@ -13499,14 +13499,14 @@ C implements A;</pre>
             <p>
               There must be a property named “constructor”
               on the DOMException prototype object with attributes
-              <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
+              <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
               and whose value is the <a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor object</a>.
             </p>
             <p>
               For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
               there must be a property on the DOMException prototype object
               whose name and value are as indicated in the table.  The property has
-              attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.
+              attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.
             </p>
           
         
@@ -13562,7 +13562,7 @@ C implements A;</pre>
           <ol class="algorithm">
             <li>
               Let |F| be the <span class="estype">Function</span> object used
-              as the <span class="esvalue">this</span> value in the top-most call
+              as the <emu-val>this</emu-val> value in the top-most call
               on the ECMAScript call stack where |F| corresponds to an IDL
               <a class="dfnref" href="#dfn-attribute">attribute</a>,
               <a class="dfnref" href="#dfn-operation">operation</a>,
@@ -13603,12 +13603,12 @@ C implements A;</pre>
             the following steps must be followed:
           </p>
           <ol class="algorithm">
-            <li>If |M| was not specified, let |M| be <span class="esvalue">undefined</span>. Otherwise, let it be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |M| to a <span class="estype">String</span> value.</li>
+            <li>If |M| was not specified, let |M| be <emu-val>undefined</emu-val>. Otherwise, let it be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |M| to a <span class="estype">String</span> value.</li>
             <li>Let |N| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |N| to a <span class="estype">String</span> value.</li>
             <li>Let |args| be a list of ECMAScript values.
               <dl class="switch">
                 <dt>|E| is <a class="dfnref" href="#dfn-DOMException">DOMException</a></dt>
-                <dd>|args| is (<span class="esvalue">undefined</span>, |N|).</dd>
+                <dd>|args| is (<emu-val>undefined</emu-val>, |N|).</dd>
                 <dt>|E| is a <a class="dfnref" href="#dfn-simple-exception">simple exception</a></dt>
                 <dd>|args| is (|M|)</dd>
               </dl>
@@ -13697,8 +13697,8 @@ try {
           <p>
             None of the algorithms or processing requirements in the
             ECMAScript language binding catch ECMAScript exceptions.  Whenever
-            an ECMAScript <span class="esvalue">Function</span> is invoked due
-            to requirements in this section and that <span class="esvalue">Function</span>
+            an ECMAScript <emu-val>Function</emu-val> is invoked due
+            to requirements in this section and that <emu-val>Function</emu-val>
             ends due to an exception being thrown, that exception
             must propagate to the caller, and if
             not caught there, to its caller, and so on.
@@ -14727,10 +14727,10 @@ d.type = et;
               <li>
                 <p>
                   Allowed all operation arguments to be specified as being optional and
-                  changed back to the behavior of <span class="esvalue">undefined</span>
+                  changed back to the behavior of <emu-val>undefined</emu-val>
                   being treated as a missing optional argument value.  Modified the
                   effective overload set and overload resolution algorithms to
-                  take this into account, as well as allowing an <span class="esvalue">undefined</span>
+                  take this into account, as well as allowing an <emu-val>undefined</emu-val>
                   value passed as the argument value at the distinguishing index to select the overload
                   with an optional argument at that index.
                   Also removed <span class="xattr">[TreatUndefinedAs=Missing]</span>.
@@ -14739,7 +14739,7 @@ d.type = et;
               <li>
                 <p>
                   Changed the ECMAScript to IDL dictionary conversion algorithm
-                  to treat a property with the value <span class="esvalue">undefined</span>
+                  to treat a property with the value <emu-val>undefined</emu-val>
                   as missing.
                 </p>
               </li>
@@ -14815,7 +14815,7 @@ d.type = et;
               <li>
                 <p>
                   Made attribute setters throw if no argument was passed to them, instead of
-                  assuming <span class="esvalue">undefined</span>.
+                  assuming <emu-val>undefined</emu-val>.
                 </p>
               </li>
               <li>
