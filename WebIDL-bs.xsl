@@ -24,6 +24,7 @@ Title: </xsl:text><xsl:value-of select='//h:title'/>
 Shortname: WebIDL
 Level: 2
 Status: ED
+Group: webplatform
 ED: https://heycam.github.io/webidl/
 TR: </xsl:text>
   <xsl:if test='$options/x:versions/x:latest/@href != ""'>

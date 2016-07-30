@@ -8,6 +8,7 @@ Title: Web IDL (Second Edition)
 Shortname: WebIDL
 Level: 2
 Status: ED
+Group: webplatform
 ED: https://heycam.github.io/webidl/
 TR: http://www.w3.org/TR/WebIDL/
 Previous Version: http://www.w3.org/TR/2012/CR-WebIDL-20120419/
