@@ -404,7 +404,7 @@ interface GraphicalWindow {
           </p>
           
           <p>
-            The <a class="xattr" href="#Constructor">[Constructor]</a> that appears on <span class="idltype">GraphicalWindow</span>
+            The <a extended-attribute="">[Constructor]</a> that appears on <span class="idltype">GraphicalWindow</span>
             is an <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.
             This extended attribute causes a constructor to exist in ECMAScript implementations,
             so that calling <code>new GraphicalWindow()</code> would return a new object
@@ -890,22 +890,22 @@ partial interface <em>SomeInterface</em> {
             <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions, with some
             limitations.  The following extended attributes must not
             be specified on partial interface definitions:
-            <a class="xattr" href="#Constructor">[Constructor]</a>,
-            <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>,
+            <a extended-attribute="">[Constructor]</a>,
+            <a extended-attribute="">[ImplicitThis]</a>,
             
-            <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
-            <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
-            <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>.
+            <a extended-attribute="">[LegacyArrayClass]</a>,
+            <a extended-attribute="">[NamedConstructor]</a>,
+            <a extended-attribute="">[NoInterfaceObject]</a>.
           </p>
               Note: The above list of <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               is all of those defined in this document that are applicable to
               <a class="dfnref" href="#dfn-interface">interfaces</a> except for
-              <a class="xattr" href="#Exposed">[Exposed]</a>,
-              <a class="xattr" href="#Global">[Global]</a>,
-              <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>,
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>,
-              <a class="xattr" href="#SecureContext">[SecureContext]</a> and
-              <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
+              <a extended-attribute="">[Exposed]</a>,
+              <a extended-attribute="">[Global]</a>,
+              <a extended-attribute="">[OverrideBuiltins]</a>,
+              <a extended-attribute="">[PrimaryGlobal]</a>,
+              <a extended-attribute="">[SecureContext]</a> and
+              <a extended-attribute="">[Unforgeable]</a>.
           <p>
             Any <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> specified
             on a <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definition
@@ -920,18 +920,18 @@ partial interface <em>SomeInterface</em> {
 
           <p>
             The following extended attributes are applicable to interfaces:
-            <a class="xattr" href="#Constructor">[Constructor]</a>,
-            <a class="xattr" href="#Exposed">[Exposed]</a>,
-            <a class="xattr" href="#Global">[Global]</a>,
-            <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>,
+            <a extended-attribute="">[Constructor]</a>,
+            <a extended-attribute="">[Exposed]</a>,
+            <a extended-attribute="">[Global]</a>,
+            <a extended-attribute="">[ImplicitThis]</a>,
             
-            <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
-            <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
-            <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>,
-            <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>,
-            <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>,
-            <a class="xattr" href="#SecureContext">[SecureContext]</a>,
-            <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
+            <a extended-attribute="">[LegacyArrayClass]</a>,
+            <a extended-attribute="">[NamedConstructor]</a>,
+            <a extended-attribute="">[NoInterfaceObject]</a>,
+            <a extended-attribute="">[OverrideBuiltins]</a>,
+            <a extended-attribute="">[PrimaryGlobal]</a>,
+            <a extended-attribute="">[SecureContext]</a>,
+            <a extended-attribute="">[Unforgeable]</a>.
           </p>
 
           <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
@@ -1206,8 +1206,8 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             </div>
             <p>
               The following extended attributes are applicable to constants:
-              <a class="xattr" href="#Exposed">[Exposed]</a>,
-              <a class="xattr" href="#SecureContext">[SecureContext]</a>.
+              <a extended-attribute="">[Exposed]</a>,
+              <a extended-attribute="">[SecureContext]</a>.
             </p>
 
             <table class="grammar"><tr id="proddef-Const"><td><span class="prod-number">[26]</span></td><td><a class="sym" href="#prod-Const">Const</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"const" <a class="sym" href="#prod-ConstType">ConstType</a> <a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ConstValue">ConstValue</a> ";"</span></td></tr><tr id="proddef-ConstValue"><td><span class="prod-number">[27]</span></td><td><a class="sym" href="#prod-ConstValue">ConstValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a> <br/> |
@@ -1349,22 +1349,22 @@ interface <i>Derived</i> : <i>Ancestor</i> {
             <p>
               The following <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               are applicable to regular and static attributes:
-              <a class="xattr" href="#Clamp">[Clamp]</a>,
-              <a class="xattr" href="#EnforceRange">[EnforceRange]</a>,
-              <a class="xattr" href="#Exposed">[Exposed]</a>,
-              <a class="xattr" href="#SameObject">[SameObject]</a>,
-              <a class="xattr" href="#SecureContext">[SecureContext]</a>,
-              <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>.
+              <a extended-attribute="">[Clamp]</a>,
+              <a extended-attribute="">[EnforceRange]</a>,
+              <a extended-attribute="">[Exposed]</a>,
+              <a extended-attribute="">[SameObject]</a>,
+              <a extended-attribute="">[SecureContext]</a>,
+              <a extended-attribute="">[TreatNullAs]</a>.
             </p>
 
             <p>
               The following <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               are applicable only to regular attributes:
-              <a class="xattr" href="#LenientSetter">[LenientSetter]</a>,
-              <a class="xattr" href="#LenientThis">[LenientThis]</a>,
-              <a class="xattr" href="#PutForwards">[PutForwards]</a>,
-              <a class="xattr" href="#Replaceable">[Replaceable]</a>,
-              <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
+              <a extended-attribute="">[LenientSetter]</a>,
+              <a extended-attribute="">[LenientThis]</a>,
+              <a extended-attribute="">[PutForwards]</a>,
+              <a extended-attribute="">[Replaceable]</a>,
+              <a extended-attribute="">[Unforgeable]</a>.
             </p>
 
             <table class="grammar"><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
@@ -1549,8 +1549,8 @@ interface Button {
             <p>
               <a class="dfnref" href="#dfn-extended-attribute">Extended attributes</a>
               that <a class="dfnref" href="#dfn-xattr-argument-list">take an argument list</a>
-              (<a class="xattr" href="#Constructor">[Constructor]</a> and
-              <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>, of those
+              (<a extended-attribute="">[Constructor]</a> and
+              <a extended-attribute="">[NamedConstructor]</a>, of those
               defined in this specification) and <a class="dfnref" href="#dfn-callback-function">callback functions</a>
               are also considered to be <a class="dfnref" href="#dfn-variadic">variadic</a>
               when the <code>...</code> token is used in their argument lists.
@@ -1719,17 +1719,17 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             <p>
               The following extended attributes
               are applicable to operations:
-              <a class="xattr" href="#Exposed">[Exposed]</a>,
-              <a class="xattr" href="#NewObject">[NewObject]</a>,
-              <a class="xattr" href="#SecureContext">[SecureContext]</a>,
-              <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>,
-              <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
+              <a extended-attribute="">[Exposed]</a>,
+              <a extended-attribute="">[NewObject]</a>,
+              <a extended-attribute="">[SecureContext]</a>,
+              <a extended-attribute="">[TreatNullAs]</a>,
+              <a extended-attribute="">[Unforgeable]</a>.
             </p>
             <p>
               The following extended attributes are applicable to operation arguments:
-              <a class="xattr" href="#Clamp">[Clamp]</a>,
-              <a class="xattr" href="#EnforceRange">[EnforceRange]</a>,
-              <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>.
+              <a extended-attribute="">[Clamp]</a>,
+              <a extended-attribute="">[EnforceRange]</a>,
+              <a extended-attribute="">[TreatNullAs]</a>.
             </p>
 
             <table class="grammar"><tr id="proddef-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#prod-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br/> |
@@ -2817,8 +2817,8 @@ partial interface A {
 partial interface A {
   void g(DOMString x);
 };</pre>
-              <p>Note that the <a class="xattr" href="#Constructor">[Constructor]</a> and
-                <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              <p>Note that the <a extended-attribute="">[Constructor]</a> and
+                <a extended-attribute="">[NamedConstructor]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a> are disallowed from appearing
                 on <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions,
                 so there is no need to also disallow overloading for constructors.</p>
@@ -2827,8 +2827,8 @@ partial interface A {
               An <dfn id="dfn-effective-overload-set" export="">effective overload set</dfn>
               represents the allowable invocations for a particular
               <a class="dfnref" href="#dfn-operation">operation</a>,
-              constructor (specified with <a class="xattr" href="#Constructor">[Constructor]</a>
-              or <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>),
+              constructor (specified with <a extended-attribute="">[Constructor]</a>
+              or <a extended-attribute="">[NamedConstructor]</a>),
               <a class="dfnref" href="#dfn-legacy-caller">legacy caller</a> or
               <a class="dfnref" href="#dfn-callback-function">callback function</a>.
               The algorithm to compute an <a class="dfnref" href="#dfn-effective-overload-set">effective overload set</a>
@@ -3488,8 +3488,8 @@ for (let session of sm) {
             </p>
             <p>
               The following extended attributes are applicable to <a class="dfnref" href="#dfn-iterable-declaration">iterable declarations</a>:
-              <a class="xattr" href="#Exposed">[Exposed]</a>,
-              <a class="xattr" href="#SecureContext">[SecureContext]</a>.
+              <a extended-attribute="">[Exposed]</a>,
+              <a extended-attribute="">[SecureContext]</a>.
             </p>
             
 
@@ -3892,14 +3892,14 @@ something.f(dict);</pre>
           </p>
           <p>
             The following extended attributes are applicable to dictionaries:
-            <a class="xattr" href="#Constructor">[Constructor]</a>,
-            <a class="xattr" href="#Exposed">[Exposed]</a>,
-            <a class="xattr" href="#SecureContext">[SecureContext]</a>,
+            <a extended-attribute="">[Constructor]</a>,
+            <a extended-attribute="">[Exposed]</a>,
+            <a extended-attribute="">[SecureContext]</a>,
           </p>
           <p>
             The following extended attributes are applicable to dictionary members:
-            <a class="xattr" href="#Clamp">[Clamp]</a>,
-            <a class="xattr" href="#EnforceRange">[EnforceRange]</a>.
+            <a extended-attribute="">[Clamp]</a>,
+            <a extended-attribute="">[EnforceRange]</a>.
           </p>
           <table class="grammar"><tr><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#prod-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br/> |
              <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="proddef-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#prod-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="proddef-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br/> |
@@ -4352,7 +4352,7 @@ meal.type == "noodles";              // Evaluates to true.</pre>
           </p>
           <p>
             The following extended attribute is applicable to callback functions:
-            <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>.
+            <a extended-attribute="">[TreatNonObjectAsNull]</a>.
           </p>
 
           <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
@@ -6204,9 +6204,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6218,9 +6218,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6257,9 +6257,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6271,9 +6271,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6310,9 +6310,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6324,9 +6324,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6364,9 +6364,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6378,9 +6378,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6415,9 +6415,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6429,9 +6429,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6466,9 +6466,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6480,9 +6480,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6517,9 +6517,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6531,9 +6531,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6575,9 +6575,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6589,9 +6589,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
-                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> annotated with the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
+                  <li>|V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a> argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
+                  <li>|V| is being used as the value of a <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6804,19 +6804,19 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ul>
                   <li>
                     |V| is being passed as an <a class="dfnref" href="#dfn-operation">operation</a>
-                    argument that is annotated with <a class="xattr" href="#TreatNullAs">[TreatNullAs=EmptyString]</a>,
+                    argument that is annotated with <a extended-attribute="">[TreatNullAs]</a>,
                   </li>
                   <li>
                     |V| is being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
-                    annotated with <a class="xattr" href="#TreatNullAs">[TreatNullAs=EmptyString]</a>,
+                    annotated with <a extended-attribute="">[TreatNullAs]</a>,
                   </li>
                   <li>
                     |V| is being returned from a <a class="dfnref" href="#dfn-user-object">user object</a> implementation of an
-                    operation annotated with <a class="xattr" href="#TreatNullAs">[TreatNullAs=EmptyString]</a>, or
+                    operation annotated with <a extended-attribute="">[TreatNullAs]</a>, or
                   </li>
                   <li>
                     |V| is being returned from a <a class="dfnref" href="#dfn-user-object">user object</a> implementation of an
-                    attribute annotated with <a class="xattr" href="#TreatNullAs">[TreatNullAs=EmptyString]</a>,
+                    attribute annotated with <a extended-attribute="">[TreatNullAs]</a>,
                   </li>
                 </ul>
                 then return the {{DOMString}}
@@ -7074,7 +7074,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 
             <p>
               IDL <a href="#idl-callback-function">callback function types</a> are represented by ECMAScript <span class="estype">Function</span>
-              objects, except in the <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a> case,
+              objects, except in the <a extended-attribute="">[TreatNonObjectAsNull]</a> case,
               when they can be any object.
             </p>
             <p id="es-to-callback-function">
@@ -7089,7 +7089,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 to |V| being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
                 whose type is a <a class="dfnref" href="#dfn-nullable-type">nullable</a>
                 <a class="dfnref" href="#dfn-callback-function">callback function</a>
-                that is annotated with <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>,
+                that is annotated with <a extended-attribute="">[TreatNonObjectAsNull]</a>,
               then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a>.</li>
               <li>Return the IDL <a href="#idl-callback-function">callback
               function type</a> value that represents a reference to the same
@@ -7126,7 +7126,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 to |V| being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
                 whose type is a <a class="dfnref" href="#dfn-nullable-type">nullable</a>
                 <a class="dfnref" href="#dfn-callback-function">callback function</a>
-                that is annotated with <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>,
+                that is annotated with <a extended-attribute="">[TreatNonObjectAsNull]</a>,
                 then return the IDL
                 <a class="dfnref" href="#dfn-nullable-type">nullable type</a> <span class="idltype">|T|?</span>
                 value <span class="idlvalue">null</span>.
@@ -7890,7 +7890,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <h4 id="Clamp">[Clamp]</h4>
 
             <p>
-              If the <a class="xattr" href="#Clamp">[Clamp]</a>
+              If the <a extended-attribute="">[Clamp]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-operation">operation</a> argument,
               writable <a class="dfnref" href="#dfn-attribute">attribute</a> or
@@ -7902,23 +7902,23 @@ alert(b[4]);    // This would alert "50".</pre>
               (<a>ToInt32</a>, <a>ToUint32</a>, etc.).
             </p>
             <p>
-              The <a class="xattr" href="#Clamp">[Clamp]</a>
+              The <a extended-attribute="">[Clamp]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Clamp">[Clamp]</a> extended attribute
+              The <a extended-attribute="">[Clamp]</a> extended attribute
               must not appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
               attribute, or an attribute, operation argument or dictionary member
               that is not of an integer type.  It also must not
-              be used in conjunction with the <a class="xattr" href="#EnforceRange">[EnforceRange]</a>
+              be used in conjunction with the <a extended-attribute="">[EnforceRange]</a>
               extended attribute.
             </p>
             <p>
               See the rules for converting ECMAScript values to the various IDL integer
               types in [[#es-type-mapping]]
               for the specific requirements that the use of
-              <a class="xattr" href="#Clamp">[Clamp]</a> entails.
+              <a extended-attribute="">[Clamp]</a> entails.
             </p>
 
             <div class="example">
@@ -7926,7 +7926,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
                 take three {{octet}} arguments; one uses
-                the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
+                the <a extended-attribute="">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 on all three arguments, while the other does not:
               </p>
               <pre class="idl-example">interface GraphicsContext {
@@ -7955,7 +7955,7 @@ context.setColorClamped(-1, 255, 257);</pre>
             <h4 id="Constructor">[Constructor]</h4>
 
             <p>
-              If the <a class="xattr" href="#Constructor">[Constructor]</a>
+              If the <a extended-attribute="">[Constructor]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>, it indicates that
               the <a class="dfnref" href="#dfn-interface-object">interface object</a> for this interface
@@ -7963,33 +7963,33 @@ context.setColorClamped(-1, 255, 257);</pre>
               allowing objects implementing the interface to be constructed.
             </p>
             <p>
-              Multiple <a class="xattr" href="#Constructor">[Constructor]</a> extended
+              Multiple <a extended-attribute="">[Constructor]</a> extended
               attributes may appear on a given interface.
             </p>
             <p>
-              The <a class="xattr" href="#Constructor">[Constructor]</a>
+              The <a extended-attribute="">[Constructor]</a>
               extended attribute must either
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a> or
               <a class="dfnref" href="#dfn-xattr-argument-list">take an argument list</a>.
               The bare form, <code>[Constructor]</code>, has the same meaning as
               using an empty argument list, <code>[Constructor()]</code>.  For each
-              <a class="xattr" href="#Constructor">[Constructor]</a> extended attribute
+              <a extended-attribute="">[Constructor]</a> extended attribute
               on the interface, there will be a way to construct an object that implements
               the interface by passing the specified arguments.
             </p>
             <p>
               The prose definition of a constructor must
               either return an IDL value of a type corresponding to the interface
-              the <a class="xattr" href="#Constructor">[Constructor]</a>
+              the <a extended-attribute="">[Constructor]</a>
               extended attribute appears on, or throw an exception.
             </p>
             <p>
-              The <a class="xattr" href="#Constructor">[Constructor]</a> and
-              <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
+              The <a extended-attribute="">[Constructor]</a> and
+              <a extended-attribute="">[NoInterfaceObject]</a>
               extended attributes must not be specified on the same interface.
             </p>
             <p>
-              The <a class="xattr" href="#Constructor">[Constructor]</a> extended attribute
+              The <a extended-attribute="">[Constructor]</a> extended attribute
               must not be used on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             </p>
             <p>
@@ -8000,7 +8000,7 @@ context.setColorClamped(-1, 255, 257);</pre>
             <div class="example">
               <p>
                 The following IDL defines two interfaces.  The second has the
-                <a class="xattr" href="#Constructor">[Constructor]</a> extended
+                <a extended-attribute="">[Constructor]</a> extended
                 attribute, while the first does not.
               </p>
               <pre class="idl-example">interface NodeList {
@@ -8041,7 +8041,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
             <h4 id="EnforceRange">[EnforceRange]</h4>
 
             <p>
-              If the <a class="xattr" href="#EnforceRange">[EnforceRange]</a>
+              If the <a extended-attribute="">[EnforceRange]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-operation">operation</a> argument,
               writable <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a> or
@@ -8054,24 +8054,24 @@ var z = new NodeList();    // This would throw a TypeError, since no
               will be rounded towards zero before being checked against its range.
             </p>
             <p>
-              The <a class="xattr" href="#EnforceRange">[EnforceRange]</a>
+              The <a extended-attribute="">[EnforceRange]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#EnforceRange">[EnforceRange]</a> extended attribute
+              The <a extended-attribute="">[EnforceRange]</a> extended attribute
               must not appear on a <a class="dfnref" href="#dfn-read-only">read only</a>
               attribute, a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>,
               or an attribute, operation argument or dictionary member
               that is not of an integer type.  It also must not
-              be used in conjunction with the <a class="xattr" href="#Clamp">[Clamp]</a>
+              be used in conjunction with the <a extended-attribute="">[Clamp]</a>
               extended attribute.
             </p>
             <p>
               See the rules for converting ECMAScript values to the various IDL integer
               types in [[#es-type-mapping]]
               for the specific requirements that the use of
-              <a class="xattr" href="#EnforceRange">[EnforceRange]</a> entails.
+              <a extended-attribute="">[EnforceRange]</a> entails.
             </p>
 
             <div class="example">
@@ -8079,7 +8079,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
                 In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
                 take three {{octet}} arguments; one uses
-                the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
+                the <a extended-attribute="">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 on all three arguments, while the other does not:
               </p>
               <pre class="idl-example">interface GraphicsContext {
@@ -8112,7 +8112,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
           
             <h4 id="Exposed">[Exposed]</h4>
             <p>
-              If the <a class="xattr" href="#Exposed">[Exposed]</a>
+              If the <a extended-attribute="">[Exposed]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               <a class="dfnref" href="#dfn-partial-interface">partial interface</a>, or
@@ -8122,7 +8122,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               being exposed only on the <a class="dfnref" href="#dfn-primary-global-interface">primary global interface</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Exposed">[Exposed]</a>
+              The <a extended-attribute="">[Exposed]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               must either
               <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a> or
@@ -8131,7 +8131,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               a <a class="dfnref" href="#dfn-global-name">global name</a>.
             </p>
             <p>
-              Every construct that the <a class="xattr" href="#Exposed">[Exposed]</a>
+              Every construct that the <a extended-attribute="">[Exposed]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               can be specified on has an <dfn id="dfn-exposure-set" export="">exposure set</dfn>,
               which is a set of <a class="dfnref" href="#dfn-interface">interfaces</a>
@@ -8141,14 +8141,14 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
             </p>
             <ul>
               <li>
-                <p>If the <a class="xattr" href="#Exposed">[Exposed]</a>
+                <p>If the <a extended-attribute="">[Exposed]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 is specified on the construct, then the <a class="dfnref" href="#dfn-exposure-set">exposure set</a>
                 is the set of all interfaces that have a <a class="dfnref" href="#dfn-global-name">global name</a>
                 that is listed in the extended attribute's argument.</p>
               </li>
               <li>
-                <p>If the <a class="xattr" href="#Exposed">[Exposed]</a>
+                <p>If the <a extended-attribute="">[Exposed]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 does not appear on a construct, then its
                 <a class="dfnref" href="#dfn-exposure-set">exposure set</a> is defined
@@ -8170,17 +8170,17 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               </li>
             </ul>
             <p>
-              If <a class="xattr" href="#Exposed">[Exposed]</a> appears on an
+              If <a extended-attribute="">[Exposed]</a> appears on an
               <a class="dfnref" href="#dfn-overloaded">overloaded</a> <a class="dfnref" href="#dfn-operation">operation</a>,
               then it must appear identically on all overloads.
             </p>
             <p>
-              The <a class="xattr" href="#Exposed">[Exposed]</a> extended attribute
+              The <a extended-attribute="">[Exposed]</a> extended attribute
               must not be specified on both an interface
               member and a partial interface definition the interface member is declared on.
             </p>
             <p>
-              If <a class="xattr" href="#Exposed">[Exposed]</a> appears on both an interface
+              If <a extended-attribute="">[Exposed]</a> appears on both an interface
               and one of its interface members, then the interface member's
               <a class="dfnref" href="#dfn-exposure-set">exposure set</a>
               must be a subset of the interface's
@@ -8230,10 +8230,10 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               [[#es-operations]] and
               [[#es-iterators]]
               for the specific requirements that the use of
-              <a class="xattr" href="#Exposed">[Exposed]</a> entails.
+              <a extended-attribute="">[Exposed]</a> entails.
             </p>
             <div class="example">
-              <p><a class="xattr" href="#Exposed">[Exposed]</a>
+              <p><a extended-attribute="">[Exposed]</a>
               is intended to be used to control whether interfaces or individual interface
               members are available for use only in workers, only in the <span class="idltype">Window</span>,
               or in both.</p>
@@ -8281,7 +8281,7 @@ interface Node {
           
             <h4 id="ImplicitThis">[ImplicitThis]</h4>
             <p>
-              If the <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
+              If the <a extended-attribute="">[ImplicitThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that when a <span class="estype">Function</span> corresponding
@@ -8292,16 +8292,16 @@ interface Node {
               This is regardless of whether the calling code is in strict mode.
             </p>
             <p>
-              The <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
+              The <a extended-attribute="">[ImplicitThis]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
               See [[#es-operations]]
               for the specific requirements that the use of
-              <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> entails.
+              <a extended-attribute="">[ImplicitThis]</a> entails.
             </p>
-                Note: The <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
+                Note: The <a extended-attribute="">[ImplicitThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               is intended for use on the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> as defined
@@ -8309,7 +8309,7 @@ interface Node {
             <div class="example">
               <p>In the following example, the <span class="idltype">Window</span>
               <a class="dfnref" href="#dfn-interface">interface</a> is defined
-              with the <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>
+              with the <a extended-attribute="">[ImplicitThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.</p>
               <pre class="idl-example">[ImplicitThis]
 interface Window {
@@ -8336,8 +8336,8 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
             <h4 oldids="PrimaryGlobal" id="Global">[Global] and [PrimaryGlobal]</h4>
 
             <p>
-              If the <a class="xattr" href="#Global">[Global]</a>
-              or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              If the <a extended-attribute="">[Global]</a>
+              or <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that objects implementing this interface can
@@ -8385,28 +8385,28 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               </p>
             </div>
             <p>
-              If the <a class="xattr" href="#Global">[Global]</a> or
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              If the <a extended-attribute="">[Global]</a> or
+              <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               is used on an <a class="dfnref" href="#dfn-interface">interface</a>, then:
             </p>
             <ul>
               <li>The interface must not define a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a>.</li>
-              <li>The interface must not also be declared with the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+              <li>The interface must not also be declared with the <a extended-attribute="">[OverrideBuiltins]</a>
                 extended attribute.</li>
               <li>The interface must not <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface with the
-                <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a> extended attribute.</li>
+                <a extended-attribute="">[OverrideBuiltins]</a> extended attribute.</li>
               <li>Any other interface must not <a class="dfnref" href="#dfn-inherit">inherit</a> from it.</li>
             </ul>
             <p>
-              If <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> is specified on
+              If <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> is specified on
               a <a class="dfnref" href="#dfn-partial-interface">partial interface</a>
               definition, then that partial interface definition must
               be the part of the interface definition that defines
               the <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Global">[Global]</a> and <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              The <a extended-attribute="">[Global]</a> and <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> must not
               be used on an <a class="dfnref" href="#dfn-interface">interface</a> that can have more
               than one object implementing it in the same ECMAScript global environment.
@@ -8416,8 +8416,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 sense for more than one object’s named properties to be exposed on an object that
                 all of those objects inherit from.
             <p>
-              If an interface is declared with the <a class="xattr" href="#Global">[Global]</a> or
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              If an interface is declared with the <a extended-attribute="">[Global]</a> or
+              <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, then
               there must not be more than one
               <a class="dfnref" href="#dfn-interface-member">interface member</a> across
@@ -8434,38 +8434,38 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 Note: This is because all of the members of the interface and its consequential
               interfaces get flattened down on to the object that implements the interface.
             <p>
-              The <a class="xattr" href="#Global">[Global]</a> and
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attributes
+              The <a extended-attribute="">[Global]</a> and
+              <a extended-attribute="">[PrimaryGlobal]</a> extended attributes
               can also be used to give a name to one or more global interfaces,
-              which can then be referenced by the <a class="xattr" href="#Exposed">[Exposed]</a>
+              which can then be referenced by the <a extended-attribute="">[Exposed]</a>
               extended attribute.
             </p>
             <p>
-              The <a class="xattr" href="#Global">[Global]</a> and
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              The <a extended-attribute="">[Global]</a> and
+              <a extended-attribute="">[PrimaryGlobal]</a>
               extended attributes must either
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>
               or <a class="dfnref" href="#dfn-xattr-identifier-list">take an identifier list</a>.
             </p>
             <p>
-              If the <a class="xattr" href="#Global">[Global]</a> or
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              If the <a extended-attribute="">[Global]</a> or
+              <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               is declared with an identifier list argument, then those identifiers are the interface’s
               <dfn id="dfn-global-name" export="">global names</dfn>; otherwise, the interface has
               a single global name, which is the interface's identifier.
             </p>
                 Note: The identifier argument list exists so that more than one global interface can
-                be addressed with a single name in an <a class="xattr" href="#Exposed">[Exposed]</a>
+                be addressed with a single name in an <a extended-attribute="">[Exposed]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.
             <p>
-              The <a class="xattr" href="#Global">[Global]</a> and
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              The <a extended-attribute="">[Global]</a> and
+              <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               must not be declared on the same
-              interface.  The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              interface.  The <a extended-attribute="">[PrimaryGlobal]</a>
               extended attribute must be declared on
-              at most one interface.  The interface <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              at most one interface.  The interface <a extended-attribute="">[PrimaryGlobal]</a>
               is declared on, if any, is known as the <dfn id="dfn-primary-global-interface" export="">primary global interface</dfn>.
             </p>
             <p>
@@ -8473,7 +8473,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               [[#getownproperty]] and
               [[#defineownproperty]]
               for the specific requirements that the use of
-              <a class="xattr" href="#Global">[Global]</a> and <a class="xattr" href="#Global">[PrimaryGlobal]</a>
+              <a extended-attribute="">[Global]</a> and <a extended-attribute="">[PrimaryGlobal]</a>
               entails for named properties,
               and [[#es-constants]],
               [[#es-attributes]] and
@@ -8483,10 +8483,10 @@ var requestAnimationFrame = window.requestAnimationFrame ||
             </p>
             <div class="example">
               <p>
-                The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+                The <a extended-attribute="">[PrimaryGlobal]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> is intended
                 to be used by the <span class="idltype">Window</span> interface as defined in
-                HTML5 ([[HTML5]], section 5.2).  (<a class="xattr" href="#Global">[Global]</a>
+                HTML5 ([[HTML5]], section 5.2).  (<a extended-attribute="">[Global]</a>
                 is intended to be used by worker global interfaces.)
                 The <span class="idltype">Window</span> interface exposes frames as properties on the <span class="idltype">Window</span>
                 object.  Since the <span class="idltype">Window</span> object also serves as the
@@ -8536,7 +8536,7 @@ interface Window {
             <h4 id="LegacyArrayClass">[LegacyArrayClass]</h4>
 
             <p>
-              If the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
+              If the <a extended-attribute="">[LegacyArrayClass]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>
               that is not defined to <a class="dfnref" href="#dfn-inherit">inherit</a>
@@ -8548,12 +8548,12 @@ interface Window {
               with objects implementing the interface.
             </p>
             <p>
-              The <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> extended attribute
+              The <a extended-attribute="">[LegacyArrayClass]</a> extended attribute
               must <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
               It must not be used on an interface that
               has any <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>.
             </p>
-                Note: Interfaces using <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> will
+                Note: Interfaces using <a extended-attribute="">[LegacyArrayClass]</a> will
                 need to define a “length” <a class="dfnref" href="#dfn-attribute">attribute</a>
                 of type <span class="estype">unsigned long</span> that exposes the length
                 of the array-like object, in order for the inherited <span class="estype">Array</span>
@@ -8563,14 +8563,14 @@ interface Window {
               
             <p>
               See [[#interface-prototype-object]] for the
-              specific requirements that the use of <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
+              specific requirements that the use of <a extended-attribute="">[LegacyArrayClass]</a>
               entails.
             </p>
             <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines two <a class="dfnref" href="#dfn-interface">interfaces</a>
-                that use <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>.
+                that use <a extended-attribute="">[LegacyArrayClass]</a>.
               </p>
               <pre class="idl-example">[LegacyArrayClass]
 interface ItemList {
@@ -8612,28 +8612,28 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             <h4 id="LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</h4>
 
             <p>
-              If the <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+              If the <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-interface">interface</a>
               that <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
               it indicates that all the interface's named properties are unenumerable.
             </p>
             <p>
-              The <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+              The <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>
               and must not appear on an interface
               that does not define a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>.
             </p>
             <p>
-              If the <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+              If the <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               extended attribute is specified on an interface, then it applies to all its derived interfaces and
               must not be specified on any of them.
             </p>
             <p>
               See [[#property-enumeration]]
               for the specific requirements that the use of
-              <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+              <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               entails.
             </p>
           
@@ -8641,7 +8641,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
           
             <h4 id="LenientSetter">[LenientSetter]</h4>
             <p>
-              If the <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
+              If the <a extended-attribute="">[LenientSetter]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>,
@@ -8651,12 +8651,12 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             </p>
             <div class="advisement">
               <p>
-                Specifications should not use <a href="#LenientThis" class="xattr">[LenientSetter]</a>
+                Specifications should not use <a extended-attribute="">[LenientSetter]</a>
                 unless required for compatibility reasons.  Pages have been observed
                 where authors have attempted to polyfill an IDL attribute by assigning
                 to the property, but have accidentally done so even if the property
                 exists.  In strict mode, this would cause an exception to be thrown,
-                potentially breaking page.  Without <a class="xattr" href="#LenientSetter">[LenientSetter]</a>,
+                potentially breaking page.  Without <a extended-attribute="">[LenientSetter]</a>,
                 this could prevent a browser from shipping the feature.
               </p>
               <p>
@@ -8667,7 +8667,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               </p>
             </div>
             <p>
-              The <a class="xattr" href="#LenientThis">[LenientThis]</a> extended attribute
+              The <a extended-attribute="">[LenientThis]</a> extended attribute
               must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
               It must not be used on anything other than
@@ -8675,20 +8675,20 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>.
             </p>
             <p>
-              An attribute with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
+              An attribute with the <a extended-attribute="">[LenientSetter]</a>
               extended attribute must not also be declared
-              with the <a class="xattr" href="#PutForwards">[PutForwards]</a>
-              or <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attributes.
+              with the <a extended-attribute="">[PutForwards]</a>
+              or <a extended-attribute="">[Replaceable]</a> extended attributes.
             </p>
             <p>
               See the <a href="#es-attributes">Attributes</a> section for how
-              <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
+              <a extended-attribute="">[LenientSetter]</a>
               is to be implemented.
             </p>
             <div class="example">
               <p>
                 The following IDL fragment defines an interface that uses the
-                <a class="xattr" href="#LenientSetter">[LenientSetter]</a> extended
+                <a extended-attribute="">[LenientSetter]</a> extended
                 attribute.
               </p>
               <pre class="idl-example">interface Example {
@@ -8715,7 +8715,7 @@ example.y = 1;</pre>
           
             <h4 id="LenientThis">[LenientThis]</h4>
             <p>
-              If the <a class="xattr" href="#LenientThis">[LenientThis]</a>
+              If the <a extended-attribute="">[LenientThis]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>,
               it indicates that invocations of the attribute’s getter or setter
@@ -8724,13 +8724,13 @@ example.y = 1;</pre>
               on which the attribute appears will be ignored.
             </p>
             <p>
-              The <a class="xattr" href="#LenientThis">[LenientThis]</a> extended attribute
+              The <a extended-attribute="">[LenientThis]</a> extended attribute
               must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
               It must not be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             </p>
-                Advisement: Specifications should not use <a href="#LenientThis" class="xattr">[LenientThis]</a>
+                Advisement: Specifications should not use <a extended-attribute="">[LenientThis]</a>
                 unless required for compatibility reasons.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
@@ -8738,13 +8738,13 @@ example.y = 1;</pre>
               
             <p>
               See the <a href="#es-attributes">Attributes</a> section for how
-              <a class="xattr" href="#LenientThis">[LenientThis]</a>
+              <a extended-attribute="">[LenientThis]</a>
               is to be implemented.
             </p>
             <div class="example">
               <p>
                 The following IDL fragment defines an interface that uses the
-                <a class="xattr" href="#LenientThis">[LenientThis]</a> extended
+                <a extended-attribute="">[LenientThis]</a> extended
                 attribute.
               </p>
               <pre class="idl-example">interface Example {
@@ -8777,30 +8777,30 @@ Example.prototype.y;</pre>
           
             <h4 id="NamedConstructor">[NamedConstructor]</h4>
             <p>
-              If the <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              If the <a extended-attribute="">[NamedConstructor]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that the ECMAScript global object will have a property with the
               specified name whose value is a constructor function that can
               create objects that implement the interface.
-              Multiple <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended
+              Multiple <a extended-attribute="">[NamedConstructor]</a> extended
               attributes may appear on a given interface.
             </p>
             <p>
-              The <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              The <a extended-attribute="">[NamedConstructor]</a>
               extended attribute must either
               <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a> or
               <a class="dfnref" href="#dfn-xattr-named-argument-list">take a named argument list</a>.
               The first form, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>]</code>, has the same meaning as
               using an empty argument list, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>()]</code>.  For each
-              <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended attribute
+              <a extended-attribute="">[NamedConstructor]</a> extended attribute
               on the interface, there will be a way to construct an object that implements
               the interface by passing the specified arguments to the constructor function
               that is the value of the aforementioned property.
             </p>
             <p>
               The identifier used for the named constructor must not
-              be the same as that used by an <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              be the same as that used by an <a extended-attribute="">[NamedConstructor]</a>
               extended attribute on another interface, must not
               be the same as an identifier of an interface
               that has an <a class="dfnref" href="#dfn-interface-object">interface object</a>,
@@ -8808,7 +8808,7 @@ Example.prototype.y;</pre>
               <a class="dfnref" href="#dfn-reserved-identifier">reserved identifiers</a>.
             </p>
             <p>
-              The <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended attribute
+              The <a extended-attribute="">[NamedConstructor]</a> extended attribute
               must not be used on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             </p>
             <p>
@@ -8819,7 +8819,7 @@ Example.prototype.y;</pre>
             <div class="example">
               <p>
                 The following IDL defines an interface that uses the
-                <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended
+                <a extended-attribute="">[NamedConstructor]</a> extended
                 attribute.
               </p>
               <pre class="idl-example">[NamedConstructor=Audio,
@@ -8847,7 +8847,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
             <h4 id="NewObject">[NewObject]</h4>
 
             <p>
-              If the <a class="xattr" href="#NewObject">[NewObject]</a>
+              If the <a extended-attribute="">[NewObject]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-regular-operation">regular</a>
               or <a class="dfnref" href="#dfn-static-operation">static</a>
@@ -8857,12 +8857,12 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               must always be returned.
             </p>
             <p>
-              The <a class="xattr" href="#NewObject">[NewObject]</a>
+              The <a extended-attribute="">[NewObject]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#NewObject">[NewObject]</a>
+              The <a extended-attribute="">[NewObject]</a>
               extended attribute must not
               be used on anything other than a <a class="dfnref" href="#dfn-regular-operation">regular</a>
               or <a class="dfnref" href="#dfn-static-operation">static</a>
@@ -8891,14 +8891,14 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
             <h4 id="NoInterfaceObject">[NoInterfaceObject]</h4>
 
             <p>
-              If the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
+              If the <a extended-attribute="">[NoInterfaceObject]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that an
               <a class="dfnref" href="#dfn-interface-object">interface object</a>
               will not exist for the interface in the ECMAScript binding.
             </p>
-                Advisement: The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
+                Advisement: The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
                 should not be used on interfaces that are not
                 solely used as <a class="dfnref" href="#dfn-supplemental-interface">supplemental</a> interfaces,
                 unless there are clear Web compatibility reasons for doing so.  Specification authors who
@@ -8907,38 +8907,38 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
                 mailing list before proceeding.
               
             <p>
-              The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
+              The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
               must <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              If the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
-              is specified on an interface, then the <a class="xattr" href="#Constructor">[Constructor]</a>
+              If the <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
+              is specified on an interface, then the <a extended-attribute="">[Constructor]</a>
               extended attribute must not also be specified on that interface.
-              A <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a> extended attribute is fine,
+              A <a extended-attribute="">[NamedConstructor]</a> extended attribute is fine,
               however.
             </p>
             <p>
-              The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
+              The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
               must not be specified on an interface that has any
               <a class="dfnref" href="#dfn-static-operation">static operations</a> defined on it.
             </p>
             <p>
-              The <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended attribute
+              The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
               must not be specified on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>
               unless it has a <a class="dfnref" href="#dfn-constant">constant</a> declared on it.
               This is because callback interfaces without constants never have
               <a class="dfnref" href="#dfn-interface-object">interface objects</a>.
             </p>
             <p>
-              An interface that does not have the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended
+              An interface that does not have the <a extended-attribute="">[NoInterfaceObject]</a> extended
               attribute specified must not inherit
-              from an interface that has the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> extended
+              from an interface that has the <a extended-attribute="">[NoInterfaceObject]</a> extended
               attribute specified.
             </p>
             <p>
               See [[#es-interfaces]]
               for the specific requirements that the use of
-              <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a> entails.
+              <a extended-attribute="">[NoInterfaceObject]</a> entails.
             </p>
             <div class="example">
               <p>
@@ -8978,7 +8978,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
             <h4 id="OverrideBuiltins">[OverrideBuiltins]</h4>
 
             <p>
-              If the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+              If the <a extended-attribute="">[OverrideBuiltins]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that for a <a class="dfnref" href="#dfn-platform-object">platform object</a> implementing the interface,
@@ -8993,13 +8993,13 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
               same name on the object itself or somewhere on its prototype chain.
             </p>
             <p>
-              The <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+              The <a extended-attribute="">[OverrideBuiltins]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>
               and must not appear on an interface
               that does not define a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>
-              or that also is declared with the <a class="xattr" href="#Global">[Global]</a>
-              or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              or that also is declared with the <a extended-attribute="">[Global]</a>
+              or <a extended-attribute="">[PrimaryGlobal]</a>
               extended attribute.  If the extended attribute is specified on
               a <a class="dfnref" href="#dfn-partial-interface">partial interface</a>
               definition, then that partial interface definition must
@@ -9010,7 +9010,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
               See [[#indexed-and-named-properties]]
               and [[#defineownproperty]]
               for the specific requirements that the use of
-              <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a> entails.
+              <a extended-attribute="">[OverrideBuiltins]</a> entails.
             </p>
             <div class="example">
               <p>
@@ -9072,7 +9072,7 @@ map2.toString;</pre>
             <h4 id="PutForwards">[PutForwards]</h4>
 
             <p>
-              If the <a class="xattr" href="#PutForwards">[PutForwards]</a>
+              If the <a extended-attribute="">[PutForwards]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a> declaration whose type is
@@ -9083,14 +9083,14 @@ map2.toString;</pre>
               referenced by the attribute being assigned to.
             </p>
             <p>
-              The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended
+              The <a extended-attribute="">[PutForwards]</a> extended
               attribute must <a class="dfnref" href="#dfn-xattr-identifier">take an identifier</a>.
               Assuming that:
             </p>
             <ul>
               <li>
                 |A| is the <a class="dfnref" href="#dfn-attribute">attribute</a>
-                on which the <a class="xattr" href="#PutForwards">[PutForwards]</a>
+                on which the <a extended-attribute="">[PutForwards]</a>
                 extended attribute appears,
               </li>
               <li>
@@ -9116,9 +9116,9 @@ map2.toString;</pre>
               references, instead.
             </p>
             <p>
-              Note that <a class="xattr" href="#PutForwards">[PutForwards]</a>-annotated
+              Note that <a extended-attribute="">[PutForwards]</a>-annotated
               <a class="dfnref" href="#dfn-attribute">attributes</a> can be
-              chained.  That is, an attribute with the <a class="xattr" href="#PutForwards">[PutForwards]</a>
+              chained.  That is, an attribute with the <a extended-attribute="">[PutForwards]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               can refer to an attribute that itself has that extended attribute.
               There must not exist a cycle in a
@@ -9128,36 +9128,36 @@ map2.toString;</pre>
               encountered more than once.
             </p>
             <p>
-              An attribute with the <a class="xattr" href="#PutForwards">[PutForwards]</a>
+              An attribute with the <a extended-attribute="">[PutForwards]</a>
               extended attribute must not also be declared
-              with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a> or
-              <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attributes.
+              with the <a extended-attribute="">[LenientSetter]</a> or
+              <a extended-attribute="">[Replaceable]</a> extended attributes.
             </p>
             <p>
-              The <a class="xattr" href="#PutForwards">[PutForwards]</a>
+              The <a extended-attribute="">[PutForwards]</a>
               extended attribute must not be used
               on an <a class="dfnref" href="#dfn-attribute">attribute</a> that
               is not <a class="dfnref" href="#dfn-read-only">read only</a>.
             </p>
             <p>
-              The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute
+              The <a extended-attribute="">[PutForwards]</a> extended attribute
               must not be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             </p>
             <p>
-              The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute
+              The <a extended-attribute="">[PutForwards]</a> extended attribute
               must not be used on an attribute declared on
               a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             </p>
             <p>
               See the <a href="#es-attributes">Attributes</a> section for how
-              <a class="xattr" href="#PutForwards">[PutForwards]</a>
+              <a extended-attribute="">[PutForwards]</a>
               is to be implemented.
             </p>
             <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines interfaces for names and people.
-                The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended
+                The <a extended-attribute="">[PutForwards]</a> extended
                 attribute is used on the <span class="idlattr">name</span> attribute
                 of the <span class="idltype">Person</span> interface to indicate
                 that assignments to that attribute result in assignments to the
@@ -9189,7 +9189,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
             <h4 id="Replaceable">[Replaceable]</h4>
 
             <p>
-              If the <a class="xattr" href="#Replaceable">[Replaceable]</a>
+              If the <a extended-attribute="">[Replaceable]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>,
@@ -9201,36 +9201,36 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
               exists on the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Replaceable">[Replaceable]</a>
+              The <a extended-attribute="">[Replaceable]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              An attribute with the <a class="xattr" href="#Replaceable">[Replaceable]</a>
+              An attribute with the <a extended-attribute="">[Replaceable]</a>
               extended attribute must not also be declared
-              with the <a class="xattr" href="#LenientSetter">[LenientSetter]</a> or
-              <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attributes.
+              with the <a extended-attribute="">[LenientSetter]</a> or
+              <a extended-attribute="">[PutForwards]</a> extended attributes.
             </p>
             <p>
-              The <a class="xattr" href="#Replaceable">[Replaceable]</a>
+              The <a extended-attribute="">[Replaceable]</a>
               extended attribute must not be used
               on an <a class="dfnref" href="#dfn-attribute">attribute</a> that
               is not <a class="dfnref" href="#dfn-read-only">read only</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attribute
+              The <a extended-attribute="">[Replaceable]</a> extended attribute
               must not be used on a
               <a class="dfnref" href="#dfn-static-attribute">static attribute</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Replaceable">[Replaceable]</a> extended attribute
+              The <a extended-attribute="">[Replaceable]</a> extended attribute
               must not be used on an attribute declared on
               a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             </p>
             <p>
               See [[#es-attributes]]
               for the specific requirements that the use of
-              <a class="xattr" href="#Replaceable">[Replaceable]</a> entails.
+              <a extended-attribute="">[Replaceable]</a> entails.
             </p>
             <div class="example">
               <p>
@@ -9277,7 +9277,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <h4 id="SameObject">[SameObject]</h4>
 
             <p>
-              If the <a class="xattr" href="#SameObject">[SameObject]</a>
+              If the <a extended-attribute="">[SameObject]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>, then it
@@ -9286,12 +9286,12 @@ counter.value;                                           // Evaluates to 3.</pre
               be returned.
             </p>
             <p>
-              The <a class="xattr" href="#SameObject">[SameObject]</a>
+              The <a extended-attribute="">[SameObject]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#SameObject">[SameObject]</a>
+              The <a extended-attribute="">[SameObject]</a>
               extended attribute must not
               be used on anything other than a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>
@@ -9318,7 +9318,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <h4 id="SecureContext">[SecureContext]</h4>
 
             <p>
-              If the <a class="xattr" href="#SecureContext">[SecureContext]</a>
+              If the <a extended-attribute="">[SecureContext]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               <a class="dfnref" href="#dfn-partial-interface">partial interface</a>,
@@ -9329,12 +9329,12 @@ counter.value;                                           // Evaluates to 3.</pre
               ([[!SECURE-CONTEXTS]], section 2).
             </p>
             <p>
-              The <a class="xattr" href="#SecureContext">[SecureContext]</a>
+              The <a extended-attribute="">[SecureContext]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#SecureContext">[SecureContext]</a>
+              The <a extended-attribute="">[SecureContext]</a>
               extended attribute must not
               be used on anything other than an
               <a class="dfnref" href="#dfn-interface">interface</a>,
@@ -9342,20 +9342,20 @@ counter.value;                                           // Evaluates to 3.</pre
               an individual <a class="dfnref" href="#dfn-interface-member">interface member</a>.
             </p>
             <p>
-              Whether a construct that the <a class="xattr" href="#SecureContext">[SecureContext]</a>
+              Whether a construct that the <a extended-attribute="">[SecureContext]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               can be specified on is <dfn id="dfn-available-only-in-secure-contexts" export="">available only in secure contexts</dfn>
               is defined as follows:
             </p>
             <ul>
               <li>
-                <p>If the <a class="xattr" href="#SecureContext">[SecureContext]</a>
+                <p>If the <a extended-attribute="">[SecureContext]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 is specified on the construct, then it is
                 <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</p>
               </li>
               <li>
-                <p>Otherwise, if the <a class="xattr" href="#SecureContext">[SecureContext]</a>
+                <p>Otherwise, if the <a extended-attribute="">[SecureContext]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 does not appear on a construct, then whether it is
                 <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
@@ -9379,20 +9379,20 @@ counter.value;                                           // Evaluates to 3.</pre
                 ECMAScript global environment.
               
             <p>
-              If <a class="xattr" href="#SecureContext">[SecureContext]</a> appears on an
+              If <a extended-attribute="">[SecureContext]</a> appears on an
               <a class="dfnref" href="#dfn-overloaded">overloaded</a> <a class="dfnref" href="#dfn-operation">operation</a>,
               then it must appear on all overloads.
             </p>
             <p>
-              The <a class="xattr" href="#SecureContext">[SecureContext]</a> extended attribute
+              The <a extended-attribute="">[SecureContext]</a> extended attribute
               must not be specified on both an interface
               member and the interface or partial interface definition the
               interface member is declared on.
             </p>
             <p>
-              An interface without the <a class="xattr" href="#SecureContext">[SecureContext]</a> extended attribute
+              An interface without the <a extended-attribute="">[SecureContext]</a> extended attribute
               must not <a class="dfnref" href="#dfn-inherit">inherit</a> from another interface
-              that does specify <a class="xattr" href="#SecureContext">[SecureContext]</a>.
+              that does specify <a extended-attribute="">[SecureContext]</a>.
             </p>
             <div class="example">
               <p>The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface
@@ -9420,7 +9420,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <h4 id="TreatNonObjectAsNull">[TreatNonObjectAsNull]</h4>
 
             <p>
-              If the <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>
+              If the <a extended-attribute="">[TreatNonObjectAsNull]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-callback-function">callback function</a>,
               then it indicates that any value assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a>
@@ -9429,13 +9429,13 @@ counter.value;                                           // Evaluates to 3.</pre
               that is not an object will be converted to
               the <span class="idlvalue">null</span> value.
             </p>
-                Advisement: Specifications should not use <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
+                Advisement: Specifications should not use <a extended-attribute="">[TreatNonObjectAsNull]</a>
                 unless required to specify the behavior of legacy APIs or for consistency with these
                 APIs.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                 mailing list before proceeding.  At the time of writing, the only known
-                valid use of <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
+                valid use of <a extended-attribute="">[TreatNonObjectAsNull]</a>
                 is for the <a class="dfnref" href="#dfn-callback-function">callback functions</a> used as the type
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
                 ([[HTML5]], section 6.1.6.1)
@@ -9444,12 +9444,12 @@ counter.value;                                           // Evaluates to 3.</pre
             <p>
               See [[#es-nullable-type]]
               for the specific requirements that the use of
-              <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a> entails.
+              <a extended-attribute="">[TreatNonObjectAsNull]</a> entails.
             </p>
             <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
-                attribute whose type is a <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>-annotated
+                attribute whose type is a <a extended-attribute="">[TreatNonObjectAsNull]</a>-annotated
                 <a class="dfnref" href="#dfn-callback-function">callback function</a> and another whose type is a
                 <a class="dfnref" href="#dfn-callback-function">callback function</a> without the <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>:
               </p>
@@ -9490,7 +9490,7 @@ manager.handler2;            // Evaluates to null.</pre>
             <h4 id="TreatNullAs">[TreatNullAs]</h4>
 
             <p>
-              If the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
+              If the <a extended-attribute="">[TreatNullAs]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-attribute">attribute</a>
               or <a class="dfnref" href="#dfn-operation">operation</a> argument whose type is
@@ -9502,39 +9502,39 @@ manager.handler2;            // Evaluates to null.</pre>
               it will be converted to the empty string “”.
             </p>
             <p>
-              If <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> is specified on
+              If <a extended-attribute="">[TreatNullAs]</a> is specified on
               an operation itself, and that operation is on a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>,
               then it indicates that a <a href="#es-user-objects">user object implementing the interface</a> will have the return
               value of the function that implements the operation handled in the same way as for operation arguments
               and attributes, as above.
             </p>
             <p>
-              The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
+              The <a extended-attribute="">[TreatNullAs]</a>
               extended attribute must <a class="dfnref" href="#dfn-xattr-identifier">take the identifier</a>
               <code>EmptyString</code>.
             </p>
             <p>
-              The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute
+              The <a extended-attribute="">[TreatNullAs]</a> extended attribute
               must not be specified on an operation argument,
               attribute or operation return value whose type is not {{DOMString}}.
             </p>
                 Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
-              use <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>, since <span class="idlvalue">null</span>
+              use <a extended-attribute="">[TreatNullAs]</a>, since <span class="idlvalue">null</span>
               is a valid value of that type.
             <p>
-              The <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> extended attribute
+              The <a extended-attribute="">[TreatNullAs]</a> extended attribute
               also must not be specified on an operation on
               a non-callback interface.
             </p>
             <p>
               See [[#es-DOMString]]
               for the specific requirements that the use of
-              <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a> entails.
+              <a extended-attribute="">[TreatNullAs]</a> entails.
             </p>
             <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
-                attribute with the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
+                attribute with the <a extended-attribute="">[TreatNullAs]</a>
                 extended attribute, and one operation with an argument that has
                 the extended attribute:
               </p>
@@ -9568,7 +9568,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             <h4 id="Unforgeable">[Unforgeable]</h4>
 
             <p>
-              If the <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+              If the <a extended-attribute="">[Unforgeable]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a non-<a class="dfnref" href="#dfn-static-attribute">static</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>
@@ -9582,7 +9582,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               itself rather than on its prototype.
             </p>
             <p>
-              If the <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+              If the <a extended-attribute="">[Unforgeable]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-interface">interface</a>,
               it indicates that all of the non-<a class="dfnref" href="#dfn-static-attribute">static</a>
@@ -9600,25 +9600,25 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             <ul>
               <li>The attribute or operation is declared on |A| or one
                 of |A|’s <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>,
-                and is annotated with the <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+                and is annotated with the <a extended-attribute="">[Unforgeable]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.</li>
               <li>The attribute or operation is declared on |A| or one
                 of |A|’s <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>,
-                and that interface is annotated with the <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+                and that interface is annotated with the <a extended-attribute="">[Unforgeable]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.</li>
               <li>There exists an interface |B|, which is either |A| or one of
                 |A|’s <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>,
-                |B| is annotated with the <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+                |B| is annotated with the <a extended-attribute="">[Unforgeable]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 and the attribute or operation is declared on one of |B|’s consequential interfaces.</li>
             </ul>
             <p>
-              The <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+              The <a extended-attribute="">[Unforgeable]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Unforgeable">[Unforgeable]</a>
+              The <a extended-attribute="">[Unforgeable]</a>
               extended attribute must not appear on
               anything other than an <a class="dfnref" href="#dfn-attribute">attribute</a>,
               non-<a class="dfnref" href="#dfn-static-operation">static</a> <a class="dfnref" href="#dfn-operation">operation</a>
@@ -9645,13 +9645,13 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               [[#indexed-and-named-properties]] and
               [[#defineownproperty]]
               for the specific requirements that the use of
-              <a class="xattr" href="#Unforgeable">[Unforgeable]</a> entails.
+              <a extended-attribute="">[Unforgeable]</a> entails.
             </p>
             <div class="example">
               <p>
                 The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
                 an interface that has two <a class="dfnref" href="#dfn-attribute">attributes</a>,
-                one of which is designated as <a class="xattr" href="#Unforgeable">[Unforgeable]</a>:
+                one of which is designated as <a extended-attribute="">[Unforgeable]</a>:
               </p>
               <pre class="idl-example">interface System {
   [Unforgeable] readonly attribute DOMString username;
@@ -9686,7 +9686,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             <h4 id="Unscopable">[Unscopable]</h4>
 
             <p>
-              If the <a class="xattr" href="#Unscopable">[Unscopable]</a>
+              If the <a extended-attribute="">[Unscopable]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on a <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>
               or <a class="dfnref" href="#dfn-regular-operation">regular operation</a>, it
@@ -9700,12 +9700,12 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
               <a>@@unscopables</a> property’s value.
             </p>
             <p>
-              The <a class="xattr" href="#Unscopable">[Unscopable]</a>
+              The <a extended-attribute="">[Unscopable]</a>
               extended attribute must
               <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
             </p>
             <p>
-              The <a class="xattr" href="#Unscopable">[Unscopable]</a>
+              The <a extended-attribute="">[Unscopable]</a>
               extended attribute must not appear on
               anything other than a <a class="dfnref" href="#dfn-regular-attribute">regular attribute</a>
               or <a class="dfnref" href="#dfn-regular-operation">regular operation</a>.
@@ -9713,7 +9713,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             <p>
               See [[#interface-prototype-object]]
               for the specific requirements that the use of
-              <a class="xattr" href="#Unscopable">[Unscopable]</a> entails.
+              <a extended-attribute="">[Unscopable]</a> entails.
             </p>
             <div class="note">
               <p>For example, with the following IDL:</p>
@@ -10197,7 +10197,7 @@ with (thing) {
             <li>is a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>
               that has <a class="dfnref" href="#dfn-constant">constants</a> declared on it, or</li>
             <li>is a non-callback <a class="dfnref" href="#dfn-interface">interface</a>
-              that is not declared with the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
+              that is not declared with the <a extended-attribute="">[NoInterfaceObject]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,</li>
           </ul>
           <p>
@@ -10212,7 +10212,7 @@ with (thing) {
           </p>
 
           <p>
-            In addition, for every <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+            In addition, for every <a extended-attribute="">[NamedConstructor]</a>
             extended attribute on an <a class="dfnref" href="#dfn-exposed">exposed</a> interface, a corresponding property must
             exist on the ECMAScript global object.  The name of the property is the
             <a class="sym" href="#prod-identifier">identifier</a> that occurs directly after the
@@ -10281,7 +10281,7 @@ with (thing) {
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> is declared with a
-                <a class="xattr" href="#Constructor">[Constructor]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
+                <a extended-attribute="">[Constructor]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 then the <a class="dfnref" href="#dfn-interface-object">interface object</a>
                 can be called as a function to create an object that implements that
                 interface.  Interfaces that do not have a constructor will throw
@@ -10298,7 +10298,7 @@ with (thing) {
               </p>
               <ol class="algorithm">
                 <li>
-                  If |I| was not declared with a <a class="xattr" href="#Constructor">[Constructor]</a>
+                  If |I| was not declared with a <a extended-attribute="">[Constructor]</a>
                   <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, then
                   <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
                 </li>
@@ -10340,7 +10340,7 @@ with (thing) {
                 Interface objects for non-callback interfaces must have a property named “length”
                 with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 whose value is a <span class="estype">Number</span>.
-                If the <a class="xattr" href="#Constructor">[Constructor]</a>
+                If the <a extended-attribute="">[Constructor]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 does not appear on the interface definition, then the value is 0.
                 Otherwise, the value is determined as follows:
@@ -10403,21 +10403,21 @@ with (thing) {
             <p>
               A <a class="dfnref" href="#dfn-named-constructor">named constructor</a>
               that exists due to one or more
-              <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              <a extended-attribute="">[NamedConstructor]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
               with a given <a class="dfnref" href="#dfn-identifier">identifier</a>
               is a <a class="dfnref" href="#dfn-function-object">function object</a>.
               It must have a <span class="prop">\[[Call]]</span>
               internal property, which allows construction of objects that
               implement the interface on which the
-              <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              <a extended-attribute="">[NamedConstructor]</a>
               extended attributes appear.  It behaves as follows, assuming
               |arg|<sub>0..|n|−1</sub> is the list
               of argument values passed to the constructor, |id|
               is the identifier of the constructor specified in the
               extended attribute <a class="dfnref" href="#dfn-xattr-named-argument-list">named argument list</a>,
               and |I| is the <a class="dfnref" href="#dfn-interface">interface</a>
-              on which the <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              on which the <a extended-attribute="">[NamedConstructor]</a>
               extended attribute appears:
             </p>
             <ol class="algorithm">
@@ -10482,7 +10482,7 @@ with (thing) {
               <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
               whose value is the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the <a class="dfnref" href="#dfn-interface">interface</a> on which the
-              <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>
+              <a extended-attribute="">[NamedConstructor]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears.
             </p>
@@ -10496,7 +10496,7 @@ with (thing) {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype
                 object</a> for every non-callback <a class="dfnref" href="#dfn-interface">interface</a>
               defined, regardless of whether the interface was declared with the
-              <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
+              <a extended-attribute="">[NoInterfaceObject]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>.
               The interface prototype object for a particular interface has
               properties that correspond to the <a class="dfnref" href="#dfn-regular-attribute">regular attributes</a>
@@ -10512,7 +10512,7 @@ with (thing) {
               interface, described in [[#es-operations]].
             </p>
             <p>
-              If the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
+              If the <a extended-attribute="">[NoInterfaceObject]</a>
               extended attribute was not specified on the interface, then
               the interface prototype object must
               also have a property named “constructor” with attributes
@@ -10527,8 +10527,8 @@ with (thing) {
               the following steps:
             </p>
             <ol class="algorithm">
-              <li>If |A| is declared with the <a class="xattr" href="#Global">[Global]</a>
-              or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              <li>If |A| is declared with the <a extended-attribute="">[Global]</a>
+              or <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, and |A|
               <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>, then
               return the <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
@@ -10537,7 +10537,7 @@ with (thing) {
               interface, then return the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
-              <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
+              <li>Otherwise, if |A| is declared with the <a extended-attribute="">[LegacyArrayClass]</a>
               extended attribute, then return <a>%ArrayPrototype%</a>.</li>
               <li>Otherwise, return <a>%ObjectPrototype%</a>.
               ([[!ECMA-262]], section 15.2.4).</li>
@@ -10546,7 +10546,7 @@ with (thing) {
               <p>
                 The <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
                 of an <a class="dfnref" href="#dfn-interface">interface</a> that is defined with
-                the <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>
+                the <a extended-attribute="">[NoInterfaceObject]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 will be accessible if the interface is used as a
                 <a class="dfnref" href="#dfn-supplemental-interface">non-supplemental interface</a>.
@@ -10581,7 +10581,7 @@ partial interface Window {
             <p>
               If the interface or any of its <a class="dfnref" href="#dfn-consequential-interfaces">consequential interfaces</a>
               has any <a class="dfnref" href="#dfn-interface-member">interface member</a> declared with
-              the <a class="xattr" href="#Unscopable">[Unscopable]</a> extended attribute,
+              the <a extended-attribute="">[Unscopable]</a> extended attribute,
               then there must be a property on the
               interface prototype object whose name is the <a>@@unscopables</a> symbol
               and whose value is an object created as follows:
@@ -10589,7 +10589,7 @@ partial interface Window {
             <ol class="algorithm">
               <li>Let |object| be a new object created as if by the expression <code>({})</code>.</li>
               <li>For each of the aforementioned <a class="dfnref" href="#dfn-interface-member">interface members</a>
-                declared with the <a class="xattr" href="#Unscopable">[Unscopable]</a> extended attribute,
+                declared with the <a extended-attribute="">[Unscopable]</a> extended attribute,
                 call <a>CreateDataProperty</a>(|object|,
                 the <a class="dfnref" href="#dfn-identifier">identifier</a> of the
                 interface member, <emu-val>true</emu-val>).</li>
@@ -10609,8 +10609,8 @@ partial interface Window {
 
             <p>
               For every <a class="dfnref" href="#dfn-interface">interface</a> declared with the
-              <a class="xattr" href="#Global">[Global]</a> or
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              <a extended-attribute="">[Global]</a> or
+              <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               that <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
               there must exist an object known as the
@@ -10627,7 +10627,7 @@ partial interface Window {
               <li>If |A| is declared to inherit from another interface, then return the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
-              <li>Otherwise, if |A| is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
+              <li>Otherwise, if |A| is declared with the <a extended-attribute="">[LegacyArrayClass]</a>
               extended attribute, then return <a>%ArrayPrototype%</a>.</li>
               <li>Otherwise, return <a>%ObjectPrototype%</a>.</li>
             </ol>
@@ -10676,7 +10676,7 @@ partial interface Window {
                     <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                       |value| to an ECMAScript value.</li>
                     <li>If |A| implements an interface with the
-                      <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+                      <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
                       <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                       then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
                       otherwise set it to <emu-val>true</emu-val>.</li>
@@ -10741,12 +10741,12 @@ partial interface Window {
               <li>
                 The location of the property is determined as follows:
                 <ul>
-                  <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                  <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                   then the property exists on the single object that implements the interface.</li>
                   <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                  of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> annotated interface, then
-                  the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                  <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                  of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a> annotated interface, then
+                  the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                  <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                   the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                   <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 </ul>
@@ -10783,12 +10783,12 @@ partial interface Window {
                   <li>If the attribute is a <a class="dfnref" href="#dfn-static-attribute">static attribute</a>,
                   then there is a single corresponding property and it exists on the interface’s <a class="dfnref" href="#dfn-interface-object">interface object</a>.</li>
                   <li>Otherwise, if the attribute is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on
-                  the interface or if the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                  the interface or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                   then the property exists on every object that implements the interface.</li>
                   <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                  of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                  the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                  <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                  of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                  the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                  <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                   the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                   <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 </ul>
@@ -10798,7 +10798,7 @@ partial interface Window {
                 where:
                 <ul>
                   <li>|configurable| is <emu-val>false</emu-val> if the attribute was
-                    declared with the <a class="xattr" href="#Unforgeable">[Unforgeable]</a> extended attribute and <emu-val>true</emu-val> otherwise;</li>
+                    declared with the <a extended-attribute="">[Unforgeable]</a> extended attribute and <emu-val>true</emu-val> otherwise;</li>
                   <li>|G| is the <a class="dfnref" href="#dfn-attribute-getter">attribute getter</a>, defined below; and</li>
                   <li>|S| is the <a class="dfnref" href="#dfn-attribute-setter">attribute setter</a>, also defined below.</li>
                 </ul>
@@ -10834,7 +10834,7 @@ partial interface Window {
                       <li>If |O| is not a <a class="dfnref" href="#dfn-platform-object">platform object</a> that implements |I|, then:
                         <ol>
                           <li>If the <a class="dfnref" href="#dfn-attribute">attribute</a> was specified with the
-                            <a class="xattr" href="#LenientThis">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
+                            <a extended-attribute="">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                             then return <emu-val>undefined</emu-val>.</li>
                           <li>Otherwise, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                         </ol>
@@ -10866,8 +10866,8 @@ partial interface Window {
               <li>
                 The <dfn id="dfn-attribute-setter" export="">attribute setter</dfn> is <emu-val>undefined</emu-val>
                 if the attribute is declared <code>readonly</code> and does not have a
-                <a class="xattr" href="#LenientThis">[LenientThis]</a>, <a class="xattr" href="#PutForwards">[PutForwards]</a> or
-                <a class="xattr" href="#Replaceable">[Replaceable]</a>
+                <a extended-attribute="">[LenientThis]</a>, <a extended-attribute="">[PutForwards]</a> or
+                <a extended-attribute="">[Replaceable]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> declared on it.
                 Otherwise, it is a <span class="estype">Function</span> object whose behavior when invoked is as follows:
                 <ol class="algorithm">
@@ -10895,9 +10895,9 @@ partial interface Window {
                         <emu-val>false</emu-val> otherwise.</li>
                       <li>If |validThis| is <emu-val>false</emu-val> and the
                         <a class="dfnref" href="#dfn-attribute">attribute</a> was not specified with the
-                        <a class="xattr" href="#LenientThis">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
+                        <a extended-attribute="">[LenientThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                         then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                      <li>If the attribute is declared with a <a class="xattr" href="#Replaceable">[Replaceable]</a>
+                      <li>If the attribute is declared with a <a extended-attribute="">[Replaceable]</a>
                         extended attribute, then:
                         <ol>
                           <li>Let |P| be the identifier of the attribute.</li>
@@ -10906,15 +10906,15 @@ partial interface Window {
                         </ol>
                       </li>
                       <li>If |validThis| is <emu-val>false</emu-val>, then return <emu-val>undefined</emu-val>.</li>
-                      <li>If the attribute is declared with a <a class="xattr" href="#LenientSetter">[LenientSetter]</a>
+                      <li>If the attribute is declared with a <a extended-attribute="">[LenientSetter]</a>
                         extended attribute, then return <emu-val>undefined</emu-val>.</li>
-                      <li>If the attribute is declared with a <a class="xattr" href="#PutForwards">[PutForwards]</a>
+                      <li>If the attribute is declared with a <a extended-attribute="">[PutForwards]</a>
                         extended attribute, then:
                         <ol>
                           <li>Let |Q| be the result of calling the <span class="prop">\[[Get]]</span> method
                             on |O| using the identifier of the attribute as the property name.</li>
                           <li>If |Q| is not an object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                          <li>Let |A| be the attribute identified by the <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute.</li>
+                          <li>Let |A| be the attribute identified by the <a extended-attribute="">[PutForwards]</a> extended attribute.</li>
                           <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
                             using the identifier of |A| as the property name and |V| as the value.</li>
                           <li>Return <emu-val>undefined</emu-val>.</li>
@@ -10984,12 +10984,12 @@ partial interface Window {
                   <li>If the operation is <a class="dfnref" href="#dfn-static-operation">static</a>, then
                   the property exists on the <a class="dfnref" href="#dfn-interface-object">interface object</a>.</li>
                   <li>Otherwise, if the operation is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on
-                  the interface or if the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                  the interface or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                   then the property exists on every object that implements the interface.</li>
                   <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                  of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                  the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                  <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                  of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                  the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                  <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                   the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                   <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 </ul>
@@ -11033,7 +11033,7 @@ partial interface Window {
                           <li>
                             Otherwise, if the <a class="dfnref" href="#dfn-interface">interface</a> on which the
                             <a class="dfnref" href="#dfn-operation">operation</a> appears has an
-                            <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
+                            <a extended-attribute="">[ImplicitThis]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                             and the <emu-val>this</emu-val> value is <emu-val>null</emu-val>
                             or <emu-val>undefined</emu-val>, then |O| is
                             the ECMAScript global object associated with the <span class="estype">Function</span> object.
@@ -11143,7 +11143,7 @@ partial interface Window {
                 <li>The name of the property is “toString”.</li>
                 <li>If the <a class="dfnref" href="#dfn-stringifier">stringifier</a> is
                   <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on the interface
-                  or if the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                  or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                   then the property exists on every object that implements the interface.
                   Otherwise, the property exists on the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
@@ -11210,12 +11210,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                 the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
               </ul>
@@ -11344,12 +11344,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                 the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
               </ul>
@@ -11451,12 +11451,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                 the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
               </ul>
@@ -11573,12 +11573,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                 the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
               </ul>
@@ -11608,12 +11608,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                 the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
               </ul>
@@ -11664,12 +11664,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a <a class="dfnref" href="#dfn-consequential-interfaces">consequential interface</a>
-                of a <a class="xattr" href="#Global">[Global]</a>- or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a class="xattr" href="#Global">[Global]</a>- or
-                <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
+                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
+                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
                 the consequential interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
                 <li>Otherwise, the property exists solely on the interface’s <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</li>
               </ul>
@@ -12467,7 +12467,7 @@ C implements A;</pre>
           
 
           <p>
-            Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
+            Every platform object that implements an <a extended-attribute="">[Unforgeable]</a>-annotated
             interface and which does not have a <a class="dfnref" href="#dfn-stringifier">stringifier</a>
             that is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on any of the
             interfaces it implements must have a property with the
@@ -12480,7 +12480,7 @@ C implements A;</pre>
           </ul>
 
           <p>
-            Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
+            Every platform object that implements an <a extended-attribute="">[Unforgeable]</a>-annotated
             interface and which does not have a <a class="dfnref" href="#dfn-serializer">serializer</a>
             that is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on any of the
             interfaces it implements must have a property with the
@@ -12493,7 +12493,7 @@ C implements A;</pre>
           </ul>
 
           <p>
-            Every platform object that implements an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
+            Every platform object that implements an <a extended-attribute="">[Unforgeable]</a>-annotated
             interface must have a property with the
             following characteristics:
           </p>
@@ -12536,8 +12536,8 @@ C implements A;</pre>
               by the <span class="prop">\[[GetOwnProperty]]</span> internal method.
             </p>
             <p>
-              However, when the <a class="xattr" href="#Global">[Global]</a> or
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              However, when the <a extended-attribute="">[Global]</a> or
+              <a extended-attribute="">[PrimaryGlobal]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> has been used,
               named properties are not exposed on the object but on another object
               in the prototype chain, the <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>.
@@ -12566,8 +12566,8 @@ C implements A;</pre>
               or <code>Object.preventExtensions</code> is called on one of these objects, the function
               must <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
               Similarly, an <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
-              that exposes named properties due to the use of <a class="xattr" href="#Global">[Global]</a> or
-              <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+              that exposes named properties due to the use of <a extended-attribute="">[Global]</a> or
+              <a extended-attribute="">[PrimaryGlobal]</a>
               also must <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>
               if one of the three functions above is called on it.
             </p>
@@ -12592,7 +12592,7 @@ C implements A;</pre>
               has an <a class="dfnref" href="#dfn-interface-member">interface member</a> with that identifier
               and that interface member is <a class="dfnref" href="#dfn-unforgeable-on-an-interface">unforgeable</a> on any of
               the interfaces that |O| implements.  If the object implements an
-              <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated
+              <a extended-attribute="">[Unforgeable]</a>-annotated
               <a class="dfnref" href="#dfn-interface">interface</a>, then “toString” and “valueOf” are
               also <a class="dfnref" href="#dfn-unforgeable-property-name">unforgeable property names</a>
               on that object.
@@ -12600,7 +12600,7 @@ C implements A;</pre>
             <p>
               The <dfn id="dfn-named-property-visibility" export="">named property visibility algorithm</dfn> is used to determine if
               a given named property is exposed on an object.  Some named properties are not exposed on an object
-              depending on whether the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+              depending on whether the <a extended-attribute="">[OverrideBuiltins]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> was used.  The algorithm
               operates as follows, with property name |P| and object |O|:
             </p>
@@ -12609,11 +12609,11 @@ C implements A;</pre>
               <li>If |P| is an <a class="dfnref" href="#dfn-unforgeable-property-name">unforgeable property name</a>
                 on |O|, then return false.</li>
               <li>If |O| implements an <a class="dfnref" href="#dfn-interface">interface</a> with
-                an <a class="xattr" href="#Unforgeable">[Unforgeable]</a>-annotated <a class="dfnref" href="#dfn-attribute">attribute</a>
+                an <a extended-attribute="">[Unforgeable]</a>-annotated <a class="dfnref" href="#dfn-attribute">attribute</a>
                 whose <a class="dfnref" href="#dfn-identifier">identifier</a> is |P|, then return false.</li>
               <li>If |P| is not a <a class="dfnref" href="#dfn-supported-property-names">supported property name</a>
                 of |O|, then return false.</li>
-              <li>If |O| implements an interface that has the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+              <li>If |O| implements an interface that has the <a extended-attribute="">[OverrideBuiltins]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, then return true.</li>
               <li>If |O| has an own property named |P|, then return false.</li>
               <li>Initialize |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |O|.</li>
@@ -12673,7 +12673,7 @@ C implements A;</pre>
               </li>
 
               <li>If |O| <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>, |O| does not
-                implement an <a class="dfnref" href="#dfn-interface">interface</a> with the <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
+                implement an <a class="dfnref" href="#dfn-interface">interface</a> with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, the result of running the <a class="dfnref" href="#dfn-named-property-visibility">named property visibility algorithm</a> with
                 property name |P| and object |O| is true, and |ignoreNamedProps| is false, then:
                 <ol>
@@ -12694,7 +12694,7 @@ C implements A;</pre>
                     |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
                     <emu-val>false</emu-val>.</li>
                   <li>If |O| implements an interface with the
-                    <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+                    <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
                     <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                     then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
                     otherwise set it to <emu-val>true</emu-val>.</li>
@@ -12870,13 +12870,13 @@ C implements A;</pre>
               <li>
                 If |O| <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
                 |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
-                <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
+                <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 and |P| is not an <a class="dfnref" href="#dfn-unforgeable-property-name">unforgeable property name</a>
                 of |O|, then:
                 <ol>
                   <li>Let |creating| be true if |P| is not a <a class="dfnref" href="#dfn-supported-property-names">supported property name</a>, and false otherwise.</li>
                   
-                  <li>If |O| implements an interface with the <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>
+                  <li>If |O| implements an interface with the <a extended-attribute="">[OverrideBuiltins]</a>
                     <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> or |O| does not have an own property
                     named |P|, then:
                     <ol>
@@ -12898,7 +12898,7 @@ C implements A;</pre>
               </li>
 
               <li>If |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
-                <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
+                <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
               <li>Call the <a>default \[[DefineOwnProperty]] internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
             </ol>
@@ -12929,7 +12929,7 @@ C implements A;</pre>
               <li>
                 If |O| <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a>,
                 |O| does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
-                <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
+                <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
                 and the result of calling the <a class="dfnref" href="#dfn-named-property-visibility">named property visibility algorithm</a>
                 with property name |P| and object |O| is true, then:
                 <ol>
@@ -13010,7 +13010,7 @@ C implements A;</pre>
               the object’s <a class="dfnref" href="#dfn-supported-property-indices">supported property indices</a> are
               enumerated first, in numerical order.</li>
               <li>If the object <a class="dfnref" href="#dfn-support-named-properties">supports named properties</a> and doesn't implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
-              <a class="xattr" href="#LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</a>
+              <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>, then
               the object’s <a class="dfnref" href="#dfn-supported-property-names">supported property names</a> that
               are visible according to the <a class="dfnref" href="#dfn-named-property-visibility">named property visibility algorithm</a>
@@ -13339,7 +13339,7 @@ C implements A;</pre>
 
                   <div class="note">
                     <p>This is only possible when the callback function came from an attribute
-                    marked with <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>.</p>
+                    marked with <a extended-attribute="">[TreatNonObjectAsNull]</a>.</p>
                   </div>
                 </li>
 
@@ -14051,7 +14051,7 @@ d.type = et;
           “A” is distinct from one named “a”, and an
           <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
           <span class="xattr">[constructor]</span> will not be recognized as
-          the <a class="xattr" href="#Constructor">[Constructor]</a>
+          the <a extended-attribute="">[Constructor]</a>
           extended attribute.
         </p>
         <p>
