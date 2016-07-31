@@ -187,8 +187,7 @@ urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
           low enough precision as to result in interoperability issues.  In
           addition, each specification must describe the same basic information,
           such as DOM interfaces described in IDL corresponding to properties
-          on the ECMAScript global object, or the <a class="idltype" href="#idl-unsigned-long">unsigned
-            long</a> IDL type mapping to the <span class="estype">Number</span>
+          on the ECMAScript global object, or the {{unsigned long}} IDL type mapping to the <span class="estype">Number</span>
           type in ECMAScript.
         </p>
         <p>
@@ -1078,7 +1077,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               
             <p>
               The value of the boolean literal tokens <code>true</code> and
-              <code>false</code> are the IDL <a class="idltype" href="#idl-boolean">boolean</a> values
+              <code>false</code> are the IDL {{boolean}} values
               <span class="idlvalue">true</span> and <span class="idlvalue">false</span>.
             </p>
             <p>
@@ -2123,7 +2122,7 @@ var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
                   values are <a class="dfnref" href="#dfn-serialized-value">serialized values</a></li>
                 <li>a <em>list</em> of <a class="dfnref" href="#dfn-serialized-value">serialized values</a></li>
                 <li>a {{DOMString}} value</li>
-                <li>an <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value</li>
+                <li>an {{unrestricted double}} value</li>
                 <li>a {{boolean}} value</li>
                 <li>the <span class="idlvalue">null</span> value</li>
               </ul>
@@ -2301,14 +2300,14 @@ serializer = { inherit, attribute };</pre>
               <dfn id="dfn-convert-to-serialized-value" export="" lt="converted to a serialized value|converted to serialized values">converted to serialized values</dfn> is as follows:</p>
               <dl class="switch">
                 <dt>{{long long}}</dt>
-                <dd>converted by choosing the closest equivalent <a class="idltype" href="#idl-double">double</a> value
+                <dd>converted by choosing the closest equivalent {{double}} value
                   (as when <a href="#es-long-long">converting a <span class="idltype">long long</span> to an ECMAScript <span class="estype">Number</span> value</a>)</dd>
                 <dt>{{unsigned long long}}</dt>
-                <dd>converted by choosing the closest equivalent <a class="idltype" href="#idl-double">double</a> value
+                <dd>converted by choosing the closest equivalent {{double}} value
                   (as when <a href="#es-unsigned-long-long">converting a <span class="idltype">unsigned long long</span> to an ECMAScript <span class="estype">Number</span> value</a>)</dd>
                 <dt>any other <a class="dfnref" href="#dfn-integer-type">integer type</a></dt>
                 <dt>{{float}}</dt>
-                <dd>converted by choosing the equivalent <a class="idltype" href="#idl-double">double</a> value</dd>
+                <dd>converted by choosing the equivalent {{double}} value</dd>
                 <dt>{{double}}</dt>
                 <dt>{{boolean}}</dt>
                 <dt>{{DOMString}}</dt>
@@ -3959,7 +3958,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             that specifications can reference and throw in their definition of
             operations, attributes, and so on.  Exceptions have an
             <dfn id="dfn-exception-error-name" for="exception" export="">error name</dfn>,
-            a <a class="idltype" href="#idl-DOMString">DOMString</a>,
+            a {{DOMString}},
             which is the type of error the exception represents, and a
             <dfn id="dfn-exception-message" for="exception" export="">message</dfn>, which is an optional,
             user agent-defined value that provides human readable details of the error.
@@ -4631,22 +4630,22 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           </p>
           <p>
             The following types are known as <dfn id="dfn-integer-type" export="">integer types</dfn>:
-            <a class="idltype" href="#idl-byte">byte</a>,
-            <a class="idltype" href="#idl-octet">octet</a>,
-            <a class="idltype" href="#idl-short">short</a>,
-            <a class="idltype" href="#idl-unsigned-short">unsigned short</a>,
-            <a class="idltype" href="#idl-long">long</a>,
-            <a class="idltype" href="#idl-unsigned-long">unsigned long</a>,
-            <a class="idltype" href="#idl-long-long">long long</a> and
-            <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>.
+            {{byte}},
+            {{octet}},
+            {{short}},
+            {{unsigned short}},
+            {{long}},
+            {{unsigned long}},
+            {{long long}} and
+            {{unsigned long long}}.
           </p>
           <p>
             The following types are known as <dfn id="dfn-numeric-type" export="">numeric types</dfn>:
             the <a class="dfnref" href="#dfn-integer-type">integer types</a>,
-            <a class="idltype" href="#idl-float">float</a>,
-            <a class="idltype" href="#idl-unrestricted-float">unresticted float</a>,
-            <a class="idltype" href="#idl-double">double</a> and
-            <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>.
+            {{float}},
+            {{unresticted float}},
+            {{double}} and
+            {{unrestricted double}}.
           </p>
           <p>
             The <dfn id="dfn-primitive-type" export="">primitive types</dfn> are
@@ -4680,7 +4679,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             and the <a class="dfnref" href="#dfn-typed-array-type">typed array types</a>.
           </p>
           <p>
-            The <a class="idltype" href="#idl-object">object</a> type,
+            The {{object}} type,
             all <a class="dfnref" href="#idl-interface">interface types</a>
             and the <a class="dfnref" href="#dfn-exception-type">exception types</a>
             are known as <dfn id="dfn-object-type" export="">object types</dfn>.
@@ -4739,22 +4738,22 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-any" id="idl-any" interface="" dfn="">any</h4>
 
             <p>
-              The <a class="idltype" href="#idl-any">any</a> type is the union of all other possible
+              The {{any}} type is the union of all other possible
               non-<a href="#idl-union">union</a> types.
               Its <a class="dfnref" href="#dfn-type-name">type name</a> is “Any”.
             </p>
             <p>
-              The <a class="idltype" href="#idl-any">any</a> type is like
+              The {{any}} type is like
               a discriminated union type, in that each of its values has a
-              specific non-<a class="idltype" href="#idl-any">any</a> type
+              specific non-{{any}} type
               associated with it.  For example, one value of the
-              <a class="idltype" href="#idl-any">any</a> type is the
-              <a class="idltype" href="#idl-unsigned-long">unsigned long</a>
-              150, while another is the <a class="idltype" href="#idl-long">long</a> 150.
+              {{any}} type is the
+              {{unsigned long}}
+              150, while another is the {{long}} 150.
               These are distinct values.
             </p>
             <p>
-              The particular type of an <a class="idltype" href="#idl-any">any</a>
+              The particular type of an {{any}}
               value is known as its <dfn id="dfn-specific-type" export="">specific type</dfn>.
               (Values of <a href="#idl-union">union types</a> also have
               <a class="dfnref" href="#dfn-specific-type">specific types</a>.)
@@ -4765,11 +4764,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-boolean" id="idl-boolean" interface="" dfn="">boolean</h4>
 
             <p>
-              The <a class="idltype" href="#idl-boolean">boolean</a> type has two values:
+              The {{boolean}} type has two values:
               <span class="idlvalue">true</span> and <span class="idlvalue">false</span>.
             </p>
             <p>
-              <a class="idltype" href="#idl-boolean">boolean</a> constant values in IDL are
+              {{boolean}} constant values in IDL are
               represented with the <code>true</code> and
               <code>false</code> tokens.
             </p>
@@ -4783,11 +4782,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-byte" id="idl-byte" interface="" dfn="">byte</h4>
 
             <p>
-              The <a class="idltype" href="#idl-byte">byte</a> type is a signed integer
+              The {{byte}} type is a signed integer
               type that has values in the range [−128, 127].
             </p>
             <p>
-              <a class="idltype" href="#idl-byte">byte</a> constant values in IDL are
+              {{byte}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4801,11 +4800,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-octet" id="idl-octet" interface="" dfn="">octet</h4>
 
             <p>
-              The <a class="idltype" href="#idl-octet">octet</a> type is an unsigned integer
+              The {{octet}} type is an unsigned integer
               type that has values in the range [0, 255].
             </p>
             <p>
-              <a class="idltype" href="#idl-octet">octet</a> constant values in IDL are
+              {{octet}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4819,11 +4818,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-short" id="idl-short" interface="" dfn="">short</h4>
 
             <p>
-              The <a class="idltype" href="#idl-short">short</a> type is a signed integer
+              The {{short}} type is a signed integer
               type that has values in the range [−32768, 32767].
             </p>
             <p>
-              <a class="idltype" href="#idl-short">short</a> constant values in IDL are
+              {{short}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4837,11 +4836,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-unsignedshort" id="idl-unsigned-short" interface="" dfn="">unsigned short</h4>
 
             <p>
-              The <a class="idltype" href="#idl-unsigned-short">unsigned short</a> type is an unsigned integer
+              The {{unsigned short}} type is an unsigned integer
               type that has values in the range [0, 65535].
             </p>
             <p>
-              <a class="idltype" href="#idl-unsigned-short">unsigned short</a> constant values in IDL are
+              {{unsigned short}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4855,11 +4854,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-long" id="idl-long" interface="" dfn="">long</h4>
 
             <p>
-              The <a class="idltype" href="#idl-long">long</a> type is a signed integer
+              The {{long}} type is a signed integer
               type that has values in the range [−2147483648, 2147483647].
             </p>
             <p>
-              <a class="idltype" href="#idl-long">long</a> constant values in IDL are
+              {{long}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4873,11 +4872,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-unsignedlong" id="idl-unsigned-long" interface="" dfn="">unsigned long</h4>
 
             <p>
-              The <a class="idltype" href="#idl-unsigned-long">unsigned long</a> type is an unsigned integer
+              The {{unsigned long}} type is an unsigned integer
               type that has values in the range [0, 4294967295].
             </p>
             <p>
-              <a class="idltype" href="#idl-unsigned-long">unsigned long</a> constant values in IDL are
+              {{unsigned long}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4891,11 +4890,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-longlong" id="idl-long-long" interface="" dfn="">long long</h4>
 
             <p>
-              The <a class="idltype" href="#idl-long-long">long long</a> type is a signed integer
+              The {{long long}} type is a signed integer
               type that has values in the range [−9223372036854775808, 9223372036854775807].
             </p>
             <p>
-              <a class="idltype" href="#idl-long-long">long long</a> constant values in IDL are
+              {{long long}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4909,11 +4908,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-unsignedlonglong" id="idl-unsigned-long-long" interface="" dfn="">unsigned long long</h4>
 
             <p>
-              The <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> type is an unsigned integer
+              The {{unsigned long long}} type is an unsigned integer
               type that has values in the range [0, 18446744073709551615].
             </p>
             <p>
-              <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> constant values in IDL are
+              {{unsigned long long}} constant values in IDL are
               represented with <a class="sym" href="#prod-integer">integer</a>
               tokens.
             </p>
@@ -4927,12 +4926,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-float" id="idl-float" interface="" dfn="">float</h4>
 
             <p>
-              The <a class="idltype" href="#idl-float">float</a> type is a floating point numeric
+              The {{float}} type is a floating point numeric
               type that corresponds to the set of finite single-precision 32 bit
               IEEE 754 floating point numbers.  [[!IEEE-754]]
             </p>
             <p>
-              <a class="idltype" href="#idl-float">float</a> constant values in IDL are
+              {{float}} constant values in IDL are
               represented with <a class="sym" href="#prod-float">float</a>
               tokens.
             </p>
@@ -4952,12 +4951,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" interface="" dfn="">unrestricted float</h4>
 
             <p>
-              The <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is a floating point numeric
+              The {{unrestricted float}} type is a floating point numeric
               type that corresponds to the set of all possible single-precision 32 bit
               IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
             </p>
             <p>
-              <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> constant values in IDL are
+              {{unrestricted float}} constant values in IDL are
               represented with <a class="sym" href="#prod-float">float</a>
               tokens.
             </p>
@@ -4971,12 +4970,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-double" id="idl-double" interface="" dfn="">double</h4>
 
             <p>
-              The <a class="idltype" href="#idl-double">double</a> type is a floating point numeric
+              The {{double}} type is a floating point numeric
               type that corresponds to the set of finite double-precision 64 bit
               IEEE 754 floating point numbers.  [[!IEEE-754]]
             </p>
             <p>
-              <a class="idltype" href="#idl-double">double</a> constant values in IDL are
+              {{double}} constant values in IDL are
               represented with <a class="sym" href="#prod-float">float</a>
               tokens.
             </p>
@@ -4990,12 +4989,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-unrestricteddouble" id="idl-unrestricted-double" interface="" dfn="">unrestricted double</h4>
 
             <p>
-              The <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is a floating point numeric
+              The {{unrestricted double}} type is a floating point numeric
               type that corresponds to the set of all possible double-precision 64 bit
               IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
             </p>
             <p>
-              <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> constant values in IDL are
+              {{unrestricted double}} constant values in IDL are
               represented with <a class="sym" href="#prod-float">float</a>
               tokens.
             </p>
@@ -5009,12 +5008,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-DOMString" id="idl-DOMString" interface="" dfn="">DOMString</h4>
 
             <p>
-              The <a class="idltype" href="#idl-DOMString">DOMString</a> type
+              The {{DOMString}} type
               corresponds to the set of all possible sequences of <a class="dfnref" href="#dfn-code-unit">code units</a>.
               Such sequences are commonly interpreted as UTF-16 encoded strings [[!RFC2781]]
               although this is not required.
               While {{DOMString}} is defined to be an OMG IDL boxed
-              <a class="idltype" href="#idl-sequence">sequence&lt;unsigned short&gt;</a>
+              {{sequence&lt;unsigned short&gt;}}
               valuetype in <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#ID-C74D1578">DOM Level 3 Core</a></cite>
               ([[DOM-LEVEL-3-CORE]], section 1.2.1),
               this document defines {{DOMString}} to be an intrinsic type so as to avoid
@@ -5084,7 +5083,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               <li>Return |U|.</li>
             </ol>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-DOMString">DOMString</a>
+              There is no way to represent a constant {{DOMString}}
               value in IDL, although {{DOMString}} <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
               and <a class="dfnref" href="#dfn-optional-argument">operation optional argument</a> default values
               can be specified using a <a class="sym" href="#prod-string">string</a> literal.
@@ -5099,13 +5098,13 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-ByteString" id="idl-ByteString" interface="" dfn="">ByteString</h4>
 
             <p>
-              The <a class="idltype" href="#idl-ByteString">ByteString</a> type
+              The {{ByteString}} type
               corresponds to the set of all possible sequences of bytes.
               Such sequences might be interpreted as UTF-8 encoded strings [[!RFC3629]]
               or strings in some other 8-bit-per-code-unit encoding, although this is not required.
             </p>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-ByteString">ByteString</a>
+              There is no way to represent a constant {{ByteString}}
               value in IDL.
             </p>
             <p>
@@ -5131,14 +5130,14 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-USVString" id="idl-USVString" interface="" dfn="">USVString</h4>
 
             <p>
-              The <a class="idltype" href="#idl-USVString">USVString</a> type
+              The {{USVString}} type
               corresponds to the set of all possible sequences of
               <a>Unicode scalar values</a>,
               which are all of the Unicode code points apart from the
               surrogate code points.
             </p>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-USVString">USVString</a>
+              There is no way to represent a constant {{USVString}}
               value in IDL, although {{USVString}} <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
               and <a class="dfnref" href="#dfn-optional-argument">operation optional argument</a> default values
               can be specified using a <a class="sym" href="#prod-string">string</a> literal.
@@ -5161,11 +5160,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-object" id="idl-object" interface="" dfn="">object</h4>
 
             <p>
-              The <a class="idltype" href="#idl-object">object</a> type corresponds to the set of
+              The {{object}} type corresponds to the set of
               all possible non-null object references.
             </p>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-object">object</a>
+              There is no way to represent a constant {{object}}
               value in IDL.
             </p>
             <p>
@@ -5326,7 +5325,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               <p>
                 The following <a class="dfnref" href="#dfn-interface">interface</a> has two
                 <a class="dfnref" href="#dfn-attribute">attributes</a>: one whose value can
-                be a <a class="idltype" href="#idl-DOMString">DOMString</a> or the <span class="idlvalue">null</span>
+                be a {{DOMString}} or the <span class="idlvalue">null</span>
                 value, and another whose value can be a reference to a <span class="idltype">Node</span>
                 object or the <span class="idlvalue">null</span> value:
               </p>
@@ -5342,7 +5341,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-sequence" id="idl-sequence" interface="" dfn="" lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;|T|&gt;</h4>
 
             <p>
-              The <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a>
+              The {{sequence&lt;T&gt;}}
               type is a parameterized type whose values are (possibly zero-length) sequences of
               values of type |T|.
             </p>
@@ -5542,13 +5541,13 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <h4 oldids="dom-RegExp" id="idl-RegExp" interface="" dfn="">RegExp</h4>
 
             <p>
-              The <a class="idltype" href="#idl-RegExp">RegExp</a> type is a type
+              The {{RegExp}} type is a type
               whose values are references to objects that represent regular expressions.
               The particular regular expression language and the features it supports
               is language binding specific.
             </p>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-RegExp">RegExp</a>
+              There is no way to represent a constant {{RegExp}}
               value in IDL.
             </p>
             <p>
@@ -5560,12 +5559,12 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
             <h4 oldids="dom-Error" id="idl-Error" interface="" dfn="">Error</h4>
 
-            <p>The <a class="idltype" href="#idl-Error">Error</a> type corresponds to the
+            <p>The {{Error}} type corresponds to the
               set of all possible non-null references to exception objects, including
               <a class="dfnref" href="#dfn-simple-exception">simple exceptions</a>
               and <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>.</p>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-Error">Error</a>
+              There is no way to represent a constant {{Error}}
               value in IDL.
             </p>
             <p>
@@ -5577,11 +5576,11 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
             <h4 id="idl-DOMException">DOMException</h4>
 
-            <p>The <a class="idltype" href="#idl-DOMException">DOMException</a> type corresponds to the
+            <p>The {{DOMException}} type corresponds to the
               set of all possible non-null references to objects
               representing <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>.</p>
             <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-DOMException">DOMException</a>
+              There is no way to represent a constant {{DOMException}}
               value in IDL.
             </p>
             <p>
@@ -6088,7 +6087,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <h4 id="es-any">any</h4>
 
             <p>
-              Since the IDL <a class="idltype" href="#idl-any">any</a> type
+              Since the IDL {{any}} type
               is the union of all other IDL types, it can correspond to any
               ECMAScript value type.
             </p>
@@ -6100,19 +6099,19 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <dt>The <emu-val>undefined</emu-val> value</dt>
               <dd>
                 The IDL value is an
-                <a class="idltype" href="#idl-object">object</a> reference
+                {{object}} reference
                 to a special object that represents the ECMAScript
                 <emu-val>undefined</emu-val> value.
               </dd>
               <dt>The <emu-val>null</emu-val> value</dt>
               <dd>
                 The IDL value is the <span class="idlvalue">null</span>
-                <a class="idltype" href="#idl-object">object?</a> reference.
+                {{object?}} reference.
               </dd>
               <dt>A <span class="estype">Boolean</span> value</dt>
               <dd>
                 The IDL value is the
-                <a class="idltype" href="#idl-boolean">boolean</a>
+                {{boolean}}
                 value that represents the same truth value.
               </dd>
               <dt>A <span class="estype">Number</span> value</dt>
@@ -6120,7 +6119,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 The IDL value is that which is obtained
                 by following the rules for converting the
                 <span class="estype">Number</span> to an IDL
-                <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value,
+                {{unrestricted double}} value,
                 as described in [[#es-unrestricted-double]],.
               </dd>
               <dt>A <span class="estype">String</span> value</dt>
@@ -6128,25 +6127,25 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 The IDL value is that which is obtained
                 by following the rules for converting the
                 <span class="estype">String</span> to an IDL
-                <a class="idltype" href="#idl-DOMString">DOMString</a> value,
+                {{DOMString}} value,
                 as described in [[#es-DOMString]],.
               </dd>
               <dt>An <span class="estype">object</span> value</dt>
               <dd>
                 The IDL value is an
-                <a class="idltype" href="#idl-object">object</a> value that
+                {{object}} value that
                 references the same object.
               </dd>
             </dl>
             <p id="any-to-es">
-              An IDL <a class="idltype" href="#idl-any">any</a> value is
+              An IDL {{any}} value is
               <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted to an ECMAScript value</a>
-              as follows.  If the value is an <a class="idltype" href="#idl-object">object</a>
+              as follows.  If the value is an {{object}}
               reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val>
               value, then it is converted to the ECMAScript
               <emu-val>undefined</emu-val> value.  Otherwise,
               the rules for converting the <a class="dfnref" href="#dfn-specific-type">specific type</a>
-              of the IDL <a class="idltype" href="#idl-any">any</a> value
+              of the IDL {{any}} value
               as described in the remainder of this section are performed.
             </p>
           
@@ -6155,16 +6154,16 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <h4 id="es-void">void</h4>
 
             <p>
-              The only place that the <a class="idltype" href="#idl-void">void</a> type may appear
+              The only place that the {{void}} type may appear
               in IDL is as the <a class="dfnref" href="#dfn-return-type">return type</a> of an
               <a class="dfnref" href="#dfn-operation">operation</a>.  Functions on <a class="dfnref" href="#dfn-platform-object">platform objects</a>
               that implement an operation whose IDL specifies a
-              <a class="idltype" href="#idl-void">void</a> return type must return the
+              {{void}} return type must return the
               <emu-val>undefined</emu-val> value.
             </p>
             <p>
               ECMAScript functions that implement an operation whose IDL
-              specifies a <a class="idltype" href="#idl-void">void</a> return type
+              specifies a {{void}} return type
               may return any value, which will be discarded.
             </p>
           
@@ -6180,7 +6179,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </p>
             <ol class="algorithm">
               <li>Let |x| be the result of computing <a>ToBoolean</a>(|V|).</li>
-              <li>Return the IDL <a class="idltype" href="#idl-boolean">boolean</a> value that is the one that represents the same truth value as the ECMAScript <span class="estype">Boolean</span> value |x|.</li>
+              <li>Return the IDL {{boolean}} value that is the one that represents the same truth value as the ECMAScript <span class="estype">Boolean</span> value |x|.</li>
             </ol>
             <p id="boolean-to-es">
               The IDL {{boolean}} value <span class="idlvalue">true</span>
@@ -6823,7 +6822,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 value that represents the empty string.
               </li>
               <li>Let |x| be <a>ToString</a>(|V|).</li>
-              <li>Return the IDL <a class="idltype" href="#idl-DOMString">DOMString</a> value that represents the same sequence of code units as the one the ECMAScript <span class="estype">String</span> value |x| represents.</li>
+              <li>Return the IDL {{DOMString}} value that represents the same sequence of code units as the one the ECMAScript <span class="estype">String</span> value |x| represents.</li>
             </ol>
             <p id="DOMString-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
@@ -6847,7 +6846,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Let |x| be <a>ToString</a>(|V|).</li>
               <li>If the value of any <a>element</a>
                 of |x| is greater than 255, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>Return an IDL <a class="idltype" href="#idl-ByteString">ByteString</a> value
+              <li>Return an IDL {{ByteString}} value
                 whose length is the length of |x|, and where the value of each element is
                 the value of the corresponding element of |x|.</li>
             </ol>
@@ -6873,7 +6872,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <ol class="algorithm">
               <li>Let |string| be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a> |V|
                 to a {{DOMString}}.</li>
-              <li>Return an IDL <a class="idltype" href="#idl-USVString">USVString</a> value
+              <li>Return an IDL {{USVString}} value
                 that is the result of <a class="dfnref" href="#dfn-obtain-unicode">converting |string| to a sequence of Unicode scalar values</a>.</li>
             </ol>
             <p id="USVString-to-es">
@@ -6892,7 +6891,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <h4 id="es-object">object</h4>
 
             <p>
-              IDL <a class="idltype" href="#idl-object">object</a>
+              IDL {{object}}
               values are represented by ECMAScript <span class="estype">Object</span> values.
             </p>
             <p id="es-to-object">
@@ -7165,12 +7164,12 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <h4 id="es-sequence">Sequences — sequence&lt;|T|&gt;</h4>
 
             <p>
-              IDL <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a> values are represented by
+              IDL {{sequence&lt;T&gt;}} values are represented by
               ECMAScript <span class="estype">Array</span> values.
             </p>
             <p id="es-to-sequence">
               An ECMAScript value |V| is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a> value as follows:
+              to an IDL {{sequence&lt;T&gt;}} value as follows:
             </p>
             <ol class="algorithm">
               <li>
@@ -7205,7 +7204,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 
             <p id="sequence-to-es">
               An IDL sequence value |S| of type
-              <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a> is
+              {{sequence&lt;T&gt;}} is
               <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a>
               to an ECMAScript <span class="estype">Array</span> object as follows:
             </p>
@@ -7229,7 +7228,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             
               <h5 id="create-sequence-from-iterable">Creating a sequence from an iterable</h5>
               <p>
-                To create an IDL value of type <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a> given an
+                To create an IDL value of type {{sequence&lt;T&gt;}} given an
                 iterable |iterable| and an iterator getter
                 |method|, perform the following steps:
               </p>
@@ -7251,7 +7250,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li>
                     If |next| is <emu-val>false</emu-val>,
                     then return an IDL sequence value of type
-                    <a class="idltype" href="#idl-sequence">sequence&lt;|T|&gt;</a>
+                    {{sequence&lt;T&gt;}}
                     of length |i|, where the value of the element
                     at index |j| is
                     |S|<sub>|j|</sub>.
@@ -7357,7 +7356,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <p id="es-to-promise">
               An ECMAScript value |V| is
               <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-promise">Promise&lt;|T|&gt;</a> value as follows:
+              to an IDL {{Promise&lt;T&gt;}} value as follows:
             </p>
             <ol class="algorithm">
               <li>Let |resolve| be the original value of <a class="nocite">%Promise%</a>.resolve.
@@ -7383,7 +7382,7 @@ alert(b[4]);    // This would alert "50".</pre>
               must be followed:
             </p>
             <ol class="algorithm">
-              <li>Let |promise| be the promise object of type <a class="idltype" href="#idl-promise">Promise&lt;|T|&gt;</a>.</li>
+              <li>Let |promise| be the promise object of type {{Promise&lt;T&gt;}}.</li>
               <li>
                 Let |onFulfilled| be a new <a class="dfnref" href="#dfn-function-object">function object</a> whose
                 behavior when invoked is as follows:
@@ -7466,9 +7465,9 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>
                 If |V| is a native <span class="estype">RegExp</span> object, then:
                 <ol>
-                  <li>If |types| includes <a class="idltype" href="#idl-RegExp">RegExp</a>, then return the
+                  <li>If |types| includes {{RegExp}}, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    |V| to <a class="idltype" href="#idl-RegExp">RegExp</a>.</li>
+                    |V| to {{RegExp}}.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
@@ -7476,8 +7475,8 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>
                 If |V| is a <a class="dfnref" href="#dfn-DOMException">DOMException</a> platform object, then:
                 <ol>
-                  <li>If |types| includes <a class="idltype" href="#idl-DOMException">DOMException</a> or
-                    <a class="idltype" href="#idl-Error">Error</a>, then return the
+                  <li>If |types| includes {{DOMException}} or
+                    {{Error}}, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
                     |V| to that type.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
@@ -7487,9 +7486,9 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>
                 If |V| is a native <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a>internal slot</a>), then:
                 <ol>
-                  <li>If |types| includes <a class="idltype" href="#idl-Error">Error</a>, then return the
+                  <li>If |types| includes {{Error}}, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    |V| to <a class="idltype" href="#idl-Error">Error</a>.</li>
+                    |V| to {{Error}}.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
                 </ol>
@@ -7638,7 +7637,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <h4 id="es-RegExp">RegExp</h4>
 
             <p>
-              IDL <a class="idltype" href="#idl-RegExp">RegExp</a> values are represented by
+              IDL {{RegExp}} values are represented by
               ECMAScript <span class="estype">RegExp</span> objects.
             </p>
             <p id="es-to-RegExp">
@@ -7672,7 +7671,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <h4 id="es-Error">Error</h4>
 
             <p>
-              IDL <a class="idltype" href="#idl-Error">Error</a> values are represented
+              IDL {{Error}} values are represented
               by native ECMAScript <span class="estype">Error</span> objects and
               platform objects for <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>.
             </p>
@@ -7699,7 +7698,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <h4 id="es-DOMException">DOMException</h4>
 
             <p>
-              IDL <a class="idltype" href="#idl-DOMException">DOMException</a> values are represented
+              IDL {{DOMException}} values are represented
               by platform objects for <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>.
             </p>
             <p id="es-to-DOMException">
@@ -7861,7 +7860,7 @@ alert(b[4]);    // This would alert "50".</pre>
             
               <h5 id="create-frozen-array-from-iterable">Creating a frozen array from an iterable</h5>
               <p>
-                To create an IDL value of type <a class="idltype" href="#idl-sequence">FrozenArray&lt;|T|&gt;</a> given an
+                To create an IDL value of type {{FrozenArray&lt;T&gt;}} given an
                 iterable |iterable| and an iterator getter
                 |method|, perform the following steps:
               </p>
@@ -9494,7 +9493,7 @@ manager.handler2;            // Evaluates to null.</pre>
               <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
               appears on an <a class="dfnref" href="#dfn-attribute">attribute</a>
               or <a class="dfnref" href="#dfn-operation">operation</a> argument whose type is
-              <a class="idltype" href="#idl-DOMString">DOMString</a>,
+              {{DOMString}},
               it indicates that a <emu-val>null</emu-val> value
               assigned to the attribute or passed as the operation argument will be
               handled differently from its default handling.  Instead of being stringified
