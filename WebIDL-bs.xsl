@@ -174,17 +174,11 @@ TR: </xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@class="xattr"]'>
-    <xsl:variable name='name'>
-        <xsl:choose>
-          <xsl:when test='string(.) = "[TreatNullAs=EmptyString]"'>
-            <xsl:text>[TreatNullAs]</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select='.' />
-          </xsl:otherwise>
-        </xsl:choose>
-    </xsl:variable>
-    <a extended-attribute=""><xsl:value-of select='$name' /></a>
+    <a extended-attribute=""><xsl:value-of select='.' /></a>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
+    <a extended-attribute=""><xsl:text>[TreatNullAs]</xsl:text></a>
   </xsl:template>
   
   <xsl:template match='processing-instruction("productions")'>
