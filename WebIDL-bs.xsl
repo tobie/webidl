@@ -183,7 +183,6 @@ TR: </xsl:text>
   
   <xsl:template match='h:a[@class="idltype"]'>
     <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
-    <xsl:message terminate='no'>content: '<xsl:value-of select='string(.)'/>', href: '<xsl:value-of select='@href'/>'</xsl:message>
   </xsl:template>
   
   <xsl:template match='processing-instruction("productions")'>
