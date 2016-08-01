@@ -400,7 +400,7 @@ interface GraphicalWindow {
           </p>
           
           <p>
-            The <a extended-attribute="">[Constructor]</a> that appears on <span class="idltype">GraphicalWindow</span>
+            The [{{Constructor}}] that appears on <span class="idltype">GraphicalWindow</span>
             is an [=extended attribute=].
             This extended attribute causes a constructor to exist in ECMAScript implementations,
             so that calling <code>new GraphicalWindow()</code> would return a new object
@@ -886,22 +886,22 @@ partial interface <em>SomeInterface</em> {
             [=partial interface=] definitions, with some
             limitations.  The following extended attributes must not
             be specified on partial interface definitions:
-            <a extended-attribute="">[Constructor]</a>,
-            <a extended-attribute="">[ImplicitThis]</a>,
+            [{{Constructor}}],
+            [{{ImplicitThis}}],
             
-            <a extended-attribute="">[LegacyArrayClass]</a>,
-            <a extended-attribute="">[NamedConstructor]</a>,
-            <a extended-attribute="">[NoInterfaceObject]</a>.
+            [{{LegacyArrayClass}}],
+            [{{NamedConstructor}}],
+            [{{NoInterfaceObject}}].
           </p>
               Note: The above list of [=extended attributes=]
               is all of those defined in this document that are applicable to
               [=interfaces=] except for
-              <a extended-attribute="">[Exposed]</a>,
-              <a extended-attribute="">[Global]</a>,
-              <a extended-attribute="">[OverrideBuiltins]</a>,
-              <a extended-attribute="">[PrimaryGlobal]</a>,
-              <a extended-attribute="">[SecureContext]</a> and
-              <a extended-attribute="">[Unforgeable]</a>.
+              [{{Exposed}}],
+              [{{Global}}],
+              [{{OverrideBuiltins}}],
+              [{{PrimaryGlobal}}],
+              [{{SecureContext}}] and
+              [{{Unforgeable}}].
           <p>
             Any [=extended attribute=] specified
             on a [=partial interface=] definition
@@ -916,18 +916,18 @@ partial interface <em>SomeInterface</em> {
 
           <p>
             The following extended attributes are applicable to interfaces:
-            <a extended-attribute="">[Constructor]</a>,
-            <a extended-attribute="">[Exposed]</a>,
-            <a extended-attribute="">[Global]</a>,
-            <a extended-attribute="">[ImplicitThis]</a>,
+            [{{Constructor}}],
+            [{{Exposed}}],
+            [{{Global}}],
+            [{{ImplicitThis}}],
             
-            <a extended-attribute="">[LegacyArrayClass]</a>,
-            <a extended-attribute="">[NamedConstructor]</a>,
-            <a extended-attribute="">[NoInterfaceObject]</a>,
-            <a extended-attribute="">[OverrideBuiltins]</a>,
-            <a extended-attribute="">[PrimaryGlobal]</a>,
-            <a extended-attribute="">[SecureContext]</a>,
-            <a extended-attribute="">[Unforgeable]</a>.
+            [{{LegacyArrayClass}}],
+            [{{NamedConstructor}}],
+            [{{NoInterfaceObject}}],
+            [{{OverrideBuiltins}}],
+            [{{PrimaryGlobal}}],
+            [{{SecureContext}}],
+            [{{Unforgeable}}].
           </p>
 
           <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
@@ -1200,8 +1200,8 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             </div>
             <p>
               The following extended attributes are applicable to constants:
-              <a extended-attribute="">[Exposed]</a>,
-              <a extended-attribute="">[SecureContext]</a>.
+              [{{Exposed}}],
+              [{{SecureContext}}].
             </p>
 
             <table class="grammar"><tr id="proddef-Const"><td><span class="prod-number">[26]</span></td><td><a class="sym" href="#prod-Const">Const</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"const" <a class="sym" href="#prod-ConstType">ConstType</a> <a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-ConstValue">ConstValue</a> ";"</span></td></tr><tr id="proddef-ConstValue"><td><span class="prod-number">[27]</span></td><td><a class="sym" href="#prod-ConstValue">ConstValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-BooleanLiteral">BooleanLiteral</a> <br/> |
@@ -1343,22 +1343,22 @@ interface <i>Derived</i> : <i>Ancestor</i> {
             <p>
               The following [=extended attributes=]
               are applicable to regular and static attributes:
-              <a extended-attribute="">[Clamp]</a>,
-              <a extended-attribute="">[EnforceRange]</a>,
-              <a extended-attribute="">[Exposed]</a>,
-              <a extended-attribute="">[SameObject]</a>,
-              <a extended-attribute="">[SecureContext]</a>,
-              <a extended-attribute="">[TreatNullAs]</a>.
+              [{{Clamp}}],
+              [{{EnforceRange}}],
+              [{{Exposed}}],
+              [{{SameObject}}],
+              [{{SecureContext}}],
+              [{{TreatNullAs}}].
             </p>
 
             <p>
               The following [=extended attributes=]
               are applicable only to regular attributes:
-              <a extended-attribute="">[LenientSetter]</a>,
-              <a extended-attribute="">[LenientThis]</a>,
-              <a extended-attribute="">[PutForwards]</a>,
-              <a extended-attribute="">[Replaceable]</a>,
-              <a extended-attribute="">[Unforgeable]</a>.
+              [{{LenientSetter}}],
+              [{{LenientThis}}],
+              [{{PutForwards}}],
+              [{{Replaceable}}],
+              [{{Unforgeable}}].
             </p>
 
             <table class="grammar"><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br/> |
@@ -1543,8 +1543,8 @@ interface Button {
             <p>
               [=Extended attributes=]
               that [=takes an argument list|take an argument list=]
-              (<a extended-attribute="">[Constructor]</a> and
-              <a extended-attribute="">[NamedConstructor]</a>, of those
+              ([{{Constructor}}] and
+              [{{NamedConstructor}}], of those
               defined in this specification) and [=callback functions=]
               are also considered to be [=variadic=]
               when the <code>...</code> token is used in their argument lists.
@@ -1713,17 +1713,17 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
             <p>
               The following extended attributes
               are applicable to operations:
-              <a extended-attribute="">[Exposed]</a>,
-              <a extended-attribute="">[NewObject]</a>,
-              <a extended-attribute="">[SecureContext]</a>,
-              <a extended-attribute="">[TreatNullAs]</a>,
-              <a extended-attribute="">[Unforgeable]</a>.
+              [{{Exposed}}],
+              [{{NewObject}}],
+              [{{SecureContext}}],
+              [{{TreatNullAs}}],
+              [{{Unforgeable}}].
             </p>
             <p>
               The following extended attributes are applicable to operation arguments:
-              <a extended-attribute="">[Clamp]</a>,
-              <a extended-attribute="">[EnforceRange]</a>,
-              <a extended-attribute="">[TreatNullAs]</a>.
+              [{{Clamp}}],
+              [{{EnforceRange}}],
+              [{{TreatNullAs}}].
             </p>
 
             <table class="grammar"><tr id="proddef-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#prod-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br/> |
@@ -2811,8 +2811,8 @@ partial interface A {
 partial interface A {
   void g(DOMString x);
 };</pre>
-              <p>Note that the <a extended-attribute="">[Constructor]</a> and
-                <a extended-attribute="">[NamedConstructor]</a>
+              <p>Note that the [{{Constructor}}] and
+                [{{NamedConstructor}}]
                 [=extended attributes=] are disallowed from appearing
                 on [=partial interface=] definitions,
                 so there is no need to also disallow overloading for constructors.</p>
@@ -2821,8 +2821,8 @@ partial interface A {
               An <dfn id="dfn-effective-overload-set" export="">effective overload set</dfn>
               represents the allowable invocations for a particular
               [=operation=],
-              constructor (specified with <a extended-attribute="">[Constructor]</a>
-              or <a extended-attribute="">[NamedConstructor]</a>),
+              constructor (specified with [{{Constructor}}]
+              or [{{NamedConstructor}}]),
               [=legacy caller=] or
               [=callback function=].
               The algorithm to compute an [=effective overload set=]
@@ -3481,8 +3481,8 @@ for (let session of sm) {
             </p>
             <p>
               The following extended attributes are applicable to [=iterable declarations=]:
-              <a extended-attribute="">[Exposed]</a>,
-              <a extended-attribute="">[SecureContext]</a>.
+              [{{Exposed}}],
+              [{{SecureContext}}].
             </p>
             
 
@@ -3884,14 +3884,14 @@ something.f(dict);</pre>
           </p>
           <p>
             The following extended attributes are applicable to dictionaries:
-            <a extended-attribute="">[Constructor]</a>,
-            <a extended-attribute="">[Exposed]</a>,
-            <a extended-attribute="">[SecureContext]</a>,
+            [{{Constructor}}],
+            [{{Exposed}}],
+            [{{SecureContext}}],
           </p>
           <p>
             The following extended attributes are applicable to dictionary members:
-            <a extended-attribute="">[Clamp]</a>,
-            <a extended-attribute="">[EnforceRange]</a>.
+            [{{Clamp}}],
+            [{{EnforceRange}}].
           </p>
           <table class="grammar"><tr><td><span class="prod-number">[6]</span></td><td><a class="sym" href="#prod-Partial">Partial</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"partial" <a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></span></td></tr><tr><td><span class="prod-number">[7]</span></td><td><a class="sym" href="#prod-PartialDefinition">PartialDefinition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PartialInterface">PartialInterface</a> <br/> |
              <a class="sym" href="#prod-PartialDictionary">PartialDictionary</a></span></td></tr><tr id="proddef-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#prod-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="proddef-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br/> |
@@ -4344,7 +4344,7 @@ meal.type == "noodles";              // Evaluates to true.</pre>
           </p>
           <p>
             The following extended attribute is applicable to callback functions:
-            <a extended-attribute="">[TreatNonObjectAsNull]</a>.
+            [{{TreatNonObjectAsNull}}].
           </p>
 
           <table class="grammar"><tr><td><span class="prod-number">[3]</span></td><td><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"callback" <a class="sym" href="#prod-CallbackRestOrInterface">CallbackRestOrInterface</a> <br/> |
@@ -6195,9 +6195,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6209,9 +6209,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6248,9 +6248,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6262,9 +6262,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6301,9 +6301,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6315,9 +6315,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6355,9 +6355,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6369,9 +6369,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6406,9 +6406,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6420,9 +6420,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6457,9 +6457,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6471,9 +6471,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6508,9 +6508,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6522,9 +6522,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6566,9 +6566,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Initialize |x| to <a>ToNumber</a>(|V|).</li>
               <li>If the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[EnforceRange]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{EnforceRange}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{EnforceRange}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{EnforceRange}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6580,9 +6580,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
                 <ul>
-                  <li>|V| is being assigned to an [=attribute=] annotated with the <a extended-attribute="">[Clamp]</a> [=extended attribute=],</li>
-                  <li>|V| is being passed as an [=operation=] argument annotated with the <a extended-attribute="">[Clamp]</a> extended attribute, or</li>
-                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the <a extended-attribute="">[Clamp]</a> extended attribute,</li>
+                  <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
+                  <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
+                  <li>|V| is being used as the value of a [=dictionary member=] annotated with the [{{Clamp}}] extended attribute,</li>
                 </ul>
                 then:
                 <ol>
@@ -6795,19 +6795,19 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 <ul>
                   <li>
                     |V| is being passed as an [=operation=]
-                    argument that is annotated with <a extended-attribute="">[TreatNullAs]</a>,
+                    argument that is annotated with [{{TreatNullAs}}],
                   </li>
                   <li>
                     |V| is being assigned to an [=attribute=]
-                    annotated with <a extended-attribute="">[TreatNullAs]</a>,
+                    annotated with [{{TreatNullAs}}],
                   </li>
                   <li>
                     |V| is being returned from a [=user object=] implementation of an
-                    operation annotated with <a extended-attribute="">[TreatNullAs]</a>, or
+                    operation annotated with [{{TreatNullAs}}], or
                   </li>
                   <li>
                     |V| is being returned from a [=user object=] implementation of an
-                    attribute annotated with <a extended-attribute="">[TreatNullAs]</a>,
+                    attribute annotated with [{{TreatNullAs}}],
                   </li>
                 </ul>
                 then return the {{DOMString}}
@@ -7063,7 +7063,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 
             <p>
               IDL <a href="#idl-callback-function">callback function types</a> are represented by ECMAScript <span class="estype">Function</span>
-              objects, except in the <a extended-attribute="">[TreatNonObjectAsNull]</a> case,
+              objects, except in the [{{TreatNonObjectAsNull}}] case,
               when they can be any object.
             </p>
             <p id="es-to-callback-function">
@@ -7078,7 +7078,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 to |V| being assigned to an [=attribute=]
                 whose type is a [=nullable type|nullable=]
                 [=callback function=]
-                that is annotated with <a extended-attribute="">[TreatNonObjectAsNull]</a>,
+                that is annotated with [{{TreatNonObjectAsNull}}],
               then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a>.</li>
               <li>Return the IDL <a href="#idl-callback-function">callback
               function type</a> value that represents a reference to the same
@@ -7115,7 +7115,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 to |V| being assigned to an [=attribute=]
                 whose type is a [=nullable type|nullable=]
                 [=callback function=]
-                that is annotated with <a extended-attribute="">[TreatNonObjectAsNull]</a>,
+                that is annotated with [{{TreatNonObjectAsNull}}],
                 then return the IDL
                 [=nullable type=] <span class="idltype">|T|?</span>
                 value <span class="idlvalue">null</span>.
@@ -7870,7 +7870,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <h4 id="Clamp">[Clamp]</h4>
 
             <p>
-              If the <a extended-attribute="">[Clamp]</a>
+              If the [{{Clamp}}]
               [=extended attribute=]
               appears on an [=operation=] argument,
               writable [=attribute=] or
@@ -7882,23 +7882,23 @@ alert(b[4]);    // This would alert "50".</pre>
               (<a>ToInt32</a>, <a>ToUint32</a>, etc.).
             </p>
             <p>
-              The <a extended-attribute="">[Clamp]</a>
+              The [{{Clamp}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[Clamp]</a> extended attribute
+              The [{{Clamp}}] extended attribute
               must not appear on a [=read only=]
               attribute, or an attribute, operation argument or dictionary member
               that is not of an integer type.  It also must not
-              be used in conjunction with the <a extended-attribute="">[EnforceRange]</a>
+              be used in conjunction with the [{{EnforceRange}}]
               extended attribute.
             </p>
             <p>
               See the rules for converting ECMAScript values to the various IDL integer
               types in [[#es-type-mapping]]
               for the specific requirements that the use of
-              <a extended-attribute="">[Clamp]</a> entails.
+              [{{Clamp}}] entails.
             </p>
 
             <div class="example">
@@ -7906,7 +7906,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 In the following [=IDL fragment=],
                 two [=operations=] are declared that
                 take three {{octet}} arguments; one uses
-                the <a extended-attribute="">[Clamp]</a> [=extended attribute=]
+                the [{{Clamp}}] [=extended attribute=]
                 on all three arguments, while the other does not:
               </p>
               <pre class="idl-example">interface GraphicsContext {
@@ -7935,7 +7935,7 @@ context.setColorClamped(-1, 255, 257);</pre>
             <h4 id="Constructor">[Constructor]</h4>
 
             <p>
-              If the <a extended-attribute="">[Constructor]</a>
+              If the [{{Constructor}}]
               [=extended attribute=]
               appears on an [=interface=], it indicates that
               the [=interface object=] for this interface
@@ -7943,33 +7943,33 @@ context.setColorClamped(-1, 255, 257);</pre>
               allowing objects implementing the interface to be constructed.
             </p>
             <p>
-              Multiple <a extended-attribute="">[Constructor]</a> extended
+              Multiple [{{Constructor}}] extended
               attributes may appear on a given interface.
             </p>
             <p>
-              The <a extended-attribute="">[Constructor]</a>
+              The [{{Constructor}}]
               extended attribute must either
               [=takes no arguments|take no arguments=] or
               [=takes an argument list|take an argument list=].
               The bare form, <code>[Constructor]</code>, has the same meaning as
               using an empty argument list, <code>[Constructor()]</code>.  For each
-              <a extended-attribute="">[Constructor]</a> extended attribute
+              [{{Constructor}}] extended attribute
               on the interface, there will be a way to construct an object that implements
               the interface by passing the specified arguments.
             </p>
             <p>
               The prose definition of a constructor must
               either return an IDL value of a type corresponding to the interface
-              the <a extended-attribute="">[Constructor]</a>
+              the [{{Constructor}}]
               extended attribute appears on, or throw an exception.
             </p>
             <p>
-              The <a extended-attribute="">[Constructor]</a> and
-              <a extended-attribute="">[NoInterfaceObject]</a>
+              The [{{Constructor}}] and
+              [{{NoInterfaceObject}}]
               extended attributes must not be specified on the same interface.
             </p>
             <p>
-              The <a extended-attribute="">[Constructor]</a> extended attribute
+              The [{{Constructor}}] extended attribute
               must not be used on a [=callback interface=].
             </p>
             <p>
@@ -7980,7 +7980,7 @@ context.setColorClamped(-1, 255, 257);</pre>
             <div class="example">
               <p>
                 The following IDL defines two interfaces.  The second has the
-                <a extended-attribute="">[Constructor]</a> extended
+                [{{Constructor}}] extended
                 attribute, while the first does not.
               </p>
               <pre class="idl-example">interface NodeList {
@@ -8021,7 +8021,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
             <h4 id="EnforceRange">[EnforceRange]</h4>
 
             <p>
-              If the <a extended-attribute="">[EnforceRange]</a>
+              If the [{{EnforceRange}}]
               [=extended attribute=]
               appears on an [=operation=] argument,
               writable [=regular attribute=] or
@@ -8034,24 +8034,24 @@ var z = new NodeList();    // This would throw a TypeError, since no
               will be rounded towards zero before being checked against its range.
             </p>
             <p>
-              The <a extended-attribute="">[EnforceRange]</a>
+              The [{{EnforceRange}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[EnforceRange]</a> extended attribute
+              The [{{EnforceRange}}] extended attribute
               must not appear on a [=read only=]
               attribute, a [=static attribute=],
               or an attribute, operation argument or dictionary member
               that is not of an integer type.  It also must not
-              be used in conjunction with the <a extended-attribute="">[Clamp]</a>
+              be used in conjunction with the [{{Clamp}}]
               extended attribute.
             </p>
             <p>
               See the rules for converting ECMAScript values to the various IDL integer
               types in [[#es-type-mapping]]
               for the specific requirements that the use of
-              <a extended-attribute="">[EnforceRange]</a> entails.
+              [{{EnforceRange}}] entails.
             </p>
 
             <div class="example">
@@ -8059,7 +8059,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
                 In the following [=IDL fragment=],
                 two [=operations=] are declared that
                 take three {{octet}} arguments; one uses
-                the <a extended-attribute="">[EnforceRange]</a> [=extended attribute=]
+                the [{{EnforceRange}}] [=extended attribute=]
                 on all three arguments, while the other does not:
               </p>
               <pre class="idl-example">interface GraphicsContext {
@@ -8092,7 +8092,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
           
             <h4 id="Exposed">[Exposed]</h4>
             <p>
-              If the <a extended-attribute="">[Exposed]</a>
+              If the [{{Exposed}}]
               [=extended attribute=]
               appears on an [=interface=],
               [=partial interface=], or
@@ -8102,7 +8102,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               being exposed only on the [=primary global interface=].
             </p>
             <p>
-              The <a extended-attribute="">[Exposed]</a>
+              The [{{Exposed}}]
               [=extended attribute=]
               must either
               [=takes an identifier|take an identifier=] or
@@ -8111,7 +8111,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               a [=global name=].
             </p>
             <p>
-              Every construct that the <a extended-attribute="">[Exposed]</a>
+              Every construct that the [{{Exposed}}]
               [=extended attribute=]
               can be specified on has an <dfn id="dfn-exposure-set" export="">exposure set</dfn>,
               which is a set of [=interfaces=]
@@ -8121,14 +8121,14 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
             </p>
             <ul>
               <li>
-                <p>If the <a extended-attribute="">[Exposed]</a>
+                <p>If the [{{Exposed}}]
                 [=extended attribute=]
                 is specified on the construct, then the [=exposure set=]
                 is the set of all interfaces that have a [=global name=]
                 that is listed in the extended attribute's argument.</p>
               </li>
               <li>
-                <p>If the <a extended-attribute="">[Exposed]</a>
+                <p>If the [{{Exposed}}]
                 [=extended attribute=]
                 does not appear on a construct, then its
                 [=exposure set=] is defined
@@ -8150,17 +8150,17 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               </li>
             </ul>
             <p>
-              If <a extended-attribute="">[Exposed]</a> appears on an
+              If [{{Exposed}}] appears on an
               [=overloaded=] [=operation=],
               then it must appear identically on all overloads.
             </p>
             <p>
-              The <a extended-attribute="">[Exposed]</a> extended attribute
+              The [{{Exposed}}] extended attribute
               must not be specified on both an interface
               member and a partial interface definition the interface member is declared on.
             </p>
             <p>
-              If <a extended-attribute="">[Exposed]</a> appears on both an interface
+              If [{{Exposed}}] appears on both an interface
               and one of its interface members, then the interface member's
               [=exposure set=]
               must be a subset of the interface's
@@ -8209,10 +8209,10 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               [[#es-operations]] and
               [[#es-iterators]]
               for the specific requirements that the use of
-              <a extended-attribute="">[Exposed]</a> entails.
+              [{{Exposed}}] entails.
             </p>
             <div class="example">
-              <p><a extended-attribute="">[Exposed]</a>
+              <p>[{{Exposed}}]
               is intended to be used to control whether interfaces or individual interface
               members are available for use only in workers, only in the <span class="idltype">Window</span>,
               or in both.</p>
@@ -8260,7 +8260,7 @@ interface Node {
           
             <h4 id="ImplicitThis">[ImplicitThis]</h4>
             <p>
-              If the <a extended-attribute="">[ImplicitThis]</a>
+              If the [{{ImplicitThis}}]
               [=extended attribute=]
               appears on an [=interface=],
               it indicates that when a <span class="estype">Function</span> corresponding
@@ -8271,16 +8271,16 @@ interface Node {
               This is regardless of whether the calling code is in strict mode.
             </p>
             <p>
-              The <a extended-attribute="">[ImplicitThis]</a>
+              The [{{ImplicitThis}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
               See [[#es-operations]]
               for the specific requirements that the use of
-              <a extended-attribute="">[ImplicitThis]</a> entails.
+              [{{ImplicitThis}}] entails.
             </p>
-                Note: The <a extended-attribute="">[ImplicitThis]</a>
+                Note: The [{{ImplicitThis}}]
               [=extended attribute=]
               is intended for use on the <span class="idltype">Window</span>
               [=interface=] as defined
@@ -8288,7 +8288,7 @@ interface Node {
             <div class="example">
               <p>In the following example, the <span class="idltype">Window</span>
               [=interface=] is defined
-              with the <a extended-attribute="">[ImplicitThis]</a>
+              with the [{{ImplicitThis}}]
               [=extended attribute=].</p>
               <pre class="idl-example">[ImplicitThis]
 interface Window {
@@ -8315,8 +8315,8 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
             <h4 oldids="PrimaryGlobal" id="Global">[Global] and [PrimaryGlobal]</h4>
 
             <p>
-              If the <a extended-attribute="">[Global]</a>
-              or <a extended-attribute="">[PrimaryGlobal]</a>
+              If the [{{Global}}]
+              or [{{PrimaryGlobal}}]
               [=extended attribute=]
               appears on an [=interface=],
               it indicates that objects implementing this interface can
@@ -8364,28 +8364,28 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               </p>
             </div>
             <p>
-              If the <a extended-attribute="">[Global]</a> or
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              If the [{{Global}}] or
+              [{{PrimaryGlobal}}]
               [=extended attributes=]
               is used on an [=interface=], then:
             </p>
             <ul>
               <li>The interface must not define a [=named property setter=].</li>
-              <li>The interface must not also be declared with the <a extended-attribute="">[OverrideBuiltins]</a>
+              <li>The interface must not also be declared with the [{{OverrideBuiltins}}]
                 extended attribute.</li>
               <li>The interface must not [=inherit=] from another interface with the
-                <a extended-attribute="">[OverrideBuiltins]</a> extended attribute.</li>
+                [{{OverrideBuiltins}}] extended attribute.</li>
               <li>Any other interface must not [=inherit=] from it.</li>
             </ul>
             <p>
-              If <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> is specified on
+              If [{{Global}}] or [{{PrimaryGlobal}}] is specified on
               a [=partial interface=]
               definition, then that partial interface definition must
               be the part of the interface definition that defines
               the [=named property getter=].
             </p>
             <p>
-              The <a extended-attribute="">[Global]</a> and <a extended-attribute="">[PrimaryGlobal]</a>
+              The [{{Global}}] and [{{PrimaryGlobal}}]
               [=extended attribute=] must not
               be used on an [=interface=] that can have more
               than one object implementing it in the same ECMAScript global environment.
@@ -8395,8 +8395,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 sense for more than one object’s named properties to be exposed on an object that
                 all of those objects inherit from.
             <p>
-              If an interface is declared with the <a extended-attribute="">[Global]</a> or
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              If an interface is declared with the [{{Global}}] or
+              [{{PrimaryGlobal}}]
               [=extended attribute=], then
               there must not be more than one
               [=interface member=] across
@@ -8413,38 +8413,38 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 Note: This is because all of the members of the interface and its consequential
               interfaces get flattened down on to the object that implements the interface.
             <p>
-              The <a extended-attribute="">[Global]</a> and
-              <a extended-attribute="">[PrimaryGlobal]</a> extended attributes
+              The [{{Global}}] and
+              [{{PrimaryGlobal}}] extended attributes
               can also be used to give a name to one or more global interfaces,
-              which can then be referenced by the <a extended-attribute="">[Exposed]</a>
+              which can then be referenced by the [{{Exposed}}]
               extended attribute.
             </p>
             <p>
-              The <a extended-attribute="">[Global]</a> and
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              The [{{Global}}] and
+              [{{PrimaryGlobal}}]
               extended attributes must either
               [=takes no arguments|take no arguments=]
               or [=takes an identifier list|take an identifier list=].
             </p>
             <p>
-              If the <a extended-attribute="">[Global]</a> or
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              If the [{{Global}}] or
+              [{{PrimaryGlobal}}]
               [=extended attribute=]
               is declared with an identifier list argument, then those identifiers are the interface’s
               <dfn id="dfn-global-name" export="">global names</dfn>; otherwise, the interface has
               a single global name, which is the interface's identifier.
             </p>
                 Note: The identifier argument list exists so that more than one global interface can
-                be addressed with a single name in an <a extended-attribute="">[Exposed]</a>
+                be addressed with a single name in an [{{Exposed}}]
                 [=extended attribute=].
             <p>
-              The <a extended-attribute="">[Global]</a> and
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              The [{{Global}}] and
+              [{{PrimaryGlobal}}]
               [=extended attributes=]
               must not be declared on the same
-              interface.  The <a extended-attribute="">[PrimaryGlobal]</a>
+              interface.  The [{{PrimaryGlobal}}]
               extended attribute must be declared on
-              at most one interface.  The interface <a extended-attribute="">[PrimaryGlobal]</a>
+              at most one interface.  The interface [{{PrimaryGlobal}}]
               is declared on, if any, is known as the <dfn id="dfn-primary-global-interface" export="">primary global interface</dfn>.
             </p>
             <p>
@@ -8452,7 +8452,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               [[#getownproperty]] and
               [[#defineownproperty]]
               for the specific requirements that the use of
-              <a extended-attribute="">[Global]</a> and <a extended-attribute="">[PrimaryGlobal]</a>
+              [{{Global}}] and [{{PrimaryGlobal}}]
               entails for named properties,
               and [[#es-constants]],
               [[#es-attributes]] and
@@ -8462,10 +8462,10 @@ var requestAnimationFrame = window.requestAnimationFrame ||
             </p>
             <div class="example">
               <p>
-                The <a extended-attribute="">[PrimaryGlobal]</a>
+                The [{{PrimaryGlobal}}]
                 [=extended attribute=] is intended
                 to be used by the <span class="idltype">Window</span> interface as defined in
-                HTML5 ([[HTML5]], section 5.2).  (<a extended-attribute="">[Global]</a>
+                HTML5 ([[HTML5]], section 5.2).  ([{{Global}}]
                 is intended to be used by worker global interfaces.)
                 The <span class="idltype">Window</span> interface exposes frames as properties on the <span class="idltype">Window</span>
                 object.  Since the <span class="idltype">Window</span> object also serves as the
@@ -8515,7 +8515,7 @@ interface Window {
             <h4 id="LegacyArrayClass">[LegacyArrayClass]</h4>
 
             <p>
-              If the <a extended-attribute="">[LegacyArrayClass]</a>
+              If the [{{LegacyArrayClass}}]
               [=extended attribute=]
               appears on an [=interface=]
               that is not defined to [=inherit=]
@@ -8527,12 +8527,12 @@ interface Window {
               with objects implementing the interface.
             </p>
             <p>
-              The <a extended-attribute="">[LegacyArrayClass]</a> extended attribute
+              The [{{LegacyArrayClass}}] extended attribute
               must [=takes no arguments|take no arguments=].
               It must not be used on an interface that
               has any [=inherited interfaces=].
             </p>
-                Note: Interfaces using <a extended-attribute="">[LegacyArrayClass]</a> will
+                Note: Interfaces using [{{LegacyArrayClass}}] will
                 need to define a “length” [=attribute=]
                 of type <span class="estype">unsigned long</span> that exposes the length
                 of the array-like object, in order for the inherited <span class="estype">Array</span>
@@ -8542,14 +8542,14 @@ interface Window {
               
             <p>
               See [[#interface-prototype-object]] for the
-              specific requirements that the use of <a extended-attribute="">[LegacyArrayClass]</a>
+              specific requirements that the use of [{{LegacyArrayClass}}]
               entails.
             </p>
             <div class="example">
               <p>
                 The following [=IDL fragment=]
                 defines two [=interfaces=]
-                that use <a extended-attribute="">[LegacyArrayClass]</a>.
+                that use [{{LegacyArrayClass}}].
               </p>
               <pre class="idl-example">[LegacyArrayClass]
 interface ItemList {
@@ -8591,28 +8591,28 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             <h4 id="LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</h4>
 
             <p>
-              If the <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+              If the [{{LegacyUnenumerableNamedProperties}}]
               [=extended attribute=]
               appears on a [=interface=]
               that [=support named properties|supports named properties=],
               it indicates that all the interface's named properties are unenumerable.
             </p>
             <p>
-              The <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+              The [{{LegacyUnenumerableNamedProperties}}]
               extended attribute must
               [=takes no arguments|take no arguments=]
               and must not appear on an interface
               that does not define a [=named property getter=].
             </p>
             <p>
-              If the <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+              If the [{{LegacyUnenumerableNamedProperties}}]
               extended attribute is specified on an interface, then it applies to all its derived interfaces and
               must not be specified on any of them.
             </p>
             <p>
               See [[#property-enumeration]]
               for the specific requirements that the use of
-              <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+              [{{LegacyUnenumerableNamedProperties}}]
               entails.
             </p>
           
@@ -8620,7 +8620,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
           
             <h4 id="LenientSetter">[LenientSetter]</h4>
             <p>
-              If the <a extended-attribute="">[LenientSetter]</a>
+              If the [{{LenientSetter}}]
               [=extended attribute=]
               appears on a [=read only=]
               [=regular attribute=],
@@ -8630,12 +8630,12 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             </p>
             <div class="advisement">
               <p>
-                Specifications should not use <a extended-attribute="">[LenientSetter]</a>
+                Specifications should not use [{{LenientSetter}}]
                 unless required for compatibility reasons.  Pages have been observed
                 where authors have attempted to polyfill an IDL attribute by assigning
                 to the property, but have accidentally done so even if the property
                 exists.  In strict mode, this would cause an exception to be thrown,
-                potentially breaking page.  Without <a extended-attribute="">[LenientSetter]</a>,
+                potentially breaking page.  Without [{{LenientSetter}}],
                 this could prevent a browser from shipping the feature.
               </p>
               <p>
@@ -8646,7 +8646,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               </p>
             </div>
             <p>
-              The <a extended-attribute="">[LenientThis]</a> extended attribute
+              The [{{LenientThis}}] extended attribute
               must
               [=takes no arguments|take no arguments=].
               It must not be used on anything other than
@@ -8654,20 +8654,20 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               [=regular attribute=].
             </p>
             <p>
-              An attribute with the <a extended-attribute="">[LenientSetter]</a>
+              An attribute with the [{{LenientSetter}}]
               extended attribute must not also be declared
-              with the <a extended-attribute="">[PutForwards]</a>
-              or <a extended-attribute="">[Replaceable]</a> extended attributes.
+              with the [{{PutForwards}}]
+              or [{{Replaceable}}] extended attributes.
             </p>
             <p>
               See the <a href="#es-attributes">Attributes</a> section for how
-              <a extended-attribute="">[LenientSetter]</a>
+              [{{LenientSetter}}]
               is to be implemented.
             </p>
             <div class="example">
               <p>
                 The following IDL fragment defines an interface that uses the
-                <a extended-attribute="">[LenientSetter]</a> extended
+                [{{LenientSetter}}] extended
                 attribute.
               </p>
               <pre class="idl-example">interface Example {
@@ -8694,7 +8694,7 @@ example.y = 1;</pre>
           
             <h4 id="LenientThis">[LenientThis]</h4>
             <p>
-              If the <a extended-attribute="">[LenientThis]</a>
+              If the [{{LenientThis}}]
               [=extended attribute=]
               appears on a [=regular attribute=],
               it indicates that invocations of the attribute’s getter or setter
@@ -8703,13 +8703,13 @@ example.y = 1;</pre>
               on which the attribute appears will be ignored.
             </p>
             <p>
-              The <a extended-attribute="">[LenientThis]</a> extended attribute
+              The [{{LenientThis}}] extended attribute
               must
               [=takes no arguments|take no arguments=].
               It must not be used on a
               [=static attribute=].
             </p>
-                Advisement: Specifications should not use <a extended-attribute="">[LenientThis]</a>
+                Advisement: Specifications should not use [{{LenientThis}}]
                 unless required for compatibility reasons.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
@@ -8717,13 +8717,13 @@ example.y = 1;</pre>
               
             <p>
               See the <a href="#es-attributes">Attributes</a> section for how
-              <a extended-attribute="">[LenientThis]</a>
+              [{{LenientThis}}]
               is to be implemented.
             </p>
             <div class="example">
               <p>
                 The following IDL fragment defines an interface that uses the
-                <a extended-attribute="">[LenientThis]</a> extended
+                [{{LenientThis}}] extended
                 attribute.
               </p>
               <pre class="idl-example">interface Example {
@@ -8756,30 +8756,30 @@ Example.prototype.y;</pre>
           
             <h4 id="NamedConstructor">[NamedConstructor]</h4>
             <p>
-              If the <a extended-attribute="">[NamedConstructor]</a>
+              If the [{{NamedConstructor}}]
               [=extended attribute=]
               appears on an [=interface=],
               it indicates that the ECMAScript global object will have a property with the
               specified name whose value is a constructor function that can
               create objects that implement the interface.
-              Multiple <a extended-attribute="">[NamedConstructor]</a> extended
+              Multiple [{{NamedConstructor}}] extended
               attributes may appear on a given interface.
             </p>
             <p>
-              The <a extended-attribute="">[NamedConstructor]</a>
+              The [{{NamedConstructor}}]
               extended attribute must either
               [=takes an identifier|take an identifier=] or
               [=takes a named argument list|take a named argument list=].
               The first form, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>]</code>, has the same meaning as
               using an empty argument list, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>()]</code>.  For each
-              <a extended-attribute="">[NamedConstructor]</a> extended attribute
+              [{{NamedConstructor}}] extended attribute
               on the interface, there will be a way to construct an object that implements
               the interface by passing the specified arguments to the constructor function
               that is the value of the aforementioned property.
             </p>
             <p>
               The identifier used for the named constructor must not
-              be the same as that used by an <a extended-attribute="">[NamedConstructor]</a>
+              be the same as that used by an [{{NamedConstructor}}]
               extended attribute on another interface, must not
               be the same as an identifier of an interface
               that has an [=interface object=],
@@ -8787,7 +8787,7 @@ Example.prototype.y;</pre>
               [=reserved identifiers=].
             </p>
             <p>
-              The <a extended-attribute="">[NamedConstructor]</a> extended attribute
+              The [{{NamedConstructor}}] extended attribute
               must not be used on a [=callback interface=].
             </p>
             <p>
@@ -8798,7 +8798,7 @@ Example.prototype.y;</pre>
             <div class="example">
               <p>
                 The following IDL defines an interface that uses the
-                <a extended-attribute="">[NamedConstructor]</a> extended
+                [{{NamedConstructor}}] extended
                 attribute.
               </p>
               <pre class="idl-example">[NamedConstructor=Audio,
@@ -8826,7 +8826,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
             <h4 id="NewObject">[NewObject]</h4>
 
             <p>
-              If the <a extended-attribute="">[NewObject]</a>
+              If the [{{NewObject}}]
               [=extended attribute=]
               appears on a [=regular operation|regular=]
               or [=static operations|static=]
@@ -8836,12 +8836,12 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               must always be returned.
             </p>
             <p>
-              The <a extended-attribute="">[NewObject]</a>
+              The [{{NewObject}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[NewObject]</a>
+              The [{{NewObject}}]
               extended attribute must not
               be used on anything other than a [=regular operation|regular=]
               or [=static operations|static=]
@@ -8870,14 +8870,14 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
             <h4 id="NoInterfaceObject">[NoInterfaceObject]</h4>
 
             <p>
-              If the <a extended-attribute="">[NoInterfaceObject]</a>
+              If the [{{NoInterfaceObject}}]
               [=extended attribute=]
               appears on an [=interface=],
               it indicates that an
               [=interface object=]
               will not exist for the interface in the ECMAScript binding.
             </p>
-                Advisement: The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
+                Advisement: The [{{NoInterfaceObject}}] extended attribute
                 should not be used on interfaces that are not
                 solely used as [=supplemental=] interfaces,
                 unless there are clear Web compatibility reasons for doing so.  Specification authors who
@@ -8886,38 +8886,38 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
                 mailing list before proceeding.
               
             <p>
-              The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
+              The [{{NoInterfaceObject}}] extended attribute
               must [=takes no arguments|take no arguments=].
             </p>
             <p>
-              If the <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
-              is specified on an interface, then the <a extended-attribute="">[Constructor]</a>
+              If the [{{NoInterfaceObject}}] extended attribute
+              is specified on an interface, then the [{{Constructor}}]
               extended attribute must not also be specified on that interface.
-              A <a extended-attribute="">[NamedConstructor]</a> extended attribute is fine,
+              A [{{NamedConstructor}}] extended attribute is fine,
               however.
             </p>
             <p>
-              The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
+              The [{{NoInterfaceObject}}] extended attribute
               must not be specified on an interface that has any
               [=static operations=] defined on it.
             </p>
             <p>
-              The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
+              The [{{NoInterfaceObject}}] extended attribute
               must not be specified on a [=callback interface=]
               unless it has a [=constant=] declared on it.
               This is because callback interfaces without constants never have
               [=interface objects=].
             </p>
             <p>
-              An interface that does not have the <a extended-attribute="">[NoInterfaceObject]</a> extended
+              An interface that does not have the [{{NoInterfaceObject}}] extended
               attribute specified must not inherit
-              from an interface that has the <a extended-attribute="">[NoInterfaceObject]</a> extended
+              from an interface that has the [{{NoInterfaceObject}}] extended
               attribute specified.
             </p>
             <p>
               See [[#es-interfaces]]
               for the specific requirements that the use of
-              <a extended-attribute="">[NoInterfaceObject]</a> entails.
+              [{{NoInterfaceObject}}] entails.
             </p>
             <div class="example">
               <p>
@@ -8956,7 +8956,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
             <h4 id="OverrideBuiltins">[OverrideBuiltins]</h4>
 
             <p>
-              If the <a extended-attribute="">[OverrideBuiltins]</a>
+              If the [{{OverrideBuiltins}}]
               [=extended attribute=]
               appears on an [=interface=],
               it indicates that for a [=platform object=] implementing the interface,
@@ -8971,13 +8971,13 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
               same name on the object itself or somewhere on its prototype chain.
             </p>
             <p>
-              The <a extended-attribute="">[OverrideBuiltins]</a>
+              The [{{OverrideBuiltins}}]
               extended attribute must
               [=takes no arguments|take no arguments=]
               and must not appear on an interface
               that does not define a [=named property getter=]
-              or that also is declared with the <a extended-attribute="">[Global]</a>
-              or <a extended-attribute="">[PrimaryGlobal]</a>
+              or that also is declared with the [{{Global}}]
+              or [{{PrimaryGlobal}}]
               extended attribute.  If the extended attribute is specified on
               a [=partial interface=]
               definition, then that partial interface definition must
@@ -8988,7 +8988,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
               See [[#indexed-and-named-properties]]
               and [[#defineownproperty]]
               for the specific requirements that the use of
-              <a extended-attribute="">[OverrideBuiltins]</a> entails.
+              [{{OverrideBuiltins}}] entails.
             </p>
             <div class="example">
               <p>
@@ -9050,7 +9050,7 @@ map2.toString;</pre>
             <h4 id="PutForwards">[PutForwards]</h4>
 
             <p>
-              If the <a extended-attribute="">[PutForwards]</a>
+              If the [{{PutForwards}}]
               [=extended attribute=]
               appears on a [=read only=]
               [=regular attribute=] declaration whose type is
@@ -9061,14 +9061,14 @@ map2.toString;</pre>
               referenced by the attribute being assigned to.
             </p>
             <p>
-              The <a extended-attribute="">[PutForwards]</a> extended
+              The [{{PutForwards}}] extended
               attribute must [=takes an identifier|take an identifier=].
               Assuming that:
             </p>
             <ul>
               <li>
                 |A| is the [=attribute=]
-                on which the <a extended-attribute="">[PutForwards]</a>
+                on which the [{{PutForwards}}]
                 extended attribute appears,
               </li>
               <li>
@@ -9094,9 +9094,9 @@ map2.toString;</pre>
               references, instead.
             </p>
             <p>
-              Note that <a extended-attribute="">[PutForwards]</a>-annotated
+              Note that [{{PutForwards}}]-annotated
               [=attributes=] can be
-              chained.  That is, an attribute with the <a extended-attribute="">[PutForwards]</a>
+              chained.  That is, an attribute with the [{{PutForwards}}]
               [=extended attribute=]
               can refer to an attribute that itself has that extended attribute.
               There must not exist a cycle in a
@@ -9106,36 +9106,36 @@ map2.toString;</pre>
               encountered more than once.
             </p>
             <p>
-              An attribute with the <a extended-attribute="">[PutForwards]</a>
+              An attribute with the [{{PutForwards}}]
               extended attribute must not also be declared
-              with the <a extended-attribute="">[LenientSetter]</a> or
-              <a extended-attribute="">[Replaceable]</a> extended attributes.
+              with the [{{LenientSetter}}] or
+              [{{Replaceable}}] extended attributes.
             </p>
             <p>
-              The <a extended-attribute="">[PutForwards]</a>
+              The [{{PutForwards}}]
               extended attribute must not be used
               on an [=attribute=] that
               is not [=read only=].
             </p>
             <p>
-              The <a extended-attribute="">[PutForwards]</a> extended attribute
+              The [{{PutForwards}}] extended attribute
               must not be used on a
               [=static attribute=].
             </p>
             <p>
-              The <a extended-attribute="">[PutForwards]</a> extended attribute
+              The [{{PutForwards}}] extended attribute
               must not be used on an attribute declared on
               a [=callback interface=].
             </p>
             <p>
               See the <a href="#es-attributes">Attributes</a> section for how
-              <a extended-attribute="">[PutForwards]</a>
+              [{{PutForwards}}]
               is to be implemented.
             </p>
             <div class="example">
               <p>
                 The following [=IDL fragment=] defines interfaces for names and people.
-                The <a extended-attribute="">[PutForwards]</a> extended
+                The [{{PutForwards}}] extended
                 attribute is used on the <span class="idlattr">name</span> attribute
                 of the <span class="idltype">Person</span> interface to indicate
                 that assignments to that attribute result in assignments to the
@@ -9167,7 +9167,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
             <h4 id="Replaceable">[Replaceable]</h4>
 
             <p>
-              If the <a extended-attribute="">[Replaceable]</a>
+              If the [{{Replaceable}}]
               [=extended attribute=]
               appears on a [=read only=]
               [=regular attribute=],
@@ -9179,36 +9179,36 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
               exists on the [=interface prototype object=].
             </p>
             <p>
-              The <a extended-attribute="">[Replaceable]</a>
+              The [{{Replaceable}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              An attribute with the <a extended-attribute="">[Replaceable]</a>
+              An attribute with the [{{Replaceable}}]
               extended attribute must not also be declared
-              with the <a extended-attribute="">[LenientSetter]</a> or
-              <a extended-attribute="">[PutForwards]</a> extended attributes.
+              with the [{{LenientSetter}}] or
+              [{{PutForwards}}] extended attributes.
             </p>
             <p>
-              The <a extended-attribute="">[Replaceable]</a>
+              The [{{Replaceable}}]
               extended attribute must not be used
               on an [=attribute=] that
               is not [=read only=].
             </p>
             <p>
-              The <a extended-attribute="">[Replaceable]</a> extended attribute
+              The [{{Replaceable}}] extended attribute
               must not be used on a
               [=static attribute=].
             </p>
             <p>
-              The <a extended-attribute="">[Replaceable]</a> extended attribute
+              The [{{Replaceable}}] extended attribute
               must not be used on an attribute declared on
               a [=callback interface=].
             </p>
             <p>
               See [[#es-attributes]]
               for the specific requirements that the use of
-              <a extended-attribute="">[Replaceable]</a> entails.
+              [{{Replaceable}}] entails.
             </p>
             <div class="example">
               <p>
@@ -9255,7 +9255,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <h4 id="SameObject">[SameObject]</h4>
 
             <p>
-              If the <a extended-attribute="">[SameObject]</a>
+              If the [{{SameObject}}]
               [=extended attribute=]
               appears on a [=read only=]
               [=attribute=], then it
@@ -9264,12 +9264,12 @@ counter.value;                                           // Evaluates to 3.</pre
               be returned.
             </p>
             <p>
-              The <a extended-attribute="">[SameObject]</a>
+              The [{{SameObject}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[SameObject]</a>
+              The [{{SameObject}}]
               extended attribute must not
               be used on anything other than a [=read only=]
               [=attribute=]
@@ -9296,7 +9296,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <h4 id="SecureContext">[SecureContext]</h4>
 
             <p>
-              If the <a extended-attribute="">[SecureContext]</a>
+              If the [{{SecureContext}}]
               [=extended attribute=]
               appears on an [=interface=],
               [=partial interface=],
@@ -9307,12 +9307,12 @@ counter.value;                                           // Evaluates to 3.</pre
               ([[!SECURE-CONTEXTS]], section 2).
             </p>
             <p>
-              The <a extended-attribute="">[SecureContext]</a>
+              The [{{SecureContext}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[SecureContext]</a>
+              The [{{SecureContext}}]
               extended attribute must not
               be used on anything other than an
               [=interface=],
@@ -9320,20 +9320,20 @@ counter.value;                                           // Evaluates to 3.</pre
               an individual [=interface member=].
             </p>
             <p>
-              Whether a construct that the <a extended-attribute="">[SecureContext]</a>
+              Whether a construct that the [{{SecureContext}}]
               [=extended attribute=]
               can be specified on is <dfn id="dfn-available-only-in-secure-contexts" export="">available only in secure contexts</dfn>
               is defined as follows:
             </p>
             <ul>
               <li>
-                <p>If the <a extended-attribute="">[SecureContext]</a>
+                <p>If the [{{SecureContext}}]
                 [=extended attribute=]
                 is specified on the construct, then it is
                 <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</p>
               </li>
               <li>
-                <p>Otherwise, if the <a extended-attribute="">[SecureContext]</a>
+                <p>Otherwise, if the [{{SecureContext}}]
                 [=extended attribute=]
                 does not appear on a construct, then whether it is
                 <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
@@ -9357,20 +9357,20 @@ counter.value;                                           // Evaluates to 3.</pre
                 ECMAScript global environment.
               
             <p>
-              If <a extended-attribute="">[SecureContext]</a> appears on an
+              If [{{SecureContext}}] appears on an
               [=overloaded=] [=operation=],
               then it must appear on all overloads.
             </p>
             <p>
-              The <a extended-attribute="">[SecureContext]</a> extended attribute
+              The [{{SecureContext}}] extended attribute
               must not be specified on both an interface
               member and the interface or partial interface definition the
               interface member is declared on.
             </p>
             <p>
-              An interface without the <a extended-attribute="">[SecureContext]</a> extended attribute
+              An interface without the [{{SecureContext}}] extended attribute
               must not [=inherit=] from another interface
-              that does specify <a extended-attribute="">[SecureContext]</a>.
+              that does specify [{{SecureContext}}].
             </p>
             <div class="example">
               <p>The following [=IDL fragment=] defines an interface
@@ -9398,7 +9398,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <h4 id="TreatNonObjectAsNull">[TreatNonObjectAsNull]</h4>
 
             <p>
-              If the <a extended-attribute="">[TreatNonObjectAsNull]</a>
+              If the [{{TreatNonObjectAsNull}}]
               [=extended attribute=]
               appears on a [=callback function=],
               then it indicates that any value assigned to an [=attribute=]
@@ -9407,13 +9407,13 @@ counter.value;                                           // Evaluates to 3.</pre
               that is not an object will be converted to
               the <span class="idlvalue">null</span> value.
             </p>
-                Advisement: Specifications should not use <a extended-attribute="">[TreatNonObjectAsNull]</a>
+                Advisement: Specifications should not use [{{TreatNonObjectAsNull}}]
                 unless required to specify the behavior of legacy APIs or for consistency with these
                 APIs.  Specification authors who
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                 mailing list before proceeding.  At the time of writing, the only known
-                valid use of <a extended-attribute="">[TreatNonObjectAsNull]</a>
+                valid use of [{{TreatNonObjectAsNull}}]
                 is for the [=callback functions=] used as the type
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
                 ([[HTML5]], section 6.1.6.1)
@@ -9422,12 +9422,12 @@ counter.value;                                           // Evaluates to 3.</pre
             <p>
               See [[#es-nullable-type]]
               for the specific requirements that the use of
-              <a extended-attribute="">[TreatNonObjectAsNull]</a> entails.
+              [{{TreatNonObjectAsNull}}] entails.
             </p>
             <div class="example">
               <p>
                 The following [=IDL fragment=] defines an interface that has one
-                attribute whose type is a <a extended-attribute="">[TreatNonObjectAsNull]</a>-annotated
+                attribute whose type is a [{{TreatNonObjectAsNull}}]-annotated
                 [=callback function=] and another whose type is a
                 [=callback function=] without the [=extended attribute=]:
               </p>
@@ -9468,7 +9468,7 @@ manager.handler2;            // Evaluates to null.</pre>
             <h4 id="TreatNullAs">[TreatNullAs]</h4>
 
             <p>
-              If the <a extended-attribute="">[TreatNullAs]</a>
+              If the [{{TreatNullAs}}]
               [=extended attribute=]
               appears on an [=attribute=]
               or [=operation=] argument whose type is
@@ -9480,39 +9480,39 @@ manager.handler2;            // Evaluates to null.</pre>
               it will be converted to the empty string “”.
             </p>
             <p>
-              If <a extended-attribute="">[TreatNullAs]</a> is specified on
+              If [{{TreatNullAs}}] is specified on
               an operation itself, and that operation is on a [=callback interface=],
               then it indicates that a <a href="#es-user-objects">user object implementing the interface</a> will have the return
               value of the function that implements the operation handled in the same way as for operation arguments
               and attributes, as above.
             </p>
             <p>
-              The <a extended-attribute="">[TreatNullAs]</a>
+              The [{{TreatNullAs}}]
               extended attribute must [=takes an identifier|take the identifier=]
               <code>EmptyString</code>.
             </p>
             <p>
-              The <a extended-attribute="">[TreatNullAs]</a> extended attribute
+              The [{{TreatNullAs}}] extended attribute
               must not be specified on an operation argument,
               attribute or operation return value whose type is not {{DOMString}}.
             </p>
                 Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
-              use <a extended-attribute="">[TreatNullAs]</a>, since <span class="idlvalue">null</span>
+              use [{{TreatNullAs}}], since <span class="idlvalue">null</span>
               is a valid value of that type.
             <p>
-              The <a extended-attribute="">[TreatNullAs]</a> extended attribute
+              The [{{TreatNullAs}}] extended attribute
               also must not be specified on an operation on
               a non-callback interface.
             </p>
             <p>
               See [[#es-DOMString]]
               for the specific requirements that the use of
-              <a extended-attribute="">[TreatNullAs]</a> entails.
+              [{{TreatNullAs}}] entails.
             </p>
             <div class="example">
               <p>
                 The following [=IDL fragment=] defines an interface that has one
-                attribute with the <a extended-attribute="">[TreatNullAs]</a>
+                attribute with the [{{TreatNullAs}}]
                 extended attribute, and one operation with an argument that has
                 the extended attribute:
               </p>
@@ -9546,7 +9546,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             <h4 id="Unforgeable">[Unforgeable]</h4>
 
             <p>
-              If the <a extended-attribute="">[Unforgeable]</a>
+              If the [{{Unforgeable}}]
               [=extended attribute=]
               appears on a non-[=Static attributes|static=]
               [=attribute=]
@@ -9560,7 +9560,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               itself rather than on its prototype.
             </p>
             <p>
-              If the <a extended-attribute="">[Unforgeable]</a>
+              If the [{{Unforgeable}}]
               [=extended attribute=]
               appears on an [=interface=],
               it indicates that all of the non-[=Static attributes|static=]
@@ -9578,25 +9578,25 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             <ul>
               <li>The attribute or operation is declared on |A| or one
                 of |A|’s [=consequential interfaces=],
-                and is annotated with the <a extended-attribute="">[Unforgeable]</a>
+                and is annotated with the [{{Unforgeable}}]
                 [=extended attribute=].</li>
               <li>The attribute or operation is declared on |A| or one
                 of |A|’s [=consequential interfaces=],
-                and that interface is annotated with the <a extended-attribute="">[Unforgeable]</a>
+                and that interface is annotated with the [{{Unforgeable}}]
                 [=extended attribute=].</li>
               <li>There exists an interface |B|, which is either |A| or one of
                 |A|’s [=consequential interfaces=],
-                |B| is annotated with the <a extended-attribute="">[Unforgeable]</a>
+                |B| is annotated with the [{{Unforgeable}}]
                 [=extended attribute=],
                 and the attribute or operation is declared on one of |B|’s consequential interfaces.</li>
             </ul>
             <p>
-              The <a extended-attribute="">[Unforgeable]</a>
+              The [{{Unforgeable}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[Unforgeable]</a>
+              The [{{Unforgeable}}]
               extended attribute must not appear on
               anything other than an [=attribute=],
               non-[=static operations|static=] [=operation=]
@@ -9623,13 +9623,13 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               [[#indexed-and-named-properties]] and
               [[#defineownproperty]]
               for the specific requirements that the use of
-              <a extended-attribute="">[Unforgeable]</a> entails.
+              [{{Unforgeable}}] entails.
             </p>
             <div class="example">
               <p>
                 The following [=IDL fragment=] defines
                 an interface that has two [=attributes=],
-                one of which is designated as <a extended-attribute="">[Unforgeable]</a>:
+                one of which is designated as [{{Unforgeable}}]:
               </p>
               <pre class="idl-example">interface System {
   [Unforgeable] readonly attribute DOMString username;
@@ -9664,7 +9664,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             <h4 id="Unscopable">[Unscopable]</h4>
 
             <p>
-              If the <a extended-attribute="">[Unscopable]</a>
+              If the [{{Unscopable}}]
               [=extended attribute=]
               appears on a [=regular attribute=]
               or [=regular operation=], it
@@ -9678,12 +9678,12 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
               <a>@@unscopables</a> property’s value.
             </p>
             <p>
-              The <a extended-attribute="">[Unscopable]</a>
+              The [{{Unscopable}}]
               extended attribute must
               [=takes no arguments|take no arguments=].
             </p>
             <p>
-              The <a extended-attribute="">[Unscopable]</a>
+              The [{{Unscopable}}]
               extended attribute must not appear on
               anything other than a [=regular attribute=]
               or [=regular operation=].
@@ -9691,7 +9691,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             <p>
               See [[#interface-prototype-object]]
               for the specific requirements that the use of
-              <a extended-attribute="">[Unscopable]</a> entails.
+              [{{Unscopable}}] entails.
             </p>
             <div class="note">
               <p>For example, with the following IDL:</p>
@@ -10170,7 +10170,7 @@ with (thing) {
             <li>is a [=callback interface=]
               that has [=constants=] declared on it, or</li>
             <li>is a non-callback [=interface=]
-              that is not declared with the <a extended-attribute="">[NoInterfaceObject]</a>
+              that is not declared with the [{{NoInterfaceObject}}]
               [=extended attribute=],</li>
           </ul>
           <p>
@@ -10185,7 +10185,7 @@ with (thing) {
           </p>
 
           <p>
-            In addition, for every <a extended-attribute="">[NamedConstructor]</a>
+            In addition, for every [{{NamedConstructor}}]
             extended attribute on an [=exposed=] interface, a corresponding property must
             exist on the ECMAScript global object.  The name of the property is the
             <a class="sym" href="#prod-identifier">identifier</a> that occurs directly after the
@@ -10254,7 +10254,7 @@ with (thing) {
 
               <p>
                 If the [=interface=] is declared with a
-                <a extended-attribute="">[Constructor]</a> [=extended attribute=],
+                [{{Constructor}}] [=extended attribute=],
                 then the [=interface object=]
                 can be called as a function to create an object that implements that
                 interface.  Interfaces that do not have a constructor will throw
@@ -10271,7 +10271,7 @@ with (thing) {
               </p>
               <ol class="algorithm">
                 <li>
-                  If |I| was not declared with a <a extended-attribute="">[Constructor]</a>
+                  If |I| was not declared with a [{{Constructor}}]
                   [=extended attribute=], then
                   <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
                 </li>
@@ -10313,7 +10313,7 @@ with (thing) {
                 Interface objects for non-callback interfaces must have a property named “length”
                 with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
                 whose value is a <span class="estype">Number</span>.
-                If the <a extended-attribute="">[Constructor]</a>
+                If the [{{Constructor}}]
                 [=extended attribute=]
                 does not appear on the interface definition, then the value is 0.
                 Otherwise, the value is determined as follows:
@@ -10376,21 +10376,21 @@ with (thing) {
             <p>
               A [=named constructor=]
               that exists due to one or more
-              <a extended-attribute="">[NamedConstructor]</a>
+              [{{NamedConstructor}}]
               [=extended attributes=]
               with a given [=identifier=]
               is a [=function object=].
               It must have a <span class="prop">\[[Call]]</span>
               internal property, which allows construction of objects that
               implement the interface on which the
-              <a extended-attribute="">[NamedConstructor]</a>
+              [{{NamedConstructor}}]
               extended attributes appear.  It behaves as follows, assuming
               |arg|<sub>0..|n|−1</sub> is the list
               of argument values passed to the constructor, |id|
               is the identifier of the constructor specified in the
               extended attribute [=takes a named argument list|named argument list=],
               and |I| is the [=interface=]
-              on which the <a extended-attribute="">[NamedConstructor]</a>
+              on which the [{{NamedConstructor}}]
               extended attribute appears:
             </p>
             <ol class="algorithm">
@@ -10455,7 +10455,7 @@ with (thing) {
               <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
               whose value is the [=interface prototype object=]
               for the [=interface=] on which the
-              <a extended-attribute="">[NamedConstructor]</a>
+              [{{NamedConstructor}}]
               [=extended attribute=]
               appears.
             </p>
@@ -10468,7 +10468,7 @@ with (thing) {
               There must exist an
               [=interface prototype object=] for every non-callback [=interface=]
               defined, regardless of whether the interface was declared with the
-              <a extended-attribute="">[NoInterfaceObject]</a>
+              [{{NoInterfaceObject}}]
               [=extended attribute=].
               The interface prototype object for a particular interface has
               properties that correspond to the [=regular attributes=]
@@ -10484,7 +10484,7 @@ with (thing) {
               interface, described in [[#es-operations]].
             </p>
             <p>
-              If the <a extended-attribute="">[NoInterfaceObject]</a>
+              If the [{{NoInterfaceObject}}]
               extended attribute was not specified on the interface, then
               the interface prototype object must
               also have a property named “constructor” with attributes
@@ -10499,8 +10499,8 @@ with (thing) {
               the following steps:
             </p>
             <ol class="algorithm">
-              <li>If |A| is declared with the <a extended-attribute="">[Global]</a>
-              or <a extended-attribute="">[PrimaryGlobal]</a>
+              <li>If |A| is declared with the [{{Global}}]
+              or [{{PrimaryGlobal}}]
               [=extended attribute=], and |A|
               [=support named properties|supports named properties=], then
               return the [=named properties object=]
@@ -10509,7 +10509,7 @@ with (thing) {
               interface, then return the
               [=interface prototype object=]
               for the inherited interface.</li>
-              <li>Otherwise, if |A| is declared with the <a extended-attribute="">[LegacyArrayClass]</a>
+              <li>Otherwise, if |A| is declared with the [{{LegacyArrayClass}}]
               extended attribute, then return <a>%ArrayPrototype%</a>.</li>
               <li>Otherwise, return <a>%ObjectPrototype%</a>.
               ([[!ECMA-262]], section 15.2.4).</li>
@@ -10518,7 +10518,7 @@ with (thing) {
               <p>
                 The [=interface prototype object=]
                 of an [=interface=] that is defined with
-                the <a extended-attribute="">[NoInterfaceObject]</a>
+                the [{{NoInterfaceObject}}]
                 [=extended attribute=]
                 will be accessible if the interface is used as a
                 [=supplemental interfaces|non-supplemental interface=].
@@ -10553,7 +10553,7 @@ partial interface Window {
             <p>
               If the interface or any of its [=consequential interfaces=]
               has any [=interface member=] declared with
-              the <a extended-attribute="">[Unscopable]</a> extended attribute,
+              the [{{Unscopable}}] extended attribute,
               then there must be a property on the
               interface prototype object whose name is the <a>@@unscopables</a> symbol
               and whose value is an object created as follows:
@@ -10561,7 +10561,7 @@ partial interface Window {
             <ol class="algorithm">
               <li>Let |object| be a new object created as if by the expression <code>({})</code>.</li>
               <li>For each of the aforementioned [=interface members=]
-                declared with the <a extended-attribute="">[Unscopable]</a> extended attribute,
+                declared with the [{{Unscopable}}] extended attribute,
                 call <a>CreateDataProperty</a>(|object|,
                 the [=identifier=] of the
                 interface member, <emu-val>true</emu-val>).</li>
@@ -10581,8 +10581,8 @@ partial interface Window {
 
             <p>
               For every [=interface=] declared with the
-              <a extended-attribute="">[Global]</a> or
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              [{{Global}}] or
+              [{{PrimaryGlobal}}]
               [=extended attribute=]
               that [=support named properties|supports named properties=],
               there must exist an object known as the
@@ -10599,7 +10599,7 @@ partial interface Window {
               <li>If |A| is declared to inherit from another interface, then return the
               [=interface prototype object=]
               for the inherited interface.</li>
-              <li>Otherwise, if |A| is declared with the <a extended-attribute="">[LegacyArrayClass]</a>
+              <li>Otherwise, if |A| is declared with the [{{LegacyArrayClass}}]
               extended attribute, then return <a>%ArrayPrototype%</a>.</li>
               <li>Otherwise, return <a>%ObjectPrototype%</a>.</li>
             </ol>
@@ -10648,7 +10648,7 @@ partial interface Window {
                     <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
                       |value| to an ECMAScript value.</li>
                     <li>If |A| implements an interface with the
-                      <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+                      [{{LegacyUnenumerableNamedProperties}}]
                       [=extended attribute=],
                       then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
                       otherwise set it to <emu-val>true</emu-val>.</li>
@@ -10713,12 +10713,12 @@ partial interface Window {
               <li>
                 The location of the property is determined as follows:
                 <ul>
-                  <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                  <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                   then the property exists on the single object that implements the interface.</li>
                   <li>Otherwise, if the interface is a [=consequential interface=]
-                  of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a> annotated interface, then
-                  the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                  <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                  of a [{{Global}}]- or [{{PrimaryGlobal}}] annotated interface, then
+                  the property exists on the single object that implements the [{{Global}}]- or
+                  [{{PrimaryGlobal}}]-annotated interface as well as on
                   the consequential interface’s [=interface prototype object=].</li>
                   <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
                 </ul>
@@ -10755,12 +10755,12 @@ partial interface Window {
                   <li>If the attribute is a [=static attribute=],
                   then there is a single corresponding property and it exists on the interface’s [=interface object=].</li>
                   <li>Otherwise, if the attribute is [=unforgeable=] on
-                  the interface or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                  the interface or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                   then the property exists on every object that implements the interface.</li>
                   <li>Otherwise, if the interface is a [=consequential interface=]
-                  of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                  the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                  <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                  of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                  the property exists on the single object that implements the [{{Global}}]- or
+                  [{{PrimaryGlobal}}]-annotated interface as well as on
                   the consequential interface’s [=interface prototype object=].</li>
                   <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
                 </ul>
@@ -10770,7 +10770,7 @@ partial interface Window {
                 where:
                 <ul>
                   <li>|configurable| is <emu-val>false</emu-val> if the attribute was
-                    declared with the <a extended-attribute="">[Unforgeable]</a> extended attribute and <emu-val>true</emu-val> otherwise;</li>
+                    declared with the [{{Unforgeable}}] extended attribute and <emu-val>true</emu-val> otherwise;</li>
                   <li>|G| is the [=attribute getter=], defined below; and</li>
                   <li>|S| is the [=attribute setter=], also defined below.</li>
                 </ul>
@@ -10806,7 +10806,7 @@ partial interface Window {
                       <li>If |O| is not a [=platform object=] that implements |I|, then:
                         <ol>
                           <li>If the [=attribute=] was specified with the
-                            <a extended-attribute="">[LenientThis]</a> [=extended attribute=],
+                            [{{LenientThis}}] [=extended attribute=],
                             then return <emu-val>undefined</emu-val>.</li>
                           <li>Otherwise, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                         </ol>
@@ -10838,8 +10838,8 @@ partial interface Window {
               <li>
                 The <dfn id="dfn-attribute-setter" export="">attribute setter</dfn> is <emu-val>undefined</emu-val>
                 if the attribute is declared <code>readonly</code> and does not have a
-                <a extended-attribute="">[LenientThis]</a>, <a extended-attribute="">[PutForwards]</a> or
-                <a extended-attribute="">[Replaceable]</a>
+                [{{LenientThis}}], [{{PutForwards}}] or
+                [{{Replaceable}}]
                 [=extended attribute=] declared on it.
                 Otherwise, it is a <span class="estype">Function</span> object whose behavior when invoked is as follows:
                 <ol class="algorithm">
@@ -10867,9 +10867,9 @@ partial interface Window {
                         <emu-val>false</emu-val> otherwise.</li>
                       <li>If |validThis| is <emu-val>false</emu-val> and the
                         [=attribute=] was not specified with the
-                        <a extended-attribute="">[LenientThis]</a> [=extended attribute=],
+                        [{{LenientThis}}] [=extended attribute=],
                         then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                      <li>If the attribute is declared with a <a extended-attribute="">[Replaceable]</a>
+                      <li>If the attribute is declared with a [{{Replaceable}}]
                         extended attribute, then:
                         <ol>
                           <li>Let |P| be the identifier of the attribute.</li>
@@ -10878,15 +10878,15 @@ partial interface Window {
                         </ol>
                       </li>
                       <li>If |validThis| is <emu-val>false</emu-val>, then return <emu-val>undefined</emu-val>.</li>
-                      <li>If the attribute is declared with a <a extended-attribute="">[LenientSetter]</a>
+                      <li>If the attribute is declared with a [{{LenientSetter}}]
                         extended attribute, then return <emu-val>undefined</emu-val>.</li>
-                      <li>If the attribute is declared with a <a extended-attribute="">[PutForwards]</a>
+                      <li>If the attribute is declared with a [{{PutForwards}}]
                         extended attribute, then:
                         <ol>
                           <li>Let |Q| be the result of calling the <span class="prop">\[[Get]]</span> method
                             on |O| using the identifier of the attribute as the property name.</li>
                           <li>If |Q| is not an object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-                          <li>Let |A| be the attribute identified by the <a extended-attribute="">[PutForwards]</a> extended attribute.</li>
+                          <li>Let |A| be the attribute identified by the [{{PutForwards}}] extended attribute.</li>
                           <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
                             using the identifier of |A| as the property name and |V| as the value.</li>
                           <li>Return <emu-val>undefined</emu-val>.</li>
@@ -10956,12 +10956,12 @@ partial interface Window {
                   <li>If the operation is [=static operations|static=], then
                   the property exists on the [=interface object=].</li>
                   <li>Otherwise, if the operation is [=unforgeable=] on
-                  the interface or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                  the interface or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                   then the property exists on every object that implements the interface.</li>
                   <li>Otherwise, if the interface is a [=consequential interface=]
-                  of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                  the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                  <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                  of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                  the property exists on the single object that implements the [{{Global}}]- or
+                  [{{PrimaryGlobal}}]-annotated interface as well as on
                   the consequential interface’s [=interface prototype object=].</li>
                   <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
                 </ul>
@@ -11005,7 +11005,7 @@ partial interface Window {
                           <li>
                             Otherwise, if the [=interface=] on which the
                             [=operation=] appears has an
-                            <a extended-attribute="">[ImplicitThis]</a> [=extended attribute=],
+                            [{{ImplicitThis}}] [=extended attribute=],
                             and the <emu-val>this</emu-val> value is <emu-val>null</emu-val>
                             or <emu-val>undefined</emu-val>, then |O| is
                             the ECMAScript global object associated with the <span class="estype">Function</span> object.
@@ -11115,7 +11115,7 @@ partial interface Window {
                 <li>The name of the property is “toString”.</li>
                 <li>If the [=stringifier=] is
                   [=unforgeable=] on the interface
-                  or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                  or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                   then the property exists on every object that implements the interface.
                   Otherwise, the property exists on the [=interface prototype object=].</li>
                 <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
@@ -11182,12 +11182,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a [=consequential interface=]
-                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                the property exists on the single object that implements the [{{Global}}]- or
+                [{{PrimaryGlobal}}]-annotated interface as well as on
                 the consequential interface’s [=interface prototype object=].</li>
                 <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
               </ul>
@@ -11316,12 +11316,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a [=consequential interface=]
-                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                the property exists on the single object that implements the [{{Global}}]- or
+                [{{PrimaryGlobal}}]-annotated interface as well as on
                 the consequential interface’s [=interface prototype object=].</li>
                 <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
               </ul>
@@ -11422,12 +11422,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a [=consequential interface=]
-                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                the property exists on the single object that implements the [{{Global}}]- or
+                [{{PrimaryGlobal}}]-annotated interface as well as on
                 the consequential interface’s [=interface prototype object=].</li>
                 <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
               </ul>
@@ -11544,12 +11544,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a [=consequential interface=]
-                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                the property exists on the single object that implements the [{{Global}}]- or
+                [{{PrimaryGlobal}}]-annotated interface as well as on
                 the consequential interface’s [=interface prototype object=].</li>
                 <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
               </ul>
@@ -11579,12 +11579,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a [=consequential interface=]
-                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                the property exists on the single object that implements the [{{Global}}]- or
+                [{{PrimaryGlobal}}]-annotated interface as well as on
                 the consequential interface’s [=interface prototype object=].</li>
                 <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
               </ul>
@@ -11635,12 +11635,12 @@ partial interface Window {
                 The location of the property is determined as follows:
               </p>
               <ul>
-                <li>If the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
+                <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
                 then the property exists on the single object that implements the interface.</li>
                 <li>Otherwise, if the interface is a [=consequential interface=]
-                of a <a extended-attribute="">[Global]</a>- or <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface, then
-                the property exists on the single object that implements the <a extended-attribute="">[Global]</a>- or
-                <a extended-attribute="">[PrimaryGlobal]</a>-annotated interface as well as on
+                of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
+                the property exists on the single object that implements the [{{Global}}]- or
+                [{{PrimaryGlobal}}]-annotated interface as well as on
                 the consequential interface’s [=interface prototype object=].</li>
                 <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
               </ul>
@@ -12438,7 +12438,7 @@ C implements A;</pre>
           
 
           <p>
-            Every platform object that implements an <a extended-attribute="">[Unforgeable]</a>-annotated
+            Every platform object that implements an [{{Unforgeable}}]-annotated
             interface and which does not have a [=stringifier=]
             that is [=unforgeable=] on any of the
             interfaces it implements must have a property with the
@@ -12451,7 +12451,7 @@ C implements A;</pre>
           </ul>
 
           <p>
-            Every platform object that implements an <a extended-attribute="">[Unforgeable]</a>-annotated
+            Every platform object that implements an [{{Unforgeable}}]-annotated
             interface and which does not have a [=serializer=]
             that is [=unforgeable=] on any of the
             interfaces it implements must have a property with the
@@ -12464,7 +12464,7 @@ C implements A;</pre>
           </ul>
 
           <p>
-            Every platform object that implements an <a extended-attribute="">[Unforgeable]</a>-annotated
+            Every platform object that implements an [{{Unforgeable}}]-annotated
             interface must have a property with the
             following characteristics:
           </p>
@@ -12507,8 +12507,8 @@ C implements A;</pre>
               by the <span class="prop">\[[GetOwnProperty]]</span> internal method.
             </p>
             <p>
-              However, when the <a extended-attribute="">[Global]</a> or
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              However, when the [{{Global}}] or
+              [{{PrimaryGlobal}}]
               [=extended attribute=] has been used,
               named properties are not exposed on the object but on another object
               in the prototype chain, the [=named properties object=].
@@ -12537,8 +12537,8 @@ C implements A;</pre>
               or <code>Object.preventExtensions</code> is called on one of these objects, the function
               must <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
               Similarly, an [=interface prototype object=]
-              that exposes named properties due to the use of <a extended-attribute="">[Global]</a> or
-              <a extended-attribute="">[PrimaryGlobal]</a>
+              that exposes named properties due to the use of [{{Global}}] or
+              [{{PrimaryGlobal}}]
               also must <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>
               if one of the three functions above is called on it.
             </p>
@@ -12563,7 +12563,7 @@ C implements A;</pre>
               has an [=interface member=] with that identifier
               and that interface member is [=unforgeable=] on any of
               the interfaces that |O| implements.  If the object implements an
-              <a extended-attribute="">[Unforgeable]</a>-annotated
+              [{{Unforgeable}}]-annotated
               [=interface=], then “toString” and “valueOf” are
               also [=unforgeable property names=]
               on that object.
@@ -12571,7 +12571,7 @@ C implements A;</pre>
             <p>
               The <dfn id="dfn-named-property-visibility" export="">named property visibility algorithm</dfn> is used to determine if
               a given named property is exposed on an object.  Some named properties are not exposed on an object
-              depending on whether the <a extended-attribute="">[OverrideBuiltins]</a>
+              depending on whether the [{{OverrideBuiltins}}]
               [=extended attribute=] was used.  The algorithm
               operates as follows, with property name |P| and object |O|:
             </p>
@@ -12580,11 +12580,11 @@ C implements A;</pre>
               <li>If |P| is an [=unforgeable property name=]
                 on |O|, then return false.</li>
               <li>If |O| implements an [=interface=] with
-                an <a extended-attribute="">[Unforgeable]</a>-annotated [=attribute=]
+                an [{{Unforgeable}}]-annotated [=attribute=]
                 whose [=identifier=] is |P|, then return false.</li>
               <li>If |P| is not a [=supported property name=]
                 of |O|, then return false.</li>
-              <li>If |O| implements an interface that has the <a extended-attribute="">[OverrideBuiltins]</a>
+              <li>If |O| implements an interface that has the [{{OverrideBuiltins}}]
                 [=extended attribute=], then return true.</li>
               <li>If |O| has an own property named |P|, then return false.</li>
               <li>Initialize |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |O|.</li>
@@ -12644,7 +12644,7 @@ C implements A;</pre>
               </li>
 
               <li>If |O| [=support named properties|supports named properties=], |O| does not
-                implement an [=interface=] with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a>
+                implement an [=interface=] with the [{{Global}}] or [{{PrimaryGlobal}}]
                 [=extended attribute=], the result of running the [=named property visibility algorithm=] with
                 property name |P| and object |O| is true, and |ignoreNamedProps| is false, then:
                 <ol>
@@ -12665,7 +12665,7 @@ C implements A;</pre>
                     |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
                     <emu-val>false</emu-val>.</li>
                   <li>If |O| implements an interface with the
-                    <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+                    [{{LegacyUnenumerableNamedProperties}}]
                     [=extended attribute=],
                     then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
                     otherwise set it to <emu-val>true</emu-val>.</li>
@@ -12833,13 +12833,13 @@ C implements A;</pre>
               <li>
                 If |O| [=support named properties|supports named properties=],
                 |O| does not implement an [=interface=] with the
-                <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> [=extended attribute=]
+                [{{Global}}] or [{{PrimaryGlobal}}] [=extended attribute=]
                 and |P| is not an [=unforgeable property name=]
                 of |O|, then:
                 <ol>
                   <li>Let |creating| be true if |P| is not a [=supported property name=], and false otherwise.</li>
                   
-                  <li>If |O| implements an interface with the <a extended-attribute="">[OverrideBuiltins]</a>
+                  <li>If |O| implements an interface with the [{{OverrideBuiltins}}]
                     [=extended attribute=] or |O| does not have an own property
                     named |P|, then:
                     <ol>
@@ -12861,7 +12861,7 @@ C implements A;</pre>
               </li>
 
               <li>If |O| does not implement an [=interface=] with the
-                <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> [=extended attribute=],
+                [{{Global}}] or [{{PrimaryGlobal}}] [=extended attribute=],
                 then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
               <li>Call the <a>default \[[DefineOwnProperty]] internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
             </ol>
@@ -12892,7 +12892,7 @@ C implements A;</pre>
               <li>
                 If |O| [=support named properties|supports named properties=],
                 |O| does not implement an [=interface=] with the
-                <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> [=extended attribute=]
+                [{{Global}}] or [{{PrimaryGlobal}}] [=extended attribute=]
                 and the result of calling the [=named property visibility algorithm=]
                 with property name |P| and object |O| is true, then:
                 <ol>
@@ -12973,7 +12973,7 @@ C implements A;</pre>
               the object’s [=supported property indices=] are
               enumerated first, in numerical order.</li>
               <li>If the object [=support named properties|supports named properties=] and doesn't implement an [=interface=] with the
-              <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
+              [{{LegacyUnenumerableNamedProperties}}]
               [=extended attribute=], then
               the object’s [=supported property names=] that
               are visible according to the [=named property visibility algorithm=]
@@ -13300,7 +13300,7 @@ C implements A;</pre>
 
                   <div class="note">
                     <p>This is only possible when the callback function came from an attribute
-                    marked with <a extended-attribute="">[TreatNonObjectAsNull]</a>.</p>
+                    marked with [{{TreatNonObjectAsNull}}].</p>
                   </div>
                 </li>
 
@@ -14011,7 +14011,7 @@ d.type = et;
           “A” is distinct from one named “a”, and an
           [=extended attribute=]
           <span class="xattr">[constructor]</span> will not be recognized as
-          the <a extended-attribute="">[Constructor]</a>
+          the [{{Constructor}}]
           extended attribute.
         </p>
         <p>

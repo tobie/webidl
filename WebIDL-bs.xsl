@@ -174,11 +174,11 @@ TR: </xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@class="xattr"]'>
-    <a extended-attribute=""><xsl:value-of select='.' /></a>
+    <xsl:text>[{{</xsl:text><xsl:value-of select='replace(., "^\[|\]$", "")' /><xsl:text>}}]</xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
-    <a extended-attribute=""><xsl:text>[TreatNullAs]</xsl:text></a>
+    <xsl:text>[{{TreatNullAs}}]</xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@class="idltype"]'>
