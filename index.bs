@@ -12702,8 +12702,7 @@ C implements A;</pre>
           
             <h4 id="invoking-indexed-setter">Invoking a platform object indexed property setter</h4>
             <p>
-              To <dfn id="invoke-indexed-setter" export="" lt="invoke the indexed property setter">invoke an indexed property
-              setter</dfn> with property name |P| and ECMAScript value
+              To <dfn id="invoke-indexed-setter" export="" lt="invoke the indexed property setter">invoke an indexed property setter</dfn> with property name |P| and ECMAScript value
               |V|, the following steps must be performed:
             </p>
             <ol class="algorithm">
@@ -12730,8 +12729,7 @@ C implements A;</pre>
           
             <h4 id="invoking-named-setter">Invoking a platform object named property setter</h4>
             <p>
-              To <dfn id="invoke-named-setter" export="" lt="invoke the named property setter">invoke a named property
-              setter</dfn> with property name |P| and ECMAScript value
+              To <dfn id="invoke-named-setter" export="" lt="invoke the named property setter">invoke a named property setter</dfn> with property name |P| and ECMAScript value
               |V|, the following steps must be performed:
             </p>
             <ol class="algorithm">

@@ -272,7 +272,15 @@ TR: </xsl:text>
           <xsl:value-of select='@data-lt' />
         </xsl:attribute>
       </xsl:if>
-      <xsl:apply-templates select="node()"/>
+      
+      <xsl:choose>
+        <xsl:when test='./*[1]'>
+          <xsl:apply-templates select="node()"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select='replace(., "\s*\n\s*", " ")'/>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:copy>
   </xsl:template>
   

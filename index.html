@@ -9939,8 +9939,7 @@ C implements A;</pre>
                 arguments. 
    </ol>
    <h4 class="heading settled" data-level="5.8.4" id="invoking-indexed-setter"><span class="secno">5.8.4. </span><span class="content">Invoking a platform object indexed property setter</span><a class="self-link" href="#invoking-indexed-setter"></a></h4>
-   <p> To <dfn data-dfn-type="dfn" data-export="" data-lt="invoke the indexed property setter" id="invoke-indexed-setter">invoke an indexed property
-              setter<a class="self-link" href="#invoke-indexed-setter"></a></dfn> with property name <var>P</var> and ECMAScript value <var>V</var>, the following steps must be performed: </p>
+   <p> To <dfn data-dfn-type="dfn" data-export="" data-lt="invoke the indexed property setter" id="invoke-indexed-setter">invoke an indexed property setter<a class="self-link" href="#invoke-indexed-setter"></a></dfn> with property name <var>P</var> and ECMAScript value <var>V</var>, the following steps must be performed: </p>
    <ol class="algorithm">
     <li>Let <var>index</var> be the result of calling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>(<var>P</var>).
     <li>Let <var>creating</var> be true if <var>index</var> is not a <a data-link-type="dfn">supported property indices</a>, and false otherwise.
@@ -9956,8 +9955,7 @@ C implements A;</pre>
     <li>Otherwise, <var>operation</var> was defined with an identifier.  Perform the steps listed in the description of <var>operation</var> with <var>index</var> and <var>value</var> as the two argument values.
    </ol>
    <h4 class="heading settled" data-level="5.8.5" id="invoking-named-setter"><span class="secno">5.8.5. </span><span class="content">Invoking a platform object named property setter</span><a class="self-link" href="#invoking-named-setter"></a></h4>
-   <p> To <dfn data-dfn-type="dfn" data-export="" data-lt="invoke the named property setter" id="invoke-named-setter">invoke a named property
-              setter<a class="self-link" href="#invoke-named-setter"></a></dfn> with property name <var>P</var> and ECMAScript value <var>V</var>, the following steps must be performed: </p>
+   <p> To <dfn data-dfn-type="dfn" data-export="" data-lt="invoke the named property setter" id="invoke-named-setter">invoke a named property setter<a class="self-link" href="#invoke-named-setter"></a></dfn> with property name <var>P</var> and ECMAScript value <var>V</var>, the following steps must be performed: </p>
    <ol class="algorithm">
     <li>Let <var>creating</var> be true if <var>P</var> is not a <a data-link-type="dfn" href="#dfn-supported-property-names" id="ref-for-dfn-supported-property-names-5">supported property name</a>, and false otherwise.
     <li>Let <var>operation</var> be the operation used to declare the named property setter.
