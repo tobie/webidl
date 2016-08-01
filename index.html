@@ -1409,7 +1409,7 @@ Possible extra rowspan handling
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL (Second Edition)</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-07-31">31 July 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-01">1 August 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2815,7 +2815,7 @@ interface Button {
     <strong class="advisement"> It is strongly suggested not to use <a class="dfnref" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-3">default value</a> of <span class="idlvalue">true</span> for <span class="estype">boolean</span>-typed arguments,
                 as this can be confusing for authors who might otherwise expect the default
                 conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).</strong> 
-   <p> If the type of an argument is a <a href="#idl-dictionary">dictionary type</a> or a <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-2">union type</a> that has a
+   <p> If the type of an argument is a <a href="#idl-dictionary" id="ref-for-idl-dictionary-1">dictionary type</a> or a <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-2">union type</a> that has a
               dictionary type as one of its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-2">flattened member types</a>,
               and that dictionary type and its ancestors have no <a class="dfnref" href="#required-dictionary-member" id="ref-for-required-dictionary-member-1">required members</a>,
               and the argument is either the final argument or is followed only by <a class="dfnref" href="#dfn-optional-argument" id="ref-for-dfn-optional-argument-1">optional arguments</a>, then
@@ -3397,7 +3397,7 @@ interface Button {
                   that is present, where the entry’s key is the identifier of the dictionary
                   member and its value is the result of converting the dictionary member’s
                   value to a serializable type
-    <dt>an <a href="#idl-interface">interface</a> type that has a <a class="dfnref" href="#dfn-serializer" id="ref-for-dfn-serializer-2">serializer</a>
+    <dt>an <a href="#idl-interface" id="ref-for-idl-interface-1">interface</a> type that has a <a class="dfnref" href="#dfn-serializer" id="ref-for-dfn-serializer-2">serializer</a>
     <dd>converted by invoking the object’s serializer
    </dl>
    <p> Serializers can also be specified using an <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-11">operation</a> with the <code>serializer</code> keyword: </p>
@@ -3898,7 +3898,7 @@ partial interface A {
     <div class="set"> { &lt;f1, (DOMString), (required)>,<br> &lt;f2, (Node, DOMString), (required, required)>,<br> &lt;f2, (Node, DOMString, double), (required, required, variadic)>,<br> &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)>,<br> &lt;f3, (), ()>,<br> &lt;f4, (Event, DOMString), (required, required)>,<br> &lt;f4, (Event, DOMString, DOMString), (required, required, optional)>,<br> &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)> } </div>
    </div>
    <p> Two types are <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-distinguishable">distinguishable</dfn> if
-              at most one of the two <a class="dfnref" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-1">includes a nullable type</a> or is a <a href="#idl-dictionary">dictionary type</a>,
+              at most one of the two <a class="dfnref" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-1">includes a nullable type</a> or is a <a href="#idl-dictionary" id="ref-for-idl-dictionary-2">dictionary type</a>,
               and at least one of the following three conditions is true: </p>
    <ol>
     <li>
@@ -5070,7 +5070,7 @@ Entry implements Observable;</pre>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-buffer-source-type">buffer source types</dfn> are <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a></code>,
             and the <a class="dfnref" href="#dfn-typed-array-type" id="ref-for-dfn-typed-array-type-1">typed array types</a>. </p>
    <p> The <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code> type,
-            all <a class="dfnref" href="#idl-interface">interface types</a> and the <a class="dfnref" href="#dfn-exception-type" id="ref-for-dfn-exception-type-1">exception types</a> are known as <dfn data-dfn-type="dfn" data-export="" id="dfn-object-type">object types<a class="self-link" href="#dfn-object-type"></a></dfn>. </p>
+            all <a class="dfnref" href="#idl-interface" id="ref-for-idl-interface-2">interface types</a> and the <a class="dfnref" href="#dfn-exception-type" id="ref-for-dfn-exception-type-1">exception types</a> are known as <dfn data-dfn-type="dfn" data-export="" id="dfn-object-type">object types<a class="self-link" href="#dfn-object-type"></a></dfn>. </p>
    <p> Every type has a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-type-name">type name</dfn>, which
             is a string, not necessarily unique, that identifies the type.
             Each sub-section below defines what the type name is for each
@@ -5368,7 +5368,7 @@ Entry implements Observable;</pre>
    <p> There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code> value in IDL. </p>
    <p> To denote a type that includes all possible object references plus the <span class="idlvalue">null</span> value, use the <a href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-9">nullable type</a> <span class="idltype">object?</span>. </p>
    <p> The <a class="dfnref" href="#dfn-type-name" id="ref-for-dfn-type-name-18">type name</a> of the <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code> type is “Object”. </p>
-   <h4 class="heading settled" data-level="4.10.19" id="idl-interface"><span class="secno">4.10.19. </span><span class="content">Interface types</span><a class="self-link" href="#idl-interface"></a></h4>
+   <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="4.10.19" data-lt="Interface types" data-noexport="" id="idl-interface"><span class="secno">4.10.19. </span><span class="content">Interface types</span></h4>
    <p> An <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-40">identifier</a> that
               identifies an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-50">interface</a> is used to refer to
               a type that corresponds to the set of all possible non-null references to objects that
@@ -5389,7 +5389,7 @@ Entry implements Observable;</pre>
               use a <a href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-10">nullable type</a>. </p>
    <p> The <a class="dfnref" href="#dfn-type-name" id="ref-for-dfn-type-name-19">type name</a> of an interface type
               is the <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-41">identifier</a> of the interface. </p>
-   <h4 class="heading settled" data-level="4.10.20" id="idl-dictionary"><span class="secno">4.10.20. </span><span class="content">Dictionary types</span><a class="self-link" href="#idl-dictionary"></a></h4>
+   <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="4.10.20" data-lt="Dictionary types" data-noexport="" id="idl-dictionary"><span class="secno">4.10.20. </span><span class="content">Dictionary types</span></h4>
    <p> An <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-42">identifier</a> that
               identifies a <a class="dfnref" href="#dfn-dictionary" id="ref-for-dfn-dictionary-9">dictionary</a> is used to refer to
               a type that corresponds to the set of all dictionaries that adhere to
@@ -5404,13 +5404,13 @@ Entry implements Observable;</pre>
    <p> Like <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></code>, there is no way to represent a constant <a class="dfnref" href="#dfn-enumeration" id="ref-for-dfn-enumeration-16">enumeration</a> value in IDL, although enumeration-typed <a class="dfnref" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-11">dictionary member</a> <a class="dfnref" href="#dfn-dictionary-member-default-value" id="ref-for-dfn-dictionary-member-default-value-8">default values</a> can be specified using a <a class="sym" href="#prod-string">string</a> literal. </p>
    <p> The <a class="dfnref" href="#dfn-type-name" id="ref-for-dfn-type-name-21">type name</a> of an enumeration type
               is the <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-45">identifier</a> of the enumeration. </p>
-   <h4 class="heading settled" data-level="4.10.22" id="idl-callback-function"><span class="secno">4.10.22. </span><span class="content">Callback function types</span><a class="self-link" href="#idl-callback-function"></a></h4>
+   <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="4.10.22" data-lt="Callback function types" data-noexport="" id="idl-callback-function"><span class="secno">4.10.22. </span><span class="content">Callback function types</span></h4>
    <p> An <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-46">identifier</a> that identifies
               a <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-17">callback function</a> is used to refer to
               a type whose values are references to objects that are functions with the given signature. </p>
    <p> An IDL value of the callback function type is represented by a tuple of an object
               reference and a <a class="dfnref" href="#dfn-callback-context" id="ref-for-dfn-callback-context-3">callback context</a>. </p>
-    Note: As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context" id="ref-for-dfn-callback-context-4">callback context</a> is used
+    Note: As with <a href="#idl-interface" id="ref-for-idl-interface-3">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context" id="ref-for-dfn-callback-context-4">callback context</a> is used
               to hold a reference to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a> at the time an ECMAScript <span class="estype">Object</span> value
               is converted to an IDL callback function type value.  See <a href="#es-callback-function">§5.2.23 Callback function types</a>. 
    <p> There is no way to represent a constant <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-18">callback function</a> value in IDL. </p>
@@ -5532,7 +5532,7 @@ Entry implements Observable;</pre>
               be used as a <a class="dfnref" href="#dfn-union-member-type" id="ref-for-dfn-union-member-type-8">union member type</a>. </p>
    <p> The <a class="dfnref" href="#dfn-number-of-nullable-member-types" id="ref-for-dfn-number-of-nullable-member-types-2">number of nullable member types</a> of a <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-17">union type</a> must
               be 0 or 1, and if it is 1 then the union type must also not have
-              a <a class="dfnref" href="#idl-dictionary">dictionary type</a> in its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-7">flattened member types</a>. </p>
+              a <a class="dfnref" href="#idl-dictionary" id="ref-for-idl-dictionary-3">dictionary type</a> in its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-7">flattened member types</a>. </p>
    <p> A type <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-includes-a-nullable-type">includes a nullable type</dfn> if: </p>
    <ul>
     <li>the type is a <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-14">nullable type</a>, or
@@ -6472,23 +6472,23 @@ Entry implements Observable;</pre>
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
               IDL <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code> represents. </p>
    <h4 class="heading settled" data-level="5.2.20" id="es-interface"><span class="secno">5.2.20. </span><span class="content">Interface types</span><a class="self-link" href="#es-interface"></a></h4>
-   <p> IDL <a href="#idl-interface">interface type</a> values are represented by ECMAScript <span class="estype">Object</span> or <span class="estype">Function</span> values. </p>
-   <p id="es-to-interface"> An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-20">converted</a> to an IDL <a href="#idl-interface">interface type</a> value
+   <p> IDL <a href="#idl-interface" id="ref-for-idl-interface-4">interface type</a> values are represented by ECMAScript <span class="estype">Object</span> or <span class="estype">Function</span> values. </p>
+   <p id="es-to-interface"> An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-20">converted</a> to an IDL <a href="#idl-interface" id="ref-for-idl-interface-5">interface type</a> value
               by running the following algorithm (where <var>I</var> is the <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-54">interface</a>): </p>
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a class="dfnref external" href="#ecmascript-throw">throw a <span class="estype">TypeError</span></a>.
-    <li>If <var>V</var> is a <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-12">platform object</a> that implements <var>I</var>, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that platform object.
+    <li>If <var>V</var> is a <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-12">platform object</a> that implements <var>I</var>, then return the IDL <a href="#idl-interface" id="ref-for-idl-interface-6">interface type</a> value that represents a reference to that platform object.
     <li>If <var>V</var> is a <a class="dfnref" href="#dfn-user-object" id="ref-for-dfn-user-object-8">user object</a> that is considered to implement <var>I</var> according to the rules in <a href="#es-user-objects">§5.9 User objects implementing callback interfaces</a>,
-                then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
+                then return the IDL <a href="#idl-interface" id="ref-for-idl-interface-7">interface type</a> value that represents a reference to that user object,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a> as the <a class="dfnref" href="#dfn-callback-context" id="ref-for-dfn-callback-context-5">callback context</a>. <a data-link-type="biblio" href="#biblio-html">[HTML]</a>
     <li><a class="dfnref external" href="#ecmascript-throw">Throw a <emu-val>TypeError</emu-val></a>.
    </ol>
-   <p id="interface-to-es"> The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-19">converting</a> an IDL <a href="#idl-interface">interface type</a> value to an ECMAScript value is the <span class="estype">Object</span> value that represents a reference to the same object that the IDL <a href="#idl-interface">interface type</a> value represents. </p>
+   <p id="interface-to-es"> The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-19">converting</a> an IDL <a href="#idl-interface" id="ref-for-idl-interface-8">interface type</a> value to an ECMAScript value is the <span class="estype">Object</span> value that represents a reference to the same object that the IDL <a href="#idl-interface" id="ref-for-idl-interface-9">interface type</a> value represents. </p>
    <h4 class="heading settled" data-level="5.2.21" id="es-dictionary"><span class="secno">5.2.21. </span><span class="content">Dictionary types</span><a class="self-link" href="#es-dictionary"></a></h4>
-   <p> IDL <a href="#idl-dictionary">dictionary type</a> values are represented
+   <p> IDL <a href="#idl-dictionary" id="ref-for-idl-dictionary-4">dictionary type</a> values are represented
               by ECMAScript <span class="estype">Object</span> values.  Properties on
               the object (or its prototype chain) correspond to <a class="dfnref" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-29">dictionary members</a>. </p>
-   <p id="es-to-dictionary"> An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-21">converted</a> to an IDL <a href="#idl-dictionary">dictionary type</a> value
+   <p id="es-to-dictionary"> An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-21">converted</a> to an IDL <a href="#idl-dictionary" id="ref-for-idl-dictionary-5">dictionary type</a> value
               by running the following algorithm (where <var>D</var> is the <a class="dfnref" href="#dfn-dictionary" id="ref-for-dfn-dictionary-10">dictionary</a>): </p>
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Undefined, Null or Object, then <a class="dfnref external" href="#ecmascript-throw">throw a <span class="estype">TypeError</span></a>.
@@ -6570,22 +6570,22 @@ Entry implements Observable;</pre>
               value is the <span class="estype">String</span> value that represents the same sequence of <a class="dfnref" href="#dfn-code-unit" id="ref-for-dfn-code-unit-9">code units</a> as
               the <a class="dfnref" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-6">enumeration value</a>. </p>
    <h4 class="heading settled" data-level="5.2.23" id="es-callback-function"><span class="secno">5.2.23. </span><span class="content">Callback function types</span><a class="self-link" href="#es-callback-function"></a></h4>
-   <p> IDL <a href="#idl-callback-function">callback function types</a> are represented by ECMAScript <span class="estype">Function</span> objects, except in the <a class="idl-code" data-link-type="extended-attribute">[TreatNonObjectAsNull]</a> case,
+   <p> IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-1">callback function types</a> are represented by ECMAScript <span class="estype">Function</span> objects, except in the <a class="idl-code" data-link-type="extended-attribute">[TreatNonObjectAsNull]</a> case,
               when they can be any object. </p>
-   <p id="es-to-callback-function"> An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-24">converted</a> to an IDL <a href="#idl-callback-function">callback function type</a> value
+   <p id="es-to-callback-function"> An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-24">converted</a> to an IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-2">callback function type</a> value
               by running the following algorithm: </p>
    <ol class="algorithm">
     <li>If the result of calling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>V</var>) is <emu-val>false</emu-val> and the conversion to an IDL value
               is not being performed due
                 to <var>V</var> being assigned to an <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-41">attribute</a> whose type is a <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-15">nullable</a> <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-19">callback function</a> that is annotated with <a class="idl-code" data-link-type="extended-attribute">[TreatNonObjectAsNull]</a>,
               then <a class="dfnref external" href="#ecmascript-throw">throw a <emu-val>TypeError</emu-val></a>.
-    <li>Return the IDL <a href="#idl-callback-function">callback
+    <li>Return the IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-3">callback
               function type</a> value that represents a reference to the same
               object that <var>V</var> represents,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a> as the <a class="dfnref" href="#dfn-callback-context" id="ref-for-dfn-callback-context-6">callback context</a>. <a data-link-type="biblio" href="#biblio-html">[HTML]</a>.
    </ol>
-   <p id="callback-function-to-es"> The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-23">converting</a> an IDL <a href="#idl-callback-function">callback function type</a> value to an ECMAScript value is a reference to the same object
-              that the IDL <a href="#idl-callback-function">callback function type</a> value represents. </p>
+   <p id="callback-function-to-es"> The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-23">converting</a> an IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-4">callback function type</a> value to an ECMAScript value is a reference to the same object
+              that the IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-5">callback function type</a> value represents. </p>
    <h4 class="heading settled" data-level="5.2.24" id="es-nullable-type"><span class="secno">5.2.24. </span><span class="content">Nullable types — <var>T</var>?</span><a class="self-link" href="#es-nullable-type"></a></h4>
    <p> IDL <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-16">nullable type</a> values are represented
               by values of either the ECMAScript type corresponding to the <a class="dfnref" href="#dfn-inner-type" id="ref-for-dfn-inner-type-8">inner IDL type</a>, or
@@ -6616,7 +6616,7 @@ Entry implements Observable;</pre>
     <li> Let <var>method</var> be the result of <a data-link-type="dfn" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>). 
     <li> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>). 
     <li> If <var>method</var> is <emu-val>undefined</emu-val>, <a class="dfnref external" href="#ecmascript-throw">throw a <span class="estype">TypeError</span></a>. 
-    <li> Return the result of <a class="dfnref" href="#create-sequence-from-iterable">creating a sequence
+    <li> Return the result of <a class="dfnref" href="#create-sequence-from-iterable" id="ref-for-create-sequence-from-iterable-1">creating a sequence
                 of type <span class="idltype">sequence&lt;<var>T</var>></span> from <var>V</var> and <var>method</var></a>. 
    </ol>
    <p id="sequence-to-es"> An IDL sequence value <var>S</var> of type <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-sequence">sequence&lt;T></a></code> is <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-26">converted</a> to an ECMAScript <span class="estype">Array</span> object as follows: </p>
@@ -6635,7 +6635,7 @@ Entry implements Observable;</pre>
      </ol>
     <li>Return <var>A</var>.
    </ol>
-   <h5 class="heading settled" data-level="5.2.25.1" id="create-sequence-from-iterable"><span class="secno">5.2.25.1. </span><span class="content">Creating a sequence from an iterable</span><a class="self-link" href="#create-sequence-from-iterable"></a></h5>
+   <h5 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.2.25.1" data-lt="Creating a sequence from an iterable" data-noexport="" id="create-sequence-from-iterable"><span class="secno">5.2.25.1. </span><span class="content">Creating a sequence from an iterable</span></h5>
    <p> To create an IDL value of type <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-sequence">sequence&lt;T></a></code> given an
                 iterable <var>iterable</var> and an iterator getter <var>method</var>, perform the following steps: </p>
    <ol class="algorithm">
@@ -6786,12 +6786,12 @@ Entry implements Observable;</pre>
     <li>If the <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-21">union type</a> <a class="dfnref" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-3">includes a nullable type</a> and <var>V</var> is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
                 then return the IDL value <span class="idlvalue">null</span>.
     <li> Let <var>types</var> be the <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-9">flattened member types</a> of the <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-22">union type</a>. 
-    <li> If <var>V</var> is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>, and <var>types</var> includes a <a href="#idl-dictionary">dictionary type</a>, then return the
+    <li> If <var>V</var> is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>, and <var>types</var> includes a <a href="#idl-dictionary" id="ref-for-idl-dictionary-6">dictionary type</a>, then return the
                 result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-33">converting</a> <var>V</var> to that dictionary type. 
     <li>
       If <var>V</var> is a <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-13">platform object</a>, then: 
      <ol>
-      <li>If <var>types</var> includes an <a href="#idl-interface">interface type</a> that <var>V</var> implements, then return the IDL value that is a reference to the object <var>V</var>.
+      <li>If <var>types</var> includes an <a href="#idl-interface" id="ref-for-idl-interface-10">interface type</a> that <var>V</var> implements, then return the IDL value that is a reference to the object <var>V</var>.
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code>, then return the IDL value
                     that is a reference to the object <var>V</var>.
      </ol>
@@ -6860,7 +6860,7 @@ Entry implements Observable;</pre>
         <li> Let <var>method</var> be the result of <a data-link-type="dfn" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>). 
         <li> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>). 
         <li> If <var>method</var> is not <emu-val>undefined</emu-val>,
-                        return the result of <a class="dfnref" href="#create-sequence-from-iterable">creating a
+                        return the result of <a class="dfnref" href="#create-sequence-from-iterable" id="ref-for-create-sequence-from-iterable-2">creating a
                         sequence of that type from <var>V</var> and <var>method</var></a>. 
        </ol>
       <li>
@@ -6869,10 +6869,10 @@ Entry implements Observable;</pre>
         <li> Let <var>method</var> be the result of <a data-link-type="dfn" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>). 
         <li> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>). 
         <li> If <var>method</var> is not <emu-val>undefined</emu-val>,
-                        return the result of <a class="dfnref" href="#create-frozen-array-from-iterable">creating a
+                        return the result of <a class="dfnref" href="#create-frozen-array-from-iterable" id="ref-for-create-frozen-array-from-iterable-1">creating a
                         frozen array of that type from <var>V</var> and <var>method</var></a>. 
        </ol>
-      <li>If <var>types</var> includes a <a href="#idl-dictionary">dictionary type</a>, then return the
+      <li>If <var>types</var> includes a <a href="#idl-dictionary" id="ref-for-idl-dictionary-7">dictionary type</a>, then return the
                     result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-41">converting</a> <var>V</var> to that dictionary type.
       <li>If <var>types</var> includes a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-17">callback interface</a> type, then return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-42">converting</a> <var>V</var> to that interface type.
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code>, then return the IDL value
@@ -7020,11 +7020,11 @@ Entry implements Observable;</pre>
    <p> The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-34">converting</a> an IDL <span class="idltype">FrozenArray&lt;<var>T</var>></span> value to an ECMAScript
               value is the <span class="estype">Object</span> value that represents a reference
               to the same object that the IDL <span class="idltype">FrozenArray&lt;<var>T</var>></span> represents. </p>
-   <h5 class="heading settled" data-level="5.2.32.1" id="create-frozen-array-from-iterable"><span class="secno">5.2.32.1. </span><span class="content">Creating a frozen array from an iterable</span><a class="self-link" href="#create-frozen-array-from-iterable"></a></h5>
+   <h5 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.2.32.1" data-lt="Creating a frozen array from an iterable" data-noexport="" id="create-frozen-array-from-iterable"><span class="secno">5.2.32.1. </span><span class="content">Creating a frozen array from an iterable</span></h5>
    <p> To create an IDL value of type <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-FrozenArray">FrozenArray&lt;T></a></code> given an
                 iterable <var>iterable</var> and an iterator getter <var>method</var>, perform the following steps: </p>
    <ol class="algorithm">
-    <li>Let <var>values</var> be the result of <a class="dfnref" href="#create-sequence-from-iterable">creating
+    <li>Let <var>values</var> be the result of <a class="dfnref" href="#create-sequence-from-iterable" id="ref-for-create-sequence-from-iterable-3">creating
                     a sequence of type <span class="idltype">sequence&lt;<var>T</var>></span> from <var>iterable</var> and <var>method</var></a>.
     <li>Return the result of <a class="dfnref" href="#dfn-create-frozen-array" id="ref-for-dfn-create-frozen-array-2">creating a frozen
                     array</a> from <var>values</var>.
@@ -7579,7 +7579,7 @@ interface HTMLAudioElement : HTMLMediaElement {
               must always be returned. </p>
    <p> The <a class="idl-code" data-link-type="extended-attribute">[NewObject]</a> extended attribute must <a class="dfnref" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-10">take no arguments</a>. </p>
    <p> The <a class="idl-code" data-link-type="extended-attribute">[NewObject]</a> extended attribute must not
-              be used on anything other than a <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-9">regular</a> or <a class="dfnref" href="#dfn-static-operation" id="ref-for-dfn-static-operation-8">static</a> <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-56">operation</a> whose <a class="dfnref" href="#dfn-return-type" id="ref-for-dfn-return-type-4">return type</a> is an <a href="#idl-interface">interface type</a> or
+              be used on anything other than a <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-9">regular</a> or <a class="dfnref" href="#dfn-static-operation" id="ref-for-dfn-static-operation-8">static</a> <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-56">operation</a> whose <a class="dfnref" href="#dfn-return-type" id="ref-for-dfn-return-type-4">return type</a> is an <a href="#idl-interface" id="ref-for-idl-interface-11">interface type</a> or
               a <a class="dfnref" href="#dfn-promise-type" id="ref-for-dfn-promise-type-1">promise type</a>. </p>
    <div class="example" id="example-537b167a">
     <a class="self-link" href="#example-537b167a"></a> 
@@ -7707,7 +7707,7 @@ interface StringMap2 {
    </div>
    <h4 class="heading settled" data-level="5.3.15" id="PutForwards"><span class="secno">5.3.15. </span><span class="content">[PutForwards]</span><a class="self-link" href="#PutForwards"></a></h4>
    <p> If the <a class="idl-code" data-link-type="extended-attribute">[PutForwards]</a> <a class="dfnref" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-68">extended attribute</a> appears on a <a class="dfnref" href="#dfn-read-only" id="ref-for-dfn-read-only-8">read only</a> <a class="dfnref" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-8">regular attribute</a> declaration whose type is
-              an <a href="#idl-interface">interface type</a>,
+              an <a href="#idl-interface" id="ref-for-idl-interface-12">interface type</a>,
               it indicates that assigning to the attribute will have specific behavior.
               Namely, the assignment is “forwarded” to the attribute (specified by
               the extended attribute argument) on the object that is currently
@@ -7718,7 +7718,7 @@ interface StringMap2 {
    <ul>
     <li> <var>A</var> is the <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-47">attribute</a> on which the <a class="idl-code" data-link-type="extended-attribute">[PutForwards]</a> extended attribute appears, 
     <li> <var>I</var> is the <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-75">interface</a> on which <var>A</var> is declared, 
-    <li> <var>J</var> is the <a href="#idl-interface">interface type</a> that <var>A</var> is declared to be of, and 
+    <li> <var>J</var> is the <a href="#idl-interface" id="ref-for-idl-interface-13">interface type</a> that <var>A</var> is declared to be of, and 
     <li> <var>N</var> is the <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-51">identifier</a> argument of the extended attribute, 
    </ul>
    <p> then there must be another <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-48">attribute</a> <var>B</var> declared on <var>J</var> whose <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-52">identifier</a> is <var>N</var>.  Assignment of a value to the attribute <var>A</var> on an object implementing <var>I</var> will result in that value
@@ -7819,7 +7819,7 @@ interface Person {
               be returned. </p>
    <p> The <a class="idl-code" data-link-type="extended-attribute">[SameObject]</a> extended attribute must <a class="dfnref" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-14">take no arguments</a>. </p>
    <p> The <a class="idl-code" data-link-type="extended-attribute">[SameObject]</a> extended attribute must not
-              be used on anything other than a <a class="dfnref" href="#dfn-read-only" id="ref-for-dfn-read-only-13">read only</a> <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-55">attribute</a> whose type is an <a href="#idl-interface">interface type</a> or <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code>. </p>
+              be used on anything other than a <a class="dfnref" href="#dfn-read-only" id="ref-for-dfn-read-only-13">read only</a> <a class="dfnref" href="#dfn-attribute" id="ref-for-dfn-attribute-55">attribute</a> whose type is an <a href="#idl-interface" id="ref-for-idl-interface-14">interface type</a> or <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code>. </p>
    <div class="example" id="example-aa3b9412">
     <a class="self-link" href="#example-aa3b9412"></a> 
     <p> As an example, this extended attribute is suitable for use on
@@ -8126,16 +8126,16 @@ interface Manager {
                   and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li>a <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-25">nullable type</a>
-        <li>a <a href="#idl-dictionary">dictionary type</a>
+        <li>a <a href="#idl-dictionary" id="ref-for-idl-dictionary-8">dictionary type</a>
         <li>a <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-23">union type</a> that <a class="dfnref" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-4">includes a nullable type</a> or that
-                      has a <a href="#idl-dictionary">dictionary type</a> in its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-10">flattened members</a>
+                      has a <a href="#idl-dictionary" id="ref-for-idl-dictionary-9">dictionary type</a> in its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-10">flattened members</a>
        </ul>
         then remove from <var>S</var> all other entries. 
       <li>
         Otherwise: if <var>V</var> is a <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-18">platform object</a>, and
                   there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
-        <li>an <a href="#idl-interface">interface type</a> that <var>V</var> implements
+        <li>an <a href="#idl-interface" id="ref-for-idl-interface-15">interface type</a> that <var>V</var> implements
         <li><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code>
         <li>a <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-26">nullable</a> version of any of the above types
         <li>a <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-24">union type</a> or a <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-27">nullable</a> union type
@@ -8257,7 +8257,7 @@ interface Manager {
                   there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li>a <a class="dfnref" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-24">callback interface</a> type
-        <li>a <a href="#idl-dictionary">dictionary type</a>
+        <li>a <a href="#idl-dictionary" id="ref-for-idl-dictionary-10">dictionary type</a>
         <li><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#dom-object">object</a></code>
         <li>a <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-46">nullable</a> version of any of the above types
         <li>a <a class="dfnref" href="#dfn-union-type" id="ref-for-dfn-union-type-34">union type</a> or <a class="dfnref" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-47">nullable</a> union type
@@ -8323,10 +8323,10 @@ interface Manager {
       <li> Let <var>T</var> be the type at index <var>i</var> in the
                   type list of the remaining entry in <var>S</var>. 
       <li> If <var>T</var> is a <a href="#idl-sequence" id="ref-for-idl-sequence-11">sequence type</a>, then
-                  append to <var>values</var> the result of <a class="dfnref" href="#create-sequence-from-iterable">creating a sequence
+                  append to <var>values</var> the result of <a class="dfnref" href="#create-sequence-from-iterable" id="ref-for-create-sequence-from-iterable-4">creating a sequence
                   of type <var>T</var> from <var>V</var> and <var>method</var></a>. 
       <li> Otherwise, <var>T</var> is a <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-5">frozen array type</a>.
-                  Append to <var>values</var> the result of <a class="dfnref" href="#create-frozen-array-from-iterable">creating a frozen array
+                  Append to <var>values</var> the result of <a class="dfnref" href="#create-frozen-array-from-iterable" id="ref-for-create-frozen-array-from-iterable-2">creating a frozen array
                   of type <var>T</var> from <var>V</var> and <var>method</var></a>. 
       <li> Set <var>i</var> to <var>i</var> + 1. 
      </ol>
@@ -8462,7 +8462,7 @@ interface Manager {
     <li> Initialize <var>S</var> to the <a class="dfnref" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-5">effective overload set</a> for constructors with <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-57">identifier</a> <var>id</var> on <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-87">interface</a> <var>I</var> and with argument count <var>n</var>. 
     <li> Let &lt;<var>constructor</var>, <var>values</var>> be the result of passing <var>S</var> and <var>arg</var><sub>0..<var>n</var>−1</sub> to the <a class="dfnref" href="#dfn-overload-resolution-algorithm" id="ref-for-dfn-overload-resolution-algorithm-1">overload resolution algorithm</a>. 
     <li> Let <var>R</var> be the result of performing the actions listed in the description of <var>constructor</var> with <var>values</var> as the argument values. 
-    <li> Return the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-35">converting</a> <var>R</var> to an ECMAScript <a href="#idl-interface">interface type</a> value <var>I</var>. 
+    <li> Return the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-35">converting</a> <var>R</var> to an ECMAScript <a href="#idl-interface" id="ref-for-idl-interface-16">interface type</a> value <var>I</var>. 
    </ol>
    <p> If the internal <span class="prop">[[Call]]</span> method
                 of the <a class="dfnref" href="#dfn-interface-object" id="ref-for-dfn-interface-object-8">interface object</a> returns normally, then it must
@@ -8512,7 +8512,7 @@ interface Manager {
     <li> Initialize <var>S</var> to the <a class="dfnref" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-7">effective overload set</a> for constructors with <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-60">identifier</a> <var>id</var> on <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-90">interface</a> <var>I</var> and with argument count <var>n</var>. 
     <li> Let &lt;<var>constructor</var>, <var>values</var>> be the result of passing <var>S</var> and <var>arg</var><sub>0..<var>n</var>−1</sub> to the <a class="dfnref" href="#dfn-overload-resolution-algorithm" id="ref-for-dfn-overload-resolution-algorithm-2">overload resolution algorithm</a>. 
     <li> Let <var>R</var> be the result of performing the actions listed in the description of <var>constructor</var> with <var>values</var> as the argument values. 
-    <li> Return the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-36">converting</a> <var>R</var> to an ECMAScript <a href="#idl-interface">interface type</a> value <var>I</var>. 
+    <li> Return the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-36">converting</a> <var>R</var> to an ECMAScript <a href="#idl-interface" id="ref-for-idl-interface-17">interface type</a> value <var>I</var>. 
    </ol>
    <p> If the internal <span class="prop">[[Call]]</span> method
               of the <a class="dfnref" href="#dfn-named-constructor" id="ref-for-dfn-named-constructor-3">named constructor</a> returns normally, then it must
@@ -9903,7 +9903,7 @@ C implements A;</pre>
    </ol>
     Note: This should ensure that for objects with named properties, property resolution is done in the following order:
             [[]] 
-   <h4 class="heading settled" data-level="5.8.2" id="getownproperty-guts"><span class="secno">5.8.2. </span><span class="content">The PlatformObjectGetOwnProperty abstract operation</span><a class="self-link" href="#getownproperty-guts"></a></h4>
+   <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.8.2" data-lt="The PlatformObjectGetOwnProperty abstract operation" data-noexport="" id="getownproperty-guts"><span class="secno">5.8.2. </span><span class="content">The PlatformObjectGetOwnProperty abstract operation</span></h4>
    <p> The <span class="prop">PlatformObjectGetOwnProperty</span> abstract operation performs the following steps when called with an
               object <var>O</var>, a property name <var>P</var>, and a boolean <var>ignoreNamedProps</var> value: </p>
    <ol class="algorithm">
@@ -9953,7 +9953,7 @@ C implements A;</pre>
    <h4 class="heading settled" data-level="5.8.3" id="getownproperty"><span class="secno">5.8.3. </span><span class="content">Platform object [[GetOwnProperty]] method</span><a class="self-link" href="#getownproperty"></a></h4>
    <p> The internal <span class="prop">[[GetOwnProperty]]</span> method of every <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-52">platform object</a> <var>O</var> that implements an <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-142">interface</a> which <a class="dfnref" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-11">supports indexed</a> or <a class="dfnref" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-7">named properties</a> must behave as follows when called with property name <var>P</var>: </p>
    <ol class="algorithm">
-    <li> Return the result of invoking the <a class="dfnref" href="#getownproperty-guts">PlatformObjectGetOwnProperty</a> abstract operation with <var>O</var>, <var>P</var>, and <emu-val>false</emu-val> as
+    <li> Return the result of invoking the <a class="dfnref" href="#getownproperty-guts" id="ref-for-getownproperty-guts-1">PlatformObjectGetOwnProperty</a> abstract operation with <var>O</var>, <var>P</var>, and <emu-val>false</emu-val> as
                 arguments. 
    </ol>
    <h4 class="heading settled" data-level="5.8.4" id="invoking-indexed-setter"><span class="secno">5.8.4. </span><span class="content">Invoking a platform object indexed property setter</span><a class="self-link" href="#invoking-indexed-setter"></a></h4>
@@ -10019,7 +10019,7 @@ C implements A;</pre>
         <li>Return <emu-val>true</emu-val>.
        </ol>
      </ol>
-    <li> Let <var>ownDesc</var> be the result of invoking the <a class="dfnref" href="#getownproperty-guts">PlatformObjectGetOwnProperty</a> abstract operation with <var>O</var>, <var>P</var>, and <emu-val>true</emu-val> as
+    <li> Let <var>ownDesc</var> be the result of invoking the <a class="dfnref" href="#getownproperty-guts" id="ref-for-getownproperty-guts-2">PlatformObjectGetOwnProperty</a> abstract operation with <var>O</var>, <var>P</var>, and <emu-val>true</emu-val> as
                 arguments. 
     <li> Perform steps 3-11 of the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a>. 
    </ol>
@@ -10107,7 +10107,7 @@ C implements A;</pre>
    </ol>
    <h4 class="heading settled" data-level="5.8.10" id="property-enumeration"><span class="secno">5.8.10. </span><span class="content">Property enumeration</span><a class="self-link" href="#property-enumeration"></a></h4>
    <p> This document does not define a complete property enumeration order
-              for all <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-57">platform objects</a> implementing <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-150">interfaces</a> (or for <a href="#es-exception-objects">platform objects representing exceptions</a>).
+              for all <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-57">platform objects</a> implementing <a class="dfnref" href="#dfn-interface" id="ref-for-dfn-interface-150">interfaces</a> (or for <a href="#es-exception-objects" id="ref-for-es-exception-objects-1">platform objects representing exceptions</a>).
               However, if a platform object implements an interface that <a class="dfnref" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-18">supports indexed</a> or <a class="dfnref" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-14">named properties</a>, then
               properties on the object must be
               enumerated in the following order: </p>
@@ -10158,7 +10158,7 @@ C implements A;</pre>
     <li>has one or more <a class="dfnref" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-17">regular operations</a> that all have the same <a class="dfnref" href="#dfn-identifier" id="ref-for-dfn-identifier-90">identifier</a>,
               and no others.
    </ul>
-   <p> To <dfn data-dfn-type="dfn" data-noexport="" id="call-a-user-objects-operation">call a user object’s operation<a class="self-link" href="#call-a-user-objects-operation"></a></dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value <var>value</var>,
+   <p> To <dfn data-dfn-type="dfn" data-noexport="" id="call-a-user-objects-operation">call a user object’s operation<a class="self-link" href="#call-a-user-objects-operation"></a></dfn>, given a <a class="dfnref" href="#idl-interface" id="ref-for-idl-interface-18">callback interface type</a> value <var>value</var>,
             sometimes-optional operation name <var>opName</var>, list of argument values <var>arg</var><sub>0..<var>n</var>−1</sub> each of which is either an IDL value or the
             special value “missing” (representing a missing optional argument), and optional <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-callback-this-value">callback this value</dfn> <var>thisArg</var>, perform the following steps. These steps will either return an IDL
             value or throw an exception. </p>
@@ -10225,7 +10225,7 @@ C implements A;</pre>
       <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-68">converting</a> <var>rejectedPromise</var> to the operation’s return type.
      </ol>
    </ol>
-   <p> To <dfn data-dfn-type="dfn" data-export="" id="get-a-user-objects-attribute-value">get a user object’s attribute value<a class="self-link" href="#get-a-user-objects-attribute-value"></a></dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value <var>object</var> and attribute name <var>attributeName</var>, perform the following steps. These steps
+   <p> To <dfn data-dfn-type="dfn" data-export="" id="get-a-user-objects-attribute-value">get a user object’s attribute value<a class="self-link" href="#get-a-user-objects-attribute-value"></a></dfn>, given a <a class="dfnref" href="#idl-interface" id="ref-for-idl-interface-19">callback interface type</a> value <var>object</var> and attribute name <var>attributeName</var>, perform the following steps. These steps
             will either return an IDL value or throw an exception. </p>
    <ol class="algorithm">
     <li>Let <var>completion</var> be an uninitialized variable.
@@ -10250,7 +10250,7 @@ C implements A;</pre>
       <li>Return the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-70">converting</a> <var>rejectedPromise</var> to the attribute’s type.
      </ol>
    </ol>
-   <p> To <dfn data-dfn-type="dfn" data-export="" id="set-a-user-objects-attribute-value">set a user object’s attribute value<a class="self-link" href="#set-a-user-objects-attribute-value"></a></dfn>, given a <a class="dfnref" href="#idl-interface">callback interface type</a> value <var>object</var>, attribute name <var>attributeName</var>, and IDL value <var>value</var>, perform the following steps. These steps will not return anything, but
+   <p> To <dfn data-dfn-type="dfn" data-export="" id="set-a-user-objects-attribute-value">set a user object’s attribute value<a class="self-link" href="#set-a-user-objects-attribute-value"></a></dfn>, given a <a class="dfnref" href="#idl-interface" id="ref-for-idl-interface-20">callback interface type</a> value <var>object</var>, attribute name <var>attributeName</var>, and IDL value <var>value</var>, perform the following steps. These steps will not return anything, but
             could throw an exception. </p>
    <ol class="algorithm">
     <li>Let <var>completion</var> be an uninitialized variable.
@@ -10278,7 +10278,7 @@ C implements A;</pre>
             used as a <a class="dfnref" href="#dfn-callback-function" id="ref-for-dfn-callback-function-28">callback function</a> value is
             called in a manner similar to how <a class="dfnref" href="#dfn-operation" id="ref-for-dfn-operation-79">operations</a> on <a class="dfnref" href="#dfn-user-object" id="ref-for-dfn-user-object-10">user objects</a> are called (as
             described in the previous section). </p>
-   <p> To <dfn data-dfn-type="dfn" data-export="" id="invoke">invoke<a class="self-link" href="#invoke"></a></dfn> a <a class="dfnref" href="#idl-callback-function">callback function type</a> value <var>callable</var> with
+   <p> To <dfn data-dfn-type="dfn" data-export="" id="invoke">invoke<a class="self-link" href="#invoke"></a></dfn> a <a class="dfnref" href="#idl-callback-function" id="ref-for-idl-callback-function-6">callback function type</a> value <var>callable</var> with
             a list of arguments <var>arg</var><sub>0..<var>n</var>−1</sub>, each of which is either
             an IDL value or the special value “missing” (representing a missing optional argument),
             and with optional <a class="dfnref" href="#dfn-callback-this-value" id="ref-for-dfn-callback-this-value-2">callback this
@@ -10385,7 +10385,7 @@ C implements A;</pre>
               there must be a property on the DOMException prototype object
               whose name and value are as indicated in the table.  The property has
               attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>. </p>
-   <h3 class="heading settled" data-level="5.12" id="es-exception-objects"><span class="secno">5.12. </span><span class="content">Exception objects</span><a class="self-link" href="#es-exception-objects"></a></h3>
+   <h3 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.12" data-lt="Exception objects" data-noexport="" id="es-exception-objects"><span class="secno">5.12. </span><span class="content">Exception objects</span></h3>
    <p> <a class="dfnref" href="#dfn-simple-exception" id="ref-for-dfn-simple-exception-5">Simple exceptions</a> are represented
             by native ECMAScript objects of the corresponding type. </p>
    <p> <a class="dfnref" href="#dfn-DOMException" id="ref-for-dfn-DOMException-28">DOMExceptions</a> are represented by <a class="dfnref" href="#dfn-platform-object" id="ref-for-dfn-platform-object-58">platform objects</a> that inherit from
@@ -10463,7 +10463,7 @@ C implements A;</pre>
     <li>Throw <var>O</var>.
    </ol>
    <div class="note" role="note">
-    <p> The above algorithms do not restrict <a class="dfnref" href="#es-exception-objects">platform objects representing exceptions</a> propagating out of a <span class="estype">Function</span> to be
+    <p> The above algorithms do not restrict <a class="dfnref" href="#es-exception-objects" id="ref-for-es-exception-objects-2">platform objects representing exceptions</a> propagating out of a <span class="estype">Function</span> to be
               ones that are associated with the global environment
               where that <span class="estype">Function</span> object originated.
               For example, consider the IDL: </p>
@@ -11733,6 +11733,7 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
    <li><a href="#call-a-user-objects-operation">call a user object’s operation</a><span>, in §5.9</span>
    <li><a href="#dfn-callback-context">callback context</a><span>, in §4.10.19</span>
    <li><a href="#dfn-callback-function">callback function</a><span>, in §4.6</span>
+   <li><a href="#idl-callback-function">Callback function types</a><span>, in §4.10.21</span>
    <li><a href="#dfn-callback-interface">callback interface</a><span>, in §4.2</span>
    <li><a href="#dfn-callback-this-value">callback this value</a><span>, in §5.9</span>
    <li><a href="#dfn-change-global-environment">change</a><span>, in §5.8</span>
@@ -11754,6 +11755,8 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
    <li><a href="#dfn-obtain-unicode">convert to a sequence of Unicode scalar values</a><span>, in §4.10.15</span>
    <li><a href="#dfn-create-frozen-array">create a frozen array</a><span>, in §5.2.32</span>
    <li><a href="#dfn-create-exception">created</a><span>, in §4.4</span>
+   <li><a href="#create-frozen-array-from-iterable">Creating a frozen array from an iterable</a><span>, in §5.2.32</span>
+   <li><a href="#create-sequence-from-iterable">Creating a sequence from an iterable</a><span>, in §5.2.25</span>
    <li><a href="#dfn-current-global-environment">current global environment</a><span>, in §5.13</span>
    <li><a href="#dom-domexception-data_clone_err">DATA_CLONE_ERR</a><span>, in §4.4.1</span>
    <li><a href="#datacloneerror">DataCloneError</a><span>, in §4.4.1</span>
@@ -11775,6 +11778,7 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
    <li><a href="#dfn-determine-the-value-of-an-indexed-property">determine the value of an indexed property</a><span>, in §4.2.4.4</span>
    <li><a href="#dfn-dictionary">dictionary</a><span>, in §4.3</span>
    <li><a href="#dfn-dictionary-member">dictionary members</a><span>, in §4.3</span>
+   <li><a href="#idl-dictionary">Dictionary types</a><span>, in §4.10.19</span>
    <li><a href="#dfn-distinguishable">distinguishable</a><span>, in §4.2.6</span>
    <li><a href="#dfn-distinguishing-argument-index">distinguishing argument index</a><span>, in §4.2.6</span>
    <li><a href="#dfn-DOMException">DOMException</a><span>, in §4.4</span>
@@ -11793,6 +11797,7 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
    <li><a href="#evalerror">EvalError</a><span>, in §4.4</span>
    <li><a href="#dfn-example-term">example term</a><span>, in §2.1</span>
    <li><a href="#dfn-exception">exception</a><span>, in §4.4</span>
+   <li><a href="#es-exception-objects">Exception objects</a><span>, in §5.11.2</span>
    <li><a href="#dfn-exception-type">exception types</a><span>, in §4.10</span>
    <li><a href="#dfn-exposed">exposed</a><span>, in §5.3.4</span>
    <li><a href="#dfn-expose">exposes</a><span>, in §5.1</span>
@@ -11843,6 +11848,7 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
    <li><a href="#dfn-interface-member">interface member</a><span>, in §4.2</span>
    <li><a href="#dfn-interface-object">interface object</a><span>, in §5.6</span>
    <li><a href="#dfn-interface-prototype-object">interface prototype object</a><span>, in §5.6.1</span>
+   <li><a href="#idl-interface">Interface types</a><span>, in §4.10.18</span>
    <li><a href="#dom-domexception-inuse_attribute_err">INUSE_ATTRIBUTE_ERR</a><span>, in §4.4.1</span>
    <li><a href="#inuseattributeerror">InUseAttributeError</a><span>, in §4.4.1</span>
    <li><a href="#dom-domexception-invalid_access_err">INVALID_ACCESS_ERR</a><span>, in §4.4.1</span>
@@ -11969,6 +11975,7 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
    <li><a href="#dfn-xattr-identifier">takes an identifier</a><span>, in §4.11</span>
    <li><a href="#dfn-xattr-identifier-list">takes an identifier list</a><span>, in §4.11</span>
    <li><a href="#dfn-xattr-no-arguments">takes no arguments</a><span>, in §4.11</span>
+   <li><a href="#getownproperty-guts">The PlatformObjectGetOwnProperty abstract operation</a><span>, in §5.8.1</span>
    <li><a href="#dfn-throw">throw</a><span>, in §4.4</span>
    <li><a href="#dfn-throw">thrown</a><span>, in §4.4</span>
    <li><a href="#dom-domexception-timeout_err">TIMEOUT_ERR</a><span>, in §4.4.1</span>
@@ -13452,6 +13459,23 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
     <li><a href="#ref-for-dfn-obtain-unicode-1">5.2.18. USVString</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="idl-interface">
+   <b><a href="#idl-interface">#idl-interface</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-idl-interface-1">4.2.4.3. Serializers</a>
+    <li><a href="#ref-for-idl-interface-2">4.10. Types</a>
+    <li><a href="#ref-for-idl-interface-3">4.10.22. Callback function types</a>
+    <li><a href="#ref-for-idl-interface-4">5.2.20. Interface types</a> <a href="#ref-for-idl-interface-5">(2)</a> <a href="#ref-for-idl-interface-6">(3)</a> <a href="#ref-for-idl-interface-7">(4)</a> <a href="#ref-for-idl-interface-8">(5)</a> <a href="#ref-for-idl-interface-9">(6)</a>
+    <li><a href="#ref-for-idl-interface-10">5.2.27. Union types</a>
+    <li><a href="#ref-for-idl-interface-11">5.3.12. [NewObject]</a>
+    <li><a href="#ref-for-idl-interface-12">5.3.15. [PutForwards]</a> <a href="#ref-for-idl-interface-13">(2)</a>
+    <li><a href="#ref-for-idl-interface-14">5.3.17. [SameObject]</a>
+    <li><a href="#ref-for-idl-interface-15">5.5. Overload resolution algorithm</a>
+    <li><a href="#ref-for-idl-interface-16">5.6.1.1. Interface object [[Call]] method</a>
+    <li><a href="#ref-for-idl-interface-17">5.6.2. Named constructors</a>
+    <li><a href="#ref-for-idl-interface-18">5.9. User objects implementing callback interfaces</a> <a href="#ref-for-idl-interface-19">(2)</a> <a href="#ref-for-idl-interface-20">(3)</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dfn-callback-context">
    <b><a href="#dfn-callback-context">#dfn-callback-context</a></b><b>Referenced in:</b>
    <ul>
@@ -13459,6 +13483,24 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
     <li><a href="#ref-for-dfn-callback-context-3">4.10.22. Callback function types</a> <a href="#ref-for-dfn-callback-context-4">(2)</a>
     <li><a href="#ref-for-dfn-callback-context-5">5.2.20. Interface types</a>
     <li><a href="#ref-for-dfn-callback-context-6">5.2.23. Callback function types</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="idl-dictionary">
+   <b><a href="#idl-dictionary">#idl-dictionary</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-idl-dictionary-1">4.2.3. Operations</a>
+    <li><a href="#ref-for-idl-dictionary-2">4.2.6. Overloading</a>
+    <li><a href="#ref-for-idl-dictionary-3">4.10.26. Union types</a>
+    <li><a href="#ref-for-idl-dictionary-4">5.2.21. Dictionary types</a> <a href="#ref-for-idl-dictionary-5">(2)</a>
+    <li><a href="#ref-for-idl-dictionary-6">5.2.27. Union types</a> <a href="#ref-for-idl-dictionary-7">(2)</a>
+    <li><a href="#ref-for-idl-dictionary-8">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-dictionary-9">(2)</a> <a href="#ref-for-idl-dictionary-10">(3)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="idl-callback-function">
+   <b><a href="#idl-callback-function">#idl-callback-function</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-idl-callback-function-1">5.2.23. Callback function types</a> <a href="#ref-for-idl-callback-function-2">(2)</a> <a href="#ref-for-idl-callback-function-3">(3)</a> <a href="#ref-for-idl-callback-function-4">(4)</a> <a href="#ref-for-idl-callback-function-5">(5)</a>
+    <li><a href="#ref-for-idl-callback-function-6">5.10. Invoking callback functions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-nullable-type">
@@ -13874,11 +13916,27 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-59">5.13. Creating and throwing exceptions</a> <a href="#ref-for-dfn-convert-idl-to-ecmascript-value-60">(2)</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="create-sequence-from-iterable">
+   <b><a href="#create-sequence-from-iterable">#create-sequence-from-iterable</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-create-sequence-from-iterable-1">5.2.25. Sequences — sequence&lt;T></a>
+    <li><a href="#ref-for-create-sequence-from-iterable-2">5.2.27. Union types</a>
+    <li><a href="#ref-for-create-sequence-from-iterable-3">5.2.32.1. Creating a frozen array from an iterable</a>
+    <li><a href="#ref-for-create-sequence-from-iterable-4">5.5. Overload resolution algorithm</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dfn-create-frozen-array">
    <b><a href="#dfn-create-frozen-array">#dfn-create-frozen-array</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dfn-create-frozen-array-1">5.2.32. Frozen arrays — FrozenArray&lt;T></a>
     <li><a href="#ref-for-dfn-create-frozen-array-2">5.2.32.1. Creating a frozen array from an iterable</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="create-frozen-array-from-iterable">
+   <b><a href="#create-frozen-array-from-iterable">#create-frozen-array-from-iterable</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-create-frozen-array-from-iterable-1">5.2.27. Union types</a>
+    <li><a href="#ref-for-create-frozen-array-from-iterable-2">5.5. Overload resolution algorithm</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-exposure-set">
@@ -14144,6 +14202,13 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
     <li><a href="#ref-for-dfn-named-property-visibility-4">5.8.10. Property enumeration</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="getownproperty-guts">
+   <b><a href="#getownproperty-guts">#getownproperty-guts</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-getownproperty-guts-1">5.8.3. Platform object [[GetOwnProperty]] method</a>
+    <li><a href="#ref-for-getownproperty-guts-2">5.8.6. Platform object [[Set]] method</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dfn-single-operation-callback-interface">
    <b><a href="#dfn-single-operation-callback-interface">#dfn-single-operation-callback-interface</a></b><b>Referenced in:</b>
    <ul>
@@ -14172,6 +14237,13 @@ Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data
     <li><a href="#ref-for-dfn-DOMException-prototype-object-1">5.1. ECMAScript environment</a>
     <li><a href="#ref-for-dfn-DOMException-prototype-object-2">5.11.2. DOMException prototype object</a>
     <li><a href="#ref-for-dfn-DOMException-prototype-object-3">5.12. Exception objects</a> <a href="#ref-for-dfn-DOMException-prototype-object-4">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="es-exception-objects">
+   <b><a href="#es-exception-objects">#es-exception-objects</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-es-exception-objects-1">5.8.10. Property enumeration</a>
+    <li><a href="#ref-for-es-exception-objects-2">5.13. Creating and throwing exceptions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-current-global-environment">

@@ -5179,7 +5179,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 id="idl-interface">Interface types</h4>
+            <h4 id="idl-interface" dfn="">Interface types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that
@@ -5217,7 +5217,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 id="idl-dictionary">Dictionary types</h4>
+            <h4 id="idl-dictionary" dfn="">Dictionary types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that
@@ -5258,7 +5258,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 id="idl-callback-function">Callback function types</h4>
+            <h4 id="idl-callback-function" dfn="">Callback function types</h4>
 
             <p>
               An <a class="dfnref" href="#dfn-identifier">identifier</a> that identifies
@@ -7226,7 +7226,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             </ol>
 
             
-              <h5 id="create-sequence-from-iterable">Creating a sequence from an iterable</h5>
+              <h5 id="create-sequence-from-iterable" dfn="">Creating a sequence from an iterable</h5>
               <p>
                 To create an IDL value of type {{sequence&lt;T&gt;}} given an
                 iterable |iterable| and an iterator getter
@@ -7858,7 +7858,7 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
 
             
-              <h5 id="create-frozen-array-from-iterable">Creating a frozen array from an iterable</h5>
+              <h5 id="create-frozen-array-from-iterable" dfn="">Creating a frozen array from an iterable</h5>
               <p>
                 To create an IDL value of type {{FrozenArray&lt;T&gt;}} given an
                 iterable |iterable| and an iterator getter
@@ -12630,7 +12630,7 @@ C implements A;</pre>
           
 
           
-            <h4 id="getownproperty-guts">The PlatformObjectGetOwnProperty abstract operation</h4>
+            <h4 id="getownproperty-guts" dfn="">The PlatformObjectGetOwnProperty abstract operation</h4>
 
             <p>
               The <span class="prop">PlatformObjectGetOwnProperty</span>
@@ -13512,7 +13512,7 @@ C implements A;</pre>
         
 
         
-          <h3 id="es-exception-objects">Exception objects</h3>
+          <h3 id="es-exception-objects" dfn="">Exception objects</h3>
 
           <p>
             <a class="dfnref" href="#dfn-simple-exception">Simple exceptions</a> are represented
