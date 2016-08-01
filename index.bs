@@ -4728,7 +4728,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
              ε</span></td></tr></table>
 
           
-            <h4 oldids="dom-any" id="idl-any" interface="" dfn="">any</h4>
+            <h4 oldids="dom-any" id="idl-any" interface="">any</h4>
 
             <p>
               The {{any}} type is the union of all other possible
@@ -4754,7 +4754,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-boolean" id="idl-boolean" interface="" dfn="">boolean</h4>
+            <h4 oldids="dom-boolean" id="idl-boolean" interface="">boolean</h4>
 
             <p>
               The {{boolean}} type has two values:
@@ -4772,7 +4772,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-byte" id="idl-byte" interface="" dfn="">byte</h4>
+            <h4 oldids="dom-byte" id="idl-byte" interface="">byte</h4>
 
             <p>
               The {{byte}} type is a signed integer
@@ -4790,7 +4790,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-octet" id="idl-octet" interface="" dfn="">octet</h4>
+            <h4 oldids="dom-octet" id="idl-octet" interface="">octet</h4>
 
             <p>
               The {{octet}} type is an unsigned integer
@@ -4808,7 +4808,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-short" id="idl-short" interface="" dfn="">short</h4>
+            <h4 oldids="dom-short" id="idl-short" interface="">short</h4>
 
             <p>
               The {{short}} type is a signed integer
@@ -4826,7 +4826,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-unsignedshort" id="idl-unsigned-short" interface="" dfn="">unsigned short</h4>
+            <h4 oldids="dom-unsignedshort" id="idl-unsigned-short" interface="">unsigned short</h4>
 
             <p>
               The {{unsigned short}} type is an unsigned integer
@@ -4844,7 +4844,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-long" id="idl-long" interface="" dfn="">long</h4>
+            <h4 oldids="dom-long" id="idl-long" interface="">long</h4>
 
             <p>
               The {{long}} type is a signed integer
@@ -4862,7 +4862,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-unsignedlong" id="idl-unsigned-long" interface="" dfn="">unsigned long</h4>
+            <h4 oldids="dom-unsignedlong" id="idl-unsigned-long" interface="">unsigned long</h4>
 
             <p>
               The {{unsigned long}} type is an unsigned integer
@@ -4880,7 +4880,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-longlong" id="idl-long-long" interface="" dfn="">long long</h4>
+            <h4 oldids="dom-longlong" id="idl-long-long" interface="">long long</h4>
 
             <p>
               The {{long long}} type is a signed integer
@@ -4898,7 +4898,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-unsignedlonglong" id="idl-unsigned-long-long" interface="" dfn="">unsigned long long</h4>
+            <h4 oldids="dom-unsignedlonglong" id="idl-unsigned-long-long" interface="">unsigned long long</h4>
 
             <p>
               The {{unsigned long long}} type is an unsigned integer
@@ -4916,7 +4916,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-float" id="idl-float" interface="" dfn="">float</h4>
+            <h4 oldids="dom-float" id="idl-float" interface="">float</h4>
 
             <p>
               The {{float}} type is a floating point numeric
@@ -4941,7 +4941,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" interface="" dfn="">unrestricted float</h4>
+            <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" interface="">unrestricted float</h4>
 
             <p>
               The {{unrestricted float}} type is a floating point numeric
@@ -4960,7 +4960,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-double" id="idl-double" interface="" dfn="">double</h4>
+            <h4 oldids="dom-double" id="idl-double" interface="">double</h4>
 
             <p>
               The {{double}} type is a floating point numeric
@@ -4979,7 +4979,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-unrestricteddouble" id="idl-unrestricted-double" interface="" dfn="">unrestricted double</h4>
+            <h4 oldids="dom-unrestricteddouble" id="idl-unrestricted-double" interface="">unrestricted double</h4>
 
             <p>
               The {{unrestricted double}} type is a floating point numeric
@@ -4998,7 +4998,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-DOMString" id="idl-DOMString" interface="" dfn="">DOMString</h4>
+            <h4 oldids="dom-DOMString" id="idl-DOMString" interface="">DOMString</h4>
 
             <p>
               The {{DOMString}} type
@@ -5088,7 +5088,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-ByteString" id="idl-ByteString" interface="" dfn="">ByteString</h4>
+            <h4 oldids="dom-ByteString" id="idl-ByteString" interface="">ByteString</h4>
 
             <p>
               The {{ByteString}} type
@@ -5120,7 +5120,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-USVString" id="idl-USVString" interface="" dfn="">USVString</h4>
+            <h4 oldids="dom-USVString" id="idl-USVString" interface="">USVString</h4>
 
             <p>
               The {{USVString}} type
@@ -5150,7 +5150,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-object" id="idl-object" interface="" dfn="">object</h4>
+            <h4 oldids="dom-object" id="idl-object" interface="">object</h4>
 
             <p>
               The {{object}} type corresponds to the set of
@@ -5331,7 +5331,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-sequence" id="idl-sequence" interface="" dfn="" lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;|T|&gt;</h4>
+            <h4 oldids="dom-sequence" id="idl-sequence" interface="" lt="sequence|sequence&lt;T&gt;">Sequences — sequence&lt;|T|&gt;</h4>
 
             <p>
               The {{sequence&lt;T&gt;}}
@@ -5369,7 +5369,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-promise" id="idl-promise" interface="" dfn="" lt="Promise|Promise&lt;T&gt;">Promise types — Promise&lt;|T|&gt;</h4>
+            <h4 oldids="dom-promise" id="idl-promise" interface="" lt="Promise|Promise&lt;T&gt;">Promise types — Promise&lt;|T|&gt;</h4>
 
             <p>
               A <dfn id="dfn-promise-type" export="">promise type</dfn> is a parameterized type
@@ -5530,7 +5530,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-RegExp" id="idl-RegExp" interface="" dfn="">RegExp</h4>
+            <h4 oldids="dom-RegExp" id="idl-RegExp" interface="">RegExp</h4>
 
             <p>
               The {{RegExp}} type is a type
@@ -5549,7 +5549,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-Error" id="idl-Error" interface="" dfn="">Error</h4>
+            <h4 oldids="dom-Error" id="idl-Error" interface="">Error</h4>
 
             <p>The {{Error}} type corresponds to the
               set of all possible non-null references to exception objects, including
@@ -5669,7 +5669,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
           
 
           
-            <h4 oldids="dom-FrozenArray" id="idl-frozen-array" interface="" dfn="" lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;|T|&gt;</h4>
+            <h4 oldids="dom-FrozenArray" id="idl-frozen-array" interface="" lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;|T|&gt;</h4>
 
             <p>
               A <dfn id="dfn-frozen-array-type" export="">frozen array type</dfn> is a parameterized

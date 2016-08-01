@@ -313,7 +313,6 @@ TR: </xsl:text>
       </xsl:attribute>
       <xsl:if test="@data-dfn-type">
         <xsl:attribute name="{@data-dfn-type}" />
-        <xsl:attribute name="dfn" />
       </xsl:if>
       <xsl:if test='$parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
         <xsl:attribute name="dfn" />
