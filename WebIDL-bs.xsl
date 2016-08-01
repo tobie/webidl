@@ -185,6 +185,43 @@ TR: </xsl:text>
     <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
   </xsl:template>
   
+  <xsl:template match='h:a[@class="dfnref"]'>
+    <xsl:variable name='id' select='substring-after(@href, "#")'/>
+    <xsl:variable name='dfn' select='//*[@id=$id]'/>
+    <xsl:if test='$dfn/name() = "dfn" or $dfn/@dfn'>
+      <xsl:call-template name='link-to-dfn'>
+        <xsl:with-param name='dfn' select='$dfn'/>
+        <xsl:with-param name='a' select='.'/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@class="dfnref"][@href="#create-frozen-array-from-iterable"] | h:a[@class="dfnref"][@href="create-sequence-from-iterable"] | h:a[@class="dfnref"][@href="#es-exception-objects"] | h:a[@class="dfnref"][@href="#getownproperty-guts"] | h:a[@class="dfnref"][@href="#idl-callback-function"] | h:a[@class="dfnref"][@href="#idl-dictionary"] | h:a[@class="dfnref"][@href="#idl-interface"]'>
+    <xsl:variable name='id' select='substring-after(@href, "#")'/>
+    <xsl:call-template name='link-to-dfn'>
+      <xsl:with-param name='dfn' select='//*[@id=$id]/*[1]'/>
+      <xsl:with-param name='a' select='.'/>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template name='link-to-dfn'>
+    <xsl:param name="a" />
+    <xsl:param name="dfn" />
+    <xsl:variable name='txt' select='replace(string($a), "\s*\n\s*", " ")'/>
+    <xsl:variable name='singular' select='lower-case(replace($txt, "s$", ""))'/>
+    <xsl:variable name='plural' select='lower-case(concat($singular, "s"))'/>
+    <xsl:variable name='lt' select='$dfn/@data-lt'/>
+    <xsl:variable name='dfntxt' select='lower-case($dfn)'/>
+    <xsl:choose>
+      <xsl:when test='lower-case($txt) = $dfntxt or contains($lt, $txt) or $singular = $dfntxt or contains($lt, $singular) or $plural = $dfntxt or contains($lt, $plural)'>
+        <xsl:text>[=</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>[=</xsl:text><xsl:value-of select='$txt'/><xsl:text>|</xsl:text><xsl:value-of select='$dfn'/><xsl:text>=]</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
   <xsl:template match='processing-instruction("productions")'>
     <xsl:variable name='id' select='substring-before(., " ")'/>
     <xsl:variable name='names' select='concat(" ", substring-after(., " "), " ")'/>
