@@ -217,7 +217,7 @@ TR: </xsl:text>
         <xsl:text>[=</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:text>[=</xsl:text><xsl:value-of select='$txt'/><xsl:text>|</xsl:text><xsl:value-of select='$dfn'/><xsl:text>=]</xsl:text>
+        <xsl:text>[=</xsl:text><xsl:value-of select='$dfn'/><xsl:text>|</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>

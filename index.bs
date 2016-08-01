@@ -320,9 +320,9 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
           The different kinds of <dfn id="dfn-definition">definitions</dfn> that can appear in an
           [=IDL fragment=] are:
           [=interfaces=],
-          [=partial interface definitions|partial interface=],
-          [=dictionaries|dictionary=],
-          [=partial dictionary definitions|partial dictionary=],
+          [=partial interface|partial interface definitions=],
+          [=dictionary|dictionaries=],
+          [=partial dictionary|partial dictionary definitions=],
           [=typedefs=] and
           [=implements statements=].
           These are all defined in the following sections.
@@ -413,9 +413,9 @@ interface GraphicalWindow {
 
           <p>
             Every [=interface=],
-            [=partial interface definition|partial interface=],
+            [=partial interface|partial interface definition=],
             [=dictionary=],
-            [=partial dictionary definition|partial dictionary=],
+            [=partial dictionary|partial dictionary definition=],
             [=enumeration=],
             [=callback function=] and
             [=typedef=] (together called <dfn id="dfn-named-definition" export="" lt="named definition">named definitions</dfn>)
@@ -1049,7 +1049,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               The type of a constant (matching <a class="sym" href="#prod-ConstType">ConstType</a>)
               must not be any type other than
               a [=primitive type=]
-              or a [=nullable|nullable type=] primitive type.
+              or a [=nullable type|nullable=] primitive type.
               If an [=identifier=] is used,
               it must reference a [=typedef=]
               whose type is a primitive type or a nullable primitive type.
@@ -1066,7 +1066,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>).
             </p>
                 Note: These values – in addition to strings and the empty sequence – can also be used to specify the
-                [=default value of a dictionary member|default value=] or [=of an optional argument|default value=].  Note that strings and the
+                [=default value|default value of a dictionary member=] or [=default value|of an optional argument=].  Note that strings and the
                 empty sequence <code>[]</code> cannot be used as the value of a
                 [=constant=].
               
@@ -1276,7 +1276,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
             </p>
             <p>
               The type of the attribute, after resolving typedefs, must not be a
-              [=nullable|nullable type=] or non-nullable version of any of the following types:
+              [=nullable type|nullable=] or non-nullable version of any of the following types:
             </p>
             <ul>
               <li>a <a href="#idl-sequence">sequence type</a></li>
@@ -1300,7 +1300,7 @@ node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
               can be declared to <dfn id="dfn-inherit-getter" export="">inherit its getter</dfn>
               from an ancestor interface.  This can be used to make a read only attribute
               in an ancestor interface be writable on a derived interface.  An attribute
-              [=inherits its getter|inherit its getter=] if
+              [=inherit its getter|inherits its getter=] if
               its declaration includes <code>inherit</code> in the declaration.
               The read only attribute from which the attribute inherits its getter
               is the attribute with the same identifier on the closest ancestor interface
@@ -1542,7 +1542,7 @@ interface Button {
 <i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);</pre>
             <p>
               [=Extended attributes=]
-              that [=take an argument list|takes an argument list=]
+              that [=takes an argument list|take an argument list=]
               (<a extended-attribute="">[Constructor]</a> and
               <a extended-attribute="">[NamedConstructor]</a>, of those
               defined in this specification) and [=callback functions=]
@@ -1608,7 +1608,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
               or a [=union type=] that has a
               dictionary type as one of its [=flattened member types=],
-              and that dictionary type and its ancestors have no [=required members|required dictionary member=],
+              and that dictionary type and its ancestors have no [=required dictionary member|required members=],
               and the argument is either the final argument or is followed only by
               [=optional arguments=], then
               the argument must be specified as optional.
@@ -1662,7 +1662,7 @@ s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</p
               If the type of the [=optional argument=]
               is an [=enumeration=], then its
               [=default value=] if specified must
-              be one of the [=enumeration’s values|enumeration values=].
+              be one of the [=enumeration values|enumeration’s values=].
             </p>
             <p>
               Optional argument default values can also be specified using the
@@ -2166,7 +2166,7 @@ serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>
                         <li>Remove any entry in |map| with key name |i|.</li>
                         <li>Let |V| be the value of the attribute with identifier |i|.</li>
                         <li>Add an entry to |map| whose key name is |i| and whose
-                        value is result of [=converting|converted to serialized values=]
+                        value is result of [=converted to serialized values|converting=]
                         |V| to a serialized value.</li>
                       </ol>
                     </li>
@@ -2197,7 +2197,7 @@ serializer = { inherit, attribute };</pre>
                         <li>Remove any entry in |map| with key name |i|.</li>
                         <li>Let |V| be the value of the attribute with identifier |i|.</li>
                         <li>Add an entry to |map| whose key name is |i| and whose
-                        value is result of [=converting|converted to serialized values=]
+                        value is result of [=converted to serialized values|converting=]
                         |V| to a serialized value.</li>
                       </ol>
                     </li>
@@ -2218,7 +2218,7 @@ serializer = { inherit, attribute };</pre>
                       <ol>
                         <li>Let |V| be the value of the named property with name |n|.</li>
                         <li>Add an entry to |map| whose key name is |i| and whose
-                        value is result of [=converting|converted to serialized values=]
+                        value is result of [=converted to serialized values|converting=]
                         |V| to a serialized value.</li>
                       </ol>
                     </li>
@@ -2239,7 +2239,7 @@ serializer = { inherit, attribute };</pre>
                       <ol>
                         <li>Let |V| be the value of the attribute with identifier |i|.</li>
                         <li>Append to |list| the value that is the result of
-                        [=converting|converted to serialized values=]
+                        [=converted to serialized values|converting=]
                         |V| to a serialized value.</li>
                       </ol>
                     </li>
@@ -2262,7 +2262,7 @@ serializer = { inherit, attribute };</pre>
                         <li>Let |V| be the value of the indexed property with index |i|
                           if |i| is a supported property index, or <span class="idlvalue">null</span> otherwise.</li>
                         <li>Append to |list| the value that is the result of
-                        [=converting|converted to serialized values=]
+                        [=converted to serialized values|converting=]
                         |V| to a serialized value.</li>
                         <li>Set |i| to |i| + 1.</li>
                       </ol>
@@ -2280,7 +2280,7 @@ serializer = { inherit, attribute };</pre>
                   form of serialization pattern is as follows:</p>
                   <ol class="algorithm">
                     <li>Let |V| be the value of the attribute with the specified identifier.</li>
-                    <li>Return the result of [=converting|converted to serialized values=]
+                    <li>Return the result of [=converted to serialized values|converting=]
                       |V| to a serialized value.</li>
                   </ol>
                 </li>
@@ -2307,7 +2307,7 @@ serializer = { inherit, attribute };</pre>
                 <dt>{{boolean}}</dt>
                 <dt>{{DOMString}}</dt>
                 <dd>the same value of the respective type</dd>
-                <dt>an [=enumeration type|enumeration=]</dt>
+                <dt>an [=enumeration|enumeration type=]</dt>
                 <dd>the equivalent {{DOMString}} value</dd>
                 <dt>a {{USVString}}</dt>
                 <dd>the {{DOMString}} produced by
@@ -2315,7 +2315,7 @@ serializer = { inherit, attribute };</pre>
                 UTF-16</dd>
                 <dt>a {{ByteString}}</dt>
                 <dd>the equivalent {{DOMString}} value where each code unit has the same value as the corresponding byte value</dd>
-                <dt>a [=nullable|nullable type=] serializable type</dt>
+                <dt>a [=nullable type|nullable=] serializable type</dt>
                 <dd>converted to <span class="idltype">null</span> if that is its value,
                   otherwise converted as per its [=inner type=]</dd>
                 <dt>a [=union type=] where
@@ -2327,7 +2327,7 @@ serializer = { inherit, attribute };</pre>
                 <dd>converted to a list where each element is the result of converting its
                   corresponding sequence element to a serialized value</dd>
                 <dt>a [=dictionary=] where
-                  all of its [=members|dictionary members=] have
+                  all of its [=dictionary members|members=] have
                   serializable types</dt>
                 <dd>converted to a map consisting of an entry for each dictionary member
                   that is present, where the entry’s key is the identifier of the dictionary
@@ -2350,7 +2350,7 @@ serializer = { inherit, attribute };</pre>
               <p>
                 The [=serialization behavior=]
                 of the interface with a serializer declared with an operation is the result of
-                [=converting|converted to serialized values=]
+                [=converted to serialized values|converting=]
                 the value returned from invoking the operation to a serialized value.
               </p>
 
@@ -2466,7 +2466,7 @@ JSON.stringify(txn);</pre>
                 is said to <dfn id="dfn-support-indexed-properties" export="">support indexed properties</dfn>.
               </p>
               <p>
-                If an interface [=supports indexed properties|support indexed properties=],
+                If an interface [=support indexed properties|supports indexed properties=],
                 then the interface definition must be accompanied by
                 a description of what indices the object can be indexed with at
                 any given time. These indices are called the <dfn id="dfn-supported-property-indices" export="">supported property indices</dfn>.
@@ -2489,7 +2489,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                 <li>
                   If an [=indexed property getter=] was specified using an [=operation=]
                   with an [=identifier=],
-                  then the value returned when indexing the object with a given [=supported property index|supported property indices=]
+                  then the value returned when indexing the object with a given [=supported property indices|supported property index=]
                   is the value that would be returned by invoking the operation, passing
                   the index as its only argument.  If the operation used to declare the indexed property getter
                   did not have an identifier, then the interface definition must be accompanied
@@ -2514,7 +2514,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
                   Note that if an [=indexed property getter=] or
                   [=setter=]
                   is specified using an [=operation=] with an [=identifier=],
-                  then indexing an object with an integer that is not a [=supported property index|supported property indices=]
+                  then indexing an object with an integer that is not a [=supported property indices|supported property index=]
                   does not necessarily elicit the same behavior as invoking the operation with that index.  The actual behavior in this
                   case is language binding specific.
                 </p>
@@ -2632,7 +2632,7 @@ delete map.cake;  // If a named property named "cake" exists, then the "cake"
                 is said to <dfn id="dfn-support-named-properties" export="">support named properties</dfn>.
               </p>
               <p>
-                If an interface [=supports named properties|support named properties=],
+                If an interface [=support named properties|supports named properties=],
                 then the interface definition must be accompanied by
                 a description of the ordered set of names that can be used to index the object
                 at any given time.  These names are called the
@@ -2882,7 +2882,7 @@ partial interface A {
               is the callback function itself.  In all cases, |type list| is a list
               of IDL types, and |optionality list| is a list of three possible <dfn id="dfn-optionality-value" export="">optionality values</dfn> –
               “required”, “optional” or “variadic” – indicating whether
-              the argument at a given index was declared as being [=optional|optional argument=]
+              the argument at a given index was declared as being [=optional argument|optional=]
               or corresponds to a [=variadic=] argument.
               Each tuple represents an allowable invocation of the operation,
               constructor, legacy caller or callback function with an argument value list of the given types.
@@ -2904,7 +2904,7 @@ partial interface A {
             <p>
               Whenever an argument of an extended
               attribute is mentioned, it is referring to an argument of the
-              extended attribute’s [=named argument list|takes a named argument list=].
+              extended attribute’s [=takes a named argument list|named argument list=].
             </p>
             <ol class="algorithm">
               <li>Initialize |S| to ∅.</li>
@@ -2931,7 +2931,7 @@ partial interface A {
                     The elements of |F| are the
                     <a class="sym" href="#NamedConstructor">[NamedConstructor]</a>
                     [=extended attributes=] on interface |I| whose
-                    [=named argument lists’|takes a named argument list=]
+                    [=takes a named argument list|named argument lists’=]
                     identifiers are |A|.
                   </dd>
                   <dt>For legacy callers</dt>
@@ -2962,7 +2962,7 @@ partial interface A {
                     is the type of |X|’s argument at index |i|.</li>
                   <li>Let |o|<sub>0..|n|−1</sub> be a list of [=optionality values=], where |o|<sub>|i|</sub>
                     is “variadic” if |X|’s argument at index |i| is a final, variadic argument,
-                    “optional” if the argument is [=optional|optional argument=],
+                    “optional” if the argument is [=optional argument|optional=],
                     and “required” otherwise.</li>
                   <li>Add to |S| the tuple &lt;|X|, |t|<sub>0..|n|−1</sub>, |o|<sub>0..|n|−1</sub>&gt;.</li>
                   <li>If |X| is declared to be [=variadic=], then:
@@ -2984,7 +2984,7 @@ partial interface A {
                   <li>Initialize |i| to |n|−1.</li>
                   <li>While |i| ≥ 0:
                     <ol>
-                      <li>If argument |i| of |X| is not [=optional|optional argument=], then break this loop.</li>
+                      <li>If argument |i| of |X| is not [=optional argument|optional=], then break this loop.</li>
                       <li>Otherwise, add to |S| the tuple &lt;|X|, |t|<sub>0..|i|−1</sub>, |o|<sub>0..|i|−1</sub>&gt;.</li>
                       <li>Set |i| to |i|−1.</li>
                     </ol>
@@ -3349,8 +3349,8 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             <p>
               A [=value iterator=]
               must only be declared on an interface
-              that [=supports indexed properties|support indexed properties=]
-              and has an [=integer-typed|integer types=]
+              that [=support indexed properties|supports indexed properties=]
+              and has an [=integer types|integer-typed=]
               [=attribute=] named “length”.
               The value-type of the [=value iterator=]
               must be the same as the type returned by
@@ -3361,7 +3361,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             <p>
               A [=pair iterator=]
               must not be declared on an interface
-              that [=supports indexed properties|support indexed properties=].
+              that [=support indexed properties|supports indexed properties=].
               Prose accompanying an interface with a
               [=pair iterator=]
               must define what the list of
@@ -3398,8 +3398,8 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               Interfaces with iterable declarations must not
               have any [=interface members=]
               named “entries”, “keys” or “values”,
-              or have any [=inherited|inherited interfaces=]
-              or [=consequential|consequential interfaces=]
+              or have any [=inherited interfaces|inherited=]
+              or [=consequential interfaces|consequential=]
               interfaces that have interface members with these names.
             </p>
 
@@ -3466,15 +3466,15 @@ for (let session of sm) {
             <p>
               An interface must not have more than one
               [=iterable declaration=].
-              The [=inherited|inherited interfaces=]
-              and [=consequential|consequential interfaces=]
+              The [=inherited interfaces|inherited=]
+              and [=consequential interfaces|consequential=]
               interfaces of an interface with an
               [=iterable declaration=]
               must not also have an
               [=iterable declaration=].
               An interface with an [=iterable declaration=]
-              and its [=inherited|inherited interfaces=]
-              and [=consequential|consequential interfaces=]
+              and its [=inherited interfaces|inherited=]
+              and [=consequential interfaces|consequential=]
               interfaces must not have a
               [=maplike declaration=] or
               [=setlike declaration=].
@@ -3532,14 +3532,14 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               Maplike interfaces must not
               have any [=interface members=]
               named “entries”, “forEach”, “get”, “has”, “keys”, “size”, or “values”,
-              or have any [=inherited|inherited interfaces=]
-              or [=consequential|consequential interfaces=]
+              or have any [=inherited interfaces|inherited=]
+              or [=consequential interfaces|consequential=]
               interfaces that have interface members with these names.
               Read–write maplike interfaces must not
               have any [=attributes=]
               or [=constants=] named
-              “clear”, “delete”, or “set”, or have any [=inherited|inherited interfaces=]
-              or [=consequential|consequential interfaces=]
+              “clear”, “delete”, or “set”, or have any [=inherited interfaces|inherited=]
+              or [=consequential interfaces|consequential=]
               interfaces that have attributes or constants with these names.
             </p>
                 Note: Operations named “clear”, “delete”, or “set” are allowed on read–write maplike
@@ -3549,12 +3549,12 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             <p>
               An interface must not have more than one
               [=maplike declaration=].
-              The [=inherited|inherited interfaces=]
-              and [=consequential|consequential interfaces=]
+              The [=inherited interfaces|inherited=]
+              and [=consequential interfaces|consequential=]
               interfaces of a maplike interface must not
               also have a [=maplike declaration=].
-              A maplike interface and its [=inherited|inherited interfaces=]
-              and [=consequential|consequential interfaces=]
+              A maplike interface and its [=inherited interfaces|inherited=]
+              and [=consequential interfaces|consequential=]
               interfaces must not have an
               [=iterable declaration=] or
               [=setlike declaration=].
@@ -3610,14 +3610,14 @@ setlike&lt;<i>type</i>&gt;;</pre>
               Setlike interfaces must not
               have any [=interface members=]
               named “entries”, “forEach”, “has”, “keys”, “size”, or “values”,
-              or have any [=inherited|inherited interfaces=]
-              or [=consequential|consequential interfaces=]
+              or have any [=inherited interfaces|inherited=]
+              or [=consequential interfaces|consequential=]
               interfaces that have interface members with these names..
               Read–write setlike interfaces must not
               have any [=attributes=]
               or [=constants=] named
-              “add”, “clear”, or “delete”, or have any [=inherited|inherited interfaces=]
-              or [=consequential|consequential interfaces=]
+              “add”, “clear”, or “delete”, or have any [=inherited interfaces|inherited=]
+              or [=consequential interfaces|consequential=]
               interfaces that have attributes or constants with these names.
             </p>
                 Note: Operations named “add”, “clear”, or “delete” are allowed on read–write setlike
@@ -3627,12 +3627,12 @@ setlike&lt;<i>type</i>&gt;;</pre>
             <p>
               An interface must not have more than one
               [=setlike declaration=].
-              The [=inherited|inherited interfaces=]
-              and [=consequential|consequential interfaces=]
+              The [=inherited interfaces|inherited=]
+              and [=consequential interfaces|consequential=]
               interfaces of a setlike interface must not
               also have a [=setlike declaration=].
-              A setlike interface and its [=inherited|inherited interfaces=]
-              and [=consequential|consequential interfaces=]
+              A setlike interface and its [=inherited interfaces|inherited=]
+              and [=consequential interfaces|consequential=]
               interfaces must not have an
               [=iterable declaration=] or
               [=maplike declaration=].
@@ -3700,14 +3700,14 @@ dictionary <i>Derived</i> : <em>Base</em> {
             On a given dictionary value, the presence of each dictionary member
             is optional, unless that member is specified as required.
             When specified in the dictionary value, a dictionary member is said to be
-            <dfn id="dfn-present" export="">present</dfn>, otherwise it is [=not present|present=].
+            <dfn id="dfn-present" export="">present</dfn>, otherwise it is [=present|not present=].
             Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" for="dictionary member" export="">default value</dfn>, which is
             the value to use for the dictionary member when passing a value to a
             [=platform object=] that does
             not have a specified value.  Dictionary members with default values are
             always considered to be present.
           </p>
-              Advisement: As with [=operation argument default values|default value=],
+              Advisement: As with [=default value|operation argument default values=],
               is strongly suggested not to use of <span class="idlvalue">true</span> as the
               [=default value=] for
               <span class="estype">boolean</span>-typed
@@ -3754,13 +3754,13 @@ dictionary <i>Derived</i> : <em>Base</em> {
             the two token sequence <code>[]</code> used as the
             [=default value=],
             it is interpreted in the same way as for an [=operation=]’s
-            [=optional argument default value|default value=].
+            [=default value|optional argument default value=].
           </p>
           <p>
             If the type of the [=dictionary member=]
             is an [=enumeration=], then its
             [=default value=] if specified must
-            be one of the [=enumeration’s values|enumeration values=].
+            be one of the [=enumeration values|enumeration’s values=].
           </p>
           <p>
             If the type of the dictionary member is preceded by the
@@ -4006,7 +4006,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             Exceptions can be <dfn id="dfn-create-exception" for="exception" export="">created</dfn> by providing its
             [=error name=].
             Exceptions can also be <dfn id="dfn-throw" for="exception" export="" lt="throw|thrown">thrown</dfn>, by providing the
-            same details required to [=create|created=] one.
+            same details required to [=created|create=] one.
           </p>
           <p>
             The resulting behavior from creating and throwing an exception is language binding-specific.
@@ -4054,7 +4054,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
 
             <table id="error-names" class="vert">
               <thead>
-                <tr><th>Name</th><th>Description</th><th>Legacy [=code|DOMException=] name and value</th></tr>
+                <tr><th>Name</th><th>Description</th><th>Legacy [=DOMException|code=] name and value</th></tr>
               </thead>
               <tbody>
                 <tr>
@@ -4573,7 +4573,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             object that are considered to be platform objects:
           </p>
           <ul>
-            <li>objects that implement a non-[=callback|callback interface=] [=interface=];</li>
+            <li>objects that implement a non-[=callback interface|callback=] [=interface=];</li>
             <li>objects representing IDL [=DOMExceptions=].</li>
           </ul>
           <p>
@@ -5078,7 +5078,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <p>
               There is no way to represent a constant {{DOMString}}
               value in IDL, although {{DOMString}} [=dictionary member=]
-              and [=operation optional argument|optional argument=] default values
+              and [=optional argument|operation optional argument=] default values
               can be specified using a <a class="sym" href="#prod-string">string</a> literal.
             </p>
             <p>
@@ -5132,7 +5132,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             <p>
               There is no way to represent a constant {{USVString}}
               value in IDL, although {{USVString}} [=dictionary member=]
-              and [=operation optional argument|optional argument=] default values
+              and [=optional argument|operation optional argument=] default values
               can be specified using a <a class="sym" href="#prod-string">string</a> literal.
             </p>
             <p>
@@ -5236,7 +5236,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
               refer to a type whose values are the set of strings (sequences of
               [=code units=], as with
               {{DOMString}}) that are the
-              [=enumeration’s values|enumeration values=].
+              [=enumeration values|enumeration’s values=].
             </p>
             <p>
               Like {{DOMString}}, there is no way to represent a constant [=enumeration=]
@@ -5479,7 +5479,7 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </ol>
             <p>
               The {{any}} type must not
-              be used as a [=union member type|member types=].
+              be used as a [=member types|union member type=].
             </p>
             <p>
               The [=number of nullable member types=]
@@ -5659,8 +5659,8 @@ typeof e.addEventListener;  // Evaluates to "function".</pre>
             </div>
             <p>
               Attempting to [=get a reference to=] or
-              [=get a copy of the bytes held by a buffer source|get a copy of the bytes held by the buffer source=]
-              when the {{ArrayBuffer}} has been [=detached|detach=]
+              [=get a copy of the bytes held by the buffer source|get a copy of the bytes held by a buffer source=]
+              when the {{ArrayBuffer}} has been [=detach|detached=]
               will fail in a language binding-specific manner.
             </p>
                 Note: See [[#es-buffer-source-types]] below for
@@ -6084,7 +6084,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               ECMAScript value type.
             </p>
             <p id="es-to-any">
-              How to [=convert an ECMAScript value|converted to an IDL value=] to an IDL {{any}} value depends on the type of the
+              How to [=converted to an IDL value|convert an ECMAScript value=] to an IDL {{any}} value depends on the type of the
               ECMAScript value:
             </p>
             <dl class="switch">
@@ -6227,7 +6227,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 Otherwise, return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="byte-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{byte}} value to an ECMAScript
               value is a <span class="estype">Number</span> that represents
               the same numeric value as the IDL {{byte}} value.
@@ -6279,7 +6279,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="octet-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{octet}} value to an ECMAScript
               value is a <span class="estype">Number</span> that represents
               the same numeric value as the IDL
@@ -6333,7 +6333,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 Otherwise, return the IDL {{short}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="short-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{short}} value to an ECMAScript
               value is a <span class="estype">Number</span> that represents the
               same numeric value as the IDL
@@ -6384,7 +6384,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-short-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{unsigned short}} value to an ECMAScript
               value is a <span class="estype">Number</span> that
               represents the same numeric value as the IDL
@@ -6435,7 +6435,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="long-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{long}} value to an ECMAScript
               value is a <span class="estype">Number</span> that
               represents the same numeric value as the IDL
@@ -6486,7 +6486,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-long-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{unsigned long}} value to an ECMAScript
               value is a <span class="estype">Number</span> that
               represents the same numeric value as the IDL
@@ -6540,7 +6540,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="long-long-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{long long}} value to an ECMAScript
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the {{long long}},
@@ -6597,7 +6597,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
             </ol>
             <p id="unsigned-long-long-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{unsigned long long}} value to an ECMAScript
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the {{unsigned long long}},
@@ -6646,7 +6646,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
             </ol>
             <p id="float-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{float}} value to an ECMAScript
               value is the <span class="estype">Number</span> value that represents the same numeric value as the IDL
               {{float}} value.
@@ -6696,7 +6696,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 value when its bit pattern is interpreted as an unsigned 32 bit integer.
               
             <p id="unrestricted-float-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{unrestricted float}} value to an ECMAScript
               value is a <span class="estype">Number</span>:
             </p>
@@ -6732,7 +6732,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
             </ol>
             <p id="double-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{double}} value to an ECMAScript
               value is the <span class="estype">Number</span> value that represents the
               same numeric value as the IDL {{double}} value.
@@ -6762,7 +6762,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 value when its bit pattern is interpreted as an unsigned 64 bit integer.
               
             <p id="unrestricted-double-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{unrestricted double}} value to an ECMAScript
               value is a <span class="estype">Number</span>:
             </p>
@@ -6817,7 +6817,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{DOMString}} value that represents the same sequence of code units as the one the ECMAScript <span class="estype">String</span> value |x| represents.</li>
             </ol>
             <p id="DOMString-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{DOMString}} value to an ECMAScript
               value is the <span class="estype">String</span>
               value that represents the same sequence of [=code units=] that the
@@ -6843,7 +6843,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 the value of the corresponding element of |x|.</li>
             </ol>
             <p id="ByteString-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{ByteString}} value to an ECMAScript
               value is a <span class="estype">String</span>
               value whose length is the length of the {{ByteString}},
@@ -6862,10 +6862,10 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               by running the following algorithm:
             </p>
             <ol class="algorithm">
-              <li>Let |string| be the result of [=converting|converted to an IDL value=] |V|
+              <li>Let |string| be the result of [=converted to an IDL value|converting=] |V|
                 to a {{DOMString}}.</li>
               <li>Return an IDL {{USVString}} value
-                that is the result of [=converting string to a sequence of Unicode scalar values|convert a DOMString to a sequence of Unicode scalar values=].</li>
+                that is the result of [=convert a DOMString to a sequence of Unicode scalar values|converting string to a sequence of Unicode scalar values=].</li>
             </ol>
             <p id="USVString-to-es">
               An IDL {{USVString}} value is
@@ -6897,7 +6897,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the IDL {{object}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="object-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{object}} value to an ECMAScript
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
               IDL {{object}} represents.
@@ -6930,7 +6930,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li><a href="#ecmascript-throw" class="dfnref external">Throw a <emu-val>TypeError</emu-val></a>.</li>
             </ol>
             <p id="interface-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL <a href="#idl-interface">interface type</a>
               value to an ECMAScript value is the <span class="estype">Object</span>
               value that represents a reference to the same object that the IDL
@@ -6957,7 +6957,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>If |V| is a native <span class="estype">RegExp</span> object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Let |dict| be an empty dictionary value of type |D|;
               every [=dictionary member=]
-              is initially considered to be [=not present|present=].</li>
+              is initially considered to be [=present|not present=].</li>
               <li>Let |dictionaries| be a list consisting of |D| and all of |D|’s [=inherited dictionaries=],
                 in order from least to most derived.</li>
               <li>For each dictionary |dictionary| in |dictionaries|, in order:
@@ -6976,7 +6976,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                       </li>
                       <li>If |value| is not <emu-val>undefined</emu-val>, then:
                         <ol>
-                          <li>Let |idlValue| be the result of [=converting|converted to an IDL value=] |value| to an IDL value whose type is the type |member| is declared to be of.</li>
+                          <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |value| to an IDL value whose type is the type |member| is declared to be of.</li>
                           <li>Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].</li>
                         </ol>
                       </li>
@@ -7019,7 +7019,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                       <li>If the dictionary member named |key| is [=present=] in |V|, then:
                         <ol>
                           <li>Let |idlValue| be the value of |member| on |V|.</li>
-                          <li>Let |value| be the result of [=converting|converted to ECMAScript values=] |idlValue| to an ECMAScript value.</li>
+                          <li>Let |value| be the result of [=converted to ECMAScript values|converting=] |idlValue| to an ECMAScript value.</li>
                           <li>Call <a>CreateDataProperty</a>(|O|, |key|, |value|.</li>
                         </ol>
                       </li>
@@ -7041,7 +7041,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
             <p id="es-to-enumeration">
               An ECMAScript value |V| is
               [=converted=]
-              to an IDL [=enumeration type|enumeration=]
+              to an IDL [=enumeration|enumeration type=]
               value as follows (where |E| is the [=enumeration=]):
             </p>
             <ol class="algorithm">
@@ -7050,8 +7050,8 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>Return the enumeration value of type |E| that is equal to |S|.</li>
             </ol>
             <p id="enumeration-to-es">
-              The result of [=converting|converted to ECMAScript values=]
-              an IDL [=enumeration type|enumeration=] value to an ECMAScript
+              The result of [=converted to ECMAScript values|converting=]
+              an IDL [=enumeration|enumeration type=] value to an ECMAScript
               value is the <span class="estype">String</span>
               value that represents the same sequence of [=code units=] as
               the [=enumeration value=].
@@ -7076,7 +7076,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>If the result of calling <a>IsCallable</a>(|V|) is <emu-val>false</emu-val> and the conversion to an IDL value
               is not being performed due
                 to |V| being assigned to an [=attribute=]
-                whose type is a [=nullable|nullable type=]
+                whose type is a [=nullable type|nullable=]
                 [=callback function=]
                 that is annotated with <a extended-attribute="">[TreatNonObjectAsNull]</a>,
               then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a>.</li>
@@ -7087,7 +7087,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 as the [=callback context=]. [[!HTML]].</li>
             </ol>
             <p id="callback-function-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL <a href="#idl-callback-function">callback function type</a>
               value to an ECMAScript value is a reference to the same object
               that the IDL <a href="#idl-callback-function">callback function type</a> value represents.
@@ -7099,7 +7099,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
 
             <p>
               IDL [=nullable type=] values are represented
-              by values of either the ECMAScript type corresponding to the [=inner IDL type|inner type=], or
+              by values of either the ECMAScript type corresponding to the [=inner type|inner IDL type=], or
               the ECMAScript <emu-val>null</emu-val> value.
             </p>
             <p id="es-to-nullable">
@@ -7113,7 +7113,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                 If <a>Type</a>(|V|) is not Object, and
                 the conversion to an IDL value is being performed due
                 to |V| being assigned to an [=attribute=]
-                whose type is a [=nullable|nullable type=]
+                whose type is a [=nullable type|nullable=]
                 [=callback function=]
                 that is annotated with <a extended-attribute="">[TreatNonObjectAsNull]</a>,
                 then return the IDL
@@ -7127,12 +7127,12 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>
                 Otherwise, return the result of
-                [=converting|converted to an IDL value=] |V|
-                using the rules for the [=inner IDL type|inner type=] <span class="idltype">|T|</span>.
+                [=converted to an IDL value|converting=] |V|
+                using the rules for the [=inner type|inner IDL type=] <span class="idltype">|T|</span>.
               </li>
             </ol>
             <p id="nullable-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL [=nullable type=] value to an ECMAScript value is:
             </p>
             <ul>
@@ -7143,9 +7143,9 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               </li>
               <li>
                 Otherwise, the ECMAScript value is the result of
-                [=converting|converted to ECMAScript values=]
+                [=converted to ECMAScript values|converting=]
                 the IDL [=nullable type=] value
-                to the [=inner IDL type|inner type=] <span class="idltype">|T|</span>.
+                to the [=inner type|inner IDL type=] <span class="idltype">|T|</span>.
               </li>
             </ul>
           
@@ -7203,7 +7203,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
               <li>While |i| &lt; |n|:
                 <ol>
                   <li>Let |V| be the value in |S| at index |i|.</li>
-                  <li>Let |E| be the result of [=converting|converted to ECMAScript values=]
+                  <li>Let |E| be the result of [=converted to ECMAScript values|converting=]
                     |V| to an ECMAScript value.</li>
                   <li>Let |P| be the result of calling <a>ToString</a>(|i|).</li>
                   <li>Call <a>CreateDataProperty</a>(|A|, |P|, |E|).</li>
@@ -7250,7 +7250,7 @@ iframe.appendChild instanceof w.Function;  // Evaluates to false
                   <li><a>ReturnIfAbrupt</a>(|nextItem|).</li>
                   <li>
                     Initialize |S|<sub>|i|</sub> to the result of
-                    [=converting|converted to an IDL value=]
+                    [=converted to an IDL value|converting=]
                     |nextItem| to an IDL value of type |T|.
                   </li>
                   <li>Set |i| to |i| + 1.</li>
@@ -7358,7 +7358,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 same object as |promise|.</li>
             </ol>
             <p id="promise-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL <a href="#idl-promise">promise type</a> value to an ECMAScript
               value is the <span class="estype">Promise</span> value that represents a reference to the same object that the
               IDL <a href="#idl-promise">promise type</a> represents.
@@ -7380,7 +7380,7 @@ alert(b[4]);    // This would alert "50".</pre>
                   <li>Otherwise, |T| is a type other than {{void}}:
                     <ol>
                       <li>Let |V| be the first argument to |onFulfilled|.</li>
-                      <li>Let |value| be the result of [=converting|converted to an IDL value=]
+                      <li>Let |value| be the result of [=converted to an IDL value|converting=]
                         |V| to an IDL value of type |T|.</li>
                       <li>If there are no steps that are required to be run if the promise was fulfilled, then
                         return <emu-val>undefined</emu-val>.</li>
@@ -7395,7 +7395,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 behavior when invoked is as follows:
                 <ol>
                   <li>Let |R| be the first argument to |onRejected|.</li>
-                  <li>Let |reason| be the result of [=converting|converted to an IDL value=]
+                  <li>Let |reason| be the result of [=converted to an IDL value|converting=]
                     |R| to an IDL value of type {{any}}.</li>
                   <li>If there are no steps that are required to be run if the promise was rejected, then
                     return <emu-val>undefined</emu-val>.</li>
@@ -7420,7 +7420,7 @@ alert(b[4]);    // This would alert "50".</pre>
               [=member types=].
             </p>
             <p id="es-to-union">
-              To [=convert an ECMAScript value|converted to an IDL value=] |V| to an IDL <a href="#idl-union">union type</a>
+              To [=converted to an IDL value|convert an ECMAScript value=] |V| to an IDL <a href="#idl-union">union type</a>
               value is done as follows:
             </p>
             <ol class="algorithm">
@@ -7438,7 +7438,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 |types| includes a
                 <a href="#idl-dictionary">dictionary type</a>, then return the
                 result of
-                [=converting|converted to an IDL value=]
+                [=converted to an IDL value|converting=]
                 |V| to that dictionary type.
               </li>
               <li>
@@ -7454,7 +7454,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 If |V| is a native <span class="estype">RegExp</span> object, then:
                 <ol>
                   <li>If |types| includes {{RegExp}}, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to {{RegExp}}.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7465,7 +7465,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>If |types| includes {{DOMException}} or
                     {{Error}}, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to that type.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7475,7 +7475,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 If |V| is a native <span class="estype">Error</span> object (that is, it has an \[[ErrorData]] <a>internal slot</a>), then:
                 <ol>
                   <li>If |types| includes {{Error}}, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to {{Error}}.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7485,7 +7485,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 If |V| is an object with an \[[ArrayBufferData]] <a>internal slot</a>, then:
                 <ol>
                   <li>If |types| includes {{ArrayBuffer}}, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to {{ArrayBuffer}}.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7495,7 +7495,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 If |V| is an object with a \[[DataView]] <a>internal slot</a>, then:
                 <ol>
                   <li>If |types| includes {{DataView}}, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to {{DataView}}.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7506,7 +7506,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>If |types| includes a [=typed array type=]
                     whose name is the value of |V|’s \[[TypedArrayName]] <a>internal slot</a>, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to that type.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7517,7 +7517,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>If |types| includes a [=callback function=]
                     type, then return the result of
-                    [=converting|converted to an IDL value=]
+                    [=converted to an IDL value|converting=]
                     |V| to that callback function type.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7559,16 +7559,16 @@ alert(b[4]);    // This would alert "50".</pre>
                         If |method| is not
                         <emu-val>undefined</emu-val>,
                         return the result of
-                        [=creating a frozen array of that type from V and method|Creating a frozen array from an iterable=].
+                        [=Creating a frozen array from an iterable|creating a frozen array of that type from V and method=].
                       </li>
                     </ol>
                   </li>
                   <li>If |types| includes a <a href="#idl-dictionary">dictionary type</a>, then return the
-                    result of [=converting|converted to an IDL value=]
+                    result of [=converted to an IDL value|converting=]
                     |V| to that dictionary type.</li>
                   <li>If |types| includes a [=callback interface=]
                     type, then return the result of
-                    [=converting|converted to an IDL value=]
+                    [=converted to an IDL value|converting=]
                     |V| to that interface type.</li>
                   <li>If |types| includes {{object}}, then return the IDL value
                     that is a reference to the object |V|.</li>
@@ -7579,7 +7579,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>
                     If |types| includes a {{boolean}},
-                    then return the result of [=converting|converted to an IDL value=]
+                    then return the result of [=converted to an IDL value|converting=]
                     |V| to {{boolean}}.
                   </li>
                 </ol>
@@ -7589,7 +7589,7 @@ alert(b[4]);    // This would alert "50".</pre>
                 <ol>
                   <li>
                     If |types| includes a [=numeric type=],
-                    then return the result of [=converting|converted to an IDL value=]
+                    then return the result of [=converted to an IDL value|converting=]
                     |V| to that [=numeric type=].
                   </li>
                 </ol>
@@ -7597,17 +7597,17 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>
                 If |types| includes a [=string type=],
                 then return the result of
-                [=converting|converted to an IDL value=]
+                [=converted to an IDL value|converting=]
                 |V| to that type.
               </li>
               <li>
                 If |types| includes a [=numeric type=],
-                then return the result of [=converting|converted to an IDL value=]
+                then return the result of [=converted to an IDL value|converting=]
                 |V| to that [=numeric type=].
               </li>
               <li>
                 If |types| includes a {{boolean}},
-                then return the result of [=converting|converted to an IDL value=]
+                then return the result of [=converted to an IDL value|converting=]
                 |V| to {{boolean}}.
               </li>
               <li>
@@ -7644,7 +7644,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Return the IDL {{RegExp}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="RegExp-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{RegExp}} value to an ECMAScript
               value is the <span class="estype">RegExp</span> value that represents a reference to the same object that the
               IDL {{RegExp}} represents.
@@ -7671,7 +7671,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Return the IDL {{Error}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="Error-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{Error}} value to an ECMAScript
               value is the <span class="estype">Error</span> value that represents a reference to the same object that the
               IDL {{Error}} represents.
@@ -7697,7 +7697,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Return the IDL {{DOMException}} value that is a reference to the same object as |V|.</li>
             </ol>
             <p id="DOMException-to-es">
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL {{DOMException}} value to an ECMAScript
               value is the <span class="estype">Object</span> value that represents a reference to the same object that the
               IDL {{DOMException}} represents.
@@ -7760,14 +7760,14 @@ alert(b[4]);    // This would alert "50".</pre>
               <li>Return the IDL value of type |T| that is a reference to the same object as |V|.</li>
             </ol>
             <p>
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL value of any [=buffer source type=]
               to an ECMAScript value is the <span class="estype">Object</span> value that represents
               a reference to the same object that the IDL value represents.
             </p>
             <p>
-              When [=getting a reference to|get a reference to the bytes held by the buffer source=]
-              or [=getting a copy of the bytes held by a buffer source|get a copy of the bytes held by the buffer source=]
+              When [=get a reference to the bytes held by the buffer source|getting a reference to=]
+              or [=get a copy of the bytes held by the buffer source|getting a copy of the bytes held by a buffer source=]
               that is an ECMAScript <span class="estype">ArrayBuffer</span>, <span class="estype">DataView</span>
               or typed array object, these steps must be followed:
             </p>
@@ -7817,10 +7817,10 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>Let |values| be the result of
-                [=converting|converted to an IDL value=]
+                [=converted to an IDL value|converting=]
                 |V| to IDL type <span class="idltype">sequence&lt;|T|&gt;</span>.</li>
               <li>Return the result of
-                [=creating a frozen array|create a frozen array=]
+                [=create a frozen array|creating a frozen array=]
                 from |values|.</li>
             </ol>
             <p>
@@ -7829,13 +7829,13 @@ alert(b[4]);    // This would alert "50".</pre>
             </p>
             <ol class="algorithm">
               <li>Let |array| be the result of
-                [=converting|converted to ECMAScript values=]
+                [=converted to ECMAScript values|converting=]
                 the sequence of values to an ECMAScript value.</li>
               <li>Perform <a>SetIntegrityLevel</a>(|array|, <code>"frozen"</code>).</li>
               <li>Return |array|.</li>
             </ol>
             <p>
-              The result of [=converting|converted to ECMAScript values=]
+              The result of [=converted to ECMAScript values|converting=]
               an IDL <span class="idltype">FrozenArray&lt;|T|&gt;</span> value to an ECMAScript
               value is the <span class="estype">Object</span> value that represents a reference
               to the same object that the IDL <span class="idltype">FrozenArray&lt;|T|&gt;</span> represents.
@@ -7851,7 +7851,7 @@ alert(b[4]);    // This would alert "50".</pre>
               <ol class="algorithm">
                 <li>Let |values| be the result of
                   .</li>
-                <li>Return the result of [=creating a frozen array|create a frozen array=] from |values|.</li>
+                <li>Return the result of [=create a frozen array|creating a frozen array=] from |values|.</li>
               </ol>
             
           
@@ -7884,7 +7884,7 @@ alert(b[4]);    // This would alert "50".</pre>
             <p>
               The <a extended-attribute="">[Clamp]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[Clamp]</a> extended attribute
@@ -7949,8 +7949,8 @@ context.setColorClamped(-1, 255, 257);</pre>
             <p>
               The <a extended-attribute="">[Constructor]</a>
               extended attribute must either
-              [=take no arguments|takes no arguments=] or
-              [=take an argument list|takes an argument list=].
+              [=takes no arguments|take no arguments=] or
+              [=takes an argument list|take an argument list=].
               The bare form, <code>[Constructor]</code>, has the same meaning as
               using an empty argument list, <code>[Constructor()]</code>.  For each
               <a extended-attribute="">[Constructor]</a> extended attribute
@@ -8036,7 +8036,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
             <p>
               The <a extended-attribute="">[EnforceRange]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[EnforceRange]</a> extended attribute
@@ -8105,8 +8105,8 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
               The <a extended-attribute="">[Exposed]</a>
               [=extended attribute=]
               must either
-              [=take an identifier|takes an identifier=] or
-              [=take an identifier list|takes an identifier list=].
+              [=takes an identifier|take an identifier=] or
+              [=takes an identifier list|take an identifier list=].
               Each of the identifiers mentioned must be
               a [=global name=].
             </p>
@@ -8273,7 +8273,7 @@ interface Node {
             <p>
               The <a extended-attribute="">[ImplicitThis]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               See [[#es-operations]]
@@ -8423,8 +8423,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
               The <a extended-attribute="">[Global]</a> and
               <a extended-attribute="">[PrimaryGlobal]</a>
               extended attributes must either
-              [=take no arguments|takes no arguments=]
-              or [=take an identifier list|takes an identifier list=].
+              [=takes no arguments|take no arguments=]
+              or [=takes an identifier list|take an identifier list=].
             </p>
             <p>
               If the <a extended-attribute="">[Global]</a> or
@@ -8528,7 +8528,7 @@ interface Window {
             </p>
             <p>
               The <a extended-attribute="">[LegacyArrayClass]</a> extended attribute
-              must [=take no arguments|takes no arguments=].
+              must [=takes no arguments|take no arguments=].
               It must not be used on an interface that
               has any [=inherited interfaces=].
             </p>
@@ -8594,13 +8594,13 @@ list.unshift({ });         // Insert an item at index 0.</pre>
               If the <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               [=extended attribute=]
               appears on a [=interface=]
-              that [=supports named properties|support named properties=],
+              that [=support named properties|supports named properties=],
               it indicates that all the interface's named properties are unenumerable.
             </p>
             <p>
               The <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=]
+              [=takes no arguments|take no arguments=]
               and must not appear on an interface
               that does not define a [=named property getter=].
             </p>
@@ -8648,7 +8648,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
             <p>
               The <a extended-attribute="">[LenientThis]</a> extended attribute
               must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
               It must not be used on anything other than
               a [=read only=]
               [=regular attribute=].
@@ -8705,7 +8705,7 @@ example.y = 1;</pre>
             <p>
               The <a extended-attribute="">[LenientThis]</a> extended attribute
               must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
               It must not be used on a
               [=static attribute=].
             </p>
@@ -8768,8 +8768,8 @@ Example.prototype.y;</pre>
             <p>
               The <a extended-attribute="">[NamedConstructor]</a>
               extended attribute must either
-              [=take an identifier|takes an identifier=] or
-              [=take a named argument list|takes a named argument list=].
+              [=takes an identifier|take an identifier=] or
+              [=takes a named argument list|take a named argument list=].
               The first form, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>]</code>, has the same meaning as
               using an empty argument list, <code>[NamedConstructor=<a class="sym" href="#prod-identifier">identifier</a>()]</code>.  For each
               <a extended-attribute="">[NamedConstructor]</a> extended attribute
@@ -8828,8 +8828,8 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
             <p>
               If the <a extended-attribute="">[NewObject]</a>
               [=extended attribute=]
-              appears on a [=regular|regular operation=]
-              or [=static|static operations=]
+              appears on a [=regular operation|regular=]
+              or [=static operations|static=]
               [=operation=],
               then it indicates that when calling the operation,
               a reference to a newly created object
@@ -8838,13 +8838,13 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
             <p>
               The <a extended-attribute="">[NewObject]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[NewObject]</a>
               extended attribute must not
-              be used on anything other than a [=regular|regular operation=]
-              or [=static|static operations=]
+              be used on anything other than a [=regular operation|regular=]
+              or [=static operations|static=]
               [=operation=]
               whose [=return type=]
               is an <a href="#idl-interface">interface type</a> or
@@ -8887,7 +8887,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
               
             <p>
               The <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
-              must [=take no arguments|takes no arguments=].
+              must [=takes no arguments|take no arguments=].
             </p>
             <p>
               If the <a extended-attribute="">[NoInterfaceObject]</a> extended attribute
@@ -8973,7 +8973,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
             <p>
               The <a extended-attribute="">[OverrideBuiltins]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=]
+              [=takes no arguments|take no arguments=]
               and must not appear on an interface
               that does not define a [=named property getter=]
               or that also is declared with the <a extended-attribute="">[Global]</a>
@@ -9062,7 +9062,7 @@ map2.toString;</pre>
             </p>
             <p>
               The <a extended-attribute="">[PutForwards]</a> extended
-              attribute must [=take an identifier|takes an identifier=].
+              attribute must [=takes an identifier|take an identifier=].
               Assuming that:
             </p>
             <ul>
@@ -9181,7 +9181,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
             <p>
               The <a extended-attribute="">[Replaceable]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               An attribute with the <a extended-attribute="">[Replaceable]</a>
@@ -9266,7 +9266,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <p>
               The <a extended-attribute="">[SameObject]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[SameObject]</a>
@@ -9309,7 +9309,7 @@ counter.value;                                           // Evaluates to 3.</pre
             <p>
               The <a extended-attribute="">[SecureContext]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[SecureContext]</a>
@@ -9402,7 +9402,7 @@ counter.value;                                           // Evaluates to 3.</pre
               [=extended attribute=]
               appears on a [=callback function=],
               then it indicates that any value assigned to an [=attribute=]
-              whose type is a [=nullable|nullable type=]
+              whose type is a [=nullable type|nullable=]
               [=callback function=]
               that is not an object will be converted to
               the <span class="idlvalue">null</span> value.
@@ -9488,7 +9488,7 @@ manager.handler2;            // Evaluates to null.</pre>
             </p>
             <p>
               The <a extended-attribute="">[TreatNullAs]</a>
-              extended attribute must [=take the identifier|takes an identifier=]
+              extended attribute must [=takes an identifier|take the identifier=]
               <code>EmptyString</code>.
             </p>
             <p>
@@ -9548,9 +9548,9 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             <p>
               If the <a extended-attribute="">[Unforgeable]</a>
               [=extended attribute=]
-              appears on a non-[=static|Static attributes=]
+              appears on a non-[=Static attributes|static=]
               [=attribute=]
-              or non-[=static|static operations=]
+              or non-[=static operations|static=]
               [=operations=], it indicates
               that the attribute or operation will be reflected as an ECMAScript property in
               a way that means its behavior cannot be modified and that performing
@@ -9563,9 +9563,9 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
               If the <a extended-attribute="">[Unforgeable]</a>
               [=extended attribute=]
               appears on an [=interface=],
-              it indicates that all of the non-[=static|Static attributes=]
+              it indicates that all of the non-[=Static attributes|static=]
               [=attributes=]
-              and non-[=static|static operations=]
+              and non-[=static operations|static=]
               [=operations=] declared on
               that interface and its [=consequential interfaces=]
               will be similarly reflected as own ECMAScript properties on objects
@@ -9593,13 +9593,13 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
             <p>
               The <a extended-attribute="">[Unforgeable]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[Unforgeable]</a>
               extended attribute must not appear on
               anything other than an [=attribute=],
-              non-[=static|static operations=] [=operation=]
+              non-[=static operations|static=] [=operation=]
               or an [=interface=].  If it does
               appear on an [=operation=], then
               it must appear on all operations with
@@ -9680,7 +9680,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
             <p>
               The <a extended-attribute="">[Unscopable]</a>
               extended attribute must
-              [=take no arguments|takes no arguments=].
+              [=takes no arguments|take no arguments=].
             </p>
             <p>
               The <a extended-attribute="">[Unscopable]</a>
@@ -9788,7 +9788,7 @@ with (thing) {
                     <li>Otherwise, append to |values| the special value “missing”.</li>
                   </ol>
                 </li>
-                <li>Otherwise, append to |values| the result of [=converting|converted to an IDL value=]
+                <li>Otherwise, append to |values| the result of [=converted to an IDL value|converting=]
                   |V| to IDL type |type|.</li>
                 <li>Set |i| to |i| + 1.</li>
               </ol>
@@ -9810,7 +9810,7 @@ with (thing) {
                     <li>a <a href="#idl-dictionary">dictionary type</a></li>
                     <li>a [=union type=] that
                       [=includes a nullable type=] or that
-                      has a <a href="#idl-dictionary">dictionary type</a> in its [=flattened members|flattened member types=]</li>
+                      has a <a href="#idl-dictionary">dictionary type</a> in its [=flattened member types|flattened members=]</li>
                   </ul>
                   then remove from |S| all other entries.
                 </li>
@@ -9821,8 +9821,8 @@ with (thing) {
                   <ul>
                     <li>an <a href="#idl-interface">interface type</a> that |V| implements</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of any of the above types</li>
-                    <li>a [=union type=] or a [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of any of the above types</li>
+                    <li>a [=union type=] or a [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9834,8 +9834,8 @@ with (thing) {
                   <ul>
                     <li>{{RegExp}}</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9847,8 +9847,8 @@ with (thing) {
                   <ul>
                     <li>{{RegExp}}</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9861,8 +9861,8 @@ with (thing) {
                     <li>{{DOMException}}</li>
                     <li>{{Error}}</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9874,8 +9874,8 @@ with (thing) {
                   <ul>
                     <li>{{Error}}</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9887,8 +9887,8 @@ with (thing) {
                   <ul>
                     <li>{{ArrayBuffer}}</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9900,8 +9900,8 @@ with (thing) {
                   <ul>
                     <li>{{DataView}}</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9914,8 +9914,8 @@ with (thing) {
                     <li>a [=typed array type=] whose name
                       is equal to the value of |V|’s \[[TypedArrayName]] <a>internal slot</a></li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of either of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of either of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9927,8 +9927,8 @@ with (thing) {
                   <ul>
                     <li>a [=callback function=] type</li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of any of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of any of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9942,8 +9942,8 @@ with (thing) {
                   <ul>
                     <li>a <a href="#idl-sequence">sequence type</a></li>
                     <li>a <a href="#idl-frozen-array">frozen array type</a></li>
-                    <li>a [=nullable|nullable type=] version of any of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of any of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
 
                   </ul>
@@ -9969,8 +9969,8 @@ with (thing) {
                     <li>a [=callback interface=] type</li>
                     <li>a <a href="#idl-dictionary">dictionary type</a></li>
                     <li>{{object}}</li>
-                    <li>a [=nullable|nullable type=] version of any of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of any of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9981,8 +9981,8 @@ with (thing) {
                   and there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>{{boolean}}</li>
-                    <li>a [=nullable|nullable type=] {{boolean}}</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] {{boolean}}</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                       that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -9993,8 +9993,8 @@ with (thing) {
                   and there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a [=numeric type=]</li>
-                    <li>a [=nullable|nullable type=] [=numeric type=]</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] [=numeric type=]</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                       that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -10004,8 +10004,8 @@ with (thing) {
                   Otherwise: if there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a [=string type=]</li>
-                    <li>a [=nullable|nullable type=] version of any of the above types</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] version of any of the above types</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                        that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -10015,8 +10015,8 @@ with (thing) {
                   Otherwise: if there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>a [=numeric type=]</li>
-                    <li>a [=nullable|nullable type=] [=numeric type=]</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] [=numeric type=]</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                       that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -10026,8 +10026,8 @@ with (thing) {
                   Otherwise: if there is an entry in |S| that has one of the following types at position |i| of its type list,
                   <ul>
                     <li>{{boolean}}</li>
-                    <li>a [=nullable|nullable type=] {{boolean}}</li>
-                    <li>a [=union type=] or [=nullable|nullable type=] union type
+                    <li>a [=nullable type|nullable=] {{boolean}}</li>
+                    <li>a [=union type=] or [=nullable type|nullable=] union type
                       that has one of the above types in its [=flattened member types=]</li>
                   </ul>
                   then remove from |S| all other entries.
@@ -10067,7 +10067,7 @@ with (thing) {
                 <li>
                   Otherwise, |T| is a <a href="#idl-frozen-array">frozen array type</a>.
                   Append to |values| the result of
-                  [=creating a frozen array of type T from V and method|Creating a frozen array from an iterable=].
+                  [=Creating a frozen array from an iterable|creating a frozen array of type T from V and method=].
                 </li>
                 <li>
                   Set |i| to |i| + 1.
@@ -10089,7 +10089,7 @@ with (thing) {
                   </ol>
                 </li>
                 <li>Otherwise, append to |values| the result of
-                  [=converting|converted to an IDL value=] |V| to IDL type |type|.</li>
+                  [=converted to an IDL value|converting=] |V| to IDL type |type|.</li>
                 <li>Set |i| to |i| + 1.</li>
               </ol>
             </li>
@@ -10149,7 +10149,7 @@ with (thing) {
               after the last possible argument.</p>
             <p>When converting an optional argument’s ECMAScript value to its equivalent IDL value,
               <emu-val>undefined</emu-val> will be converted into
-              the [=optional argument’s default value|default value=],
+              the [=default value|optional argument’s default value=],
               if it has one, or a special value “missing” otherwise.</p>
             <p>Optional arguments corresponding to a final, variadic argument do not treat
               <emu-val>undefined</emu-val> as a special “missing” value, however.
@@ -10295,7 +10295,7 @@ with (thing) {
                   |constructor| with |values| as the argument values.
                 </li>
                 <li>
-                  Return the result of [=converting|converted to ECMAScript values=]
+                  Return the result of [=converted to ECMAScript values|converting=]
                   |R| to an ECMAScript <a href="#idl-interface">interface type</a> value
                   |I|.
                 </li>
@@ -10388,7 +10388,7 @@ with (thing) {
               |arg|<sub>0..|n|−1</sub> is the list
               of argument values passed to the constructor, |id|
               is the identifier of the constructor specified in the
-              extended attribute [=named argument list|takes a named argument list=],
+              extended attribute [=takes a named argument list|named argument list=],
               and |I| is the [=interface=]
               on which the <a extended-attribute="">[NamedConstructor]</a>
               extended attribute appears:
@@ -10411,7 +10411,7 @@ with (thing) {
                 |constructor| with |values| as the argument values.
               </li>
               <li>
-                Return the result of [=converting|converted to ECMAScript values=]
+                Return the result of [=converted to ECMAScript values|converting=]
                 |R| to an ECMAScript
                 <a href="#idl-interface">interface type</a> value
                 |I|.
@@ -10502,7 +10502,7 @@ with (thing) {
               <li>If |A| is declared with the <a extended-attribute="">[Global]</a>
               or <a extended-attribute="">[PrimaryGlobal]</a>
               [=extended attribute=], and |A|
-              [=supports named properties|support named properties=], then
+              [=support named properties|supports named properties=], then
               return the [=named properties object=]
               for |A|, as defined in [[#named-properties-object]].</li>
               <li>Otherwise, if |A| is declared to inherit from another
@@ -10521,7 +10521,7 @@ with (thing) {
                 the <a extended-attribute="">[NoInterfaceObject]</a>
                 [=extended attribute=]
                 will be accessible if the interface is used as a
-                [=non-supplemental interface|supplemental interfaces=].
+                [=supplemental interfaces|non-supplemental interface=].
                 For example, with the following IDL:
               </p>
               <pre class="idl-example example">[NoInterfaceObject]
@@ -10584,7 +10584,7 @@ partial interface Window {
               <a extended-attribute="">[Global]</a> or
               <a extended-attribute="">[PrimaryGlobal]</a>
               [=extended attribute=]
-              that [=supports named properties|support named properties=],
+              that [=support named properties|supports named properties=],
               there must exist an object known as the
               <dfn id="dfn-named-properties-object" export="">named properties object</dfn> for that
               interface.
@@ -10645,7 +10645,7 @@ partial interface Window {
                       of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
                     <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
-                    <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converting|converted to ECMAScript values=]
+                    <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
                       |value| to an ECMAScript value.</li>
                     <li>If |A| implements an interface with the
                       <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
@@ -10723,7 +10723,7 @@ partial interface Window {
                   <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
                 </ul>
               </li>
-              <li>The value of the property is that which is obtained by [=converting|converted to ECMAScript values=] the [=constant=]’s IDL value to an ECMAScript value.</li>
+              <li>The value of the property is that which is obtained by [=converted to ECMAScript values|converting=] the [=constant=]’s IDL value to an ECMAScript value.</li>
               <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
             </ul>
             <p>
@@ -10822,7 +10822,7 @@ partial interface Window {
                   <li>Otherwise, the attribute is a [=static attribute=].
                     Set |idlValue| to be the result of performing the actions listed in the description of the attribute that occur when getting.</li>
                   <li>
-                    Let |V| be the result of [=converting|converted to ECMAScript values=]
+                    Let |V| be the result of [=converted to ECMAScript values|converting=]
                     |idlValue| to an ECMAScript value.
                   </li>
                   <li>
@@ -10899,12 +10899,12 @@ partial interface Window {
                       <li>If the type of the attribute is an [=enumeration=], then:
                         <ol>
                           <li>Let |S| be the result of calling <a>ToString</a>(|V|).</li>
-                          <li>If |S| is not one of the [=enumeration’s values|enumeration values=], then return <emu-val>undefined</emu-val>.</li>
+                          <li>If |S| is not one of the [=enumeration values|enumeration’s values=], then return <emu-val>undefined</emu-val>.</li>
                           <li>The value of |idlValue| is the enumeration value equal to |S|.</li>
                         </ol>
                       </li>
                       <li>Otherwise, the type of the attribute is not an [=enumeration=].
-                        The value of |idlValue| is the result of [=converting|converted to an IDL value=]
+                        The value of |idlValue| is the result of [=converted to an IDL value|converting=]
                         |V| to an IDL value.</li>
                     </ul></li>
                   <li>If the attribute is a regular attribute, then perform the actions listed in the description of the attribute that occur when setting,
@@ -10953,7 +10953,7 @@ partial interface Window {
               <li>
                 The location of the property is determined as follows:
                 <ul>
-                  <li>If the operation is [=static|static operations=], then
+                  <li>If the operation is [=static operations|static=], then
                   the property exists on the [=interface object=].</li>
                   <li>Otherwise, if the operation is [=unforgeable=] on
                   the interface or if the interface was declared with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> extended attribute,
@@ -11055,7 +11055,7 @@ partial interface Window {
                         |operation| with |values| as the argument values.
                       </li>
                       <li>
-                        Return the result of [=converting|converted to ECMAScript values=]
+                        Return the result of [=converted to ECMAScript values|converting=]
                         |R| to an ECMAScript value of
                         the type |op| is declared to return.
                       </li>
@@ -11155,7 +11155,7 @@ partial interface Window {
                           of the interface.</dd>
                       </dl>
                     </li>
-                    <li>Return the result of [=converting|converted to ECMAScript values=] |V| to a <span class="estype">String</span> value.</li>
+                    <li>Return the result of [=converted to ECMAScript values|converting=] |V| to a <span class="estype">String</span> value.</li>
                   </ol>
                 </li>
                 <li>The value of the <span class="estype">Function</span> object’s “length”
@@ -11224,7 +11224,7 @@ partial interface Window {
                       <ol class="algorithm">
                         <li>Let |S| be the [=serialized value=] that is the result of invoking the [=serialization behavior=] of the
                           [=interface=] for object |O|.</li>
-                        <li>Return the result of [=converting|convert a serialized value to an ECMAScript value=]
+                        <li>Return the result of [=convert a serialized value to an ECMAScript value|converting=]
                           |S| to an ECMAScript value.</li>
                       </ol>
                     </dd>
@@ -11248,7 +11248,7 @@ partial interface Window {
                         <li>Let |O| be a new object created as if by the expression <code>({})</code>.</li>
                         <li>For each entry in |S|, in the order they were added to the map:
                           <ol>
-                            <li>Let |V| be the result of [=converting|convert a serialized value to an ECMAScript value=]
+                            <li>Let |V| be the result of [=convert a serialized value to an ECMAScript value|converting=]
                             the value of the entry to an ECMAScript value.</li>
                             <li>Let |P| be the entry’s key.</li>
                             <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
@@ -11264,7 +11264,7 @@ partial interface Window {
                         <li>Let |index| be 0.</li>
                         <li>While |index| is less than the number of elements in |S|:
                           <ol>
-                            <li>Let |V| be the result of [=converting|convert a serialized value to an ECMAScript value=]
+                            <li>Let |V| be the result of [=convert a serialized value to an ECMAScript value|converting=]
                             the value of the element in |S| at index |index| to an ECMAScript value.</li>
                             <li>Let |P| be <a>ToString</a>(|index|).</li>
                             <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
@@ -11276,7 +11276,7 @@ partial interface Window {
                     <dt>any other serialized value</dt>
                     <dd>
                       <ol class="algorithm">
-                        <li>Let |V| be the result of [=converting|converted to ECMAScript values=]
+                        <li>Let |V| be the result of [=converted to ECMAScript values|converting=]
                         |S| to an ECMAScript value.</li>
                         <li>Return |V|.</li>
                       </ol>
@@ -11300,7 +11300,7 @@ partial interface Window {
               <ul>
                 <li>an [=iterable declaration=]</li>
                 <li>an [=indexed property getter=]
-                and an [=integer-typed|integer types=]
+                and an [=integer types|integer-typed=]
                 [=attribute=] named
                 “length”</li>
                 <li>a [=maplike declaration=]</li>
@@ -11769,7 +11769,7 @@ partial interface Window {
                     <dd>
                       <ol class="algorithm">
                         <li>Let |idlKey| be |pair|’s key.</li>
-                        <li>Let |key| be the result of [=converting|converted to ECMAScript values=] |idlKey| to an ECMAScript value.</li>
+                        <li>Let |key| be the result of [=converted to ECMAScript values|converting=] |idlKey| to an ECMAScript value.</li>
                         <li>|result| is |key|.</li>
                       </ol>
                     </dd>
@@ -11777,7 +11777,7 @@ partial interface Window {
                     <dd>
                       <ol class="algorithm">
                         <li>Let |idlValue| be |pair|’s value.</li>
-                        <li>Let |value| be the result of [=converting|converted to ECMAScript values=] |idlValue| to an ECMAScript value.</li>
+                        <li>Let |value| be the result of [=converted to ECMAScript values|converting=] |idlValue| to an ECMAScript value.</li>
                         <li>|result| is |value|.</li>
                       </ol>
                     </dd>
@@ -11786,8 +11786,8 @@ partial interface Window {
                       <ol class="algorithm">
                         <li>Let |idlKey| be |pair|’s key.</li>
                         <li>Let |idlValue| be |pair|’s value.</li>
-                        <li>Let |key| be the result of [=converting|converted to ECMAScript values=] |idlKey| to an ECMAScript value.</li>
-                        <li>Let |value| be the result of [=converting|converted to ECMAScript values=] |idlValue| to an ECMAScript value.</li>
+                        <li>Let |key| be the result of [=converted to ECMAScript values|converting=] |idlKey| to an ECMAScript value.</li>
+                        <li>Let |value| be the result of [=converted to ECMAScript values|converting=] |idlValue| to an ECMAScript value.</li>
                         <li>Let |array| be the result of performing <a>ArrayCreate</a>(2).</li>
                         <li>Call <a>CreateDataProperty</a>(|array|, "0", |key|).</li>
                         <li>Call <a>CreateDataProperty</a>(|array|, "1", |value|).</li>
@@ -11912,7 +11912,7 @@ partial interface Window {
               </p>
               <ul>
                 <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
-                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards that name to the internal map object|forwards to the internal map object=].</li>
+                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal map object|forwards that name to the internal map object=].</li>
               </ul>
               <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys” or “values”, correspondingly.</p>
@@ -11946,7 +11946,7 @@ partial interface Window {
                     <li>Let |keyType| be the key type specified in the [=maplike declaration=].</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
-                    <li>Let |keyIDL| be the result of [=converting|converted to an IDL value=] |keyArg| to an IDL value of type |keyType|.</li>
+                    <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
@@ -11971,7 +11971,7 @@ partial interface Window {
               </p>
               <ul>
                 <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
-                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards “clear” to the internal map object|forwards to the internal map object=].</li>
+                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal map object|forwards “clear” to the internal map object=].</li>
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
@@ -12009,7 +12009,7 @@ partial interface Window {
                     <li>Let |keyType| be the key type specified in the [=maplike declaration=].</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
-                    <li>Let |keyIDL| be the result of [=converting|converted to an IDL value=] |keyArg| to an IDL value of type |keyType|.</li>
+                    <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
                   </ol>
@@ -12052,8 +12052,8 @@ partial interface Window {
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
                     <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
                     <li>Let |valueArg| be the second argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
-                    <li>Let |keyIDL| be the result of [=converting|converted to an IDL value=] |keyArg| to an IDL value of type |keyType|.</li>
-                    <li>Let |valueIDL| be the result of [=converting|converted to an IDL value=] |valueArg| to an IDL value of type |valueType|.</li>
+                    <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
+                    <li>Let |valueIDL| be the result of [=converted to an IDL value|converting=] |valueArg| to an IDL value of type |valueType|.</li>
                     <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |valueIDL| to an ECMAScript value.</li>
                     <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |key| and |value| as |argumentsList|.</li>
@@ -12170,7 +12170,7 @@ partial interface Window {
               </p>
               <ul>
                 <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
-                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards that name to the internal set object|forwards to the internal set object=].</li>
+                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal set object|forwards that name to the internal set object=].</li>
               </ul>
               <p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “entries” or “keys”, correspondingly.</p>
@@ -12203,7 +12203,7 @@ partial interface Window {
                     <li>Let |type| be the value type specified in the [=setlike declaration=].</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
-                    <li>Let |idlValue| be the result of [=converting|converted to an IDL value=] |arg| to an IDL value of type |type|.</li>
+                    <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |arg| to an IDL value of type |type|.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
                     <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                   </ol>
@@ -12251,7 +12251,7 @@ partial interface Window {
                     <li>Let |type| be the value type specified in the [=setlike declaration=].</li>
                     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
                     <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
-                    <li>Let |idlValue| be the result of [=converting|converted to an IDL value=] |arg| to an IDL value of type |type|.</li>
+                    <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |arg| to an IDL value of type |type|.</li>
                     <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
                     <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
                     <li>Assert: |result| is not an abrupt completion.</li>
@@ -12289,7 +12289,7 @@ partial interface Window {
               </p>
               <ul>
                 <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
-                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards “clear” to the internal set object|forwards to the internal set object=].</li>
+                <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal set object|forwards “clear” to the internal set object=].</li>
               </ul>
               <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
               <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
@@ -12419,7 +12419,7 @@ C implements A;</pre>
           </p>
           <p>
             The <dfn id="dfn-primary-interface" export="">primary interface</dfn> of a platform object
-            that implements one or more interfaces is the most-derived [=non-supplemental interface|supplemental interfaces=]
+            that implements one or more interfaces is the most-derived [=supplemental interfaces|non-supplemental interface=]
             that it implements.  The value of the internal <span class="prop">\[[Prototype]]</span>
             property of the platform object is the [=interface prototype object=]
             of the [=primary interface=]
@@ -12499,8 +12499,8 @@ C implements A;</pre>
 
             <p>
               If a [=platform object=] implements an [=interface=] that
-              [=supports indexed|support indexed properties=] or
-              [=named properties|support named properties=],
+              [=support indexed properties|supports indexed=] or
+              [=support named properties|named properties=],
               the object will appear to have additional properties that correspond to the
               object’s indexed and named properties.  These properties are not “real” own
               properties on the object, but are made to look like they are by being exposed
@@ -12613,11 +12613,11 @@ C implements A;</pre>
 
             <ol class="algorithm">
               <li>
-                If |O| [=supports indexed properties|support indexed properties=]
+                If |O| [=support indexed properties|supports indexed properties=]
                 and |P| is an [=array index property name=], then:
                 <ol>
                   <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
-                  <li>If |index| is a [=supported property index|supported property indices=], then:
+                  <li>If |index| is a [=supported property indices|supported property index=], then:
                     <ol>
                       <li>Let |operation| be the operation used to declare the indexed property getter.</li>
 
@@ -12630,7 +12630,7 @@ C implements A;</pre>
                         of performing the steps listed in the description of |operation| with |index| as the only argument value.</li>
 
                       <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
-                      <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converting|converted to ECMAScript values=]
+                      <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
                         |value| to an ECMAScript value.</li>
                       <li>If |O| implements an interface with an [=indexed property setter=], then set
                         |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
@@ -12643,7 +12643,7 @@ C implements A;</pre>
                 </ol>
               </li>
 
-              <li>If |O| [=supports named properties|support named properties=], |O| does not
+              <li>If |O| [=support named properties|supports named properties=], |O| does not
                 implement an [=interface=] with the <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a>
                 [=extended attribute=], the result of running the [=named property visibility algorithm=] with
                 property name |P| and object |O| is true, and |ignoreNamedProps| is false, then:
@@ -12659,7 +12659,7 @@ C implements A;</pre>
                     of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
 
                   <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
-                  <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converting|converted to ECMAScript values=]
+                  <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
                     |value| to an ECMAScript value.</li>
                   <li>If |O| implements an interface with a [=named property setter=], then set
                     |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
@@ -12684,14 +12684,14 @@ C implements A;</pre>
             <p>
               The internal <span class="prop">\[[GetOwnProperty]]</span> method of every
               [=platform object=] |O| that implements an [=interface=]
-              which [=supports indexed|support indexed properties=] or
-              [=named properties|support named properties=]
+              which [=support indexed properties|supports indexed=] or
+              [=support named properties|named properties=]
               must behave as follows when called with property name |P|:
             </p>
 
             <ol class="algorithm">
               <li>
-                Return the result of invoking the [=PlatformObjectGetOwnProperty|The PlatformObjectGetOwnProperty abstract operation=]
+                Return the result of invoking the [=The PlatformObjectGetOwnProperty abstract operation|PlatformObjectGetOwnProperty=]
                 abstract operation with
                 |O|, |P|, and <emu-val>false</emu-val> as
                 arguments.
@@ -12707,10 +12707,10 @@ C implements A;</pre>
             </p>
             <ol class="algorithm">
               <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
-              <li>Let |creating| be true if |index| is not a [=supported property index|supported property indices=], and false otherwise.</li>
+              <li>Let |creating| be true if |index| is not a [=supported property indices|supported property index=], and false otherwise.</li>
               <li>Let |operation| be the operation used to declare the indexed property setter.</li>
               <li>Let |T| be the type of the second argument of |operation|.</li>
-              <li>Let |value| be the result of [=converting|converted to an IDL value=] |V| to an IDL value of type |T|.</li>
+              <li>Let |value| be the result of [=converted to an IDL value|converting=] |V| to an IDL value of type |T|.</li>
               <li>If |operation| was defined without an [=identifier=], then:
               <ol>
                 <li>If |creating| is true, then perform the steps listed in the interface description to
@@ -12736,7 +12736,7 @@ C implements A;</pre>
               <li>Let |creating| be true if |P| is not a [=supported property name=], and false otherwise.</li>
               <li>Let |operation| be the operation used to declare the named property setter.</li>
               <li>Let |T| be the type of the second argument of |operation|.</li>
-              <li>Let |value| be the result of [=converting|converted to an IDL value=] |V| to an IDL value of type |T|.</li>
+              <li>Let |value| be the result of [=converted to an IDL value|converting=] |V| to an IDL value of type |T|.</li>
               <li>If |operation| was defined without an [=identifier=], then:
               <ol>
                 <li>If |creating| is true, then perform the steps listed in the interface description to
@@ -12758,8 +12758,8 @@ C implements A;</pre>
             <p>
               The internal <span class="prop">\[[Set]]</span> method of every
               [=platform object=] |O| that implements an [=interface=]
-              which [=supports indexed|support indexed properties=] or
-              [=named properties|support named properties=]
+              which [=support indexed properties|supports indexed=] or
+              [=support named properties|named properties=]
               must behave as follows when called
               with property name |P|, value |V|, and
               ECMAScript language value |Receiver|:
@@ -12770,7 +12770,7 @@ C implements A;</pre>
               then:
               <ol>
                 <li>
-                  If |O| [=supports indexed properties|support indexed properties=], |P| is an [=array index property name=], and |O| implements an interface with an [=indexed property setter=], then:
+                  If |O| [=support indexed properties|supports indexed properties=], |P| is an [=array index property name=], and |O| implements an interface with an [=indexed property setter=], then:
                   <ol>
                     <li>
                       <a href="#invoking-indexed-setter">Invoke the indexed
@@ -12781,7 +12781,7 @@ C implements A;</pre>
                 </li>
 
                 <li>
-                  If |O| [=supports named properties|support named properties=], <a>Type</a>(|P|) is String,
+                  If |O| [=support named properties|supports named properties=], <a>Type</a>(|P|) is String,
                   |P| is not an [=array index property name=], and |O| implements an interface with a [=named property setter=], then:
                   <ol>
                     <li>
@@ -12794,7 +12794,7 @@ C implements A;</pre>
               </ol>
               </li>
               <li>
-                Let |ownDesc| be the result of invoking the [=PlatformObjectGetOwnProperty|The PlatformObjectGetOwnProperty abstract operation=]
+                Let |ownDesc| be the result of invoking the [=The PlatformObjectGetOwnProperty abstract operation|PlatformObjectGetOwnProperty=]
                 abstract operation with
                 |O|, |P|, and <emu-val>true</emu-val> as
                 arguments.
@@ -12811,15 +12811,15 @@ C implements A;</pre>
             <p>
               The internal <span class="prop">\[[DefineOwnProperty]]</span> method of every
               [=platform object=] |O| that implements an [=interface=]
-              which [=supports indexed|support indexed properties=] or
-              [=named properties|support named properties=]
+              which [=support indexed properties|supports indexed=] or
+              [=support named properties|named properties=]
               must behave as follows when called with property name |P|,
               Property Descriptor |Desc| and boolean flag |Throw|.
             </p>
 
             <ol class="algorithm">
               <li>
-                If |O| [=supports indexed properties|support indexed properties=] and
+                If |O| [=support indexed properties|supports indexed properties=] and
                 |P| is an [=array index property name=], then:
                 <ol>
                   <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.</li>
@@ -12831,7 +12831,7 @@ C implements A;</pre>
               </li>
 
               <li>
-                If |O| [=supports named properties|support named properties=],
+                If |O| [=support named properties|supports named properties=],
                 |O| does not implement an [=interface=] with the
                 <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> [=extended attribute=]
                 and |P| is not an [=unforgeable property name=]
@@ -12873,24 +12873,24 @@ C implements A;</pre>
             <p>
               The internal <span class="prop">\[[Delete]]</span> method of every
               [=platform object=] |O| that implements an [=interface=]
-              which [=supports indexed|support indexed properties=] or
-              [=named properties|support named properties=]
+              which [=support indexed properties|supports indexed=] or
+              [=support named properties|named properties=]
               must behave as follows when called with property name |P|.
             </p>
 
             <ol class="algorithm">
               <li>
-                If |O| [=supports indexed properties|support indexed properties=] and
+                If |O| [=support indexed properties|supports indexed properties=] and
                 |P| is an [=array index property name=], then:
                 <ol>
                   <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
-                  <li>If |index| is not a [=supported property index|supported property indices=], then return <emu-val>true</emu-val>.</li>
+                  <li>If |index| is not a [=supported property indices|supported property index=], then return <emu-val>true</emu-val>.</li>
                   <li>Return <emu-val>false</emu-val>.</li>
                 </ol>
               </li>
 
               <li>
-                If |O| [=supports named properties|support named properties=],
+                If |O| [=support named properties|supports named properties=],
                 |O| does not implement an [=interface=] with the
                 <a extended-attribute="">[Global]</a> or <a extended-attribute="">[PrimaryGlobal]</a> [=extended attribute=]
                 and the result of calling the [=named property visibility algorithm=]
@@ -12948,7 +12948,7 @@ C implements A;</pre>
               </li>
               <li>Perform the actions listed in the description of the legacy caller |operation| with
                 |values| as the argument values.</li>
-              <li>Return the result of [=converting|converted to ECMAScript values=]
+              <li>Return the result of [=converted to ECMAScript values|converting=]
                 the return value from those actions to an ECMAScript value of the type
                 |operation| is declared to return (or <emu-val>undefined</emu-val>
                 if |operation| is declared to return {{void}}).</li>
@@ -12963,16 +12963,16 @@ C implements A;</pre>
               for all [=platform objects=] implementing [=interfaces=]
               (or for <a href="#es-exception-objects">platform objects representing exceptions</a>).
               However, if a platform object implements an interface that
-              [=supports indexed|support indexed properties=] or
-              [=named properties|support named properties=], then
+              [=support indexed properties|supports indexed=] or
+              [=support named properties|named properties=], then
               properties on the object must be
               enumerated in the following order:
             </p>
             <ol>
-              <li>If the object [=supports indexed properties|support indexed properties=], then
+              <li>If the object [=support indexed properties|supports indexed properties=], then
               the object’s [=supported property indices=] are
               enumerated first, in numerical order.</li>
-              <li>If the object [=supports named properties|support named properties=] and doesn't implement an [=interface=] with the
+              <li>If the object [=support named properties|supports named properties=] and doesn't implement an [=interface=] with the
               <a extended-attribute="">[LegacyUnenumerableNamedProperties]</a>
               [=extended attribute=], then
               the object’s [=supported property names=] that
@@ -13043,7 +13043,7 @@ C implements A;</pre>
           </ul>
 
           <p>
-            To <dfn>call a user object's operation</dfn>, given a [=callback interface type|Interface types=] value |value|,
+            To <dfn>call a user object's operation</dfn>, given a [=Interface types|callback interface type=] value |value|,
             sometimes-optional operation name |opName|, list of argument values
             |arg|<sub>0..|n|−1</sub> each of which is either an IDL value or the
             special value “missing” (representing a missing optional argument), and optional <dfn id="dfn-callback-this-value" export="">callback this value</dfn>
@@ -13114,7 +13114,7 @@ C implements A;</pre>
                   Otherwise, |arg|<sub>|i|</sub> is an IDL value:
 
                   <ol>
-                    <li>Let |convertResult| be the result of [=converting|converted to ECMAScript values=]
+                    <li>Let |convertResult| be the result of [=converted to ECMAScript values|converting=]
                     |arg|<sub>|i|</sub> to an ECMAScript value.</li>
 
                     <li>If |convertResult| is an abrupt completion, set |completion|
@@ -13138,7 +13138,7 @@ C implements A;</pre>
             <li>If |callResult| is an abrupt completion, set |completion| to
             |callResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
 
-            <li>Set |completion| to the result of [=converting|converted to an IDL value=]
+            <li>Set |completion| to the result of [=converted to an IDL value|converting=]
             |callResult|.\[[Value]] to an IDL value of the same type as the operation’s
             return type.</li>
 
@@ -13160,14 +13160,14 @@ C implements A;</pre>
                 <a>%Promise%</a> as the <emu-val>this</emu-val> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
-                <li>Return the result of [=converting|converted to an IDL value=]
+                <li>Return the result of [=converted to an IDL value|converting=]
                 |rejectedPromise| to the operation's return type.</li>
               </ol>
             </li>
           </ol>
 
           <p>
-            To <dfn export="">get a user object's attribute value</dfn>, given a [=callback interface type|Interface types=] value |object|
+            To <dfn export="">get a user object's attribute value</dfn>, given a [=Interface types|callback interface type=] value |object|
             and attribute name |attributeName|, perform the following steps. These steps
             will either return an IDL value or throw an exception.
           </p>
@@ -13189,7 +13189,7 @@ C implements A;</pre>
             <li>If |getResult| is an abrupt completion, set |completion| to
             |getResult| and jump to the step labeled <a href="#get-user-object-attribute-return"><i>return</i></a>.</li>
 
-            <li>Set |completion| to the result of [=converting|converted to an IDL value=]
+            <li>Set |completion| to the result of [=converted to an IDL value|converting=]
             |getResult|.\[[Value]] to an IDL value of the same type as the attribute's
             type.</li>
 
@@ -13213,14 +13213,14 @@ C implements A;</pre>
                 <a>%Promise%</a> as the <emu-val>this</emu-val> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
-                <li>Return the result of [=converting|converted to an IDL value=]
+                <li>Return the result of [=converted to an IDL value|converting=]
                 |rejectedPromise| to the attribute's type.</li>
               </ol>
             </li>
           </ol>
 
           <p>
-            To <dfn export="">set a user object's attribute value</dfn>, given a [=callback interface type|Interface types=] value
+            To <dfn export="">set a user object's attribute value</dfn>, given a [=Interface types|callback interface type=] value
             |object|, attribute name |attributeName|, and IDL value
             |value|, perform the following steps. These steps will not return anything, but
             could throw an exception.
@@ -13238,7 +13238,7 @@ C implements A;</pre>
 
             <li><a>Prepare to run script</a> with |settings|.</li>
 
-            <li>Let |convertResult| be the result of [=converting|converted to ECMAScript values=] |value| to an
+            <li>Let |convertResult| be the result of [=converted to ECMAScript values|converting=] |value| to an
             ECMAScript value.</li>
 
             <li>If |convertResult| is an abrupt completion, set |completion| to
@@ -13304,7 +13304,7 @@ C implements A;</pre>
                   </div>
                 </li>
 
-                <li>Return the result of [=converting|converted to an IDL value=] <emu-val>undefined</emu-val> to the callback function's return type.</li>
+                <li>Return the result of [=converted to an IDL value|converting=] <emu-val>undefined</emu-val> to the callback function's return type.</li>
               </ol>
             </li>
 
@@ -13332,7 +13332,7 @@ C implements A;</pre>
                   Otherwise, |arg|<sub>|i|</sub> is an IDL value:
 
                   <ol>
-                    <li>Let |convertResult| be the result of [=converting|converted to ECMAScript values=]
+                    <li>Let |convertResult| be the result of [=converted to ECMAScript values|converting=]
                     |arg|<sub>|i|</sub> to an ECMAScript value.</li>
 
                     <li>If |convertResult| is an abrupt completion, set |completion|
@@ -13356,7 +13356,7 @@ C implements A;</pre>
             <li>If |callResult| is an abrupt completion, set |completion| to
             |callResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
 
-            <li>Set |completion| to the result of [=converting|converted to an IDL value=]
+            <li>Set |completion| to the result of [=converted to an IDL value|converting=]
             |callResult|.\[[Value]] to an IDL value of the same type as the operation’s
             return type.</li>
 
@@ -13379,7 +13379,7 @@ C implements A;</pre>
                 <a>%Promise%</a> as the <emu-val>this</emu-val> value and
                 |completion|.\[[Value]] as the single argument value.</li>
 
-                <li>Return the result of [=converting|converted to an IDL value=]
+                <li>Return the result of [=converted to an IDL value|converting=]
                 |rejectedPromise| to the callback function's return type.</li>
               </ol>
             </li>
@@ -13565,8 +13565,8 @@ C implements A;</pre>
             the following steps must be followed:
           </p>
           <ol class="algorithm">
-            <li>If |M| was not specified, let |M| be <emu-val>undefined</emu-val>. Otherwise, let it be the result of [=converting|converted to ECMAScript values=] |M| to a <span class="estype">String</span> value.</li>
-            <li>Let |N| be the result of [=converting|converted to ECMAScript values=] |N| to a <span class="estype">String</span> value.</li>
+            <li>If |M| was not specified, let |M| be <emu-val>undefined</emu-val>. Otherwise, let it be the result of [=converted to ECMAScript values|converting=] |M| to a <span class="estype">String</span> value.</li>
+            <li>Let |N| be the result of [=converted to ECMAScript values|converting=] |N| to a <span class="estype">String</span> value.</li>
             <li>Let |args| be a list of ECMAScript values.
               <dl class="switch">
                 <dt>|E| is [=DOMException=]</dt>
@@ -13599,14 +13599,14 @@ C implements A;</pre>
             the following steps must be followed:
           </p>
           <ol class="algorithm">
-            <li>Let |O| be the result of [=creating|created=]
+            <li>Let |O| be the result of [=created|creating=]
               the specified exception |E| with [=error name=] |N| and
               optional user agent-defined message |M|.</li>
             <li>Throw |O|.</li>
           </ol>
           <div class="note">
             <p>
-              The above algorithms do not restrict [=platform objects representing exceptions|Exception objects=]
+              The above algorithms do not restrict [=Exception objects|platform objects representing exceptions=]
               propagating out of a <span class="estype">Function</span> to be
               ones that are associated with the global environment
               where that <span class="estype">Function</span> object originated.
