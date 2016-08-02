@@ -314,6 +314,10 @@ TR: </xsl:text>
       <xsl:if test="@data-dfn-type">
         <xsl:attribute name="{@data-dfn-type}" />
       </xsl:if>
+      <xsl:if test="name() = 'h4' and ancestor::*/@id = 'es-extended-attributes'">
+        <xsl:attribute name="extended-attribute" />
+        <xsl:attribute name="lt"><xsl:value-of select='replace(., "\[|\]", "")' /></xsl:attribute>
+      </xsl:if>
       <xsl:if test='$parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
         <xsl:attribute name="dfn" />
       </xsl:if>

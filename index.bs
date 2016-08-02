@@ -7867,7 +7867,7 @@ alert(b[4]);    // This would alert "50".</pre>
           </p>
 
           
-            <h4 id="Clamp">[Clamp]</h4>
+            <h4 id="Clamp" extended-attribute="" lt="Clamp">[Clamp]</h4>
 
             <p>
               If the [{{Clamp}}]
@@ -7932,7 +7932,7 @@ context.setColorClamped(-1, 255, 257);</pre>
           
 
           
-            <h4 id="Constructor">[Constructor]</h4>
+            <h4 id="Constructor" extended-attribute="" lt="Constructor">[Constructor]</h4>
 
             <p>
               If the [{{Constructor}}]
@@ -8018,7 +8018,7 @@ var z = new NodeList();    // This would throw a TypeError, since no
           
 
           
-            <h4 id="EnforceRange">[EnforceRange]</h4>
+            <h4 id="EnforceRange" extended-attribute="" lt="EnforceRange">[EnforceRange]</h4>
 
             <p>
               If the [{{EnforceRange}}]
@@ -8090,7 +8090,7 @@ context.setColorEnforcedRange(-1, 255, 256);</pre>
           
 
           
-            <h4 id="Exposed">[Exposed]</h4>
+            <h4 id="Exposed" extended-attribute="" lt="Exposed">[Exposed]</h4>
             <p>
               If the [{{Exposed}}]
               [=extended attribute=]
@@ -8258,7 +8258,7 @@ interface Node {
           
 
           
-            <h4 id="ImplicitThis">[ImplicitThis]</h4>
+            <h4 id="ImplicitThis" extended-attribute="" lt="ImplicitThis">[ImplicitThis]</h4>
             <p>
               If the [{{ImplicitThis}}]
               [=extended attribute=]
@@ -8312,7 +8312,7 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
           
 
           
-            <h4 oldids="PrimaryGlobal" id="Global">[Global] and [PrimaryGlobal]</h4>
+            <h4 oldids="PrimaryGlobal" id="Global" extended-attribute="" lt="Global and PrimaryGlobal">[Global] and [PrimaryGlobal]</h4>
 
             <p>
               If the [{{Global}}]
@@ -8512,7 +8512,7 @@ interface Window {
           
 
           
-            <h4 id="LegacyArrayClass">[LegacyArrayClass]</h4>
+            <h4 id="LegacyArrayClass" extended-attribute="" lt="LegacyArrayClass">[LegacyArrayClass]</h4>
 
             <p>
               If the [{{LegacyArrayClass}}]
@@ -8588,7 +8588,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
 
 
           
-            <h4 id="LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</h4>
+            <h4 id="LegacyUnenumerableNamedProperties" extended-attribute="" lt="LegacyUnenumerableNamedProperties">[LegacyUnenumerableNamedProperties]</h4>
 
             <p>
               If the [{{LegacyUnenumerableNamedProperties}}]
@@ -8618,7 +8618,7 @@ list.unshift({ });         // Insert an item at index 0.</pre>
           
 
           
-            <h4 id="LenientSetter">[LenientSetter]</h4>
+            <h4 id="LenientSetter" extended-attribute="" lt="LenientSetter">[LenientSetter]</h4>
             <p>
               If the [{{LenientSetter}}]
               [=extended attribute=]
@@ -8692,7 +8692,7 @@ example.y = 1;</pre>
           
 
           
-            <h4 id="LenientThis">[LenientThis]</h4>
+            <h4 id="LenientThis" extended-attribute="" lt="LenientThis">[LenientThis]</h4>
             <p>
               If the [{{LenientThis}}]
               [=extended attribute=]
@@ -8754,7 +8754,7 @@ Example.prototype.y;</pre>
           
 
           
-            <h4 id="NamedConstructor">[NamedConstructor]</h4>
+            <h4 id="NamedConstructor" extended-attribute="" lt="NamedConstructor">[NamedConstructor]</h4>
             <p>
               If the [{{NamedConstructor}}]
               [=extended attribute=]
@@ -8823,7 +8823,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
           
 
           
-            <h4 id="NewObject">[NewObject]</h4>
+            <h4 id="NewObject" extended-attribute="" lt="NewObject">[NewObject]</h4>
 
             <p>
               If the [{{NewObject}}]
@@ -8867,7 +8867,7 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
           
 
           
-            <h4 id="NoInterfaceObject">[NoInterfaceObject]</h4>
+            <h4 id="NoInterfaceObject" extended-attribute="" lt="NoInterfaceObject">[NoInterfaceObject]</h4>
 
             <p>
               If the [{{NoInterfaceObject}}]
@@ -8953,7 +8953,7 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
           
 
           
-            <h4 id="OverrideBuiltins">[OverrideBuiltins]</h4>
+            <h4 id="OverrideBuiltins" extended-attribute="" lt="OverrideBuiltins">[OverrideBuiltins]</h4>
 
             <p>
               If the [{{OverrideBuiltins}}]
@@ -9047,7 +9047,7 @@ map2.toString;</pre>
           
 
           
-            <h4 id="PutForwards">[PutForwards]</h4>
+            <h4 id="PutForwards" extended-attribute="" lt="PutForwards">[PutForwards]</h4>
 
             <p>
               If the [{{PutForwards}}]
@@ -9164,7 +9164,7 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
           
 
           
-            <h4 id="Replaceable">[Replaceable]</h4>
+            <h4 id="Replaceable" extended-attribute="" lt="Replaceable">[Replaceable]</h4>
 
             <p>
               If the [{{Replaceable}}]
@@ -9252,7 +9252,7 @@ counter.value;                                           // Evaluates to 3.</pre
           
 
           
-            <h4 id="SameObject">[SameObject]</h4>
+            <h4 id="SameObject" extended-attribute="" lt="SameObject">[SameObject]</h4>
 
             <p>
               If the [{{SameObject}}]
@@ -9293,7 +9293,7 @@ counter.value;                                           // Evaluates to 3.</pre
           
 
           
-            <h4 id="SecureContext">[SecureContext]</h4>
+            <h4 id="SecureContext" extended-attribute="" lt="SecureContext">[SecureContext]</h4>
 
             <p>
               If the [{{SecureContext}}]
@@ -9395,7 +9395,7 @@ counter.value;                                           // Evaluates to 3.</pre
           
 
           
-            <h4 id="TreatNonObjectAsNull">[TreatNonObjectAsNull]</h4>
+            <h4 id="TreatNonObjectAsNull" extended-attribute="" lt="TreatNonObjectAsNull">[TreatNonObjectAsNull]</h4>
 
             <p>
               If the [{{TreatNonObjectAsNull}}]
@@ -9465,7 +9465,7 @@ manager.handler2;            // Evaluates to null.</pre>
           
 
           
-            <h4 id="TreatNullAs">[TreatNullAs]</h4>
+            <h4 id="TreatNullAs" extended-attribute="" lt="TreatNullAs">[TreatNullAs]</h4>
 
             <p>
               If the [{{TreatNullAs}}]
@@ -9543,7 +9543,7 @@ d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
           
 
           
-            <h4 id="Unforgeable">[Unforgeable]</h4>
+            <h4 id="Unforgeable" extended-attribute="" lt="Unforgeable">[Unforgeable]</h4>
 
             <p>
               If the [{{Unforgeable}}]
@@ -9661,7 +9661,7 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
           
 
           
-            <h4 id="Unscopable">[Unscopable]</h4>
+            <h4 id="Unscopable" extended-attribute="" lt="Unscopable">[Unscopable]</h4>
 
             <p>
               If the [{{Unscopable}}]
