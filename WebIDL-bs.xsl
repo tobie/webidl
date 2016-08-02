@@ -25,6 +25,15 @@ Shortname: WebIDL
 Level: 2
 Status: ED
 Group: webplatform
+!Participate: </xsl:text>
+<a href="https://github.com/heycam/webidl"><xsl:text>GitHub</xsl:text></a>
+<xsl:text> (</xsl:text>
+<a href="https://github.com/heycam/webidl/issues/new"><xsl:text>new issue</xsl:text></a>
+<xsl:text>, </xsl:text>
+<a href="https://github.com/heycam/webidl/issues"><xsl:text>open issues</xsl:text></a>
+<xsl:text>, </xsl:text>
+<a href="https://www.w3.org/Bugs/Public/buglist.cgi?product=WebAppsWG&amp;component=WebIDL&amp;resolution=---"><xsl:text>legacy bug tracker</xsl:text></a>
+<xsl:text>)
 ED: https://heycam.github.io/webidl/
 TR: </xsl:text>
   <xsl:if test='$options/x:versions/x:latest/@href != ""'>

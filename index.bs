@@ -9,6 +9,7 @@ Shortname: WebIDL
 Level: 2
 Status: ED
 Group: webplatform
+!Participate: <a href="https://github.com/heycam/webidl">GitHub</a> (<a href="https://github.com/heycam/webidl/issues/new">new issue</a>, <a href="https://github.com/heycam/webidl/issues">open issues</a>, <a href="https://www.w3.org/Bugs/Public/buglist.cgi?product=WebAppsWG&amp;component=WebIDL&amp;resolution=---">legacy bug tracker</a>)
 ED: https://heycam.github.io/webidl/
 TR: http://www.w3.org/TR/WebIDL/
 Previous Version: http://www.w3.org/TR/2012/CR-WebIDL-20120419/
