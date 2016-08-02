@@ -1,7 +1,7 @@
 all : index.html
 
 index.html : index.bs
-	bikeshed spec --force
+	bikeshed spec index.bs
 
 index.bs : index.xml WebIDL-bs.xsl
 	java  -jar saxon9he.jar -warnings:silent -s:index.xml -xsl:WebIDL-bs.xsl -o:index.bs
