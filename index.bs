@@ -13929,9 +13929,9 @@ d.type = et;
       
     
 
-    <div id="appendices">
+    
       
-        <h2 id="idl-grammar">IDL grammar</h2>
+        <h2 class="no-num">IDL grammar</h2>
 
         <p>
           This section defines an LL(1) grammar whose start symbol,
@@ -14252,7 +14252,7 @@ d.type = et;
       
 
       
-        <h2 id="changes">Changes</h2>
+        <h2 class="no-num">Changes</h2>
 
         <p class="norm">This section is informative.</p>
 
@@ -14907,6 +14907,6 @@ d.type = et;
           </dd>
         </dl>
       
-    </div>
+    
   
 </html>

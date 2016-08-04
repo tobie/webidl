@@ -343,6 +343,18 @@ TR: </xsl:text>
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
+  <xsl:template match='h:h2[ancestor::h:div[@id="appendices"]]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="class">no-num</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:div[@id="appendices"]'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
   <xsl:template match='h:div[@class="section"][h:h2[text()="Abstract"]]'/>
   
   <xsl:template name='markdown-note-issue-advisement'>
