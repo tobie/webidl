@@ -6,7 +6,7 @@ function getSortedAnchors(window) {
 var argv = process.argv;
 
 if (argv.indexOf("-h") > 0 || argv.indexOf("--help") > 0) {
-    console.log("$ node ./check-anchors.js [--show-examples] [--show-issues] [--show-refs-for]")
+    console.log("$ node ./check-anchors.js [--show-added] [--show-examples] [--show-issues] [--show-refs-for]")
     process.exit();
 }
  
@@ -27,12 +27,14 @@ jsdom.env({
         var oldAnchors = getSortedAnchors(oldWindow)
         console.log("Anchors missing from the Bikeshed port:")
         oldAnchors.filter(id => bikeshedAnchors.indexOf(id) == -1).forEach(id => console.log("  * " + id));
-        console.log("Anchors added by the Bikeshed port (to include all anchors see -h):")
-        bikeshedAnchors.filter(id => oldAnchors.indexOf(id) == -1)
-            .filter(filterRefsFor)
-            .filter(filterIssues)
-            .filter(filterExamples)
-            .forEach(id => console.log("  * " + id))
+        if (argv.indexOf("--show-added") > 0) {
+          console.log("Anchors added by the Bikeshed port (to include all anchors see -h):")
+          bikeshedAnchors.filter(id => oldAnchors.indexOf(id) == -1)
+              .filter(filterRefsFor)
+              .filter(filterIssues)
+              .filter(filterExamples)
+              .forEach(id => console.log("  * " + id))
+        }
       }
     });
   }
