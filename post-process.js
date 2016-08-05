@@ -12,7 +12,7 @@ function printPre(buf, ws) {
     // handle first line
     var parts = buf.shift().trim().split(/(<pre[^>]*>)/).filter(p => p);
     buf.unshift(parts.pop().trim());
-    output.push(parts.join("").trim());
+    output.push.apply(output, parts.map(line => line.trim()));
     
     // handle last line
     parts = buf.pop().split(/(<\/pre>)/);
@@ -125,8 +125,8 @@ reader.on("line", function(line) {
         if (pre_buffer.length == 1) {
             console.log(pre_buffer[0]);
         } else {
-            // console.log(printPre(pre_buffer, ws));
-            console.log(pre_buffer.join("\n"));
+            console.log(printPre(pre_buffer, ws));
+            // console.log(pre_buffer.join("\n"));
         }
         pre_buffer.length = 0;
         pre = false;
