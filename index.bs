@@ -211,9 +211,11 @@ urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
     <li>Variable names in prose and algorithms: |exampleVariableName|.</li>
     <li>Algorithms use <a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">the conventions of the ECMAScript specification</a>, including the ! and ? notation for unwrapping completion records.</li>
     <li>IDL informal syntax examples:
-              <pre class="syntax">interface <i>identifier</i> {
-  <em>interface-members…</em>
-};</pre>
+        <pre class="syntax">
+            interface <i>identifier</i> {
+              <em>interface-members…</em>
+            };
+        </pre>
     (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
     <li>IDL grammar snippets:
         <table class="grammar">
@@ -223,12 +225,17 @@ urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
     <li>Non-normative notes: <div class="note"><p>This is a note.</p></div></li>
     <li>Non-normative examples: <div class="example"><p>This is an example.</p></div></li>
     <li>Normative warnings: <div class="advisement"><p>This is a warning.</p></div></li>
-            <li>Code blocks: <pre class="idl-example example">// This is an IDL code block.
-interface Example {
-  attribute long something;
-};</pre>
-<pre highlight="js">// This is an ECMAScript code block.
-window.onload = function() { window.alert("loaded"); };</pre></li>
+        <li>Code blocks:
+        <pre class="idl-example example">
+            // This is an IDL code block.
+            interface Example {
+              attribute long something;
+            };
+        </pre>
+    <pre highlight="js">
+        // This is an ECMAScript code block.
+        window.onload = function() { window.alert("loaded"); };
+    </pre></li>
 </ul>
 
 
@@ -335,10 +342,12 @@ window.onload = function() { window.alert("loaded"); };</pre></li>
     in [[#es-extended-attributes]].
 </p>
 
-        <pre class="syntax">[<em>extended-attributes</em>]
-interface <i>identifier</i> {
-  <i>interface-members…</i>
-};</pre>
+<pre class="syntax">
+    [<em>extended-attributes</em>]
+    interface <i>identifier</i> {
+      <i>interface-members…</i>
+    };
+</pre>
 
 <table class="grammar"><tr id="proddef-Definitions"><td><span class="prod-number">[1]</span></td><td><a class="sym" href="#prod-Definitions">Definitions</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-Definition">Definition</a> <a class="sym" href="#prod-Definitions">Definitions</a> <br/> |
             ε</span></td></tr><tr id="proddef-Definition"><td><span class="prod-number">[2]</span></td><td><a class="sym" href="#prod-Definition">Definition</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-CallbackOrInterface">CallbackOrInterface</a> <br/> |
@@ -353,29 +362,31 @@ interface <i>identifier</i> {
     <p>
         The following is an example of an [=IDL fragment=].
     </p>
-          <pre class="idl-example">interface Paint { };
-
-interface SolidColor : Paint {
-  attribute double red;
-  attribute double green;
-  attribute double blue;
-};
-
-interface Pattern : Paint {
-  attribute DOMString imageURL;
-};
-
-[Constructor]
-interface GraphicalWindow {
-  readonly attribute unsigned long width;
-  readonly attribute unsigned long height;
-
-  attribute Paint currentPaint;
-
-  void drawRectangle(double x, double y, double width, double height);
-
-  void drawText(double x, double y, DOMString text);
-};</pre>
+    <pre class="idl-example">
+        interface Paint { };
+        
+        interface SolidColor : Paint {
+          attribute double red;
+          attribute double green;
+          attribute double blue;
+        };
+        
+        interface Pattern : Paint {
+          attribute DOMString imageURL;
+        };
+        
+        [Constructor]
+        interface GraphicalWindow {
+          readonly attribute unsigned long width;
+          readonly attribute unsigned long height;
+        
+          attribute Paint currentPaint;
+        
+          void drawRectangle(double x, double y, double width, double height);
+        
+          void drawText(double x, double y, DOMString text);
+        };
+    </pre>
     <p>
         Here, four [=interfaces=]
         are being defined.
@@ -431,12 +442,14 @@ interface GraphicalWindow {
         <code>dictionary</code>, <code>enum</code>
         or <code>callback</code> keyword
         determines the identifier of that definition.
-              <pre class="syntax">interface <em>interface-identifier</em> { <i>interface-members…</i> };
-partial interface <em>interface-identifier</em> { <i>interface-members…</i> };
-dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
-partial dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
-enum <em>enumeration-identifier</em> { <i>enumeration-values…</i> };
-callback <em>callback-identifier</em> = <i>callback-signature</i>;</pre>
+        <pre class="syntax">
+            interface <em>interface-identifier</em> { <i>interface-members…</i> };
+            partial interface <em>interface-identifier</em> { <i>interface-members…</i> };
+            dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
+            partial dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
+            enum <em>enumeration-identifier</em> { <i>enumeration-values…</i> };
+            callback <em>callback-identifier</em> = <i>callback-signature</i>;
+        </pre>
     </li>
     <li>
         For [=attributes=],
@@ -444,15 +457,17 @@ callback <em>callback-identifier</em> = <i>callback-signature</i>;</pre>
         and [=dictionary members=],
         the final <a class="sym" href="#prod-identifier">identifier</a> token before the
         semicolon at the end of the declaration determines the identifier.
-              <pre class="syntax">interface <i>identifier</i> {
-  attribute <i>type</i> <em>attribute-identifier</em>;
-};
-
-typedef <i>type</i> <em>typedef-identifier</em>;
-
-dictionary <i>identifier</i> {
-  <i>type</i> <em>dictionary-member-identifier</em>;
-};</pre>
+        <pre class="syntax">
+            interface <i>identifier</i> {
+              attribute <i>type</i> <em>attribute-identifier</em>;
+            };
+            
+            typedef <i>type</i> <em>typedef-identifier</em>;
+            
+            dictionary <i>identifier</i> {
+              <i>type</i> <em>dictionary-member-identifier</em>;
+            };
+        </pre>
     </li>
     <li>
         For [=constants=],
@@ -563,14 +578,16 @@ in later sections.
 </p>
 <div class="example">
     <p>Therefore, the following [=IDL fragment=] is valid:</p>
-            <pre class="idl-example">interface B : A {
-  void f(SequenceOfLongs x);
-};
-
-interface A {
-};
-
-typedef sequence&lt;long&gt; SequenceOfLongs;</pre>
+    <pre class="idl-example">
+        interface B : A {
+          void f(SequenceOfLongs x);
+        };
+        
+        interface A {
+        };
+        
+        typedef sequence&lt;long&gt; SequenceOfLongs;
+    </pre>
 </div>
 
 <div class="example">
@@ -579,32 +596,34 @@ typedef sequence&lt;long&gt; SequenceOfLongs;</pre>
         demonstrates how [=identifiers=]
         are given to definitions and [=interface members=].
     </p>
-            <pre class="idl-example">// Typedef identifier: "number"
-typedef double number;
-
-// Interface identifier: "System"
-interface System {
-
-  // Operation identifier:          "createObject"
-  // Operation argument identifier: "interface"
-  object createObject(DOMString _interface);
-
-  // Operation argument identifier: "interface"
-  sequence&lt;object&gt; getObjects(DOMString interface);
-
-  // Operation has no identifier; it declares a getter.
-  getter DOMString (DOMString keyName);
-};
-
-// Interface identifier: "TextField"
-interface TextField {
-
-  // Attribute identifier: "const"
-  attribute boolean _const;
-
-  // Attribute identifier: "value"
-  attribute DOMString? _value;
-};</pre>
+    <pre class="idl-example">
+        // Typedef identifier: "number"
+        typedef double number;
+        
+        // Interface identifier: "System"
+        interface System {
+        
+          // Operation identifier:          "createObject"
+          // Operation argument identifier: "interface"
+          object createObject(DOMString _interface);
+        
+          // Operation argument identifier: "interface"
+          sequence&lt;object&gt; getObjects(DOMString interface);
+        
+          // Operation has no identifier; it declares a getter.
+          getter DOMString (DOMString keyName);
+        };
+        
+        // Interface identifier: "TextField"
+        interface TextField {
+        
+          // Attribute identifier: "const"
+          attribute boolean _const;
+        
+          // Attribute identifier: "value"
+          attribute DOMString? _value;
+        };
+    </pre>
     <p>
         Note that while the second [=attribute=]
         on the <span class="idltype">TextField</span> [=interface=]
@@ -627,9 +646,11 @@ interface TextField {
     <span class="sym">"callback"</span> <a class="sym" href="#prod-Interface">Interface</a>) that declares some
     state and behavior that an object implementing that interface will expose.
 </p>
-          <pre class="syntax">interface <i>identifier</i> {
-  <i>interface-members…</i>
-};</pre>
+<pre class="syntax">
+    interface <i>identifier</i> {
+      <i>interface-members…</i>
+    };
+</pre>
 <p>
     An interface is a specification of a set of
     <dfn id="dfn-interface-member" export lt="interface member">interface members</dfn>
@@ -662,9 +683,11 @@ interface TextField {
     also implements that inherited interface.  The object therefore will also
     have members that correspond to the interface members from the inherited interface.
 </p>
-          <pre class="syntax">interface <i>identifier</i> : <em>identifier-of-inherited-interface</em> {
-  <i>interface-members…</i>
-};</pre>
+<pre class="syntax">
+    interface <i>identifier</i> : <em>identifier-of-inherited-interface</em> {
+      <i>interface-members…</i>
+    };
+</pre>
 <p>
     The order that members appear in has no significance except in the
     case of <a href="#idl-overloading">overloading</a>.
@@ -680,26 +703,30 @@ interface TextField {
     <p>
         Consider the following two interfaces.
     </p>
-            <pre class="idl-example">interface A {
-  void f();
-  void g();
-};
-
-interface B : A {
-  void f();
-  void g(DOMString x);
-};</pre>
+    <pre class="idl-example">
+        interface A {
+          void f();
+          void g();
+        };
+        
+        interface B : A {
+          void f();
+          void g(DOMString x);
+        };
+    </pre>
     <p>
         In the ECMAScript language binding, an instance of <span class="idltype">B</span>
         will have a prototype chain that looks like the following:
     </p>
-            <pre>  [Object.prototype: the Object prototype object]
-       ↑
-  [A.prototype: interface prototype object for A]
-       ↑
-  [B.prototype: interface prototype object for B]
-       ↑
-  [instanceOfB]</pre>
+    <pre>
+        [Object.prototype: the Object prototype object]
+               ↑
+          [A.prototype: interface prototype object for A]
+               ↑
+          [B.prototype: interface prototype object for B]
+               ↑
+          [instanceOfB]
+    </pre>
     <p>
         Calling <code>instanceOfB.f()</code> in ECMAScript will invoke the f defined
         on <span class="idltype">B</span>.  However, the f from <span class="idltype">A</span>
@@ -737,17 +764,19 @@ interface B : A {
     <a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a>),
     which can control how the interface member will be handled in language bindings.
 </p>
-        <pre class="syntax">interface <i>identifier</i> {
-
-  [<em>extended-attributes</em>]
-  const <i>type</i> <i>identifier</i> = <i>value</i>;
-
-  [<em>extended-attributes</em>]
-  attribute <i>type</i> <i>identifier</i>;
-
-  [<em>extended-attributes</em>]
-  <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-};</pre>
+<pre class="syntax">
+    interface <i>identifier</i> {
+    
+      [<em>extended-attributes</em>]
+      const <i>type</i> <i>identifier</i> = <i>value</i>;
+    
+      [<em>extended-attributes</em>]
+      attribute <i>type</i> <i>identifier</i>;
+    
+      [<em>extended-attributes</em>]
+      <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
+    };
+</pre>
 
 <p>
     A <dfn id="dfn-callback-interface" export>callback interface</dfn> is
@@ -758,9 +787,11 @@ interface B : A {
     and not by [=platform objects=],
     as described in [[#idl-objects]].
 </p>
-          <pre class="syntax">callback interface <i>identifier</i> {
-  <i>interface-members…</i>
-};</pre>
+<pre class="syntax">
+    callback interface <i>identifier</i> {
+      <i>interface-members…</i>
+    };
+</pre>
 Note: See also the similarly named [=callback function=] definition.
 <p>
     [=Callback interfaces=]
@@ -818,33 +849,39 @@ for the property's existence.
     <p>
         For example, instead of this:
     </p>
-            <pre class="idl-example example">callback interface Options {
-  attribute DOMString? option1;
-  attribute DOMString? option2;
-  attribute long? option3;
-};
-
-interface A {
-  void doTask(DOMString type, Options options);
-};</pre>
+    <pre class="idl-example example">
+        callback interface Options {
+          attribute DOMString? option1;
+          attribute DOMString? option2;
+          attribute long? option3;
+        };
+        
+        interface A {
+          void doTask(DOMString type, Options options);
+        };
+    </pre>
     <p>
         to be used like this:
     </p>
-            <pre highlight="js">var a = getA();  // Get an instance of A.
-
-a.doTask("something", { option1: "banana", option3: 100 });</pre>
+    <pre highlight="js">
+        var a = getA();  // Get an instance of A.
+        
+        a.doTask("something", { option1: "banana", option3: 100 });
+    </pre>
     <p>
         instead write the following:
     </p>
-            <pre class="idl-example example">dictionary Options {
-  DOMString? option1;
-  DOMString? option2;
-  long? option3;
-};
-
-interface A {
-  void doTask(DOMString type, Options options);
-};</pre>
+    <pre class="idl-example example">
+        dictionary Options {
+          DOMString? option1;
+          DOMString? option2;
+          long? option3;
+        };
+        
+        interface A {
+          void doTask(DOMString type, Options options);
+        };
+    </pre>
 </div>
 
 <p>
@@ -857,13 +894,15 @@ interface A {
     the members that appear on each of the partial interfaces are considered to be
     members of the interface itself.
 </p>
-          <pre class="syntax">interface <em>SomeInterface</em> {
-  <i>interface-members…</i>
-};
-
-partial interface <em>SomeInterface</em> {
-  <i>interface-members…</i>
-};</pre>
+<pre class="syntax">
+    interface <em>SomeInterface</em> {
+      <i>interface-members…</i>
+    };
+    
+    partial interface <em>SomeInterface</em> {
+      <i>interface-members…</i>
+    };
+</pre>
 Note: Partial interface definitions are intended for use as a specification
 editorial aide, allowing the definition of an interface to be separated
 over more than one section of the document, and sometimes multiple documents.
@@ -948,17 +987,19 @@ is all of those defined in this document that are applicable to
         inherit from <span class="idltype">Animal</span>.  Objects that implement
         either of those two interfaces will thus have a <code>name</code> attribute.
     </p>
-            <pre class="idl-example">interface Animal {
-  attribute DOMString name;
-};
-
-interface Human : Animal {
-  attribute Dog? pet;
-};
-
-interface Dog : Animal {
-  attribute Human? owner;
-};</pre>
+    <pre class="idl-example">
+        interface Animal {
+          attribute DOMString name;
+        };
+        
+        interface Human : Animal {
+          attribute Dog? pet;
+        };
+        
+        interface Dog : Animal {
+          attribute Human? owner;
+        };
+    </pre>
 </div>
 
 <div class="example">
@@ -967,47 +1008,53 @@ interface Dog : Animal {
         simplified versions of a few DOM [=interfaces=], one of which
         is a [=callback interface=].
     </p>
-            <pre class="idl-example">interface Node {
-  readonly attribute DOMString nodeName;
-  readonly attribute Node? parentNode;
-  Node appendChild(Node newChild);
-  void addEventListener(DOMString type, EventListener listener);
-};
-
-callback interface EventListener {
-  void handleEvent(Event event);
-};</pre>
+    <pre class="idl-example">
+        interface Node {
+          readonly attribute DOMString nodeName;
+          readonly attribute Node? parentNode;
+          Node appendChild(Node newChild);
+          void addEventListener(DOMString type, EventListener listener);
+        };
+        
+        callback interface EventListener {
+          void handleEvent(Event event);
+        };
+    </pre>
     <p>
         Since the <span class="idltype">EventListener</span> interface is annotated
         callback interface, [=user objects=]
         can implement it:
     </p>
-            <pre highlight="js">var node = getNode();                                // Obtain an instance of Node.
-
-var listener = {
-  handleEvent: function(event) {
-    ...
-  }
-};
-node.addEventListener("click", listener);            // This works.
-
-node.addEventListener("click", function() { ... });  // As does this.</pre>
+    <pre highlight="js">
+        var node = getNode();                                // Obtain an instance of Node.
+        
+        var listener = {
+          handleEvent: function(event) {
+            ...
+          }
+        };
+        node.addEventListener("click", listener);            // This works.
+        
+        node.addEventListener("click", function() { ... });  // As does this.
+    </pre>
     <p>
         It is not possible for a user object to implement <span class="idltype">Node</span>, however:
     </p>
-            <pre highlight="js">var node = getNode();  // Obtain an instance of Node.
-
-var newNode = {
-  nodeName: "span",
-  parentNode: null,
-  appendChild: function(newchild) {
-    ...
-  },
-  addEventListener: function(type, listener) {
-    ...
-  }
-};
-node.appendChild(newNode);  // This will throw a TypeError exception.</pre>
+    <pre highlight="js">
+        var node = getNode();  // Obtain an instance of Node.
+        
+        var newNode = {
+          nodeName: "span",
+          parentNode: null,
+          appendChild: function(newchild) {
+            ...
+          },
+          addEventListener: function(type, listener) {
+            ...
+          }
+        };
+        node.appendChild(newNode);  // This will throw a TypeError exception.
+    </pre>
 </div>
 
 
@@ -1182,9 +1229,11 @@ empty sequence <code>[]</code> cannot be used as the value of a
         on which the [=constants=] are declared.
         For example, with the following IDL:
     </p>
-              <pre class="idl-example example">interface A {
-  const short rambaldi = 47;
-};</pre>
+    <pre class="idl-example example">
+        interface A {
+          const short rambaldi = 47;
+        };
+    </pre>
     <p>
         the constant value can be accessed in ECMAScript  either as
         <code>A.rambaldi</code> or <code>instanceOfA.rambaldi</code>.
@@ -1211,12 +1260,14 @@ empty sequence <code>[]</code> cannot be used as the value of a
         demonstrates how [=constants=]
         of the above types can be defined.
     </p>
-              <pre class="idl-example">interface Util {
-  const boolean DEBUG = false;
-  const octet LF = 10;
-  const unsigned long BIT_MASK = 0x0000fc00;
-  const double AVOGADRO = 6.022e23;
-};</pre>
+    <pre class="idl-example">
+        interface Util {
+          const boolean DEBUG = false;
+          const octet LF = 10;
+          const unsigned long BIT_MASK = 0x0000fc00;
+          const double AVOGADRO = 6.022e23;
+        };
+    </pre>
 </div>
 
 
@@ -1302,13 +1353,15 @@ empty sequence <code>[]</code> cannot be used as the value of a
     must not appear on a [=read only=]
     attribute or a [=static attribute=].
 </p>
-            <pre class="syntax">interface <i>Ancestor</i> {
-  readonly attribute <i>TheType</i> <i>theIdentifier</i>;
-};
-
-interface <i>Derived</i> : <i>Ancestor</i> {
-  inherit attribute <i>TheType</i> <i>theIdentifier</i>;
-};</pre>
+<pre class="syntax">
+    interface <i>Ancestor</i> {
+      readonly attribute <i>TheType</i> <i>theIdentifier</i>;
+    };
+    
+    interface <i>Derived</i> : <i>Ancestor</i> {
+      inherit attribute <i>TheType</i> <i>theIdentifier</i>;
+    };
+</pre>
 
 <p>
     When the <code>stringifier</code> keyword is used
@@ -1367,21 +1420,23 @@ interface <i>Derived</i> : <i>Ancestor</i> {
         demonstrates how [=attributes=]
         can be declared on an [=interface=]:
     </p>
-              <pre class="idl-example">interface Animal {
-
-  // A simple attribute that can be set to any string value.
-  readonly attribute DOMString name;
-
-  // An attribute whose value can be assigned to.
-  attribute unsigned short age;
-};
-
-interface Person : Animal {
-
-  // An attribute whose getter behavior is inherited from Animal, and need not be
-  // specified in the description of Person.
-  inherit attribute DOMString name;
-};</pre>
+    <pre class="idl-example">
+        interface Animal {
+        
+          // A simple attribute that can be set to any string value.
+          readonly attribute DOMString name;
+        
+          // An attribute whose value can be assigned to.
+          attribute unsigned short age;
+        };
+        
+        interface Person : Animal {
+        
+          // An attribute whose getter behavior is inherited from Animal, and need not be
+          // specified in the description of Person.
+          inherit attribute DOMString name;
+        };
+    </pre>
 </div>
 
 
@@ -1407,8 +1462,10 @@ interface Person : Animal {
     <li>[=special operations=],
         which are used to declare special behavior on objects
         implementing the interface, such as object indexing and stringification
-              <pre class="syntax"><i>special-keywords…</i> <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-<i>special-keywords…</i> <i>return-type</i> (<i>arguments…</i>);</pre></li>
+    <pre class="syntax">
+        <i>special-keywords…</i> <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
+        <i>special-keywords…</i> <i>return-type</i> (<i>arguments…</i>);
+    </pre></li>
     <li>[=static operations=],
         which are used to declare operations that are not associated with
         a particular object implementing the interface
@@ -1503,20 +1560,22 @@ symbol without needing to escape it.
         demonstrates how [=regular operations=]
         can be declared on an [=interface=]:
     </p>
-              <pre class="idl-example">interface Dimensions {
-  attribute unsigned long width;
-  attribute unsigned long height;
-};
-
-interface Button {
-
-  // An operation that takes no arguments and returns a boolean.
-  boolean isMouseOver();
-
-  // Overloaded operations.
-  void setDimensions(Dimensions size);
-  void setDimensions(unsigned long width, unsigned long height);
-};</pre>
+    <pre class="idl-example">
+        interface Dimensions {
+          attribute unsigned long width;
+          attribute unsigned long height;
+        };
+        
+        interface Button {
+        
+          // An operation that takes no arguments and returns a boolean.
+          boolean isMouseOver();
+        
+          // Overloaded operations.
+          void setDimensions(Dimensions size);
+          void setDimensions(unsigned long width, unsigned long height);
+        };
+    </pre>
 </div>
 
 <p>
@@ -1530,8 +1589,10 @@ interface Button {
     be declared with the <code>...</code> token unless it
     is the final argument in the operation’s argument list.
 </p>
-            <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i><em>...</em> <i>identifier</i>);
-<i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);</pre>
+<pre class="syntax">
+    <i>return-type</i> <i>identifier</i>(<i>type</i><em>...</em> <i>identifier</i>);
+    <i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);
+</pre>
 <p>
     [=Extended attributes=]
     that [=takes an argument list|take an argument list=]
@@ -1547,20 +1608,24 @@ interface Button {
         The following [=IDL fragment=] defines an interface that has
         two variadic operations:
     </p>
-              <pre class="idl-example">interface IntegerSet {
-  readonly attribute unsigned long cardinality;
-
-  void union(long... ints);
-  void intersection(long... ints);
-};</pre>
+    <pre class="idl-example">
+        interface IntegerSet {
+          readonly attribute unsigned long cardinality;
+        
+          void union(long... ints);
+          void intersection(long... ints);
+        };
+    </pre>
     <p>
         In the ECMAScript binding, variadic operations are implemented by
         functions that can accept the subsequent arguments:
     </p>
-              <pre highlight="js">var s = getIntegerSet();  // Obtain an instance of IntegerSet.
-
-s.union();                // Passing no arguments corresponding to 'ints'.
-s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.</pre>
+    <pre highlight="js">
+        var s = getIntegerSet();  // Obtain an instance of IntegerSet.
+        
+        s.union();                // Passing no arguments corresponding to 'ints'.
+        s.union(1, 4, 7);         // Passing three arguments corresponding to 'ints'.
+    </pre>
     <p>
         A binding for a language that does not support variadic functions
         might specify that an explicit array or list of integers be passed
@@ -1673,18 +1738,22 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
         with a single [=operation=]
         that can be invoked with two different argument list lengths:
     </p>
-              <pre class="idl-example">interface ColorCreator {
-  object createColor(double v1, double v2, double v3, optional double alpha);
-};</pre>
+    <pre class="idl-example">
+        interface ColorCreator {
+          object createColor(double v1, double v2, double v3, optional double alpha);
+        };
+    </pre>
     <p>
         It is equivalent to an [=interface=]
         that has two [=overloaded=]
         [=operations=]:
     </p>
-              <pre class="idl-example">interface ColorCreator {
-  object createColor(double v1, double v2, double v3);
-  object createColor(double v1, double v2, double v3, double alpha);
-};</pre>
+    <pre class="idl-example">
+        interface ColorCreator {
+          object createColor(double v1, double v2, double v3);
+          object createColor(double v1, double v2, double v3, double alpha);
+        };
+    </pre>
 </div>
 
 
@@ -1824,12 +1893,14 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
 </p>
 <div class="example">
     <p>The following IDL fragment defines an interface with a getter and a setter:</p>
-              <pre class="idl-example">interface Dictionary {
-  readonly attribute unsigned long propertyCount;
-
-  getter double (DOMString propertyName);
-  setter void (DOMString propertyName, double propertyValue);
-};</pre>
+    <pre class="idl-example">
+        interface Dictionary {
+          readonly attribute unsigned long propertyCount;
+        
+          getter double (DOMString propertyName);
+          setter void (DOMString propertyName, double propertyValue);
+        };
+    </pre>
     <p>In language bindings that do not support property getters and setters,
         objects implementing <span class="idltype">Dictionary</span> will not
     have that special behavior.  </p>
@@ -1843,21 +1914,25 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
 </p>
 <div class="example">
     <p>The following two interfaces are equivalent:</p>
-              <pre class="idl-example">interface Dictionary {
-  readonly attribute unsigned long propertyCount;
-
-  getter double getProperty(DOMString propertyName);
-  setter void setProperty(DOMString propertyName, double propertyValue);
-};</pre>
-              <pre class="idl-example">interface Dictionary {
-  readonly attribute unsigned long propertyCount;
-
-  double getProperty(DOMString propertyName);
-  void setProperty(DOMString propertyName, double propertyValue);
-
-  getter double (DOMString propertyName);
-  setter void (DOMString propertyName, double propertyValue);
-};</pre>
+    <pre class="idl-example">
+        interface Dictionary {
+          readonly attribute unsigned long propertyCount;
+        
+          getter double getProperty(DOMString propertyName);
+          setter void setProperty(DOMString propertyName, double propertyValue);
+        };
+    </pre>
+    <pre class="idl-example">
+        interface Dictionary {
+          readonly attribute unsigned long propertyCount;
+        
+          double getProperty(DOMString propertyName);
+          void setProperty(DOMString propertyName, double propertyValue);
+        
+          getter double (DOMString propertyName);
+          setter void (DOMString propertyName, double propertyValue);
+        };
+    </pre>
 </div>
 
 <p>
@@ -1921,8 +1996,10 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     legacy callers can be specified using an [=operation=]
     declared with the <code>legacycaller</code> keyword.
 </p>
-              <pre class="syntax">legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-legacycaller <i>return-type</i> (<i>arguments…</i>);</pre>
+<pre class="syntax">
+    legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
+    legacycaller <i>return-type</i> (<i>arguments…</i>);
+</pre>
 <p>
     If multiple legacy callers are specified on an interface, overload resolution
     is used to determine which legacy caller is invoked when the object is called
@@ -1946,20 +2023,24 @@ mailing list before proceeding.
         defines an [=interface=]
         with a [=legacy caller=].
     </p>
-                <pre class="idl-example">interface NumberQuadrupler {
-  // This operation simply returns four times the given number x.
-  legacycaller double compute(double x);
-};</pre>
+    <pre class="idl-example">
+        interface NumberQuadrupler {
+          // This operation simply returns four times the given number x.
+          legacycaller double compute(double x);
+        };
+    </pre>
     <p>
         An ECMAScript implementation supporting this interface would
         allow a [=platform object=]
         that implements <span class="idltype">NumberQuadrupler</span>
         to be called as a function:
     </p>
-                <pre highlight="js">var f = getNumberQuadrupler();  // Obtain an instance of NumberQuadrupler.
-
-f.compute(3);                   // This evaluates to 12.
-f(3);                           // This also evaluates to 12.</pre>
+    <pre highlight="js">
+        var f = getNumberQuadrupler();  // Obtain an instance of NumberQuadrupler.
+        
+        f.compute(3);                   // This evaluates to 12.
+        f(3);                           // This also evaluates to 12.
+    </pre>
 </div>
 
 
@@ -1973,8 +2054,10 @@ f(3);                           // This also evaluates to 12.</pre>
     stringifiers can be specified using an [=operation=]
     declared with the <code>stringifier</code> keyword.
 </p>
-              <pre class="syntax">stringifier DOMString <i>identifier</i>();
-stringifier DOMString ();</pre>
+<pre class="syntax">
+    stringifier DOMString <i>identifier</i>();
+    stringifier DOMString ();
+</pre>
 <p>
     If an operation used to declare a stringifier does not have an
     [=identifier=], then prose
@@ -1997,12 +2080,16 @@ stringifier DOMString ();</pre>
               <pre class="syntax">stringifier;</pre>
 <div class="example">
     <p>The following two interfaces are equivalent:</p>
-                <pre class="idl-example">interface A {
-  stringifier DOMString ();
-};</pre>
-                <pre class="idl-example">interface A {
-  stringifier;
-};</pre>
+    <pre class="idl-example">
+        interface A {
+          stringifier DOMString ();
+        };
+    </pre>
+    <pre class="idl-example">
+        interface A {
+          stringifier;
+        };
+    </pre>
 </div>
 <p>
     The <code>stringifier</code> keyword
@@ -2026,35 +2113,41 @@ stringifier DOMString ();</pre>
         defines an interface that will stringify to the value of its
         <span class="idlattr">name</span> attribute:
     </p>
-                <pre class="idl-example">[Constructor]
-interface Student {
-  attribute unsigned long id;
-  stringifier attribute DOMString name;
-};</pre>
+    <pre class="idl-example">
+        [Constructor]
+        interface Student {
+          attribute unsigned long id;
+          stringifier attribute DOMString name;
+        };
+    </pre>
     <p>
         In the ECMAScript binding, using a <span class="idltype">Student</span>
         object in a context where a string is expected will result in the
         value of the object’s “name” property being
         used:
     </p>
-                <pre highlight="js">var s = new Student();
-s.id = 12345678;
-s.name = '周杰倫';
-
-var greeting = 'Hello, ' + s + '!';  // Now greeting == 'Hello, 周杰倫!'.</pre>
+    <pre highlight="js">
+        var s = new Student();
+        s.id = 12345678;
+        s.name = '周杰倫';
+        
+        var greeting = 'Hello, ' + s + '!';  // Now greeting == 'Hello, 周杰倫!'.
+    </pre>
     <p>
         The following [=IDL fragment=]
         defines an interface that has custom stringification behavior that is
         not specified in the IDL itself.
     </p>
-                <pre class="idl-example">[Constructor]
-interface Student {
-  attribute unsigned long id;
-  attribute DOMString? familyName;
-  attribute DOMString givenName;
-
-  stringifier DOMString ();
-};</pre>
+    <pre class="idl-example">
+        [Constructor]
+        interface Student {
+          attribute unsigned long id;
+          attribute DOMString? familyName;
+          attribute DOMString givenName;
+        
+          stringifier DOMString ();
+        };
+    </pre>
     <p>
         Thus, prose is required to explain the stringification behavior, such
         as the following paragraph:
@@ -2077,12 +2170,14 @@ interface Student {
     <p>
         An ECMAScript implementation of the IDL would behave as follows:
     </p>
-                <pre highlight="js">var s = new Student();
-s.id = 12345679;
-s.familyName = 'Smithee';
-s.givenName = 'Alan';
-
-var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.</pre>
+    <pre highlight="js">
+        var s = new Student();
+        s.id = 12345679;
+        s.familyName = 'Smithee';
+        s.givenName = 'Alan';
+        
+        var greeting = 'Hi ' + s;  // Now greeting == 'Hi Alan Smithee'.
+    </pre>
 </div>
 
 
@@ -2137,8 +2232,10 @@ into an ECMAScript value that can be serialized to JSON by the
     <li>
         <p>A map with entries corresponding to zero or more attributes from the interface, and optionally
         attributes from an inherited interface:</p>
-                  <pre class="syntax">serializer = { <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
-serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };</pre>
+        <pre class="syntax">
+            serializer = { <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
+            serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
+        </pre>
         <p>Each identifier must be the identifier of an attribute declared
             on the interface.  The identified attributes all must have a
         [=serializable type=].</p>
@@ -2169,8 +2266,10 @@ serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>
         <p>A map with entries corresponding to all attributes from the interface that have
             a [=serializable type=], and optionally
         attributes from an inherited interface:</p>
-                  <pre class="syntax">serializer = { attribute };
-serializer = { inherit, attribute };</pre>
+        <pre class="syntax">
+            serializer = { attribute };
+            serializer = { inherit, attribute };
+        </pre>
         <p>The <code>inherit</code> keyword must not be used unless
             the interface inherits from another that defines a serializer, and the closest such interface
             defines its serializer using this [=serialization pattern=]
@@ -2364,20 +2463,22 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
         an interface <span class="idltype">Transaction</span> that has a
         [=serializer=] defines in prose:
     </p>
-                <pre class="idl-example">interface Transaction {
-  readonly attribute Account from;
-  readonly attribute Account to;
-  readonly attribute double amount;
-  readonly attribute DOMString description;
-  readonly attribute unsigned long number;
-
-  serializer;
-};
-
-interface Account {
-  DOMString name;
-  unsigned long number;
-};</pre>
+    <pre class="idl-example">
+        interface Transaction {
+          readonly attribute Account from;
+          readonly attribute Account to;
+          readonly attribute double amount;
+          readonly attribute DOMString description;
+          readonly attribute unsigned long number;
+        
+          serializer;
+        };
+        
+        interface Account {
+          DOMString name;
+          unsigned long number;
+        };
+    </pre>
     <p>
         The serializer could be defined as follows:
     </p>
@@ -2411,41 +2512,45 @@ interface Account {
         could be used to avoid having to define the [=serialization behavior=]
         in prose:
     </p>
-                <pre class="idl-example">interface Transaction {
-  readonly attribute Account from;
-  readonly attribute Account to;
-  readonly attribute double amount;
-  readonly attribute DOMString description;
-  readonly attribute unsigned long number;
-
-  serializer = { from, to, amount, description };
-};
-
-interface Account {
-  DOMString name;
-  unsigned long number;
-
-  serializer = number;
-};</pre>
+    <pre class="idl-example">
+        interface Transaction {
+          readonly attribute Account from;
+          readonly attribute Account to;
+          readonly attribute double amount;
+          readonly attribute DOMString description;
+          readonly attribute unsigned long number;
+        
+          serializer = { from, to, amount, description };
+        };
+        
+        interface Account {
+          DOMString name;
+          unsigned long number;
+        
+          serializer = number;
+        };
+    </pre>
     <p>
         In the ECMAScript language binding, there would exist a <code>toJSON</code> method on
         <span class="idltype">Transaction</span> objects:
     </p>
-                <pre highlight="js">// Get an instance of Transaction.
-var txn = getTransaction();
-
-// Evaluates to an object like this:
-// {
-//   from: 1234
-//   to: 5678
-//   amount: 110.75
-//   description: "dinner"
-// }
-txn.toJSON();
-
-// Evaluates to a string like this:
-// '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'
-JSON.stringify(txn);</pre>
+    <pre highlight="js">
+        // Get an instance of Transaction.
+        var txn = getTransaction();
+        
+        // Evaluates to an object like this:
+        // {
+        //   from: 1234
+        //   to: 5678
+        //   amount: 110.75
+        //   description: "dinner"
+        // }
+        txn.toJSON();
+        
+        // Evaluates to a string like this:
+        // '{"from":1234,"to":5678,"amount":110.75,"description":"dinner"}'
+        JSON.stringify(txn);
+    </pre>
 </div>
 
 
@@ -2469,11 +2574,13 @@ JSON.stringify(txn);</pre>
     Indexed property setters must
     be declared to take two arguments, where the first is an {{unsigned long}}.
 </p>
-              <pre class="syntax">getter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>);
-setter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
-
-getter <i>type</i> (unsigned long <i>identifier</i>);
-setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);</pre>
+<pre class="syntax">
+    getter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>);
+    setter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
+    
+    getter <i>type</i> (unsigned long <i>identifier</i>);
+    setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
+</pre>
 <p>
     The following requirements apply to the definitions of indexed property getters and setters:
 </p>
@@ -2513,9 +2620,11 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
     <p>
         In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:
     </p>
-                <pre class="idl-example example">interface A {
-  getter DOMString toWord(unsigned long index);
-};</pre>
+    <pre class="idl-example example">
+        interface A {
+          getter DOMString toWord(unsigned long index);
+        };
+    </pre>
     <p>
         Assume that an object implementing <span class="idltype">A</span> has [=supported property indices=]
         in the range 0 ≤ |index| &lt; 2.  Also assume that toWord is defined to return
@@ -2523,13 +2632,15 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
         [=operation=] with an out of range index
         is different from indexing the object directly:
     </p>
-                <pre highlight="js">var a = getA();
-
-a.toWord(0);  // Evalautes to "zero".
-a[0];         // Also evaluates to "zero".
-
-a.toWord(5);  // Evaluates to "five".
-a[5];         // Evaluates to undefined, since there is no property "5".</pre>
+    <pre highlight="js">
+        var a = getA();
+        
+        a.toWord(0);  // Evalautes to "zero".
+        a[0];         // Also evaluates to "zero".
+        
+        a.toWord(5);  // Evaluates to "five".
+        a[5];         // Evaluates to undefined, since there is no property "5".
+    </pre>
 </div>
 
 <div class="example">
@@ -2538,15 +2649,17 @@ a[5];         // Evaluates to undefined, since there is no property "5".</pre>
         <span class="idltype">OrderedMap</span> which allows
         retrieving and setting values by name or by index number:
     </p>
-                <pre class="idl-example">interface OrderedMap {
-  readonly attribute unsigned long size;
-
-  getter any getByIndex(unsigned long index);
-  setter void setByIndex(unsigned long index, any value);
-
-  getter any get(DOMString name);
-  setter void set(DOMString name, any value);
-};</pre>
+    <pre class="idl-example">
+        interface OrderedMap {
+          readonly attribute unsigned long size;
+        
+          getter any getByIndex(unsigned long index);
+          setter void setByIndex(unsigned long index, any value);
+        
+          getter any get(DOMString name);
+          setter void set(DOMString name, any value);
+        };
+    </pre>
     <p>
         Since all of the special operations are declared using
         operations with identifiers, the only additional prose
@@ -2578,40 +2691,41 @@ a[5];         // Evaluates to undefined, since there is no property "5".</pre>
         with the object in the same way as invoking the object’s
         methods, as demonstrated below:
     </p>
-                <pre highlight="js">// Assume map is a platform object implementing the OrderedMap interface.
-var map = getOrderedMap();
-var x, y;
-
-x = map[0];       // If map.length &gt; 0, then this is equivalent to:
-                  //
-                  //   x = map.getByIndex(0)
-                  //
-                  // since a property named "0" will have been placed on map.
-                  // Otherwise, x will be set to undefined, since there will be
-                  // no property named "0" on map.
-
-map[1] = false;   // This will do the equivalent of:
-                  //
-                  //   map.setByIndex(1, false)
-
-y = map.apple;    // If there exists a named property named "apple", then this
-                  // will be equivalent to:
-                  //
-                  //   y = map.get('apple')
-                  //
-                  // since a property named "apple" will have been placed on
-                  // map.  Otherwise, y will be set to undefined, since there
-                  // will be no property named "apple" on map.
-
-map.berry = 123;  // This will do the equivalent of:
-                  //
-                  //   map.set('berry', 123)
-
-delete map.cake;  // If a named property named "cake" exists, then the "cake"
-                  // property will be deleted, and then the equivalent to the
-                  // following will be performed:
-                  //
-                  //   map.remove("cake")
+<pre highlight="js">
+    // Assume map is a platform object implementing the OrderedMap interface.
+    var map = getOrderedMap();
+    var x, y;
+    
+    x = map[0];       // If map.length &gt; 0, then this is equivalent to:
+                      //
+                      //   x = map.getByIndex(0)
+                      //
+                      // since a property named "0" will have been placed on map.
+                      // Otherwise, x will be set to undefined, since there will be
+                      // no property named "0" on map.
+    
+    map[1] = false;   // This will do the equivalent of:
+                      //
+                      //   map.setByIndex(1, false)
+    
+    y = map.apple;    // If there exists a named property named "apple", then this
+                      // will be equivalent to:
+                      //
+                      //   y = map.get('apple')
+                      //
+                      // since a property named "apple" will have been placed on
+                      // map.  Otherwise, y will be set to undefined, since there
+                      // will be no property named "apple" on map.
+    
+    map.berry = 123;  // This will do the equivalent of:
+                      //
+                      //   map.set('berry', 123)
+    
+    delete map.cake;  // If a named property named "cake" exists, then the "cake"
+                      // property will be deleted, and then the equivalent to the
+                      // following will be performed:
+                      //
+                      //   map.remove("cake")
 </pre></div>
 
 
@@ -2636,13 +2750,15 @@ delete map.cake;  // If a named property named "cake" exists, then the "cake"
     Named property setters must
     be declared to take two arguments, where the first is a {{DOMString}}.
 </p>
-              <pre class="syntax">getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
-setter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
-deleter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
-
-getter <i>type</i> (DOMString <i>identifier</i>);
-setter <i>type</i> (DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
-deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
+<pre class="syntax">
+    getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
+    setter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
+    deleter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
+    
+    getter <i>type</i> (DOMString <i>identifier</i>);
+    setter <i>type</i> (DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
+    deleter <i>type</i> (DOMString <i>identifier</i>);
+</pre>
 <p>
     The following requirements apply to the definitions of named property getters, setters and deleters:
 </p>
@@ -2723,36 +2839,40 @@ is language binding specific.
         <span class="idltype">Circle</span> that has a static
         operation declared on it:
     </p>
-              <pre class="idl-example">interface Point { /* ... */ };
-
-interface Circle {
-  attribute double cx;
-  attribute double cy;
-  attribute double radius;
-
-  static readonly attribute long triangulationCount;
-  static Point triangulate(Circle c1, Circle c2, Circle c3);
-};</pre>
+    <pre class="idl-example">
+        interface Point { /* ... */ };
+        
+        interface Circle {
+          attribute double cx;
+          attribute double cy;
+          attribute double radius;
+        
+          static readonly attribute long triangulationCount;
+          static Point triangulate(Circle c1, Circle c2, Circle c3);
+        };
+    </pre>
     <p>
         In the ECMAScript language binding, the <span class="estype">Function</span> object for
         <code>triangulate</code> and the accessor property for <code>triangulationCount</code>
         will exist on the [=interface object=]
         for <span class="idltype">Circle</span>:
     </p>
-              <pre highlight="js">var circles = getCircles();           // an Array of Circle objects
-
-typeof Circle.triangulate;            // Evaluates to "function"
-typeof Circle.triangulationCount;     // Evaluates to "number"
-Circle.prototype.triangulate;         // Evaluates to undefined
-Circle.prototype.triangulationCount;  // Also evaluates to undefined
-circles[0].triangulate;               // As does this
-circles[0].triangulationCount;        // And this
-
-// Call the static operation
-var triangulationPoint = Circle.triangulate(circles[0], circles[1], circles[2]);
-
-// Find out how many triangulations we have done
-window.alert(Circle.triangulationCount);</pre>
+    <pre highlight="js">
+        var circles = getCircles();           // an Array of Circle objects
+        
+        typeof Circle.triangulate;            // Evaluates to "function"
+        typeof Circle.triangulationCount;     // Evaluates to "number"
+        Circle.prototype.triangulate;         // Evaluates to undefined
+        Circle.prototype.triangulationCount;  // Also evaluates to undefined
+        circles[0].triangulate;               // As does this
+        circles[0].triangulationCount;        // And this
+        
+        // Call the static operation
+        var triangulationPoint = Circle.triangulate(circles[0], circles[1], circles[2]);
+        
+        // Find out how many triangulations we have done
+        window.alert(Circle.triangulationCount);
+    </pre>
     
 </div>
 
@@ -2791,18 +2911,20 @@ window.alert(Circle.triangulationCount);</pre>
         For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span>
         are disallowed:
     </p>
-              <pre class="idl-example example">interface A {
-  void f();
-};
-
-partial interface A {
-  void f(double x);
-  void g();
-};
-
-partial interface A {
-  void g(DOMString x);
-};</pre>
+    <pre class="idl-example example">
+        interface A {
+          void f();
+        };
+        
+        partial interface A {
+          void f(double x);
+          void g();
+        };
+        
+        partial interface A {
+          void g(DOMString x);
+        };
+    </pre>
     <p>Note that the [{{Constructor}}] and
         [{{NamedConstructor}}]
         [=extended attributes=] are disallowed from appearing
@@ -2992,12 +3114,14 @@ partial interface A {
     <p>
         For the following interface:
     </p>
-              <pre class="idl-example">interface A {
-  /* f1 */ void f(DOMString a);
-  /* f2 */ void f(Node a, DOMString b, double... c);
-  /* f3 */ void f();
-  /* f4 */ void f(Event a, DOMString b, optional DOMString c, double... d);
-};</pre>
+    <pre class="idl-example">
+        interface A {
+          /* f1 */ void f(DOMString a);
+          /* f2 */ void f(Node a, DOMString b, double... c);
+          /* f3 */ void f();
+          /* f4 */ void f(Event a, DOMString b, optional DOMString c, double... d);
+        };
+    </pre>
     <p>
         assuming <span class="idltype">Node</span> and <span class="idltype">Event</span>
         are two other interfaces of which no object can implement both,
@@ -3268,10 +3392,12 @@ are not distinguishable with any other type.
     <p>
         The following use of overloading however is invalid:
     </p>
-              <pre class="idl-example">interface B {
-  void f(DOMString x);
-  void f(double x);
-};</pre>
+    <pre class="idl-example">
+        interface B {
+          void f(DOMString x);
+          void f(double x);
+        };
+    </pre>
     <p>
         since {{DOMString}} and
         {{double}} are not distinguishable.
@@ -3287,11 +3413,13 @@ are not distinguishable with any other type.
 </p>
 <div class="example">
     <p>The following is invalid:</p>
-              <pre class="idl-example">interface B {
-  /* f1 */ void f(DOMString w);
-  /* f2 */ void f(long w, double x, Node y, Node z);
-  /* f3 */ void f(double w, double x, DOMString y, Node z);
-};</pre>
+    <pre class="idl-example">
+        interface B {
+          /* f1 */ void f(DOMString w);
+          /* f2 */ void f(long w, double x, Node y, Node z);
+          /* f3 */ void f(double w, double x, DOMString y, Node z);
+        };
+    </pre>
     <p>
         For argument count 4, the effective overload set is:
     </p>
@@ -3320,8 +3448,10 @@ are not distinguishable with any other type.
     <dfn id="dfn-iterable" export>iterable</dfn> by using an <dfn id="dfn-iterable-declaration" export>iterable declaration</dfn>
     (matching <a class="sym" href="#prod-Iterable">Iterable</a>) in the body of the interface.
 </p>
-            <pre class="syntax">iterable&lt;<i>value-type</i>&gt;;
-iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
+<pre class="syntax">
+    iterable&lt;<i>value-type</i>&gt;;
+    iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;
+</pre>
 <p>
     Objects implementing an interface that is declared to be iterable
     support being iterated over to obtain a sequence of values.
@@ -3398,17 +3528,19 @@ actual <a>array iterator objects</a>.
 <div class="example">
     <p>Consider the following interface <span class="idltype">SessionManager</span>, which allows access to
     a number of <span class="idltype">Session</span> objects:</p>
-              <pre class="idl-example">interface SessionManager {
-  Session getSessionForUser(DOMString username);
-  readonly attribute unsigned long sessionCount;
-
-  iterable&lt;Session&gt;;
-};
-
-interface Session {
-  readonly attribute DOMString username;
-  // ...
-};</pre>
+    <pre class="idl-example">
+        interface SessionManager {
+          Session getSessionForUser(DOMString username);
+          readonly attribute unsigned long sessionCount;
+        
+          iterable&lt;Session&gt;;
+        };
+        
+        interface Session {
+          readonly attribute DOMString username;
+          // ...
+        };
+    </pre>
     <p>
         The behavior of the iterator could be defined like so:
     </p>
@@ -3430,29 +3562,31 @@ interface Session {
         a <a>@@iterator</a> method that allows a <span class="idltype">SessionManager</span>
         to be used in a <code>for..of</code> loop:
     </p>
-              <pre highlight="js">// Get an instance of SessionManager.
-// Assume that it has sessions for two users, "anna" and "brian".
-var sm = getSessionManager();
-
-typeof SessionManager.prototype.values;            // Evaluates to "function"
-var it = sm.values();                              // values() returns an iterator object
-String(it);                                        // Evaluates to "[object SessionManager Iterator]"
-typeof it.next;                                    // Evaluates to "function"
-
-// This loop will alert "anna" and then "brian".
-for (;;) {
-  let result = it.next();
-  if (result.done) {
-    break;
-  }
-  let session = result.value;
-  window.alert(session.username);
-}
-
-// This loop will also alert "anna" and then "brian".
-for (let session of sm) {
-  window.alert(session.username);
-}</pre>
+    <pre highlight="js">
+        // Get an instance of SessionManager.
+        // Assume that it has sessions for two users, "anna" and "brian".
+        var sm = getSessionManager();
+        
+        typeof SessionManager.prototype.values;            // Evaluates to "function"
+        var it = sm.values();                              // values() returns an iterator object
+        String(it);                                        // Evaluates to "[object SessionManager Iterator]"
+        typeof it.next;                                    // Evaluates to "function"
+        
+        // This loop will alert "anna" and then "brian".
+        for (;;) {
+          let result = it.next();
+          if (result.done) {
+            break;
+          }
+          let session = result.value;
+          window.alert(session.username);
+        }
+        
+        // This loop will also alert "anna" and then "brian".
+        for (let session of sm) {
+          window.alert(session.username);
+        }
+    </pre>
 </div>
 
 <p>
@@ -3491,8 +3625,10 @@ for (let session of sm) {
     (matching <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> or
     <span class="sym">"readonly"</span> <a class="sym" href="#prod-MaplikeRest">MaplikeRest</a>) in the body of the interface.
 </p>
-            <pre class="syntax">readonly maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;
-maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
+<pre class="syntax">
+    readonly maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;
+    maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;
+</pre>
 <p>
     Objects implementing an interface that is declared to be maplike
     represent an ordered list of key–value pairs known as its <dfn id="dfn-map-entries" export>map entries</dfn>.
@@ -3570,8 +3706,10 @@ Issue: Add example.
     (matching <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a> or
     <span class="sym">"readonly"</span> <a class="sym" href="#prod-SetlikeRest">SetlikeRest</a>) in the body of the interface.
 </p>
-            <pre class="syntax">readonly setlike&lt;<i>type</i>&gt;;
-setlike&lt;<i>type</i>&gt;;</pre>
+<pre class="syntax">
+    readonly setlike&lt;<i>type</i>&gt;;
+    setlike&lt;<i>type</i>&gt;;
+</pre>
 <p>
     Objects implementing an interface that is declared to be setlike
     represent an ordered list of values known as its <dfn id="dfn-set-entries" export>set entries</dfn>.
@@ -3650,9 +3788,11 @@ Issue: Add example.
     termed <dfn id="dfn-dictionary-member" export>dictionary members</dfn>,
     where keys are strings and values are of a particular type specified in the definition.
 </p>
-          <pre class="syntax">dictionary <i>identifier</i> {
-  <i>dictionary-members…</i>
-};</pre>
+<pre class="syntax">
+    dictionary <i>identifier</i> {
+      <i>dictionary-members…</i>
+    };
+</pre>
 <p>
     Dictionaries are always passed by value.  In language bindings where a dictionary is represented by an object of some kind, passing a
     dictionary to a [=platform object=] will not result in a reference to the dictionary being kept by that object.
@@ -3670,13 +3810,15 @@ Issue: Add example.
     |A| cannot inherit from itself, nor can it inherit from another
     dictionary |B| that inherits from |A|, and so on.
 </p>
-          <pre class="syntax">dictionary <em>Base</em> {
-  <i>dictionary-members…</i>
-};
-
-dictionary <i>Derived</i> : <em>Base</em> {
-  <i>dictionary-members…</i>
-};</pre>
+<pre class="syntax">
+    dictionary <em>Base</em> {
+      <i>dictionary-members…</i>
+    };
+    
+    dictionary <i>Derived</i> : <em>Base</em> {
+      <i>dictionary-members…</i>
+    };
+</pre>
 <p>
     The <dfn id="dfn-inherited-dictionaries" export>inherited dictionaries</dfn> of
     a given dictionary |D| is the set of all dictionaries that |D|
@@ -3724,17 +3866,21 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     not followed by <code>?</code>, then the identifier must
     identify any one of those definitions or a [=dictionary=].
 </p>
-          <pre class="syntax">dictionary <i>identifier</i> {
-  <i>type</i> <i>identifier</i>;
-};</pre>
+<pre class="syntax">
+    dictionary <i>identifier</i> {
+      <i>type</i> <i>identifier</i>;
+    };
+</pre>
 <p>
     If the identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
     and a value (matching <a class="sym" href="#prod-DefaultValue">DefaultValue</a>),
     then that gives the dictionary member its [=default value=].
 </p>
-          <pre class="syntax">dictionary <i>identifier</i> {
-  <i>type</i> <i>identifier</i> = <i>value</i>;
-};</pre>
+<pre class="syntax">
+    dictionary <i>identifier</i> {
+      <i>type</i> <i>identifier</i> = <i>value</i>;
+    };
+</pre>
 <p>
     When a boolean literal token (<code>true</code> or <code>false</code>),
     the <code>null</code> token,
@@ -3761,9 +3907,11 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     and must be present on the dictionary.  A
     [=required dictionary member=] must not have a default value.
 </p>
-          <pre class="syntax">dictionary <i>identifier</i> {
-  required <i>type</i> <i>identifier</i>;
-};</pre>
+<pre class="syntax">
+    dictionary <i>identifier</i> {
+      required <i>type</i> <i>identifier</i>;
+    };
+</pre>
 <p>
     The type of a dictionary member must not include
     the dictionary it appears on.  A type includes a dictionary |D|
@@ -3792,13 +3940,15 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     of the partial dictionary definitions are considered to be members of
     the dictionary itself.
 </p>
-          <pre class="syntax">dictionary <em>SomeDictionary</em> {
-  <i>dictionary-members…</i>
-};
-
-partial dictionary <em>SomeDictionary</em> {
-  <i>dictionary-members…</i>
-};</pre>
+<pre class="syntax">
+    dictionary <em>SomeDictionary</em> {
+      <i>dictionary-members…</i>
+    };
+    
+    partial dictionary <em>SomeDictionary</em> {
+      <i>dictionary-members…</i>
+    };
+</pre>
 Note: As with partial interface definitions, partial dictionary definitions are intended for use as a specification
 editorial aide, allowing the definition of an interface to be separated
 over more than one section of the document, and sometimes multiple documents.
@@ -3812,25 +3962,27 @@ over more than one section of the document, and sometimes multiple documents.
 </p>
 <div class="note">
     <p>For example, with the following definitions:</p>
-            <pre class="idl-example example">dictionary B : A {
-  long b;
-  long a;
-};
-
-dictionary A {
-  long c;
-  long g;
-};
-
-dictionary C : B {
-  long e;
-  long f;
-};
-
-partial dictionary A {
-  long h;
-  long d;
-};</pre>
+    <pre class="idl-example example">
+        dictionary B : A {
+          long b;
+          long a;
+        };
+        
+        dictionary A {
+          long c;
+          long g;
+        };
+        
+        dictionary C : B {
+          long e;
+          long f;
+        };
+        
+        partial dictionary A {
+          long h;
+          long d;
+        };
+    </pre>
     <p>
         the order of the [=dictionary members=]
         of a dictionary value of type <span class="idltype">C</span> is
@@ -3843,20 +3995,24 @@ partial dictionary A {
         the dictionary members are fetched.  For example, consider the
         following additional interface:
     </p>
-            <pre class="idl-example example">interface Something {
-  void f(A a);
-};</pre>
+    <pre class="idl-example example">
+        interface Something {
+          void f(A a);
+        };
+    </pre>
     <p>
         and this ECMAScript code:
     </p>
-            <pre highlight="js">var something = getSomething();  // Get an instance of Something.
-var x = 0;
-
-var dict = { };
-Object.defineProperty(dict, "d", { get: function() { return ++x; } });
-Object.defineProperty(dict, "c", { get: function() { return ++x; } });
-
-something.f(dict);</pre>
+    <pre highlight="js">
+        var something = getSomething();  // Get an instance of Something.
+        var x = 0;
+        
+        var dict = { };
+        Object.defineProperty(dict, "d", { get: function() { return ++x; } });
+        Object.defineProperty(dict, "c", { get: function() { return ++x; } });
+        
+        something.f(dict);
+    </pre>
     <p>
         The order that the dictionary members are fetched in determines
         what values they will be taken to have.  Since the order for
@@ -3899,30 +4055,34 @@ something.f(dict);</pre>
         constrained as to the order they are specified at the call site.  For example,
         consider the following [=IDL fragment=]:
     </p>
-            <pre class="idl-example">[Constructor]
-interface Point {
-  attribute double x;
-  attribute double y;
-};
-
-dictionary PaintOptions {
-  DOMString? fillPattern = "black";
-  DOMString? strokePattern = null;
-  Point position;
-};
-
-interface GraphicsContext {
-  void drawRectangle(double width, double height, optional PaintOptions options);
-};</pre>
+    <pre class="idl-example">
+        [Constructor]
+        interface Point {
+          attribute double x;
+          attribute double y;
+        };
+        
+        dictionary PaintOptions {
+          DOMString? fillPattern = "black";
+          DOMString? strokePattern = null;
+          Point position;
+        };
+        
+        interface GraphicsContext {
+          void drawRectangle(double width, double height, optional PaintOptions options);
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of the IDL, an <span class="estype">Object</span>
         can be passed in for the optional <span class="idltype">PaintOptions</span> dictionary:
     </p>
-            <pre highlight="js">// Get an instance of GraphicsContext.
-var ctx = getGraphicsContext();
-
-// Draw a rectangle.
-ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) });</pre>
+    <pre highlight="js">
+        // Get an instance of GraphicsContext.
+        var ctx = getGraphicsContext();
+        
+        // Draw a rectangle.
+        ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) });
+    </pre>
     <p>
         Both fillPattern and strokePattern are given [=default values=],
         so if they are omitted, the definition of drawRectangle can assume that they
@@ -4283,31 +4443,35 @@ results in an exception being thrown.
         that is used as the type of an [=attribute=]
         and an [=operation=] argument:
     </p>
-            <pre class="idl-example">enum MealType { "rice", "noodles", "other" };
-
-interface Meal {
-  attribute MealType type;
-  attribute double size;     // in grams
-
-  void initialize(MealType type, double size);
-};</pre>
+    <pre class="idl-example">
+        enum MealType { "rice", "noodles", "other" };
+        
+        interface Meal {
+          attribute MealType type;
+          attribute double size;     // in grams
+        
+          void initialize(MealType type, double size);
+        };
+    </pre>
     <p>
         An ECMAScript implementation would restrict the strings that can be
         assigned to the type property or passed to the initializeMeal function
         to those identified in the [=enumeration=].
     </p>
-            <pre highlight="js">var meal = getMeal();                // Get an instance of Meal.
-
-meal.initialize("rice", 200);        // Operation invoked as normal.
-
-try {
-  meal.initialize("sandwich", 100);  // Throws a TypeError.
-} catch (e) {
-}
-
-meal.type = "noodles";               // Attribute assigned as normal.
-meal.type = "dumplings";             // Attribute assignment ignored.
-meal.type == "noodles";              // Evaluates to true.</pre>
+    <pre highlight="js">
+        var meal = getMeal();                // Get an instance of Meal.
+        
+        meal.initialize("rice", 200);        // Operation invoked as normal.
+        
+        try {
+          meal.initialize("sandwich", 100);  // Throws a TypeError.
+        } catch (e) {
+        }
+        
+        meal.type = "noodles";               // Attribute assigned as normal.
+        meal.type = "dumplings";             // Attribute assignment ignored.
+        meal.type == "noodles";              // Evaluates to true.
+    </pre>
 </div>
 
 
@@ -4349,20 +4513,24 @@ Note: See also the similarly named [=callback interfaces=].
         a [=callback function=] used for an API that
         invokes a user-defined function when an operation is complete.
     </p>
-            <pre class="idl-example">callback AsyncOperationCallback = void (DOMString status);
-
-interface AsyncOperations {
-  void performOperation(AsyncOperationCallback whenFinished);
-};</pre>
+    <pre class="idl-example">
+        callback AsyncOperationCallback = void (DOMString status);
+        
+        interface AsyncOperations {
+          void performOperation(AsyncOperationCallback whenFinished);
+        };
+    </pre>
     <p>
         In the ECMAScript language binding, a <span class="estype">Function</span> object is
         passed as the operation argument.
     </p>
-            <pre highlight="js">var ops = getAsyncOperations();  // Get an instance of AsyncOperations.
-
-ops.performOperation(function(status) {
-  window.alert("Operation finished, status is " + status + ".");
-});</pre>
+    <pre highlight="js">
+        var ops = getAsyncOperations();  // Get an instance of AsyncOperations.
+        
+        ops.performOperation(function(status) {
+          window.alert("Operation finished, status is " + status + ".");
+        });
+    </pre>
 </div>
 
 
@@ -4402,17 +4570,19 @@ ops.performOperation(function(status) {
         [=identifier=] instead of a long
         <a href="#idl-sequence">sequence type</a>.
     </p>
-            <pre class="idl-example">interface Point {
-  attribute double x;
-  attribute double y;
-};
-
-typedef sequence&lt;Point&gt; Points;
-
-interface Widget {
-  boolean pointWithinBounds(Point p);
-  boolean allPointsWithinBounds(Points ps);
-};</pre>
+    <pre class="idl-example">
+        interface Point {
+          attribute double x;
+          attribute double y;
+        };
+        
+        typedef sequence&lt;Point&gt; Points;
+        
+        interface Widget {
+          boolean pointWithinBounds(Point p);
+          boolean allPointsWithinBounds(Points ps);
+        };
+    </pre>
 </div>
 
 
@@ -4472,16 +4642,20 @@ interface Widget {
         is a [=supplemental interface=].
         For example, if author 1 writes:
     </p>
-            <pre class="idl-example example">interface Window { ... };
-interface SomeFunctionality { ... };
-Window implements SomeFunctionality;</pre>
+    <pre class="idl-example example">
+        interface Window { ... };
+        interface SomeFunctionality { ... };
+        Window implements SomeFunctionality;
+    </pre>
     <p>
         and author 2 later writes:
     </p>
-            <pre class="idl-example example">interface Gizmo { ... };
-interface MoreFunctionality { ... };
-SomeFunctionality implements MoreFunctionality;
-Gizmo implements SomeFunctionality;</pre>
+    <pre class="idl-example example">
+        interface Gizmo { ... };
+        interface MoreFunctionality { ... };
+        SomeFunctionality implements MoreFunctionality;
+        Gizmo implements SomeFunctionality;
+    </pre>
     <p>
         then it might be the case that author 2 is unaware of exactly which
         interfaces already are used on the left-hand side of an
@@ -4492,10 +4666,12 @@ Gizmo implements SomeFunctionality;</pre>
     <p>
         Better in this case would be for author 2 to write:
     </p>
-            <pre class="idl-example example">interface Gizmo { ... };
-interface MoreFunctionality { ... };
-Gizmo implements SomeFunctionality;
-Gizmo implements MoreFunctionality;</pre>
+    <pre class="idl-example example">
+        interface Gizmo { ... };
+        interface MoreFunctionality { ... };
+        Gizmo implements SomeFunctionality;
+        Gizmo implements MoreFunctionality;
+    </pre>
 </div>
 <p>
     The <dfn id="dfn-consequential-interfaces" export>consequential interfaces</dfn> of an interface
@@ -4528,25 +4704,29 @@ Note: For example, that precludes the following:
         defines two [=interfaces=], stating
         that one interface is always implemented on objects implementing the other.
     </p>
-            <pre class="idl-example">interface Entry {
-  readonly attribute unsigned short entryType;
-  // ...
-};
-
-interface Observable {
-  void addEventListener(DOMString type,
-                        EventListener listener,
-                        boolean useCapture);
-  // ...
-};
-
-Entry implements Observable;</pre>
+    <pre class="idl-example">
+        interface Entry {
+          readonly attribute unsigned short entryType;
+          // ...
+        };
+        
+        interface Observable {
+          void addEventListener(DOMString type,
+                                EventListener listener,
+                                boolean useCapture);
+          // ...
+        };
+        
+        Entry implements Observable;
+    </pre>
     <p>
         An ECMAScript implementation would thus have an “addEventListener”
         property in the prototype chain of every <span class="idltype">Entry</span>:
     </p>
-            <pre highlight="js">var e = getEntry();          // Obtain an instance of Entry.
-typeof e.addEventListener;  // Evaluates to "function".</pre>
+    <pre highlight="js">
+        var e = getEntry();          // Obtain an instance of Entry.
+        typeof e.addEventListener;  // Evaluates to "function".
+    </pre>
     
     <p>
         Note that it is not the case that all <span class="idltype">Observable</span>
@@ -5304,9 +5484,11 @@ as the type of an operation argument or a dictionary member.
         <span class="idlvalue">false</span> and <span class="idlvalue">null</span>
         is written as <span class="idltype">boolean?</span>:
     </p>
-              <pre class="idl-example">interface MyConstants {
-  const boolean? ARE_WE_THERE_YET = false;
-};</pre>
+    <pre class="idl-example">
+        interface MyConstants {
+          const boolean? ARE_WE_THERE_YET = false;
+        };
+    </pre>
     <p>
         The following [=interface=] has two
         [=attributes=]: one whose value can
@@ -5314,11 +5496,13 @@ as the type of an operation argument or a dictionary member.
         value, and another whose value can be a reference to a <span class="idltype">Node</span>
         object or the <span class="idlvalue">null</span> value:
     </p>
-              <pre class="idl-example">interface Node {
-  readonly attribute DOMString? namespaceURI;
-  readonly attribute Node? parentNode;
-  // ...
-};</pre>
+    <pre class="idl-example">
+        interface Node {
+          readonly attribute DOMString? namespaceURI;
+          readonly attribute Node? parentNode;
+          // ...
+        };
+    </pre>
 </div>
 
 
@@ -6011,20 +6195,22 @@ Issue: The list above needs updating for the latest ES6 draft.
         its own set of [=initial objects=],
         which the following HTML document demonstrates:
     </p>
-            <pre highlight="html">&lt;!DOCTYPE html&gt;
-&lt;title&gt;Different global environments&lt;/title&gt;
-&lt;iframe id=a&gt;&lt;/iframe&gt;
-&lt;script&gt;
-var iframe = document.getElementById("a");
-var w = iframe.contentWindow;              // The global object in the frame
-
-Object == w.Object;                        // Evaluates to false, per ECMA-262
-Node == w.Node;                            // Evaluates to false
-iframe instanceof w.Node;                  // Evaluates to false
-iframe instanceof w.Object;                // Evaluates to false
-iframe.appendChild instanceof Function;    // Evaluates to true
-iframe.appendChild instanceof w.Function;  // Evaluates to false
-&lt;/script&gt;</pre>
+    <pre highlight="html">
+        &lt;!DOCTYPE html&gt;
+        &lt;title&gt;Different global environments&lt;/title&gt;
+        &lt;iframe id=a&gt;&lt;/iframe&gt;
+        &lt;script&gt;
+        var iframe = document.getElementById("a");
+        var w = iframe.contentWindow;              // The global object in the frame
+        
+        Object == w.Object;                        // Evaluates to false, per ECMA-262
+        Node == w.Node;                            // Evaluates to false
+        iframe instanceof w.Node;                  // Evaluates to false
+        iframe instanceof w.Object;                // Evaluates to false
+        iframe.appendChild instanceof Function;    // Evaluates to true
+        iframe.appendChild instanceof w.Function;  // Evaluates to false
+        &lt;/script&gt;
+    </pre>
 </div>
 <p>
     Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" for="ECMAScript global environment" export>exposes</dfn>
@@ -7256,15 +7442,17 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         type as well as an [=operation=]
         with an argument of a sequence type.
     </p>
-              <pre class="idl-example">interface Canvas {
-
-  sequence&lt;DOMString&gt; getSupportedImageCodecs();
-
-  void drawPolygon(sequence&lt;double&gt; coordinates);
-  sequence&lt;double&gt; getLastDrawnPolygon();
-
-  // ...
-};</pre>
+    <pre class="idl-example">
+        interface Canvas {
+        
+          sequence&lt;DOMString&gt; getSupportedImageCodecs();
+        
+          void drawPolygon(sequence&lt;double&gt; coordinates);
+          sequence&lt;double&gt; getLastDrawnPolygon();
+        
+          // ...
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of this interface, an <span class="estype">Array</span>
         object with elements of type <span class="estype">String</span> is used to
@@ -7278,48 +7466,49 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         passed to <code>drawPolygon</code> no reference
         will be kept after the call completes.
     </p>
-              <pre highlight="js">
-// Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()
-// returns a sequence with two DOMString values: "image/png" and "image/svg+xml".
-var canvas = getCanvas();
-
-// An Array object of length 2.
-var supportedImageCodecs = canvas.getSupportedImageCodecs();
-
-// Evaluates to "image/png".
-supportedImageCodecs[0];
-
-// Each time canvas.getSupportedImageCodecs() is called, it returns a
-// new Array object.  Thus modifying the returned Array will not
-// affect the value returned from a subsequent call to the function.
-supportedImageCodecs[0] = "image/jpeg";
-
-// Evaluates to "image/png".
-canvas.getSupportedImageCodecs()[0];
-
-// This evaluates to false, since a new Array object is returned each call.
-canvas.getSupportedImageCodecs() == canvas.getSupportedImageCodecs();
-
-
-// An Array of Numbers...
-var a = [0, 0, 100, 0, 50, 62.5];
-
-// ...can be passed to a platform object expecting a sequence&lt;double&gt;.
-canvas.drawPolygon(a);
-
-// Each element will be converted to a double by first calling ToNumber().
-// So the following call is equivalent to the previous one, except that
-// "hi" will be alerted before drawPolygon() returns.
-a = [false, '',
-     { valueOf: function() { alert('hi'); return 100; } }, 0,
-     '50', new Number(62.5)];
-canvas.drawPolygon(s);
-
-// Modifying an Array that was passed to drawPolygon() is guaranteed not to
-// have an effect on the Canvas, since the Array is effectively passed by value.
-a[4] = 20;
-var b = canvas.getLastDrawnPolygon();
-alert(b[4]);    // This would alert "50".</pre>
+        <pre highlight="js">
+        // Obtain an instance of Canvas.  Assume that getSupportedImageCodecs()
+        // returns a sequence with two DOMString values: "image/png" and "image/svg+xml".
+        var canvas = getCanvas();
+        
+        // An Array object of length 2.
+        var supportedImageCodecs = canvas.getSupportedImageCodecs();
+        
+        // Evaluates to "image/png".
+        supportedImageCodecs[0];
+        
+        // Each time canvas.getSupportedImageCodecs() is called, it returns a
+        // new Array object.  Thus modifying the returned Array will not
+        // affect the value returned from a subsequent call to the function.
+        supportedImageCodecs[0] = "image/jpeg";
+        
+        // Evaluates to "image/png".
+        canvas.getSupportedImageCodecs()[0];
+        
+        // This evaluates to false, since a new Array object is returned each call.
+        canvas.getSupportedImageCodecs() == canvas.getSupportedImageCodecs();
+        
+        
+        // An Array of Numbers...
+        var a = [0, 0, 100, 0, 50, 62.5];
+        
+        // ...can be passed to a platform object expecting a sequence&lt;double&gt;.
+        canvas.drawPolygon(a);
+        
+        // Each element will be converted to a double by first calling ToNumber().
+        // So the following call is equivalent to the previous one, except that
+        // "hi" will be alerted before drawPolygon() returns.
+        a = [false, '',
+             { valueOf: function() { alert('hi'); return 100; } }, 0,
+             '50', new Number(62.5)];
+        canvas.drawPolygon(s);
+        
+        // Modifying an Array that was passed to drawPolygon() is guaranteed not to
+        // have an effect on the Canvas, since the Array is effectively passed by value.
+        a[4] = 20;
+        var b = canvas.getLastDrawnPolygon();
+        alert(b[4]);    // This would alert "50".
+    </pre>
 </div>
 
 
@@ -7900,25 +8089,29 @@ Issue: Include an example of how to write spec text using this term.
         the [{{Clamp}}] [=extended attribute=]
         on all three arguments, while the other does not:
     </p>
-              <pre class="idl-example">interface GraphicsContext {
-  void setColor(octet red, octet green, octet blue);
-  void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
-};</pre>
+    <pre class="idl-example">
+        interface GraphicsContext {
+          void setColor(octet red, octet green, octet blue);
+          void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of the IDL, a call to setColorClamped with
         <span class="estype">Number</span> values that are out of range for an
         {{octet}} are clamped to the range [0, 255].
     </p>
-              <pre highlight="js">// Get an instance of GraphicsContext.
-var context = getGraphicsContext();
-
-// Calling the non-[Clamp] version uses ToUint8 to coerce the Numbers to octets.
-// This is equivalent to calling setColor(255, 255, 1).
-context.setColor(-1, 255, 257);
-
-// Call setColorClamped with some out of range values.
-// This is equivalent to calling setColorClamped(0, 255, 255).
-context.setColorClamped(-1, 255, 257);</pre>
+    <pre highlight="js">
+        // Get an instance of GraphicsContext.
+        var context = getGraphicsContext();
+        
+        // Calling the non-[Clamp] version uses ToUint8 to coerce the Numbers to octets.
+        // This is equivalent to calling setColor(255, 255, 1).
+        context.setColor(-1, 255, 257);
+        
+        // Call setColorClamped with some out of range values.
+        // This is equivalent to calling setColorClamped(0, 255, 255).
+        context.setColorClamped(-1, 255, 257);
+    </pre>
 </div>
 
 
@@ -7974,19 +8167,21 @@ context.setColorClamped(-1, 255, 257);</pre>
         [{{Constructor}}] extended
         attribute, while the first does not.
     </p>
-              <pre class="idl-example">interface NodeList {
-  Node item(unsigned long index);
-  readonly attribute unsigned long length;
-};
-
-[Constructor,
- Constructor(double radius)]
-interface Circle {
-  attribute double r;
-  attribute double cx;
-  attribute double cy;
-  readonly attribute double circumference;
-};</pre>
+    <pre class="idl-example">
+        interface NodeList {
+          Node item(unsigned long index);
+          readonly attribute unsigned long length;
+        };
+        
+        [Constructor,
+         Constructor(double radius)]
+        interface Circle {
+          attribute double r;
+          attribute double cx;
+          attribute double cy;
+          readonly attribute double circumference;
+        };
+    </pre>
     <p>
         An ECMAScript implementation supporting these interfaces would
         have a <span class="prop">\[[Construct]]</span> property on the
@@ -7996,15 +8191,17 @@ interface Circle {
         <span class="idltype">NodeList</span> interface object would not
         have a <span class="prop">\[[Construct]]</span> property.
     </p>
-              <pre highlight="js">var x = new Circle();      // The uses the zero-argument constructor to create a
-                           // reference to a platform object that implements the
-                           // Circle interface.
-
-var y = new Circle(1.25);  // This also creates a Circle object, this time using
-                           // the one-argument constructor.
-
-var z = new NodeList();    // This would throw a TypeError, since no
-                           // [Constructor] is declared.</pre>
+    <pre highlight="js">
+        var x = new Circle();      // The uses the zero-argument constructor to create a
+                                   // reference to a platform object that implements the
+                                   // Circle interface.
+        
+        var y = new Circle(1.25);  // This also creates a Circle object, this time using
+                                   // the one-argument constructor.
+        
+        var z = new NodeList();    // This would throw a TypeError, since no
+                                   // [Constructor] is declared.
+    </pre>
 </div>
 
 
@@ -8053,30 +8250,34 @@ var z = new NodeList();    // This would throw a TypeError, since no
         the [{{EnforceRange}}] [=extended attribute=]
         on all three arguments, while the other does not:
     </p>
-              <pre class="idl-example">interface GraphicsContext {
-  void setColor(octet red, octet green, octet blue);
-  void setColorEnforcedRange([EnforceRange] octet red, [EnforceRange] octet green, [EnforceRange] octet blue);
-};</pre>
+    <pre class="idl-example">
+        interface GraphicsContext {
+          void setColor(octet red, octet green, octet blue);
+          void setColorEnforcedRange([EnforceRange] octet red, [EnforceRange] octet green, [EnforceRange] octet blue);
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of the IDL, a call to setColorEnforcedRange with
         <span class="estype">Number</span> values that are out of range for an
         {{octet}} will result in an exception being
         thrown.
     </p>
-              <pre highlight="js">// Get an instance of GraphicsContext.
-var context = getGraphicsContext();
-
-// Calling the non-[EnforceRange] version uses ToUint8 to coerce the Numbers to octets.
-// This is equivalent to calling setColor(255, 255, 1).
-context.setColor(-1, 255, 257);
-
-// When setColorEnforcedRange is called, Numbers are rounded towards zero.
-// This is equivalent to calling setColor(0, 255, 255).
-context.setColorEnforcedRange(-0.9, 255, 255.2);
-
-// The following will cause a TypeError to be thrown, since even after
-// rounding the first and third argument values are out of range.
-context.setColorEnforcedRange(-1, 255, 256);</pre>
+    <pre highlight="js">
+        // Get an instance of GraphicsContext.
+        var context = getGraphicsContext();
+        
+        // Calling the non-[EnforceRange] version uses ToUint8 to coerce the Numbers to octets.
+        // This is equivalent to calling setColor(255, 255, 1).
+        context.setColor(-1, 255, 257);
+        
+        // When setColorEnforcedRange is called, Numbers are rounded towards zero.
+        // This is equivalent to calling setColor(0, 255, 255).
+        context.setColorEnforcedRange(-0.9, 255, 255.2);
+        
+        // The following will cause a TypeError to be thrown, since even after
+        // rounding the first and third argument values are out of range.
+        context.setColorEnforcedRange(-1, 255, 256);
+    </pre>
 </div>
 
 
@@ -8208,43 +8409,45 @@ are created.
         members are available for use only in workers, only in the <span class="idltype">Window</span>,
     or in both.</p>
     <p>The following IDL fragment shows how that might be achieved:</p>
-              <pre class="idl-example">[PrimaryGlobal]
-interface Window {
-  ...
-};
-
-// By using the same identifier Worker for both SharedWorkerGlobalScope
-// and DedicatedWorkerGlobalScope, both can be addressed in an [Exposed]
-// extended attribute at once.
-[Global=Worker]
-interface SharedWorkerGlobalScope : WorkerGlobalScope {
-  ...
-};
-
-[Global=Worker]
-interface DedicatedWorkerGlobalScope : WorkerGlobalScope {
-  ...
-};
-
-// MathUtils is available for use in workers and on the main thread.
-[Exposed=(Window,Worker)]
-interface MathUtils {
-  static double someComplicatedFunction(double x, double y);
-};
-
-// WorkerUtils is only available in workers.  Evaluating WorkerUtils
-// in the global scope of a worker would give you its interface object, while
-// doing so on the main thread will give you a ReferenceError.
-[Exposed=Worker]
-interface WorkerUtils {
-  static void setPriority(double x);
-};
-
-// Node is only available on the main thread.  Evaluating Node
-// in the global scope of a worker would give you a ReferenceError.
-interface Node {
-  ...
-};</pre>
+    <pre class="idl-example">
+        [PrimaryGlobal]
+        interface Window {
+          ...
+        };
+        
+        // By using the same identifier Worker for both SharedWorkerGlobalScope
+        // and DedicatedWorkerGlobalScope, both can be addressed in an [Exposed]
+        // extended attribute at once.
+        [Global=Worker]
+        interface SharedWorkerGlobalScope : WorkerGlobalScope {
+          ...
+        };
+        
+        [Global=Worker]
+        interface DedicatedWorkerGlobalScope : WorkerGlobalScope {
+          ...
+        };
+        
+        // MathUtils is available for use in workers and on the main thread.
+        [Exposed=(Window,Worker)]
+        interface MathUtils {
+          static double someComplicatedFunction(double x, double y);
+        };
+        
+        // WorkerUtils is only available in workers.  Evaluating WorkerUtils
+        // in the global scope of a worker would give you its interface object, while
+        // doing so on the main thread will give you a ReferenceError.
+        [Exposed=Worker]
+        interface WorkerUtils {
+          static void setPriority(double x);
+        };
+        
+        // Node is only available on the main thread.  Evaluating Node
+        // in the global scope of a worker would give you a ReferenceError.
+        interface Node {
+          ...
+        };
+    </pre>
 </div>
 
 
@@ -8281,24 +8484,28 @@ in HTML5 ([[HTML5]], section 5.2).
         [=interface=] is defined
         with the [{{ImplicitThis}}]
     [=extended attribute=].</p>
-              <pre class="idl-example">[ImplicitThis]
-interface Window {
-  ...
-  attribute DOMString name;
-  void alert(DOMString message);
-};</pre>
+    <pre class="idl-example">
+        [ImplicitThis]
+        interface Window {
+          ...
+          attribute DOMString name;
+          void alert(DOMString message);
+        };
+    </pre>
     <p>Since the <span class="idltype">Window</span> object is used as
         the ECMAScript global object, calls to its functions can be made
     without an explicit object, even in strict mode:</p>
-            <pre highlight="js">"use strict";
-
-window.alert("hello");      // Calling alert with an explicit window object works.
-alert("hello");             // This also works, even though we are in strict mode.
-alert.call(null, "hello");  // As does passing null explicitly as the this value.
-
-// This does not apply to getters for attributes on the interface, though.
-// The following will throw a TypeError.
-Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
+    <pre highlight="js">
+        "use strict";
+        
+        window.alert("hello");      // Calling alert with an explicit window object works.
+        alert("hello");             // This also works, even though we are in strict mode.
+        alert.call(null, "hello");  // As does passing null explicitly as the this value.
+        
+        // This does not apply to getters for attributes on the interface, though.
+        // The following will throw a TypeError.
+        Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);
+    </pre>
 </div>
 
 
@@ -8340,11 +8547,13 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</pre>
         the object itself will mean that common feature detection
         methods like the following will work:
     </p>
-              <pre highlight="js">var indexedDB = window.indexedDB || window.webkitIndexedDB ||
-                window.mozIndexedDB || window.msIndexedDB;
-
-var requestAnimationFrame = window.requestAnimationFrame ||
-                            window.mozRequestAnimationFrame || ...;</pre>
+    <pre highlight="js">
+        var indexedDB = window.indexedDB || window.webkitIndexedDB ||
+                        window.mozIndexedDB || window.msIndexedDB;
+        
+        var requestAnimationFrame = window.requestAnimationFrame ||
+                                    window.mozRequestAnimationFrame || ...;
+    </pre>
     <p>
         Because of the way variable declarations are handled in
         ECMAScript, the code above would result in the <code>window.indexedDB</code>
@@ -8464,41 +8673,45 @@ be addressed with a single name in an [{{Exposed}}]
         will result in them being replaced by the new value.  Variable declarations for
         attributes will not create a property that replaces the existing one.
     </p>
-              <pre class="idl-example">[PrimaryGlobal]
-interface Window {
-  getter any (DOMString name);
-  attribute DOMString name;
-  // ...
-};</pre>
+    <pre class="idl-example">
+        [PrimaryGlobal]
+        interface Window {
+          getter any (DOMString name);
+          attribute DOMString name;
+          // ...
+        };
+    </pre>
     <p>
         The following HTML document illustrates how the named properties on the
         <span class="idltype">Window</span> object can be shadowed, and how
         the property for an attribute will not be replaced when declaring
         a variable of the same name:
     </p>
-              <pre highlight="html">&lt;!DOCTYPE html&gt;
-&lt;title&gt;Variable declarations and assignments on Window&lt;/title&gt;
-&lt;iframe name=abc&gt;&lt;/iframe&gt;
-&lt;!-- Shadowing named properties --&gt;
-&lt;script&gt;
-  window.abc;    // Evaluates to the iframe's Window object.
-  abc = 1;       // Shadows the named property.
-  window.abc;    // Evaluates to 1.
-&lt;/script&gt;
-
-&lt;!-- Preserving properties for IDL attributes --&gt;
-&lt;script&gt;
-  Window.prototype.def = 2;         // Places a property on the prototype.
-  window.hasOwnProperty("length");  // Evaluates to true.
-  length;                           // Evaluates to 1.
-  def;                              // Evaluates to 2.
-&lt;/script&gt;
-&lt;script&gt;
-  var length;                       // Variable declaration leaves existing property.
-  length;                           // Evaluates to 1.
-  var def;                          // Variable declaration creates shadowing property.
-  def;                              // Evaluates to undefined.
-&lt;/script&gt;</pre>
+    <pre highlight="html">
+        &lt;!DOCTYPE html&gt;
+        &lt;title&gt;Variable declarations and assignments on Window&lt;/title&gt;
+        &lt;iframe name=abc&gt;&lt;/iframe&gt;
+        &lt;!-- Shadowing named properties --&gt;
+        &lt;script&gt;
+          window.abc;    // Evaluates to the iframe's Window object.
+          abc = 1;       // Shadows the named property.
+          window.abc;    // Evaluates to 1.
+        &lt;/script&gt;
+        
+        &lt;!-- Preserving properties for IDL attributes --&gt;
+        &lt;script&gt;
+          Window.prototype.def = 2;         // Places a property on the prototype.
+          window.hasOwnProperty("length");  // Evaluates to true.
+          length;                           // Evaluates to 1.
+          def;                              // Evaluates to 2.
+        &lt;/script&gt;
+        &lt;script&gt;
+          var length;                       // Variable declaration leaves existing property.
+          length;                           // Evaluates to 1.
+          var def;                          // Variable declaration creates shadowing property.
+          def;                              // Evaluates to undefined.
+        &lt;/script&gt;
+    </pre>
 </div>
 
 
@@ -8542,29 +8755,33 @@ which would provide access to the array elements.
         defines two [=interfaces=]
         that use [{{LegacyArrayClass}}].
     </p>
-              <pre class="idl-example">[LegacyArrayClass]
-interface ItemList {
-  attribute unsigned long length;
-  getter object getItem(unsigned long index);
-  setter object setItem(unsigned long index, object item);
-};
-
-[LegacyArrayClass]
-interface ImmutableItemList {
-  readonly attribute unsigned long length;
-  getter object getItem(unsigned long index);
-};</pre>
+    <pre class="idl-example">
+        [LegacyArrayClass]
+        interface ItemList {
+          attribute unsigned long length;
+          getter object getItem(unsigned long index);
+          setter object setItem(unsigned long index, object item);
+        };
+        
+        [LegacyArrayClass]
+        interface ImmutableItemList {
+          readonly attribute unsigned long length;
+          getter object getItem(unsigned long index);
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of the above two interfaces,
         with appropriate definitions for getItem, setItem and removeItem,
         <span class="estype">Array</span> methods to inspect and
         modify the array-like object can be used.
     </p>
-              <pre highlight="js">var list = getItemList();  // Obtain an instance of ItemList.
-
-list.concat();             // Clone the ItemList into an Array.
-list.pop();                // Remove an item from the ItemList.
-list.unshift({ });         // Insert an item at index 0.</pre>
+    <pre highlight="js">
+        var list = getItemList();  // Obtain an instance of ItemList.
+        
+        list.concat();             // Clone the ItemList into an Array.
+        list.pop();                // Remove an item from the ItemList.
+        list.unshift({ });         // Insert an item at index 0.
+    </pre>
     <p>
         <span class="idltype">ImmutableItemList</span> has a read only
         length [=attribute=]
@@ -8661,24 +8878,28 @@ list.unshift({ });         // Insert an item at index 0.</pre>
         [{{LenientSetter}}] extended
         attribute.
     </p>
-              <pre class="idl-example">interface Example {
-  [LenientSetter] readonly attribute DOMString x;
-  readonly attribute DOMString y;
-};</pre>
+    <pre class="idl-example">
+        interface Example {
+          [LenientSetter] readonly attribute DOMString x;
+          readonly attribute DOMString y;
+        };
+    </pre>
     <p>
         An ECMAScript implementation that supports this interface will
         have a setter on the accessor property that correspond to x,
         which allows any assignment to be ignored in strict mode.
     </p>
-              <pre highlight="js">"use strict";
-
-var example = getExample();  // Get an instance of Example.
-
-// Fine; while we are in strict mode, there is a setter that is a no-op.
-example.x = 1;
-
-// Throws a TypeError, since we are in strict mode and there is no setter.
-example.y = 1;</pre>
+    <pre highlight="js">
+        "use strict";
+        
+        var example = getExample();  // Get an instance of Example.
+        
+        // Fine; while we are in strict mode, there is a setter that is a no-op.
+        example.x = 1;
+        
+        // Throws a TypeError, since we are in strict mode and there is no setter.
+        example.y = 1;
+    </pre>
 </div>
 
 
@@ -8717,30 +8938,34 @@ mailing list before proceeding.
         [{{LenientThis}}] extended
         attribute.
     </p>
-              <pre class="idl-example">interface Example {
-  [LenientThis] attribute DOMString x;
-  attribute DOMString y;
-};</pre>
+    <pre class="idl-example">
+        interface Example {
+          [LenientThis] attribute DOMString x;
+          attribute DOMString y;
+        };
+    </pre>
     <p>
         An ECMAScript implementation that supports this interface will
         allow the getter and setter of the accessor property that corresponds
         to x to be invoked with something other than an <span class="idltype">Example</span>
         object.
     </p>
-              <pre highlight="js">var example = getExample();  // Get an instance of Example.
-var obj = { };
-
-// Fine.
-example.x;
-
-// Ignored, since the this value is not an Example object and [LenientThis] is used.
-Object.getOwnPropertyDescriptor(Example.prototype, "x").get.call(obj);
-
-// Also ignored, since Example.prototype is not an Example object and [LenientThis] is used.
-Example.prototype.x;
-
-// Throws a TypeError, since Example.prototype is not an Example object.
-Example.prototype.y;</pre>
+    <pre highlight="js">
+        var example = getExample();  // Get an instance of Example.
+        var obj = { };
+        
+        // Fine.
+        example.x;
+        
+        // Ignored, since the this value is not an Example object and [LenientThis] is used.
+        Object.getOwnPropertyDescriptor(Example.prototype, "x").get.call(obj);
+        
+        // Also ignored, since Example.prototype is not an Example object and [LenientThis] is used.
+        Example.prototype.x;
+        
+        // Throws a TypeError, since Example.prototype is not an Example object.
+        Example.prototype.y;
+    </pre>
 </div>
 
 
@@ -8792,24 +9017,28 @@ Example.prototype.y;</pre>
         [{{NamedConstructor}}] extended
         attribute.
     </p>
-              <pre class="idl-example">[NamedConstructor=Audio,
- NamedConstructor=Audio(DOMString src)]
-interface HTMLAudioElement : HTMLMediaElement {
-  // ...
-};</pre>
+    <pre class="idl-example">
+        [NamedConstructor=Audio,
+         NamedConstructor=Audio(DOMString src)]
+        interface HTMLAudioElement : HTMLMediaElement {
+          // ...
+        };
+    </pre>
     <p>
         An ECMAScript implementation that supports this interface will
         allow the construction of <span class="estype">HTMLAudioElement</span>
         objects using the <span class="estype">Audio</span> constructor.
     </p>
-              <pre highlight="js">typeof Audio;                   // Evaluates to 'function'.
-
-var a1 = new Audio();           // Creates a new object that implements
-                                // HTMLAudioElement, using the zero-argument
-                                // constructor.
-
-var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
-                                // one-argument constructor.</pre>
+    <pre highlight="js">
+        typeof Audio;                   // Evaluates to 'function'.
+        
+        var a1 = new Audio();           // Creates a new object that implements
+                                        // HTMLAudioElement, using the zero-argument
+                                        // constructor.
+        
+        var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
+                                        // one-argument constructor.
+    </pre>
 </div>
 
 
@@ -8850,10 +9079,12 @@ var a2 = new Audio('a.flac');   // Creates an HTMLAudioElement using the
         since a new object should always be returned when
         it is called.
     </p>
-              <pre class="idl-example">interface Document : Node {
-  [NewObject] Element createElement(DOMString localName);
-  ...
-};</pre>
+    <pre class="idl-example">
+        interface Document : Node {
+          [NewObject] Element createElement(DOMString localName);
+          ...
+        };
+    </pre>
 </div>
 
 
@@ -8915,31 +9146,34 @@ mailing list before proceeding.
         The following [=IDL fragment=] defines two interfaces, one whose interface object
         is exposed on the ECMAScript global object, and one whose isn’t:
     </p>
-              <pre class="idl-example">interface Storage {
-  void addEntry(unsigned long key, any value);
-};
-
-[NoInterfaceObject]
-interface Query {
-  any lookupEntry(unsigned long key);
-};</pre>
+    <pre class="idl-example">
+        interface Storage {
+          void addEntry(unsigned long key, any value);
+        };
+        
+        [NoInterfaceObject]
+        interface Query {
+          any lookupEntry(unsigned long key);
+        };
+    </pre>
     <p>
         An ECMAScript implementation of the above IDL would allow
         manipulation of <span class="idltype">Storage</span>’s
         prototype, but not <span class="idltype">Query</span>’s.
     </p>
-              <pre highlight="js">typeof Storage;                        // evaluates to "object"
-
-// Add some tracing alert() call to Storage.addEntry.
-var fn = Storage.prototype.addEntry;
-Storage.prototype.addEntry = function(key, value) {
-  alert('Calling addEntry()');
-  return fn.call(this, key, value);
-};
-
-typeof Query;                          // evaluates to "undefined"
-var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
-</pre>
+    <pre highlight="js">
+        typeof Storage;                        // evaluates to "object"
+        
+        // Add some tracing alert() call to Storage.addEntry.
+        var fn = Storage.prototype.addEntry;
+        Storage.prototype.addEntry = function(key, value) {
+          alert('Calling addEntry()');
+          return fn.call(this, key, value);
+        };
+        
+        typeof Query;                          // evaluates to "undefined"
+        var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
+    </pre>
 </div>
 
 
@@ -8988,50 +9222,54 @@ var fn = Query.prototype.lookupEntry;  // exception, Query isn’t defined
         one that has a [=named property getter=]
         and one that does not.
     </p>
-              <pre class="idl-example">interface StringMap {
-  readonly attribute unsigned long length;
-  getter DOMString lookup(DOMString key);
-};
-
-[OverrideBuiltins]
-interface StringMap2 {
-  readonly attribute unsigned long length;
-  getter DOMString lookup(DOMString key);
-};</pre>
+    <pre class="idl-example">
+        interface StringMap {
+          readonly attribute unsigned long length;
+          getter DOMString lookup(DOMString key);
+        };
+        
+        [OverrideBuiltins]
+        interface StringMap2 {
+          readonly attribute unsigned long length;
+          getter DOMString lookup(DOMString key);
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of these two interfaces,
         getting certain properties on objects implementing
         the interfaces will result in different values:
     </p>
-              <pre highlight="js">// Obtain an instance of StringMap.  Assume that it has "abc", "length" and
-// "toString" as supported property names.
-var map1 = getStringMap();
-
-// This invokes the named property getter.
-map1.abc;
-
-// This fetches the "length" property on the object that corresponds to the
-// length attribute.
-map1.length;
-
-// This fetches the "toString" property from the object's prototype chain.
-map1.toString;
-
-
-// Obtain an instance of StringMap2.  Assume that it also has "abc", "length"
-// and "toString" as supported property names.
-var map2 = getStringMap2();
-
-// This invokes the named property getter.
-map2.abc;
-
-// This also invokes the named property getter, despite the fact that the "length"
-// property on the object corresponds to the length attribute.
-map2.length;
-
-// This too invokes the named property getter, despite the fact that "toString" is
-// a property in map2's prototype chain.
-map2.toString;</pre>
+    <pre highlight="js">
+        // Obtain an instance of StringMap.  Assume that it has "abc", "length" and
+        // "toString" as supported property names.
+        var map1 = getStringMap();
+        
+        // This invokes the named property getter.
+        map1.abc;
+        
+        // This fetches the "length" property on the object that corresponds to the
+        // length attribute.
+        map1.length;
+        
+        // This fetches the "toString" property from the object's prototype chain.
+        map1.toString;
+        
+        
+        // Obtain an instance of StringMap2.  Assume that it also has "abc", "length"
+        // and "toString" as supported property names.
+        var map2 = getStringMap2();
+        
+        // This invokes the named property getter.
+        map2.abc;
+        
+        // This also invokes the named property getter, despite the fact that the "length"
+        // property on the object corresponds to the length attribute.
+        map2.length;
+        
+        // This too invokes the named property getter, despite the fact that "toString" is
+        // a property in map2's prototype chain.
+        map2.toString;
+    </pre>
 </div>
 
 
@@ -9133,24 +9371,28 @@ map2.toString;</pre>
         <span class="idlattr">full</span> attribute of the
         <span class="idltype">Person</span> object:
     </p>
-              <pre class="idl-example">interface Name {
-  attribute DOMString full;
-  attribute DOMString family;
-  attribute DOMString given;
-};
-
-interface Person {
-  [PutForwards=full] readonly attribute Name name;
-  attribute unsigned short age;
-};</pre>
+    <pre class="idl-example">
+        interface Name {
+          attribute DOMString full;
+          attribute DOMString family;
+          attribute DOMString given;
+        };
+        
+        interface Person {
+          [PutForwards=full] readonly attribute Name name;
+          attribute unsigned short age;
+        };
+    </pre>
     <p>
         In the ECMAScript binding, this would allow assignments to the
         “name” property:
     </p>
-              <pre highlight="js">var p = getPerson();           // Obtain an instance of Person.
-
-p.name = 'John Citizen';       // This statement...
-p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
+    <pre highlight="js">
+        var p = getPerson();           // Obtain an instance of Person.
+        
+        p.name = 'John Citizen';       // This statement...
+        p.name.full = 'John Citizen';  // ...has the same behavior as this one.
+    </pre>
 </div>
 
 
@@ -9209,36 +9451,40 @@ p.name.full = 'John Citizen';  // ...has the same behavior as this one.</pre>
         that increments a counter, and an [=attribute=]
         that exposes the counter’s value, which is initially 0:
     </p>
-              <pre class="idl-example">interface Counter {
-  [Replaceable] readonly attribute unsigned long value;
-  void increment();
-};</pre>
+    <pre class="idl-example">
+        interface Counter {
+          [Replaceable] readonly attribute unsigned long value;
+          void increment();
+        };
+    </pre>
     <p>
         Assigning to the “value” property
         on a [=platform object=] implementing <span class="idltype">Counter</span>
         will shadow the property that corresponds to the
         [=attribute=]:
     </p>
-              <pre highlight="js">var counter = getCounter();                              // Obtain an instance of Counter.
-counter.value;                                           // Evaluates to 0.
-
-counter.hasOwnProperty("value");                         // Evaluates to false.
-Object.getPrototypeOf(counter).hasOwnProperty("value");  // Evaluates to true.
-
-counter.increment();
-counter.increment();
-counter.value;                                           // Evaluates to 2.
-
-counter.value = 'a';                                     // Shadows the property with one that is unrelated
-                                                         // to Counter::value.
-
-counter.hasOwnProperty("value");                         // Evaluates to true.
-
-counter.increment();
-counter.value;                                           // Evaluates to 'a'.
-
-delete counter.value;                                    // Reveals the original property.
-counter.value;                                           // Evaluates to 3.</pre>
+    <pre highlight="js">
+        var counter = getCounter();                              // Obtain an instance of Counter.
+        counter.value;                                           // Evaluates to 0.
+        
+        counter.hasOwnProperty("value");                         // Evaluates to false.
+        Object.getPrototypeOf(counter).hasOwnProperty("value");  // Evaluates to true.
+        
+        counter.increment();
+        counter.increment();
+        counter.value;                                           // Evaluates to 2.
+        
+        counter.value = 'a';                                     // Shadows the property with one that is unrelated
+                                                                 // to Counter::value.
+        
+        counter.hasOwnProperty("value");                         // Evaluates to true.
+        
+        counter.increment();
+        counter.value;                                           // Evaluates to 'a'.
+        
+        delete counter.value;                                    // Reveals the original property.
+        counter.value;                                           // Evaluates to 3.
+    </pre>
 </div>
 
 
@@ -9276,10 +9522,12 @@ counter.value;                                           // Evaluates to 3.</pre
         since the same object is always returned for a given
         <span class="idltype">Document</span> object.
     </p>
-              <pre class="idl-example">interface Document : Node {
-  [SameObject] readonly attribute DOMImplementation implementation;
-  ...
-};</pre>
+    <pre class="idl-example">
+        interface Document : Node {
+          [SameObject] readonly attribute DOMImplementation implementation;
+          ...
+        };
+    </pre>
 </div>
 
 
@@ -9368,19 +9616,21 @@ ECMAScript global environment.
         with one [=operation=] that is executable from all
     contexts, and two which are executable only from secure contexts.</p>
     
-              <pre class="idl-example">interface PowerfulFeature {
-  // This call will succeed in all contexts.
-  Promise &lt;Result&gt; calculateNotSoSecretResult();
-
-  // This operation will not be exposed to a non-secure context. In such a context,
-  // there will be no "calculateSecretResult" property on PowerfulFeature.prototype.
-  [SecureContext] Promise&lt;Result&gt; calculateSecretResult();
-
-  // The same applies here: the attribute will not be exposed to a non-secure context,
-  // and in a non-secure context there will be no "secretBoolean" property on
-  // PowerfulFeature.prototype.
-  [SecureContext] readonly attribute boolean secretBoolean;
-};</pre>
+    <pre class="idl-example">
+        interface PowerfulFeature {
+          // This call will succeed in all contexts.
+          Promise &lt;Result&gt; calculateNotSoSecretResult();
+        
+          // This operation will not be exposed to a non-secure context. In such a context,
+          // there will be no "calculateSecretResult" property on PowerfulFeature.prototype.
+          [SecureContext] Promise&lt;Result&gt; calculateSecretResult();
+        
+          // The same applies here: the attribute will not be exposed to a non-secure context,
+          // and in a non-secure context there will be no "secretBoolean" property on
+          // PowerfulFeature.prototype.
+          [SecureContext] readonly attribute boolean secretBoolean;
+        };
+    </pre>
     
 </div>
 
@@ -9422,36 +9672,40 @@ such as <code>onclick</code> and <code>onerror</code>.
         [=callback function=] and another whose type is a
         [=callback function=] without the [=extended attribute=]:
     </p>
-              <pre class="idl-example">callback OccurrenceHandler = void (DOMString details);
-
-[TreatNonObjectAsNull]
-callback ErrorHandler = void (DOMString details);
-
-interface Manager {
-  attribute OccurrenceHandler? handler1;
-  attribute ErrorHandler? handler2;
-};</pre>
+    <pre class="idl-example">
+        callback OccurrenceHandler = void (DOMString details);
+        
+        [TreatNonObjectAsNull]
+        callback ErrorHandler = void (DOMString details);
+        
+        interface Manager {
+          attribute OccurrenceHandler? handler1;
+          attribute ErrorHandler? handler2;
+        };
+    </pre>
     <p>
         In an ECMAScript implementation, assigning a value that is not
         an object (such as a <span class="estype">Number</span> value)
         to handler1 will have different behavior from that when assigning
         to handler2:
     </p>
-              <pre highlight="js">var manager = getManager();  // Get an instance of Manager.
-
-manager.handler1 = function() { };
-manager.handler1;            // Evaluates to the function.
-
-try {
-  manager.handler1 = 123;    // Throws a TypeError.
-} catch (e) {
-}
-
-manager.handler2 = function() { };
-manager.handler2;            // Evaluates to the function.
-
-manager.handler2 = 123;
-manager.handler2;            // Evaluates to null.</pre>
+    <pre highlight="js">
+        var manager = getManager();  // Get an instance of Manager.
+        
+        manager.handler1 = function() { };
+        manager.handler1;            // Evaluates to the function.
+        
+        try {
+          manager.handler1 = 123;    // Throws a TypeError.
+        } catch (e) {
+        }
+        
+        manager.handler2 = function() { };
+        manager.handler2;            // Evaluates to the function.
+        
+        manager.handler2 = 123;
+        manager.handler2;            // Evaluates to null.
+    </pre>
 </div>
 
 
@@ -9507,12 +9761,14 @@ is a valid value of that type.
         extended attribute, and one operation with an argument that has
         the extended attribute:
     </p>
-              <pre class="idl-example">interface Dog {
-  attribute DOMString name;
-  [TreatNullAs=EmptyString] attribute DOMString owner;
-
-  boolean isMemberOfBreed([TreatNullAs=EmptyString] DOMString breedName);
-};</pre>
+    <pre class="idl-example">
+        interface Dog {
+          attribute DOMString name;
+          [TreatNullAs=EmptyString] attribute DOMString owner;
+        
+          boolean isMemberOfBreed([TreatNullAs=EmptyString] DOMString breedName);
+        };
+    </pre>
     <p>
         An ECMAScript implementation implementing the <span class="idltype">Dog</span>
         interface would convert a <emu-val>null</emu-val> value
@@ -9520,16 +9776,18 @@ is a valid value of that type.
         argument to the <code>isMemberOfBreed</code> function
         to the empty string rather than <code>"null"</code>:
     </p>
-              <pre highlight="js">var d = getDog();         // Assume d is a platform object implementing the Dog
-                          // interface.
-
-d.name = null;            // This assigns the string "null" to the .name
-                          // property.
-
-d.owner = null;           // This assigns the string "" to the .owner property.
-
-d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
-                          // function.</pre>
+    <pre highlight="js">
+        var d = getDog();         // Assume d is a platform object implementing the Dog
+                                  // interface.
+        
+        d.name = null;            // This assigns the string "null" to the .name
+                                  // property.
+        
+        d.owner = null;           // This assigns the string "" to the .owner property.
+        
+        d.isMemberOfBreed(null);  // This passes the string "" to the isMemberOfBreed
+                                  // function.
+    </pre>
 </div>
 
 
@@ -9622,32 +9880,36 @@ Note: For example, the following is disallowed:
         an interface that has two [=attributes=],
         one of which is designated as [{{Unforgeable}}]:
     </p>
-              <pre class="idl-example">interface System {
-  [Unforgeable] readonly attribute DOMString username;
-  readonly attribute long long loginTime;
-};</pre>
+    <pre class="idl-example">
+        interface System {
+          [Unforgeable] readonly attribute DOMString username;
+          readonly attribute long long loginTime;
+        };
+    </pre>
     <p>
         In an ECMAScript implementation of the interface, the username attribute will be exposed as a non-configurable property on the
         object itself:
     </p>
-              <pre highlight="js">var system = getSystem();                      // Get an instance of System.
-
-system.hasOwnProperty("username");             // Evaluates to true.
-system.hasOwnProperty("loginTime");            // Evaluates to false.
-System.prototype.hasOwnProperty("username");   // Evaluates to false.
-System.prototype.hasOwnProperty("loginTime");  // Evaluates to true.
-
-try {
-  // This call would fail, since the property is non-configurable.
-  Object.defineProperty(system, "username", { value: "administrator" });
-} catch (e) { }
-
-// This defineProperty call would succeed, because System.prototype.loginTime
-// is configurable.
-var forgedLoginTime = 5;
-Object.defineProperty(System.prototype, "loginTime", { value: forgedLoginTime });
-
-system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
+    <pre highlight="js">
+        var system = getSystem();                      // Get an instance of System.
+        
+        system.hasOwnProperty("username");             // Evaluates to true.
+        system.hasOwnProperty("loginTime");            // Evaluates to false.
+        System.prototype.hasOwnProperty("username");   // Evaluates to false.
+        System.prototype.hasOwnProperty("loginTime");  // Evaluates to true.
+        
+        try {
+          // This call would fail, since the property is non-configurable.
+          Object.defineProperty(system, "username", { value: "administrator" });
+        } catch (e) { }
+        
+        // This defineProperty call would succeed, because System.prototype.loginTime
+        // is configurable.
+        var forgedLoginTime = 5;
+        Object.defineProperty(System.prototype, "loginTime", { value: forgedLoginTime });
+        
+        system.loginTime;  // So this now evaluates to forgedLoginTime.
+    </pre>
 </div>
 
 
@@ -9686,17 +9948,21 @@ system.loginTime;  // So this now evaluates to forgedLoginTime.</pre>
 </p>
 <div class="note">
     <p>For example, with the following IDL:</p>
-              <pre class="idl-example example">interface Thing {
-  void f();
-  [Unscopable] g();
-};</pre>
+    <pre class="idl-example example">
+        interface Thing {
+          void f();
+          [Unscopable] g();
+        };
+    </pre>
     <p>the “f” property an be referenced with a bare identifier
     in a <code>with</code> statement but the “g” property cannot:</p>
-              <pre highlight="js">var thing = getThing();  // An instance of Thing
-with (thing) {
-  f;                     // Evaluates to a Function object.
-  g;                     // Throws a ReferenceError.
-}</pre>
+    <pre highlight="js">
+        var thing = getThing();  // An instance of Thing
+        with (thing) {
+          f;                     // Evaluates to a Function object.
+          g;                     // Throws a ReferenceError.
+        }
+    </pre>
 </div>
 
 
@@ -10515,13 +10781,15 @@ when they do exist, they are not [=function objects=].
         [=supplemental interfaces|non-supplemental interface=].
         For example, with the following IDL:
     </p>
-              <pre class="idl-example example">[NoInterfaceObject]
-interface Foo {
-};
-
-partial interface Window {
-  attribute Foo foo;
-};</pre>
+    <pre class="idl-example example">
+        [NoInterfaceObject]
+        interface Foo {
+        };
+        
+        partial interface Window {
+          attribute Foo foo;
+        };
+    </pre>
     <p>
         it is not possible to access the interface prototype object through
         the [=interface object=]
@@ -12371,15 +12639,17 @@ use standard ECMAScript Array iterator objects.
     <p>
         For example, consider the following IDL:
     </p>
-            <pre class="idl-example example">interface A {
-  void f();
-};
-
-interface B { };
-B implements A;
-
-interface C { };
-C implements A;</pre>
+    <pre class="idl-example example">
+        interface A {
+          void f();
+        };
+        
+        interface B { };
+        B implements A;
+        
+        interface C { };
+        C implements A;
+    </pre>
     <p>
         Attempting to call <code>B.prototype.f</code> on an object that implements
         <span class="idltype">A</span> (but not <span class="idltype">B</span>) or one
@@ -13603,39 +13873,43 @@ on exception objects too.
         where that <span class="estype">Function</span> object originated.
         For example, consider the IDL:
     </p>
-            <pre class="idl-example example">interface A {
-
-  /**
-   * Calls computeSquareRoot on m, passing x as its argument.
-   */
-  double doComputation(MathUtils m, double x);
-};
-
-interface MathUtils {
-  /**
-   * If x is negative, throws a <a href="#notsupportederror">NotSupportedError</a>.  Otherwise, returns
-   * the square root of x.
-   */
-  double computeSquareRoot(double x);
-};</pre>
+    <pre class="idl-example example">
+        interface A {
+        
+          /**
+           * Calls computeSquareRoot on m, passing x as its argument.
+           */
+          double doComputation(MathUtils m, double x);
+        };
+        
+        interface MathUtils {
+          /**
+           * If x is negative, throws a <a href="#notsupportederror">NotSupportedError</a>.  Otherwise, returns
+           * the square root of x.
+           */
+          double computeSquareRoot(double x);
+        };
+    </pre>
     <p>
         If we pass a <span class="idltype">MathUtils</span> object from
         a different global environment to doComputation, then the exception
         thrown will be from that global environment:
     </p>
-            <pre highlight="js">var a = getA();                           // An A object from this global environment.
-var m = otherWindow.getMathUtils();       // A MathUtils object from a different global environment.
-
-a instanceof Object;                      // Evaluates to true.
-m instanceof Object;                      // Evaluates to false.
-m instanceof otherWindow.Object;          // Evaluates to true.
-
-try {
-  a.doComputation(m, -1);
-} catch (e) {
-  e instanceof DOMException;              // Evaluates to false.
-  e instanceof otherWindow.DOMException;  // Evaluates to true.
-}</pre>
+    <pre highlight="js">
+        var a = getA();                           // An A object from this global environment.
+        var m = otherWindow.getMathUtils();       // A MathUtils object from a different global environment.
+        
+        a instanceof Object;                      // Evaluates to true.
+        m instanceof Object;                      // Evaluates to false.
+        m instanceof otherWindow.Object;          // Evaluates to true.
+        
+        try {
+          a.doComputation(m, -1);
+        } catch (e) {
+          e instanceof DOMException;              // Evaluates to false.
+          e instanceof otherWindow.DOMException;  // Evaluates to true.
+        }
+    </pre>
 </div>
 <p>
     Any requirements in this document to throw an instance of an ECMAScript built-in
@@ -13665,43 +13939,47 @@ try {
         is defined to throw an exception whenever an attempt is made
         to get its value.
     </p>
-            <pre class="idl-example">interface Dahut {
-  attribute DOMString type;
-};
-
-interface ExceptionThrower {
-  // This attribute always throws a NotSupportedError and never returns a value.
-  attribute long valueOf;
-};</pre>
+    <pre class="idl-example">
+        interface Dahut {
+          attribute DOMString type;
+        };
+        
+        interface ExceptionThrower {
+          // This attribute always throws a NotSupportedError and never returns a value.
+          attribute long valueOf;
+        };
+    </pre>
     <p>
         Assuming an ECMAScript implementation supporting this interface,
         the following code demonstrates how exceptions are handled:
     </p>
-            <pre highlight="js">var d = getDahut();              // Obtain an instance of Dahut.
-var et = getExceptionThrower();  // Obtain an instance of ExceptionThrower.
-
-try {
-  d.type = { toString: function() { throw "abc"; } };
-} catch (e) {
-  // The string "abc" is caught here, since as part of the conversion
-  // from the native object to a string, the anonymous function
-  // was invoked, and none of the \[[DefaultValue]], ToPrimitive or
-  // ToString algorithms are defined to catch the exception.
-}
-
-try {
-  d.type = { toString: { } };
-} catch (e) {
-  // An exception is caught here, since an attempt is made to invoke
-  // \[[Call]] on the native object that is the value of toString
-  // property.
-}
-
-d.type = et;
-// An uncaught NotSupportedError DOMException is thrown here, since the
-// \[[DefaultValue]] algorithm attempts to get the value of the
-// "valueOf" property on the ExceptionThrower object.  The exception
-// propagates out of this block of code.</pre>
+    <pre highlight="js">
+        var d = getDahut();              // Obtain an instance of Dahut.
+        var et = getExceptionThrower();  // Obtain an instance of ExceptionThrower.
+        
+        try {
+          d.type = { toString: function() { throw "abc"; } };
+        } catch (e) {
+          // The string "abc" is caught here, since as part of the conversion
+          // from the native object to a string, the anonymous function
+          // was invoked, and none of the \[[DefaultValue]], ToPrimitive or
+          // ToString algorithms are defined to catch the exception.
+        }
+        
+        try {
+          d.type = { toString: { } };
+        } catch (e) {
+          // An exception is caught here, since an attempt is made to invoke
+          // \[[Call]] on the native object that is the value of toString
+          // property.
+        }
+        
+        d.type = et;
+        // An uncaught NotSupportedError DOMException is thrown here, since the
+        // \[[DefaultValue]] algorithm attempts to get the value of the
+        // "valueOf" property on the ExceptionThrower object.  The exception
+        // propagates out of this block of code.
+    </pre>
 </div>
 
 
@@ -13718,9 +13996,11 @@ d.type = et;
 
 <h3 id="common-ArrayBufferView">ArrayBufferView</h3>
 
-          <pre class="idl-example example">typedef (Int8Array or Int16Array or Int32Array or
-         Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
-         Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef>ArrayBufferView</dfn>;</pre>
+<pre class="idl-example example">
+    typedef (Int8Array or Int16Array or Int32Array or
+             Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
+             Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef>ArrayBufferView</dfn>;
+</pre>
 <p>
     The {{ArrayBufferView}} typedef is used to represent
     objects that provide a view on to an {{ArrayBuffer}}.
