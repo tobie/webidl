@@ -293,10 +293,6 @@ TR: </xsl:text>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match='h:span[@class="esvalue"]'>
-    <emu-val><xsl:apply-templates select="node()"/></emu-val>
-  </xsl:template>
-  
   <xsl:template match='h:var'>
     <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
   </xsl:template>

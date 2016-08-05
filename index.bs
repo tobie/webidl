@@ -1659,7 +1659,7 @@ symbol without needing to escape it.
 Advisement: It is strongly suggested not to use [=default value=]
 of <span class="idlvalue">true</span> for <span class="estype">boolean</span>-typed arguments,
 as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
+conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
 
 <p>
     If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
@@ -3847,7 +3847,7 @@ is strongly suggested not to use of <span class="idlvalue">true</span> as the
 <span class="estype">boolean</span>-typed
 [=dictionary members=],
 as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
+conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
 
 <p>
     Each [=dictionary member=] (matching
@@ -6077,11 +6077,11 @@ and possibly WindowProxy objects</a>.
 
 <p>
     Unless otherwise specified, the <span class="prop">\[[Extensible]]</span> internal property
-    of objects defined in this section has the value <emu-val>true</emu-val>.
+    of objects defined in this section has the value <span class="esvalue">true</span>.
 </p>
 <p>
     Unless otherwise specified, the <span class="prop">\[[Prototype]]</span> internal property
-    of objects defined in this section is the <emu-val>Object</emu-val> prototype object.
+    of objects defined in this section is the <span class="esvalue">Object</span> prototype object.
 </p>
 <p>
     Some objects described in this section are defined to have a <dfn id="dfn-class-string" export>class string</dfn>,
@@ -6265,14 +6265,14 @@ for Web pages.
     ECMAScript value:
 </p>
 <dl class="switch">
-    <dt>The <emu-val>undefined</emu-val> value</dt>
+    <dt>The <span class="esvalue">undefined</span> value</dt>
     <dd>
         The IDL value is an
         {{object}} reference
         to a special object that represents the ECMAScript
-        <emu-val>undefined</emu-val> value.
+        <span class="esvalue">undefined</span> value.
     </dd>
-    <dt>The <emu-val>null</emu-val> value</dt>
+    <dt>The <span class="esvalue">null</span> value</dt>
     <dd>
         The IDL value is the <span class="idlvalue">null</span>
         {{object?}} reference.
@@ -6310,9 +6310,9 @@ for Web pages.
     An IDL {{any}} value is
     [=converted to an ECMAScript value=]
     as follows.  If the value is an {{object}}
-    reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val>
+    reference to a special object that represents an ECMAScript <span class="esvalue">undefined</span>
     value, then it is converted to the ECMAScript
-    <emu-val>undefined</emu-val> value.  Otherwise,
+    <span class="esvalue">undefined</span> value.  Otherwise,
     the rules for converting the [=specific type=]
     of the IDL {{any}} value
     as described in the remainder of this section are performed.
@@ -6328,7 +6328,7 @@ for Web pages.
     [=operation=].  Functions on [=platform objects=]
     that implement an operation whose IDL specifies a
     {{void}} return type must return the
-    <emu-val>undefined</emu-val> value.
+    <span class="esvalue">undefined</span> value.
 </p>
 <p>
     ECMAScript functions that implement an operation whose IDL
@@ -6353,9 +6353,9 @@ for Web pages.
 <p id="boolean-to-es">
     The IDL {{boolean}} value <span class="idlvalue">true</span>
     is [=converted=] to
-    the ECMAScript <emu-val>true</emu-val> value and the IDL {{boolean}}
+    the ECMAScript <span class="esvalue">true</span> value and the IDL {{boolean}}
     value <span class="idlvalue">false</span> is converted to the ECMAScript
-    <emu-val>false</emu-val> value.
+    <span class="esvalue">false</span> value.
 </p>
 
 
@@ -6378,13 +6378,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; −2<sup>7</sup> or |x| &gt; 2<sup>7</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6397,7 +6397,7 @@ for Web pages.
             <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{byte}} value that represents 0.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{byte}} value that represents 0.</li>
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
     <li>If |x| ≥ 2<sup>7</sup>, return the IDL {{byte}} value that represents the same numeric value as |x| − 2<sup>8</sup>.
@@ -6431,13 +6431,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; 0 or |x| &gt; 2<sup>8</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6450,7 +6450,7 @@ for Web pages.
             <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{octet}} value that represents 0.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{octet}} value that represents 0.</li>
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
     <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
@@ -6484,13 +6484,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; −2<sup>15</sup> or |x| &gt; 2<sup>15</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6503,7 +6503,7 @@ for Web pages.
             <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{short}} value that represents 0.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{short}} value that represents 0.</li>
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>16</sup>.</li>
     <li>If |x| ≥ 2<sup>15</sup>, return the IDL {{short}} value that represents the same numeric value as |x| − 2<sup>16</sup>.
@@ -6538,13 +6538,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; 0 or |x| &gt; 2<sup>16</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6589,13 +6589,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; −2<sup>31</sup> or |x| &gt; 2<sup>31</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6640,13 +6640,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; 0 or |x| &gt; 2<sup>32</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6691,13 +6691,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; −2<sup>53</sup> + 1 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6710,7 +6710,7 @@ for Web pages.
             <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{long long}} value that represents 0.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{long long}} value that represents 0.</li>
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
     <li>If |x| is greater than or equal to 2<sup>63</sup>, then set |x| to |x| − 2<sup>64</sup>.</li>
@@ -6749,13 +6749,13 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+            <li>If |x| is <span class="esvalue">NaN</span>, +∞, or −∞, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
             <li>If |x| &lt; 0 or |x| &gt; 2<sup>53</sup> − 1, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is not <emu-val>NaN</emu-val> and the conversion to an IDL value is being performed due to any of the following:
+    <li>If |x| is not <span class="esvalue">NaN</span> and the conversion to an IDL value is being performed due to any of the following:
         <ul>
             <li>|V| is being assigned to an [=attribute=] annotated with the [{{Clamp}}] [=extended attribute=],</li>
             <li>|V| is being passed as an [=operation=] argument annotated with the [{{Clamp}}] extended attribute, or</li>
@@ -6768,7 +6768,7 @@ for Web pages.
             <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
-    <li>If |x| is <emu-val>NaN</emu-val>, +0, −0, +∞, or −∞, then return the IDL {{unsigned long long}} value that represents 0.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, +0, −0, +∞, or −∞, then return the IDL {{unsigned long long}} value that represents 0.</li>
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>64</sup>.</li>
     <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
@@ -6798,8 +6798,8 @@ for Web pages.
 </p>
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-    <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
-    <emu-val>−Infinity</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
+    <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>
         Let |S| be the set of finite IEEE 754 single-precision floating
         point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6841,7 +6841,7 @@ for Web pages.
 </p>
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-    <li>If |x| is <emu-val>NaN</emu-val>, then return the IDL {{unrestricted float}} value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL {{unrestricted float}} value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
     <li>
         Let |S| be the set of finite IEEE 754 single-precision floating
         point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6867,7 +6867,7 @@ for Web pages.
         Return |y|.
     </li>
 </ol>
-Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
+Note: Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
 it must be canonicalized to a particular single precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
 value when its bit pattern is interpreted as an unsigned 32 bit integer.
@@ -6880,7 +6880,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 <ul>
     <li>
         If the IDL {{unrestricted float}} value is a NaN,
-        then the <span class="estype">Number</span> value is <emu-val>NaN</emu-val>.
+        then the <span class="estype">Number</span> value is <span class="esvalue">NaN</span>.
     </li>
     <li>
         Otherwise, the <span class="estype">Number</span> value is
@@ -6901,8 +6901,8 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 </p>
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-    <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
-    <emu-val>−Infinity</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, <span class="esvalue">+Infinity</span> or
+    <span class="esvalue">−Infinity</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>
         Return the IDL {{double}} value
         that has the same numeric value as |x|.
@@ -6927,13 +6927,13 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 </p>
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
-    <li>If |x| is <emu-val>NaN</emu-val>, then return the IDL {{unrestricted double}} value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
+    <li>If |x| is <span class="esvalue">NaN</span>, then return the IDL {{unrestricted double}} value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
     <li>
         Return the IDL {{unrestricted double}} value
         that has the same numeric value as |x|.
     </li>
 </ol>
-Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
+Note: Since there is only a single ECMAScript <span class="esvalue">NaN</span> value,
 it must be canonicalized to a particular double precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
 value when its bit pattern is interpreted as an unsigned 64 bit integer.
@@ -6946,7 +6946,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 <ul>
     <li>
         If the IDL {{unrestricted double}} value is a NaN,
-        then the <span class="estype">Number</span> value is <emu-val>NaN</emu-val>.
+        then the <span class="estype">Number</span> value is <span class="esvalue">NaN</span>.
     </li>
     <li>
         Otherwise, the <span class="estype">Number</span> value is
@@ -6966,7 +6966,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
     by running the following algorithm:
 </p>
 <ol class="algorithm">
-    <li>If |V| is <emu-val>null</emu-val>
+    <li>If |V| is <span class="esvalue">null</span>
         and the conversion to an IDL value is being performed due
         to any of the following:
         <ul>
@@ -7104,7 +7104,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
         then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
         with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
     as the [=callback context=]. [[!HTML]]</li>
-    <li><a href="#ecmascript-throw" class="dfnref external">Throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li><a href="#ecmascript-throw" class="dfnref external">Throw a <span class="esvalue">TypeError</span></a>.</li>
 </ol>
 <p id="interface-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -7146,18 +7146,18 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
                         <dl class="switch">
                             <dt>Undefined</dt>
                             <dt>Null</dt>
-                            <dd>|value| is <emu-val>undefined</emu-val>.</dd>
+                            <dd>|value| is <span class="esvalue">undefined</span>.</dd>
                             <dt>anything else</dt>
                             <dd>|value| is the result of calling the <span class="prop">\[[Get]]</span> internal method on |V| with property name |key|.</dd>
                         </dl>
                     </li>
-                    <li>If |value| is not <emu-val>undefined</emu-val>, then:
+                    <li>If |value| is not <span class="esvalue">undefined</span>, then:
                         <ol>
                             <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |value| to an IDL value whose type is the type |member| is declared to be of.</li>
                             <li>Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].</li>
                         </ol>
                     </li>
-                    <li>Otherwise, if |value| is <emu-val>undefined</emu-val> but the [=dictionary member=] has a [=default value=], then:
+                    <li>Otherwise, if |value| is <span class="esvalue">undefined</span> but the [=dictionary member=] has a [=default value=], then:
                         <ol>
                             <li>Let |idlValue| be the dictionary member’s default value.</li>
                             <li>Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].</li>
@@ -7165,7 +7165,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
                     </li>
                     <li>
                         Otherwise, if |value| is
-                        <emu-val>undefined</emu-val> and the
+                        <span class="esvalue">undefined</span> and the
                         [=dictionary member=] is a
                         [=required dictionary member=], then throw a <span class="estype">TypeError</span>.
                     </li>
@@ -7250,13 +7250,13 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     by running the following algorithm:
 </p>
 <ol class="algorithm">
-    <li>If the result of calling <a>IsCallable</a>(|V|) is <emu-val>false</emu-val> and the conversion to an IDL value
+    <li>If the result of calling <a>IsCallable</a>(|V|) is <span class="esvalue">false</span> and the conversion to an IDL value
         is not being performed due
         to |V| being assigned to an [=attribute=]
         whose type is a [=nullable type|nullable=]
         [=callback function=]
         that is annotated with [{{TreatNonObjectAsNull}}],
-    then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a>.</li>
     <li>Return the IDL <a href="#idl-callback-function">callback
         function type</a> value that represents a reference to the same
         object that |V| represents,
@@ -7277,7 +7277,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
 <p>
     IDL [=nullable type=] values are represented
     by values of either the ECMAScript type corresponding to the [=inner type|inner IDL type=], or
-    the ECMAScript <emu-val>null</emu-val> value.
+    the ECMAScript <span class="esvalue">null</span> value.
 </p>
 <p id="es-to-nullable">
     An ECMAScript value |V| is
@@ -7298,7 +7298,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         value <span class="idlvalue">null</span>.
     </li>
     <li>
-        Otherwise, if |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>, then return the IDL
+        Otherwise, if |V| is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>, then return the IDL
         [=nullable type=] <span class="idltype">|T|?</span>
         value <span class="idlvalue">null</span>.
     </li>
@@ -7316,7 +7316,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>
         If the IDL [=nullable type=] <span class="idltype">|T|?</span>
         value is <span class="idlvalue">null</span>,
-        then the ECMAScript value is <emu-val>null</emu-val>.
+        then the ECMAScript value is <span class="esvalue">null</span>.
     </li>
     <li>
         Otherwise, the ECMAScript value is the result of
@@ -7357,7 +7357,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         <a>ReturnIfAbrupt</a>(|method|).
     </li>
     <li>
-        If |method| is <emu-val>undefined</emu-val>,
+        If |method| is <span class="esvalue">undefined</span>,
         <a href="#ecmascript-throw" class="dfnref external">throw a
         <span class="estype">TypeError</span></a>.
     </li>
@@ -7413,7 +7413,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
             </li>
             <li><a>ReturnIfAbrupt</a>(|next|).</li>
             <li>
-                If |next| is <emu-val>false</emu-val>,
+                If |next| is <span class="esvalue">false</span>,
                 then return an IDL sequence value of type
                 {{sequence&lt;T&gt;}}
                 of length |i|, where the value of the element
@@ -7533,7 +7533,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         </div>
     </li>
     <li>Let |promise| be the result of calling |resolve| with <a class="nocite">%Promise%</a>
-    as the <emu-val>this</emu-val> value and |V| as the single argument value.</li>
+    as the <span class="esvalue">this</span> value and |V| as the single argument value.</li>
     <li>Return the IDL <a href="#idl-promise">promise type</a> value that is a reference to the
     same object as |promise|.</li>
 </ol>
@@ -7563,7 +7563,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
                     <li>Let |value| be the result of [=converted to an IDL value|converting=]
                     |V| to an IDL value of type |T|.</li>
                     <li>If there are no steps that are required to be run if the promise was fulfilled, then
-                    return <emu-val>undefined</emu-val>.</li>
+                    return <span class="esvalue">undefined</span>.</li>
                     <li>Otherwise, return the result of performing any steps that were required to be run if the promise was fulfilled,
                     with |value| as the promise’s value.</li>
                 </ol>
@@ -7578,14 +7578,14 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
             <li>Let |reason| be the result of [=converted to an IDL value|converting=]
             |R| to an IDL value of type {{any}}.</li>
             <li>If there are no steps that are required to be run if the promise was rejected, then
-            return <emu-val>undefined</emu-val>.</li>
+            return <span class="esvalue">undefined</span>.</li>
             <li>Otherwise, return the result of performing any steps that were required to be run if the promise was rejected,
             with |reason| as the rejection reason.</li>
         </ol>
     </li>
     <li>Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.</li>
     <li>If |then| is not <a>callable</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-    <li>Return the result of calling |then| with |promise| as the <emu-val>this</emu-val> value and |onFulfilled| and |onRejected|
+    <li>Return the result of calling |then| with |promise| as the <span class="esvalue">this</span> value and |onFulfilled| and |onRejected|
     as its two arguments.</li>
 </ol>
 Issue: Include an example of how to write spec text using this term.
@@ -7606,15 +7606,15 @@ Issue: Include an example of how to write spec text using this term.
 <ol class="algorithm">
     <li>If the [=union type=]
         [=includes a nullable type=] and
-        |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
+        |V| is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>,
     then return the IDL value <span class="idlvalue">null</span>.</li>
     <li>
         Let |types| be the [=flattened member types=]
         of the [=union type=].
     </li>
     <li>
-        If |V| is <emu-val>null</emu-val> or
-        <emu-val>undefined</emu-val>, and
+        If |V| is <span class="esvalue">null</span> or
+        <span class="esvalue">undefined</span>, and
         |types| includes a
         <a href="#idl-dictionary">dictionary type</a>, then return the
         result of
@@ -7719,7 +7719,7 @@ Issue: Include an example of how to write spec text using this term.
                     </li>
                     <li>
                         If |method| is not
-                        <emu-val>undefined</emu-val>,
+                        <span class="esvalue">undefined</span>,
                         return the result of
                         .
                     </li>
@@ -7737,7 +7737,7 @@ Issue: Include an example of how to write spec text using this term.
                     </li>
                     <li>
                         If |method| is not
-                        <emu-val>undefined</emu-val>,
+                        <span class="esvalue">undefined</span>,
                         return the result of
                         [=Creating a frozen array from an iterable|creating a frozen array of that type from V and method=].
                     </li>
@@ -7959,7 +7959,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>If |O| has a \[[ViewedArrayBuffer]] <a>internal slot</a>, then:
         <ol>
             <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a>internal slot</a>.</li>
-            <li>If |arrayBuffer| is <emu-val>undefined</emu-val>, then
+            <li>If |arrayBuffer| is <span class="esvalue">undefined</span>, then
             <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
             <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a>internal slot</a>.</li>
             <li>Set |length| to the value of |O|’s \[[ByteLength]] <a>internal slot</a>.</li>
@@ -8459,9 +8459,9 @@ are created.
     appears on an [=interface=],
     it indicates that when a <span class="estype">Function</span> corresponding
     to one of the interface’s [=operations=]
-    is invoked with the <emu-val>null</emu-val> or <emu-val>undefined</emu-val>
-    value as the <emu-val>this</emu-val> value, that the ECMAScript global
-    object will be used as the <emu-val>this</emu-val> value instead.
+    is invoked with the <span class="esvalue">null</span> or <span class="esvalue">undefined</span>
+    value as the <span class="esvalue">this</span> value, that the ECMAScript global
+    object will be used as the <span class="esvalue">this</span> value instead.
     This is regardless of whether the calling code is in strict mode.
 </p>
 <p>
@@ -8910,7 +8910,7 @@ which would provide access to the array elements.
     [=extended attribute=]
     appears on a [=regular attribute=],
     it indicates that invocations of the attribute’s getter or setter
-    with a <emu-val>this</emu-val> value that is not an
+    with a <span class="esvalue">this</span> value that is not an
     object that implements the [=interface=]
     on which the attribute appears will be ignored.
 </p>
@@ -9718,7 +9718,7 @@ such as <code>onclick</code> and <code>onerror</code>.
     appears on an [=attribute=]
     or [=operation=] argument whose type is
     {{DOMString}},
-    it indicates that a <emu-val>null</emu-val> value
+    it indicates that a <span class="esvalue">null</span> value
     assigned to the attribute or passed as the operation argument will be
     handled differently from its default handling.  Instead of being stringified
     to “null”, which is the default,
@@ -9771,7 +9771,7 @@ is a valid value of that type.
     </pre>
     <p>
         An ECMAScript implementation implementing the <span class="idltype">Dog</span>
-        interface would convert a <emu-val>null</emu-val> value
+        interface would convert a <span class="esvalue">null</span> value
         assigned to the “owner” property or passed as the
         argument to the <code>isMemberOfBreed</code> function
         to the empty string rather than <code>"null"</code>:
@@ -10020,7 +10020,7 @@ appropriate exception or return normally. [[!HTML]]
     
     <li>
         Initialize |method| to
-        <emu-val>undefined</emu-val>.
+        <span class="esvalue">undefined</span>.
     </li>
     
     <li>If there is more than one entry in |S|, then set
@@ -10038,7 +10038,7 @@ appropriate exception or return normally. [[!HTML]]
                 <div class="note"><p>All entries in |S| at this point have the same type and [=optionality value=] at index |i|.</p></div>
             </li>
             <li>Let |optionality| be the value at index |i| in the list of [=optionality values=] of any entry in |S|.</li>
-            <li>If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
+            <li>If |optionality| is “optional” and |V| is <span class="esvalue">undefined</span>, then:
                 <ol>
                     <li>If the argument at index |i| is declared with a [=default value=],
                     then append to |values| that default value.</li>
@@ -10056,11 +10056,11 @@ appropriate exception or return normally. [[!HTML]]
             <li>Let |V| be |arg|<sub>|i|</sub>.
             <div class="note"><p>This is the argument that will be used to resolve which overload is selected.</p></div></li>
             
-            <li>If |V| is <emu-val>undefined</emu-val>, and there is an entry in |S|
+            <li>If |V| is <span class="esvalue">undefined</span>, and there is an entry in |S|
                 whose list of [=optionality values=] has “optional” at index |i|,
             then remove from |S| all other entries.</li>
             
-            <li>Otherwise: if |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
+            <li>Otherwise: if |V| is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>,
                 and there is an entry in |S| that has one of the following types at position |i| of its type list,
                 <ul>
                     <li>a [=nullable type=]</li>
@@ -10214,7 +10214,7 @@ appropriate exception or return normally. [[!HTML]]
                         <a>ReturnIfAbrupt</a>(|method|).
                     </li>
                 </ol>
-                |method| is not <emu-val>undefined</emu-val>, then remove from |S| all
+                |method| is not <span class="esvalue">undefined</span>, then remove from |S| all
                 other entries.
             </li>
             
@@ -10307,7 +10307,7 @@ appropriate exception or return normally. [[!HTML]]
     of the single entry in |S|.</li>
     
     <li>
-        If |i| = |d| and |method| is not <emu-val>undefined</emu-val>, then
+        If |i| = |d| and |method| is not <span class="esvalue">undefined</span>, then
         <ol>
             <li>
                 Let |V| be |arg|<sub>|i|</sub>.
@@ -10338,7 +10338,7 @@ appropriate exception or return normally. [[!HTML]]
             <li>Let |V| be |arg|<sub>|i|</sub>.</li>
             <li>Let |type| be the type at index |i| in the type list of the remaining entry in |S|.</li>
             <li>Let |optionality| be the value at index |i| in the list of [=optionality values=] of the remaining entry in |S|.</li>
-            <li>If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
+            <li>If |optionality| is “optional” and |V| is <span class="esvalue">undefined</span>, then:
                 <ol>
                     <li>If the argument at index |i| is declared with a [=default value=],
                     then append to |values| that default value.</li>
@@ -10392,7 +10392,7 @@ appropriate exception or return normally. [[!HTML]]
         ECMAScript value that is passed in at the distinguishing argument
         index to determine which IDL type it may correspond to.
         This allows us to select the final overload that will
-        be invoked.  If the value passed in is <emu-val>undefined</emu-val>
+        be invoked.  If the value passed in is <span class="esvalue">undefined</span>
         and there is an overload with an optional argument at this position, then
         we will choose that overload.  If there is no valid overload for the type of
         value passed in here, then we throw a <span class="estype">TypeError</span>.
@@ -10405,12 +10405,12 @@ appropriate exception or return normally. [[!HTML]]
         again ignoring any additional arguments that were ignored due to being passed
     after the last possible argument.</p>
     <p>When converting an optional argument’s ECMAScript value to its equivalent IDL value,
-        <emu-val>undefined</emu-val> will be converted into
+        <span class="esvalue">undefined</span> will be converted into
         the [=default value|optional argument’s default value=],
     if it has one, or a special value “missing” otherwise.</p>
     <p>Optional arguments corresponding to a final, variadic argument do not treat
-        <emu-val>undefined</emu-val> as a special “missing” value, however.
-        The <emu-val>undefined</emu-val> value is converted to the type
+        <span class="esvalue">undefined</span> as a special “missing” value, however.
+        The <span class="esvalue">undefined</span> value is converted to the type
     of variadic argument as would be done for a non-optional argument.</p>
 </div>
 
@@ -10437,7 +10437,7 @@ appropriate exception or return normally. [[!HTML]]
     and its value is an object called the <dfn id="dfn-interface-object" export>interface object</dfn>.
 </p>
 <p>
-    The property has the attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
+    The property has the attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
     The characteristics of an interface object are described in [[#interface-object]].
 </p>
 
@@ -10449,7 +10449,7 @@ appropriate exception or return normally. [[!HTML]]
     “<span class="sym">=</span>”, and its value is an object called a
     <dfn id="dfn-named-constructor" export>named constructor</dfn>, which allows
     construction of objects that implement the interface.  The property has the
-    attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
+    attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
     The characteristics of a named constructor are described in
     [[#named-constructors]].
 </p>
@@ -10487,7 +10487,7 @@ appropriate exception or return normally. [[!HTML]]
 <p>
     An interface object for a non-callback interface must have a property named “prototype”
     with attributes
-    <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
+    <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
     whose value is an object called the <dfn id="dfn-interface-prototype-object" export>interface prototype object</dfn>.  This object has properties
     that correspond to the [=regular attributes=] and
     [=regular operations=] defined on the interface,
@@ -10495,7 +10495,7 @@ appropriate exception or return normally. [[!HTML]]
     [[#interface-prototype-object]].
 </p>
 Note: Since an interface object for a non-callback interface is a [=function object=] the <code>typeof</code> operator will return
-<emu-val>"function"</emu-val> when applied to
+<span class="esvalue">"function"</span> when applied to
 such an interface object.
 <p>
     The internal <span class="esprop">\[[Prototype]]</span> property
@@ -10568,7 +10568,7 @@ when they do exist, they are not [=function objects=].
 </p>
 <p>
     Interface objects for non-callback interfaces must have a property named “length”
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     whose value is a <span class="estype">Number</span>.
     If the [{{Constructor}}]
     [=extended attribute=]
@@ -10593,7 +10593,7 @@ when they do exist, they are not [=function objects=].
 </ol>
 <p>
     All interface objects must have a
-    property named “name” with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    property named “name” with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     whose value is the identifier of the corresponding interface.
 </p>
 
@@ -10609,18 +10609,18 @@ when they do exist, they are not [=function objects=].
     argument passed to <span class="prop">\[[HasInstance]]</span>:
 </p>
 <ol class="algorithm">
-    <li>If |V| is not an object, return <emu-val>false</emu-val>.</li>
+    <li>If |V| is not an object, return <span class="esvalue">false</span>.</li>
     <li>Let |O| be the result of calling the <span class="prop">\[[Get]]</span> method of |A| with property name “prototype”.</li>
     <li>If |O| is not an object, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a> exception.</li>
     <li>If |V| is a platform object that implements the
         interface for which |O| is the [=interface prototype object=],
-    return <emu-val>true</emu-val>.</li>
+    return <span class="esvalue">true</span>.</li>
     <li>Repeat:
         <ol>
             <li>Set |V| to the value of the <span class="prop">\[[Prototype]]</span> internal property of |V|.</li>
-            <li>If |V| is <emu-val>null</emu-val>, return <emu-val>false</emu-val>.</li>
+            <li>If |V| is <span class="esvalue">null</span>, return <span class="esvalue">false</span>.</li>
             <li>If |O| and |V| refer to the same object,
-            return <emu-val>true</emu-val>.</li>
+            return <span class="esvalue">true</span>.</li>
         </ol>
     </li>
 </ol>
@@ -10685,7 +10685,7 @@ when they do exist, they are not [=function objects=].
 </p>
 <p>
     A named constructor must have a property named “length”
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     whose value is a <span class="estype">Number</span> determined as follows:
 </p>
 <ol class="algorithm">
@@ -10703,13 +10703,13 @@ when they do exist, they are not [=function objects=].
 </ol>
 <p>
     A named constructor must have a property named “name”
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     whose value is the identifier used for the named constructor.
 </p>
 <p>
     A named constructor must also have a property named
     “prototype” with attributes
-    <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
+    <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
     whose value is the [=interface prototype object=]
     for the [=interface=] on which the
     [{{NamedConstructor}}]
@@ -10745,7 +10745,7 @@ when they do exist, they are not [=function objects=].
     extended attribute was not specified on the interface, then
     the interface prototype object must
     also have a property named “constructor” with attributes
-    <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span> whose value
+    <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span> whose value
     is a reference to the interface object for the interface.
 </p>
 
@@ -10823,7 +10823,7 @@ when they do exist, they are not [=function objects=].
         declared with the [{{Unscopable}}] extended attribute,
         call <a>CreateDataProperty</a>(|object|,
         the [=identifier=] of the
-    interface member, <emu-val>true</emu-val>).</li>
+    interface member, <span class="esvalue">true</span>).</li>
     <li>Return |object|.</li>
 </ol>
 <p>
@@ -10909,10 +10909,10 @@ when they do exist, they are not [=function objects=].
             <li>If |A| implements an interface with the
                 [{{LegacyUnenumerableNamedProperties}}]
                 [=extended attribute=],
-                then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
-            otherwise set it to <emu-val>true</emu-val>.</li>
-            <li>Set |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val> and
-            |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
+                then set |desc|.<span class="prop">\[[Enumerable]]</span> to <span class="esvalue">false</span>,
+            otherwise set it to <span class="esvalue">true</span>.</li>
+            <li>Set |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span> and
+            |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
             <li>Return |desc|.</li>
         </ol>
     </li>
@@ -10930,8 +10930,8 @@ when they do exist, they are not [=function objects=].
     must behave as follows when called with object |O|
     and property name |P|.
     The term <span id="Reject">“Reject”</span> is used in the same sense as that defined in ECMA-262, namely, to mean “If |Throw| is
-    <emu-val>true</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <emu-val>TypeError</emu-val></a> exception,
-    otherwise return <emu-val>false</emu-val>”.
+    <span class="esvalue">true</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a> exception,
+    otherwise return <span class="esvalue">false</span>”.
 </p>
 
 <ol class="algorithm">
@@ -10950,7 +10950,7 @@ when they do exist, they are not [=function objects=].
 </p>
 
 <ol class="algorithm">
-    <li>Return <emu-val>false</emu-val>.</li>
+    <li>Return <span class="esvalue">false</span>.</li>
 </ol>
 
 
@@ -10983,7 +10983,7 @@ when they do exist, they are not [=function objects=].
         </ul>
     </li>
     <li>The value of the property is that which is obtained by [=converted to ECMAScript values|converting=] the [=constant=]’s IDL value to an ECMAScript value.</li>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
 </ul>
 <p>
     In addition, a property with the same characteristics must
@@ -11025,11 +11025,11 @@ when they do exist, they are not [=function objects=].
         </ul>
     </li>
     <li>
-        The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Set]]: |S|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |configurable| }</span>,
+        The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Set]]: |S|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |configurable| }</span>,
         where:
         <ul>
-            <li>|configurable| is <emu-val>false</emu-val> if the attribute was
-            declared with the [{{Unforgeable}}] extended attribute and <emu-val>true</emu-val> otherwise;</li>
+            <li>|configurable| is <span class="esvalue">false</span> if the attribute was
+            declared with the [{{Unforgeable}}] extended attribute and <span class="esvalue">true</span> otherwise;</li>
             <li>|G| is the [=attribute getter=], defined below; and</li>
             <li>|S| is the [=attribute setter=], also defined below.</li>
         </ul>
@@ -11066,7 +11066,7 @@ when they do exist, they are not [=function objects=].
                         <ol>
                             <li>If the [=attribute=] was specified with the
                                 [{{LenientThis}}] [=extended attribute=],
-                            then return <emu-val>undefined</emu-val>.</li>
+                            then return <span class="esvalue">undefined</span>.</li>
                             <li>Otherwise, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
                         </ol>
                     </li>
@@ -11089,13 +11089,13 @@ when they do exist, they are not [=function objects=].
             </li>
         </ol>
         <p>The value of the <span class="estype">Function</span> object’s “length”
-        property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+        property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
         <p>The value of the <span class="estype">Function</span> object’s “name”
             property is a <span class="estype">String</span> whose value is the
         concatenation of “get ” and the identifier of the attribute.</p>
     </li>
     <li>
-        The <dfn id="dfn-attribute-setter" export>attribute setter</dfn> is <emu-val>undefined</emu-val>
+        The <dfn id="dfn-attribute-setter" export>attribute setter</dfn> is <span class="esvalue">undefined</span>
         if the attribute is declared <code>readonly</code> and does not have a
         [{{LenientThis}}], [{{PutForwards}}] or
         [{{Replaceable}}]
@@ -11121,10 +11121,10 @@ when they do exist, they are not [=function objects=].
                             <li>the type “setter”.</li>
                         </ul>
                     </li>
-                    <li>Let |validThis| be <emu-val>true</emu-val> if |O| is a
+                    <li>Let |validThis| be <span class="esvalue">true</span> if |O| is a
                         [=platform object=] that implements |I|, or
-                    <emu-val>false</emu-val> otherwise.</li>
-                    <li>If |validThis| is <emu-val>false</emu-val> and the
+                    <span class="esvalue">false</span> otherwise.</li>
+                    <li>If |validThis| is <span class="esvalue">false</span> and the
                         [=attribute=] was not specified with the
                         [{{LenientThis}}] [=extended attribute=],
                     then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
@@ -11133,12 +11133,12 @@ when they do exist, they are not [=function objects=].
                         <ol>
                             <li>Let |P| be the identifier of the attribute.</li>
                             <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
-                            <li>Return <emu-val>undefined</emu-val>.</li>
+                            <li>Return <span class="esvalue">undefined</span>.</li>
                         </ol>
                     </li>
-                    <li>If |validThis| is <emu-val>false</emu-val>, then return <emu-val>undefined</emu-val>.</li>
+                    <li>If |validThis| is <span class="esvalue">false</span>, then return <span class="esvalue">undefined</span>.</li>
                     <li>If the attribute is declared with a [{{LenientSetter}}]
-                    extended attribute, then return <emu-val>undefined</emu-val>.</li>
+                    extended attribute, then return <span class="esvalue">undefined</span>.</li>
                     <li>If the attribute is declared with a [{{PutForwards}}]
                         extended attribute, then:
                         <ol>
@@ -11148,7 +11148,7 @@ when they do exist, they are not [=function objects=].
                             <li>Let |A| be the attribute identified by the [{{PutForwards}}] extended attribute.</li>
                             <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
                             using the identifier of |A| as the property name and |V| as the value.</li>
-                            <li>Return <emu-val>undefined</emu-val>.</li>
+                            <li>Return <span class="esvalue">undefined</span>.</li>
                         </ol>
                     </li>
                 </ol>
@@ -11158,7 +11158,7 @@ when they do exist, they are not [=function objects=].
                     <li>If the type of the attribute is an [=enumeration=], then:
                         <ol>
                             <li>Let |S| be the result of calling <a>ToString</a>(|V|).</li>
-                            <li>If |S| is not one of the [=enumeration values|enumeration’s values=], then return <emu-val>undefined</emu-val>.</li>
+                            <li>If |S| is not one of the [=enumeration values|enumeration’s values=], then return <span class="esvalue">undefined</span>.</li>
                             <li>The value of |idlValue| is the enumeration value equal to |S|.</li>
                         </ol>
                     </li>
@@ -11170,10 +11170,10 @@ when they do exist, they are not [=function objects=].
             with |O| as the object and |idlValue| as the value.</li>
             <li>Otherwise, the attribute is a [=static attribute=].
             Perform the actions listed in the description of the attribute that occur when setting with |idlValue| as the value.</li>
-            <li>Return <emu-val>undefined</emu-val>.</li>
+            <li>Return <span class="esvalue">undefined</span>.</li>
         </ol>
         <p>The value of the <span class="estype">Function</span> object’s “length”
-        property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
+        property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
         <p>The value of the <span class="estype">Function</span> object’s “name”
             property is a <span class="estype">String</span> whose value is the
         concatenation of “set ” and the identifier of the attribute.</p>
@@ -11227,10 +11227,10 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     </li>
     <li>
         The property has attributes
-        <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
-        where |B| is <emu-val>false</emu-val> if the operation is
+        <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |B| }</span>,
+        where |B| is <span class="esvalue">false</span> if the operation is
         [=unforgeable=] on the interface,
-        and <emu-val>true</emu-val> otherwise.
+        and <span class="esvalue">true</span> otherwise.
     </li>
     <li>
         The value of the property is a <span class="estype">Function</span> object whose
@@ -11259,19 +11259,19 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                         Let |O| be a value determined as follows:
                         <ul>
                             <li>
-                                If the operation is a static operation, then |O| is <emu-val>null</emu-val>.
+                                If the operation is a static operation, then |O| is <span class="esvalue">null</span>.
                             </li>
                             <li>
                                 Otherwise, if the [=interface=] on which the
                                 [=operation=] appears has an
                                 [{{ImplicitThis}}] [=extended attribute=],
-                                and the <emu-val>this</emu-val> value is <emu-val>null</emu-val>
-                                or <emu-val>undefined</emu-val>, then |O| is
+                                and the <span class="esvalue">this</span> value is <span class="esvalue">null</span>
+                                or <span class="esvalue">undefined</span>, then |O| is
                                 the ECMAScript global object associated with the <span class="estype">Function</span> object.
                             </li>
                             <li>
-                                Otherwise, if the <emu-val>this</emu-val> value is not <emu-val>null</emu-val>,
-                                then |O| is the <emu-val>this</emu-val> value.
+                                Otherwise, if the <span class="esvalue">this</span> value is not <span class="esvalue">null</span>,
+                                then |O| is the <span class="esvalue">this</span> value.
                             </li>
                             <li>
                                 Otherwise, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
@@ -11289,7 +11289,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                         </ul>
                     </li>
                     <li>
-                        If |O| is not <emu-val>null</emu-val> and is also not a [=platform object=]
+                        If |O| is not <span class="esvalue">null</span> and is also not a [=platform object=]
                         that implements interface |I|, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
                     </li>
                     <li>
@@ -11326,7 +11326,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                         <ol>
                             <li>Let |reject| be the initial value of <a class="nocite">%Promise%</a>.reject.</li>
                             <li>Return the result of calling |reject| with <a class="nocite">%Promise%</a> as the
-                                <emu-val>this</emu-val> object and the exception as the single
+                                <span class="esvalue">this</span> object and the exception as the single
                             argument value.</li>
                         </ol>
                     </li>
@@ -11377,14 +11377,14 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
         or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
         then the property exists on every object that implements the interface.
     Otherwise, the property exists on the [=interface prototype object=].</li>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
-        where |B| is <emu-val>false</emu-val> if the stringifier is
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: |B| }</span>,
+        where |B| is <span class="esvalue">false</span> if the stringifier is
         [=unforgeable=] on the interface,
-    and <emu-val>true</emu-val> otherwise.</li>
+    and <span class="esvalue">true</span> otherwise.</li>
     <li>
         <p>The value of the property is a <span class="estype">Function</span> object, which behaves as follows:</p>
         <ol class="algorithm">
-            <li>Let |O| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
                 <ul>
@@ -11407,7 +11407,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                     with |O| as the object.</dd>
                     <dt>on an [=operation=] with an identifier</dt>
                     <dd>Set |V| to the result of performing the actions listed in the description
-                        of the operation, using |O| as the <emu-val>this</emu-val> value
+                        of the operation, using |O| as the <span class="esvalue">this</span> value
                     and passing no arguments.</dd>
                     <dt>on an [=operation=] with no identifier</dt>
                     <dd>Set |V| to the result of performing the [=stringification behavior=]
@@ -11418,7 +11418,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
         </ol>
     </li>
     <li>The value of the <span class="estype">Function</span> object’s “length”
-    property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</li>
+    property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</li>
     <li>The value of the <span class="estype">Function</span> object’s “name”
     property is the <span class="estype">String</span> value “toString”.</li>
 </ul>
@@ -11433,7 +11433,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     [=serializer=], then
     a property must exist
     whose name is “toJSON”,
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a
     <span class="estype">Function</span> object.
 </p>
@@ -11455,7 +11455,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     must behave as follows:
 </p>
 <ol class="algorithm">
-    <li>Let |O| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |O| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |O| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -11474,7 +11474,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
             <dd>
                 <ol class="algorithm">
                     <li>Return the result of performing the actions listed in the description of the
-                        operation, using |O| as the <emu-val>this</emu-val> value
+                        operation, using |O| as the <span class="esvalue">this</span> value
                     and passing no arguments.</li>
                 </ol>
             </dd>
@@ -11491,7 +11491,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     </li>
 </ol>
 <p>The value of the <span class="estype">Function</span> object’s “length”
-property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name”
 property is the <span class="estype">String</span> value “toJSON”.</p>
 <p>
@@ -11568,7 +11568,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
 <p>
     then a property must exist
     whose name is the <a>@@iterator</a> symbol,
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a [=function object=].
 </p>
 <p>
@@ -11594,7 +11594,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
     must behave as follows:
 </p>
 <ol class="algorithm">
-    <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -11620,7 +11620,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
     when invoked, must behave as follows:
 </p>
 <ol class="algorithm">
-    <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -11650,7 +11650,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
 </ol>
 <p>
     The value of the <a>@@iterator</a> <span class="estype">Function</span> object’s “length”
-    property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.
+    property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
 </p>
 <p>The value of the <a>@@iterator</a> <span class="estype">Function</span> object’s “name”
     property is the <span class="estype">String</span> value “entries” if the interface has a
@@ -11674,7 +11674,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
 </ul>
 <p>
     then a property named “forEach” must exist
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a [=function object=].
 </p>
 <p>
@@ -11716,7 +11716,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
             <li>Let |key| be |pair|’s key.</li>
             <li>Let |value| be |pair|’s value.</li>
             <li><a href="#es-invoking-callback-functions">Invoke</a> |callback| with |thisArg|
-                (or <emu-val>undefined</emu-val>, if the argument was not supplied)
+                (or <span class="esvalue">undefined</span>, if the argument was not supplied)
                 as the [=callback this value=] and
             |value|, |key| and |O| as its arguments.</li>
             <li>Update |pairs| to the current list of [=value pairs to iterate over=].</li>
@@ -11731,7 +11731,7 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
     must behave as follows:
 </p>
 <ol class="algorithm">
-    <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -11747,16 +11747,16 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
     then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-    <li>Let |callbackFn| be the value of the first argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
-    <li>If <a>IsCallable</a>(|callbackFn|) is <emu-val>false</emu-val>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-    <li>Let |thisArg| be the value of the second argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
+    <li>Let |callbackFn| be the value of the first argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
+    <li>If <a>IsCallable</a>(|callbackFn|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+    <li>Let |thisArg| be the value of the second argument passed to the function, or <span class="esvalue">undefined</span> if the argument was not supplied.</li>
     <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|,
         if the interface has a [=maplike declaration=],
     or the \[[BackingSet]] <a>internal slot</a> of |object| otherwise.</li>
     <li>Let |callbackWrapper| be a <span class="estype">Function</span> that, when invoked, behaves as follows:
         <ol>
             <li>Let |v| and |k| be the first two arguments passed to the function.</li>
-            <li>Let |thisArg| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |thisArg| be the <span class="esvalue">this</span> value.</li>
             <li>Call the \[[Call]] internal method of |callbackFn| with |thisArg| as |thisArgument|
             and |v|, |k| and |object| as |argumentsList|.</li>
         </ol>
@@ -11772,14 +11772,14 @@ property is the <span class="estype">String</span> value “toJSON”.</p>
     </li>
     <li>Let |forEach| be the result of calling the \[[Get]] internal method of
     |backing| with “forEach” and |backing| as arguments.</li>
-    <li>If <a>IsCallable</a>(|forEach|) is <emu-val>false</emu-val>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+    <li>If <a>IsCallable</a>(|forEach|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>Call the \[[Call]] internal method of |forEach| with |backing| as |thisArgument|
     and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
-    <li>Return <emu-val>undefined</emu-val>.</li>
+    <li>Return <span class="esvalue">undefined</span>.</li>
 </ol>
 <p>
     The value of the <span class="estype">Function</span> object’s “length”
-    property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.
+    property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.
 </p>
 <p>The value of the <span class="estype">Function</span> object’s “name”
 property is the <span class="estype">String</span> value “forEach”.</p>
@@ -11796,7 +11796,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     If the [=interface=] has an
     [=iterable declaration=],
     then a property named “entries” must exist
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a [=function object=].
 </p>
 <p>
@@ -11831,7 +11831,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     If the [=interface=] has an
     [=iterable declaration=],
     then a property named “keys” must exist
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a [=function object=].
 </p>
 <p>
@@ -11857,7 +11857,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     then the <span class="estype">Function</span>, when invoked, must behave as follows:
 </p>
 <ol class="algorithm">
-    <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -11876,7 +11876,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     for |interface| with |object| as its target and iterator kind “key”.</li>
     <li>Return |iterator|.</li>
 </ol>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys”.</p>
 
 
@@ -11887,7 +11887,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     If the [=interface=] has an
     [=iterable declaration=],
     then a property named “values” must exist
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a [=function object=].
 </p>
 <p>
@@ -11915,7 +11915,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     then the <span class="estype">Function</span>, when invoked, must behave as follows:
 </p>
 <ol class="algorithm">
-    <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -11934,7 +11934,7 @@ property is the <span class="estype">String</span> value “forEach”.</p>
     for |interface| with |object| as its target and iterator kind “value”.</li>
     <li>Return |iterator|.</li>
 </ol>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “values”.</p>
 
 
@@ -11995,14 +11995,14 @@ use standard ECMAScript Array iterator objects.
 <p>
     An [=iterator prototype object=]
     must have a property named “next” with
-    attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is a [=function object=]
     that behaves as follows:
 </p>
 <ol class="algorithm">
     <li>Let |interface| be the [=interface=] for which the
     [=iterator prototype object=] exists.</li>
-    <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
+    <li>Let |object| be the result of calling <a>ToObject</a> on the <span class="esvalue">this</span> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
         <ul>
@@ -12020,7 +12020,7 @@ use standard ECMAScript Array iterator objects.
     <li>Let |values| be the list of [=value pairs to iterate over=].</li>
     <li>Let |len| be the length of |values|.</li>
     <li>If |object|’s index is greater than or equal to |len|, then
-    return <a>CreateIterResultObject</a>(<emu-val>undefined</emu-val>, <emu-val>true</emu-val>).</li>
+    return <a>CreateIterResultObject</a>(<span class="esvalue">undefined</span>, <span class="esvalue">true</span>).</li>
     <li>Let |pair| be the entry in |values| at index |index|.</li>
     <li>Let |result| be a value determined by the value of |kind|:
         <dl class="switch">
@@ -12055,7 +12055,7 @@ use standard ECMAScript Array iterator objects.
             </dd>
         </dl>
     </li>
-    <li>Return <a>CreateIterResultObject</a>(|result|, <emu-val>false</emu-val>).</li>
+    <li>Return <a>CreateIterResultObject</a>(|result|, <span class="esvalue">false</span>).</li>
 </ol>
 <p>
     The [=class string=] of an
@@ -12094,7 +12094,7 @@ use standard ECMAScript Array iterator objects.
     for a given function name.  Such functions behave as follows when invoked:
 </p>
 <ol class="algorithm">
-    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
     <li>Let |arguments| be the list of arguments passed to this function.</li>
     <li>Let |name| be the function name.</li>
     <li>If |O| is a [=platform object=],
@@ -12109,7 +12109,7 @@ use standard ECMAScript Array iterator objects.
     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
-    <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+    <li>If <a>IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |arguments| as |argumentsList|.</li>
 </ol>
 
@@ -12122,14 +12122,14 @@ use standard ECMAScript Array iterator objects.
     with the following characteristics:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
+    <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>,
         where |G| is the interface’s <dfn id="dfn-map-size-getter" export>map size getter</dfn>,
     defined below.</li>
     <li><p>The [=map size getter=] is
             a <span class="estype">Function</span> object whose
         behavior when invoked is as follows:</p>
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
                 <ul>
@@ -12143,7 +12143,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Return the result of calling the \[[Get]] internal method of |map| passing “size” and |map| as arguments.</li>
         </ol>
-        <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+        <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
         <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.</p>
     </li>
 </ul>
@@ -12155,7 +12155,7 @@ use standard ECMAScript Array iterator objects.
 <p>
     A property named “entries” must exist on
     |A|’s [=interface prototype object=]
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is the [=function object=] that is the value of
     the <a>@@iterator</a> property.
 </p>
@@ -12170,10 +12170,10 @@ use standard ECMAScript Array iterator objects.
     with the following characteristics:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal map object|forwards that name to the internal map object=].</li>
 </ul>
-<p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “keys” or “values”, correspondingly.</p>
 
 
@@ -12186,10 +12186,10 @@ use standard ECMAScript Array iterator objects.
     with the following characteristics:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>Let |name| be the name of the property – “get” or “has”.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
@@ -12204,14 +12204,14 @@ use standard ECMAScript Array iterator objects.
             <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Let |keyType| be the key type specified in the [=maplike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
-            <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
+            <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
             <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
             <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
             <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
         </ol>
     </li>
 </ul>
-<p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “get” or “has”, correspondingly.</p>
 
 
@@ -12229,10 +12229,10 @@ use standard ECMAScript Array iterator objects.
     [=interface prototype object=]:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal map object|forwards “clear” to the internal map object=].</li>
 </ul>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
 
 
@@ -12250,10 +12250,10 @@ use standard ECMAScript Array iterator objects.
     [=interface prototype object=]:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
                 <ul>
@@ -12267,14 +12267,14 @@ use standard ECMAScript Array iterator objects.
             <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Let |keyType| be the key type specified in the [=maplike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
-            <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
+            <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
             <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
             <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
             <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
         </ol>
     </li>
 </ul>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “delete”.</p>
 
 
@@ -12292,10 +12292,10 @@ use standard ECMAScript Array iterator objects.
     [=interface prototype object=]:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
                 <ul>
@@ -12309,8 +12309,8 @@ use standard ECMAScript Array iterator objects.
             <li>Let |map| be the <span class="estype">Map</span> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Let |keyType| and |valueType| be the key and value types specified in the [=maplike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
-            <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
-            <li>Let |valueArg| be the second argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
+            <li>Let |keyArg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
+            <li>Let |valueArg| be the second argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
             <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
             <li>Let |valueIDL| be the result of [=converted to an IDL value|converting=] |valueArg| to an IDL value of type |valueType|.</li>
             <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
@@ -12321,7 +12321,7 @@ use standard ECMAScript Array iterator objects.
         </ol>
     </li>
 </ul>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>2</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">2</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “set”.</p>
 
 
@@ -12352,7 +12352,7 @@ use standard ECMAScript Array iterator objects.
     for a given function name.  Such functions behave as follows when invoked:
 </p>
 <ol class="algorithm">
-    <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+    <li>Let |O| be the <span class="esvalue">this</span> value.</li>
     <li>Let |arguments| be the list of arguments passed to this function.</li>
     <li>Let |name| be the function name.</li>
     <li>If |O| is a [=platform object=],
@@ -12367,7 +12367,7 @@ use standard ECMAScript Array iterator objects.
     <li>If |O| is not an object that implements |A|, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
-    <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+    <li>If <a>IsCallable</a>(|function|) is <span class="esvalue">false</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
     <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and |arguments| as |argumentsList|.</li>
 </ol>
 
@@ -12380,14 +12380,14 @@ use standard ECMAScript Array iterator objects.
     with the following characteristics:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
+    <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>,
         where |G| is the interface’s <dfn id="dfn-set-size-getter" export>set size getter</dfn>,
     defined below.</li>
     <li><p>The [=set size getter=] is
             a <span class="estype">Function</span> object whose
         behavior when invoked is as follows:</p>
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
                 <ul>
@@ -12401,7 +12401,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
             <li>Return the result of calling the \[[Get]] internal method of |set| passing “size” and |set| as arguments.</li>
         </ol>
-        <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+        <p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
         <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “size”.</p>
     </li>
 </ul>
@@ -12413,7 +12413,7 @@ use standard ECMAScript Array iterator objects.
 <p>
     A property named “values” must exist on
     |A|’s [=interface prototype object=]
-    with attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    with attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is the [=function object=] that is the value of
     the <a>@@iterator</a> property.
 </p>
@@ -12428,10 +12428,10 @@ use standard ECMAScript Array iterator objects.
     with the following characteristics:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal set object|forwards that name to the internal set object=].</li>
 </ul>
-<p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> objects’ “length” properties is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “entries” or “keys”, correspondingly.</p>
 
 
@@ -12444,10 +12444,10 @@ use standard ECMAScript Array iterator objects.
     with the following characteristics:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
                 <ul>
@@ -12461,14 +12461,14 @@ use standard ECMAScript Array iterator objects.
             <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
             <li>Let |type| be the value type specified in the [=setlike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
-            <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
+            <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
             <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |arg| to an IDL value of type |type|.</li>
             <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
             <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
         </ol>
     </li>
 </ul>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is a <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is a <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “has”.</p>
 
 
@@ -12491,10 +12491,10 @@ use standard ECMAScript Array iterator objects.
     [=interface prototype object=]:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that behaves as follows when invoked:
         <ol class="algorithm">
-            <li>Let |O| be the <emu-val>this</emu-val> value.</li>
+            <li>Let |O| be the <span class="esvalue">this</span> value.</li>
             <li>Let |name| be the name of the property – “add” or “delete”.</li>
             <li>If |O| is a [=platform object=],
                 then [=perform a security check=], passing:
@@ -12509,7 +12509,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |set| be the <span class="estype">Set</span> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
             <li>Let |type| be the value type specified in the [=setlike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
-            <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
+            <li>Let |arg| be the first argument passed to this function, or <span class="esvalue">undefined</span> if not supplied.</li>
             <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |arg| to an IDL value of type |type|.</li>
             <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
             <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
@@ -12529,7 +12529,7 @@ use standard ECMAScript Array iterator objects.
         </ol>
     </li>
 </ul>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>1</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">1</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “add” or “delete”, correspondingly.</p>
 
 
@@ -12547,10 +12547,10 @@ use standard ECMAScript Array iterator objects.
     [=interface prototype object=]:
 </p>
 <ul>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.</li>
     <li>The value of the property is a <span class="estype">Function</span> object that [=forwards to the internal set object|forwards “clear” to the internal set object=].</li>
 </ul>
-<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</p>
+<p>The value of the <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</p>
 <p>The value of the <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “clear”.</p>
 
 
@@ -12571,23 +12571,23 @@ use standard ECMAScript Array iterator objects.
 </p>
 <ol class="algorithm">
     <li>If <a>Type</a>(|destination|) is not Object, then, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
-    <li>If |iterable| is not present, let |iterable| be <emu-val>undefined</emu-val>.</li>
-    <li>If |iterable| is either <emu-val>undefined</emu-val> or <emu-val>null</emu-val>, then let |iter| be <emu-val>undefined</emu-val>.</li>
+    <li>If |iterable| is not present, let |iterable| be <span class="esvalue">undefined</span>.</li>
+    <li>If |iterable| is either <span class="esvalue">undefined</span> or <span class="esvalue">null</span>, then let |iter| be <span class="esvalue">undefined</span>.</li>
     <li>Else,
         <ol>
             <li>Let |adder| be the result of <a>Get</a>(|destination|, |adder|).</li>
             <li><a>ReturnIfAbrupt</a>(|adder|).</li>
-            <li>If <a>IsCallable</a>(|adder|) is <emu-val>false</emu-val>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+            <li>If <a>IsCallable</a>(|adder|) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
             <li>Let |iter| be the result of <a>GetIterator</a>(|iterable|).</li>
             <li><a>ReturnIfAbrupt</a>(|iter|).</li>
         </ol>
     </li>
-    <li>If |iter| is <emu-val>undefined</emu-val>, then return.</li>
+    <li>If |iter| is <span class="esvalue">undefined</span>, then return.</li>
     <li>Repeat
         <ol>
             <li>Let |next| be the result of <a>IteratorStep</a>(|iter|).</li>
             <li><a>ReturnIfAbrupt</a>(|next|).</li>
-            <li>If |next| is <emu-val>false</emu-val>, then return <a>NormalCompletion</a>(|destination|).</li>
+            <li>If |next| is <span class="esvalue">false</span>, then return <a>NormalCompletion</a>(|destination|).</li>
             <li>Let |nextItem| be <a>IteratorValue</a>(|next|).</li>
             <li><a>ReturnIfAbrupt</a>(|nextItem|).</li>
             <li>If <a>Type</a>(|nextItem|) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
@@ -12630,7 +12630,7 @@ use standard ECMAScript Array iterator objects.
     <p>
         When invoking an [=operation=] by calling
         a <span class="estype">Function</span> object that is the value of one of the copies that exists
-        due to an implements statement, the <emu-val>this</emu-val> value is
+        due to an implements statement, the <span class="esvalue">this</span> value is
         checked to ensure that it is an object that implements the
         [=interface=] corresponding to the
         [=interface prototype object=]
@@ -12707,7 +12707,7 @@ use standard ECMAScript Array iterator objects.
 </p>
 <ul>
     <li>The name of the property is “toString”.</li>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
     <li>The value of the property is <a>%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</li>
 </ul>
 
@@ -12720,8 +12720,8 @@ use standard ECMAScript Array iterator objects.
 </p>
 <ul>
     <li>The name of the property is “toJSON”.</li>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
-    <li>The value of the property is <emu-val>undefined</emu-val>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
+    <li>The value of the property is <span class="esvalue">undefined</span>.</li>
 </ul>
 
 <p>
@@ -12731,18 +12731,18 @@ use standard ECMAScript Array iterator objects.
 </p>
 <ul>
     <li>The name of the property is “valueOf”.</li>
-    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.</li>
+    <li>The property has attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.</li>
     <li>
         The value of the property is a <span class="estype">Function</span> object whose behavior
         is as follows:
         <ol class="algorithm">
-            <li>Return the <emu-val>this</emu-val> value.</li>
+            <li>Return the <span class="esvalue">this</span> value.</li>
         </ol>
         This <span class="estype">Function</span> object is the
         <dfn id="dfn-default-unforgeable-valueOf-function" export>default unforgeable valueOf function</dfn>.
     </li>
     <li>The value of the <span class="estype">Function</span> object’s “length”
-    property is the <span class="estype">Number</span> value <emu-val>0</emu-val>.</li>
+    property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.</li>
     <li>The value of the <span class="estype">Function</span> object’s “name” property is the
     <span class="estype">String</span> value “valueOf”.</li>
 </ul>
@@ -12808,13 +12808,13 @@ use standard ECMAScript Array iterator objects.
     The name of each property that appears to exist due to an object supporting indexed properties
     is an <dfn id="dfn-array-index-property-name" export>array index property name</dfn>, which is a property
     name |P| such that <a>Type</a>(|P|) is String
-    and for which the following algorithm returns <emu-val>true</emu-val>:
+    and for which the following algorithm returns <span class="esvalue">true</span>:
 </p>
 <ol class="algorithm">
     <li>Let |i| be <a>ToUint32</a>(|P|).</li>
     <li>Let |s| be <a>ToString</a>(|i|).</li>
-    <li>If |s| ≠ |P| or |i| = 2<sup>32</sup> − 1, then return <emu-val>false</emu-val>.</li>
-    <li>Return <emu-val>true</emu-val>.</li>
+    <li>If |s| ≠ |P| or |i| = 2<sup>32</sup> − 1, then return <span class="esvalue">false</span>.</li>
+    <li>Return <span class="esvalue">true</span>.</li>
 </ol>
 
 
@@ -12894,9 +12894,9 @@ Note: This should ensure that for objects with named properties, property resolu
                     <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
                     |value| to an ECMAScript value.</li>
                     <li>If |O| implements an interface with an [=indexed property setter=], then set
-                        |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
-                    <emu-val>false</emu-val>.</li>
-                    <li>Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
+                        |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
+                    <span class="esvalue">false</span>.</li>
+                    <li>Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
                     <li>Return |desc|.</li>
                 </ol>
             </li>
@@ -12923,14 +12923,14 @@ Note: This should ensure that for objects with named properties, property resolu
             <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
             |value| to an ECMAScript value.</li>
             <li>If |O| implements an interface with a [=named property setter=], then set
-                |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
-            <emu-val>false</emu-val>.</li>
+                |desc|.<span class="prop">\[[Writable]]</span> to <span class="esvalue">true</span>, otherwise set it to
+            <span class="esvalue">false</span>.</li>
             <li>If |O| implements an interface with the
                 [{{LegacyUnenumerableNamedProperties}}]
                 [=extended attribute=],
-                then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
-            otherwise set it to <emu-val>true</emu-val>.</li>
-            <li>Set |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
+                then set |desc|.<span class="prop">\[[Enumerable]]</span> to <span class="esvalue">false</span>,
+            otherwise set it to <span class="esvalue">true</span>.</li>
+            <li>Set |desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
             <li>Return |desc|.</li>
         </ol>
     </li>
@@ -12954,7 +12954,7 @@ Note: This should ensure that for objects with named properties, property resolu
     <li>
         Return the result of invoking the [=The PlatformObjectGetOwnProperty abstract operation|PlatformObjectGetOwnProperty=]
         abstract operation with
-        |O|, |P|, and <emu-val>false</emu-val> as
+        |O|, |P|, and <span class="esvalue">false</span> as
         arguments.
     </li>
 </ol>
@@ -13037,7 +13037,7 @@ Note: This should ensure that for objects with named properties, property resolu
                         <a href="#invoking-indexed-setter">Invoke the indexed
                         property setter</a> with |P| and |V|.
                     </li>
-                    <li>Return <emu-val>true</emu-val>.</li>
+                    <li>Return <span class="esvalue">true</span>.</li>
                 </ol>
             </li>
             
@@ -13049,7 +13049,7 @@ Note: This should ensure that for objects with named properties, property resolu
                         <a href="#invoking-named-setter">Invoke the named
                         property setter</a> with |P| and |V|.
                     </li>
-                    <li>Return <emu-val>true</emu-val>.</li>
+                    <li>Return <span class="esvalue">true</span>.</li>
                 </ol>
             </li>
         </ol>
@@ -13057,7 +13057,7 @@ Note: This should ensure that for objects with named properties, property resolu
     <li>
         Let |ownDesc| be the result of invoking the [=The PlatformObjectGetOwnProperty abstract operation|PlatformObjectGetOwnProperty=]
         abstract operation with
-        |O|, |P|, and <emu-val>true</emu-val> as
+        |O|, |P|, and <span class="esvalue">true</span> as
         arguments.
     </li>
     <li>
@@ -13083,11 +13083,11 @@ Note: This should ensure that for objects with named properties, property resolu
         If |O| [=support indexed properties|supports indexed properties=] and
         |P| is an [=array index property name=], then:
         <ol>
-            <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.</li>
+            <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
             <li>If |O| does not implement an interface with an [=indexed property setter=], then <a href="#Reject">Reject</a>.</li>
             <li><a href="#invoking-indexed-setter">Invoke the indexed
             property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.</li>
-            <li>Return <emu-val>true</emu-val>.</li>
+            <li>Return <span class="esvalue">true</span>.</li>
         </ol>
     </li>
     
@@ -13107,13 +13107,13 @@ Note: This should ensure that for objects with named properties, property resolu
                     <li>If |creating| is false and |O| does not implement an interface with a [=named property setter=], then <a href="#Reject">Reject</a>.</li>
                     <li>If |O| implements an interface with a [=named property setter=], then:
                         <ol>
-                            <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.</li>
+                            <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <span class="esvalue">false</span>, then <a href="#Reject">Reject</a>.</li>
                             <li>
                                 <a href="#invoking-named-setter">Invoke the named
                                 property setter</a> with |P| and
                                 |Desc|.<span class="prop">\[[Value]]</span>.
                             </li>
-                            <li>Return <emu-val>true</emu-val>.</li>
+                            <li>Return <span class="esvalue">true</span>.</li>
                         </ol>
                     </li>
                 </ol>
@@ -13123,7 +13123,7 @@ Note: This should ensure that for objects with named properties, property resolu
     
     <li>If |O| does not implement an [=interface=] with the
         [{{Global}}] or [{{PrimaryGlobal}}] [=extended attribute=],
-    then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
+    then set |Desc|.<span class="prop">\[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
     <li>Call the <a>default \[[DefineOwnProperty]] internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
 </ol>
 
@@ -13145,8 +13145,8 @@ Note: This should ensure that for objects with named properties, property resolu
         |P| is an [=array index property name=], then:
         <ol>
             <li>Let |index| be the result of calling <a>ToUint32</a>(|P|).</li>
-            <li>If |index| is not a [=supported property indices|supported property index=], then return <emu-val>true</emu-val>.</li>
-            <li>Return <emu-val>false</emu-val>.</li>
+            <li>If |index| is not a [=supported property indices|supported property index=], then return <span class="esvalue">true</span>.</li>
+            <li>Return <span class="esvalue">false</span>.</li>
         </ol>
     </li>
     
@@ -13157,34 +13157,34 @@ Note: This should ensure that for objects with named properties, property resolu
         and the result of calling the [=named property visibility algorithm=]
         with property name |P| and object |O| is true, then:
         <ol>
-            <li>If |O| does not implement an interface with a [=named property deleter=], then <emu-val>false</emu-val>.</li>
+            <li>If |O| does not implement an interface with a [=named property deleter=], then <span class="esvalue">false</span>.</li>
             <li>Let |operation| be the operation used to declare the named property deleter.</li>
             <li>If |operation| was defined without an [=identifier=], then:
                 <ol>
                     <li>Perform the steps listed in the interface description to
                         [=delete an existing named property=]
                     with |P| as the name.</li>
-                    <li>If the steps indicated that the deletion failed, then <emu-val>false</emu-val>.</li>
+                    <li>If the steps indicated that the deletion failed, then <span class="esvalue">false</span>.</li>
                 </ol>
             </li>
             <li>Otherwise, |operation| was defined with an identifier:
                 <ol>
                     <li>Perform the steps listed in the description of |operation| with |P| as the only argument value.</li>
                     <li>If |operation| was declared with a [=return type=] of {{boolean}}
-                    and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.</li>
+                    and the steps returned <span class="idlvalue">false</span>, then <span class="esvalue">false</span>.</li>
                 </ol>
             </li>
-            <li>Return <emu-val>true</emu-val>.</li>
+            <li>Return <span class="esvalue">true</span>.</li>
         </ol>
     </li>
     
     <li>If |O| has an own property with name |P|, then:
         <ol>
-            <li>If the property is not configurable, then <emu-val>false</emu-val>.</li>
+            <li>If the property is not configurable, then <span class="esvalue">false</span>.</li>
             <li>Otherwise, remove the property from |O|.</li>
         </ol>
     </li>
-    <li>Return <emu-val>true</emu-val>.</li>
+    <li>Return <span class="esvalue">true</span>.</li>
 </ol>
 
 
@@ -13211,7 +13211,7 @@ Note: This should ensure that for objects with named properties, property resolu
     |values| as the argument values.</li>
     <li>Return the result of [=converted to ECMAScript values|converting=]
         the return value from those actions to an ECMAScript value of the type
-        |operation| is declared to return (or <emu-val>undefined</emu-val>
+        |operation| is declared to return (or <span class="esvalue">undefined</span>
     if |operation| is declared to return {{void}}).</li>
 </ol>
 
@@ -13315,7 +13315,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
 <ol class="algorithm">
     <li>Let |completion| be an uninitialized variable.</li>
     
-    <li>If |thisArg| was not given, let |thisArg| be <emu-val>undefined</emu-val>.</li>
+    <li>If |thisArg| was not given, let |thisArg| be <span class="esvalue">undefined</span>.</li>
     
     <li>Let |O| be the ECMAScript object corresponding to |value|.</li>
     
@@ -13349,13 +13349,13 @@ Note: Future versions of the ECMAScript specification may define a total order f
     </li>
     
     
-    <li>If <a>!</a> <a>IsCallable</a>(|X|) is <emu-val>false</emu-val>,
+    <li>If <a>!</a> <a>IsCallable</a>(|X|) is <span class="esvalue">false</span>,
         then set |completion| to a new <a>Completion</a>{\[[Type]]: throw, \[[Value]]: a
         newly created <span class="estype">TypeError</span> object, \[[Target]]: empty}, and jump
     to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
     
     <li>If |value|'s interface is not a [=single operation callback interface=],
-        or if <a>!</a> <a>IsCallable</a>(|O|) is <emu-val>false</emu-val>,
+        or if <a>!</a> <a>IsCallable</a>(|O|) is <span class="esvalue">false</span>,
     set |thisArg| to |O| (overriding the provided value).</li>
     
     <li>Let |esArgs| be an empty List of ECMAScript values.</li>
@@ -13369,7 +13369,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
         
         <ol>
             <li>If |arg|<sub>|i|</sub> is the special value “missing”, then
-            append <emu-val>undefined</emu-val> to |esArgs|.</li>
+            append <span class="esvalue">undefined</span> to |esArgs|.</li>
             
             <li>
                 Otherwise, |arg|<sub>|i|</sub> is an IDL value:
@@ -13418,7 +13418,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
             
             <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a>%Promise%</a> as the <emu-val>this</emu-val> value and
+                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
             |completion|.\[[Value]] as the single argument value.</li>
             
             <li>Return the result of [=converted to an IDL value|converting=]
@@ -13471,7 +13471,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
             
             <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a>%Promise%</a> as the <emu-val>this</emu-val> value and
+                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
             |completion|.\[[Value]] as the single argument value.</li>
             
             <li>Return the result of [=converted to an IDL value|converting=]
@@ -13506,12 +13506,12 @@ Note: Future versions of the ECMAScript specification may define a total order f
     |convertResult| and jump to the step labeled <a href="#set-user-object-attribute-return"><i>return</i></a>.</li>
     
     <li>Set |completion| to <a>Set</a>(|O|, |attributeName|,
-    |convertResult|.\[[Value]], <emu-val>true</emu-val>).</li>
+    |convertResult|.\[[Value]], <span class="esvalue">true</span>).</li>
     
     <li>
         <i id="set-user-object-attribute-return">Return:</i> at this
         point |completion| will be set to an ECMAScript completion value, which is
-        either an abrupt completion or a normal completion for the value <emu-val>true</emu-val> (as returned by <a>Set</a>).
+        either an abrupt completion or a normal completion for the value <span class="esvalue">true</span> (as returned by <a>Set</a>).
         
         <ol>
             <li><a>Clean up after running script</a> with |settings|.</li>
@@ -13547,12 +13547,12 @@ Note: Future versions of the ECMAScript specification may define a total order f
 <ol class="algorithm">
     <li>Let |completion| be an uninitialized variable.</li>
     
-    <li>If |thisArg| was not given, let |thisArg| be <emu-val>undefined</emu-val>.</li>
+    <li>If |thisArg| was not given, let |thisArg| be <span class="esvalue">undefined</span>.</li>
     
     <li>Let |F| be the ECMAScript object corresponding to |value|.</li>
     
     <li>
-        If <a>!</a> <a>IsCallable</a>(|F|) is <emu-val>false</emu-val>:
+        If <a>!</a> <a>IsCallable</a>(|F|) is <span class="esvalue">false</span>:
         
         <ol>
             <li>
@@ -13565,7 +13565,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
                 </div>
             </li>
             
-            <li>Return the result of [=converted to an IDL value|converting=] <emu-val>undefined</emu-val> to the callback function's return type.</li>
+            <li>Return the result of [=converted to an IDL value|converting=] <span class="esvalue">undefined</span> to the callback function's return type.</li>
         </ol>
     </li>
     
@@ -13587,7 +13587,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
         
         <ol>
             <li>If |arg|<sub>|i|</sub> is the special value “missing”, then
-            append <emu-val>undefined</emu-val> to |esArgs|.</li>
+            append <span class="esvalue">undefined</span> to |esArgs|.</li>
             
             <li>
                 Otherwise, |arg|<sub>|i|</sub> is an IDL value:
@@ -13637,7 +13637,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
             
             <li>Let |rejectedPromise| be the result of calling |reject| with
-                <a>%Promise%</a> as the <emu-val>this</emu-val> value and
+                <a>%Promise%</a> as the <span class="esvalue">this</span> value and
             |completion|.\[[Value]] as the single argument value.</li>
             
             <li>Return the result of [=converted to an IDL value|converting=]
@@ -13656,7 +13656,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <dfn id="dfn-DOMException-constructor-object" for="DOMException" export>DOMException constructor object</dfn>,
     which provides access to legacy DOMException code constants and allows construction of
     DOMException instances.
-    The property has the attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
+    The property has the attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>.
 </p>
 
 
@@ -13670,12 +13670,12 @@ Note: Future versions of the ECMAScript specification may define a total order f
     For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
     there must be a property on the DOMException constructor object
     whose name and value are as indicated in the table.  The property has
-    attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.
+    attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.
 </p>
 <p>
     The DOMException constructor object must also have a property named
     “prototype” with attributes
-    <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>
+    <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>
     whose value is an object called the <dfn id="dfn-DOMException-prototype-object" for="DOMException" export>DOMException prototype object</dfn>.
     This object also provides access to the legacy code values.
 </p>
@@ -13687,18 +13687,18 @@ Note: Future versions of the ECMAScript specification may define a total order f
 
 <ol class="algorithm">
     <li>Let |F| be the active function object.</li>
-    <li>If NewTarget is <emu-val>undefined</emu-val>, let |newTarget| be |F|, else let |newTarget| be NewTarget.</li>
+    <li>If NewTarget is <span class="esvalue">undefined</span>, let |newTarget| be |F|, else let |newTarget| be NewTarget.</li>
     <li>Let |super| be |F|.\[[GetPrototypeOf]]().</li>
     <li><a>ReturnIfAbrupt</a>(|super|).</li>
-    <li>If <a>IsConstructor</a>(|super|) is <emu-val>false</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li>
+    <li>If <a>IsConstructor</a>(|super|) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
     <li>Let |O| be <a>Construct</a>(|super|, «|message|», |newTarget|).</li>
-    <li>If |name| is not <emu-val>undefined</emu-val>, then
+    <li>If |name| is not <span class="esvalue">undefined</span>, then
         <ol>
             <li>Let |name| be <a>ToString</a>(|name|).</li>
-            <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val>}</span>).</li>
+            <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |name|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
             <li><a>ReturnIfAbrupt</a>(|status|).</li>
-            <li>Let |code| be the legacy code indicated in the [=error names table=] for error name |name|, or <emu-val>0</emu-val> if there is none.</li>
-            <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val>}</span>).</li>
+            <li>Let |code| be the legacy code indicated in the [=error names table=] for error name |name|, or <span class="esvalue">0</span> if there is none.</li>
+            <li>Let |status| be <a>DefinePropertyOrThrow</a>(|O|, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{\[[Value]]: |code|, \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
             <li><a>ReturnIfAbrupt</a>(|status|).</li>
         </ol>
     </li>
@@ -13722,14 +13722,14 @@ Note: Future versions of the ECMAScript specification may define a total order f
 <p>
     There must be a property named “constructor”
     on the DOMException prototype object with attributes
-    <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>
+    <span class="descriptor">{ \[[Writable]]: <span class="esvalue">true</span>, \[[Enumerable]]: <span class="esvalue">false</span>, \[[Configurable]]: <span class="esvalue">true</span> }</span>
     and whose value is the [=DOMException constructor object=].
 </p>
 <p>
     For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
     there must be a property on the DOMException prototype object
     whose name and value are as indicated in the table.  The property has
-    attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: <emu-val>false</emu-val> }</span>.
+    attributes <span class="descriptor">{ \[[Writable]]: <span class="esvalue">false</span>, \[[Enumerable]]: <span class="esvalue">true</span>, \[[Configurable]]: <span class="esvalue">false</span> }</span>.
 </p>
 
 
@@ -13785,7 +13785,7 @@ on exception objects too.
 <ol class="algorithm">
     <li>
         Let |F| be the <span class="estype">Function</span> object used
-        as the <emu-val>this</emu-val> value in the top-most call
+        as the <span class="esvalue">this</span> value in the top-most call
         on the ECMAScript call stack where |F| corresponds to an IDL
         [=attribute=],
         [=operation=],
@@ -13826,12 +13826,12 @@ on exception objects too.
     the following steps must be followed:
 </p>
 <ol class="algorithm">
-    <li>If |M| was not specified, let |M| be <emu-val>undefined</emu-val>. Otherwise, let it be the result of [=converted to ECMAScript values|converting=] |M| to a <span class="estype">String</span> value.</li>
+    <li>If |M| was not specified, let |M| be <span class="esvalue">undefined</span>. Otherwise, let it be the result of [=converted to ECMAScript values|converting=] |M| to a <span class="estype">String</span> value.</li>
     <li>Let |N| be the result of [=converted to ECMAScript values|converting=] |N| to a <span class="estype">String</span> value.</li>
     <li>Let |args| be a list of ECMAScript values.
         <dl class="switch">
             <dt>|E| is [=DOMException=]</dt>
-            <dd>|args| is (<emu-val>undefined</emu-val>, |N|).</dd>
+            <dd>|args| is (<span class="esvalue">undefined</span>, |N|).</dd>
             <dt>|E| is a [=simple exception=]</dt>
             <dd>|args| is (|M|)</dd>
         </dl>
@@ -13924,8 +13924,8 @@ on exception objects too.
 <p>
     None of the algorithms or processing requirements in the
     ECMAScript language binding catch ECMAScript exceptions.  Whenever
-    an ECMAScript <emu-val>Function</emu-val> is invoked due
-    to requirements in this section and that <emu-val>Function</emu-val>
+    an ECMAScript <span class="esvalue">Function</span> is invoked due
+    to requirements in this section and that <span class="esvalue">Function</span>
     ends due to an exception being thrown, that exception
     must propagate to the caller, and if
     not caught there, to its caller, and so on.
@@ -14959,10 +14959,10 @@ and <span class="sym">","</span>.
             <li>
                 <p>
                     Allowed all operation arguments to be specified as being optional and
-                    changed back to the behavior of <emu-val>undefined</emu-val>
+                    changed back to the behavior of <span class="esvalue">undefined</span>
                     being treated as a missing optional argument value.  Modified the
                     effective overload set and overload resolution algorithms to
-                    take this into account, as well as allowing an <emu-val>undefined</emu-val>
+                    take this into account, as well as allowing an <span class="esvalue">undefined</span>
                     value passed as the argument value at the distinguishing index to select the overload
                     with an optional argument at that index.
                     Also removed <span class="xattr">[TreatUndefinedAs=Missing]</span>.
@@ -14971,7 +14971,7 @@ and <span class="sym">","</span>.
             <li>
                 <p>
                     Changed the ECMAScript to IDL dictionary conversion algorithm
-                    to treat a property with the value <emu-val>undefined</emu-val>
+                    to treat a property with the value <span class="esvalue">undefined</span>
                     as missing.
                 </p>
             </li>
@@ -15047,7 +15047,7 @@ and <span class="sym">","</span>.
             <li>
                 <p>
                     Made attribute setters throw if no argument was passed to them, instead of
-                    assuming <emu-val>undefined</emu-val>.
+                    assuming <span class="esvalue">undefined</span>.
                 </p>
             </li>
             <li>
