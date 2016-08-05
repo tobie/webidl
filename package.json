@@ -7,6 +7,6 @@
     "check-anchors": "node ./check-anchors.js"
   },
   "dependencies": {
-    "jsdom": "^9.2.1"
+    "line-by-line": "0.1.5"
   }
 }
