@@ -276,9 +276,7 @@ TR: </xsl:text>
       <xsl:text>[[</xsl:text><xsl:value-of select='./@href'/><xsl:text>]]</xsl:text>
   </xsl:template>
 
-  <xsl:template match='processing-instruction("sdir")'>
-    <xsl:text></xsl:text>
-  </xsl:template>
+  <xsl:template match='processing-instruction("sdir")' />
   
   <xsl:template match='*[processing-instruction("sdir")]/text()[following-sibling::processing-instruction("sdir")][last()]'>
     <xsl:value-of select='replace(., "\s+$", "")'/>
