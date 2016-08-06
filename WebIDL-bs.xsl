@@ -118,6 +118,15 @@ TR: </xsl:text>
         </xsl:for-each-group>
     </xsl:for-each-group>
 </pre>
+
+<style>
+  <xsl:text>
+    emu-val {
+      font-weight: bold;
+    }
+  </xsl:text>
+</style>
+
   </xsl:template>
 
   <xsl:param name='now'>12340506<!--
@@ -308,8 +317,13 @@ TR: </xsl:text>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match='h:span[@class="esvalue"]'>
-    <emu-val><xsl:apply-templates select="node()"/></emu-val>
+  <xsl:template match='h:span[@class="esvalue"] | h:span[@class="estype"]'>
+    <xsl:if test='.="unsigned long"'>
+      <xsl:text>{{unsigned long}}</xsl:text>
+    </xsl:if>
+    <xsl:if test='.!="unsigned long"'>
+      <emu-val><xsl:apply-templates select="node()"/></emu-val>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match='h:var'>
