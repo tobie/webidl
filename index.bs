@@ -144,6 +144,9 @@ urlPrefix: http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapi
     type: dfn
         url: incumbent-script
             text: incumbent script
+urlPrefix: https://tc39.github.io/ecma262/
+    type: dfn
+        text: typed arrays; url: sec-typedarray-objects
 </pre><style>
 emu-val {
 font-weight: bold;
@@ -5345,11 +5348,11 @@ strings should be represented with
 {{DOMString}} values, even if it is expected
 that values of the string will always be in ASCII or some
 8 bit character encoding.  <a href="#idl-sequence">Sequences</a>,
-<a href="#idl-frozen-array">frozen arrays</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a>
+<a href="#idl-frozen-array">frozen arrays</a> or [=Typed Arrays=]
 with {{octet}} or {{byte}}
 elements should be used for holding
 8 bit data rather than {{ByteString}}.
-[[!TYPEDARRAY]]
+[[!ECMA-262]]
 
 
 

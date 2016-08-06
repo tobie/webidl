@@ -5541,8 +5541,8 @@ written as <code>DOMString?</code> in IDL, needs to be used.</p>
 that use bytes and strings interchangably, such as HTTP.  In general,
 strings should be represented with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-30">DOMString</a></code> values, even if it is expected
 that values of the string will always be in ASCII or some
-8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
-8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-typedarray">[TYPEDARRAY]</a></strong> 
+8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-typedarray-objects">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
+8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a></strong> 
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.17" data-lt="USVString" id="idl-USVString"><span class="secno">4.10.17. </span><span class="content">USVString</span><span id="dom-USVString"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-5">USVString</a></code> type
     corresponds to the set of all possible sequences of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a>,
@@ -12409,7 +12409,7 @@ interface ExceptionThrower {
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[TYPEDARRAY]</a> defines the following terms:
+    <a data-link-type="biblio">[typedarray]</a> defines the following terms:
     <ul>
      <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a>
      <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a>

@@ -118,6 +118,10 @@ Boilerplate: omit issues-index
           </xsl:choose>
         </xsl:for-each-group>
     </xsl:for-each-group>
+<xsl:text>urlPrefix: https://tc39.github.io/ecma262/
+    type: dfn
+        text: typed arrays; url: sec-typedarray-objects
+</xsl:text>
 </pre>
 
 <style>
@@ -174,7 +178,11 @@ Boilerplate: omit issues-index
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
+  
+  <xsl:template match='h:a[@href="http://www.khronos.org/registry/typedarray/specs/latest/"]'>
+    <xsl:text>[=Typed Arrays=]</xsl:text>
+  </xsl:template>
+  
   <xsl:template match='h:a[not(@href)]'>
     <xsl:variable name='name' select='string(.)'/>
     <xsl:variable name='escaped-name' select='replace($name, "\[\[", "\\[[")'/>
@@ -497,7 +505,7 @@ Issue</xsl:text>
   <xsl:template match='h:a[starts-with(@href, "#ref-")]'>
     <xsl:choose>
       <xsl:when test='text()="[TYPEDARRAYS]"'>
-        <xsl:text>[[!TYPEDARRAY]]</xsl:text>
+        <xsl:text>[[!ECMA-262]]</xsl:text>
       </xsl:when>
       <xsl:when test='text()="[DOM3CORE]"'>
         <xsl:text>[[DOM-LEVEL-3-CORE]]</xsl:text>
