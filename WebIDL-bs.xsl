@@ -207,9 +207,16 @@ Boilerplate: omit issues-index
   <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
     <xsl:text>[{{TreatNullAs}}]</xsl:text>
   </xsl:template>
-  
+
   <xsl:template match='h:a[@class="idltype"]'>
-    <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
+    <xsl:choose>
+      <xsl:when test='text()="unresticted float"'>
+        <xsl:text>{{unrestricted float}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match='h:a[contains(@class, "external")][matches(@href, ".#")]'>

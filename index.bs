@@ -4870,7 +4870,7 @@ Note: For example, that precludes the following:
     The following types are known as <dfn id="dfn-numeric-type" export>numeric types</dfn>:
     the [=integer types=],
     {{float}},
-    {{unresticted float}},
+    {{unrestricted float}},
     {{double}} and
     {{unrestricted double}}.
 </p>

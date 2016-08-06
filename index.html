@@ -5256,7 +5256,7 @@ Entry implements Observable;
     corresponding to each type, and how <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-17">constants</a> of that type are represented. </p>
    <p> The following types are known as <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-integer-type">integer types</dfn>: <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-1">byte</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-1">octet</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-1">short</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-1">unsigned short</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-1">long</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-5">unsigned long</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-2">long long</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-2">unsigned long long</a></code>. </p>
    <p> The following types are known as <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-numeric-type">numeric types</dfn>:
-    the <a data-link-type="dfn" href="#dfn-integer-type" id="ref-for-dfn-integer-type-3">integer types</a>, <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-4">float</a></code>, <code class="idl"><a data-link-type="idl">unresticted float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-8">double</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-6">unrestricted double</a></code>. </p>
+    the <a data-link-type="dfn" href="#dfn-integer-type" id="ref-for-dfn-integer-type-3">integer types</a>, <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-4">float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-5">unrestricted float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-8">double</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-6">unrestricted double</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-primitive-type">primitive types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-4">boolean</a></code> and the <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-1">numeric types</a>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-string-type">string types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-18">DOMString</a></code>, all <a href="#idl-enumeration">enumeration types</a>, <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-3">ByteString</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-4">USVString</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-exception-type">exception types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-4">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-2">DOMException</a></code>. </p>
@@ -5452,12 +5452,12 @@ specifications should use <code class="idl"><a data-link-type="idl" href="#idl-d
 since the set of values that a <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-10">double</a></code> can
 represent more closely matches an ECMAScript <emu-val>Number</emu-val>.</strong> 
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.12" data-lt="unrestricted float" id="idl-unrestricted-float"><span class="secno">4.10.12. </span><span class="content">unrestricted float</span><span id="dom-unrestrictedfloat"></span></h4>
-   <p> The <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-5">unrestricted float</a></code> type is a floating point numeric
+   <p> The <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-6">unrestricted float</a></code> type is a floating point numeric
     type that corresponds to the set of all possible single-precision 32 bit
     IEEE 754 floating point numbers, finite and non-finite. <a data-link-type="biblio" href="#biblio-ieee-754">[IEEE-754]</a> </p>
-   <p> <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-6">unrestricted float</a></code> constant values in IDL are
+   <p> <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-7">unrestricted float</a></code> constant values in IDL are
     represented with <a class="sym" href="#prod-float">float</a> tokens. </p>
-   <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-12">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-7">unrestricted float</a></code> type is “UnrestrictedFloat”. </p>
+   <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-12">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-8">unrestricted float</a></code> type is “UnrestrictedFloat”. </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.13" data-lt="double" id="idl-double"><span class="secno">4.10.13. </span><span class="content">double</span><span id="dom-double"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-11">double</a></code> type is a floating point numeric
     type that corresponds to the set of finite double-precision 64 bit
@@ -6544,11 +6544,11 @@ for Web pages.</p>
    <p id="float-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-10">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-10">float</a></code> value to an ECMAScript
     value is the <emu-val>Number</emu-val> value that represents the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-11">float</a></code> value. </p>
    <h4 class="heading settled" data-level="5.2.13" id="es-unrestricted-float"><span class="secno">5.2.13. </span><span class="content">unrestricted float</span><a class="self-link" href="#es-unrestricted-float"></a></h4>
-   <p id="es-to-unrestricted-float"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-8">unrestricted float</a></code> value
+   <p id="es-to-unrestricted-float"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-9">unrestricted float</a></code> value
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>Let <var>x</var> be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(<var>V</var>).
-    <li>If <var>x</var> is <emu-val>NaN</emu-val>, then return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-9">unrestricted float</a></code> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 <a data-link-type="biblio" href="#biblio-ieee-754">[IEEE-754]</a>.
+    <li>If <var>x</var> is <emu-val>NaN</emu-val>, then return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-10">unrestricted float</a></code> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 <a data-link-type="biblio" href="#biblio-ieee-754">[IEEE-754]</a>.
     <li> Let <var>S</var> be the set of finite IEEE 754 single-precision floating
         point values except −0, but with two special values added: 2<sup>128</sup> and
         −2<sup>128</sup>. 
@@ -6564,13 +6564,13 @@ for Web pages.</p>
 it must be canonicalized to a particular single precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
 value when its bit pattern is interpreted as an unsigned 32 bit integer.</p>
-   <p id="unrestricted-float-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-11">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-10">unrestricted float</a></code> value to an ECMAScript
+   <p id="unrestricted-float-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-11">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-11">unrestricted float</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val>: </p>
    <ul>
-    <li> If the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-11">unrestricted float</a></code> value is a NaN,
+    <li> If the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-12">unrestricted float</a></code> value is a NaN,
         then the <emu-val>Number</emu-val> value is <emu-val>NaN</emu-val>. 
     <li> Otherwise, the <emu-val>Number</emu-val> value is
-        the one that represents the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-12">unrestricted float</a></code> value. 
+        the one that represents the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-13">unrestricted float</a></code> value. 
    </ul>
    <h4 class="heading settled" data-level="5.2.14" id="es-double"><span class="secno">5.2.14. </span><span class="content">double</span><a class="self-link" href="#es-double"></a></h4>
    <p id="es-to-double"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-14">double</a></code> value
@@ -13911,8 +13911,9 @@ interface ExceptionThrower {
    <b><a href="#idl-unrestricted-float">#idl-unrestricted-float</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-idl-unrestricted-float-1">4.2.1. Constants</a> <a href="#ref-for-idl-unrestricted-float-2">(2)</a> <a href="#ref-for-idl-unrestricted-float-3">(3)</a> <a href="#ref-for-idl-unrestricted-float-4">(4)</a>
-    <li><a href="#ref-for-idl-unrestricted-float-5">4.10.12. unrestricted float</a> <a href="#ref-for-idl-unrestricted-float-6">(2)</a> <a href="#ref-for-idl-unrestricted-float-7">(3)</a>
-    <li><a href="#ref-for-idl-unrestricted-float-8">5.2.13. unrestricted float</a> <a href="#ref-for-idl-unrestricted-float-9">(2)</a> <a href="#ref-for-idl-unrestricted-float-10">(3)</a> <a href="#ref-for-idl-unrestricted-float-11">(4)</a> <a href="#ref-for-idl-unrestricted-float-12">(5)</a>
+    <li><a href="#ref-for-idl-unrestricted-float-5">4.10. Types</a>
+    <li><a href="#ref-for-idl-unrestricted-float-6">4.10.12. unrestricted float</a> <a href="#ref-for-idl-unrestricted-float-7">(2)</a> <a href="#ref-for-idl-unrestricted-float-8">(3)</a>
+    <li><a href="#ref-for-idl-unrestricted-float-9">5.2.13. unrestricted float</a> <a href="#ref-for-idl-unrestricted-float-10">(2)</a> <a href="#ref-for-idl-unrestricted-float-11">(3)</a> <a href="#ref-for-idl-unrestricted-float-12">(4)</a> <a href="#ref-for-idl-unrestricted-float-13">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="idl-double">
