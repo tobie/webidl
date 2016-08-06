@@ -225,7 +225,7 @@ TR: </xsl:text>
   <xsl:template match='h:p[@id="ecmascript-throw"]'>
     <p>
       When an algorithm says to
-      <dfn lt="es throw" export="" oldids="ecmascript-throw">throw a <b><i>Something</i>Error</b></dfn>
+      <dfn lt="es throw" export="" id="ecmascript-throw">throw a <b><i>Something</i>Error</b></dfn>
       then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
       and to throw it, just as the algorithms in ECMA-262 do.
     </p>
