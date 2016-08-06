@@ -237,17 +237,17 @@ font-weight: bold;
               <em>interface-members…</em>
             };
         </pre>
-    (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
+        (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
     <li>IDL grammar snippets:
         <table class="grammar">
             <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  // nothing</span></td></tr>
         </table>
-    (Each grammar rule is assigned a number for reference, shown on the left.)</li>
+        (Each grammar rule is assigned a number for reference, shown on the left.)</li>
     <li>Non-normative notes:
-    Note: This is a note.</li>
+        Note: This is a note.</li>
     <li>Non-normative examples: <div class="example"><p>This is an example.</p></div></li>
     <li>Normative warnings:
-    Advisement: This is a warning.</li>
+        Advisement: This is a warning.</li>
         <li>Code blocks:
         <pre class="idl-example example">
             // This is an IDL code block.
@@ -1169,7 +1169,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
         </dl>
     </li>
     <li>Let |number| be the result of interpreting all remaining characters following the optional leading <span class="char">U+002D HYPHEN-MINUS ("-")</span>
-    character and any characters indicating the base as an integer specified in base |base|.</li>
+        character and any characters indicating the base as an integer specified in base |base|.</li>
     <li>Return |sign| × |number|.</li>
 </ol>
 <p>
@@ -1188,7 +1188,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
 <ol class="algorithm">
     <li>Let |S| be the sequence of characters matched by the <a class="sym" href="#prod-float">float</a> token.</li>
     <li>Let |value| be the Mathematical Value that would be obtained if |S| were
-    parsed as an ECMAScript <a>NumericLiteral</a>.</li>
+        parsed as an ECMAScript <a>NumericLiteral</a>.</li>
     <li>
         If the <a class="sym" href="#prod-float">float</a> token is being
         used as the value for a {{float}} or
@@ -1361,7 +1361,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
     <li>a <a href="#dfn-dictionary">dictionary</a></li>
     <li>a [=union type=]
         that has a nullable or non-nullable sequence type or dictionary
-    as one of its [=flattened member types=]</li>
+        as one of its [=flattened member types=]</li>
 </ul>
 <p>
     The attribute is <dfn id="dfn-read-only" export>read only</dfn> if the
@@ -2240,7 +2240,7 @@ mailing list before proceeding.
 <ul>
     <li>a <em>map</em> of key–value pairs, where the keys are
         {{DOMString}} values (unique in the map) and the
-    values are [=serialized values=]</li>
+        values are [=serialized values=]</li>
     <li>a <em>list</em> of [=serialized values=]</li>
     <li>a {{DOMString}} value</li>
     <li>an {{unrestricted double}} value</li>
@@ -2289,14 +2289,14 @@ into an ECMAScript value that can be serialized to JSON by the
             <li>Let |map| be an empty map.</li>
             <li>If the <code>inherit</code> keyword was used, then set |map| to be the result of
                 the [=serialization behavior=] of the
-            closest inherited interface that declares a serializer.</li>
+                closest inherited interface that declares a serializer.</li>
             <li>For each attribute identifier |i| in the serialization pattern, in order:
                 <ol>
                     <li>Remove any entry in |map| with key name |i|.</li>
                     <li>Let |V| be the value of the attribute with identifier |i|.</li>
                     <li>Add an entry to |map| whose key name is |i| and whose
                         value is result of [=converted to serialized values|converting=]
-                    |V| to a serialized value.</li>
+                        |V| to a serialized value.</li>
                 </ol>
             </li>
             <li>Return |map|.</li>
@@ -2320,7 +2320,7 @@ into an ECMAScript value that can be serialized to JSON by the
             <li>Let |map| be an empty map.</li>
             <li>If the <code>inherit</code> keyword was used, then set |map| to be the result of
                 the [=serialization behavior=] of the
-            closest inherited interface that declares a serializer.</li>
+                closest inherited interface that declares a serializer.</li>
             <li>For each identifier |i| of an attribute on the interface whose type is
                 a [=serializable type=], in the order they appear
                 on the interface:
@@ -2329,7 +2329,7 @@ into an ECMAScript value that can be serialized to JSON by the
                     <li>Let |V| be the value of the attribute with identifier |i|.</li>
                     <li>Add an entry to |map| whose key name is |i| and whose
                         value is result of [=converted to serialized values|converting=]
-                    |V| to a serialized value.</li>
+                        |V| to a serialized value.</li>
                 </ol>
             </li>
             <li>Return |map|.</li>
@@ -2350,7 +2350,7 @@ into an ECMAScript value that can be serialized to JSON by the
                     <li>Let |V| be the value of the named property with name |n|.</li>
                     <li>Add an entry to |map| whose key name is |i| and whose
                         value is result of [=converted to serialized values|converting=]
-                    |V| to a serialized value.</li>
+                        |V| to a serialized value.</li>
                 </ol>
             </li>
             <li>Return |map|.</li>
@@ -2371,7 +2371,7 @@ into an ECMAScript value that can be serialized to JSON by the
                     <li>Let |V| be the value of the attribute with identifier |i|.</li>
                     <li>Append to |list| the value that is the result of
                         [=converted to serialized values|converting=]
-                    |V| to a serialized value.</li>
+                        |V| to a serialized value.</li>
                 </ol>
             </li>
             <li>Return |list|.</li>
@@ -2391,10 +2391,10 @@ into an ECMAScript value that can be serialized to JSON by the
             <li>While |i| is less than or equal to the greatest supported property index on the object:
                 <ol>
                     <li>Let |V| be the value of the indexed property with index |i|
-                    if |i| is a supported property index, or <span class="idlvalue">null</span> otherwise.</li>
+                        if |i| is a supported property index, or <span class="idlvalue">null</span> otherwise.</li>
                     <li>Append to |list| the value that is the result of
                         [=converted to serialized values|converting=]
-                    |V| to a serialized value.</li>
+                        |V| to a serialized value.</li>
                     <li>Set |i| to |i| + 1.</li>
                 </ol>
             </li>
@@ -2412,7 +2412,7 @@ into an ECMAScript value that can be serialized to JSON by the
         <ol class="algorithm">
             <li>Let |V| be the value of the attribute with the specified identifier.</li>
             <li>Return the result of [=converted to serialized values|converting=]
-            |V| to a serialized value.</li>
+                |V| to a serialized value.</li>
         </ol>
     </li>
 </ul>
@@ -2428,10 +2428,10 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
 <dl class="switch">
     <dt>{{long long}}</dt>
     <dd>converted by choosing the closest equivalent {{double}} value
-    (as when <a href="#es-long-long">converting a <span class="idltype">long long</span> to an ECMAScript <emu-val>Number</emu-val> value</a>)</dd>
+        (as when <a href="#es-long-long">converting a <span class="idltype">long long</span> to an ECMAScript <emu-val>Number</emu-val> value</a>)</dd>
     <dt>{{unsigned long long}}</dt>
     <dd>converted by choosing the closest equivalent {{double}} value
-    (as when <a href="#es-unsigned-long-long">converting a <span class="idltype">unsigned long long</span> to an ECMAScript <emu-val>Number</emu-val> value</a>)</dd>
+        (as when <a href="#es-unsigned-long-long">converting a <span class="idltype">unsigned long long</span> to an ECMAScript <emu-val>Number</emu-val> value</a>)</dd>
     <dt>any other [=integer type=]</dt>
     <dt>{{float}}</dt>
     <dd>converted by choosing the equivalent {{double}} value</dd>
@@ -2444,12 +2444,12 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
     <dt>a {{USVString}}</dt>
     <dd>the {{DOMString}} produced by
         encoding the given sequence of <a>Unicode scalar values</a> in
-    UTF-16</dd>
+        UTF-16</dd>
     <dt>a {{ByteString}}</dt>
     <dd>the equivalent {{DOMString}} value where each code unit has the same value as the corresponding byte value</dd>
     <dt>a [=nullable type|nullable=] serializable type</dt>
     <dd>converted to <span class="idltype">null</span> if that is its value,
-    otherwise converted as per its [=inner type=]</dd>
+        otherwise converted as per its [=inner type=]</dd>
     <dt>a [=union type=] where
         all of its [=member types=]
     are serializable types</dt>
@@ -2457,14 +2457,14 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
     <dt>a <a href="#idl-sequence">sequence type</a> that
     has a serializable type as its element type</dt>
     <dd>converted to a list where each element is the result of converting its
-    corresponding sequence element to a serialized value</dd>
+        corresponding sequence element to a serialized value</dd>
     <dt>a [=dictionary=] where
         all of its [=dictionary members|members=] have
     serializable types</dt>
     <dd>converted to a map consisting of an entry for each dictionary member
         that is present, where the entry’s key is the identifier of the dictionary
         member and its value is the result of converting the dictionary member’s
-    value to a serializable type</dd>
+        value to a serializable type</dd>
     <dt>an <a href="#idl-interface">interface</a> type that has a
     [=serializer=]</dt>
     <dd>converted by invoking the object’s serializer</dd>
@@ -2534,16 +2534,16 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
             <li>Add an entry to |map| whose key is “from” and whose value is
                 the [=serialized value=] of
                 the <code>number</code> attribute on the <span class="idltype">Account</span>
-            object referenced by the <code>from</code> attribute on |O|.</li>
+                object referenced by the <code>from</code> attribute on |O|.</li>
             <li>Add an entry to |map| whose key is “to” and whose value is
                 the [=serialized value=] of
                 the <code>number</code> attribute on the <span class="idltype">Account</span>
-            object referenced by the <code>from</code> attribute on |O|.</li>
+                object referenced by the <code>from</code> attribute on |O|.</li>
             <li>For both of the attributes <code>amount</code> and <code>description</code>,
                 add an entry to |map| whose key is the
                 [=identifier=] of the attribute
                 and whose value is the [=serialized value=]
-            of the value of the attribute on |O|.</li>
+                of the value of the attribute on |O|.</li>
             <li>Return |map|.</li>
         </ol>
     </blockquote>
@@ -3114,11 +3114,11 @@ is language binding specific.
         <ol>
             <li>Let |n| be the number of arguments |X| is declared to take.</li>
             <li>Let |t|<sub>0..|n|−1</sub> be a list of types, where |t|<sub>|i|</sub>
-            is the type of |X|’s argument at index |i|.</li>
+                is the type of |X|’s argument at index |i|.</li>
             <li>Let |o|<sub>0..|n|−1</sub> be a list of [=optionality values=], where |o|<sub>|i|</sub>
                 is “variadic” if |X|’s argument at index |i| is a final, variadic argument,
                 “optional” if the argument is [=optional argument|optional=],
-            and “required” otherwise.</li>
+                and “required” otherwise.</li>
             <li>Add to |S| the tuple &lt;|X|, |t|<sub>0..|n|−1</sub>, |o|<sub>0..|n|−1</sub>&gt;.</li>
             <li>If |X| is declared to be [=variadic=], then:
                 <ol>
@@ -3396,7 +3396,7 @@ is language binding specific.
             <li>The two identified [=interfaces=] are
                 not the same, it is not possible for a single [=platform object=]
                 to implement both [=interfaces=],
-            and it is not the case that both are [=callback interfaces=].</li>
+                and it is not the case that both are [=callback interfaces=].</li>
             <li>The interface type is not a [=callback interface=].</li>
         </ol>
     </li>
@@ -3971,14 +3971,14 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     <li>the type is |D|</li>
     <li>the type is a dictionary that [=inherits=] from |D|</li>
     <li>the type is a [=nullable type=]
-    whose [=inner type=] includes |D|</li>
+        whose [=inner type=] includes |D|</li>
     <li>the type is a <a href="#idl-sequence">sequence type</a> or <a href="#idl-frozen-array">frozen array</a>
-    whose element type includes |D|</li>
+        whose element type includes |D|</li>
     <li>the type is a <a class="dnfref" href="#dfn-union-type">union type</a>,
         one of whose [=member types=]
-    includes |D|</li>
+        includes |D|</li>
     <li>the type is a dictionary, one of whose members or inherited members has
-    a type that includes |D|</li>
+        a type that includes |D|</li>
 </ul>
 <p>
     As with interfaces, the IDL for dictionaries can be split into multiple parts
@@ -4688,9 +4688,9 @@ Note: See also the similarly named [=callback interfaces=].
 </p>
 <ul>
     <li>|O| implements a different interface |B|, and the IDL states that
-    <code>B implements A</code>; or</li>
+        <code>B implements A</code>; or</li>
     <li>|O| implements a different [=supplemental interface=]
-    |C|, and |C| [=inherits=] from |A|.</li>
+        |C|, and |C| [=inherits=] from |A|.</li>
 </ul>
 <div class="note">
     <p>
@@ -4738,7 +4738,7 @@ Note: See also the similarly named [=callback interfaces=].
     <li>each interface |B| where the IDL states <code>A implements B</code>;</li>
     <li>each interface that a consequential interface of |A| inherits from; and</li>
     <li>each interface |D| where the IDL states that <code>C implements D</code>,
-    where |C| is a consequential interface of |A|.</li>
+        where |C| is a consequential interface of |A|.</li>
 </ul>
 <p>
     For a given interface, there must not
@@ -5284,18 +5284,18 @@ written as <code>DOMString?</code> in IDL, needs to be used.
                             <li>Otherwise, |i| &lt; |n|−1:
                                 <ol>
                                     <li>Let |d| be the code unit in |S| at index
-                                    |i|+1.</li>
+                                        |i|+1.</li>
                                     <li>If 0xDC00 ≤ |d| ≤ 0xDFFF, then:
                                         <ol>
                                             <li>Let |a| be |c| &amp; 0x3FF.</li>
                                             <li>Let |b| be |d| &amp; 0x3FF.</li>
                                             <li>Append to |U| the Unicode character with
-                                            code point 2<sup>16</sup>+2<sup>10</sup>|a|+|b|.</li>
+                                                code point 2<sup>16</sup>+2<sup>10</sup>|a|+|b|.</li>
                                             <li>Set |i| to |i|+1.</li>
                                         </ol>
                                     </li>
                                     <li>Otherwise, |d| &lt; 0xDC00 or |d| &gt; 0xDFFF.
-                                    Append to |U| a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.</li>
+                                        Append to |U| a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.</li>
                                 </ol>
                             </li>
                         </ol>
@@ -5677,12 +5677,12 @@ sequence is used.
     <li>For each [=member type=] |U| of |T|:
         <ol>
             <li>If |U| is a [=nullable type=], then
-            set |U| to be the [=inner type=] of |U|.</li>
+                set |U| to be the [=inner type=] of |U|.</li>
             <li>If |U| is a [=union type=], then
                 add to |S| the [=flattened member types=]
-            of |U|.</li>
+                of |U|.</li>
             <li>Otherwise, |U| is not a [=union type=].
-            Add |U| to |S|.</li>
+                Add |U| to |S|.</li>
         </ol>
     </li>
     <li>Return |S|.</li>
@@ -5715,7 +5715,7 @@ are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Ev
                 <ol>
                     <li>Let |m| be the [=number of nullable member types=] of |U|.</li>
                     <li>Set |n| to |n| + |m|.</li>
-            </ol></li>
+                </ol></li>
         </ol>
     </li>
     <li>Return |n|.</li>
@@ -5737,7 +5737,7 @@ are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Ev
 <ul>
     <li>the type is a [=nullable type=], or</li>
     <li>the type is a [=union type=] and its
-    [=number of nullable member types=] is 1.</li>
+        [=number of nullable member types=] is 1.</li>
 </ul>
 <p>
     Each pair of [=flattened member types=]
@@ -6171,7 +6171,7 @@ and configurable.
 </p>
 <ul>
     <li>Its <span class="prop">\[[Prototype]]</span> internal property is
-    <a>%FunctionPrototype%</a> unless otherwise specified.</li>
+        <a>%FunctionPrototype%</a> unless otherwise specified.</li>
     <li>Its <span class="prop">\[[Get]]</span> internal property is set as described in [=ECMA-262 section 9.1.8=].</li>
     <li>Its <span class="prop">\[[Construct]]</span> internal property is set as described in [=ECMA-262 section 19.2.2.3=].</li>
     <li>Its <span class="prop">@@hasInstance</span> property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.</li>
@@ -6475,7 +6475,7 @@ for Web pages.
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>8</sup>.</li>
     <li>If |x| ≥ 2<sup>7</sup>, return the IDL {{byte}} value that represents the same numeric value as |x| − 2<sup>8</sup>.
-    Otherwise, return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
+        Otherwise, return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
 </ol>
 <p id="byte-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -6581,7 +6581,7 @@ for Web pages.
     <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
     <li>Set |x| to |x| <a>modulo</a> 2<sup>16</sup>.</li>
     <li>If |x| ≥ 2<sup>15</sup>, return the IDL {{short}} value that represents the same numeric value as |x| − 2<sup>16</sup>.
-    Otherwise, return the IDL {{short}} value that represents the same numeric value as |x|.</li>
+        Otherwise, return the IDL {{short}} value that represents the same numeric value as |x|.</li>
 </ol>
 <p id="short-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -6873,7 +6873,7 @@ for Web pages.
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
     <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
-    <emu-val>−Infinity</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        <emu-val>−Infinity</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>
         Let |S| be the set of finite IEEE 754 single-precision floating
         point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6977,7 +6977,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
     <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
-    <emu-val>−Infinity</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        <emu-val>−Infinity</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>
         Return the IDL {{double}} value
         that has the same numeric value as |x|.
@@ -7090,10 +7090,10 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 <ol class="algorithm">
     <li>Let |x| be <a>ToString</a>(|V|).</li>
     <li>If the value of any <a>element</a>
-    of |x| is greater than 255, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        of |x| is greater than 255, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return an IDL {{ByteString}} value
         whose length is the length of |x|, and where the value of each element is
-    the value of the corresponding element of |x|.</li>
+        the value of the corresponding element of |x|.</li>
 </ol>
 <p id="ByteString-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -7116,9 +7116,9 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 </p>
 <ol class="algorithm">
     <li>Let |string| be the result of [=converted to an IDL value|converting=] |V|
-    to a {{DOMString}}.</li>
+        to a {{DOMString}}.</li>
     <li>Return an IDL {{USVString}} value
-    that is the result of [=convert a DOMString to a sequence of Unicode scalar values|converting string to a sequence of Unicode scalar values=].</li>
+        that is the result of [=convert a DOMString to a sequence of Unicode scalar values|converting string to a sequence of Unicode scalar values=].</li>
 </ol>
 <p id="USVString-to-es">
     An IDL {{USVString}} value is
@@ -7179,7 +7179,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
         [[#es-user-objects]],
         then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
         with the [=incumbent script=]
-    as the [=callback context=]. [[!HTML]]</li>
+        as the [=callback context=]. [[!HTML]]</li>
     <li><a lt="es throw">Throw a <emu-val>TypeError</emu-val></a>.</li>
 </ol>
 <p id="interface-to-es">
@@ -7210,9 +7210,9 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
     <li>If |V| is a native <emu-val>RegExp</emu-val> object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |dict| be an empty dictionary value of type |D|;
         every [=dictionary member=]
-    is initially considered to be [=present|not present=].</li>
+        is initially considered to be [=present|not present=].</li>
     <li>Let |dictionaries| be a list consisting of |D| and all of |D|’s [=inherited dictionaries=],
-    in order from least to most derived.</li>
+        in order from least to most derived.</li>
     <li>For each dictionary |dictionary| in |dictionaries|, in order:
         <ol>
             <li>For each dictionary member |member| declared on |dictionary|, in lexicographical order:
@@ -7264,7 +7264,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
 <ol class="algorithm">
     <li>Let |O| be a new <emu-val>Object</emu-val> value created as if by the expression <code>({})</code>.</li>
     <li>Let |dictionaries| be a list consisting of |D| and all of |D|’s [=inherited dictionaries=],
-    in order from least to most derived.</li>
+        in order from least to most derived.</li>
     <li>For each dictionary |dictionary| in |dictionaries|, in order:
         <ol>
             <li>For each dictionary member |member| declared on |dictionary|, in lexicographical order:
@@ -7333,12 +7333,12 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         whose type is a [=nullable type|nullable=]
         [=callback function=]
         that is annotated with [{{TreatNonObjectAsNull}}],
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL <a href="#idl-callback-function">callback
         function type</a> value that represents a reference to the same
         object that |V| represents,
         with the [=incumbent script=]
-    as the [=callback context=]. [[!HTML]].</li>
+        as the [=callback context=]. [[!HTML]].</li>
 </ol>
 <p id="callback-function-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -7455,7 +7455,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         <ol>
             <li>Let |V| be the value in |S| at index |i|.</li>
             <li>Let |E| be the result of [=converted to ECMAScript values|converting=]
-            |V| to an ECMAScript value.</li>
+                |V| to an ECMAScript value.</li>
             <li>Let |P| be the result of calling <a>ToString</a>(|i|).</li>
             <li>Call <a>CreateDataProperty</a>(|A|, |P|, |E|).</li>
             <li>Set |i| to |i| + 1.</li>
@@ -7606,9 +7606,9 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         Issue: ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.
     </li>
     <li>Let |promise| be the result of calling |resolve| with <a class="nocite">%Promise%</a>
-    as the <emu-val>this</emu-val> value and |V| as the single argument value.</li>
+        as the <emu-val>this</emu-val> value and |V| as the single argument value.</li>
     <li>Return the IDL <a href="#idl-promise">promise type</a> value that is a reference to the
-    same object as |promise|.</li>
+        same object as |promise|.</li>
 </ol>
 <p id="promise-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -7629,16 +7629,16 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         behavior when invoked is as follows:
         <ol>
             <li>If |T| is {{void}}, then:
-            <ol><li>Return the result of performing any steps that were required to be run if the promise was fulfilled.</li></ol></li>
+                <ol><li>Return the result of performing any steps that were required to be run if the promise was fulfilled.</li></ol></li>
             <li>Otherwise, |T| is a type other than {{void}}:
                 <ol>
                     <li>Let |V| be the first argument to |onFulfilled|.</li>
                     <li>Let |value| be the result of [=converted to an IDL value|converting=]
-                    |V| to an IDL value of type |T|.</li>
+                        |V| to an IDL value of type |T|.</li>
                     <li>If there are no steps that are required to be run if the promise was fulfilled, then
-                    return <emu-val>undefined</emu-val>.</li>
+                        return <emu-val>undefined</emu-val>.</li>
                     <li>Otherwise, return the result of performing any steps that were required to be run if the promise was fulfilled,
-                    with |value| as the promise’s value.</li>
+                        with |value| as the promise’s value.</li>
                 </ol>
             </li>
         </ol>
@@ -7649,17 +7649,17 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         <ol>
             <li>Let |R| be the first argument to |onRejected|.</li>
             <li>Let |reason| be the result of [=converted to an IDL value|converting=]
-            |R| to an IDL value of type {{any}}.</li>
+                |R| to an IDL value of type {{any}}.</li>
             <li>If there are no steps that are required to be run if the promise was rejected, then
-            return <emu-val>undefined</emu-val>.</li>
+                return <emu-val>undefined</emu-val>.</li>
             <li>Otherwise, return the result of performing any steps that were required to be run if the promise was rejected,
-            with |reason| as the rejection reason.</li>
+                with |reason| as the rejection reason.</li>
         </ol>
     </li>
     <li>Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.</li>
     <li>If |then| is not <a>callable</a>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the result of calling |then| with |promise| as the <emu-val>this</emu-val> value and |onFulfilled| and |onRejected|
-    as its two arguments.</li>
+        as its two arguments.</li>
 </ol>
 
 Issue: Include an example of how to write spec text using this term.
@@ -7681,7 +7681,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>If the [=union type=]
         [=includes a nullable type=] and
         |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
-    then return the IDL value <span class="idlvalue">null</span>.</li>
+        then return the IDL value <span class="idlvalue">null</span>.</li>
     <li>
         Let |types| be the [=flattened member types=]
         of the [=union type=].
@@ -7699,9 +7699,9 @@ Issue: Include an example of how to write spec text using this term.
         If |V| is a [=platform object=], then:
         <ol>
             <li>If |types| includes an <a href="#idl-interface">interface type</a> that |V|
-            implements, then return the IDL value that is a reference to the object |V|.</li>
+                implements, then return the IDL value that is a reference to the object |V|.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7709,9 +7709,9 @@ Issue: Include an example of how to write spec text using this term.
         <ol>
             <li>If |types| includes {{RegExp}}, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to {{RegExp}}.</li>
+                |V| to {{RegExp}}.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7720,9 +7720,9 @@ Issue: Include an example of how to write spec text using this term.
             <li>If |types| includes {{DOMException}} or
                 {{Error}}, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to that type.</li>
+                |V| to that type.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7730,9 +7730,9 @@ Issue: Include an example of how to write spec text using this term.
         <ol>
             <li>If |types| includes {{Error}}, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to {{Error}}.</li>
+                |V| to {{Error}}.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7740,9 +7740,9 @@ Issue: Include an example of how to write spec text using this term.
         <ol>
             <li>If |types| includes {{ArrayBuffer}}, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to {{ArrayBuffer}}.</li>
+                |V| to {{ArrayBuffer}}.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7750,9 +7750,9 @@ Issue: Include an example of how to write spec text using this term.
         <ol>
             <li>If |types| includes {{DataView}}, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to {{DataView}}.</li>
+                |V| to {{DataView}}.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7761,9 +7761,9 @@ Issue: Include an example of how to write spec text using this term.
             <li>If |types| includes a [=typed array type=]
                 whose name is the value of |V|’s \[[TypedArrayName]] <a>internal slot</a>, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to that type.</li>
+                |V| to that type.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7772,9 +7772,9 @@ Issue: Include an example of how to write spec text using this term.
             <li>If |types| includes a [=callback function=]
                 type, then return the result of
                 [=converted to an IDL value|converting=]
-            |V| to that callback function type.</li>
+                |V| to that callback function type.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7819,13 +7819,13 @@ Issue: Include an example of how to write spec text using this term.
             </li>
             <li>If |types| includes a <a href="#idl-dictionary">dictionary type</a>, then return the
                 result of [=converted to an IDL value|converting=]
-            |V| to that dictionary type.</li>
+                |V| to that dictionary type.</li>
             <li>If |types| includes a [=callback interface=]
                 type, then return the result of
                 [=converted to an IDL value|converting=]
-            |V| to that interface type.</li>
+                |V| to that interface type.</li>
             <li>If |types| includes {{object}}, then return the IDL value
-            that is a reference to the object |V|.</li>
+                that is a reference to the object |V|.</li>
         </ol>
     </li>
     <li>
@@ -7929,7 +7929,7 @@ Issue: Include an example of how to write spec text using this term.
 </p>
 <ol class="algorithm">
     <li>If <a>Type</a>(|V|) is not Object,
-    or |V| does not have an \[[ErrorData]] <a>internal slot</a>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        or |V| does not have an \[[ErrorData]] <a>internal slot</a>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{Error}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p id="Error-to-es">
@@ -7955,7 +7955,7 @@ Issue: Include an example of how to write spec text using this term.
 </p>
 <ol class="algorithm">
     <li>If <a>Type</a>(|V|) is not Object,
-    or |V| is not a platform object that represents a [=DOMException=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        or |V| is not a platform object that represents a [=DOMException=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{DOMException}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p id="DOMException-to-es">
@@ -7996,7 +7996,7 @@ Issue: Include an example of how to write spec text using this term.
 <ol class="algorithm">
     <li>If <a>Type</a>(|V|) is not Object,
         or |V| does not have a \[[DataView]] <a>internal slot</a>,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{DataView}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p>
@@ -8018,7 +8018,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>If <a>Type</a>(|V|) is not Object,
         or |V| does not have a \[[TypedArrayName]] <a>internal slot</a>
         with a value equal to the name of |T|,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL value of type |T| that is a reference to the same object as |V|.</li>
 </ol>
 <p>
@@ -8042,17 +8042,17 @@ Issue: Include an example of how to write spec text using this term.
         <ol>
             <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a>internal slot</a>.</li>
             <li>If |arrayBuffer| is <emu-val>undefined</emu-val>, then
-            <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a>internal slot</a>.</li>
             <li>Set |length| to the value of |O|’s \[[ByteLength]] <a>internal slot</a>.</li>
         </ol>
     </li>
     <li>Otherwise, set |length| to the value of |O|’s \[[ArrayBufferByteLength]] <a>internal slot</a>.</li>
     <li>If <a>IsDetachedBuffer</a>(|O|), then
-    <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |data| be the value of |O|’s \[[ArrayBufferData]] <a>internal slot</a>.</li>
     <li>Return a reference to or copy of (as required) the |length| bytes in |data|
-    starting at byte offset |offset|.</li>
+        starting at byte offset |offset|.</li>
 </ol>
 <p>
     To [=detach=] an {{ArrayBuffer}},
@@ -8080,10 +8080,10 @@ Issue: Include an example of how to write spec text using this term.
 <ol class="algorithm">
     <li>Let |values| be the result of
         [=converted to an IDL value|converting=]
-    |V| to IDL type <span class="idltype">sequence&lt;|T|&gt;</span>.</li>
+        |V| to IDL type <span class="idltype">sequence&lt;|T|&gt;</span>.</li>
     <li>Return the result of
         [=create a frozen array|creating a frozen array=]
-    from |values|.</li>
+        from |values|.</li>
 </ol>
 <p>
     To <dfn id="dfn-create-frozen-array" export>create a frozen array</dfn> from a sequence
@@ -8092,7 +8092,7 @@ Issue: Include an example of how to write spec text using this term.
 <ol class="algorithm">
     <li>Let |array| be the result of
         [=converted to ECMAScript values|converting=]
-    the sequence of values to an ECMAScript value.</li>
+        the sequence of values to an ECMAScript value.</li>
     <li>Perform <a>SetIntegrityLevel</a>(|array|, <code>"frozen"</code>).</li>
     <li>Return |array|.</li>
 </ol>
@@ -8112,7 +8112,7 @@ Issue: Include an example of how to write spec text using this term.
 </p>
 <ol class="algorithm">
     <li>Let |values| be the result of
-    .</li>
+        .</li>
     <li>Return the result of [=create a frozen array|creating a frozen array=] from |values|.</li>
 </ol>
 
@@ -8411,15 +8411,15 @@ Issue: Include an example of how to write spec text using this term.
             <dt>interface</dt>
             <dd>The [=exposure set=] of the interface
                 only contains the
-            [=primary global interface=].</dd>
+                [=primary global interface=].</dd>
             <dt>partial interface</dt>
             <dd>The [=exposure set=] of the partial
                 interface is the [=exposure set=] of the original
-            interface definition.</dd>
+                interface definition.</dd>
             <dt>interface member</dt>
             <dd>The [=exposure set=] of the interface member
                 is the [=exposure set=] of the interface or
-            partial interface the member is declared on.</dd>
+                partial interface the member is declared on.</dd>
         </dl>
     </li>
 </ul>
@@ -8612,12 +8612,12 @@ in HTML5 ([[HTML5]], section 5.2).
     <li>Any <a href="#idl-named-properties">named properties</a>
         will be exposed on an object in the prototype chain – the
         [=named properties object=] –
-    rather than on the object itself.</li>
+        rather than on the object itself.</li>
     <li>[=Interface members=] from the
         [=interface=] (or
         [=consequential interfaces=])
         will correspond to properties on the object itself rather than on
-    [=interface prototype objects=].</li>
+        [=interface prototype objects=].</li>
 </ol>
 <div class="note">
     <p>
@@ -8656,9 +8656,9 @@ in HTML5 ([[HTML5]], section 5.2).
 <ul>
     <li>The interface must not define a [=named property setter=].</li>
     <li>The interface must not also be declared with the [{{OverrideBuiltins}}]
-    extended attribute.</li>
+        extended attribute.</li>
     <li>The interface must not [=inherit=] from another interface with the
-    [{{OverrideBuiltins}}] extended attribute.</li>
+        [{{OverrideBuiltins}}] extended attribute.</li>
     <li>Any other interface must not [=inherit=] from it.</li>
 </ul>
 <p>
@@ -9669,13 +9669,13 @@ mailing list before proceeding.
         <dl class="switch">
             <dt>interface</dt>
             <dd>The interface or dictionary is not
-            <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</dd>
+                <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</dd>
             <dt>partial interface</dt>
             <dd>The partial interface is <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
-            if and only if the original interface definition is.</dd>
+                if and only if the original interface definition is.</dd>
             <dt>interface member</dt>
             <dd>The interface member is <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
-            if and only if the interface or partial interface the member is declared on is.</dd>
+                if and only if the interface or partial interface the member is declared on is.</dd>
         </dl>
     </li>
 </ul>
@@ -9920,16 +9920,16 @@ is a valid value of that type.
     <li>The attribute or operation is declared on |A| or one
         of |A|’s [=consequential interfaces=],
         and is annotated with the [{{Unforgeable}}]
-    [=extended attribute=].</li>
+        [=extended attribute=].</li>
     <li>The attribute or operation is declared on |A| or one
         of |A|’s [=consequential interfaces=],
         and that interface is annotated with the [{{Unforgeable}}]
-    [=extended attribute=].</li>
+        [=extended attribute=].</li>
     <li>There exists an interface |B|, which is either |A| or one of
         |A|’s [=consequential interfaces=],
         |B| is annotated with the [{{Unforgeable}}]
         [=extended attribute=],
-    and the attribute or operation is declared on one of |B|’s consequential interfaces.</li>
+        and the attribute or operation is declared on one of |B|’s consequential interfaces.</li>
 </ul>
 <p>
     The [{{Unforgeable}}]
@@ -10073,16 +10073,16 @@ Note: For example, the following is disallowed:
 </p>
 <ol>
     <li>the [=platform object=] on
-    which the operation invocation or attribute access is being done,</li>
+        which the operation invocation or attribute access is being done,</li>
     <li>the ECMAScript global environment associated with the
         <emu-val>Function</emu-val> object that implements the
-    operation or attribute,</li>
+        operation or attribute,</li>
     <li>the [=identifier=]
-    of the operation or attribute, and</li>
+        of the operation or attribute, and</li>
     <li>the type of the <emu-val>Function</emu-val> object –
         “method” (when it corresponds to an IDL operation), or
         “getter” or “setter” (when it corresponds to the
-    getter or setter function of an IDL attribute).</li>
+        getter or setter function of an IDL attribute).</li>
 </ol>
 
 Note: The expectation is that the HTML specification defines how a
@@ -10119,7 +10119,7 @@ appropriate exception or return normally. [[!HTML]]
     
     <li>If there is more than one entry in |S|, then set
         |d| to be the [=distinguishing argument index=]
-    for the entries of |S|.</li>
+        for the entries of |S|.</li>
     
     <li>Initialize |values| to be an empty list, where each entry will be either an IDL value or the special value “missing”.</li>
     
@@ -10136,12 +10136,12 @@ appropriate exception or return normally. [[!HTML]]
             <li>If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
                 <ol>
                     <li>If the argument at index |i| is declared with a [=default value=],
-                    then append to |values| that default value.</li>
+                        then append to |values| that default value.</li>
                     <li>Otherwise, append to |values| the special value “missing”.</li>
                 </ol>
             </li>
             <li>Otherwise, append to |values| the result of [=converted to an IDL value|converting=]
-            |V| to IDL type |type|.</li>
+                |V| to IDL type |type|.</li>
             <li>Set |i| to |i| + 1.</li>
         </ol>
     </li>
@@ -10150,11 +10150,11 @@ appropriate exception or return normally. [[!HTML]]
         <ol>
             <li>Let |V| be |arg|<sub>|i|</sub>.
                 
-            Note: This is the argument that will be used to resolve which overload is selected.</li>
+                Note: This is the argument that will be used to resolve which overload is selected.</li>
             
             <li>If |V| is <emu-val>undefined</emu-val>, and there is an entry in |S|
                 whose list of [=optionality values=] has “optional” at index |i|,
-            then remove from |S| all other entries.</li>
+                then remove from |S| all other entries.</li>
             
             <li>Otherwise: if |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
                 and there is an entry in |S| that has one of the following types at position |i| of its type list,
@@ -10163,7 +10163,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>a <a href="#idl-dictionary">dictionary type</a></li>
                     <li>a [=union type=] that
                         [=includes a nullable type=] or that
-                    has a <a href="#idl-dictionary">dictionary type</a> in its [=flattened member types|flattened members=]</li>
+                        has a <a href="#idl-dictionary">dictionary type</a> in its [=flattened member types|flattened members=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10176,7 +10176,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of any of the above types</li>
                     <li>a [=union type=] or a [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10189,7 +10189,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10202,7 +10202,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10216,7 +10216,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10229,7 +10229,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10242,7 +10242,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10255,7 +10255,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10265,11 +10265,11 @@ appropriate exception or return normally. [[!HTML]]
                 there is an entry in |S| that has one of the following types at position |i| of its type list,
                 <ul>
                     <li>a [=typed array type=] whose name
-                    is equal to the value of |V|’s \[[TypedArrayName]] <a>internal slot</a></li>
+                        is equal to the value of |V|’s \[[TypedArrayName]] <a>internal slot</a></li>
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10282,7 +10282,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of any of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10297,7 +10297,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>a <a href="#idl-frozen-array">frozen array type</a></li>
                     <li>a [=nullable type|nullable=] version of any of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                     
                 </ul>
                 and after performing the following steps,
@@ -10324,7 +10324,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of any of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10336,7 +10336,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{boolean}}</li>
                     <li>a [=nullable type|nullable=] {{boolean}}</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10348,7 +10348,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>a [=numeric type=]</li>
                     <li>a [=nullable type|nullable=] [=numeric type=]</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10359,7 +10359,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>a [=string type=]</li>
                     <li>a [=nullable type|nullable=] version of any of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10370,7 +10370,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>a [=numeric type=]</li>
                     <li>a [=nullable type|nullable=] [=numeric type=]</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10381,7 +10381,7 @@ appropriate exception or return normally. [[!HTML]]
                     <li>{{boolean}}</li>
                     <li>a [=nullable type|nullable=] {{boolean}}</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
-                    that has one of the above types in its [=flattened member types=]</li>
+                        that has one of the above types in its [=flattened member types=]</li>
                 </ul>
                 then remove from |S| all other entries.
             </li>
@@ -10400,7 +10400,7 @@ appropriate exception or return normally. [[!HTML]]
     </li>
     
     <li>Let |callable| be the [=operation=] or [=extended attribute=]
-    of the single entry in |S|.</li>
+        of the single entry in |S|.</li>
     
     <li>
         If |i| = |d| and |method| is not <emu-val>undefined</emu-val>, then
@@ -10437,12 +10437,12 @@ appropriate exception or return normally. [[!HTML]]
             <li>If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
                 <ol>
                     <li>If the argument at index |i| is declared with a [=default value=],
-                    then append to |values| that default value.</li>
+                        then append to |values| that default value.</li>
                     <li>Otherwise, append to |values| the special value “missing”.</li>
                 </ol>
             </li>
             <li>Otherwise, append to |values| the result of
-            [=converted to an IDL value|converting=] |V| to IDL type |type|.</li>
+                [=converted to an IDL value|converting=] |V| to IDL type |type|.</li>
             <li>Set |i| to |i| + 1.</li>
         </ol>
     </li>
@@ -10450,7 +10450,7 @@ appropriate exception or return normally. [[!HTML]]
     <li>While |i| is less than the number of arguments |callable| is declared to take:
         <ol>
             <li>If |callable|’s argument at index |i| is declared with a [=default value=],
-            then append to |values| that default value.</li>
+                then append to |values| that default value.</li>
             <li>Otherwise, if |callable|’s argument at index |i| is not variadic, then append to |values| the special value “missing”.</li>
             <li>Set |i| to |i| + 1.</li>
         </ol>
@@ -10469,10 +10469,10 @@ appropriate exception or return normally. [[!HTML]]
     the number of ECMAScript arguments that were passed in to the function:</p>
     <ul>
         <li>If there are more arguments passed in than the longest
-        overload argument list, then they are ignored.</li>
+            overload argument list, then they are ignored.</li>
         <li>After ignoring these trailing arguments, only overloads
             that can take this exact number of arguments are considered.
-        If there are none, then a <emu-val>TypeError</emu-val> is thrown.</li>
+            If there are none, then a <emu-val>TypeError</emu-val> is thrown.</li>
     </ul>
     <p>Once we have a set of possible overloads with the right number
         of arguments, the ECMAScript values are converted from left to right.
@@ -10521,10 +10521,10 @@ appropriate exception or return normally. [[!HTML]]
 </p>
 <ul>
     <li>is a [=callback interface=]
-    that has [=constants=] declared on it, or</li>
+        that has [=constants=] declared on it, or</li>
     <li>is a non-callback [=interface=]
         that is not declared with the [{{NoInterfaceObject}}]
-    [=extended attribute=],</li>
+        [=extended attribute=],</li>
 </ul>
 <p>
     a corresponding property must exist on the
@@ -10712,13 +10712,13 @@ when they do exist, they are not [=function objects=].
     <li>If |O| is not an object, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a> exception.</li>
     <li>If |V| is a platform object that implements the
         interface for which |O| is the [=interface prototype object=],
-    return <emu-val>true</emu-val>.</li>
+        return <emu-val>true</emu-val>.</li>
     <li>Repeat:
         <ol>
             <li>Set |V| to the value of the <span class="prop">\[[Prototype]]</span> internal property of |V|.</li>
             <li>If |V| is <emu-val>null</emu-val>, return <emu-val>false</emu-val>.</li>
             <li>If |O| and |V| refer to the same object,
-            return <emu-val>true</emu-val>.</li>
+                return <emu-val>true</emu-val>.</li>
         </ol>
     </li>
 </ol>
@@ -10859,15 +10859,15 @@ when they do exist, they are not [=function objects=].
         [=extended attribute=], and |A|
         [=support named properties|supports named properties=], then
         return the [=named properties object=]
-    for |A|, as defined in [[#named-properties-object]].</li>
+        for |A|, as defined in [[#named-properties-object]].</li>
     <li>Otherwise, if |A| is declared to inherit from another
         interface, then return the
         [=interface prototype object=]
-    for the inherited interface.</li>
+        for the inherited interface.</li>
     <li>Otherwise, if |A| is declared with the [{{LegacyArrayClass}}]
-    extended attribute, then return <a>%ArrayPrototype%</a>.</li>
+        extended attribute, then return <a>%ArrayPrototype%</a>.</li>
     <li>Otherwise, return <a>%ObjectPrototype%</a>.
-    ([[!ECMA-262]], section 15.2.4).</li>
+        ([[!ECMA-262]], section 15.2.4).</li>
 </ol>
 <div class="note">
     <p>
@@ -10921,7 +10921,7 @@ when they do exist, they are not [=function objects=].
         declared with the [{{Unscopable}}] extended attribute,
         call <a>CreateDataProperty</a>(|object|,
         the [=identifier=] of the
-    interface member, <emu-val>true</emu-val>).</li>
+        interface member, <emu-val>true</emu-val>).</li>
     <li>Return |object|.</li>
 </ol>
 <p>
@@ -10955,9 +10955,9 @@ when they do exist, they are not [=function objects=].
 <ol class="algorithm">
     <li>If |A| is declared to inherit from another interface, then return the
         [=interface prototype object=]
-    for the inherited interface.</li>
+        for the inherited interface.</li>
     <li>Otherwise, if |A| is declared with the [{{LegacyArrayClass}}]
-    extended attribute, then return <a>%ArrayPrototype%</a>.</li>
+        extended attribute, then return <a>%ArrayPrototype%</a>.</li>
     <li>Otherwise, return <a>%ObjectPrototype%</a>.</li>
 </ol>
 <p>
@@ -10980,7 +10980,7 @@ when they do exist, they are not [=function objects=].
 
 <ol class="algorithm">
     <li>Let |A| be the [=interface=] for the
-    [=named properties object=] |O|.</li>
+        [=named properties object=] |O|.</li>
     <li>Let |object| be the sole object from |O|’s ECMAScript global environment that implements |A|.
         
         Note: For example, if the [=interface=] is the <span class="idltype">Window</span>
@@ -10996,20 +10996,20 @@ when they do exist, they are not [=function objects=].
             <li>If |operation| was defined without an [=identifier=], then
                 set |value| to the result of performing the steps listed in the interface description to
                 [=determine the value of a named property=]
-            with |P| as the name.</li>
+                with |P| as the name.</li>
             <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
-            of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
+                of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
             
             <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
             <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
-            |value| to an ECMAScript value.</li>
+                |value| to an ECMAScript value.</li>
             <li>If |A| implements an interface with the
                 [{{LegacyUnenumerableNamedProperties}}]
                 [=extended attribute=],
                 then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
-            otherwise set it to <emu-val>true</emu-val>.</li>
+                otherwise set it to <emu-val>true</emu-val>.</li>
             <li>Set |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val> and
-            |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
+                |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
             <li>Return |desc|.</li>
         </ol>
     </li>
@@ -11070,12 +11070,12 @@ when they do exist, they are not [=function objects=].
         The location of the property is determined as follows:
         <ul>
             <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-            then the property exists on the single object that implements the interface.</li>
+                then the property exists on the single object that implements the interface.</li>
             <li>Otherwise, if the interface is a [=consequential interface=]
                 of a [{{Global}}]- or [{{PrimaryGlobal}}] annotated interface, then
                 the property exists on the single object that implements the [{{Global}}]- or
                 [{{PrimaryGlobal}}]-annotated interface as well as on
-            the consequential interface’s [=interface prototype object=].</li>
+                the consequential interface’s [=interface prototype object=].</li>
             <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
         </ul>
     </li>
@@ -11109,15 +11109,15 @@ when they do exist, they are not [=function objects=].
         The location of the property is determined as follows:
         <ul>
             <li>If the attribute is a [=static attribute=],
-            then there is a single corresponding property and it exists on the interface’s [=interface object=].</li>
+                then there is a single corresponding property and it exists on the interface’s [=interface object=].</li>
             <li>Otherwise, if the attribute is [=unforgeable=] on
                 the interface or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-            then the property exists on every object that implements the interface.</li>
+                then the property exists on every object that implements the interface.</li>
             <li>Otherwise, if the interface is a [=consequential interface=]
                 of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
                 the property exists on the single object that implements the [{{Global}}]- or
                 [{{PrimaryGlobal}}]-annotated interface as well as on
-            the consequential interface’s [=interface prototype object=].</li>
+                the consequential interface’s [=interface prototype object=].</li>
             <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
         </ul>
     </li>
@@ -11126,7 +11126,7 @@ when they do exist, they are not [=function objects=].
         where:
         <ul>
             <li>|configurable| is <emu-val>false</emu-val> if the attribute was
-            declared with the [{{Unforgeable}}] extended attribute and <emu-val>true</emu-val> otherwise;</li>
+                declared with the [{{Unforgeable}}] extended attribute and <emu-val>true</emu-val> otherwise;</li>
             <li>|G| is the [=attribute getter=], defined below; and</li>
             <li>|S| is the [=attribute setter=], also defined below.</li>
         </ul>
@@ -11153,7 +11153,7 @@ when they do exist, they are not [=function objects=].
                         <ul>
                             <li>the platform object |O|,</li>
                             <li>the ECMAScript global environment associated with this <emu-val>Function</emu-val> that
-                            implements the [=attribute getter=],</li>
+                                implements the [=attribute getter=],</li>
                             <li>the [=identifier=] of the [=attribute=], and</li>
                             <li>the type “getter”.</li>
                         </ul>
@@ -11162,7 +11162,7 @@ when they do exist, they are not [=function objects=].
                         <ol>
                             <li>If the [=attribute=] was specified with the
                                 [{{LenientThis}}] [=extended attribute=],
-                            then return <emu-val>undefined</emu-val>.</li>
+                                then return <emu-val>undefined</emu-val>.</li>
                             <li>Otherwise, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
                         </ol>
                     </li>
@@ -11175,7 +11175,7 @@ when they do exist, they are not [=function objects=].
                 </ol>
             </li>
             <li>Otherwise, the attribute is a [=static attribute=].
-            Set |idlValue| to be the result of performing the actions listed in the description of the attribute that occur when getting.</li>
+                Set |idlValue| to be the result of performing the actions listed in the description of the attribute that occur when getting.</li>
             <li>
                 Let |V| be the result of [=converted to ECMAScript values|converting=]
                 |idlValue| to an ECMAScript value.
@@ -11199,31 +11199,31 @@ when they do exist, they are not [=function objects=].
         Otherwise, it is a <emu-val>Function</emu-val> object whose behavior when invoked is as follows:
         <ol class="algorithm">
             <li>If no arguments were passed to the <emu-val>Function</emu-val>, then
-            <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |V| be the value of the first argument passed to the <emu-val>Function</emu-val>.</li>
             <li>If the [=attribute=] is a [=regular attribute=], then:
                 <ol>
                     <li>Let |I| be the [=interface=]
                         whose [=interface prototype object=]
-                    this property corresponding to the attribute appears on.</li>
+                        this property corresponding to the attribute appears on.</li>
                     <li>Let |O| be the <strong>this</strong> value.</li>
                     <li>If |O| is a [=platform object=],
                         then [=perform a security check=], passing:
                         <ul>
                             <li>the platform object |O|,</li>
                             <li>the ECMAScript global environment associated with this <emu-val>Function</emu-val> that
-                            implements the [=attribute setter=],</li>
+                                implements the [=attribute setter=],</li>
                             <li>the [=identifier=] of the [=attribute=], and</li>
                             <li>the type “setter”.</li>
                         </ul>
                     </li>
                     <li>Let |validThis| be <emu-val>true</emu-val> if |O| is a
                         [=platform object=] that implements |I|, or
-                    <emu-val>false</emu-val> otherwise.</li>
+                        <emu-val>false</emu-val> otherwise.</li>
                     <li>If |validThis| is <emu-val>false</emu-val> and the
                         [=attribute=] was not specified with the
                         [{{LenientThis}}] [=extended attribute=],
-                    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
                     <li>If the attribute is declared with a [{{Replaceable}}]
                         extended attribute, then:
                         <ol>
@@ -11234,16 +11234,16 @@ when they do exist, they are not [=function objects=].
                     </li>
                     <li>If |validThis| is <emu-val>false</emu-val>, then return <emu-val>undefined</emu-val>.</li>
                     <li>If the attribute is declared with a [{{LenientSetter}}]
-                    extended attribute, then return <emu-val>undefined</emu-val>.</li>
+                        extended attribute, then return <emu-val>undefined</emu-val>.</li>
                     <li>If the attribute is declared with a [{{PutForwards}}]
                         extended attribute, then:
                         <ol>
                             <li>Let |Q| be the result of calling the <span class="prop">\[[Get]]</span> method
-                            on |O| using the identifier of the attribute as the property name.</li>
+                                on |O| using the identifier of the attribute as the property name.</li>
                             <li>If |Q| is not an object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
                             <li>Let |A| be the attribute identified by the [{{PutForwards}}] extended attribute.</li>
                             <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
-                            using the identifier of |A| as the property name and |V| as the value.</li>
+                                using the identifier of |A| as the property name and |V| as the value.</li>
                             <li>Return <emu-val>undefined</emu-val>.</li>
                         </ol>
                     </li>
@@ -11260,12 +11260,12 @@ when they do exist, they are not [=function objects=].
                     </li>
                     <li>Otherwise, the type of the attribute is not an [=enumeration=].
                         The value of |idlValue| is the result of [=converted to an IDL value|converting=]
-                    |V| to an IDL value.</li>
-            </ul></li>
+                        |V| to an IDL value.</li>
+                </ul></li>
             <li>If the attribute is a regular attribute, then perform the actions listed in the description of the attribute that occur when setting,
-            with |O| as the object and |idlValue| as the value.</li>
+                with |O| as the object and |idlValue| as the value.</li>
             <li>Otherwise, the attribute is a [=static attribute=].
-            Perform the actions listed in the description of the attribute that occur when setting with |idlValue| as the value.</li>
+                Perform the actions listed in the description of the attribute that occur when setting with |idlValue| as the value.</li>
             <li>Return <emu-val>undefined</emu-val>.</li>
         </ol>
         <p>The value of the <emu-val>Function</emu-val> object’s “length”
@@ -11311,15 +11311,15 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
         The location of the property is determined as follows:
         <ul>
             <li>If the operation is [=static operations|static=], then
-            the property exists on the [=interface object=].</li>
+                the property exists on the [=interface object=].</li>
             <li>Otherwise, if the operation is [=unforgeable=] on
                 the interface or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-            then the property exists on every object that implements the interface.</li>
+                then the property exists on every object that implements the interface.</li>
             <li>Otherwise, if the interface is a [=consequential interface=]
                 of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
                 the property exists on the single object that implements the [{{Global}}]- or
                 [{{PrimaryGlobal}}]-annotated interface as well as on
-            the consequential interface’s [=interface prototype object=].</li>
+                the consequential interface’s [=interface prototype object=].</li>
             <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
         </ul>
     </li>
@@ -11380,7 +11380,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                         <ul>
                             <li>the platform object |O|,</li>
                             <li>the ECMAScript global environment associated with this <emu-val>Function</emu-val> that
-                            implements the [=operation=],</li>
+                                implements the [=operation=],</li>
                             <li>the [=identifier=] of the [=operation=], and</li>
                             <li>the type “method”.</li>
                         </ul>
@@ -11424,7 +11424,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                             <li>Let |reject| be the initial value of <a class="nocite">%Promise%</a>.reject.</li>
                             <li>Return the result of calling |reject| with <a class="nocite">%Promise%</a> as the
                                 <emu-val>this</emu-val> object and the exception as the single
-                            argument value.</li>
+                                argument value.</li>
                         </ol>
                     </li>
                     <li>Otherwise, end these steps and allow the exception to propagate.</li>
@@ -11454,7 +11454,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     </li>
     <li>The value of the <emu-val>Function</emu-val> object’s “name”
         property is a <emu-val>String</emu-val> whose value is the
-    identifier of the operation.</li>
+        identifier of the operation.</li>
 </ul>
 
 
@@ -11473,11 +11473,11 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
         [=unforgeable=] on the interface
         or if the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
         then the property exists on every object that implements the interface.
-    Otherwise, the property exists on the [=interface prototype object=].</li>
+        Otherwise, the property exists on the [=interface prototype object=].</li>
     <li>The property has attributes <span class="descriptor">{ \[[Writable]]: |B|, \[[Enumerable]]: <emu-val>true</emu-val>, \[[Configurable]]: |B| }</span>,
         where |B| is <emu-val>false</emu-val> if the stringifier is
         [=unforgeable=] on the interface,
-    and <emu-val>true</emu-val> otherwise.</li>
+        and <emu-val>true</emu-val> otherwise.</li>
     <li>
         <p>The value of the property is a <emu-val>Function</emu-val> object, which behaves as follows:</p>
         <ol class="algorithm">
@@ -11487,13 +11487,13 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                 <ul>
                     <li>the platform object |O|,</li>
                     <li>the ECMAScript global environment associated with this <emu-val>Function</emu-val> that
-                    implements the [=stringifier=],</li>
+                        implements the [=stringifier=],</li>
                     <li>the [=identifier=] of the [=stringifier=], and</li>
                     <li>the type “method”.</li>
                 </ul>
             </li>
             <li>If |O| is not an object that implements the [=interface=]
-            on which the stringifier was declared, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                on which the stringifier was declared, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |V| be an uninitialized variable.</li>
             <li>Depending on where <code>stringifier</code> was specified:
                 <dl class="switch">
@@ -11501,23 +11501,23 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                     <dd>Set |V| to the result of performing the actions listed in the description of the attribute that occur when getting
                         (or those listed in the description of the inherited attribute, if this attribute is declared to
                         [=inherit its getter=]),
-                    with |O| as the object.</dd>
+                        with |O| as the object.</dd>
                     <dt>on an [=operation=] with an identifier</dt>
                     <dd>Set |V| to the result of performing the actions listed in the description
                         of the operation, using |O| as the <emu-val>this</emu-val> value
-                    and passing no arguments.</dd>
+                        and passing no arguments.</dd>
                     <dt>on an [=operation=] with no identifier</dt>
                     <dd>Set |V| to the result of performing the [=stringification behavior=]
-                    of the interface.</dd>
+                        of the interface.</dd>
                 </dl>
             </li>
             <li>Return the result of [=converted to ECMAScript values|converting=] |V| to a <emu-val>String</emu-val> value.</li>
         </ol>
     </li>
     <li>The value of the <emu-val>Function</emu-val> object’s “length”
-    property is the <emu-val>Number</emu-val> value <emu-val>0</emu-val>.</li>
+        property is the <emu-val>Number</emu-val> value <emu-val>0</emu-val>.</li>
     <li>The value of the <emu-val>Function</emu-val> object’s “name”
-    property is the <emu-val>String</emu-val> value “toString”.</li>
+        property is the <emu-val>String</emu-val> value “toString”.</li>
 </ul>
 
 
@@ -11539,12 +11539,12 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
 </p>
 <ul>
     <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-    then the property exists on the single object that implements the interface.</li>
+        then the property exists on the single object that implements the interface.</li>
     <li>Otherwise, if the interface is a [=consequential interface=]
         of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
         the property exists on the single object that implements the [{{Global}}]- or
         [{{PrimaryGlobal}}]-annotated interface as well as on
-    the consequential interface’s [=interface prototype object=].</li>
+        the consequential interface’s [=interface prototype object=].</li>
     <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
 </ul>
 <p>
@@ -11558,13 +11558,13 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
         <ul>
             <li>the platform object |O|,</li>
             <li>the ECMAScript global environment associated with this <emu-val>Function</emu-val> that
-            implements the [=serializer=],</li>
+                implements the [=serializer=],</li>
             <li>the [=identifier=] of the [=serializer=], and</li>
             <li>the type “method”.</li>
         </ul>
     </li>
     <li>If |O| is not an object that implements the [=interface=]
-    on which the serializer was declared, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        on which the serializer was declared, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Depending on how <code>serializer</code> was specified:
         <dl class="switch">
             <dt>on an [=operation=] with an identifier</dt>
@@ -11572,16 +11572,16 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                 <ol class="algorithm">
                     <li>Return the result of performing the actions listed in the description of the
                         operation, using |O| as the <emu-val>this</emu-val> value
-                    and passing no arguments.</li>
+                        and passing no arguments.</li>
                 </ol>
             </dd>
             <dt>as a keyword, either with or without a [=serialization pattern=]</dt>
             <dd>
                 <ol class="algorithm">
                     <li>Let |S| be the [=serialized value=] that is the result of invoking the [=serialization behavior=] of the
-                    [=interface=] for object |O|.</li>
+                        [=interface=] for object |O|.</li>
                     <li>Return the result of [=convert a serialized value to an ECMAScript value|converting=]
-                    |S| to an ECMAScript value.</li>
+                        |S| to an ECMAScript value.</li>
                 </ol>
             </dd>
         </dl>
@@ -11605,7 +11605,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
                     <li>For each entry in |S|, in the order they were added to the map:
                         <ol>
                             <li>Let |V| be the result of [=convert a serialized value to an ECMAScript value|converting=]
-                            the value of the entry to an ECMAScript value.</li>
+                                the value of the entry to an ECMAScript value.</li>
                             <li>Let |P| be the entry’s key.</li>
                             <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
                         </ol>
@@ -11621,7 +11621,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
                     <li>While |index| is less than the number of elements in |S|:
                         <ol>
                             <li>Let |V| be the result of [=convert a serialized value to an ECMAScript value|converting=]
-                            the value of the element in |S| at index |index| to an ECMAScript value.</li>
+                                the value of the element in |S| at index |index| to an ECMAScript value.</li>
                             <li>Let |P| be <a>ToString</a>(|index|).</li>
                             <li>Call <a>CreateDataProperty</a>(|O|, |P|, |V|).</li>
                         </ol>
@@ -11633,7 +11633,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
             <dd>
                 <ol class="algorithm">
                     <li>Let |V| be the result of [=converted to ECMAScript values|converting=]
-                    |S| to an ECMAScript value.</li>
+                        |S| to an ECMAScript value.</li>
                     <li>Return |V|.</li>
                 </ol>
             </dd>
@@ -11658,7 +11658,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     <li>an [=indexed property getter=]
         and an [=integer types|integer-typed=]
         [=attribute=] named
-    “length”</li>
+        “length”</li>
     <li>a [=maplike declaration=]</li>
     <li>a [=setlike declaration=]</li>
 </ul>
@@ -11673,12 +11673,12 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
 </p>
 <ul>
     <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-    then the property exists on the single object that implements the interface.</li>
+        then the property exists on the single object that implements the interface.</li>
     <li>Otherwise, if the interface is a [=consequential interface=]
         of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
         the property exists on the single object that implements the [{{Global}}]- or
         [{{PrimaryGlobal}}]-annotated interface as well as on
-    the consequential interface’s [=interface prototype object=].</li>
+        the consequential interface’s [=interface prototype object=].</li>
     <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
 </ul>
 <p>
@@ -11702,12 +11702,12 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
         </ul>
     </li>
     <li>Let |interface| be the [=interface=]
-    the [=iterable declaration=] is on.</li>
+        the [=iterable declaration=] is on.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |iterator| be a newly created [=default iterator object=]
-    for |interface| with |object| as its target and iterator kind “key+value”.</li>
+        for |interface| with |object| as its target and iterator kind “key+value”.</li>
     <li>Return |iterator|.</li>
 </ol>
 <p>
@@ -11731,7 +11731,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
         that implements the [=interface=]
         on which the [=maplike declaration=]
         or [=setlike declaration=] is defined,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>If the interface has a [=maplike declaration=], then:
         <ol>
             <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|.</li>
@@ -11779,12 +11779,12 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
 </p>
 <ul>
     <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-    then the property exists on the single object that implements the interface.</li>
+        then the property exists on the single object that implements the interface.</li>
     <li>Otherwise, if the interface is a [=consequential interface=]
         of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
         the property exists on the single object that implements the [{{Global}}]- or
         [{{PrimaryGlobal}}]-annotated interface as well as on
-    the consequential interface’s [=interface prototype object=].</li>
+        the consequential interface’s [=interface prototype object=].</li>
     <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
 </ul>
 <p>
@@ -11815,7 +11815,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
             <li><a href="#es-invoking-callback-functions">Invoke</a> |callback| with |thisArg|
                 (or <emu-val>undefined</emu-val>, if the argument was not supplied)
                 as the [=callback this value=] and
-            |value|, |key| and |O| as its arguments.</li>
+                |value|, |key| and |O| as its arguments.</li>
             <li>Update |pairs| to the current list of [=value pairs to iterate over=].</li>
             <li>Set |i| to |i| + 1.</li>
         </ol>
@@ -11840,22 +11840,22 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     </li>
     <li>Let |interface| be the [=interface=]
         on which the [=maplike declaration=]
-    or [=setlike declaration=] is declared.</li>
+        or [=setlike declaration=] is declared.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |callbackFn| be the value of the first argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
     <li>If <a>IsCallable</a>(|callbackFn|) is <emu-val>false</emu-val>, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |thisArg| be the value of the second argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
     <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|,
         if the interface has a [=maplike declaration=],
-    or the \[[BackingSet]] <a>internal slot</a> of |object| otherwise.</li>
+        or the \[[BackingSet]] <a>internal slot</a> of |object| otherwise.</li>
     <li>Let |callbackWrapper| be a <emu-val>Function</emu-val> that, when invoked, behaves as follows:
         <ol>
             <li>Let |v| and |k| be the first two arguments passed to the function.</li>
             <li>Let |thisArg| be the <emu-val>this</emu-val> value.</li>
             <li>Call the \[[Call]] internal method of |callbackFn| with |thisArg| as |thisArgument|
-            and |v|, |k| and |object| as |argumentsList|.</li>
+                and |v|, |k| and |object| as |argumentsList|.</li>
         </ol>
         
         Note: The |callbackWrapper| function simply calls the incoming |callbackFn|
@@ -11866,10 +11866,10 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
         one function that has captured an environment?
     </li>
     <li>Let |forEach| be the result of calling the \[[Get]] internal method of
-    |backing| with “forEach” and |backing| as arguments.</li>
+        |backing| with “forEach” and |backing| as arguments.</li>
     <li>If <a>IsCallable</a>(|forEach|) is <emu-val>false</emu-val>, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Call the \[[Call]] internal method of |forEach| with |backing| as |thisArgument|
-    and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
+        and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
     <li>Return <emu-val>undefined</emu-val>.</li>
 </ol>
 <p>
@@ -11899,12 +11899,12 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
 </p>
 <ul>
     <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-    then the property exists on the single object that implements the interface.</li>
+        then the property exists on the single object that implements the interface.</li>
     <li>Otherwise, if the interface is a [=consequential interface=]
         of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
         the property exists on the single object that implements the [{{Global}}]- or
         [{{PrimaryGlobal}}]-annotated interface as well as on
-    the consequential interface’s [=interface prototype object=].</li>
+        the consequential interface’s [=interface prototype object=].</li>
     <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
 </ul>
 <p>
@@ -11934,12 +11934,12 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
 </p>
 <ul>
     <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-    then the property exists on the single object that implements the interface.</li>
+        then the property exists on the single object that implements the interface.</li>
     <li>Otherwise, if the interface is a [=consequential interface=]
         of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
         the property exists on the single object that implements the [{{Global}}]- or
         [{{PrimaryGlobal}}]-annotated interface as well as on
-    the consequential interface’s [=interface prototype object=].</li>
+        the consequential interface’s [=interface prototype object=].</li>
     <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
 </ul>
 <p>
@@ -11963,12 +11963,12 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
         </ul>
     </li>
     <li>Let |interface| be the [=interface=]
-    on which the [=iterable declaration=] is declared on.</li>
+        on which the [=iterable declaration=] is declared on.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |iterator| be a newly created [=default iterator object=]
-    for |interface| with |object| as its target and iterator kind “key”.</li>
+        for |interface| with |object| as its target and iterator kind “key”.</li>
     <li>Return |iterator|.</li>
 </ol>
 <p>The value of the <emu-val>Function</emu-val> object’s “length” property is the <emu-val>Number</emu-val> value <emu-val>0</emu-val>.</p>
@@ -11990,12 +11990,12 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
 </p>
 <ul>
     <li>If the interface was declared with the [{{Global}}] or [{{PrimaryGlobal}}] extended attribute,
-    then the property exists on the single object that implements the interface.</li>
+        then the property exists on the single object that implements the interface.</li>
     <li>Otherwise, if the interface is a [=consequential interface=]
         of a [{{Global}}]- or [{{PrimaryGlobal}}]-annotated interface, then
         the property exists on the single object that implements the [{{Global}}]- or
         [{{PrimaryGlobal}}]-annotated interface as well as on
-    the consequential interface’s [=interface prototype object=].</li>
+        the consequential interface’s [=interface prototype object=].</li>
     <li>Otherwise, the property exists solely on the interface’s [=interface prototype object=].</li>
 </ul>
 
@@ -12021,12 +12021,12 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
         </ul>
     </li>
     <li>Let |interface| be the [=interface=]
-    on which the [=iterable declaration=] is declared on.</li>
+        on which the [=iterable declaration=] is declared on.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |iterator| be a newly created [=default iterator object=]
-    for |interface| with |object| as its target and iterator kind “value”.</li>
+        for |interface| with |object| as its target and iterator kind “value”.</li>
     <li>Return |iterator|.</li>
 </ol>
 <p>The value of the <emu-val>Function</emu-val> object’s “length” property is the <emu-val>Number</emu-val> value <emu-val>0</emu-val>.</p>
@@ -12097,7 +12097,7 @@ use standard ECMAScript Array iterator objects.
 </p>
 <ol class="algorithm">
     <li>Let |interface| be the [=interface=] for which the
-    [=iterator prototype object=] exists.</li>
+        [=iterator prototype object=] exists.</li>
     <li>Let |object| be the result of calling <a>ToObject</a> on the <emu-val>this</emu-val> value.</li>
     <li>If |object| is a [=platform object=],
         then [=perform a security check=], passing:
@@ -12109,14 +12109,14 @@ use standard ECMAScript Array iterator objects.
         </ul>
     </li>
     <li>If |object| is not a [=default iterator object=] for |interface|,
-    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |target| be |object|’s target.</li>
     <li>Let |index| be |object|’s index.</li>
     <li>Let |kind| be |object|’s kind.</li>
     <li>Let |values| be the list of [=value pairs to iterate over=].</li>
     <li>Let |len| be the length of |values|.</li>
     <li>If |object|’s index is greater than or equal to |len|, then
-    return <a>CreateIterResultObject</a>(<emu-val>undefined</emu-val>, <emu-val>true</emu-val>).</li>
+        return <a>CreateIterResultObject</a>(<emu-val>undefined</emu-val>, <emu-val>true</emu-val>).</li>
     <li>Let |pair| be the entry in |values| at index |index|.</li>
     <li>Let |result| be a value determined by the value of |kind|:
         <dl class="switch">
@@ -12220,7 +12220,7 @@ use standard ECMAScript Array iterator objects.
 <ul>
     <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
         where |G| is the interface’s <dfn id="dfn-map-size-getter" export>map size getter</dfn>,
-    defined below.</li>
+        defined below.</li>
     <li><p>The [=map size getter=] is
             a <emu-val>Function</emu-val> object whose
         behavior when invoked is as follows:</p>
@@ -12478,7 +12478,7 @@ use standard ECMAScript Array iterator objects.
 <ul>
     <li>The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
         where |G| is the interface’s <dfn id="dfn-set-size-getter" export>set size getter</dfn>,
-    defined below.</li>
+        defined below.</li>
     <li><p>The [=set size getter=] is
             a <emu-val>Function</emu-val> object whose
         behavior when invoked is as follows:</p>
@@ -12578,7 +12578,7 @@ use standard ECMAScript Array iterator objects.
     <li>|A| and |A|’s
         [=consequential interfaces=]
         do not declare an [=interface member=]
-    with a matching identifier, and</li>
+        with a matching identifier, and</li>
     <li>|A| was declared with a read–write setlike declaration,</li>
 </ul>
 <p>
@@ -12692,7 +12692,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |v| be the result of <a>Get</a>(|nextItem|, <code>'1'</code>).</li>
             <li><a>ReturnIfAbrupt</a>(|v|).</li>
             <li>Let |status| be the result of calling the \[[Call]] internal method of |adder| with |destination| as
-            |thisArgument| and (|k|, |v|) as |argumentsList|.</li>
+                |thisArgument| and (|k|, |v|) as |argumentsList|.</li>
             <li><a>ReturnIfAbrupt</a>(|status|).</li>
         </ol>
     </li>
@@ -12838,9 +12838,9 @@ use standard ECMAScript Array iterator objects.
         <dfn id="dfn-default-unforgeable-valueOf-function" export>default unforgeable valueOf function</dfn>.
     </li>
     <li>The value of the <emu-val>Function</emu-val> object’s “length”
-    property is the <emu-val>Number</emu-val> value <emu-val>0</emu-val>.</li>
+        property is the <emu-val>Number</emu-val> value <emu-val>0</emu-val>.</li>
     <li>The value of the <emu-val>Function</emu-val> object’s “name” property is the
-    <emu-val>String</emu-val> value “valueOf”.</li>
+        <emu-val>String</emu-val> value “valueOf”.</li>
 </ul>
 
 <p>
@@ -12935,20 +12935,20 @@ use standard ECMAScript Array iterator objects.
 
 <ol class="algorithm">
     <li>If |P| is an [=unforgeable property name=]
-    on |O|, then return false.</li>
+        on |O|, then return false.</li>
     <li>If |O| implements an [=interface=] with
         an [{{Unforgeable}}]-annotated [=attribute=]
-    whose [=identifier=] is |P|, then return false.</li>
+        whose [=identifier=] is |P|, then return false.</li>
     <li>If |P| is not a [=supported property name=]
-    of |O|, then return false.</li>
+        of |O|, then return false.</li>
     <li>If |O| implements an interface that has the [{{OverrideBuiltins}}]
-    [=extended attribute=], then return true.</li>
+        [=extended attribute=], then return true.</li>
     <li>If |O| has an own property named |P|, then return false.</li>
     <li>Initialize |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |O|.</li>
     <li>While |prototype| is not null:
         <ol>
             <li>If |prototype| is not a [=named properties object=],
-            and |prototype| has an own property named |P|, then return false.</li>
+                and |prototype| has an own property named |P|, then return false.</li>
             <li>Set |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |prototype|.</li>
         </ol>
     </li>
@@ -13012,16 +13012,16 @@ use standard ECMAScript Array iterator objects.
                     <li>If |operation| was defined without an [=identifier=], then
                         set |value| to the result of performing the steps listed in the interface description to
                         [=determine the value of an indexed property=]
-                    with |index| as the index.</li>
+                        with |index| as the index.</li>
                     <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
-                    of performing the steps listed in the description of |operation| with |index| as the only argument value.</li>
+                        of performing the steps listed in the description of |operation| with |index| as the only argument value.</li>
                     
                     <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
                     <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
-                    |value| to an ECMAScript value.</li>
+                        |value| to an ECMAScript value.</li>
                     <li>If |O| implements an interface with an [=indexed property setter=], then set
                         |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
-                    <emu-val>false</emu-val>.</li>
+                        <emu-val>false</emu-val>.</li>
                     <li>Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
                     <li>Return |desc|.</li>
                 </ol>
@@ -13041,21 +13041,21 @@ use standard ECMAScript Array iterator objects.
             <li>If |operation| was defined without an [=identifier=], then
                 set |value| to the result of performing the steps listed in the interface description to
                 [=determine the value of a named property=]
-            with |P| as the name.</li>
+                with |P| as the name.</li>
             <li>Otherwise, |operation| was defined with an identifier.  Set |value| to the result
-            of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
+                of performing the steps listed in the description of |operation| with |P| as the only argument value.</li>
             
             <li>Let |desc| be a newly created <a>Property Descriptor</a> with no fields.</li>
             <li>Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to ECMAScript values|converting=]
-            |value| to an ECMAScript value.</li>
+                |value| to an ECMAScript value.</li>
             <li>If |O| implements an interface with a [=named property setter=], then set
                 |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
-            <emu-val>false</emu-val>.</li>
+                <emu-val>false</emu-val>.</li>
             <li>If |O| implements an interface with the
                 [{{LegacyUnenumerableNamedProperties}}]
                 [=extended attribute=],
                 then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
-            otherwise set it to <emu-val>true</emu-val>.</li>
+                otherwise set it to <emu-val>true</emu-val>.</li>
             <li>Set |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
             <li>Return |desc|.</li>
         </ol>
@@ -13102,14 +13102,14 @@ use standard ECMAScript Array iterator objects.
         <ol>
             <li>If |creating| is true, then perform the steps listed in the interface description to
                 [=set the value of a new indexed property=]
-            with |index| as the index and |value| as the value.</li>
+                with |index| as the index and |value| as the value.</li>
             <li>Otherwise, |creating| is false.  Perform the steps listed in the interface description to
                 [=set the value of an existing indexed property=]
-            with |index| as the index and |value| as the value.</li>
+                with |index| as the index and |value| as the value.</li>
         </ol>
     </li>
     <li>Otherwise, |operation| was defined with an identifier.  Perform the steps listed in the description of
-    |operation| with |index| and |value| as the two argument values.</li>
+        |operation| with |index| and |value| as the two argument values.</li>
 </ol>
 
 
@@ -13128,14 +13128,14 @@ use standard ECMAScript Array iterator objects.
         <ol>
             <li>If |creating| is true, then perform the steps listed in the interface description to
                 [=set the value of a new named property=]
-            with |P| as the name and |value| as the value.</li>
+                with |P| as the name and |value| as the value.</li>
             <li>Otherwise, |creating| is false.  Perform the steps listed in the interface description to
                 [=set the value of an existing named property=]
-            with |P| as the name and |value| as the value.</li>
+                with |P| as the name and |value| as the value.</li>
         </ol>
     </li>
     <li>Otherwise, |operation| was defined with an identifier.  Perform the steps listed in the description of
-    |operation| with |index| and |value| as the two argument values.</li>
+        |operation| with |index| and |value| as the two argument values.</li>
 </ol>
 
 
@@ -13212,7 +13212,7 @@ use standard ECMAScript Array iterator objects.
             <li>If the result of calling <a>IsDataDescriptor</a>(|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.</li>
             <li>If |O| does not implement an interface with an [=indexed property setter=], then <a href="#Reject">Reject</a>.</li>
             <li><a href="#invoking-indexed-setter">Invoke the indexed
-            property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.</li>
+                property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.</li>
             <li>Return <emu-val>true</emu-val>.</li>
         </ol>
     </li>
@@ -13249,7 +13249,7 @@ use standard ECMAScript Array iterator objects.
     
     <li>If |O| does not implement an [=interface=] with the
         [{{Global}}] or [{{PrimaryGlobal}}] [=extended attribute=],
-    then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
+        then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.</li>
     <li>Call the <a>default \[[DefineOwnProperty]] internal method</a> on |O| passing |P|, |Desc|, and |Throw| as arguments.</li>
 </ol>
 
@@ -13289,7 +13289,7 @@ use standard ECMAScript Array iterator objects.
                 <ol>
                     <li>Perform the steps listed in the interface description to
                         [=delete an existing named property=]
-                    with |P| as the name.</li>
+                        with |P| as the name.</li>
                     <li>If the steps indicated that the deletion failed, then <emu-val>false</emu-val>.</li>
                 </ol>
             </li>
@@ -13297,7 +13297,7 @@ use standard ECMAScript Array iterator objects.
                 <ol>
                     <li>Perform the steps listed in the description of |operation| with |P| as the only argument value.</li>
                     <li>If |operation| was declared with a [=return type=] of {{boolean}}
-                    and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.</li>
+                        and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.</li>
                 </ol>
             </li>
             <li>Return <emu-val>true</emu-val>.</li>
@@ -13327,18 +13327,18 @@ use standard ECMAScript Array iterator objects.
 </p>
 <ol class="algorithm">
     <li>Initialize |S| to the [=effective overload set=]
-    for legacy callers on |I| and with argument count |n|.</li>
+        for legacy callers on |I| and with argument count |n|.</li>
     <li>
         Let &lt;|operation|, |values|&gt; be the result of passing |S| and
         |arg|<sub>0..|n|−1</sub> to the
         [=overload resolution algorithm=].
     </li>
     <li>Perform the actions listed in the description of the legacy caller |operation| with
-    |values| as the argument values.</li>
+        |values| as the argument values.</li>
     <li>Return the result of [=converted to ECMAScript values|converting=]
         the return value from those actions to an ECMAScript value of the type
         |operation| is declared to return (or <emu-val>undefined</emu-val>
-    if |operation| is declared to return {{void}}).</li>
+        if |operation| is declared to return {{void}}).</li>
 </ol>
 
 
@@ -13358,15 +13358,15 @@ use standard ECMAScript Array iterator objects.
 <ol>
     <li>If the object [=support indexed properties|supports indexed properties=], then
         the object’s [=supported property indices=] are
-    enumerated first, in numerical order.</li>
+        enumerated first, in numerical order.</li>
     <li>If the object [=support named properties|supports named properties=] and doesn't implement an [=interface=] with the
         [{{LegacyUnenumerableNamedProperties}}]
         [=extended attribute=], then
         the object’s [=supported property names=] that
         are visible according to the [=named property visibility algorithm=]
-    are enumerated next, in the order given in the definition of the set of supported property names.</li>
+        are enumerated next, in the order given in the definition of the set of supported property names.</li>
     <li>Finally, any enumerable own properties or properties from the object’s prototype chain are then enumerated,
-    in no defined order.</li>
+        in no defined order.</li>
 </ol>
 
 Note: Future versions of the ECMAScript specification may define a total order for property enumeration.
@@ -13393,12 +13393,12 @@ Note: Future versions of the ECMAScript specification may define a total order f
         <ul>
             <li>If the object is <a>callable</a>,
                 then the implementation of the operation (or set of overloaded operations) is
-            the callable object itself.</li>
+                the callable object itself.</li>
             <li>Otherwise, the object is not <a>callable</a>.
                 The implementation of the operation (or set of overloaded operations) is
                 the result of invoking the internal <span class="prop">\[[Get]]</span> method
                 on the object with a property name that is the [=identifier=]
-            of the operation.</li>
+                of the operation.</li>
         </ul>
     </li>
     <li>
@@ -13427,7 +13427,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <li>is not declared to [=inherit=] from another interface,</li>
     <li>has no [=attributes=], and</li>
     <li>has one or more [=regular operations=] that all have the same [=identifier=],
-    and no others.</li>
+        and no others.</li>
 </ul>
 
 <p>
@@ -13457,16 +13457,16 @@ Note: Future versions of the ECMAScript specification may define a total order f
         
         <ol>
             <li>If |value|'s interface is a [=single operation callback interface=] and <a>!</a> <a>IsCallable</a>(|O|) is true, then set
-            |X| to |O|.</li>
+                |X| to |O|.</li>
             
             <li>
                 Otherwise, |opName| must be supplied:
                 <ol>
                     <li>Let |getResult| be <a>Get</a>(|O|,
-                    |opName|).</li>
+                        |opName|).</li>
                     
                     <li>If |getResult| is an abrupt completion, set |completion|
-                    to |getResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
+                        to |getResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
                     
                     <li>Set |X| to |getResult|.\[[Value]].</li>
                 </ol>
@@ -13478,11 +13478,11 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <li>If <a>!</a> <a>IsCallable</a>(|X|) is <emu-val>false</emu-val>,
         then set |completion| to a new <a>Completion</a>{\[[Type]]: throw, \[[Value]]: a
         newly created <emu-val>TypeError</emu-val> object, \[[Target]]: empty}, and jump
-    to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
+        to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
     
     <li>If |value|'s interface is not a [=single operation callback interface=],
         or if <a>!</a> <a>IsCallable</a>(|O|) is <emu-val>false</emu-val>,
-    set |thisArg| to |O| (overriding the provided value).</li>
+        set |thisArg| to |O| (overriding the provided value).</li>
     
     <li>Let |esArgs| be an empty List of ECMAScript values.</li>
     
@@ -13495,17 +13495,17 @@ Note: Future versions of the ECMAScript specification may define a total order f
         
         <ol>
             <li>If |arg|<sub>|i|</sub> is the special value “missing”, then
-            append <emu-val>undefined</emu-val> to |esArgs|.</li>
+                append <emu-val>undefined</emu-val> to |esArgs|.</li>
             
             <li>
                 Otherwise, |arg|<sub>|i|</sub> is an IDL value:
                 
                 <ol>
                     <li>Let |convertResult| be the result of [=converted to ECMAScript values|converting=]
-                    |arg|<sub>|i|</sub> to an ECMAScript value.</li>
+                        |arg|<sub>|i|</sub> to an ECMAScript value.</li>
                     
                     <li>If |convertResult| is an abrupt completion, set |completion|
-                    to |convertResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
+                        to |convertResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
                     
                     <li>Append |convertResult|.\[[Value]] to |esArgs|.</li>
                     
@@ -13520,14 +13520,14 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <li>Truncate |esArgs| to have length |count|.</li>
     
     <li>Let |callResult| be <a>Call</a>(|X|, |thisArg|,
-    |esArgs|).</li>
+        |esArgs|).</li>
     
     <li>If |callResult| is an abrupt completion, set |completion| to
-    |callResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
+        |callResult| and jump to the step labeled <a href="#call-user-object-operation-return"><i>return</i></a>.</li>
     
     <li>Set |completion| to the result of [=converted to an IDL value|converting=]
         |callResult|.\[[Value]] to an IDL value of the same type as the operation’s
-    return type.</li>
+        return type.</li>
     
     <li>
         <i id="call-user-object-operation-return">Return:</i> at this
@@ -13537,7 +13537,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li><a>Clean up after running script</a> with |settings|.</li>
             
             <li>If |completion| is a normal completion, return
-            |completion|.</li>
+                |completion|.</li>
             
             <li>If |completion| is an abrupt completion and the operation has a [=return type=] that is <em>not</em> a <a href="#idl-promise">promise type</a>, return |completion|.</li>
             
@@ -13545,10 +13545,10 @@ Note: Future versions of the ECMAScript specification may define a total order f
             
             <li>Let |rejectedPromise| be the result of calling |reject| with
                 <a>%Promise%</a> as the <emu-val>this</emu-val> value and
-            |completion|.\[[Value]] as the single argument value.</li>
+                |completion|.\[[Value]] as the single argument value.</li>
             
             <li>Return the result of [=converted to an IDL value|converting=]
-            |rejectedPromise| to the operation's return type.</li>
+                |rejectedPromise| to the operation's return type.</li>
         </ol>
     </li>
 </ol>
@@ -13573,11 +13573,11 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <li>Let |getResult| be <a>Get</a>(|O|, |attributeName|).</li>
     
     <li>If |getResult| is an abrupt completion, set |completion| to
-    |getResult| and jump to the step labeled <a href="#get-user-object-attribute-return"><i>return</i></a>.</li>
+        |getResult| and jump to the step labeled <a href="#get-user-object-attribute-return"><i>return</i></a>.</li>
     
     <li>Set |completion| to the result of [=converted to an IDL value|converting=]
         |getResult|.\[[Value]] to an IDL value of the same type as the attribute's
-    type.</li>
+        type.</li>
     
     <li>
         <i id="get-user-object-attribute-return">Return:</i> at this
@@ -13587,20 +13587,20 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li><a>Clean up after running script</a> with |settings|.</li>
             
             <li>If |completion| is a normal completion, return
-            |completion|.</li>
+                |completion|.</li>
             
             <li>If |completion| is an abrupt completion and the attribute's type is
                 <em>not</em> a <a href="#idl-promise">promise type</a>, return
-            |completion|.</li>
+                |completion|.</li>
             
             <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
             
             <li>Let |rejectedPromise| be the result of calling |reject| with
                 <a>%Promise%</a> as the <emu-val>this</emu-val> value and
-            |completion|.\[[Value]] as the single argument value.</li>
+                |completion|.\[[Value]] as the single argument value.</li>
             
             <li>Return the result of [=converted to an IDL value|converting=]
-            |rejectedPromise| to the attribute's type.</li>
+                |rejectedPromise| to the attribute's type.</li>
         </ol>
     </li>
 </ol>
@@ -13624,13 +13624,13 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <li><a>Prepare to run script</a> with |settings|.</li>
     
     <li>Let |convertResult| be the result of [=converted to ECMAScript values|converting=] |value| to an
-    ECMAScript value.</li>
+        ECMAScript value.</li>
     
     <li>If |convertResult| is an abrupt completion, set |completion| to
-    |convertResult| and jump to the step labeled <a href="#set-user-object-attribute-return"><i>return</i></a>.</li>
+        |convertResult| and jump to the step labeled <a href="#set-user-object-attribute-return"><i>return</i></a>.</li>
     
     <li>Set |completion| to <a>Set</a>(|O|, |attributeName|,
-    |convertResult|.\[[Value]], <emu-val>true</emu-val>).</li>
+        |convertResult|.\[[Value]], <emu-val>true</emu-val>).</li>
     
     <li>
         <i id="set-user-object-attribute-return">Return:</i> at this
@@ -13641,7 +13641,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li><a>Clean up after running script</a> with |settings|.</li>
             
             <li>If |completion| is an abrupt completion, return
-            |completion|.</li>
+                |completion|.</li>
             
             <li>Return <a>NormalCompletion</a>({{void}}).</li>
         </ol>
@@ -13709,17 +13709,17 @@ Note: Future versions of the ECMAScript specification may define a total order f
         
         <ol>
             <li>If |arg|<sub>|i|</sub> is the special value “missing”, then
-            append <emu-val>undefined</emu-val> to |esArgs|.</li>
+                append <emu-val>undefined</emu-val> to |esArgs|.</li>
             
             <li>
                 Otherwise, |arg|<sub>|i|</sub> is an IDL value:
                 
                 <ol>
                     <li>Let |convertResult| be the result of [=converted to ECMAScript values|converting=]
-                    |arg|<sub>|i|</sub> to an ECMAScript value.</li>
+                        |arg|<sub>|i|</sub> to an ECMAScript value.</li>
                     
                     <li>If |convertResult| is an abrupt completion, set |completion|
-                    to |convertResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
+                        to |convertResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
                     
                     <li>Append |convertResult|.\[[Value]] to |esArgs|.</li>
                     
@@ -13734,14 +13734,14 @@ Note: Future versions of the ECMAScript specification may define a total order f
     <li>Truncate |esArgs| to have length |count|.</li>
     
     <li>Let |callResult| be <a>Call</a>(|X|, |thisArg|,
-    |esArgs|).</li>
+        |esArgs|).</li>
     
     <li>If |callResult| is an abrupt completion, set |completion| to
-    |callResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
+        |callResult| and jump to the step labeled <a href="#invoke-return"><i>return</i></a>.</li>
     
     <li>Set |completion| to the result of [=converted to an IDL value|converting=]
         |callResult|.\[[Value]] to an IDL value of the same type as the operation’s
-    return type.</li>
+        return type.</li>
     
     <li>
         <i id="invoke-return">Return:</i> at this
@@ -13751,19 +13751,19 @@ Note: Future versions of the ECMAScript specification may define a total order f
             <li><a>Clean up after running script</a> with |settings|.</li>
             
             <li>If |completion| is a normal completion, return
-            |completion|.</li>
+                |completion|.</li>
             
             <li>If |completion| is an abrupt completion and the callback function has a
-            [=return type=] that is <em>not</em> a <a href="#idl-promise">promise type</a>, return |completion|.</li>
+                [=return type=] that is <em>not</em> a <a href="#idl-promise">promise type</a>, return |completion|.</li>
             
             <li>Let |reject| be the initial value of <a>%Promise%</a>.reject.</li>
             
             <li>Let |rejectedPromise| be the result of calling |reject| with
                 <a>%Promise%</a> as the <emu-val>this</emu-val> value and
-            |completion|.\[[Value]] as the single argument value.</li>
+                |completion|.\[[Value]] as the single argument value.</li>
             
             <li>Return the result of [=converted to an IDL value|converting=]
-            |rejectedPromise| to the callback function's return type.</li>
+                |rejectedPromise| to the callback function's return type.</li>
         </ol>
     </li>
 </ol>
@@ -13964,14 +13964,14 @@ on exception objects too.
         <dl class="switch">
             <dt>|E| is [=DOMException=]</dt>
             <dd>|X| is the [=DOMException constructor object=]
-            from the global environment |G|.</dd>
+                from the global environment |G|.</dd>
             <dt>|E| is a [=simple exception=]</dt>
             <dd>|X| is the constructor for the corresponding ECMAScript error
-            from the global environment |G|.</dd>
+                from the global environment |G|.</dd>
         </dl>
     </li>
     <li>Let |O| be the result of calling |X| as a function
-    with |args| as the argument list.</li>
+        with |args| as the argument list.</li>
     <li>Return |O|.</li>
 </ol>
 <p>
@@ -13985,7 +13985,7 @@ on exception objects too.
 <ol class="algorithm">
     <li>Let |O| be the result of [=created|creating=]
         the specified exception |E| with [=error name=] |N| and
-    optional user agent-defined message |M|.</li>
+        optional user agent-defined message |M|.</li>
     <li>Throw |O|.</li>
 </ol>
 <div class="note">

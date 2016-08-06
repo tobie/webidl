@@ -41,6 +41,8 @@ var p = false;
 var p_has_attribute;
 var pre = false;
 var pre_buffer = [];
+var li = false;
+var dd = false;
 var blockquote = false;
 var intro = true;
 var reader = new Reader('index-pre.bs');
@@ -65,6 +67,8 @@ reader.on("line", function(line) {
                 intro = false; // first metadata block
             }
             if (m[2] == "blockquote") blockquote = true;
+            if (m[2] == "li") li = true;
+            if (m[2] == "dd") dd = true;
         } else if (m && m[1] && m[2]) {
             closed.push(m[2]);
             var last = tags.pop();
@@ -108,9 +112,10 @@ reader.on("line", function(line) {
                     console.log(ws + line);
                 }
             }
-        //} else if (blockquote) {
-        //    console.log(ws + "> " + line.trim());
         } else {
+            if (/\S+\s*<\/(li|dd)>\s*$/.test(line) && !(/^\s*<(li|dd)/).test(line)) {
+                ws += "    ";
+            }
             console.log(ws + line.trim());
         }
     }
@@ -136,6 +141,14 @@ reader.on("line", function(line) {
     }
     if (closed.indexOf("blockquote") > -1) {
         blockquote = false;
+    }
+    
+    if (closed.indexOf("li") > -1) {
+        li = false;
+    }
+    
+    if (closed.indexOf("li") > -1) {
+        dd = false;
     }
 })
 reader.on("end", function(line) { console.log("") })
