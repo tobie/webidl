@@ -83,28 +83,28 @@ TR: </xsl:text>
 <pre class="anchors">
 <xsl:text>
 </xsl:text>
-    <xsl:for-each-group select='$options/x:links/x:term' group-by='replace(@href, "#.*?$", "")'>
+    <xsl:for-each-group select='$options/x:links/x:term, //h:a[contains(@class, "external")][matches(@href, ".#")] ' group-by='substring-before(@href, "#")'>
 <xsl:text>urlPrefix: </xsl:text><xsl:value-of select="current-grouping-key()"/>
 <xsl:text>
     type: dfn
 </xsl:text>
-        <xsl:for-each-group select='current-group()' group-by='replace(@href, "^.*?#", "")'>
+        <xsl:for-each-group select='current-group()' group-by='substring-after(@href, "#")'>
           <xsl:choose>
             <xsl:when test='count(current-group()) > 1'>
               <xsl:text>        url: </xsl:text>
               <xsl:value-of select="current-grouping-key()"/>
               <xsl:text>
 </xsl:text>
-              <xsl:for-each select='current-group()'>
+              <xsl:for-each-group select='current-group()' group-by='if (@name) then @name else normalize-space(.)'>
                 <xsl:text>            text: </xsl:text>
-                <xsl:value-of select='@name' />
+                <xsl:value-of select='if (@name) then @name else normalize-space(.)' />
                 <xsl:text>
 </xsl:text>
-              </xsl:for-each>
+              </xsl:for-each-group>
             </xsl:when>
             <xsl:otherwise>
-              <xsl:variable name='url' select='replace(@href, "^.*?#", "")'/>
-              <xsl:variable name='text' select='@name'/>
+              <xsl:variable name='url' select='substring-after(@href, "#")'/>
+              <xsl:variable name='text' select='if (@name) then @name else normalize-space(.)'/>
               <xsl:text>        text: </xsl:text>
               <xsl:value-of select='$text' />
               <xsl:if test='lower-case(replace($text, "\s+", "-")) != $url'>
@@ -192,6 +192,21 @@ TR: </xsl:text>
   
   <xsl:template match='h:a[@class="idltype"]'>
     <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match='h:a[contains(@class, "external")][matches(@href, ".#")]'>
+    <xsl:variable name='hash' select='substring-after(@href, "#")'/>
+        <xsl:choose>
+          <xsl:when test='$hash="sec-code-realms"'>
+            <xsl:text>[=Realms|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
+          </xsl:when>
+          <xsl:when test='$hash="sec-ecmascript-data-types-and-values"'>
+            <xsl:text>[=Type|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>[=</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
   </xsl:template>
   
   <xsl:template match='h:a[@class="dfnref"]'>

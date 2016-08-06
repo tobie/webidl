@@ -52,7 +52,9 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: ToObject; url: sec-toobject
         text: IsAccessorDescriptor; url: sec-isaccessordescriptor
         text: IsDataDescriptor; url: sec-isdatadescriptor
-        text: Type; url: sec-ecmascript-data-types-and-values
+        url: sec-ecmascript-data-types-and-values
+            text: Type
+            text: Type(x)
         url: sec-algorithm-conventions
             text: sign
             text: floor
@@ -60,6 +62,7 @@ urlPrefix: https://tc39.github.io/ecma262/
             text: modulo
             text: !
             text: ?
+            text: ECMA-262 section 5.2
         text: element; url: sec-ecmascript-language-types-string-type
         url: sec-iscallable
             text: IsCallable
@@ -111,8 +114,16 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: IsConstructor; url: sec-isconstructor
         text: Construct; url: sec-construct
         text: DefinePropertyOrThrow; url: sec-definepropertyorthrow
-        text: Realm; url: sec-code-realms
+        url: sec-code-realms
+            text: Realm
+            text: ECMAScript global environment
         text: Completion; url: sec-completion-record-specification-type
+        text: sections 9.1; url: sec-ordinary-object-internal-methods-and-internal-slots
+        text: 9.3.1; url: sec-built-in-function-objects-call-thisargument-argumentslist
+        text: ECMA-262 section 9.1.8; url: sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver
+        text: ECMA-262 section 19.2.2.3; url: sec-function-@@create
+        text: ECMA-262 section 19.2.3.8; url: sec-function.prototype-@@hasinstance
+        text: the Array methods themselves; url: sec-properties-of-the-array-prototype-object
 urlPrefix: http://www.ecma-international.org/ecma-262/6.0/
     type: dfn
         text: GetMethod; url: sec-getmethod
@@ -123,9 +134,15 @@ urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html
         text: relevant Realm; url: concept-relevant-realm
         text: Prepare to run script
         text: Clean up after running script
+        url: concept-realm-settings-object
+            text: settings object
 urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
     type: dfn
         text: secure context
+urlPrefix: http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html
+    type: dfn
+        url: incumbent-script
+            text: incumbent script
 </pre>
 
 
@@ -5362,7 +5379,7 @@ in the string.  When in doubt, use {{DOMString}}.
 </p>
 Note: For ECMAScript objects, the [=callback context=] is used
 to hold a reference to the
-<a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
+[=incumbent script=]
 [[!HTML]] at the time the <span class="estype">Object</span> value
 is converted to an IDL callback interface type value.  See
 [[#es-interface]].
@@ -5436,7 +5453,7 @@ is converted to an IDL callback interface type value.  See
 </p>
 Note: As with <a href="#idl-interface">callback interface types</a>, the [=callback context=] is used
 to hold a reference to the
-<a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
+[=incumbent script=]
 [[!HTML]] at the time an ECMAScript <span class="estype">Object</span> value
 is converted to an IDL callback function type value.  See
 [[#es-callback-function]].
@@ -6053,8 +6070,8 @@ Issue: We should include an example of specification text that uses these types 
 </p>
 <p>
     Objects defined in this section have internal properties as described in
-    ECMA-262 <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots">sections 9.1</a> and
-    <a class="external" href="https://tc39.github.io/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist">9.3.1</a> unless otherwise specified, in which case one or
+    ECMA-262 [=sections 9.1=] and
+    [=9.3.1=] unless otherwise specified, in which case one or
     more of the following are redefined in accordance with the rules for exotic objects:
     <span class="prop">\[[Call]]</span>,
     <span class="prop">\[[Set]]</span>,
@@ -6100,14 +6117,13 @@ and configurable.
 <ul>
     <li>Its <span class="prop">\[[Prototype]]</span> internal property is
     <a>%FunctionPrototype%</a> unless otherwise specified.</li>
-    <li>Its <span class="prop">\[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
-    <li>Its <span class="prop">\[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
-    <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
+    <li>Its <span class="prop">\[[Get]]</span> internal property is set as described in [=ECMA-262 section 9.1.8=].</li>
+    <li>Its <span class="prop">\[[Construct]]</span> internal property is set as described in [=ECMA-262 section 19.2.2.3=].</li>
+    <li>Its <span class="prop">@@hasInstance</span> property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.</li>
 </ul>
 Issue: The list above needs updating for the latest ES6 draft.
 <p id="ecmascript-abstractop">
-    Algorithms in this section use the conventions described in <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262
-    section 5.2</a>, such as the use of steps and substeps, the use of mathematical
+    Algorithms in this section use the conventions described in [=ECMA-262 section 5.2=], such as the use of steps and substeps, the use of mathematical
     operations, and so on.  The
     <a>ToBoolean</a>,
     <a>ToNumber</a>,
@@ -6118,7 +6134,7 @@ Issue: The list above needs updating for the latest ES6 draft.
     <a>ToObject</a>,
     <a>IsAccessorDescriptor</a> and
     <a>IsDataDescriptor</a> abstract operations and the
-    <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type(|x|)</a>
+    [=Type|Type(x)=]
     notation referenced in this section are defined in ECMA-262 sections 6 and 7.
 </p>
 <p id="ecmascript-throw">
@@ -6180,7 +6196,7 @@ Issue: The list above needs updating for the latest ES6 draft.
     <li>[=named properties objects=]</li>
 </ul>
 <p>
-    Each <a class="external" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> ([[!ECMA-262]], section 8.2)
+    Each [=Realms|ECMAScript global environment=] ([[!ECMA-262]], section 8.2)
     must have its own unique set of each of
     the [=initial objects=], created
     before control enters any ECMAScript execution context associated with the
@@ -7102,7 +7118,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
         that is considered to implement |I| according to the rules in
         [[#es-user-objects]],
         then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
-        with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
+        with the [=incumbent script=]
     as the [=callback context=]. [[!HTML]]</li>
     <li><a href="#ecmascript-throw" class="dfnref external">Throw a <emu-val>TypeError</emu-val></a>.</li>
 </ol>
@@ -7260,7 +7276,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>Return the IDL <a href="#idl-callback-function">callback
         function type</a> value that represents a reference to the same
         object that |V| represents,
-        with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
+        with the [=incumbent script=]
     as the [=callback context=]. [[!HTML]].</li>
 </ol>
 <p id="callback-function-to-es">
@@ -8788,8 +8804,7 @@ which would provide access to the array elements.
         and no indexed property [=setter=].  The
         mutating <span class="estype">Array</span> methods will generally not
         succeed on objects implementing <span class="idltype">ImmutableItemList</span>.
-        The exact behavior depends on the definition of <a class="external" href="https://tc39.github.io/ecma262/#sec-properties-of-the-array-prototype-object">the <span class="estype">Array</span> methods
-        themselves</a> ([[!ECMA-262]], section 22.1.3).
+        The exact behavior depends on the definition of [=the Array methods themselves=] ([[!ECMA-262]], section 22.1.3).
     </p>
 </div>
 
@@ -13321,8 +13336,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     
     <li>Let |realm| be |O|'s [=associated Realm=].</li>
     
-    <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
-    object</a>.</li>
+    <li>Let |settings| be |realm|'s [=settings object=].</li>
     
     <li><a>Prepare to run script</a> with |settings|.</li>
     
@@ -13440,8 +13454,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     
     <li>Let |realm| be |O|'s [=associated Realm=].</li>
     
-    <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
-    object</a>.</li>
+    <li>Let |settings| be |realm|'s [=settings object=].</li>
     
     <li><a>Prepare to run script</a> with |settings|.</li>
     
@@ -13494,8 +13507,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     
     <li>Let |realm| be |O|'s [=associated Realm=].</li>
     
-    <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
-    object</a>.</li>
+    <li>Let |settings| be |realm|'s [=settings object=].</li>
     
     <li><a>Prepare to run script</a> with |settings|.</li>
     
@@ -13571,8 +13583,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     
     <li>Let |realm| be |F|'s [=associated Realm=].</li>
     
-    <li>Let |settings| be |realm|'s <a class="dfnref external" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings
-    object</a>.</li>
+    <li>Let |settings| be |realm|'s [=settings object=].</li>
     
     <li><a>Prepare to run script</a> with |settings|.</li>
     
