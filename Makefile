@@ -2,6 +2,7 @@ all : index.html
 
 index.html : index.bs
 	bikeshed spec index.bs
+	node "./check-anchors.js"
 
 index.bs : index.xml WebIDL-bs.xsl
 	java  -jar saxon9he.jar -warnings:silent -s:index.xml -xsl:WebIDL-bs.xsl -o:index-pre.bs
