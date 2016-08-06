@@ -396,13 +396,16 @@ TR: </xsl:text>
     <xsl:text>    </xsl:text>
     <xsl:choose>
       <xsl:when test='@class="note"'>
-          <xsl:text>Note</xsl:text>
+          <xsl:text>
+Note</xsl:text>
       </xsl:when>
       <xsl:when test='@class="warning"'>
-          <xsl:text>Advisement</xsl:text>
+          <xsl:text>
+Advisement</xsl:text>
       </xsl:when>
       <xsl:when test='@class="ednote"'>
-          <xsl:text>Issue</xsl:text>
+          <xsl:text>
+Issue</xsl:text>
       </xsl:when>
     </xsl:choose>
     <xsl:text>: </xsl:text>

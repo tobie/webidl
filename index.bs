@@ -507,6 +507,7 @@ font-weight: bold;
               <pre class="syntax"><i>return-type</i> <em>operation-identifier</em>(<i>arguments…</i>);</pre>
     </li>
 </ul>
+
 Note: Operations can have no identifier when they are being used to declare a
 <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
 
@@ -515,6 +516,7 @@ Note: Operations can have no identifier when they are being used to declare a
     is the value of the <a class="sym" href="#prod-identifier">identifier</a> token with any leading
     <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed.
 </p>
+
 Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
 like a reserved word so that, for example, an interface named “interface” can be
 defined.  The leading <span class="char">"_"</span> is dropped to unescape the
@@ -572,6 +574,7 @@ identifier.
     or begin with a <span class="char">U+005F LOW LINE ("_")</span> character.  These
     are known as <dfn id="dfn-reserved-identifier" export>reserved identifiers</dfn>.
 </p>
+
 Note: Further restrictions on identifier names for particular constructs may be made
 in later sections.
 <p>
@@ -813,6 +816,7 @@ in later sections.
       <i>interface-members…</i>
     };
 </pre>
+
 Note: See also the similarly named [=callback function=] definition.
 <p>
     [=Callback interfaces=]
@@ -847,9 +851,11 @@ Note: See also the similarly named [=callback function=] definition.
         language binding).
     </p>
 </div>
+
 Issue: Perhaps this warning shouldn't apply if you are planning to extend the callback
 interface in the future.  That's probably a good reason to start off with a single
 operation callback interface.
+
 
 Issue: I think we need to support operations not being implemented on a given
 user object implementing a callback interface.  If specs extending an existing
@@ -924,6 +930,7 @@ for the property's existence.
       <i>interface-members…</i>
     };
 </pre>
+
 Note: Partial interface definitions are intended for use as a specification
 editorial aide, allowing the definition of an interface to be separated
 over more than one section of the document, and sometimes multiple documents.
@@ -932,6 +939,7 @@ over more than one section of the document, and sometimes multiple documents.
     definition and any of its [=partial interface=]
     definitions does not matter.
 </p>
+
 Note: A partial interface definition cannot specify that the interface
 [=inherits=] from another interface.
 Inheritance must be specified on the original [=interface=]
@@ -947,6 +955,7 @@ definition.
     [{{NamedConstructor}}],
     [{{NoInterfaceObject}}].
 </p>
+
 Note: The above list of [=extended attributes=]
 is all of those defined in this document that are applicable to
 [=interfaces=] except for
@@ -1086,6 +1095,7 @@ is all of those defined in this document that are applicable to
     <a class="sym" href="#prod-Const">Const</a>) used to bind a constant value to a name.
     Constants can appear on [=interfaces=].
 </p>
+
 Advisement: Constants have in the past primarily been used to define
 named integer codes in the style of an enumeration.  The Web platform
 is moving away from this design pattern in favor of the use of strings.
@@ -1103,6 +1113,7 @@ mailing list before proceeding.
     The identifier also must not
     be “length”, “name” or “prototype”.
 </p>
+
 Note: These three names are the names of properties that exist on all
 <emu-val>Function</emu-val> objects.
 
@@ -1126,6 +1137,7 @@ Note: These three names are the names of properties that exist on all
     or one of the three special floating point constant values
     (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>).
 </p>
+
 Note: These values – in addition to strings and the empty sequence – can also be used to specify the
 [=default value|default value of a dictionary member=] or [=default value|of an optional argument=].  Note that strings and the
 empty sequence <code>[]</code> cannot be used as the value of a
@@ -1522,6 +1534,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
     The identifier of a static operation must not
     be “prototype”.
 </p>
+
 Note: The identifier can be the same as that of another operation on the
 interface, however.  This is how operation overloading is specified.
 
@@ -1548,6 +1561,7 @@ interface, however.  This is how operation overloading is specified.
     as a type (matching <a class="sym" href="#prod-Type">Type</a>) followed by an [=identifier=]
     (matching <a class="sym" href="#prod-ArgumentName">ArgumentName</a>).
 </p>
+
 Note: For expressiveness, the identifier of an operation argument can also be specified
 as one of the keywords matching the <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a>
 symbol without needing to escape it.
@@ -1677,6 +1691,7 @@ symbol without needing to escape it.
     corresponding argument omitted.
 </p>
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
+
 Advisement: It is strongly suggested not to use [=default value=]
 of <span class="idlvalue">true</span> for <emu-val>boolean</emu-val>-typed arguments,
 as this can be confusing for authors who might otherwise expect the default
@@ -2030,6 +2045,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     Legacy callers must not be defined to return a
     <a href="#idl-promise">promise type</a>.
 </p>
+
 Advisement: Legacy callers are universally recognised as an undesirable feature.  They exist
 only so that legacy Web platform features can be specified.  Legacy callers
 should not be used in specifications unless required to
@@ -2235,6 +2251,7 @@ mailing list before proceeding.
     [=serialized value=] is converted into
     an appropriate concrete value, is language binding specific.
 </p>
+
 Note: In the ECMAScript language binding,
 [=serialization behavior=]
 is exposed as a <code>toJSON</code> method which returns the
@@ -2397,6 +2414,7 @@ into an ECMAScript value that can be serialized to JSON by the
         </ol>
     </li>
 </ul>
+
 
 Note: Entries are added to maps in a particular order so that in the ECMAScript language binding
 it is defined what order properties are added to objects.  This is because this order
@@ -2816,6 +2834,7 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
         for a given property name.
     </li>
 </ul>
+
 
 Note: As with <a href="#idl-indexed-properties">indexed properties</a>,
 if an [=named property getter=],
@@ -3392,6 +3411,7 @@ is language binding specific.
         is distinguishable with each member type of the other.
     </li>
 </ol>
+
 Note: Promise types do not appear in the above table, and as a consequence
 are not distinguishable with any other type.
 <p>
@@ -3477,6 +3497,7 @@ are not distinguishable with any other type.
     Objects implementing an interface that is declared to be iterable
     support being iterated over to obtain a sequence of values.
 </p>
+
 Note: In the ECMAScript language binding, an interface that is iterable
 will have “entries”, “forEach”, “keys”, “values” and <a>@@iterator</a>
 properties on its [=interface prototype object=].
@@ -3533,6 +3554,7 @@ properties on its [=interface prototype object=].
         <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>.
     </p>
 </div>
+
 Note: This is how <a>array iterator objects</a> work.
 For interfaces that [=support indexed properties=],
 the iterator objects returned by “entries”, “keys”, “values” and <a>@@iterator</a> are
@@ -3669,6 +3691,7 @@ actual <a>array iterator objects</a>.
     keyword is not used, then it also supports an API for modifying
     the map entries.
 </p>
+
 Note: In the ECMAScript language binding, the API for interacting
 with the map entries is similar to that available on ECMAScript
 <emu-val>Map</emu-val> objects.  If the <code>readonly</code>
@@ -3691,6 +3714,7 @@ For read–write maplikes, it also includes “clear”, “delete” and
     or [=consequential interfaces|consequential=]
     interfaces that have attributes or constants with these names.
 </p>
+
 Note: Operations named “clear”, “delete”, or “set” are allowed on read–write maplike
 interfaces and will prevent the default implementation of these methods being
 added to the interface prototype object in the ECMAScript language binding.
@@ -3715,6 +3739,7 @@ This allows the default behavior of these operations to be overridden.
     No [=extended attributes=]
     defined in this specification are applicable to [=maplike declarations=].
 </p>
+
 Issue: Add example.
 
 
@@ -3750,6 +3775,7 @@ Issue: Add example.
     keyword is not used, then it also supports an API for modifying
     the set entries.
 </p>
+
 Note: In the ECMAScript language binding, the API for interacting
 with the set entries is similar to that available on ECMAScript
 <emu-val>Set</emu-val> objects.  If the <code>readonly</code>
@@ -3771,6 +3797,7 @@ For read–write setlikes, it also includes “add”, “clear”, and “delet
     or [=consequential interfaces|consequential=]
     interfaces that have attributes or constants with these names.
 </p>
+
 Note: Operations named “add”, “clear”, or “delete” are allowed on read–write setlike
 interfaces and will prevent the default implementation of these methods being
 added to the interface prototype object in the ECMAScript language binding.
@@ -3795,6 +3822,7 @@ This allows the default behavior of these operations to be overridden.
     No [=extended attributes=]
     defined in this specification are applicable to [=setlike declarations=].
 </p>
+
 Issue: Add example.
 
 
@@ -3862,6 +3890,7 @@ Issue: Add example.
     not have a specified value.  Dictionary members with default values are
     always considered to be present.
 </p>
+
 Advisement: As with [=default value|operation argument default values=],
 is strongly suggested not to use of <span class="idlvalue">true</span> as the
 [=default value=] for
@@ -3970,6 +3999,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
       <i>dictionary-members…</i>
     };
 </pre>
+
 Note: As with partial interface definitions, partial dictionary definitions are intended for use as a specification
 editorial aide, allowing the definition of an interface to be separated
 over more than one section of the document, and sometimes multiple documents.
@@ -4184,6 +4214,7 @@ over more than one section of the document, and sometimes multiple documents.
 <p>
     The resulting behavior from creating and throwing an exception is language binding-specific.
 </p>
+
 Note: See [[#es-creating-throwing-exceptions]] for details on what creating and throwing an exception
 entails in the ECMAScript language binding.
 
@@ -4222,6 +4253,7 @@ entails in the ECMAScript language binding.
     for [=DOMExceptions=], a description,
     and legacy code values.
 </p>
+
 
 Note: If an error name is not listed here, please file a bug as indicated at the top of this specification and it will be addressed shortly. Thanks!
 
@@ -4427,6 +4459,7 @@ Note: If an error name is not listed here, please file a bug as indicated at the
     The list of [=enumeration values=]
     must not include duplicates.
 </p>
+
 Advisement: It is strongly suggested that enumeration values be all lowercase,
 and that multiple words be separated using dashes or not be
 separated at all, unless there is a specific reason to use another
@@ -4443,6 +4476,7 @@ similar APIs are consistent.
     or passed as an [=operation=] argument,
     whose type is the enumeration, is language binding specific.
 </p>
+
 Note: In the ECMAScript binding, assignment of an invalid string value to an
 [=attribute=] is ignored, while
 passing such a value as an [=operation=] argument
@@ -4499,6 +4533,7 @@ results in an exception being thrown.
 
 <h3 id="idl-callback-functions">Callback functions</h3>
 
+
 Issue: The “Custom DOM Elements” spec wants to use callback function types for
 platform object provided functions.  Should we rename “callback functions” to
 just “functions” to make it clear that they can be used for both purposes?
@@ -4507,6 +4542,7 @@ just “functions” to make it clear that they can be used for both purposes?
     <span class="sym">"callback"</span> <a class="sym" href="#prod-CallbackRest">CallbackRest</a>) used to declare a function type.
 </p>
           <pre class="syntax">callback <i>identifier</i> = <i>return-type</i> (<i>arguments…</i>);</pre>
+
 Note: See also the similarly named [=callback interfaces=].
 <p>
     The [=identifier=] on the
@@ -4710,6 +4746,7 @@ Note: See also the similarly named [=callback interfaces=].
     whose identifier is the same as any other member defined on any
     of those consequential interfaces or on the original interface itself.
 </p>
+
 Note: For example, that precludes the following:
 <p>
     No [=extended attributes=]
@@ -5125,6 +5162,7 @@ Note: For example, that precludes the following:
     The [=type name=] of the
     {{float}} type is “Float”.
 </p>
+
 Advisement: Unless there are specific reasons to use a 32 bit floating point type,
 specifications should use
 {{double}} rather than {{float}},
@@ -5206,6 +5244,7 @@ represent more closely matches an ECMAScript <emu-val>Number</emu-val>.
     special casing that sequence type in various situations where a
     string is required.
 </p>
+
 Note: Note also that <span class="idlvalue">null</span>
 is not a value of type {{DOMString}}.
 To allow <span class="idlvalue">null</span>, a
@@ -5297,6 +5336,7 @@ written as <code>DOMString?</code> in IDL, needs to be used.
     The [=type name=] of the
     {{ByteString}} type is “ByteString”.
 </p>
+
 Advisement: Specifications should only use
 {{ByteString}} for interfacing with protocols
 that use bytes and strings interchangably, such as HTTP.  In general,
@@ -5332,6 +5372,7 @@ elements should be used for holding
     The [=type name=] of the
     {{USVString}} type is “USVString”.
 </p>
+
 Advisement: Specifications should only use
 {{USVString}} for APIs that perform
 text processing and need a string of Unicode
@@ -5381,6 +5422,7 @@ in the string.  When in doubt, use {{DOMString}}.
     binding specific value, and is used to store information about the execution context at
     the time the language binding specific object reference is converted to an IDL value.
 </p>
+
 Note: For ECMAScript objects, the [=callback context=] is used
 to hold a reference to the
 [=incumbent script=]
@@ -5455,6 +5497,7 @@ is converted to an IDL callback interface type value.  See
     An IDL value of the callback function type is represented by a tuple of an object
     reference and a [=callback context=].
 </p>
+
 Note: As with <a href="#idl-interface">callback interface types</a>, the [=callback context=] is used
 to hold a reference to the
 [=incumbent script=]
@@ -5487,6 +5530,7 @@ is converted to an IDL callback function type value.  See
     or has a dictionary type as one of its
     <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>.
 </p>
+
 Note: Although dictionary types can in general be nullable, they cannot when used
 as the type of an operation argument or a dictionary member.
 <p>
@@ -5551,6 +5595,7 @@ as the type of an operation argument or a dictionary member.
     type of an [=attribute=] or
     [=constant=].
 </p>
+
 Note: This restriction exists so that it is clear to specification writers
 and API users that <a href="#idl-sequence">sequences</a>
 are copied rather than having references
@@ -5642,6 +5687,7 @@ sequence is used.
     </li>
     <li>Return |S|.</li>
 </ol>
+
 Note: For example, the [=flattened member types=]
 of the [=union type=]
 <code>(Node or (sequence&lt;long&gt; or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;)</code>
@@ -5807,6 +5853,7 @@ representing [=DOMExceptions=].</p>
         <dfn id="idl-Float64Array" idl>Float64Array</dfn></td>
     <td>A view on to an {{ArrayBuffer}} that exposes it as an array of IEEE 754 floating point numbers of the given size in bits</td></tr>
 </table>
+
 Note: These types all correspond to classes defined in ECMAScript.
 <p>
     To <dfn id="dfn-detach" for="ArrayBuffer" export>detach</dfn> an {{ArrayBuffer}}
@@ -5860,8 +5907,10 @@ Note: These types all correspond to classes defined in ECMAScript.
     when the {{ArrayBuffer}} has been [=detach|detached=]
     will fail in a language binding-specific manner.
 </p>
+
 Note: See [[#es-buffer-source-types]] below for
 how interacting with buffer source types works in the ECMAScript language binding.
+
 Issue: We should include an example of specification text that uses these types and terms.
 
 
@@ -6089,6 +6138,7 @@ Issue: We should include an example of specification text that uses these types 
     of any internal method of a [=platform object=]
     that is an instance of an [=interface=].
 </p>
+
 Advisement: As overriding internal ECMAScript object methods is a low level operation and
 can result in objects that behave differently from ordinary objects,
 this facility should not be used unless necessary
@@ -6111,6 +6161,7 @@ and possibly WindowProxy objects</a>.
     at the time it is created, have a property whose name is the <a>@@toStringTag</a> symbol
     and whose value is the specified string.
 </p>
+
 Issue: Should define whether <a>@@toStringTag</a> is writable, enumerable and configurable.
 All <a>@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
 and configurable.
@@ -6125,6 +6176,7 @@ and configurable.
     <li>Its <span class="prop">\[[Construct]]</span> internal property is set as described in [=ECMA-262 section 19.2.2.3=].</li>
     <li>Its <span class="prop">@@hasInstance</span> property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.</li>
 </ul>
+
 Issue: The list above needs updating for the latest ES6 draft.
 <p id="ecmascript-abstractop">
     Algorithms in this section use the conventions described in [=ECMA-262 section 5.2=], such as the use of steps and substeps, the use of mathematical
@@ -6240,6 +6292,7 @@ Issue: The list above needs updating for the latest ES6 draft.
     [[#es-interfaces]] are
     not followed for that interface.
 </p>
+
 Note: This allows, for example, ECMAScript global environments for Web Workers to [=expose=]
 different sets of supported interfaces from those exposed in environments
 for Web pages.
@@ -6887,6 +6940,7 @@ for Web pages.
         Return |y|.
     </li>
 </ol>
+
 Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
 it must be canonicalized to a particular single precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
@@ -6953,6 +7007,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
         that has the same numeric value as |x|.
     </li>
 </ol>
+
 Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
 it must be canonicalized to a particular double precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
@@ -7195,6 +7250,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
     </li>
     <li>Return |dict|.</li>
 </ol>
+
 Note: The order that [=dictionary members=] are looked
 up on the ECMAScript object are not necessarily the same as the object’s property enumeration order.
 
@@ -7608,6 +7664,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>Return the result of calling |then| with |promise| as the <emu-val>this</emu-val> value and |onFulfilled| and |onRejected|
     as its two arguments.</li>
 </ol>
+
 Issue: Include an example of how to write spec text using this term.
 
 
@@ -8406,6 +8463,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>the <a>relevant settings object</a> for the ECMAScript global object is a <a>secure context</a>; or</li>
     <li>the interface or interface member is not [=available only in secure contexts=].</li>
 </ul>
+
 Note: Since it is not possible for the <a>relevant settings object</a>
 for an ECMAScript global object to change whether it is a
 <a>secure context</a> or not over time, an implementation's
@@ -8494,6 +8552,7 @@ are created.
     for the specific requirements that the use of
     [{{ImplicitThis}}] entails.
 </p>
+
 Note: The [{{ImplicitThis}}]
 [=extended attribute=]
 is intended for use on the <span class="idltype">Window</span>
@@ -8610,6 +8669,7 @@ in HTML5 ([[HTML5]], section 5.2).
     be used on an [=interface=] that can have more
     than one object implementing it in the same ECMAScript global environment.
 </p>
+
 Note: This is because the [=named properties object=],
 which exposes the named properties, is in the prototype chain, and it would not make
 sense for more than one object’s named properties to be exposed on an object that
@@ -8630,6 +8690,7 @@ all of those objects inherit from.
     [=setlike declaration=]
     across those interfaces.
 </p>
+
 Note: This is because all of the members of the interface and its consequential
 interfaces get flattened down on to the object that implements the interface.
 <p>
@@ -8654,6 +8715,7 @@ interfaces get flattened down on to the object that implements the interface.
     <dfn id="dfn-global-name" export>global names</dfn>; otherwise, the interface has
     a single global name, which is the interface's identifier.
 </p>
+
 Note: The identifier argument list exists so that more than one global interface can
 be addressed with a single name in an [{{Exposed}}]
 [=extended attribute=].
@@ -8756,6 +8818,7 @@ be addressed with a single name in an [{{Exposed}}]
     It must not be used on an interface that
     has any [=inherited interfaces=].
 </p>
+
 Note: Interfaces using [{{LegacyArrayClass}}] will
 need to define a “length” [=attribute=]
 of type {{unsigned long}} that exposes the length
@@ -8940,6 +9003,7 @@ which would provide access to the array elements.
     It must not be used on a
     [=static attribute=].
 </p>
+
 Advisement: Specifications should not use [{{LenientThis}}]
 unless required for compatibility reasons.  Specification authors who
 wish to use this feature are strongly advised to discuss this on the
@@ -9118,6 +9182,7 @@ mailing list before proceeding.
     [=interface object=]
     will not exist for the interface in the ECMAScript binding.
 </p>
+
 Advisement: The [{{NoInterfaceObject}}] extended attribute
 should not be used on interfaces that are not
 solely used as [=supplemental=] interfaces,
@@ -9609,6 +9674,7 @@ mailing list before proceeding.
         </dl>
     </li>
 </ul>
+
 Note: Whether a construct is
 <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
 influences whether it is [=exposed=] in a given
@@ -9667,6 +9733,7 @@ ECMAScript global environment.
     that is not an object will be converted to
     the <span class="idlvalue">null</span> value.
 </p>
+
 Advisement: Specifications should not use [{{TreatNonObjectAsNull}}]
 unless required to specify the behavior of legacy APIs or for consistency with these
 APIs.  Specification authors who
@@ -9760,6 +9827,7 @@ such as <code>onclick</code> and <code>onerror</code>.
     must not be specified on an operation argument,
     attribute or operation return value whose type is not {{DOMString}}.
 </p>
+
 Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
 use [{{TreatNullAs}}], since <span class="idlvalue">null</span>
 is a valid value of that type.
@@ -9883,6 +9951,7 @@ is a valid value of that type.
     [=regular operation=] with the same
     [=identifier=] as |X|.
 </p>
+
 Note: For example, the following is disallowed:
 <p>
     See [[#es-attributes]],
@@ -10010,6 +10079,7 @@ Note: For example, the following is disallowed:
         “getter” or “setter” (when it corresponds to the
     getter or setter function of an IDL attribute).</li>
 </ol>
+
 Note: The expectation is that the HTML specification defines how a
 security check is performed, and that it will either throw an
 appropriate exception or return normally. [[!HTML]]
@@ -10513,6 +10583,7 @@ appropriate exception or return normally. [[!HTML]]
     and is described in more detail in
     [[#interface-prototype-object]].
 </p>
+
 Note: Since an interface object for a non-callback interface is a [=function object=] the <code>typeof</code> operator will return
 <emu-val>"function"</emu-val> when applied to
 such an interface object.
@@ -10521,6 +10592,7 @@ such an interface object.
     of an interface object for a callback interface must be
     the Object.prototype object.
 </p>
+
 Note: Remember that interface objects for callback interfaces only exist if they have
 [=constants=] declared on them;
 when they do exist, they are not [=function objects=].
@@ -11198,10 +11270,12 @@ when they do exist, they are not [=function objects=].
         concatenation of “set ” and the identifier of the attribute.</p>
     </li>
 </ul>
+
 Note: Although there is only a single property for an IDL attribute, since
 accessor property getters and setters are passed a <emu-val>this</emu-val>
 value for the object on which property corresponding to the IDL attribute is
 accessed, they are able to expose instance-specific data.
+
 
 Note: Note that attempting to assign to a property corresponding to a
 [=read only=] [=attribute=]
@@ -11976,6 +12050,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     <li>its <em>kind</em>, which is the iteration kind,</li>
     <li>its <em>index</em>, which is the current index into the values value to be iterated.</li>
 </ol>
+
 Note: Default iterator objects are only used for [=pair iterators=];
 [=value iterators=], as they are currently
 restricted to iterating over an object’s
@@ -12877,6 +12952,7 @@ use standard ECMAScript Array iterator objects.
     </li>
     <li>Return true.</li>
 </ol>
+
 Note: This should ensure that for objects with named properties, property resolution is done in the following order:
 [[]]
 
@@ -13261,6 +13337,7 @@ Note: This should ensure that for objects with named properties, property resolu
     <li>Finally, any enumerable own properties or properties from the object’s prototype chain are then enumerated,
     in no defined order.</li>
 </ol>
+
 Note: Future versions of the ECMAScript specification may define a total order for property enumeration.
 
 
@@ -13780,6 +13857,7 @@ Note: Future versions of the ECMAScript specification may define a total order f
     of a [=DOMException=] object
     must be “DOMException”.
 </p>
+
 Note: The intention is for DOMException objects to be just like the other
 various native <emu-val>Error</emu-val> objects that the
 ECMAScript specification defines, apart from responding differently
@@ -14512,6 +14590,7 @@ on exception objects too.
             ε</span></td></tr><tr id="prod-ReturnType"><td><span class="prod-number">[89]</span></td><td>ReturnType</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br/> |
             "void"</span></td></tr><tr id="prod-IdentifierList"><td><span class="prod-number">[90]</span></td><td>IdentifierList</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr id="prod-Identifiers"><td><span class="prod-number">[91]</span></td><td>Identifiers</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br/> |
 ε</span></td></tr><tr id="prod-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td>ExtendedAttributeNoArgs</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td>ExtendedAttributeArgList</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td>ExtendedAttributeIdent</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td>ExtendedAttributeIdentList</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td>ExtendedAttributeNamedArgList</td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
+
 Note: The <a class="sym" href="#prod-Other">Other</a>
 non-terminal matches any single terminal symbol except for
 <span class="sym">"("</span>, <span class="sym">")"</span>,

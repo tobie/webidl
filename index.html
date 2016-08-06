@@ -2031,12 +2031,12 @@ dictionary <i>identifier</i> {
         then the operation does not have an identifier. 
 <pre class="syntax"><i>return-type</i> <em>operation-identifier</em>(<i>arguments…</i>);</pre>
    </ul>
-    Note: Operations can have no identifier when they are being used to declare a <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter. 
+   <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.</p>
    <p> For all of these constructs, the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-1">identifier</a> is the value of the <a class="sym" href="#prod-identifier">identifier</a> token with any leading <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed. </p>
-    Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
+   <p class="note" role="note">Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
 like a reserved word so that, for example, an interface named “interface” can be
 defined.  The leading <span class="char">"_"</span> is dropped to unescape the
-identifier. 
+identifier.</p>
    <p> Operation arguments can take a slightly wider set of identifiers.  In an operation
     declaration, the identifier of an argument is specified immediately after its
     type and is given by either an <a class="sym" href="#prod-identifier">identifier</a> token or by one of the keywords that match the <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> symbol.  If one of these keywords is used, it need not be escaped with a leading
@@ -2080,8 +2080,8 @@ identifier.
     “toString”, “toJSON”,
     or begin with a <span class="char">U+005F LOW LINE ("_")</span> character.  These
     are known as <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-reserved-identifier">reserved identifiers</dfn>. </p>
-    Note: Further restrictions on identifier names for particular constructs may be made
-in later sections. 
+   <p class="note" role="note">Note: Further restrictions on identifier names for particular constructs may be made
+in later sections.</p>
    <p> Within the set of <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-6">IDL fragments</a> that a given implementation supports,
     the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-5">identifier</a> of every <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-4">interface</a>, <a data-link-type="dfn" href="#dfn-dictionary" id="ref-for-dfn-dictionary-3">dictionary</a>, <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-2">enumeration</a>, <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-2">callback function</a> and <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-4">typedef</a> must not
     be the same as the identifier of any other <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-5">interface</a>, <a data-link-type="dfn" href="#dfn-dictionary" id="ref-for-dfn-dictionary-4">dictionary</a>, <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-3">enumeration</a>, <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-3">callback function</a> or <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-5">typedef</a>. </p>
@@ -2256,9 +2256,9 @@ interface B : A {
         only a <emu-val>Function</emu-val> object (in the ECMAScript
         language binding). </p>
    </div>
-    Issue: Perhaps this warning shouldn’t apply if you are planning to extend the callback
+   <p class="issue" id="issue-eff1d914"><a class="self-link" href="#issue-eff1d914"></a> Perhaps this warning shouldn’t apply if you are planning to extend the callback
 interface in the future.  That’s probably a good reason to start off with a single
-operation callback interface. 
+operation callback interface.</p>
    <p class="issue" id="issue-ea745550"><a class="self-link" href="#issue-ea745550"></a> I think we need to support operations not being implemented on a given
 user object implementing a callback interface.  If specs extending an existing
 callback interface, we probably want to be able to avoid calling the
@@ -2316,8 +2316,8 @@ partial interface <em>SomeInterface</em> {
 editorial aide, allowing the definition of an interface to be separated
 over more than one section of the document, and sometimes multiple documents.</p>
    <p> The order of appearance of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-8">interface</a> definition and any of its <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-3">partial interface</a> definitions does not matter. </p>
-    Note: A partial interface definition cannot specify that the interface <a data-link-type="dfn" href="#dfn-inherit" id="ref-for-dfn-inherit-4">inherits</a> from another interface.
-Inheritance must be specified on the original <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-9">interface</a> definition. 
+   <p class="note" role="note">Note: A partial interface definition cannot specify that the interface <a data-link-type="dfn" href="#dfn-inherit" id="ref-for-dfn-inherit-4">inherits</a> from another interface.
+Inheritance must be specified on the original <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-9">interface</a> definition.</p>
    <p> <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-4">Extended attributes</a> can be specified on <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-4">partial interface</a> definitions, with some
     limitations.  The following extended attributes must not
     be specified on partial interface definitions:
@@ -2326,13 +2326,13 @@ Inheritance must be specified on the original <a data-link-type="dfn" href="#dfn
     [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-1">LegacyArrayClass</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-1">NamedConstructor</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-1">NoInterfaceObject</a></code>]. </p>
-    Note: The above list of <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-5">extended attributes</a> is all of those defined in this document that are applicable to <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-10">interfaces</a> except for
+   <p class="note" role="note">Note: The above list of <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-5">extended attributes</a> is all of those defined in this document that are applicable to <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-10">interfaces</a> except for
 [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-1">Exposed</a></code>],
 [<code class="idl"><a data-link-type="idl">Global</a></code>],
 [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-1">OverrideBuiltins</a></code>],
 [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>],
 [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-1">SecureContext</a></code>] and
-[<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-1">Unforgeable</a></code>]. 
+[<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-1">Unforgeable</a></code>].</p>
    <p> Any <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-6">extended attribute</a> specified
     on a <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-5">partial interface</a> definition
     is considered to appear on the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-11">interface</a> itself. </p>
@@ -2466,17 +2466,17 @@ callback interface EventListener {
    <h4 class="heading settled" data-level="4.2.1" id="idl-constants"><span class="secno">4.2.1. </span><span class="content">Constants</span><a class="self-link" href="#idl-constants"></a></h4>
    <p> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-constant">constant</dfn> is a declaration (matching <a class="sym" href="#prod-Const">Const</a>) used to bind a constant value to a name.
     Constants can appear on <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-14">interfaces</a>. </p>
-    Advisement: Constants have in the past primarily been used to define
+    <strong class="advisement"> Constants have in the past primarily been used to define
 named integer codes in the style of an enumeration.  The Web platform
 is moving away from this design pattern in favor of the use of strings.
 Specification authors who wish to define constants are strongly advised to discuss
-this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. 
+this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
 <pre class="syntax">const <i>type</i> <i>identifier</i> = <i>value</i>;</pre>
    <p> The <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-10">identifier</a> of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-4">constant</a> must not be the same as the identifier
     of another <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-2">interface member</a> defined on the same interface.
     The identifier also must not
     be “length”, “name” or “prototype”. </p>
-    Note: These three names are the names of properties that exist on all <emu-val>Function</emu-val> objects. 
+   <p class="note" role="note">Note: These three names are the names of properties that exist on all <emu-val>Function</emu-val> objects.</p>
    <p> The type of a constant (matching <a class="sym" href="#prod-ConstType">ConstType</a>)
     must not be any type other than
     a <a data-link-type="dfn" href="#dfn-primitive-type" id="ref-for-dfn-primitive-type-1">primitive type</a> or a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-1">nullable</a> primitive type.
@@ -2489,8 +2489,8 @@ this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.o
     a <a class="sym" href="#prod-float">float</a> token,
     or one of the three special floating point constant values
     (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>). </p>
-    Note: These values – in addition to strings and the empty sequence – can also be used to specify the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-1">default value of a dictionary member</a> or <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-2">of an optional argument</a>.  Note that strings and the
-empty sequence <code>[]</code> cannot be used as the value of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-5">constant</a>. 
+   <p class="note" role="note">Note: These values – in addition to strings and the empty sequence – can also be used to specify the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-1">default value of a dictionary member</a> or <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-2">of an optional argument</a>.  Note that strings and the
+empty sequence <code>[]</code> cannot be used as the value of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-5">constant</a>.</p>
    <p> The value of the boolean literal tokens <code>true</code> and <code>false</code> are the IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-1">boolean</a></code> values <span class="idlvalue">true</span> and <span class="idlvalue">false</span>. </p>
    <p> The value of an <a class="sym" href="#prod-integer">integer</a> token is an integer
     whose value is determined as follows: </p>
@@ -2802,8 +2802,8 @@ interface Person : Animal {
     of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-11">constant</a> or <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-9">attribute</a> defined on the same <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-21">interface</a>.
     The identifier of a static operation must not
     be “prototype”. </p>
-    Note: The identifier can be the same as that of another operation on the
-interface, however.  This is how operation overloading is specified. 
+   <p class="note" role="note">Note: The identifier can be the same as that of another operation on the
+interface, however.  This is how operation overloading is specified.</p>
    <p> The <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-17">identifier</a> of a <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-4">static operation</a> also must not be the same as the identifier
     of a <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-3">regular operation</a> defined on the same <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-22">interface</a>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-return-type">return type</dfn> of the operation is given
@@ -2816,8 +2816,8 @@ interface, however.  This is how operation overloading is specified.
    <p> An operation’s arguments (matching <a class="sym" href="#prod-ArgumentList">ArgumentList</a>)
     are given between the parentheses in the declaration.  Each individual argument is specified
     as a type (matching <a class="sym" href="#prod-Type">Type</a>) followed by an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-20">identifier</a> (matching <a class="sym" href="#prod-ArgumentName">ArgumentName</a>). </p>
-    Note: For expressiveness, the identifier of an operation argument can also be specified
-as one of the keywords matching the <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> symbol without needing to escape it. 
+   <p class="note" role="note">Note: For expressiveness, the identifier of an operation argument can also be specified
+as one of the keywords matching the <a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> symbol without needing to escape it.</p>
    <p> If the <a class="sym" href="#prod-Type">Type</a> of an operation argument is an identifier
     followed by <code>?</code>,
     then the identifier must identify an interface, <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-6">enumeration</a>, <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-9">callback function</a> or <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-9">typedef</a>.
@@ -3205,11 +3205,11 @@ legacycaller <i>return-type</i> (<i>arguments…</i>);
     is used to determine which legacy caller is invoked when the object is called
     as if it were a function. </p>
    <p> Legacy callers must not be defined to return a <a href="#idl-promise" id="ref-for-idl-promise-1">promise type</a>. </p>
-    Advisement: Legacy callers are universally recognised as an undesirable feature.  They exist
+    <strong class="advisement"> Legacy callers are universally recognised as an undesirable feature.  They exist
 only so that legacy Web platform features can be specified.  Legacy callers
 should not be used in specifications unless required to
 specify the behavior of legacy APIs, and even then this should be discussed on
-the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. 
+the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
    <div class="example" id="example-abef87ab">
     <a class="self-link" href="#example-abef87ab"></a> 
     <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-19">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-29">interface</a> with a <a data-link-type="dfn">legacy caller</a>. </p>
@@ -3347,8 +3347,8 @@ interface Student {
    </ul>
    <p> How the <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-1">serialization behavior</a> is made available on an object in a language binding, and how exactly the abstract <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-3">serialized value</a> is converted into
     an appropriate concrete value, is language binding specific. </p>
-    Note: In the ECMAScript language binding, <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-2">serialization behavior</a> is exposed as a <code>toJSON</code> method which returns the <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-4">serialized value</a> converted
-into an ECMAScript value that can be serialized to JSON by the <code>JSON.stringify</code> function.  See <a href="#es-serializer">§5.6.7.2 Serializers</a> for details. 
+   <p class="note" role="note">Note: In the ECMAScript language binding, <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-2">serialization behavior</a> is exposed as a <code>toJSON</code> method which returns the <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-4">serialized value</a> converted
+into an ECMAScript value that can be serialized to JSON by the <code>JSON.stringify</code> function.  See <a href="#es-serializer">§5.6.7.2 Serializers</a> for details.</p>
    <p> <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-3">Serialization behavior</a> can also be specified directly in IDL, rather than separately as prose.
     This is done by following the <code>serializer</code> keyword with
     a <span class="char">U+003D EQUALS SIGN ("=")</span> character and
@@ -4253,8 +4253,8 @@ partial interface A {
     <li> Both types are either a union type or nullable union type, and each member type of the one
         is distinguishable with each member type of the other. 
    </ol>
-    Note: Promise types do not appear in the above table, and as a consequence
-are not distinguishable with any other type. 
+   <p class="note" role="note">Note: Promise types do not appear in the above table, and as a consequence
+are not distinguishable with any other type.</p>
    <p> If there is more than one entry in an <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-3">effective overload set</a> that has a given type list length, then for those entries there
     must be an index <var>i</var> such
     that for each pair of entries the types at index <var>i</var> are <a data-link-type="dfn" href="#dfn-distinguishable" id="ref-for-dfn-distinguishable-1">distinguishable</a>.
@@ -4298,8 +4298,8 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>>;
 </pre>
    <p> Objects implementing an interface that is declared to be iterable
     support being iterated over to obtain a sequence of values. </p>
-    Note: In the ECMAScript language binding, an interface that is iterable
-will have “entries”, “forEach”, “keys”, “values” and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> properties on its <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-1">interface prototype object</a>. 
+   <p class="note" role="note">Note: In the ECMAScript language binding, an interface that is iterable
+will have “entries”, “forEach”, “keys”, “values” and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> properties on its <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-1">interface prototype object</a>.</p>
    <p> If a single type parameter is given, then the interface has a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-value-iterator">value iterator</dfn> and provides
     values of the specified type.
     If two type parameters are given, then the interface has a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-pair-iterator">pair iterator</dfn> and provides
@@ -4324,10 +4324,10 @@ will have “entries”, “forEach”, “keys”, “values” and <a data-lin
         Set.protoype.forEach (where the key is the same as the value).
         If you’re creating an API that needs such a forEach method, please send a request to <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>. </p>
    </div>
-    Note: This is how <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a> work.
+   <p class="note" role="note">Note: This is how <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a> work.
 For interfaces that <a data-link-type="dfn" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-6">support indexed properties</a>,
 the iterator objects returned by “entries”, “keys”, “values” and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> are
-actual <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>. 
+actual <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>.</p>
    <p> Interfaces with iterable declarations must not
     have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a> named “entries”, “keys” or “values”,
     or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-3">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-2">consequential</a> interfaces that have interface members with these names. </p>
@@ -4418,21 +4418,21 @@ maplike&lt;<i>key-type</i>, <i>value-type</i>>;
    <p> Maplike interfaces support an API for querying the map entries
     appropriate for the language binding.  If the <code>readonly</code> keyword is not used, then it also supports an API for modifying
     the map entries. </p>
-    Note: In the ECMAScript language binding, the API for interacting
+   <p class="note" role="note">Note: In the ECMAScript language binding, the API for interacting
 with the map entries is similar to that available on ECMAScript <emu-val>Map</emu-val> objects.  If the <code>readonly</code> keyword is used, this includes “entries”, “forEach”, “get”, “has”,
 “keys”, “values”, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
 For read–write maplikes, it also includes “clear”, “delete” and
-“set” methods. 
+“set” methods.</p>
    <p> Maplike interfaces must not
     have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-7">interface members</a> named “entries”, “forEach”, “get”, “has”, “keys”, “size”, or “values”,
     or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-6">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-5">consequential</a> interfaces that have interface members with these names.
     Read–write maplike interfaces must not
     have any <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-12">attributes</a> or <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-13">constants</a> named
     “clear”, “delete”, or “set”, or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-7">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-6">consequential</a> interfaces that have attributes or constants with these names. </p>
-    Note: Operations named “clear”, “delete”, or “set” are allowed on read–write maplike
+   <p class="note" role="note">Note: Operations named “clear”, “delete”, or “set” are allowed on read–write maplike
 interfaces and will prevent the default implementation of these methods being
 added to the interface prototype object in the ECMAScript language binding.
-This allows the default behavior of these operations to be overridden. 
+This allows the default behavior of these operations to be overridden.</p>
    <p> An interface must not have more than one <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-2">maplike declaration</a>.
     The <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-8">inherited</a> and <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-7">consequential</a> interfaces of a maplike interface must not
     also have a <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-3">maplike declaration</a>.
@@ -4461,7 +4461,7 @@ This allows the default behavior of these operations to be overridden.
       <td class="prod-rhs"><span class="prod-lines">"maplike" "&lt;" <a class="sym" href="#prod-Type">Type</a> "," <a class="sym" href="#prod-Type">Type</a> ">" ";"</span>
    </table>
    <p> No <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-16">extended attributes</a> defined in this specification are applicable to <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-4">maplike declarations</a>. </p>
-    Issue: Add example. 
+   <p class="issue" id="issue-dbe4d1af"><a class="self-link" href="#issue-dbe4d1af"></a> Add example.</p>
    <h4 class="heading settled" data-level="4.2.9" id="idl-setlike"><span class="secno">4.2.9. </span><span class="content">Setlike declarations</span><a class="self-link" href="#idl-setlike"></a></h4>
    <p> An <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-46">interface</a> can be declared to be <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-setlike">setlike</dfn> by using a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-setlike-declaration">setlike declaration</dfn> (matching <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a> or <span class="sym">"readonly"</span> <a class="sym" href="#prod-SetlikeRest">SetlikeRest</a>) in the body of the interface. </p>
 <pre class="syntax">readonly setlike&lt;<i>type</i>>;
@@ -4478,20 +4478,20 @@ setlike&lt;<i>type</i>>;
    <p> Setlike interfaces support an API for querying the set entries
     appropriate for the language binding.  If the <code>readonly</code> keyword is not used, then it also supports an API for modifying
     the set entries. </p>
-    Note: In the ECMAScript language binding, the API for interacting
+   <p class="note" role="note">Note: In the ECMAScript language binding, the API for interacting
 with the set entries is similar to that available on ECMAScript <emu-val>Set</emu-val> objects.  If the <code>readonly</code> keyword is used, this includes “entries”, “forEach”, “has”,
 “keys”, “values”, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
-For read–write setlikes, it also includes “add”, “clear”, and “delete” methods. 
+For read–write setlikes, it also includes “add”, “clear”, and “delete” methods.</p>
    <p> Setlike interfaces must not
     have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-8">interface members</a> named “entries”, “forEach”, “has”, “keys”, “size”, or “values”,
     or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-10">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-9">consequential</a> interfaces that have interface members with these names..
     Read–write setlike interfaces must not
     have any <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-13">attributes</a> or <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-14">constants</a> named
     “add”, “clear”, or “delete”, or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-11">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-10">consequential</a> interfaces that have attributes or constants with these names. </p>
-    Note: Operations named “add”, “clear”, or “delete” are allowed on read–write setlike
+   <p class="note" role="note">Note: Operations named “add”, “clear”, or “delete” are allowed on read–write setlike
 interfaces and will prevent the default implementation of these methods being
 added to the interface prototype object in the ECMAScript language binding.
-This allows the default behavior of these operations to be overridden. 
+This allows the default behavior of these operations to be overridden.</p>
    <p> An interface must not have more than one <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-3">setlike declaration</a>.
     The <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-12">inherited</a> and <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-11">consequential</a> interfaces of a setlike interface must not
     also have a <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-4">setlike declaration</a>.
@@ -4520,7 +4520,7 @@ This allows the default behavior of these operations to be overridden.
       <td class="prod-rhs"><span class="prod-lines">"setlike" "&lt;" <a class="sym" href="#prod-Type">Type</a> ">" ";"</span>
    </table>
    <p> No <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-17">extended attributes</a> defined in this specification are applicable to <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-5">setlike declarations</a>. </p>
-    Issue: Add example. 
+   <p class="issue" id="issue-dbe4d1af0"><a class="self-link" href="#issue-dbe4d1af0"></a> Add example.</p>
    <h3 class="heading settled" data-level="4.3" id="idl-dictionaries"><span class="secno">4.3. </span><span class="content">Dictionaries</span><a class="self-link" href="#idl-dictionaries"></a></h3>
    <p> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-dictionary">dictionary</dfn> is a definition (matching <a class="sym" href="#prod-Dictionary">Dictionary</a>)
     used to define an associative array data type with a fixed, ordered set of key–value pairs,
@@ -4560,10 +4560,10 @@ dictionary <i>Derived</i> : <em>Base</em> {
     the value to use for the dictionary member when passing a value to a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-6">platform object</a> that does
     not have a specified value.  Dictionary members with default values are
     always considered to be present. </p>
-    Advisement: As with <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-8">operation argument default values</a>,
+    <strong class="advisement"> As with <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-8">operation argument default values</a>,
 is strongly suggested not to use of <span class="idlvalue">true</span> as the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-9">default value</a> for <emu-val>boolean</emu-val>-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-4">dictionary members</a>,
 as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>). 
+conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).</strong> 
    <p> Each <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-5">dictionary member</a> (matching <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a>) is specified
     as a type (matching <a class="sym" href="#prod-Type">Type</a>) followed by an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-33">identifier</a> (given by an <a class="sym" href="#prod-identifier">identifier</a> token following
     the type).  The identifier is the key name of the key–value pair.
@@ -4822,8 +4822,8 @@ interface GraphicsContext {
     Exceptions can also be <dfn class="dfn-paneled" data-dfn-for="exception" data-dfn-type="dfn" data-export="" data-lt="throw|thrown" id="dfn-throw">thrown</dfn>, by providing the
     same details required to <a data-link-type="dfn" href="#dfn-create-exception" id="ref-for-dfn-create-exception-1">create</a> one. </p>
    <p> The resulting behavior from creating and throwing an exception is language binding-specific. </p>
-    Note: See <a href="#es-creating-throwing-exceptions">§5.13 Creating and throwing exceptions</a> for details on what creating and throwing an exception
-entails in the ECMAScript language binding. 
+   <p class="note" role="note">Note: See <a href="#es-creating-throwing-exceptions">§5.13 Creating and throwing exceptions</a> for details on what creating and throwing an exception
+entails in the ECMAScript language binding.</p>
    <div class="example" id="example-fcbe120f">
     <a class="self-link" href="#example-fcbe120f"></a> 
     <p> Here is are some examples of wording to use to create and throw exceptions.
@@ -4985,21 +4985,21 @@ entails in the ECMAScript language binding.
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="enumeration value" id="dfn-enumeration-value">enumeration values</dfn> are specified
     as a comma-separated list of <a class="sym" href="#prod-string">string</a> literals.
     The list of <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-3">enumeration values</a> must not include duplicates. </p>
-    Advisement: It is strongly suggested that enumeration values be all lowercase,
+    <strong class="advisement"> It is strongly suggested that enumeration values be all lowercase,
 and that multiple words be separated using dashes or not be
 separated at all, unless there is a specific reason to use another
 value naming scheme.  For example, an enumeration value that
 indicates an object should be created could be named <code>"createobject"</code> or <code>'create-object"</code>.
 Consider related uses of enumeration values when deciding whether
 to dash-separate or not separate enumeration value words so that
-similar APIs are consistent. 
+similar APIs are consistent.</strong> 
    <p> The behavior when a string value that is not one a valid enumeration value
     is used when assigning to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-17">attribute</a>,
     or passed as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-24">operation</a> argument,
     whose type is the enumeration, is language binding specific. </p>
-    Note: In the ECMAScript binding, assignment of an invalid string value to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-18">attribute</a> is ignored, while
+   <p class="note" role="note">Note: In the ECMAScript binding, assignment of an invalid string value to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-18">attribute</a> is ignored, while
 passing such a value as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-25">operation</a> argument
-results in an exception being thrown. 
+results in an exception being thrown.</p>
    <p> No <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-18">extended attributes</a> defined in this specification are applicable to <a class="dnfref" href="#dfn-enumeration" id="ref-for-dfn-enumeration-12">enumerations</a>. </p>
    <table class="grammar">
     <tbody>
@@ -5199,7 +5199,7 @@ Gizmo implements MoreFunctionality;
     be any member defined on any of its consequential interfaces
     whose identifier is the same as any other member defined on any
     of those consequential interfaces or on the original interface itself. </p>
-    Note: For example, that precludes the following: 
+   <p class="note" role="note">Note: For example, that precludes the following:</p>
    <p> No <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-20">extended attributes</a> defined in this specification are applicable to <a data-link-type="dfn" href="#dfn-implements-statement" id="ref-for-dfn-implements-statement-5">implements statements</a>. </p>
    <table class="grammar">
     <tbody>
@@ -5459,10 +5459,10 @@ Entry implements Observable;
    <p> <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-6">float</a></code> constant values in IDL are
     represented with <a class="sym" href="#prod-float">float</a> tokens. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-11">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-7">float</a></code> type is “Float”. </p>
-    Advisement: Unless there are specific reasons to use a 32 bit floating point type,
+    <strong class="advisement"> Unless there are specific reasons to use a 32 bit floating point type,
 specifications should use <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-9">double</a></code> rather than <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-8">float</a></code>,
 since the set of values that a <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-10">double</a></code> can
-represent more closely matches an ECMAScript <emu-val>Number</emu-val>. 
+represent more closely matches an ECMAScript <emu-val>Number</emu-val>.</strong> 
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.12" data-lt="unrestricted float" id="idl-unrestricted-float"><span class="secno">4.10.12. </span><span class="content">unrestricted float</span><span id="dom-unrestrictedfloat"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-5">unrestricted float</a></code> type is a floating point numeric
     type that corresponds to the set of all possible single-precision 32 bit
@@ -5492,9 +5492,9 @@ represent more closely matches an ECMAScript <emu-val>Number</emu-val>.
     this document defines <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-21">DOMString</a></code> to be an intrinsic type so as to avoid
     special casing that sequence type in various situations where a
     string is required. </p>
-    Note: Note also that <span class="idlvalue">null</span> is not a value of type <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-22">DOMString</a></code>.
+   <p class="note" role="note">Note: Note also that <span class="idlvalue">null</span> is not a value of type <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-22">DOMString</a></code>.
 To allow <span class="idlvalue">null</span>, a <a href="#idl-nullable-type">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-23">DOMString</a></code>,
-written as <code>DOMString?</code> in IDL, needs to be used. 
+written as <code>DOMString?</code> in IDL, needs to be used.</p>
    <p> Nothing in this specification requires a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-24">DOMString</a></code> value to be a valid UTF-16 string.  For example, a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-25">DOMString</a></code> value might include unmatched surrogate pair characters.  However, authors
     of specifications using Web IDL might want to obtain a sequence of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> given a particular sequence of <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-2">code units</a>.
     The following algorithm defines a way to <dfn data-dfn-type="dfn" data-export="" data-lt="obtain Unicode|convert to a sequence of Unicode scalar values" id="dfn-obtain-unicode">convert a DOMString to a sequence of Unicode scalar values<a class="self-link" href="#dfn-obtain-unicode"></a></dfn>: </p>
@@ -5549,12 +5549,12 @@ written as <code>DOMString?</code> in IDL, needs to be used.
     Such sequences might be interpreted as UTF-8 encoded strings <a data-link-type="biblio" href="#biblio-rfc3629">[RFC3629]</a> or strings in some other 8-bit-per-code-unit encoding, although this is not required. </p>
    <p> There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-5">ByteString</a></code> value in IDL. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-16">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-6">ByteString</a></code> type is “ByteString”. </p>
-    Advisement: Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-7">ByteString</a></code> for interfacing with protocols
+    <strong class="advisement"> Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-7">ByteString</a></code> for interfacing with protocols
 that use bytes and strings interchangably, such as HTTP.  In general,
 strings should be represented with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-30">DOMString</a></code> values, even if it is expected
 that values of the string will always be in ASCII or some
 8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
-8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-typedarray">[TYPEDARRAY]</a> 
+8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-typedarray">[TYPEDARRAY]</a></strong> 
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.17" data-lt="USVString" id="idl-USVString"><span class="secno">4.10.17. </span><span class="content">USVString</span><span id="dom-USVString"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-5">USVString</a></code> type
     corresponds to the set of all possible sequences of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a>,
@@ -5563,11 +5563,11 @@ that values of the string will always be in ASCII or some
    <p> There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-6">USVString</a></code> value in IDL, although <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-7">USVString</a></code> <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-10">dictionary member</a> and <a data-link-type="dfn" href="#dfn-optional-argument" id="ref-for-dfn-optional-argument-9">operation optional argument</a> default values
     can be specified using a <a class="sym" href="#prod-string">string</a> literal. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-17">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-8">USVString</a></code> type is “USVString”. </p>
-    Advisement: Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-9">USVString</a></code> for APIs that perform
+    <strong class="advisement"> Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-9">USVString</a></code> for APIs that perform
 text processing and need a string of Unicode
 scalar values to operate on.  Most APIs that use strings
 should instead be using <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-31">DOMString</a></code>,
-which does not make any interpretations of the <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-4">code units</a> in the string.  When in doubt, use <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-32">DOMString</a></code>. 
+which does not make any interpretations of the <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-4">code units</a> in the string.  When in doubt, use <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-32">DOMString</a></code>.</strong> 
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.18" data-lt="object" id="idl-object"><span class="secno">4.10.18. </span><span class="content">object</span><span id="dom-object"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-2">object</a></code> type corresponds to the set of
     all possible non-null object references. </p>
@@ -5585,9 +5585,9 @@ which does not make any interpretations of the <a data-link-type="dfn" href="#df
     The <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-1">callback context</a> is a language
     binding specific value, and is used to store information about the execution context at
     the time the language binding specific object reference is converted to an IDL value. </p>
-    Note: For ECMAScript objects, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-2">callback context</a> is used
+   <p class="note" role="note">Note: For ECMAScript objects, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-2">callback context</a> is used
 to hold a reference to the <a data-link-type="dfn" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a> at the time the <emu-val>Object</emu-val> value
-is converted to an IDL callback interface type value.  See <a href="#es-interface">§5.2.20 Interface types</a>. 
+is converted to an IDL callback interface type value.  See <a href="#es-interface">§5.2.20 Interface types</a>.</p>
    <p> There is no way to represent a constant object reference value for
     a particular interface type in IDL. </p>
    <p> To denote a type that includes all possible references to objects implementing
@@ -5616,9 +5616,9 @@ is converted to an IDL callback interface type value.  See <a href="#es-interfac
     a type whose values are references to objects that are functions with the given signature. </p>
    <p> An IDL value of the callback function type is represented by a tuple of an object
     reference and a <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-3">callback context</a>. </p>
-    Note: As with <a href="#idl-interface" id="ref-for-idl-interface-3">callback interface types</a>, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-4">callback context</a> is used
+   <p class="note" role="note">Note: As with <a href="#idl-interface" id="ref-for-idl-interface-3">callback interface types</a>, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-4">callback context</a> is used
 to hold a reference to the <a data-link-type="dfn" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a> at the time an ECMAScript <emu-val>Object</emu-val> value
-is converted to an IDL callback function type value.  See <a href="#es-callback-function">§5.2.23 Callback function types</a>. 
+is converted to an IDL callback function type value.  See <a href="#es-callback-function">§5.2.23 Callback function types</a>.</p>
    <p> There is no way to represent a constant <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-18">callback function</a> value in IDL. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-22">type name</a> of a callback function type
     is the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-47">identifier</a> of the callback function. </p>
@@ -5628,8 +5628,8 @@ is converted to an IDL callback function type value.  See <a href="#es-callback-
     which just allows the additional value <span class="idlvalue">null</span> to be a member of its set of values. <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-11">Nullable types</a> are represented in IDL by placing a <span class="char">U+003F QUESTION MARK ("?")</span> character after an existing type.  The inner type must not
     be <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-6">any</a></code>,
     another nullable type, or a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-7">union type</a> that itself has <a data-link-type="dfn" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-2">includes a nullable type</a> or has a dictionary type as one of its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-4">flattened member types</a>. </p>
-    Note: Although dictionary types can in general be nullable, they cannot when used
-as the type of an operation argument or a dictionary member. 
+   <p class="note" role="note">Note: Although dictionary types can in general be nullable, they cannot when used
+as the type of an operation argument or a dictionary member.</p>
    <p> Nullable type constant values in IDL are represented in the same way that
     constant values of their <a data-link-type="dfn" href="#dfn-inner-type" id="ref-for-dfn-inner-type-5">inner type</a> would be represented, or with the <code>null</code> token. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-23">type name</a> of a nullable type
@@ -5662,11 +5662,11 @@ as the type of an operation argument or a dictionary member.
    <p> There is no way to represent a constant sequence value in IDL. </p>
    <p> Sequences must not be used as the
     type of an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-22">attribute</a> or <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-18">constant</a>. </p>
-    Note: This restriction exists so that it is clear to specification writers
+   <p class="note" role="note">Note: This restriction exists so that it is clear to specification writers
 and API users that <a href="#idl-sequence" id="ref-for-idl-sequence-8">sequences</a> are copied rather than having references
 to them passed around.  Instead of a writable <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-23">attribute</a> of a sequence
 type, it is suggested that a pair of <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-28">operations</a> to get and set the
-sequence is used. 
+sequence is used.</p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-24">type name</a> of a sequence type
     is the concatenation of the type name for <var>T</var> and
     the string “Sequence”. </p>
@@ -5713,7 +5713,7 @@ sequence is used.
      </ol>
     <li>Return <var>S</var>.
    </ol>
-    Note: For example, the <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-6">flattened member types</a> of the <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-13">union type</a> <code>(Node or (sequence&lt;long> or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double> or NodeList)>)</code> are the six types <code>Node</code>, <code>sequence&lt;long></code>, <code>Event</code>, <code>XMLHttpRequest</code>, <code>DOMString</code> and <code>sequence&lt;(sequence&lt;double> or NodeList)></code>. 
+   <p class="note" role="note">Note: For example, the <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-6">flattened member types</a> of the <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-13">union type</a> <code>(Node or (sequence&lt;long> or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double> or NodeList)>)</code> are the six types <code>Node</code>, <code>sequence&lt;long></code>, <code>Event</code>, <code>XMLHttpRequest</code>, <code>DOMString</code> and <code>sequence&lt;(sequence&lt;double> or NodeList)></code>.</p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-number-of-nullable-member-types">number of nullable member types</dfn> of a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-14">union type</a> is an integer
     determined as follows: </p>
    <ol class="algorithm">
@@ -5834,7 +5834,7 @@ representing <a data-link-type="dfn">DOMExceptions</a>.</p>
       <td> <dfn data-dfn-type="dfn" data-noexport="" id="idl-Float32Array" idl="">Float32Array<a class="self-link" href="#idl-Float32Array"></a></dfn>,<br> <dfn data-dfn-type="dfn" data-noexport="" id="idl-Float64Array" idl="">Float64Array<a class="self-link" href="#idl-Float64Array"></a></dfn>
       <td>A view on to an <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code> that exposes it as an array of IEEE 754 floating point numbers of the given size in bits
    </table>
-    Note: These types all correspond to classes defined in ECMAScript. 
+   <p class="note" role="note">Note: These types all correspond to classes defined in ECMAScript.</p>
    <p> To <dfn class="dfn-paneled" data-dfn-for="ArrayBuffer" data-dfn-type="dfn" data-export="" id="dfn-detach">detach</dfn> an <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code> is to set its buffer pointer to <span class="idlvalue">null</span>. </p>
    <p> There is no way to represent a constant value of any of these types in IDL. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-30">type name</a> of all
@@ -5859,9 +5859,9 @@ representing <a data-link-type="dfn">DOMExceptions</a>.</p>
         to use the <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code> type rather than <code class="idl"><a data-link-type="idl">Uint8Array</a></code>. </p>
    </div>
    <p> Attempting to <a data-link-type="dfn">get a reference to</a> or <a data-link-type="dfn">get a copy of the bytes held by a buffer source</a> when the <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code> has been <a data-link-type="dfn" href="#dfn-detach" id="ref-for-dfn-detach-1">detached</a> will fail in a language binding-specific manner. </p>
-    Note: See <a href="#es-buffer-source-types">§5.2.31 Buffer source types</a> below for
-how interacting with buffer source types works in the ECMAScript language binding.
-Issue: We should include an example of specification text that uses these types and terms. 
+   <p class="note" role="note">Note: See <a href="#es-buffer-source-types">§5.2.31 Buffer source types</a> below for
+how interacting with buffer source types works in the ECMAScript language binding.</p>
+   <p class="issue" id="issue-2379a917"><a class="self-link" href="#issue-2379a917"></a> We should include an example of specification text that uses these types and terms.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.31" data-lt="FrozenArray|FrozenArray<T>" id="idl-frozen-array"><span class="secno">4.10.31. </span><span class="content">Frozen arrays — FrozenArray&lt;<var>T</var>></span><span id="dom-FrozenArray"></span></h4>
    <p> A <dfn data-dfn-type="dfn" data-export="" id="dfn-frozen-array-type">frozen array type<a class="self-link" href="#dfn-frozen-array-type"></a></dfn> is a parameterized
     type whose values are references to objects that hold a fixed length array
@@ -6041,12 +6041,12 @@ Issue: We should include an example of specification text that uses these types 
     more of the following are redefined in accordance with the rules for exotic objects: <span class="prop">[[Call]]</span>, <span class="prop">[[Set]]</span>, <span class="prop">[[DefineOwnProperty]]</span>, <span class="prop">[[GetOwnProperty]]</span>, <span class="prop">[[Delete]]</span> and <span class="prop">[[HasInstance]]</span>. </p>
    <p> Other specifications may override the definitions
     of any internal method of a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-8">platform object</a> that is an instance of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-52">interface</a>. </p>
-    Advisement: As overriding internal ECMAScript object methods is a low level operation and
+    <strong class="advisement"> As overriding internal ECMAScript object methods is a low level operation and
 can result in objects that behave differently from ordinary objects,
 this facility should not be used unless necessary
 for security or compatibility.  The expectation is that this will be used
 for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
-and possibly WindowProxy objects</a>. 
+and possibly WindowProxy objects</a>.</strong> 
    <p> Unless otherwise specified, the <span class="prop">[[Extensible]]</span> internal property
     of objects defined in this section has the value <emu-val>true</emu-val>. </p>
    <p> Unless otherwise specified, the <span class="prop">[[Prototype]]</span> internal property
@@ -6056,9 +6056,9 @@ and possibly WindowProxy objects</a>.
     If an object has a class string, then the object must,
     at the time it is created, have a property whose name is the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol
     and whose value is the specified string. </p>
-    Issue: Should define whether <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
+   <p class="issue" id="issue-788163ca"><a class="self-link" href="#issue-788163ca"></a> Should define whether <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
 All <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
-and configurable. 
+and configurable.</p>
    <p> If an object is defined to be a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-function-object">function object</dfn>, then
     it has characteristics as follows: </p>
    <ul>
@@ -6067,7 +6067,7 @@ and configurable.
     <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.
     <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.
    </ul>
-    Issue: The list above needs updating for the latest ES6 draft. 
+   <p class="issue" id="issue-459a816a"><a class="self-link" href="#issue-459a816a"></a> The list above needs updating for the latest ES6 draft.</p>
    <p id="ecmascript-abstractop"> Algorithms in this section use the conventions described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262 section 5.2</a>, such as the use of steps and substeps, the use of mathematical
     operations, and so on.  The <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toboolean">ToBoolean</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-touint16">ToUint16</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toint32">ToInt32</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isaccessordescriptor">IsAccessorDescriptor</a> and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a> abstract operations and the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type(x)</a> notation referenced in this section are defined in ECMA-262 sections 6 and 7. </p>
    <p id="ecmascript-throw"> When an algorithm says to “throw a <b><i>Something</i>Error</b>” then this means to
@@ -6147,8 +6147,8 @@ and configurable.
    <p> Unless otherwise specified, each ECMAScript global environment <dfn class="dfn-paneled" data-dfn-for="ECMAScript global environment" data-dfn-type="dfn" data-export="" id="dfn-expose">exposes</dfn> all <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-53">interfaces</a> that the implementation supports.  If a given ECMAScript global environment does not
     expose an interface, then the requirements given in <a href="#es-interfaces">§5.6 Interfaces</a> are
     not followed for that interface. </p>
-    Note: This allows, for example, ECMAScript global environments for Web Workers to <a data-link-type="dfn" href="#dfn-expose" id="ref-for-dfn-expose-1">expose</a> different sets of supported interfaces from those exposed in environments
-for Web pages. 
+   <p class="note" role="note">Note: This allows, for example, ECMAScript global environments for Web Workers to <a data-link-type="dfn" href="#dfn-expose" id="ref-for-dfn-expose-1">expose</a> different sets of supported interfaces from those exposed in environments
+for Web pages.</p>
    <p> Although at the time of this writing the ECMAScript specification does not reflect this,
     every ECMAScript object must have an <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-associated-realm">associated <a class="external" data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a></dfn>. The mechanisms
     for associating objects with Realms are, for now, underspecified. However, we note that
@@ -6573,10 +6573,10 @@ for Web pages.
     <li> If <var>y</var> is +0 and <var>x</var> is negative, return −0. 
     <li> Return <var>y</var>. 
    </ol>
-    Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
+   <p class="note" role="note">Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
 it must be canonicalized to a particular single precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
-value when its bit pattern is interpreted as an unsigned 32 bit integer. 
+value when its bit pattern is interpreted as an unsigned 32 bit integer.</p>
    <p id="unrestricted-float-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-11">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-10">unrestricted float</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val>: </p>
    <ul>
@@ -6606,10 +6606,10 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
     <li> Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-13">unrestricted double</a></code> value
         that has the same numeric value as <var>x</var>. 
    </ol>
-    Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
+   <p class="note" role="note">Note: Since there is only a single ECMAScript <emu-val>NaN</emu-val> value,
 it must be canonicalized to a particular double precision IEEE 754 NaN value.  The NaN value
 mentioned above is chosen simply because it is the quiet NaN with the lowest
-value when its bit pattern is interpreted as an unsigned 64 bit integer. 
+value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
    <p id="unrestricted-double-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-13">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-14">unrestricted double</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val>: </p>
    <ul>
@@ -6738,8 +6738,8 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
      </ol>
     <li>Return <var>dict</var>.
    </ol>
-    Note: The order that <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-33">dictionary members</a> are looked
-up on the ECMAScript object are not necessarily the same as the object’s property enumeration order. 
+   <p class="note" role="note">Note: The order that <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-33">dictionary members</a> are looked
+up on the ECMAScript object are not necessarily the same as the object’s property enumeration order.</p>
    <p id="dictionary-to-es"> An IDL dictionary value <var>V</var> is <a data-link-type="dfn">converted</a> to an ECMAScript <emu-val>Object</emu-val> value
     by running the following algorithm (where <var>D</var> is the <a data-link-type="dfn" href="#dfn-dictionary" id="ref-for-dfn-dictionary-11">dictionary</a>): </p>
    <ol class="algorithm">
@@ -6985,7 +6985,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>If <var>then</var> is not <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>, then <a class="dfnref external" href="#ecmascript-throw">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the result of calling <var>then</var> with <var>promise</var> as the <emu-val>this</emu-val> value and <var>onFulfilled</var> and <var>onRejected</var> as its two arguments.
    </ol>
-    Issue: Include an example of how to write spec text using this term. 
+   <p class="issue" id="issue-efe8490d"><a class="self-link" href="#issue-efe8490d"></a> Include an example of how to write spec text using this term.</p>
    <h4 class="heading settled" data-level="5.2.27" id="es-union"><span class="secno">5.2.27. </span><span class="content">Union types</span><a class="self-link" href="#es-union"></a></h4>
    <p> IDL <a href="#idl-union">union type</a> values are
     represented by ECMAScript values that correspond to the union’s <a data-link-type="dfn" href="#dfn-union-member-type" id="ref-for-dfn-union-member-type-10">member types</a>. </p>
@@ -7435,9 +7435,9 @@ interface Circle {
     <li>the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a> for the ECMAScript global object is a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a>; or
     <li>the interface or interface member is not <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-1">available only in secure contexts</a>.
    </ul>
-    Note: Since it is not possible for the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a> for an ECMAScript global object to change whether it is a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a> or not over time, an implementation’s
+   <p class="note" role="note">Note: Since it is not possible for the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a> for an ECMAScript global object to change whether it is a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a> or not over time, an implementation’s
 decision to create properties for an interface or interface member
-can be made once, at the time the <a data-link-type="dfn" href="#dfn-initial-object" id="ref-for-dfn-initial-object-3">initial objects</a> are created. 
+can be made once, at the time the <a data-link-type="dfn" href="#dfn-initial-object" id="ref-for-dfn-initial-object-3">initial objects</a> are created.</p>
    <p> See <a href="#es-interfaces">§5.6 Interfaces</a>, <a href="#es-constants">§5.6.5 Constants</a>, <a href="#es-attributes">§5.6.6 Attributes</a>, <a href="#es-operations">§5.6.7 Operations</a> and <a href="#es-iterators">§5.6.8 Common iterator behavior</a> for the specific requirements that the use of
     [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-16">Exposed</a></code>] entails. </p>
    <div class="example" id="example-f64321dc">
@@ -7496,8 +7496,8 @@ interface Node {
     extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-4">take no arguments</a>. </p>
    <p> See <a href="#es-operations">§5.6.7 Operations</a> for the specific requirements that the use of
     [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-5">ImplicitThis</a></code>] entails. </p>
-    Note: The [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-6">ImplicitThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-50">extended attribute</a> is intended for use on the <span class="idltype">Window</span> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-61">interface</a> as defined
-in HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2). 
+   <p class="note" role="note">Note: The [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-6">ImplicitThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-50">extended attribute</a> is intended for use on the <span class="idltype">Window</span> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-61">interface</a> as defined
+in HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).</p>
    <div class="example" id="example-f1da16d2">
     <a class="self-link" href="#example-f1da16d2"></a> 
     <p>In the following example, the <span class="idltype">Window</span> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-62">interface</a> is defined
@@ -7574,10 +7574,10 @@ interface Window {
    <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-54">extended attribute</a> must not
     be used on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-66">interface</a> that can have more
     than one object implementing it in the same ECMAScript global environment. </p>
-    Note: This is because the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-4">named properties object</a>,
+   <p class="note" role="note">Note: This is because the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-4">named properties object</a>,
 which exposes the named properties, is in the prototype chain, and it would not make
 sense for more than one object’s named properties to be exposed on an object that
-all of those objects inherit from. 
+all of those objects inherit from.</p>
    <p> If an interface is declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
     [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-55">extended attribute</a>, then
     there must not be more than one <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-14">interface member</a> across
@@ -7586,8 +7586,8 @@ all of those objects inherit from.
     one <a data-link-type="dfn" href="#dfn-stringifier" id="ref-for-dfn-stringifier-2">stringifier</a>,
     more than one <a data-link-type="dfn" href="#dfn-serializer" id="ref-for-dfn-serializer-4">serializer</a>,
     or more than one <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-8">iterable declaration</a>, <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-6">maplike declaration</a> or <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-6">setlike declaration</a> across those interfaces. </p>
-    Note: This is because all of the members of the interface and its consequential
-interfaces get flattened down on to the object that implements the interface. 
+   <p class="note" role="note">Note: This is because all of the members of the interface and its consequential
+interfaces get flattened down on to the object that implements the interface.</p>
    <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and
     [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attributes
     can also be used to give a name to one or more global interfaces,
@@ -7599,8 +7599,8 @@ interfaces get flattened down on to the object that implements the interface.
    <p> If the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
     [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-56">extended attribute</a> is declared with an identifier list argument, then those identifiers are the interface’s <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-global-name">global names</dfn>; otherwise, the interface has
     a single global name, which is the interface’s identifier. </p>
-    Note: The identifier argument list exists so that more than one global interface can
-be addressed with a single name in an [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-19">Exposed</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-57">extended attribute</a>. 
+   <p class="note" role="note">Note: The identifier argument list exists so that more than one global interface can
+be addressed with a single name in an [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-19">Exposed</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-57">extended attribute</a>.</p>
    <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and
     [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-58">extended attributes</a> must not be declared on the same
     interface.  The [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
@@ -7665,10 +7665,10 @@ interface Window {
     must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-6">take no arguments</a>.
     It must not be used on an interface that
     has any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-14">inherited interfaces</a>. </p>
-    Note: Interfaces using [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-5">LegacyArrayClass</a></code>] will
+   <p class="note" role="note">Note: Interfaces using [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-5">LegacyArrayClass</a></code>] will
 need to define a “length” <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-45">attribute</a> of type <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-16">unsigned long</a></code> that exposes the length
 of the array-like object, in order for the inherited <emu-val>Array</emu-val> methods to operate correctly.  Such interfaces would typically also <a data-link-type="dfn" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-7">support indexed properties</a>,
-which would provide access to the array elements. 
+which would provide access to the array elements.</p>
    <p> See <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a> for the
     specific requirements that the use of [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-6">LegacyArrayClass</a></code>]
     entails. </p>
@@ -7774,9 +7774,9 @@ interface ImmutableItemList {
    <p> The [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-4">LenientThis</a></code>] extended attribute
     must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-9">take no arguments</a>.
     It must not be used on a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-7">static attribute</a>. </p>
-    Advisement: Specifications should not use [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-5">LenientThis</a></code>]
+    <strong class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-5">LenientThis</a></code>]
 unless required for compatibility reasons.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. 
+wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
    <p> See the <a href="#es-attributes">Attributes</a> section for how
     [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-6">LenientThis</a></code>]
     is to be implemented. </p>
@@ -7883,11 +7883,11 @@ interface HTMLAudioElement : HTMLMediaElement {
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="extended-attribute" data-export="" data-level="5.3.13" data-lt="NoInterfaceObject" id="NoInterfaceObject"><span class="secno">5.3.13. </span><span class="content">[NoInterfaceObject]</span></h4>
    <p> If the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-4">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-66">extended attribute</a> appears on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-72">interface</a>,
     it indicates that an <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-5">interface object</a> will not exist for the interface in the ECMAScript binding. </p>
-    Advisement: The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-5">NoInterfaceObject</a></code>] extended attribute
+    <strong class="advisement"> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-5">NoInterfaceObject</a></code>] extended attribute
 should not be used on interfaces that are not
 solely used as <a data-link-type="dfn">supplemental</a> interfaces,
 unless there are clear Web compatibility reasons for doing so.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. 
+wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
    <p> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-6">NoInterfaceObject</a></code>] extended attribute
     must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-11">take no arguments</a>. </p>
    <p> If the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-7">NoInterfaceObject</a></code>] extended attribute
@@ -8176,8 +8176,8 @@ interface Person {
       <dd>The interface member is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-6">available only in secure contexts</a> if and only if the interface or partial interface the member is declared on is.
      </dl>
    </ul>
-    Note: Whether a construct is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-7">available only in secure contexts</a> influences whether it is <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed-1">exposed</a> in a given
-ECMAScript global environment. 
+   <p class="note" role="note">Note: Whether a construct is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-7">available only in secure contexts</a> influences whether it is <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed-1">exposed</a> in a given
+ECMAScript global environment.</p>
    <p> If [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-14">SecureContext</a></code>] appears on an <a data-link-type="dfn" href="#dfn-overloaded" id="ref-for-dfn-overloaded-3">overloaded</a> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-58">operation</a>,
     then it must appear on all overloads. </p>
    <p> The [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-15">SecureContext</a></code>] extended attribute
@@ -8211,14 +8211,14 @@ ECMAScript global environment.
    <p> If the [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-5">TreatNonObjectAsNull</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-76">extended attribute</a> appears on a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-22">callback function</a>,
     then it indicates that any value assigned to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-56">attribute</a> whose type is a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-24">nullable</a> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-23">callback function</a> that is not an object will be converted to
     the <span class="idlvalue">null</span> value. </p>
-    Advisement: Specifications should not use [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-6">TreatNonObjectAsNull</a></code>]
+    <strong class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-6">TreatNonObjectAsNull</a></code>]
 unless required to specify the behavior of legacy APIs or for consistency with these
 APIs.  Specification authors who
 wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.  At the time of writing, the only known
 valid use of [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-7">TreatNonObjectAsNull</a></code>]
 is for the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-24">callback functions</a> used as the type
 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a> (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 6.1.6.1)
-such as <code>onclick</code> and <code>onerror</code>. 
+such as <code>onclick</code> and <code>onerror</code>.</strong> 
    <p> See <a href="#es-nullable-type">§5.2.24 Nullable types — T?</a> for the specific requirements that the use of
     [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-8">TreatNonObjectAsNull</a></code>] entails. </p>
    <div class="example" id="example-e23213c7">
@@ -8273,8 +8273,8 @@ interface Manager {
    <p> The [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs-11">TreatNullAs</a></code>] extended attribute
     must not be specified on an operation argument,
     attribute or operation return value whose type is not <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-44">DOMString</a></code>. </p>
-    Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
-use [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs-12">TreatNullAs</a></code>], since <span class="idlvalue">null</span> is a valid value of that type. 
+   <p class="note" role="note">Note: This means that even an attribute of type <span class="idltype">DOMString?</span> must not
+use [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs-12">TreatNullAs</a></code>], since <span class="idlvalue">null</span> is a valid value of that type.</p>
    <p> The [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs-13">TreatNullAs</a></code>] extended attribute
     also must not be specified on an operation on
     a non-callback interface. </p>
@@ -8342,7 +8342,7 @@ use [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-T
     it must appear on all operations with
     the same <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-53">identifier</a> on that interface. </p>
    <p> If an attribute or operation <var>X</var> is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-1">unforgeable</a> on an interface <var>A</var>, and <var>A</var> is one of the <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-15">inherited interfaces</a> of another interface <var>B</var>, then <var>B</var> and all of its <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-20">consequential interfaces</a> must not have a non-static attribute or <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-10">regular operation</a> with the same <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-54">identifier</a> as <var>X</var>. </p>
-    Note: For example, the following is disallowed: 
+   <p class="note" role="note">Note: For example, the following is disallowed:</p>
    <p> See <a href="#es-attributes">§5.6.6 Attributes</a>, <a href="#es-operations">§5.6.7 Operations</a>, <a href="#es-platform-objects">§5.8 Platform objects implementing interfaces</a>, <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of
     [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-12">Unforgeable</a></code>] entails. </p>
    <div class="example" id="example-cb10f9f7">
@@ -8423,9 +8423,9 @@ use [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-T
         “getter” or “setter” (when it corresponds to the
     getter or setter function of an IDL attribute).
    </ol>
-    Note: The expectation is that the HTML specification defines how a
+   <p class="note" role="note">Note: The expectation is that the HTML specification defines how a
 security check is performed, and that it will either throw an
-appropriate exception or return normally. <a data-link-type="biblio" href="#biblio-html">[HTML]</a> 
+appropriate exception or return normally. <a data-link-type="biblio" href="#biblio-html">[HTML]</a></p>
    <h3 class="heading settled" data-level="5.5" id="es-overloads"><span class="secno">5.5. </span><span class="content">Overload resolution algorithm</span><a class="self-link" href="#es-overloads"></a></h3>
    <p> In order to define how overloaded function invocations are resolved, the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-overload-resolution-algorithm">overload resolution algorithm</dfn> is defined.  Its input is an <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-4">effective overload set</a>, <var>S</var>, and a list of ECMAScript values, <var>arg</var><sub>0..<var>n</var>−1</sub>.
     Its output is a pair consisting of the <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-66">operation</a> or <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-85">extended attribute</a> of one of <var>S</var>’s entries
@@ -8789,13 +8789,13 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is an object called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-interface-prototype-object">interface prototype object</dfn>.  This object has properties
     that correspond to the <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-12">regular attributes</a> and <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-13">regular operations</a> defined on the interface,
     and is described in more detail in <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a>. </p>
-    Note: Since an interface object for a non-callback interface is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-4">function object</a> the <code>typeof</code> operator will return <emu-val>"function"</emu-val> when applied to
-such an interface object. 
+   <p class="note" role="note">Note: Since an interface object for a non-callback interface is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-4">function object</a> the <code>typeof</code> operator will return <emu-val>"function"</emu-val> when applied to
+such an interface object.</p>
    <p> The internal <span class="esprop">[[Prototype]]</span> property
     of an interface object for a callback interface must be
     the Object.prototype object. </p>
-    Note: Remember that interface objects for callback interfaces only exist if they have <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-22">constants</a> declared on them;
-when they do exist, they are not <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-5">function objects</a>. 
+   <p class="note" role="note">Note: Remember that interface objects for callback interfaces only exist if they have <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-22">constants</a> declared on them;
+when they do exist, they are not <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-5">function objects</a>.</p>
    <h5 class="heading settled" data-level="5.6.1.1" id="es-interface-call"><span class="secno">5.6.1.1. </span><span class="content">Interface object [[Call]] method</span><a class="self-link" href="#es-interface-call"></a></h5>
    <p> If the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-85">interface</a> is declared with a
     [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-20">Constructor</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-88">extended attribute</a>,
@@ -9185,9 +9185,9 @@ partial interface Window {
             property is a <emu-val>String</emu-val> whose value is the
         concatenation of “set ” and the identifier of the attribute.</p>
    </ul>
-    Note: Although there is only a single property for an IDL attribute, since
+   <p class="note" role="note">Note: Although there is only a single property for an IDL attribute, since
 accessor property getters and setters are passed a <emu-val>this</emu-val> value for the object on which property corresponding to the IDL attribute is
-accessed, they are able to expose instance-specific data. 
+accessed, they are able to expose instance-specific data.</p>
    <p class="note" role="note">Note: Note that attempting to assign to a property corresponding to a <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only-14">read only</a> <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-71">attribute</a> results in different behavior depending on whether the script doing so is in strict mode.
 When in strict mode, such an assignment will result in a <emu-val>TypeError</emu-val> being thrown.  When not in strict mode, the assignment attempt will be ignored.</p>
    <h4 class="heading settled" data-level="5.6.7" id="es-operations"><span class="secno">5.6.7. </span><span class="content">Operations</span><a class="self-link" href="#es-operations"></a></h4>
@@ -9704,9 +9704,9 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     <li>its <em>kind</em>, which is the iteration kind,
     <li>its <em>index</em>, which is the current index into the values value to be iterated.
    </ol>
-    Note: Default iterator objects are only used for <a data-link-type="dfn" href="#dfn-pair-iterator" id="ref-for-dfn-pair-iterator-10">pair iterators</a>; <a data-link-type="dfn" href="#dfn-value-iterator" id="ref-for-dfn-value-iterator-10">value iterators</a>, as they are currently
+   <p class="note" role="note">Note: Default iterator objects are only used for <a data-link-type="dfn" href="#dfn-pair-iterator" id="ref-for-dfn-pair-iterator-10">pair iterators</a>; <a data-link-type="dfn" href="#dfn-value-iterator" id="ref-for-dfn-value-iterator-10">value iterators</a>, as they are currently
 restricted to iterating over an object’s <a class="dfnref" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-8">supported indexed properties</a>,
-use standard ECMAScript Array iterator objects. 
+use standard ECMAScript Array iterator objects.</p>
    <p> When a <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-5">default iterator object</a> is first created,
     its index is set to 0. </p>
    <p> The <a data-link-type="dfn" href="#dfn-class-string" id="ref-for-dfn-class-string-3">class string</a> of a <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-6">default iterator object</a> for a given <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-126">interface</a> is the result of concatenting the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-79">identifier</a> of the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-127">interface</a> and
@@ -10286,8 +10286,8 @@ C implements A;
      </ol>
     <li>Return true.
    </ol>
-    Note: This should ensure that for objects with named properties, property resolution is done in the following order:
-[[]] 
+   <p class="note" role="note">Note: This should ensure that for objects with named properties, property resolution is done in the following order:
+[[]]</p>
    <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.8.2" data-lt="The PlatformObjectGetOwnProperty abstract operation" data-noexport="" id="getownproperty-guts"><span class="secno">5.8.2. </span><span class="content">The PlatformObjectGetOwnProperty abstract operation</span></h4>
    <p> The <span class="prop">PlatformObjectGetOwnProperty</span> abstract operation performs the following steps when called with an
     object <var>O</var>, a property name <var>P</var>, and a boolean <var>ignoreNamedProps</var> value: </p>
@@ -10503,7 +10503,7 @@ C implements A;
     <li>Finally, any enumerable own properties or properties from the object’s prototype chain are then enumerated,
     in no defined order.
    </ol>
-    Note: Future versions of the ECMAScript specification may define a total order for property enumeration. 
+   <p class="note" role="note">Note: Future versions of the ECMAScript specification may define a total order for property enumeration.</p>
    <h3 class="heading settled" data-level="5.9" id="es-user-objects"><span class="secno">5.9. </span><span class="content">User objects implementing callback interfaces</span><a class="self-link" href="#es-user-objects"></a></h3>
    <p> As described in <a href="#idl-objects">§4.9 Objects implementing interfaces</a>, <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-26">callback interfaces</a> can be
     implemented in script by an ECMAScript object.
@@ -10774,13 +10774,13 @@ C implements A;
    <p> The value of the internal <span class="prop">[[Prototype]]</span> property of a <a data-link-type="dfn">DOMException</a> object must be the <a data-link-type="dfn" href="#dfn-DOMException-prototype-object" id="ref-for-dfn-DOMException-prototype-object-4">DOMException prototype object</a> from the global environment the exception object is associated with. </p>
    <p> The <a data-link-type="dfn" href="#dfn-class-string" id="ref-for-dfn-class-string-7">class string</a> of a <a data-link-type="dfn">DOMException</a> object
     must be “DOMException”. </p>
-    Note: The intention is for DOMException objects to be just like the other
+   <p class="note" role="note">Note: The intention is for DOMException objects to be just like the other
 various native <emu-val>Error</emu-val> objects that the
 ECMAScript specification defines, apart from responding differently
 to being passed to Object.prototype.toString and it having a “code” property.
 If an implementation places non-standard properties on native <emu-val>Error</emu-val> objects, exposing for example
 stack traces or error line numbers, then these ought to be exposed
-on exception objects too. 
+on exception objects too.</p>
    <h3 class="heading settled" data-level="5.13" id="es-creating-throwing-exceptions"><span class="secno">5.13. </span><span class="content">Creating and throwing exceptions</span><a class="self-link" href="#es-creating-throwing-exceptions"></a></h3>
    <p> First, we define the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-current-global-environment">current global environment</dfn> as the result of running the following algorithm: </p>
    <ol class="algorithm">
@@ -11734,7 +11734,7 @@ interface ExceptionThrower {
       <td class="prod-mid">→
       <td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span>
    </table>
-    Note: The <a class="sym" href="#prod-Other">Other</a> non-terminal matches any single terminal symbol except for <span class="sym">"("</span>, <span class="sym">")"</span>, <span class="sym">"["</span>, <span class="sym">"]"</span>, <span class="sym">"{"</span>, <span class="sym">"}"</span> and <span class="sym">","</span>. 
+   <p class="note" role="note">Note: The <a class="sym" href="#prod-Other">Other</a> non-terminal matches any single terminal symbol except for <span class="sym">"("</span>, <span class="sym">")"</span>, <span class="sym">"["</span>, <span class="sym">"]"</span>, <span class="sym">"{"</span>, <span class="sym">"}"</span> and <span class="sym">","</span>.</p>
    <p> While the <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> non-terminal matches any non-empty sequence of terminal symbols (as long as any
     parentheses, square brackets or braces are balanced, and the <span class="sym">","</span> token appears only within those balanced brackets),
     only a subset of those
@@ -12465,6 +12465,9 @@ interface ExceptionThrower {
   </dl>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
+   <div class="issue"> Perhaps this warning shouldn’t apply if you are planning to extend the callback
+interface in the future.  That’s probably a good reason to start off with a single
+operation callback interface.<a href="#issue-eff1d914"> ↵ </a></div>
    <div class="issue"> I think we need to support operations not being implemented on a given
 user object implementing a callback interface.  If specs extending an existing
 callback interface, we probably want to be able to avoid calling the
@@ -12472,13 +12475,21 @@ operations that aren’t implemented (and having some default behavior instead).
 So we should perhaps define a term that means whether the operation is
 implemented, which in the ECMAScript binding would correspond to checking
 for the property’s existence.<a href="#issue-ea745550"> ↵ </a></div>
+   <div class="issue"> Add example.<a href="#issue-dbe4d1af"> ↵ </a></div>
+   <div class="issue"> Add example.<a href="#issue-dbe4d1af0"> ↵ </a></div>
    <div class="issue"> The “Custom DOM Elements” spec wants to use callback function types for
 platform object provided functions.  Should we rename “callback functions” to
 just “functions” to make it clear that they can be used for both purposes?<a href="#issue-124549c2"> ↵ </a></div>
+   <div class="issue"> We should include an example of specification text that uses these types and terms.<a href="#issue-2379a917"> ↵ </a></div>
+   <div class="issue"> Should define whether <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
+All <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
+and configurable.<a href="#issue-788163ca"> ↵ </a></div>
+   <div class="issue"> The list above needs updating for the latest ES6 draft.<a href="#issue-459a816a"> ↵ </a></div>
    <div class="issue">
     <p>ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.</p>
      <a href="#issue-358c6f5b"> ↵ </a>
    </div>
+   <div class="issue"> Include an example of how to write spec text using this term.<a href="#issue-efe8490d"> ↵ </a></div>
    <div class="issue">
     <p>Can the script author observe that <var>callbackWrapper</var> might be a new function
                 every time forEach is called?  What’s the best way of specifying that there’s only
