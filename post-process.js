@@ -88,7 +88,7 @@ reader.on("line", function(line) {
     
     // Cleanup empty string tags (e.g. <dfn export=""> => <dfn export>).
     line = line.replace(/<[a-z1-6]+\s+[^>]+>/g, function(tag) {
-        return tag.replace(/([a-z-]+)=""/, "$1")
+        return tag.replace(/([a-z-]+)=""/g, "$1")
     });
     
     if (intro || closed[0] == "html") {
