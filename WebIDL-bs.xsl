@@ -75,6 +75,7 @@ TR: </xsl:text>
 </xsl:text>
     </xsl:for-each>
 <xsl:text>Ignored Vars: callback, op, ownDesc, exampleVariableName, target
+Boilerplate: omit issues-index
 </xsl:text>
 </pre>
 <xsl:text>

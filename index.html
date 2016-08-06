@@ -1434,7 +1434,6 @@ font-weight: bold;
      <dd><span><a href="mailto:public-webapps@w3.org?subject=%5BWebIDL%5D%20YOUR%20TOPIC%20HERE">public-webapps@w3.org</a> with subject line “<kbd>[WebIDL] <i data-lt="">… message topic …</i></kbd>” (<a href="http://lists.w3.org/Archives/Public/public-webapps/" rel="discussion">archives</a>)</span>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/tobie/webidl/issues/">GitHub</a>
-     <dd><a href="#issues-index">Inline In Spec</a>
      <dt class="editor">Editors:
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="http://mcc.id.au/">Cameron McCormack</a> (<span class="p-org org">Mozilla Corporation</span>) <a class="u-email email" href="mailto:cam@mcc.id.au">cam@mcc.id.au</a>
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:bzbarsky@mit.edu">Boris Zbarsky</a> (<span class="p-org org">Mozilla Corporation</span>)
@@ -1771,7 +1770,6 @@ are interoperable.</p>
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
       <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
-    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
    </ol>
   </nav>
   <main>
@@ -12455,34 +12453,6 @@ interface ExceptionThrower {
    <dt id="biblio-xml-names">[XML-NAMES]
    <dd>Tim Bray; et al. <a href="https://www.w3.org/TR/xml-names">Namespaces in XML 1.0 (Third Edition)</a>. 8 December 2009. REC. URL: <a href="https://www.w3.org/TR/xml-names">https://www.w3.org/TR/xml-names</a>
   </dl>
-  <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
-  <div style="counter-reset:issue">
-   <div class="issue"> Perhaps this warning shouldn’t apply if you are planning to extend the callback
-interface in the future.  That’s probably a good reason to start off with a single
-operation callback interface.<a href="#issue-eff1d914"> ↵ </a></div>
-   <div class="issue"> I think we need to support operations not being implemented on a given
-user object implementing a callback interface.  If specs extending an existing
-callback interface, we probably want to be able to avoid calling the
-operations that aren’t implemented (and having some default behavior instead).
-So we should perhaps define a term that means whether the operation is
-implemented, which in the ECMAScript binding would correspond to checking
-for the property’s existence.<a href="#issue-ea745550"> ↵ </a></div>
-   <div class="issue"> Add example.<a href="#issue-dbe4d1af"> ↵ </a></div>
-   <div class="issue"> Add example.<a href="#issue-dbe4d1af0"> ↵ </a></div>
-   <div class="issue"> The “Custom DOM Elements” spec wants to use callback function types for
-platform object provided functions.  Should we rename “callback functions” to
-just “functions” to make it clear that they can be used for both purposes?<a href="#issue-124549c2"> ↵ </a></div>
-   <div class="issue"> We should include an example of specification text that uses these types and terms.<a href="#issue-2379a917"> ↵ </a></div>
-   <div class="issue"> Should define whether <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
-All <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
-and configurable.<a href="#issue-788163ca"> ↵ </a></div>
-   <div class="issue"> The list above needs updating for the latest ES6 draft.<a href="#issue-459a816a"> ↵ </a></div>
-   <div class="issue"> ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.<a href="#issue-5afa3eb0"> ↵ </a></div>
-   <div class="issue"> Include an example of how to write spec text using this term.<a href="#issue-efe8490d"> ↵ </a></div>
-   <div class="issue"> Can the script author observe that <var>callbackWrapper</var> might be a new function
-        every time forEach is called?  What’s the best way of specifying that there’s only
-        one function that has captured an environment?<a href="#issue-fc46dbc6"> ↵ </a></div>
-  </div>
   <aside class="dfn-panel" data-for="dfn-example-term">
    <b><a href="#dfn-example-term">#dfn-example-term</a></b><b>Referenced in:</b>
    <ul>
