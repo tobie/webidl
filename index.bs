@@ -7870,7 +7870,16 @@ Issue: Include an example of how to write spec text using this term.
         <a href="#ecmascript-throw" class="dfnref external">Throw a <emu-val>TypeError</emu-val></a>.
     </li>
 </ol>
-[[]]
+<p id="union-to-es">
+    An IDL union type value is
+    [=converted to an ECMAScript value=]
+    as follows.  If the value is an {{object}}
+    reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val>
+    value, then it is converted to the ECMAScript
+    <emu-val>undefined</emu-val> value.  Otherwise,
+    the rules for converting the [=specific type=]
+    of the IDL union type value as described in this section ([[#es-type-mapping]]).
+</p>
 
 
 
@@ -12970,7 +12979,15 @@ use standard ECMAScript Array iterator objects.
         </li>
     </ol>
 </div>
-[[]]
+<p>
+    Support for [=getters=] is
+    handled by the <a href="#getownproperty">platform object \[[GetOwnProperty]] method</a>
+    defined in section [[#getownproperty]], and
+    for [=setters=]
+    by the <a href="#defineownproperty">platform object \[[DefineOwnProperty]] method</a>
+    defined in section [[#defineownproperty]] and the <a href="#platformobjectset">platform object \[[Set]] method</a>
+    defined in section [[#platformobjectset]].
+</p>
 
 
 

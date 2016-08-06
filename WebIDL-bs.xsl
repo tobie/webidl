@@ -272,9 +272,15 @@ TR: </xsl:text>
     </table>
   </xsl:template>
 
-  <xsl:template match='*[processing-instruction("sref")]'>
+  <xsl:template match='h:a[processing-instruction("sref")]'>
       <xsl:text>[[</xsl:text><xsl:value-of select='./@href'/><xsl:text>]]</xsl:text>
   </xsl:template>
+  
+  <xsl:template match='processing-instruction("sref")[not(parent::h:a)]'>
+      <xsl:text>[[#</xsl:text><xsl:value-of select='.'/><xsl:text>]]</xsl:text>
+  </xsl:template>
+  
+  
 
   <xsl:template match='processing-instruction("sdir")' />
   
