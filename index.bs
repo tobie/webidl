@@ -185,7 +185,7 @@ font-weight: bold;
 
 <h2 id="introduction">Introduction</h2>
 
-<p class="norm">This section is informative.</p>
+<p><i>This section is informative.</i></p>
 
 <p>
     Technical reports published by the W3C that include programming
@@ -14071,7 +14071,7 @@ on exception objects too.
 
 <h2 id="extensibility">Extensibility</h2>
 
-<p class="norm">This section is informative.</p>
+<p><i>This section is informative.</i></p>
 
 <p>
     Extensions to language binding requirements can be specified
@@ -14095,7 +14095,7 @@ on exception objects too.
 
 <h2 id="referencing">Referencing this specification</h2>
 
-<p class="norm">This section is informative.</p>
+<p><i>This section is informative.</i></p>
 
 <p>
     It is expected that other specifications that define Web platform interfaces
@@ -14131,7 +14131,7 @@ on exception objects too.
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-<p class="norm">This section is informative.</p>
+<p><i>This section is informative.</i></p>
 
 <p>
     The editor would like to thank the following people for contributing
@@ -14539,7 +14539,7 @@ and <span class="sym">","</span>.
 
 <h2 class="no-num">Changes</h2>
 
-<p class="norm">This section is informative.</p>
+<p><i>This section is informative.</i></p>
 
 <p>
     The following is a list of substantial changes to the document on each publication.

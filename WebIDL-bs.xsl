@@ -255,6 +255,12 @@ TR: </xsl:text>
     </xsl:choose>
   </xsl:template>
   
+  <xsl:template match='h:p[@class="norm"]'>
+    <p>
+      <i><xsl:apply-templates select='node()'/></i>
+    </p>
+  </xsl:template>
+  
   <xsl:template match='processing-instruction("productions")'>
     <xsl:variable name='id' select='substring-before(., " ")'/>
     <xsl:variable name='names' select='concat(" ", substring-after(., " "), " ")'/>
