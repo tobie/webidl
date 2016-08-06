@@ -2320,9 +2320,9 @@ Inheritance must be specified on the original <a data-link-type="dfn" href="#dfn
     [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-1">NoInterfaceObject</a></code>]. </p>
    <p class="note" role="note">Note: The above list of <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-5">extended attributes</a> is all of those defined in this document that are applicable to <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-10">interfaces</a> except for
 [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-1">Exposed</a></code>],
-[<code class="idl"><a data-link-type="idl">Global</a></code>],
+[<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-1">Global</a></code>],
 [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-1">OverrideBuiltins</a></code>],
-[<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>],
+[<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-2">PrimaryGlobal</a></code>],
 [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-1">SecureContext</a></code>] and
 [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-1">Unforgeable</a></code>].</p>
    <p> Any <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-6">extended attribute</a> specified
@@ -2333,13 +2333,13 @@ Inheritance must be specified on the original <a data-link-type="dfn" href="#dfn
    <p> The following extended attributes are applicable to interfaces:
     [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-3">Constructor</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-2">Exposed</a></code>],
-    [<code class="idl"><a data-link-type="idl">Global</a></code>],
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-3">Global</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-2">ImplicitThis</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-2">LegacyArrayClass</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-2">NamedConstructor</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-2">NoInterfaceObject</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-2">OverrideBuiltins</a></code>],
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>],
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-4">PrimaryGlobal</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-2">SecureContext</a></code>],
     [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-2">Unforgeable</a></code>]. </p>
    <table class="grammar">
@@ -3186,8 +3186,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
    <p> Special operations must not be declared on <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-7">callback interfaces</a>. </p>
    <p> If an object implements more than one <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-27">interface</a> that defines a given special operation, then it is undefined which (if any)
     special operation is invoked for that operation. </p>
-   <h5 class="heading settled" data-level="4.2.4.1" id="idl-legacy-callers"><span class="secno">4.2.4.1. </span><span class="content">Legacy callers</span><a class="self-link" href="#idl-legacy-callers"></a></h5>
-   <p> When an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-28">interface</a> has one or more <a data-link-type="dfn">legacy callers</a>, it indicates that objects that implement
+   <h5 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="4.2.4.1" data-lt="Legacy callers" data-noexport="" id="idl-legacy-callers"><span class="secno">4.2.4.1. </span><span class="content">Legacy callers</span></h5>
+   <p> When an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-28">interface</a> has one or more <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-1">legacy callers</a>, it indicates that objects that implement
     the interface can be called as if they were functions.  As mentioned above,
     legacy callers can be specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-9">operation</a> declared with the <code>legacycaller</code> keyword. </p>
 <pre class="syntax">legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
@@ -3204,7 +3204,7 @@ specify the behavior of legacy APIs, and even then this should be discussed on
 the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
    <div class="example" id="example-abef87ab">
     <a class="self-link" href="#example-abef87ab"></a> 
-    <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-19">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-29">interface</a> with a <a data-link-type="dfn">legacy caller</a>. </p>
+    <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-19">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-29">interface</a> with a <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-2">legacy caller</a>. </p>
 <pre class="idl-example">interface NumberQuadrupler {
   // This operation simply returns four times the given number x.
   legacycaller double compute(double x);
@@ -3866,13 +3866,13 @@ interface Circle {
     operations on an object that implements the interface, the
     number and types of the arguments passed to the operation
     determine which of the overloaded operations is actually
-    invoked.  If an interface has multiple <a data-link-type="dfn">legacy callers</a> defined on it,
+    invoked.  If an interface has multiple <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-3">legacy callers</a> defined on it,
     then those legacy callers are also said to be overloaded.
     In the ECMAScript language binding, <a href="#Constructor" id="ref-for-Constructor-5">constructors</a> can be overloaded too.  There are some restrictions on the arguments
     that overloaded operations, legacy callers and constructors can be
     specified to take, and in order to describe these restrictions,
     the notion of an <em>effective overload set</em> is used. </p>
-   <p> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-17">Operations</a> and <a data-link-type="dfn">legacy callers</a> must not be overloaded across <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-36">interface</a> and <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-6">partial interface</a> definitions. </p>
+   <p> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-17">Operations</a> and <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-4">legacy callers</a> must not be overloaded across <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-36">interface</a> and <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-6">partial interface</a> definitions. </p>
    <div class="note" role="note">
     <p> For example, the overloads for both <span class="idltype">f</span> and <span class="idltype">g</span> are disallowed: </p>
 <pre class="idl-example example" id="example-d1ceb570"><a class="self-link" href="#example-d1ceb570"></a>interface A {
@@ -3895,7 +3895,7 @@ partial interface A {
    </div>
    <p> An <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-effective-overload-set">effective overload set</dfn> represents the allowable invocations for a particular <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-18">operation</a>,
     constructor (specified with [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-7">Constructor</a></code>]
-    or [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-5">NamedConstructor</a></code>]), <a data-link-type="dfn">legacy caller</a> or <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-11">callback function</a>.
+    or [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-5">NamedConstructor</a></code>]), <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-5">legacy caller</a> or <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-11">callback function</a>.
     The algorithm to compute an <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-1">effective overload set</a> operates on one of the following six types of IDL constructs, and listed with them below are
     the inputs to the algorithm needed to compute the set. </p>
    <dl>
@@ -3910,7 +3910,7 @@ partial interface A {
     <dt>For legacy callers
     <dd>
      <ul>
-      <li>the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-38">interface</a> on which the <a data-link-type="dfn">legacy callers</a> are to be found
+      <li>the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-38">interface</a> on which the <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-6">legacy callers</a> are to be found
       <li>the number of arguments to be passed
      </ul>
     <dt>For constructors
@@ -3975,7 +3975,7 @@ partial interface A {
       <dt>For named constructors
       <dd> The elements of <var>F</var> are the <a class="sym" href="#NamedConstructor" id="ref-for-NamedConstructor-7">[NamedConstructor]</a> <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-15">extended attributes</a> on interface <var>I</var> whose <a data-link-type="dfn" href="#dfn-xattr-named-argument-list" id="ref-for-dfn-xattr-named-argument-list-2">named argument lists’</a> identifiers are <var>A</var>. 
       <dt>For legacy callers
-      <dd> The elements of <var>F</var> are the <a data-link-type="dfn">legacy callers</a> defined on interface <var>I</var>. 
+      <dd> The elements of <var>F</var> are the <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-7">legacy callers</a> defined on interface <var>I</var>. 
       <dt>For callback functions
       <dd> The single element of <var>F</var> is the callback function itself, <var>C</var>. 
      </dl>
@@ -7506,9 +7506,9 @@ interface Window {
 <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">Window</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">).</span><span class="nx">get</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre>
    </div>
-   <h4 class="heading settled idl-code" data-dfn-type="extended-attribute" data-export="" data-level="5.3.6" data-lt="Global and PrimaryGlobal" id="Global"><span class="secno">5.3.6. </span><span class="content">[Global] and [PrimaryGlobal]</span><span id="PrimaryGlobal"></span><a class="self-link" href="#Global"></a></h4>
-   <p> If the [<code class="idl"><a data-link-type="idl">Global</a></code>]
-    or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-52">extended attribute</a> appears on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-63">interface</a>,
+   <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="extended-attribute" data-export="" data-level="5.3.6" data-lt="Global|PrimaryGlobal" dfn="" id="Global"><span class="secno">5.3.6. </span><span class="content">[Global] and [PrimaryGlobal]</span><span id="PrimaryGlobal"></span></h4>
+   <p> If the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-5">Global</a></code>]
+    or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-6">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-52">extended attribute</a> appears on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-63">interface</a>,
     it indicates that objects implementing this interface can
     be used as the global object in an ECMAScript environment,
     and that the structure of the prototype chain and how
@@ -7540,8 +7540,8 @@ interface Window {
         property would already have been created before the
         assignment is evaluated. </p>
    </div>
-   <p> If the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-53">extended attributes</a> is used on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-65">interface</a>, then: </p>
+   <p> If the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-7">Global</a></code>] or
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-8">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-53">extended attributes</a> is used on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-65">interface</a>, then: </p>
    <ul>
     <li>The interface must not define a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-3">named property setter</a>.
     <li>The interface must not also be declared with the [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-3">OverrideBuiltins</a></code>]
@@ -7550,19 +7550,19 @@ interface Window {
         [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-4">OverrideBuiltins</a></code>] extended attribute.
     <li>Any other interface must not <a data-link-type="dfn" href="#dfn-inherit" id="ref-for-dfn-inherit-12">inherit</a> from it.
    </ul>
-   <p> If [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] is specified on
+   <p> If [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-9">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-10">PrimaryGlobal</a></code>] is specified on
     a <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-9">partial interface</a> definition, then that partial interface definition must
     be the part of the interface definition that defines
     the <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-5">named property getter</a>. </p>
-   <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-54">extended attribute</a> must not
+   <p> The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-11">Global</a></code>] and [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-12">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-54">extended attribute</a> must not
     be used on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-66">interface</a> that can have more
     than one object implementing it in the same ECMAScript global environment. </p>
    <p class="note" role="note">Note: This is because the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-4">named properties object</a>,
 which exposes the named properties, is in the prototype chain, and it would not make
 sense for more than one object’s named properties to be exposed on an object that
 all of those objects inherit from.</p>
-   <p> If an interface is declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-55">extended attribute</a>, then
+   <p> If an interface is declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-13">Global</a></code>] or
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-14">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-55">extended attribute</a>, then
     there must not be more than one <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-14">interface member</a> across
     the interface and its <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-15">consequential interfaces</a> with the same <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-50">identifier</a>.
     There also must not be more than
@@ -7571,35 +7571,35 @@ all of those objects inherit from.</p>
     or more than one <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-8">iterable declaration</a>, <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-6">maplike declaration</a> or <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-6">setlike declaration</a> across those interfaces. </p>
    <p class="note" role="note">Note: This is because all of the members of the interface and its consequential
 interfaces get flattened down on to the object that implements the interface.</p>
-   <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attributes
+   <p> The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-15">Global</a></code>] and
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-16">PrimaryGlobal</a></code>] extended attributes
     can also be used to give a name to one or more global interfaces,
     which can then be referenced by the [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-18">Exposed</a></code>]
     extended attribute. </p>
-   <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
+   <p> The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-17">Global</a></code>] and
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-18">PrimaryGlobal</a></code>]
     extended attributes must either <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-5">take no arguments</a> or <a data-link-type="dfn" href="#dfn-xattr-identifier-list" id="ref-for-dfn-xattr-identifier-list-2">take an identifier list</a>. </p>
-   <p> If the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-56">extended attribute</a> is declared with an identifier list argument, then those identifiers are the interface’s <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-global-name">global names</dfn>; otherwise, the interface has
+   <p> If the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-19">Global</a></code>] or
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-20">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-56">extended attribute</a> is declared with an identifier list argument, then those identifiers are the interface’s <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-global-name">global names</dfn>; otherwise, the interface has
     a single global name, which is the interface’s identifier. </p>
    <p class="note" role="note">Note: The identifier argument list exists so that more than one global interface can
 be addressed with a single name in an [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-19">Exposed</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-57">extended attribute</a>.</p>
-   <p> The [<code class="idl"><a data-link-type="idl">Global</a></code>] and
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-58">extended attributes</a> must not be declared on the same
-    interface.  The [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
+   <p> The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-21">Global</a></code>] and
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-22">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-58">extended attributes</a> must not be declared on the same
+    interface.  The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-23">PrimaryGlobal</a></code>]
     extended attribute must be declared on
-    at most one interface.  The interface [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
+    at most one interface.  The interface [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-24">PrimaryGlobal</a></code>]
     is declared on, if any, is known as the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-primary-global-interface">primary global interface</dfn>. </p>
    <p> See <a href="#named-properties-object">§5.6.4 Named properties object</a>, <a href="#getownproperty">§5.8.3 Platform object [[GetOwnProperty]] method</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of
-    [<code class="idl"><a data-link-type="idl">Global</a></code>] and [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-25">Global</a></code>] and [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-26">PrimaryGlobal</a></code>]
     entails for named properties,
     and <a href="#es-constants">§5.6.5 Constants</a>, <a href="#es-attributes">§5.6.6 Attributes</a> and <a href="#es-operations">§5.6.7 Operations</a> for the requirements relating to the location of properties
     corresponding to <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-15">interface members</a>. </p>
    <div class="example" id="example-4e015f5f">
     <a class="self-link" href="#example-4e015f5f"></a> 
-    <p> The [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-59">extended attribute</a> is intended
+    <p> The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-27">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-59">extended attribute</a> is intended
         to be used by the <span class="idltype">Window</span> interface as defined in
-        HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).  ([<code class="idl"><a data-link-type="idl">Global</a></code>]
+        HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).  ([<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-28">Global</a></code>]
         is intended to be used by worker global interfaces.)
         The <span class="idltype">Window</span> interface exposes frames as properties on the <span class="idltype">Window</span> object.  Since the <span class="idltype">Window</span> object also serves as the
         ECMAScript global object, variable declarations or assignments to the named properties
@@ -7931,8 +7931,8 @@ interface Query {
     same name on the object itself or somewhere on its prototype chain. </p>
    <p> The [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-6">OverrideBuiltins</a></code>]
     extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-12">take no arguments</a> and must not appear on an interface
-    that does not define a <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-7">named property getter</a> or that also is declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>]
-    or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
+    that does not define a <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-7">named property getter</a> or that also is declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-29">Global</a></code>]
+    or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-30">PrimaryGlobal</a></code>]
     extended attribute.  If the extended attribute is specified on
     a <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-10">partial interface</a> definition, then that partial interface definition must
     be the part of the interface definition that defines
@@ -8881,8 +8881,8 @@ when they do exist, they are not <a data-link-type="dfn" href="#dfn-function-obj
    <p> The <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-11">interface prototype object</a> for a given interface <var>A</var> must have an internal <span class="prop">[[Prototype]]</span> property whose value is returned from
     the following steps: </p>
    <ol class="algorithm">
-    <li>If <var>A</var> is declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>]
-        or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-94">extended attribute</a>, and <var>A</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-3">supports named properties</a>, then
+    <li>If <var>A</var> is declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-31">Global</a></code>]
+        or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-32">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-94">extended attribute</a>, and <var>A</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-3">supports named properties</a>, then
         return the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-5">named properties object</a> for <var>A</var>, as defined in <a href="#named-properties-object">§5.6.4 Named properties object</a>.
     <li>Otherwise, if <var>A</var> is declared to inherit from another
         interface, then return the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-12">interface prototype object</a> for the inherited interface.
@@ -8930,8 +8930,8 @@ partial interface Window {
     “Prototype”. </p>
    <h4 class="heading settled" data-level="5.6.4" id="named-properties-object"><span class="secno">5.6.4. </span><span class="content">Named properties object</span><a class="self-link" href="#named-properties-object"></a></h4>
    <p> For every <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-96">interface</a> declared with the
-    [<code class="idl"><a data-link-type="idl">Global</a></code>] or
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-96">extended attribute</a> that <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-4">supports named properties</a>,
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-33">Global</a></code>] or
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-34">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-96">extended attribute</a> that <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-4">supports named properties</a>,
     there must exist an object known as the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-named-properties-object">named properties object</dfn> for that
     interface. </p>
    <p> The <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-6">named properties object</a> for a given interface <var>A</var> must have an internal <span class="prop">[[Prototype]]</span> property whose value is returned from
@@ -8996,11 +8996,11 @@ partial interface Window {
     <li>
       The location of the property is determined as follows: 
      <ul>
-      <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+      <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-35">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-36">PrimaryGlobal</a></code>] extended attribute,
                 then the property exists on the single object that implements the interface.
-      <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-22">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] annotated interface, then
-                the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-                [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+      <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-22">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-37">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-38">PrimaryGlobal</a></code>] annotated interface, then
+                the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-39">Global</a></code>]- or
+                [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-40">PrimaryGlobal</a></code>]-annotated interface as well as on
                 the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-16">interface prototype object</a>.
       <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-17">interface prototype object</a>.
      </ul>
@@ -9023,11 +9023,11 @@ partial interface Window {
       <li>If the attribute is a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-12">static attribute</a>,
                 then there is a single corresponding property and it exists on the interface’s <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-13">interface object</a>.
       <li>Otherwise, if the attribute is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-2">unforgeable</a> on
-                the interface or if the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+                the interface or if the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-41">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-42">PrimaryGlobal</a></code>] extended attribute,
                 then the property exists on every object that implements the interface.
-      <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-24">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-                the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-                [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+      <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-24">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-43">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-44">PrimaryGlobal</a></code>]-annotated interface, then
+                the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-45">Global</a></code>]- or
+                [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-46">PrimaryGlobal</a></code>]-annotated interface as well as on
                 the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-18">interface prototype object</a>.
       <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-19">interface prototype object</a>.
      </ul>
@@ -9179,11 +9179,11 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
       <li>If the operation is <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-14">static</a>, then
                 the property exists on the <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-14">interface object</a>.
       <li>Otherwise, if the operation is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-3">unforgeable</a> on
-                the interface or if the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+                the interface or if the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-47">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-48">PrimaryGlobal</a></code>] extended attribute,
                 then the property exists on every object that implements the interface.
-      <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-25">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-                the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-                [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+      <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-25">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-49">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-50">PrimaryGlobal</a></code>]-annotated interface, then
+                the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-51">Global</a></code>]- or
+                [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-52">PrimaryGlobal</a></code>]-annotated interface as well as on
                 the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-22">interface prototype object</a>.
       <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-23">interface prototype object</a>.
      </ul>
@@ -9266,7 +9266,7 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
    <ul>
     <li>The name of the property is “toString”.
     <li>If the <a data-link-type="dfn" href="#dfn-stringifier" id="ref-for-dfn-stringifier-4">stringifier</a> is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-5">unforgeable</a> on the interface
-        or if the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+        or if the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-53">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-54">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on every object that implements the interface.
         Otherwise, the property exists on the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-25">interface prototype object</a>.
     <li>The property has attributes <span class="descriptor">{ [[Writable]]: <var>B</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>B</var> }</span>,
@@ -9316,11 +9316,11 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <emu-val>Function</emu-val> object. </p>
    <p> The location of the property is determined as follows: </p>
    <ul>
-    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-55">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-56">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on the single object that implements the interface.
-    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-26">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-        [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-26">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-57">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-58">PrimaryGlobal</a></code>]-annotated interface, then
+        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-59">Global</a></code>]- or
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-60">PrimaryGlobal</a></code>]-annotated interface as well as on
         the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-26">interface prototype object</a>.
     <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-27">interface prototype object</a>.
    </ul>
@@ -9417,11 +9417,11 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-7">function object</a>. </p>
    <p> The location of the property is determined as follows: </p>
    <ul>
-    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-61">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-62">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on the single object that implements the interface.
-    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-27">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-        [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-27">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-63">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-64">PrimaryGlobal</a></code>]-annotated interface, then
+        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-65">Global</a></code>]- or
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-66">PrimaryGlobal</a></code>]-annotated interface as well as on
         the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-28">interface prototype object</a>.
     <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-29">interface prototype object</a>.
    </ul>
@@ -9492,11 +9492,11 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-8">function object</a>. </p>
    <p> The location of the property is determined as follows: </p>
    <ul>
-    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-67">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-68">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on the single object that implements the interface.
-    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-28">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-        [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-28">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-69">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-70">PrimaryGlobal</a></code>]-annotated interface, then
+        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-71">Global</a></code>]- or
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-72">PrimaryGlobal</a></code>]-annotated interface as well as on
         the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-30">interface prototype object</a>.
     <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-31">interface prototype object</a>.
    </ul>
@@ -9574,11 +9574,11 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-9">function object</a>. </p>
    <p> The location of the property is determined as follows: </p>
    <ul>
-    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-73">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-74">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on the single object that implements the interface.
-    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-29">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-        [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-29">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-75">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-76">PrimaryGlobal</a></code>]-annotated interface, then
+        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-77">Global</a></code>]- or
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-78">PrimaryGlobal</a></code>]-annotated interface as well as on
         the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-32">interface prototype object</a>.
     <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-33">interface prototype object</a>.
    </ul>
@@ -9594,11 +9594,11 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-10">function object</a>. </p>
    <p> The location of the property is determined as follows: </p>
    <ul>
-    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-79">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-80">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on the single object that implements the interface.
-    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-30">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-        [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-30">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-81">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-82">PrimaryGlobal</a></code>]-annotated interface, then
+        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-83">Global</a></code>]- or
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-84">PrimaryGlobal</a></code>]-annotated interface as well as on
         the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-34">interface prototype object</a>.
     <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-35">interface prototype object</a>.
    </ul>
@@ -9632,11 +9632,11 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-11">function object</a>. </p>
    <p> The location of the property is determined as follows: </p>
    <ul>
-    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] extended attribute,
+    <li>If the interface was declared with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-85">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-86">PrimaryGlobal</a></code>] extended attribute,
         then the property exists on the single object that implements the interface.
-    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-31">consequential interface</a> of a [<code class="idl"><a data-link-type="idl">Global</a></code>]- or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface, then
-        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl">Global</a></code>]- or
-        [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]-annotated interface as well as on
+    <li>Otherwise, if the interface is a <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-31">consequential interface</a> of a [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-87">Global</a></code>]- or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-88">PrimaryGlobal</a></code>]-annotated interface, then
+        the property exists on the single object that implements the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-89">Global</a></code>]- or
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-90">PrimaryGlobal</a></code>]-annotated interface as well as on
         the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-36">interface prototype object</a>.
     <li>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-37">interface prototype object</a>.
    </ul>
@@ -10197,8 +10197,8 @@ C implements A;
     object’s indexed and named properties.  These properties are not “real” own
     properties on the object, but are made to look like they are by being exposed
     by the <span class="prop">[[GetOwnProperty]]</span> internal method. </p>
-   <p> However, when the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-102">extended attribute</a> has been used,
+   <p> However, when the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-91">Global</a></code>] or
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-92">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-102">extended attribute</a> has been used,
     named properties are not exposed on the object but on another object
     in the prototype chain, the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-12">named properties object</a>. </p>
    <p> It is permissible for an object to implement multiple interfaces that support indexed properties.
@@ -10214,8 +10214,8 @@ C implements A;
     ancestor interfaces can be overridden. </p>
    <p> Platform objects implementing an interface that supports indexed or named properties cannot be fixed; if <code>Object.freeze</code>, <code>Object.seal</code> or <code>Object.preventExtensions</code> is called on one of these objects, the function
     must <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-75">throw a <emu-val>TypeError</emu-val></a>.
-    Similarly, an <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-57">interface prototype object</a> that exposes named properties due to the use of [<code class="idl"><a data-link-type="idl">Global</a></code>] or
-    [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
+    Similarly, an <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-57">interface prototype object</a> that exposes named properties due to the use of [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-93">Global</a></code>] or
+    [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-94">PrimaryGlobal</a></code>]
     also must <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-76">throw a <emu-val>TypeError</emu-val></a> if one of the three functions above is called on it. </p>
    <p> The name of each property that appears to exist due to an object supporting indexed properties
     is an <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-array-index-property-name">array index property name</dfn>, which is a property
@@ -10306,7 +10306,7 @@ C implements A;
      </ol>
     <li>
      If <var>O</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-6">supports named properties</a>, <var>O</var> does not
-        implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-141">interface</a> with the [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-105">extended attribute</a>, the result of running the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-2">named property visibility algorithm</a> with
+        implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-141">interface</a> with the [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-95">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-96">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-105">extended attribute</a>, the result of running the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-2">named property visibility algorithm</a> with
         property name <var>P</var> and object <var>O</var> is true, and <var>ignoreNamedProps</var> is false, then: 
      <ol>
       <li>Let <var>operation</var> be the operation used to declare the named property getter.
@@ -10407,7 +10407,7 @@ C implements A;
      </ol>
     <li>
       If <var>O</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-11">supports named properties</a>, <var>O</var> does not implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-145">interface</a> with the
-        [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-107">extended attribute</a> and <var>P</var> is not an <a data-link-type="dfn" href="#dfn-unforgeable-property-name" id="ref-for-dfn-unforgeable-property-name-3">unforgeable property name</a> of <var>O</var>, then: 
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-97">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-98">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-107">extended attribute</a> and <var>P</var> is not an <a data-link-type="dfn" href="#dfn-unforgeable-property-name" id="ref-for-dfn-unforgeable-property-name-3">unforgeable property name</a> of <var>O</var>, then: 
      <ol>
       <li>Let <var>creating</var> be true if <var>P</var> is not a <a data-link-type="dfn" href="#dfn-supported-property-names" id="ref-for-dfn-supported-property-names-6">supported property name</a>, and false otherwise.
       <li>
@@ -10426,7 +10426,7 @@ C implements A;
        </ol>
      </ol>
     <li>If <var>O</var> does not implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-146">interface</a> with the
-        [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-109">extended attribute</a>,
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-99">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-100">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-109">extended attribute</a>,
         then set <var>Desc</var>.<span class="prop">[[Configurable]]</span> to <emu-val>true</emu-val>.
     <li>Call the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default [[DefineOwnProperty]] internal method</a> on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.
    </ol>
@@ -10442,7 +10442,7 @@ C implements A;
      </ol>
     <li>
       If <var>O</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-13">supports named properties</a>, <var>O</var> does not implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-148">interface</a> with the
-        [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-110">extended attribute</a> and the result of calling the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-3">named property visibility algorithm</a> with property name <var>P</var> and object <var>O</var> is true, then: 
+        [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-101">Global</a></code>] or [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-102">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-110">extended attribute</a> and the result of calling the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-3">named property visibility algorithm</a> with property name <var>P</var> and object <var>O</var> is true, then: 
      <ol>
       <li>If <var>O</var> does not implement an interface with a <a data-link-type="dfn" href="#dfn-named-property-deleter" id="ref-for-dfn-named-property-deleter-5">named property deleter</a>, then <emu-val>false</emu-val>.
       <li>Let <var>operation</var> be the operation used to declare the named property deleter.
@@ -10469,7 +10469,7 @@ C implements A;
     <li>Return <emu-val>true</emu-val>.
    </ol>
    <h4 class="heading settled" data-level="5.8.9" id="call"><span class="secno">5.8.9. </span><span class="content">Platform object [[Call]] method</span><a class="self-link" href="#call"></a></h4>
-   <p> The internal <span class="prop">[[Call]]</span> method of every <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-56">platform object</a> <var>O</var> that implements an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-149">interface</a> <var>I</var> with at least one <a data-link-type="dfn">legacy caller</a> must behave as follows, assuming <var>arg</var><sub>0..<var>n</var>−1</sub> is the list of argument
+   <p> The internal <span class="prop">[[Call]]</span> method of every <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-56">platform object</a> <var>O</var> that implements an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-149">interface</a> <var>I</var> with at least one <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-8">legacy caller</a> must behave as follows, assuming <var>arg</var><sub>0..<var>n</var>−1</sub> is the list of argument
     values passed to <span class="prop">[[Call]]</span>: </p>
    <ol class="algorithm">
     <li>Initialize <var>S</var> to the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-12">effective overload set</a> for legacy callers on <var>I</var> and with argument count <var>n</var>.
@@ -12194,7 +12194,7 @@ interface ExceptionThrower {
    <li><a href="#dfn-get-buffer-source-reference">get a reference to the buffer source</a><span>, in §4.10.30</span>
    <li><a href="#get-a-user-objects-attribute-value">get a user object’s attribute value</a><span>, in §5.9</span>
    <li><a href="#dfn-getter">getter</a><span>, in §4.2.4</span>
-   <li><a href="#Global">Global and PrimaryGlobal</a><span>, in §5.3.5</span>
+   <li><a href="#Global">Global</a><span>, in §5.3.5</span>
    <li><a href="#dfn-global-name">global names</a><span>, in §5.3.6</span>
    <li><a href="#dom-domexception-hierarchy_request_err">HIERARCHY_REQUEST_ERR</a><span>, in §4.4.1</span>
    <li><a href="#hierarchyrequesterror">HierarchyRequestError</a><span>, in §4.4.1</span>
@@ -12247,6 +12247,7 @@ interface ExceptionThrower {
    <li><a href="#dfn-iterator-prototype-object">iterator prototype object</a><span>, in §5.6.9.5</span>
    <li><a href="#dfn-legacy-caller">legacy</a><span>, in §4.2.4</span>
    <li><a href="#LegacyArrayClass">LegacyArrayClass</a><span>, in §5.3.6</span>
+   <li><a href="#idl-legacy-callers">Legacy callers</a><span>, in §4.2.4</span>
    <li><a href="#LegacyUnenumerableNamedProperties">LegacyUnenumerableNamedProperties</a><span>, in §5.3.7</span>
    <li><a href="#LenientSetter">LenientSetter</a><span>, in §5.3.8</span>
    <li><a href="#LenientThis">LenientThis</a><span>, in §5.3.9</span>
@@ -12300,6 +12301,7 @@ interface ExceptionThrower {
    <li><a href="#dfn-perform-a-security-check">perform a security check</a><span>, in §5.4</span>
    <li><a href="#dfn-platform-object">platform object</a><span>, in §4.9</span>
    <li><a href="#dfn-present">present</a><span>, in §4.3</span>
+   <li><a href="#Global">PrimaryGlobal</a><span>, in §5.3.5</span>
    <li><a href="#dfn-primary-global-interface">primary global interface</a><span>, in §5.3.6</span>
    <li><a href="#dfn-primary-interface">primary interface</a><span>, in §5.8</span>
    <li><a href="#dfn-primitive-type">primitive types</a><span>, in §4.10</span>
@@ -13064,6 +13066,14 @@ interface ExceptionThrower {
     <li><a href="#ref-for-dfn-named-property-deleter-1">4.2.4. Special operations</a> <a href="#ref-for-dfn-named-property-deleter-2">(2)</a>
     <li><a href="#ref-for-dfn-named-property-deleter-3">4.2.4.5. Named properties</a> <a href="#ref-for-dfn-named-property-deleter-4">(2)</a>
     <li><a href="#ref-for-dfn-named-property-deleter-5">5.8.8. Platform object [[Delete]] method</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="idl-legacy-callers">
+   <b><a href="#idl-legacy-callers">#idl-legacy-callers</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-idl-legacy-callers-1">4.2.4.1. Legacy callers</a> <a href="#ref-for-idl-legacy-callers-2">(2)</a>
+    <li><a href="#ref-for-idl-legacy-callers-3">4.2.6. Overloading</a> <a href="#ref-for-idl-legacy-callers-4">(2)</a> <a href="#ref-for-idl-legacy-callers-5">(3)</a> <a href="#ref-for-idl-legacy-callers-6">(4)</a> <a href="#ref-for-idl-legacy-callers-7">(5)</a>
+    <li><a href="#ref-for-idl-legacy-callers-8">5.8.9. Platform object [[Call]] method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-stringification-behavior">
@@ -14590,6 +14600,30 @@ interface ExceptionThrower {
     <li><a href="#ref-for-ImplicitThis-1">4.2. Interfaces</a> <a href="#ref-for-ImplicitThis-2">(2)</a>
     <li><a href="#ref-for-ImplicitThis-3">5.3.5. [ImplicitThis]</a> <a href="#ref-for-ImplicitThis-4">(2)</a> <a href="#ref-for-ImplicitThis-5">(3)</a> <a href="#ref-for-ImplicitThis-6">(4)</a> <a href="#ref-for-ImplicitThis-7">(5)</a>
     <li><a href="#ref-for-ImplicitThis-8">5.6.7. Operations</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="Global">
+   <b><a href="#Global">#Global</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-Global-1">4.2. Interfaces</a> <a href="#ref-for-Global-2">(2)</a> <a href="#ref-for-Global-3">(3)</a> <a href="#ref-for-Global-4">(4)</a>
+    <li><a href="#ref-for-Global-5">5.3.6. [Global] and [PrimaryGlobal]</a> <a href="#ref-for-Global-6">(2)</a> <a href="#ref-for-Global-7">(3)</a> <a href="#ref-for-Global-8">(4)</a> <a href="#ref-for-Global-9">(5)</a> <a href="#ref-for-Global-10">(6)</a> <a href="#ref-for-Global-11">(7)</a> <a href="#ref-for-Global-12">(8)</a> <a href="#ref-for-Global-13">(9)</a> <a href="#ref-for-Global-14">(10)</a> <a href="#ref-for-Global-15">(11)</a> <a href="#ref-for-Global-16">(12)</a> <a href="#ref-for-Global-17">(13)</a> <a href="#ref-for-Global-18">(14)</a> <a href="#ref-for-Global-19">(15)</a> <a href="#ref-for-Global-20">(16)</a> <a href="#ref-for-Global-21">(17)</a> <a href="#ref-for-Global-22">(18)</a> <a href="#ref-for-Global-23">(19)</a> <a href="#ref-for-Global-24">(20)</a> <a href="#ref-for-Global-25">(21)</a> <a href="#ref-for-Global-26">(22)</a> <a href="#ref-for-Global-27">(23)</a> <a href="#ref-for-Global-28">(24)</a>
+    <li><a href="#ref-for-Global-29">5.3.14. [OverrideBuiltins]</a> <a href="#ref-for-Global-30">(2)</a>
+    <li><a href="#ref-for-Global-31">5.6.3. Interface prototype object</a> <a href="#ref-for-Global-32">(2)</a>
+    <li><a href="#ref-for-Global-33">5.6.4. Named properties object</a> <a href="#ref-for-Global-34">(2)</a>
+    <li><a href="#ref-for-Global-35">5.6.5. Constants</a> <a href="#ref-for-Global-36">(2)</a> <a href="#ref-for-Global-37">(3)</a> <a href="#ref-for-Global-38">(4)</a> <a href="#ref-for-Global-39">(5)</a> <a href="#ref-for-Global-40">(6)</a>
+    <li><a href="#ref-for-Global-41">5.6.6. Attributes</a> <a href="#ref-for-Global-42">(2)</a> <a href="#ref-for-Global-43">(3)</a> <a href="#ref-for-Global-44">(4)</a> <a href="#ref-for-Global-45">(5)</a> <a href="#ref-for-Global-46">(6)</a>
+    <li><a href="#ref-for-Global-47">5.6.7. Operations</a> <a href="#ref-for-Global-48">(2)</a> <a href="#ref-for-Global-49">(3)</a> <a href="#ref-for-Global-50">(4)</a> <a href="#ref-for-Global-51">(5)</a> <a href="#ref-for-Global-52">(6)</a>
+    <li><a href="#ref-for-Global-53">5.6.7.1. Stringifiers</a> <a href="#ref-for-Global-54">(2)</a>
+    <li><a href="#ref-for-Global-55">5.6.7.2. Serializers</a> <a href="#ref-for-Global-56">(2)</a> <a href="#ref-for-Global-57">(3)</a> <a href="#ref-for-Global-58">(4)</a> <a href="#ref-for-Global-59">(5)</a> <a href="#ref-for-Global-60">(6)</a>
+    <li><a href="#ref-for-Global-61">5.6.8.1. @@iterator</a> <a href="#ref-for-Global-62">(2)</a> <a href="#ref-for-Global-63">(3)</a> <a href="#ref-for-Global-64">(4)</a> <a href="#ref-for-Global-65">(5)</a> <a href="#ref-for-Global-66">(6)</a>
+    <li><a href="#ref-for-Global-67">5.6.8.2. forEach</a> <a href="#ref-for-Global-68">(2)</a> <a href="#ref-for-Global-69">(3)</a> <a href="#ref-for-Global-70">(4)</a> <a href="#ref-for-Global-71">(5)</a> <a href="#ref-for-Global-72">(6)</a>
+    <li><a href="#ref-for-Global-73">5.6.9.1. entries</a> <a href="#ref-for-Global-74">(2)</a> <a href="#ref-for-Global-75">(3)</a> <a href="#ref-for-Global-76">(4)</a> <a href="#ref-for-Global-77">(5)</a> <a href="#ref-for-Global-78">(6)</a>
+    <li><a href="#ref-for-Global-79">5.6.9.2. keys</a> <a href="#ref-for-Global-80">(2)</a> <a href="#ref-for-Global-81">(3)</a> <a href="#ref-for-Global-82">(4)</a> <a href="#ref-for-Global-83">(5)</a> <a href="#ref-for-Global-84">(6)</a>
+    <li><a href="#ref-for-Global-85">5.6.9.3. values</a> <a href="#ref-for-Global-86">(2)</a> <a href="#ref-for-Global-87">(3)</a> <a href="#ref-for-Global-88">(4)</a> <a href="#ref-for-Global-89">(5)</a> <a href="#ref-for-Global-90">(6)</a>
+    <li><a href="#ref-for-Global-91">5.8.1. Indexed and named properties</a> <a href="#ref-for-Global-92">(2)</a> <a href="#ref-for-Global-93">(3)</a> <a href="#ref-for-Global-94">(4)</a>
+    <li><a href="#ref-for-Global-95">5.8.2. The PlatformObjectGetOwnProperty abstract operation</a> <a href="#ref-for-Global-96">(2)</a>
+    <li><a href="#ref-for-Global-97">5.8.7. Platform object [[DefineOwnProperty]] method</a> <a href="#ref-for-Global-98">(2)</a> <a href="#ref-for-Global-99">(3)</a> <a href="#ref-for-Global-100">(4)</a>
+    <li><a href="#ref-for-Global-101">5.8.8. Platform object [[Delete]] method</a> <a href="#ref-for-Global-102">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-global-name">

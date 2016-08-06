@@ -2029,7 +2029,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
 </p>
 
 
-<h5 id="idl-legacy-callers">Legacy callers</h5>
+<h5 id="idl-legacy-callers" dfn>Legacy callers</h5>
 
 <p>
     When an [=interface=] has one or more
@@ -8598,7 +8598,7 @@ in HTML5 ([[HTML5]], section 5.2).
 
 
 
-<h4 oldids="PrimaryGlobal" id="Global" extended-attribute lt="Global and PrimaryGlobal">[Global] and [PrimaryGlobal]</h4>
+<h4 oldids="PrimaryGlobal" id="Global" extended-attribute lt="Global|PrimaryGlobal" dfn>[Global] and [PrimaryGlobal]</h4>
 
 <p>
     If the [{{Global}}]

@@ -386,13 +386,16 @@ Boilerplate: omit issues-index
         <xsl:attribute name="extended-attribute" />
         <xsl:attribute name="lt"><xsl:value-of select='replace(., "\[|\]", "")' /></xsl:attribute>
       </xsl:if>
-      <xsl:if test='$parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
+      <xsl:if test='$parent-id="Global" or $parent-id="idl-legacy-callers" or $parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
         <xsl:attribute name="dfn" />
       </xsl:if>
       <xsl:if test="@data-lt and text() != @data-lt">
         <xsl:attribute name="lt">
           <xsl:value-of select='@data-lt' />
         </xsl:attribute>
+      </xsl:if>
+      <xsl:if test='$parent-id="Global"'>
+          <xsl:attribute name="lt">Global|PrimaryGlobal</xsl:attribute>
       </xsl:if>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
