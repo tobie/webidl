@@ -6452,9 +6452,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; −2<sup>7</sup> or |x| &gt; 2<sup>7</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; −2<sup>7</sup> or |x| &gt; 2<sup>7</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{byte}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6505,9 +6505,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; 0 or |x| &gt; 2<sup>8</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; 0 or |x| &gt; 2<sup>8</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{octet}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6558,9 +6558,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; −2<sup>15</sup> or |x| &gt; 2<sup>15</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; −2<sup>15</sup> or |x| &gt; 2<sup>15</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{short}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6612,9 +6612,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; 0 or |x| &gt; 2<sup>16</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; 0 or |x| &gt; 2<sup>16</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{unsigned short}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6663,9 +6663,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; −2<sup>31</sup> or |x| &gt; 2<sup>31</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; −2<sup>31</sup> or |x| &gt; 2<sup>31</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6714,9 +6714,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; 0 or |x| &gt; 2<sup>32</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; 0 or |x| &gt; 2<sup>32</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{unsigned long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6765,9 +6765,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; −2<sup>53</sup> + 1 or |x| &gt; 2<sup>53</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; −2<sup>53</sup> + 1 or |x| &gt; 2<sup>53</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{long long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6823,9 +6823,9 @@ for Web pages.
         </ul>
         then:
         <ol>
-            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| is <emu-val>NaN</emu-val>, +∞, or −∞, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |x| to <a>sign</a>(|x|) * <a>floor</a>(<a>abs</a>(|x|)).</li>
-            <li>If |x| &lt; 0 or |x| &gt; 2<sup>53</sup> − 1, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |x| &lt; 0 or |x| &gt; 2<sup>53</sup> − 1, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Return the IDL {{unsigned long long}} value that represents the same numeric value as |x|.</li>
         </ol>
     </li>
@@ -6873,7 +6873,7 @@ for Web pages.
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
     <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
-    <emu-val>−Infinity</emu-val>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <emu-val>−Infinity</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>
         Let |S| be the set of finite IEEE 754 single-precision floating
         point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -6887,7 +6887,7 @@ for Web pages.
         are considered to have even significands for this purpose.)
     </li>
     <li>
-        If |y| is 2<sup>128</sup> or −2<sup>128</sup>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+        If |y| is 2<sup>128</sup> or −2<sup>128</sup>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     </li>
     <li>
         If |y| is +0 and |x| is negative, return −0.
@@ -6977,7 +6977,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 <ol class="algorithm">
     <li>Let |x| be <a>ToNumber</a>(|V|).</li>
     <li>If |x| is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or
-    <emu-val>−Infinity</emu-val>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <emu-val>−Infinity</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>
         Return the IDL {{double}} value
         that has the same numeric value as |x|.
@@ -7090,7 +7090,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 <ol class="algorithm">
     <li>Let |x| be <a>ToString</a>(|V|).</li>
     <li>If the value of any <a>element</a>
-    of |x| is greater than 255, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    of |x| is greater than 255, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return an IDL {{ByteString}} value
         whose length is the length of |x|, and where the value of each element is
     the value of the corresponding element of |x|.</li>
@@ -7146,7 +7146,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
     by running the following algorithm:
 </p>
 <ol class="algorithm">
-    <li>If <a>Type</a>(|V|) is not Object, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>Type</a>(|V|) is not Object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{object}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p id="object-to-es">
@@ -7172,7 +7172,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
     by running the following algorithm (where |I| is the [=interface=]):
 </p>
 <ol class="algorithm">
-    <li>If <a>Type</a>(|V|) is not Object, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>Type</a>(|V|) is not Object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>If |V| is a [=platform object=] that implements |I|, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that platform object.</li>
     <li>If |V| is a [=user object=]
         that is considered to implement |I| according to the rules in
@@ -7180,7 +7180,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
         then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
         with the [=incumbent script=]
     as the [=callback context=]. [[!HTML]]</li>
-    <li><a lt="es-throw">Throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li><a lt="es throw">Throw a <emu-val>TypeError</emu-val></a>.</li>
 </ol>
 <p id="interface-to-es">
     The result of [=converted to ECMAScript values|converting=]
@@ -7206,8 +7206,8 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
     by running the following algorithm (where |D| is the [=dictionary=]):
 </p>
 <ol class="algorithm">
-    <li>If <a>Type</a>(|V|) is not Undefined, Null or Object, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
-    <li>If |V| is a native <emu-val>RegExp</emu-val> object, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>Type</a>(|V|) is not Undefined, Null or Object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If |V| is a native <emu-val>RegExp</emu-val> object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |dict| be an empty dictionary value of type |D|;
         every [=dictionary member=]
     is initially considered to be [=present|not present=].</li>
@@ -7300,7 +7300,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
 </p>
 <ol class="algorithm">
     <li>Let |S| be the result of calling <a>ToString</a>(|V|).</li>
-    <li>If |S| is not one of |E|’s [=enumeration values=], then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If |S| is not one of |E|’s [=enumeration values=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the enumeration value of type |E| that is equal to |S|.</li>
 </ol>
 <p id="enumeration-to-es">
@@ -7333,7 +7333,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         whose type is a [=nullable type|nullable=]
         [=callback function=]
         that is annotated with [{{TreatNonObjectAsNull}}],
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL <a href="#idl-callback-function">callback
         function type</a> value that represents a reference to the same
         object that |V| represents,
@@ -7418,11 +7418,11 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
 <ol class="algorithm">
     <li>
         If |V| is not an object,
-        <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+        <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     </li>
     <li>
         If |V| is a native <emu-val>RegExp</emu-val> object,
-        <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+        <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     </li>
     <li>
         Let |method| be the result of
@@ -7433,7 +7433,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     </li>
     <li>
         If |method| is <emu-val>undefined</emu-val>,
-        <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+        <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     </li>
     <li>
         Return the result of
@@ -7657,7 +7657,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         </ol>
     </li>
     <li>Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.</li>
-    <li>If |then| is not <a>callable</a>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If |then| is not <a>callable</a>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the result of calling |then| with |promise| as the <emu-val>this</emu-val> value and |onFulfilled| and |onRejected|
     as its two arguments.</li>
 </ol>
@@ -7865,7 +7865,7 @@ Issue: Include an example of how to write spec text using this term.
         |V| to {{boolean}}.
     </li>
     <li>
-        <a lt="es-throw">Throw a <emu-val>TypeError</emu-val></a>.
+        <a lt="es throw">Throw a <emu-val>TypeError</emu-val></a>.
     </li>
 </ol>
 <p id="union-to-es">
@@ -7929,7 +7929,7 @@ Issue: Include an example of how to write spec text using this term.
 </p>
 <ol class="algorithm">
     <li>If <a>Type</a>(|V|) is not Object,
-    or |V| does not have an \[[ErrorData]] <a>internal slot</a>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    or |V| does not have an \[[ErrorData]] <a>internal slot</a>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{Error}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p id="Error-to-es">
@@ -7955,7 +7955,7 @@ Issue: Include an example of how to write spec text using this term.
 </p>
 <ol class="algorithm">
     <li>If <a>Type</a>(|V|) is not Object,
-    or |V| is not a platform object that represents a [=DOMException=], then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    or |V| is not a platform object that represents a [=DOMException=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{DOMException}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p id="DOMException-to-es">
@@ -7983,7 +7983,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>If <a>Type</a>(|V|) is not Object,
         or |V| does not have an \[[ArrayBufferData]] <a>internal slot</a>,
         or <a>IsDetachedBuffer</a>(|V|) is true,
-        then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+        then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     </li>
     <li>Return the IDL {{ArrayBuffer}} value that is a reference to the same object as |V|.</li>
 </ol>
@@ -7996,7 +7996,7 @@ Issue: Include an example of how to write spec text using this term.
 <ol class="algorithm">
     <li>If <a>Type</a>(|V|) is not Object,
         or |V| does not have a \[[DataView]] <a>internal slot</a>,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL {{DataView}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p>
@@ -8018,7 +8018,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>If <a>Type</a>(|V|) is not Object,
         or |V| does not have a \[[TypedArrayName]] <a>internal slot</a>
         with a value equal to the name of |T|,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the IDL value of type |T| that is a reference to the same object as |V|.</li>
 </ol>
 <p>
@@ -8042,14 +8042,14 @@ Issue: Include an example of how to write spec text using this term.
         <ol>
             <li>Set |arrayBuffer| to the value of |O|’s \[[ViewedArrayBuffer]] <a>internal slot</a>.</li>
             <li>If |arrayBuffer| is <emu-val>undefined</emu-val>, then
-            <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Set |offset| to the value of |O|’s \[[ByteOffset]] <a>internal slot</a>.</li>
             <li>Set |length| to the value of |O|’s \[[ByteLength]] <a>internal slot</a>.</li>
         </ol>
     </li>
     <li>Otherwise, set |length| to the value of |O|’s \[[ArrayBufferByteLength]] <a>internal slot</a>.</li>
     <li>If <a>IsDetachedBuffer</a>(|O|), then
-    <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |data| be the value of |O|’s \[[ArrayBufferData]] <a>internal slot</a>.</li>
     <li>Return a reference to or copy of (as required) the |length| bytes in |data|
     starting at byte offset |offset|.</li>
@@ -10108,7 +10108,7 @@ appropriate exception or return normally. [[!HTML]]
     
     <li>Remove from |S| all entries whose type list is not of length |argcount|.</li>
     
-    <li>If |S| is empty, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If |S| is empty, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     
     <li>Initialize |d| to −1.</li>
     
@@ -10394,7 +10394,7 @@ appropriate exception or return normally. [[!HTML]]
             
             <li>
                 Otherwise:
-                <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+                <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
             </li>
         </ol>
     </li>
@@ -10628,7 +10628,7 @@ when they do exist, they are not [=function objects=].
     <li>
         If |I| was not declared with a [{{Constructor}}]
         [=extended attribute=], then
-        <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+        <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     </li>
     <li>
         Let |id| be the identifier of interface |I|.
@@ -10709,7 +10709,7 @@ when they do exist, they are not [=function objects=].
 <ol class="algorithm">
     <li>If |V| is not an object, return <emu-val>false</emu-val>.</li>
     <li>Let |O| be the result of calling the <span class="prop">\[[Get]]</span> method of |A| with property name “prototype”.</li>
-    <li>If |O| is not an object, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a> exception.</li>
+    <li>If |O| is not an object, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a> exception.</li>
     <li>If |V| is a platform object that implements the
         interface for which |O| is the [=interface prototype object=],
     return <emu-val>true</emu-val>.</li>
@@ -11027,7 +11027,7 @@ when they do exist, they are not [=function objects=].
     must behave as follows when called with object |O|
     and property name |P|.
     The term <span id="Reject">“Reject”</span> is used in the same sense as that defined in ECMA-262, namely, to mean “If |Throw| is
-    <emu-val>true</emu-val>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a> exception,
+    <emu-val>true</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a> exception,
     otherwise return <emu-val>false</emu-val>”.
 </p>
 
@@ -11163,7 +11163,7 @@ when they do exist, they are not [=function objects=].
                             <li>If the [=attribute=] was specified with the
                                 [{{LenientThis}}] [=extended attribute=],
                             then return <emu-val>undefined</emu-val>.</li>
-                            <li>Otherwise, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                            <li>Otherwise, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
                         </ol>
                     </li>
                     <li>
@@ -11199,7 +11199,7 @@ when they do exist, they are not [=function objects=].
         Otherwise, it is a <emu-val>Function</emu-val> object whose behavior when invoked is as follows:
         <ol class="algorithm">
             <li>If no arguments were passed to the <emu-val>Function</emu-val>, then
-            <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |V| be the value of the first argument passed to the <emu-val>Function</emu-val>.</li>
             <li>If the [=attribute=] is a [=regular attribute=], then:
                 <ol>
@@ -11223,7 +11223,7 @@ when they do exist, they are not [=function objects=].
                     <li>If |validThis| is <emu-val>false</emu-val> and the
                         [=attribute=] was not specified with the
                         [{{LenientThis}}] [=extended attribute=],
-                    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
                     <li>If the attribute is declared with a [{{Replaceable}}]
                         extended attribute, then:
                         <ol>
@@ -11240,7 +11240,7 @@ when they do exist, they are not [=function objects=].
                         <ol>
                             <li>Let |Q| be the result of calling the <span class="prop">\[[Get]]</span> method
                             on |O| using the identifier of the attribute as the property name.</li>
-                            <li>If |Q| is not an object, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+                            <li>If |Q| is not an object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
                             <li>Let |A| be the attribute identified by the [{{PutForwards}}] extended attribute.</li>
                             <li>Call the <span class="prop">\[[Put]]</span> method on |Q|
                             using the identifier of |A| as the property name and |V| as the value.</li>
@@ -11371,7 +11371,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                                 then |O| is the <emu-val>this</emu-val> value.
                             </li>
                             <li>
-                                Otherwise, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+                                Otherwise, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
                             </li>
                         </ul>
                     </li>
@@ -11387,7 +11387,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                     </li>
                     <li>
                         If |O| is not <emu-val>null</emu-val> and is also not a [=platform object=]
-                        that implements interface |I|, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+                        that implements interface |I|, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
                     </li>
                     <li>
                         Initialize |S| to the
@@ -11493,7 +11493,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                 </ul>
             </li>
             <li>If |O| is not an object that implements the [=interface=]
-            on which the stringifier was declared, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            on which the stringifier was declared, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |V| be an uninitialized variable.</li>
             <li>Depending on where <code>stringifier</code> was specified:
                 <dl class="switch">
@@ -11564,7 +11564,7 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
         </ul>
     </li>
     <li>If |O| is not an object that implements the [=interface=]
-    on which the serializer was declared, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    on which the serializer was declared, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Depending on how <code>serializer</code> was specified:
         <dl class="switch">
             <dt>on an [=operation=] with an identifier</dt>
@@ -11705,7 +11705,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     the [=iterable declaration=] is on.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |iterator| be a newly created [=default iterator object=]
     for |interface| with |object| as its target and iterator kind “key+value”.</li>
     <li>Return |iterator|.</li>
@@ -11731,7 +11731,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
         that implements the [=interface=]
         on which the [=maplike declaration=]
         or [=setlike declaration=] is defined,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>If the interface has a [=maplike declaration=], then:
         <ol>
             <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|.</li>
@@ -11843,9 +11843,9 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     or [=setlike declaration=] is declared.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |callbackFn| be the value of the first argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
-    <li>If <a>IsCallable</a>(|callbackFn|) is <emu-val>false</emu-val>, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>IsCallable</a>(|callbackFn|) is <emu-val>false</emu-val>, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |thisArg| be the value of the second argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.</li>
     <li>Let |backing| be the value of the \[[BackingMap]] <a>internal slot</a> of |object|,
         if the interface has a [=maplike declaration=],
@@ -11867,7 +11867,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
     </li>
     <li>Let |forEach| be the result of calling the \[[Get]] internal method of
     |backing| with “forEach” and |backing| as arguments.</li>
-    <li>If <a>IsCallable</a>(|forEach|) is <emu-val>false</emu-val>, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>IsCallable</a>(|forEach|) is <emu-val>false</emu-val>, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Call the \[[Call]] internal method of |forEach| with |backing| as |thisArgument|
     and |callbackWrapper| and |thisArg| as |argumentsList|.</li>
     <li>Return <emu-val>undefined</emu-val>.</li>
@@ -11966,7 +11966,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     on which the [=iterable declaration=] is declared on.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |iterator| be a newly created [=default iterator object=]
     for |interface| with |object| as its target and iterator kind “key”.</li>
     <li>Return |iterator|.</li>
@@ -12024,7 +12024,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     on which the [=iterable declaration=] is declared on.</li>
     <li>If |object| is not a [=platform object=]
         that implements |interface|,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |iterator| be a newly created [=default iterator object=]
     for |interface| with |object| as its target and iterator kind “value”.</li>
     <li>Return |iterator|.</li>
@@ -12109,7 +12109,7 @@ use standard ECMAScript Array iterator objects.
         </ul>
     </li>
     <li>If |object| is not a [=default iterator object=] for |interface|,
-    then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |target| be |object|’s target.</li>
     <li>Let |index| be |object|’s index.</li>
     <li>Let |kind| be |object|’s kind.</li>
@@ -12202,10 +12202,10 @@ use standard ECMAScript Array iterator objects.
             <li>the type “method”.</li>
         </ul>
     </li>
-    <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |map| be the <emu-val>Map</emu-val> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
     <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
-    <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |arguments| as |argumentsList|.</li>
 </ol>
 
@@ -12235,7 +12235,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “getter”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |map| be the <emu-val>Map</emu-val> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Return the result of calling the \[[Get]] internal method of |map| passing “size” and |map| as arguments.</li>
         </ol>
@@ -12296,7 +12296,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “method”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |map| be the <emu-val>Map</emu-val> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Let |keyType| be the key type specified in the [=maplike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
@@ -12359,7 +12359,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “method”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |map| be the <emu-val>Map</emu-val> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Let |keyType| be the key type specified in the [=maplike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
@@ -12401,7 +12401,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “method”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |map| be the <emu-val>Map</emu-val> object that is the value of |O|’s \[[BackingMap]] <a>internal slot</a>.</li>
             <li>Let |keyType| and |valueType| be the key and value types specified in the [=maplike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “set” and |map| as arguments.</li>
@@ -12460,10 +12460,10 @@ use standard ECMAScript Array iterator objects.
             <li>the type “method”.</li>
         </ul>
     </li>
-    <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Let |set| be the <emu-val>Set</emu-val> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
     <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
-    <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>IsCallable</a>(|function|) is <emu-val>false</emu-val>, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and |arguments| as |argumentsList|.</li>
 </ol>
 
@@ -12493,7 +12493,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “getter”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |set| be the <emu-val>Set</emu-val> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
             <li>Return the result of calling the \[[Get]] internal method of |set| passing “size” and |set| as arguments.</li>
         </ol>
@@ -12553,7 +12553,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “method”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |set| be the <emu-val>Set</emu-val> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
             <li>Let |type| be the value type specified in the [=setlike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
@@ -12601,7 +12601,7 @@ use standard ECMAScript Array iterator objects.
                     <li>the type “method”.</li>
                 </ul>
             </li>
-            <li>If |O| is not an object that implements |A|, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |set| be the <emu-val>Set</emu-val> object that is the value of |O|’s \[[BackingSet]] <a>internal slot</a>.</li>
             <li>Let |type| be the value type specified in the [=setlike declaration=].</li>
             <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
@@ -12666,14 +12666,14 @@ use standard ECMAScript Array iterator objects.
     an object |destination| with adder method name |adder|, perform the following steps:
 </p>
 <ol class="algorithm">
-    <li>If <a>Type</a>(|destination|) is not Object, then, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+    <li>If <a>Type</a>(|destination|) is not Object, then, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
     <li>If |iterable| is not present, let |iterable| be <emu-val>undefined</emu-val>.</li>
     <li>If |iterable| is either <emu-val>undefined</emu-val> or <emu-val>null</emu-val>, then let |iter| be <emu-val>undefined</emu-val>.</li>
     <li>Else,
         <ol>
             <li>Let |adder| be the result of <a>Get</a>(|destination|, |adder|).</li>
             <li><a>ReturnIfAbrupt</a>(|adder|).</li>
-            <li>If <a>IsCallable</a>(|adder|) is <emu-val>false</emu-val>, <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If <a>IsCallable</a>(|adder|) is <emu-val>false</emu-val>, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |iter| be the result of <a>GetIterator</a>(|iterable|).</li>
             <li><a>ReturnIfAbrupt</a>(|iter|).</li>
         </ol>
@@ -12686,7 +12686,7 @@ use standard ECMAScript Array iterator objects.
             <li>If |next| is <emu-val>false</emu-val>, then return <a>NormalCompletion</a>(|destination|).</li>
             <li>Let |nextItem| be <a>IteratorValue</a>(|next|).</li>
             <li><a>ReturnIfAbrupt</a>(|nextItem|).</li>
-            <li>If <a>Type</a>(|nextItem|) is not Object, then <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.</li>
+            <li>If <a>Type</a>(|nextItem|) is not Object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
             <li>Let |k| be the result of <a>Get</a>(|nextItem|, <code>'0'</code>).</li>
             <li><a>ReturnIfAbrupt</a>(|k|).</li>
             <li>Let |v| be the result of <a>Get</a>(|nextItem|, <code>'1'</code>).</li>
@@ -12892,11 +12892,11 @@ use standard ECMAScript Array iterator objects.
 <p>
     Platform objects implementing an interface that supports indexed or named properties cannot be fixed; if <code>Object.freeze</code>, <code>Object.seal</code>
     or <code>Object.preventExtensions</code> is called on one of these objects, the function
-    must <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>.
+    must <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     Similarly, an [=interface prototype object=]
     that exposes named properties due to the use of [{{Global}}] or
     [{{PrimaryGlobal}}]
-    also must <a lt="es-throw">throw a <emu-val>TypeError</emu-val></a>
+    also must <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>
     if one of the three functions above is called on it.
 </p>
 

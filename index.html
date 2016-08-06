@@ -6060,7 +6060,7 @@ and configurable.</p>
    <p class="issue" id="issue-459a816a"><a class="self-link" href="#issue-459a816a"></a> The list above needs updating for the latest ES6 draft.</p>
    <p id="ecmascript-abstractop"> Algorithms in this section use the conventions described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262 section 5.2</a>, such as the use of steps and substeps, the use of mathematical
     operations, and so on.  The <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toboolean">ToBoolean</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-touint16">ToUint16</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toint32">ToInt32</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-touint32">ToUint32</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isaccessordescriptor">IsAccessorDescriptor</a> and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a> abstract operations and the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type(x)</a> notation referenced in this section are defined in ECMA-262 sections 6 and 7. </p>
-   <p> When an algorithm says to <dfn data-dfn-type="dfn" data-export="" data-lt="es throw" id="es-throw">throw a <b><i>Something</i>Error</b><a class="self-link" href="#es-throw"></a></dfn> then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
+   <p> When an algorithm says to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="es throw" id="es-throw">throw a <b><i>Something</i>Error</b></dfn> then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
     and to throw it, just as the algorithms in ECMA-262 do. </p>
    <p> Note that algorithm steps can call in to other algorithms and abstract operations and
     not explicitly handle exceptions that are thrown from them.  When an exception
@@ -6209,9 +6209,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-1">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; −2<sup>7</sup> or <var>x</var> > 2<sup>7</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; −2<sup>7</sup> or <var>x</var> > 2<sup>7</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-2">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-7">byte</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6251,9 +6251,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-3">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>8</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>8</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-4">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-7">octet</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6292,9 +6292,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-5">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; −2<sup>15</sup> or <var>x</var> > 2<sup>15</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; −2<sup>15</sup> or <var>x</var> > 2<sup>15</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-6">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-6">short</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6334,9 +6334,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-7">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>16</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>16</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-8">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-6">unsigned short</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6373,9 +6373,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-9">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; −2<sup>31</sup> or <var>x</var> > 2<sup>31</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; −2<sup>31</sup> or <var>x</var> > 2<sup>31</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-10">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-7">long</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6412,9 +6412,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-11">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>32</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>32</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-12">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-11">unsigned long</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6451,9 +6451,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-13">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; −2<sup>53</sup> + 1 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; −2<sup>53</sup> + 1 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-14">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-7">long long</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6496,9 +6496,9 @@ for Web pages.</p>
      </ul>
       then: 
      <ol>
-      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> is <emu-val>NaN</emu-val>, +∞, or −∞, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-15">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).
-      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-16">throw a <emu-val>TypeError</emu-val></a>.
       <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-7">unsigned long long</a></code> value that represents the same numeric value as <var>x</var>.
      </ol>
     <li>
@@ -6532,14 +6532,14 @@ for Web pages.</p>
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>Let <var>x</var> be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(<var>V</var>).
-    <li>If <var>x</var> is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or <emu-val>−Infinity</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>x</var> is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or <emu-val>−Infinity</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-17">throw a <emu-val>TypeError</emu-val></a>.
     <li> Let <var>S</var> be the set of finite IEEE 754 single-precision floating
         point values except −0, but with two special values added: 2<sup>128</sup> and
         −2<sup>128</sup>. 
     <li> Let <var>y</var> be the number in <var>S</var> that is closest
         to <var>x</var>, selecting the number with an <em>even significand</em> if there are two <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
         (The two special values 2<sup>128</sup> and −2<sup>128</sup> are considered to have even significands for this purpose.) 
-    <li> If <var>y</var> is 2<sup>128</sup> or −2<sup>128</sup>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+    <li> If <var>y</var> is 2<sup>128</sup> or −2<sup>128</sup>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-18">throw a <emu-val>TypeError</emu-val></a>. 
     <li> If <var>y</var> is +0 and <var>x</var> is negative, return −0. 
     <li> Return <var>y</var>. 
    </ol>
@@ -6579,7 +6579,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.</p>
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>Let <var>x</var> be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>(<var>V</var>).
-    <li>If <var>x</var> is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or <emu-val>−Infinity</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>x</var> is <emu-val>NaN</emu-val>, <emu-val>+Infinity</emu-val> or <emu-val>−Infinity</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-19">throw a <emu-val>TypeError</emu-val></a>.
     <li> Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-15">double</a></code> value
         that has the same numeric value as <var>x</var>. 
    </ol>
@@ -6634,7 +6634,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>Let <var>x</var> be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(<var>V</var>).
-    <li>If the value of any <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type">element</a> of <var>x</var> is greater than 255, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If the value of any <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type">element</a> of <var>x</var> is greater than 255, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-20">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return an IDL <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-10">ByteString</a></code> value
         whose length is the length of <var>x</var>, and where the value of each element is
     the value of the corresponding element of <var>x</var>.
@@ -6662,7 +6662,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
    <p id="es-to-object"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-9">object</a></code> value
     by running the following algorithm: </p>
    <ol class="algorithm">
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-21">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-10">object</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
    <p id="object-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-16">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-11">object</a></code> value to an ECMAScript
@@ -6673,12 +6673,12 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
    <p id="es-to-interface"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <a href="#idl-interface" id="ref-for-idl-interface-5">interface type</a> value
     by running the following algorithm (where <var>I</var> is the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-54">interface</a>): </p>
    <ol class="algorithm">
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-22">throw a <emu-val>TypeError</emu-val></a>.
     <li>If <var>V</var> is a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-12">platform object</a> that implements <var>I</var>, then return the IDL <a href="#idl-interface" id="ref-for-idl-interface-6">interface type</a> value that represents a reference to that platform object.
     <li>If <var>V</var> is a <a data-link-type="dfn" href="#dfn-user-object" id="ref-for-dfn-user-object-8">user object</a> that is considered to implement <var>I</var> according to the rules in <a href="#es-user-objects">§5.9 User objects implementing callback interfaces</a>,
         then return the IDL <a href="#idl-interface" id="ref-for-idl-interface-7">interface type</a> value that represents a reference to that user object,
         with the <a data-link-type="dfn" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a> as the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-5">callback context</a>. <a data-link-type="biblio" href="#biblio-html">[HTML]</a>
-    <li><a data-link-type="dfn">Throw a <emu-val>TypeError</emu-val></a>.
+    <li><a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-23">Throw a <emu-val>TypeError</emu-val></a>.
    </ol>
    <p id="interface-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-17">converting</a> an IDL <a href="#idl-interface" id="ref-for-idl-interface-8">interface type</a> value to an ECMAScript value is the <emu-val>Object</emu-val> value that represents a reference to the same object that the IDL <a href="#idl-interface" id="ref-for-idl-interface-9">interface type</a> value represents. </p>
    <h4 class="heading settled" data-level="5.2.21" id="es-dictionary"><span class="secno">5.2.21. </span><span class="content">Dictionary types</span><a class="self-link" href="#es-dictionary"></a></h4>
@@ -6688,8 +6688,8 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
    <p id="es-to-dictionary"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <a href="#idl-dictionary" id="ref-for-idl-dictionary-5">dictionary type</a> value
     by running the following algorithm (where <var>D</var> is the <a data-link-type="dfn" href="#dfn-dictionary" id="ref-for-dfn-dictionary-10">dictionary</a>): </p>
    <ol class="algorithm">
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Undefined, Null or Object, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
-    <li>If <var>V</var> is a native <emu-val>RegExp</emu-val> object, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Undefined, Null or Object, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-24">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>V</var> is a native <emu-val>RegExp</emu-val> object, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-25">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>dict</var> be an empty dictionary value of type <var>D</var>;
         every <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-30">dictionary member</a> is initially considered to be <a data-link-type="dfn" href="#dfn-present" id="ref-for-dfn-present-2">not present</a>.
     <li>Let <var>dictionaries</var> be a list consisting of <var>D</var> and all of <var>D</var>’s <a data-link-type="dfn" href="#dfn-inherited-dictionaries" id="ref-for-dfn-inherited-dictionaries-4">inherited dictionaries</a>,
@@ -6758,7 +6758,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
    <p id="es-to-enumeration"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-17">enumeration type</a> value as follows (where <var>E</var> is the <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-18">enumeration</a>): </p>
    <ol class="algorithm">
     <li>Let <var>S</var> be the result of calling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(<var>V</var>).
-    <li>If <var>S</var> is not one of <var>E</var>’s <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-5">enumeration values</a>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>S</var> is not one of <var>E</var>’s <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-5">enumeration values</a>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-26">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the enumeration value of type <var>E</var> that is equal to <var>S</var>.
    </ol>
    <p id="enumeration-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-19">converting</a> an IDL <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-19">enumeration type</a> value to an ECMAScript
@@ -6773,7 +6773,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>If the result of calling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>V</var>) is <emu-val>false</emu-val> and the conversion to an IDL value
         is not being performed due
         to <var>V</var> being assigned to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-41">attribute</a> whose type is a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-15">nullable</a> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-19">callback function</a> that is annotated with [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-3">TreatNonObjectAsNull</a></code>],
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-27">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-3">callback
         function type</a> value that represents a reference to the same
         object that <var>V</var> represents,
@@ -6806,11 +6806,11 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     ECMAScript <emu-val>Array</emu-val> values. </p>
    <p id="es-to-sequence"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-sequence" id="ref-for-idl-sequence-11">sequence&lt;T></a></code> value as follows: </p>
    <ol class="algorithm">
-    <li> If <var>V</var> is not an object, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
-    <li> If <var>V</var> is a native <emu-val>RegExp</emu-val> object, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+    <li> If <var>V</var> is not an object, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-28">throw a <emu-val>TypeError</emu-val></a>. 
+    <li> If <var>V</var> is a native <emu-val>RegExp</emu-val> object, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-29">throw a <emu-val>TypeError</emu-val></a>. 
     <li> Let <var>method</var> be the result of <a data-link-type="dfn" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>). 
     <li> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>). 
-    <li> If <var>method</var> is <emu-val>undefined</emu-val>, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+    <li> If <var>method</var> is <emu-val>undefined</emu-val>, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-30">throw a <emu-val>TypeError</emu-val></a>. 
     <li> Return the result of
         . 
    </ol>
@@ -6968,7 +6968,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
             with <var>reason</var> as the rejection reason.
      </ol>
     <li>Let <var>then</var> be the result of calling the internal <span class="prop">[[Get]]</span> method of <var>promise</var> with property name “then”.
-    <li>If <var>then</var> is not <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>then</var> is not <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-31">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the result of calling <var>then</var> with <var>promise</var> as the <emu-val>this</emu-val> value and <var>onFulfilled</var> and <var>onRejected</var> as its two arguments.
    </ol>
    <p class="issue" id="issue-efe8490d"><a class="self-link" href="#issue-efe8490d"></a> Include an example of how to write spec text using this term.</p>
@@ -7089,7 +7089,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-22">converting</a> <var>V</var> to that <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-5">numeric type</a>. 
     <li> If <var>types</var> includes a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-15">boolean</a></code>,
         then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-23">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-16">boolean</a></code>. 
-    <li> <a data-link-type="dfn">Throw a <emu-val>TypeError</emu-val></a>. 
+    <li> <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-32">Throw a <emu-val>TypeError</emu-val></a>. 
    </ol>
    <p id="union-to-es"> An IDL union type value is <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-25">converted to an ECMAScript value</a> as follows.  If the value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-22">object</a></code> reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val> value, then it is converted to the ECMAScript <emu-val>undefined</emu-val> value.  Otherwise,
     the rules for converting the <a data-link-type="dfn" href="#dfn-specific-type" id="ref-for-dfn-specific-type-5">specific type</a> of the IDL union type value as described in this section (<a href="#es-type-mapping">§5.2 ECMAScript type mapping</a>). </p>
@@ -7120,7 +7120,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
-    or <var>V</var> does not have an [[ErrorData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    or <var>V</var> does not have an [[ErrorData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-33">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-12">Error</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
    <p id="Error-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-27">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-13">Error</a></code> value to an ECMAScript
@@ -7133,7 +7133,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
-    or <var>V</var> is not a platform object that represents a <a data-link-type="dfn">DOMException</a>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    or <var>V</var> is not a platform object that represents a <a data-link-type="dfn">DOMException</a>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-34">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-9">DOMException</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
    <p id="DOMException-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-28">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-10">DOMException</a></code> value to an ECMAScript
@@ -7147,7 +7147,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
         or <var>V</var> does not have an [[ArrayBufferData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
         or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>V</var>) is true,
-        then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+        then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-35">throw a <emu-val>TypeError</emu-val></a>. 
     <li>Return the IDL <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
    <p id="buffer-source-to-es"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a></code> value
@@ -7155,7 +7155,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
         or <var>V</var> does not have a [[DataView]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-36">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the IDL <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
    <p> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl">Int8Array</a></code>, <code class="idl"><a data-link-type="idl">Int16Array</a></code>, <code class="idl"><a data-link-type="idl">Int32Array</a></code>, <code class="idl"><a data-link-type="idl">Uint8Array</a></code>, <code class="idl"><a data-link-type="idl">Uint16Array</a></code>, <code class="idl"><a data-link-type="idl">Uint32Array</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#Uint8ClampedArray">Uint8ClampedArray</a></code>, <code class="idl"><a data-link-type="idl">Float32Array</a></code> or <code class="idl"><a data-link-type="idl">Float64Array</a></code> value
@@ -7164,7 +7164,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>Let <var>T</var> be the IDL type <var>V</var> is being converted to.
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
         or <var>V</var> does not have a [[TypedArrayName]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> with a value equal to the name of <var>T</var>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-37">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the IDL value of type <var>T</var> that is a reference to the same object as <var>V</var>.
    </ol>
    <p> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-29">converting</a> an IDL value of any <a data-link-type="dfn" href="#dfn-buffer-source-type" id="ref-for-dfn-buffer-source-type-3">buffer source type</a> to an ECMAScript value is the <emu-val>Object</emu-val> value that represents
@@ -7179,12 +7179,12 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      If <var>O</var> has a [[ViewedArrayBuffer]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then: 
      <ol>
       <li>Set <var>arrayBuffer</var> to the value of <var>O</var>’s [[ViewedArrayBuffer]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
-      <li>If <var>arrayBuffer</var> is <emu-val>undefined</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>arrayBuffer</var> is <emu-val>undefined</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-38">throw a <emu-val>TypeError</emu-val></a>.
       <li>Set <var>offset</var> to the value of <var>O</var>’s [[ByteOffset]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Set <var>length</var> to the value of <var>O</var>’s [[ByteLength]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
      </ol>
     <li>Otherwise, set <var>length</var> to the value of <var>O</var>’s [[ArrayBufferByteLength]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>O</var>), then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>O</var>), then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-39">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>data</var> be the value of <var>O</var>’s [[ArrayBufferData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
     <li>Return a reference to or copy of (as required) the <var>length</var> bytes in <var>data</var> starting at byte offset <var>offset</var>.
    </ol>
@@ -8419,7 +8419,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
     <li>Let <var>maxarg</var> be the length of the longest type list of the entries in <var>S</var>.
     <li>Initialize <var>argcount</var> to be min(<var>maxarg</var>, <var>n</var>).
     <li>Remove from <var>S</var> all entries whose type list is not of length <var>argcount</var>.
-    <li>If <var>S</var> is empty, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>S</var> is empty, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-40">throw a <emu-val>TypeError</emu-val></a>.
     <li>Initialize <var>d</var> to −1.
     <li> Initialize <var>method</var> to <emu-val>undefined</emu-val>. 
     <li>If there is more than one entry in <var>S</var>, then set <var>d</var> to be the <a data-link-type="dfn" href="#dfn-distinguishing-argument-index" id="ref-for-dfn-distinguishing-argument-index-4">distinguishing argument index</a> for the entries of <var>S</var>.
@@ -8644,7 +8644,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
         then remove from <var>S</var> all other entries. 
       <li> Otherwise: if there is an entry in <var>S</var> that has <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-14">any</a></code> at position <var>i</var> of its type list,
                 then remove from <var>S</var> all other entries. 
-      <li> Otherwise: <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+      <li> Otherwise: <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-41">throw a <emu-val>TypeError</emu-val></a>. 
      </ol>
     <li>Let <var>callable</var> be the <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-67">operation</a> or <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-86">extended attribute</a> of the single entry in <var>S</var>.
     <li>
@@ -8788,7 +8788,7 @@ when they do exist, they are not <a data-link-type="dfn" href="#dfn-function-obj
     of the interface object behaves as follows, assuming <var>arg</var><sub>0..<var>n</var>−1</sub> is the list
     of argument values passed to the constructor, and <var>I</var> is the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-86">interface</a>: </p>
    <ol class="algorithm">
-    <li> If <var>I</var> was not declared with a [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-21">Constructor</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-89">extended attribute</a>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+    <li> If <var>I</var> was not declared with a [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-21">Constructor</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-89">extended attribute</a>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-42">throw a <emu-val>TypeError</emu-val></a>. 
     <li> Let <var>id</var> be the identifier of interface <var>I</var>. 
     <li> Initialize <var>S</var> to the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-5">effective overload set</a> for constructors with <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-57">identifier</a> <var>id</var> on <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-87">interface</a> <var>I</var> and with argument count <var>n</var>. 
     <li> Let &lt;<var>constructor</var>, <var>values</var>> be the result of passing <var>S</var> and <var>arg</var><sub>0..<var>n</var>−1</sub> to the <a data-link-type="dfn" href="#dfn-overload-resolution-algorithm" id="ref-for-dfn-overload-resolution-algorithm-1">overload resolution algorithm</a>. 
@@ -8819,7 +8819,7 @@ when they do exist, they are not <a data-link-type="dfn" href="#dfn-function-obj
    <ol class="algorithm">
     <li>If <var>V</var> is not an object, return <emu-val>false</emu-val>.
     <li>Let <var>O</var> be the result of calling the <span class="prop">[[Get]]</span> method of <var>A</var> with property name “prototype”.
-    <li>If <var>O</var> is not an object, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a> exception.
+    <li>If <var>O</var> is not an object, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-43">throw a <emu-val>TypeError</emu-val></a> exception.
     <li>If <var>V</var> is a platform object that implements the
         interface for which <var>O</var> is the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-8">interface prototype object</a>,
     return <emu-val>true</emu-val>.
@@ -8977,7 +8977,7 @@ partial interface Window {
    </ol>
    <h5 class="heading settled" data-level="5.6.4.2" id="named-properties-object-defineownproperty"><span class="secno">5.6.4.2. </span><span class="content">Named properties object [[DefineOwnProperty]] method</span><a class="self-link" href="#named-properties-object-defineownproperty"></a></h5>
    <p> The internal <span class="prop">[[DefineOwnProperty]]</span> method of every <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-10">named properties object</a> must behave as follows when called with object <var>O</var> and property name <var>P</var>.
-    The term <span id="Reject">“Reject”</span> is used in the same sense as that defined in ECMA-262, namely, to mean “If <var>Throw</var> is <emu-val>true</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a> exception,
+    The term <span id="Reject">“Reject”</span> is used in the same sense as that defined in ECMA-262, namely, to mean “If <var>Throw</var> is <emu-val>true</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-44">throw a <emu-val>TypeError</emu-val></a> exception,
     otherwise return <emu-val>false</emu-val>”. </p>
    <ol class="algorithm">
     <li><a href="#Reject">Reject</a>.
@@ -9072,7 +9072,7 @@ partial interface Window {
           <li>If the <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-67">attribute</a> was specified with the
                                 [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-8">LenientThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-98">extended attribute</a>,
                             then return <emu-val>undefined</emu-val>.
-          <li>Otherwise, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+          <li>Otherwise, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-45">throw a <emu-val>TypeError</emu-val></a>.
          </ol>
         <li> Set <var>idlValue</var> to be the result of performing the actions listed in the description of the attribute that occur when getting
                         (or those listed in the description of the inherited attribute, if this attribute is declared to <a data-link-type="dfn" href="#dfn-inherit-getter" id="ref-for-dfn-inherit-getter-2">inherit its getter</a>),
@@ -9094,7 +9094,7 @@ partial interface Window {
         [<code class="idl"><a data-link-type="idl" href="#Replaceable" id="ref-for-Replaceable-11">Replaceable</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-99">extended attribute</a> declared on it.
         Otherwise, it is a <emu-val>Function</emu-val> object whose behavior when invoked is as follows: 
      <ol class="algorithm">
-      <li>If no arguments were passed to the <emu-val>Function</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If no arguments were passed to the <emu-val>Function</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-46">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>V</var> be the value of the first argument passed to the <emu-val>Function</emu-val>.
       <li>
        If the <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-68">attribute</a> is a <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-15">regular attribute</a>, then: 
@@ -9114,7 +9114,7 @@ partial interface Window {
         <li>Let <var>validThis</var> be <emu-val>true</emu-val> if <var>O</var> is a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-22">platform object</a> that implements <var>I</var>, or <emu-val>false</emu-val> otherwise.
         <li>If <var>validThis</var> is <emu-val>false</emu-val> and the <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-70">attribute</a> was not specified with the
                         [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-10">LenientThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-100">extended attribute</a>,
-                    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+                    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-47">throw a <emu-val>TypeError</emu-val></a>.
         <li>
          If the attribute is declared with a [<code class="idl"><a data-link-type="idl" href="#Replaceable" id="ref-for-Replaceable-12">Replaceable</a></code>]
                         extended attribute, then: 
@@ -9132,7 +9132,7 @@ partial interface Window {
          <ol>
           <li>Let <var>Q</var> be the result of calling the <span class="prop">[[Get]]</span> method
                             on <var>O</var> using the identifier of the attribute as the property name.
-          <li>If <var>Q</var> is not an object, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+          <li>If <var>Q</var> is not an object, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-48">throw a <emu-val>TypeError</emu-val></a>.
           <li>Let <var>A</var> be the attribute identified by the [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards-17">PutForwards</a></code>] extended attribute.
           <li>Call the <span class="prop">[[Put]]</span> method on <var>Q</var> using the identifier of <var>A</var> as the property name and <var>V</var> as the value.
           <li>Return <emu-val>undefined</emu-val>.
@@ -9218,7 +9218,7 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
                                 the ECMAScript global object associated with the <emu-val>Function</emu-val> object. 
           <li> Otherwise, if the <emu-val>this</emu-val> value is not <emu-val>null</emu-val>,
                                 then <var>O</var> is the <emu-val>this</emu-val> value. 
-          <li> Otherwise, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+          <li> Otherwise, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-49">throw a <emu-val>TypeError</emu-val></a>. 
          </ul>
         <li>
          If <var>O</var> is a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-23">platform object</a>,
@@ -9230,7 +9230,7 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
           <li>the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-74">identifier</a> of the <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-72">operation</a>, and
           <li>the type “method”.
          </ul>
-        <li> If <var>O</var> is not <emu-val>null</emu-val> and is also not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-24">platform object</a> that implements interface <var>I</var>, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>. 
+        <li> If <var>O</var> is not <emu-val>null</emu-val> and is also not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-24">platform object</a> that implements interface <var>I</var>, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-50">throw a <emu-val>TypeError</emu-val></a>. 
         <li> Initialize <var>S</var> to the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-10">effective overload set</a> for <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-15">regular operations</a> (if the operation is a regular operation) or for <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-15">static operations</a> (if the operation is a static operation) with <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-75">identifier</a> <var>id</var> on <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-107">interface</a> <var>I</var> and with argument count <var>n</var>. 
         <li> Let &lt;<var>operation</var>, <var>values</var>> be the result of passing <var>S</var> and <var>arg</var><sub>0..<var>n</var>−1</sub> to the <a data-link-type="dfn" href="#dfn-overload-resolution-algorithm" id="ref-for-dfn-overload-resolution-algorithm-3">overload resolution algorithm</a>. 
         <li> Let <var>R</var> be the result of performing (on <var>O</var>, if the operation
@@ -9288,7 +9288,7 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
         <li>the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-77">identifier</a> of the <a data-link-type="dfn" href="#dfn-stringifier" id="ref-for-dfn-stringifier-6">stringifier</a>, and
         <li>the type “method”.
        </ul>
-      <li>If <var>O</var> is not an object that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-110">interface</a> on which the stringifier was declared, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-110">interface</a> on which the stringifier was declared, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-51">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>V</var> be an uninitialized variable.
       <li>
        Depending on where <code>stringifier</code> was specified: 
@@ -9340,7 +9340,7 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
       <li>the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-78">identifier</a> of the <a data-link-type="dfn" href="#dfn-serializer" id="ref-for-dfn-serializer-7">serializer</a>, and
       <li>the type “method”.
      </ul>
-    <li>If <var>O</var> is not an object that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-112">interface</a> on which the serializer was declared, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>O</var> is not an object that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-112">interface</a> on which the serializer was declared, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-52">throw a <emu-val>TypeError</emu-val></a>.
     <li>
      Depending on how <code>serializer</code> was specified: 
      <dl class="switch">
@@ -9445,7 +9445,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
      </ul>
     <li>Let <var>interface</var> be the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-115">interface</a> the <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-10">iterable declaration</a> is on.
     <li>If <var>object</var> is not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-28">platform object</a> that implements <var>interface</var>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-53">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>iterator</var> be a newly created <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-1">default iterator object</a> for <var>interface</var> with <var>object</var> as its target and iterator kind “key+value”.
     <li>Return <var>iterator</var>.
    </ol>
@@ -9464,7 +9464,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
       <li>the type “method”.
      </ul>
     <li>If <var>object</var> is not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-30">platform object</a> that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-116">interface</a> on which the <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-9">maplike declaration</a> or <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-9">setlike declaration</a> is defined,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-54">throw a <emu-val>TypeError</emu-val></a>.
     <li>
      If the interface has a <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-10">maplike declaration</a>, then: 
      <ol>
@@ -9542,9 +9542,9 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
      </ul>
     <li>Let <var>interface</var> be the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-118">interface</a> on which the <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-14">maplike declaration</a> or <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-13">setlike declaration</a> is declared.
     <li>If <var>object</var> is not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-32">platform object</a> that implements <var>interface</var>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-55">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>callbackFn</var> be the value of the first argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>callbackFn</var>) is <emu-val>false</emu-val>, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>callbackFn</var>) is <emu-val>false</emu-val>, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-56">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>thisArg</var> be the value of the second argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.
     <li>Let <var>backing</var> be the value of the [[BackingMap]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a> of <var>object</var>,
         if the interface has a <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-15">maplike declaration</a>,
@@ -9561,7 +9561,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
         every time forEach is called?  What’s the best way of specifying that there’s only
         one function that has captured an environment?</p>
     <li>Let <var>forEach</var> be the result of calling the [[Get]] internal method of <var>backing</var> with “forEach” and <var>backing</var> as arguments.
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>forEach</var>) is <emu-val>false</emu-val>, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>forEach</var>) is <emu-val>false</emu-val>, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-57">throw a <emu-val>TypeError</emu-val></a>.
     <li>Call the [[Call]] internal method of <var>forEach</var> with <var>backing</var> as <var>thisArgument</var> and <var>callbackWrapper</var> and <var>thisArg</var> as <var>argumentsList</var>.
     <li>Return <emu-val>undefined</emu-val>.
    </ol>
@@ -9622,7 +9622,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
      </ul>
     <li>Let <var>interface</var> be the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-121">interface</a> on which the <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-15">iterable declaration</a> is declared on.
     <li>If <var>object</var> is not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-34">platform object</a> that implements <var>interface</var>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-58">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>iterator</var> be a newly created <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-2">default iterator object</a> for <var>interface</var> with <var>object</var> as its target and iterator kind “key”.
     <li>Return <var>iterator</var>.
    </ol>
@@ -9660,7 +9660,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
      </ul>
     <li>Let <var>interface</var> be the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-123">interface</a> on which the <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-17">iterable declaration</a> is declared on.
     <li>If <var>object</var> is not a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-36">platform object</a> that implements <var>interface</var>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-59">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>iterator</var> be a newly created <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-3">default iterator object</a> for <var>interface</var> with <var>object</var> as its target and iterator kind “value”.
     <li>Return <var>iterator</var>.
    </ol>
@@ -9701,7 +9701,7 @@ use standard ECMAScript Array iterator objects.</p>
       <li>the type “method”.
      </ul>
     <li>If <var>object</var> is not a <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-8">default iterator object</a> for <var>interface</var>,
-    then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-60">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>target</var> be <var>object</var>’s target.
     <li>Let <var>index</var> be <var>object</var>’s index.
     <li>Let <var>kind</var> be <var>object</var>’s kind.
@@ -9768,10 +9768,10 @@ use standard ECMAScript Array iterator objects.</p>
       <li>an identifier equal to <var>name</var>, and
       <li>the type “method”.
      </ul>
-    <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-61">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>map</var> be the <emu-val>Map</emu-val> object that is the value of <var>O</var>’s [[BackingMap]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
     <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>map</var> passing <var>name</var> and <var>map</var> as arguments.
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>function</var>) is <emu-val>false</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>function</var>) is <emu-val>false</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-62">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>map</var> as <var>thisArg</var> and <var>arguments</var> as <var>argumentsList</var>.
    </ol>
    <h5 class="heading settled" data-level="5.6.10.1" id="es-map-size"><span class="secno">5.6.10.1. </span><span class="content">size</span><a class="self-link" href="#es-map-size"></a></h5>
@@ -9795,7 +9795,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>the identifier “size”, and
         <li>the type “getter”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-63">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>map</var> be the <emu-val>Map</emu-val> object that is the value of <var>O</var>’s [[BackingMap]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Return the result of calling the [[Get]] internal method of <var>map</var> passing “size” and <var>map</var> as arguments.
      </ol>
@@ -9831,7 +9831,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>an identifier equal to <var>name</var>, and
         <li>the type “method”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-64">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>map</var> be the <emu-val>Map</emu-val> object that is the value of <var>O</var>’s [[BackingMap]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Let <var>keyType</var> be the key type specified in the <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-18">maplike declaration</a>.
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>map</var> passing <var>name</var> and <var>map</var> as arguments.
@@ -9872,7 +9872,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>the identifier “delete”, and
         <li>the type “method”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-65">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>map</var> be the <emu-val>Map</emu-val> object that is the value of <var>O</var>’s [[BackingMap]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Let <var>keyType</var> be the key type specified in the <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-19">maplike declaration</a>.
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>map</var> passing “delete” and <var>map</var> as arguments.
@@ -9903,7 +9903,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>the identifier “set”, and
         <li>the type “method”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-66">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>map</var> be the <emu-val>Map</emu-val> object that is the value of <var>O</var>’s [[BackingMap]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Let <var>keyType</var> and <var>valueType</var> be the key and value types specified in the <a data-link-type="dfn" href="#dfn-maplike-declaration" id="ref-for-dfn-maplike-declaration-20">maplike declaration</a>.
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>map</var> passing “set” and <var>map</var> as arguments.
@@ -9944,10 +9944,10 @@ use standard ECMAScript Array iterator objects.</p>
       <li>an identifier equal to <var>name</var>, and
       <li>the type “method”.
      </ul>
-    <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-67">throw a <emu-val>TypeError</emu-val></a>.
     <li>Let <var>set</var> be the <emu-val>Set</emu-val> object that is the value of <var>O</var>’s [[BackingSet]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
     <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>set</var> passing <var>name</var> and <var>set</var> as arguments.
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>function</var>) is <emu-val>false</emu-val>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>function</var>) is <emu-val>false</emu-val>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-68">throw a <emu-val>TypeError</emu-val></a>.
     <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>set</var> as <var>thisArg</var> and <var>arguments</var> as <var>argumentsList</var>.
    </ol>
    <h5 class="heading settled" data-level="5.6.11.1" id="es-set-size"><span class="secno">5.6.11.1. </span><span class="content">size</span><a class="self-link" href="#es-set-size"></a></h5>
@@ -9971,7 +9971,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>the identifier “size”, and
         <li>the type “getter”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-69">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>set</var> be the <emu-val>Set</emu-val> object that is the value of <var>O</var>’s [[BackingSet]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Return the result of calling the [[Get]] internal method of <var>set</var> passing “size” and <var>set</var> as arguments.
      </ol>
@@ -10006,7 +10006,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>the identifier “has”, and
         <li>the type “method”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-70">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>set</var> be the <emu-val>Set</emu-val> object that is the value of <var>O</var>’s [[BackingSet]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Let <var>type</var> be the value type specified in the <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-16">setlike declaration</a>.
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>set</var> passing “has” and <var>set</var> as arguments.
@@ -10042,7 +10042,7 @@ use standard ECMAScript Array iterator objects.</p>
         <li>an identifier equal to <var>name</var>, and
         <li>the type “method”.
        </ul>
-      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <var>O</var> is not an object that implements <var>A</var>, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-71">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>set</var> be the <emu-val>Set</emu-val> object that is the value of <var>O</var>’s [[BackingSet]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.
       <li>Let <var>type</var> be the value type specified in the <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-17">setlike declaration</a>.
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>set</var> passing <var>name</var> and <var>set</var> as arguments.
@@ -10083,7 +10083,7 @@ use standard ECMAScript Array iterator objects.</p>
    <p> To <dfn data-dfn-type="dfn" data-export="" id="add-map-elements-from-iterable">add map elements from an iterable<a class="self-link" href="#add-map-elements-from-iterable"></a></dfn> <var>iterable</var> to
     an object <var>destination</var> with adder method name <var>adder</var>, perform the following steps: </p>
    <ol class="algorithm">
-    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>destination</var>) is not Object, then, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>destination</var>) is not Object, then, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-72">throw a <emu-val>TypeError</emu-val></a>.
     <li>If <var>iterable</var> is not present, let <var>iterable</var> be <emu-val>undefined</emu-val>.
     <li>If <var>iterable</var> is either <emu-val>undefined</emu-val> or <emu-val>null</emu-val>, then let <var>iter</var> be <emu-val>undefined</emu-val>.
     <li>
@@ -10091,7 +10091,7 @@ use standard ECMAScript Array iterator objects.</p>
      <ol>
       <li>Let <var>adder</var> be the result of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(<var>destination</var>, <var>adder</var>).
       <li><a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>adder</var>).
-      <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>adder</var>) is <emu-val>false</emu-val>, <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>adder</var>) is <emu-val>false</emu-val>, <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-73">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>iter</var> be the result of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-getiterator">GetIterator</a>(<var>iterable</var>).
       <li><a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>iter</var>).
      </ol>
@@ -10104,7 +10104,7 @@ use standard ECMAScript Array iterator objects.</p>
       <li>If <var>next</var> is <emu-val>false</emu-val>, then return <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-normalcompletion">NormalCompletion</a>(<var>destination</var>).
       <li>Let <var>nextItem</var> be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iteratorvalue">IteratorValue</a>(<var>next</var>).
       <li><a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>nextItem</var>).
-      <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>nextItem</var>) is not Object, then <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+      <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>nextItem</var>) is not Object, then <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-74">throw a <emu-val>TypeError</emu-val></a>.
       <li>Let <var>k</var> be the result of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(<var>nextItem</var>, <code><a class="property" data-link-type="propdesc">0</a></code>).
       <li><a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>k</var>).
       <li>Let <var>v</var> be the result of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(<var>nextItem</var>, <code><a class="property" data-link-type="propdesc">1</a></code>).
@@ -10215,10 +10215,10 @@ C implements A;
     This way, the definitions of these special operations from
     ancestor interfaces can be overridden. </p>
    <p> Platform objects implementing an interface that supports indexed or named properties cannot be fixed; if <code>Object.freeze</code>, <code>Object.seal</code> or <code>Object.preventExtensions</code> is called on one of these objects, the function
-    must <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a>.
+    must <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-75">throw a <emu-val>TypeError</emu-val></a>.
     Similarly, an <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-57">interface prototype object</a> that exposes named properties due to the use of [<code class="idl"><a data-link-type="idl">Global</a></code>] or
     [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>]
-    also must <a data-link-type="dfn">throw a <emu-val>TypeError</emu-val></a> if one of the three functions above is called on it. </p>
+    also must <a data-link-type="dfn" href="#es-throw" id="ref-for-es-throw-76">throw a <emu-val>TypeError</emu-val></a> if one of the three functions above is called on it. </p>
    <p> The name of each property that appears to exist due to an object supporting indexed properties
     is an <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-array-index-property-name">array index property name</dfn>, which is a property
     name <var>P</var> such that <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>P</var>) is String
@@ -14367,6 +14367,57 @@ and configurable.<a href="#issue-788163ca"> ↵ </a></div>
     <li><a href="#ref-for-dfn-function-object-15">5.6.11. Setlike declarations</a>
     <li><a href="#ref-for-dfn-function-object-16">5.6.11.2. values</a>
     <li><a href="#ref-for-dfn-function-object-17">5.11.1. DOMException constructor object</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="es-throw">
+   <b><a href="#es-throw">#es-throw</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-es-throw-1">5.2.4. byte</a> <a href="#ref-for-es-throw-2">(2)</a>
+    <li><a href="#ref-for-es-throw-3">5.2.5. octet</a> <a href="#ref-for-es-throw-4">(2)</a>
+    <li><a href="#ref-for-es-throw-5">5.2.6. short</a> <a href="#ref-for-es-throw-6">(2)</a>
+    <li><a href="#ref-for-es-throw-7">5.2.7. unsigned short</a> <a href="#ref-for-es-throw-8">(2)</a>
+    <li><a href="#ref-for-es-throw-9">5.2.8. long</a> <a href="#ref-for-es-throw-10">(2)</a>
+    <li><a href="#ref-for-es-throw-11">5.2.9. unsigned long</a> <a href="#ref-for-es-throw-12">(2)</a>
+    <li><a href="#ref-for-es-throw-13">5.2.10. long long</a> <a href="#ref-for-es-throw-14">(2)</a>
+    <li><a href="#ref-for-es-throw-15">5.2.11. unsigned long long</a> <a href="#ref-for-es-throw-16">(2)</a>
+    <li><a href="#ref-for-es-throw-17">5.2.12. float</a> <a href="#ref-for-es-throw-18">(2)</a>
+    <li><a href="#ref-for-es-throw-19">5.2.14. double</a>
+    <li><a href="#ref-for-es-throw-20">5.2.17. ByteString</a>
+    <li><a href="#ref-for-es-throw-21">5.2.19. object</a>
+    <li><a href="#ref-for-es-throw-22">5.2.20. Interface types</a> <a href="#ref-for-es-throw-23">(2)</a>
+    <li><a href="#ref-for-es-throw-24">5.2.21. Dictionary types</a> <a href="#ref-for-es-throw-25">(2)</a>
+    <li><a href="#ref-for-es-throw-26">5.2.22. Enumeration types</a>
+    <li><a href="#ref-for-es-throw-27">5.2.23. Callback function types</a>
+    <li><a href="#ref-for-es-throw-28">5.2.25. Sequences — sequence&lt;T></a> <a href="#ref-for-es-throw-29">(2)</a> <a href="#ref-for-es-throw-30">(3)</a>
+    <li><a href="#ref-for-es-throw-31">5.2.26. Promise types — Promise&lt;T></a>
+    <li><a href="#ref-for-es-throw-32">5.2.27. Union types</a>
+    <li><a href="#ref-for-es-throw-33">5.2.29. Error</a>
+    <li><a href="#ref-for-es-throw-34">5.2.30. DOMException</a>
+    <li><a href="#ref-for-es-throw-35">5.2.31. Buffer source types</a> <a href="#ref-for-es-throw-36">(2)</a> <a href="#ref-for-es-throw-37">(3)</a> <a href="#ref-for-es-throw-38">(4)</a> <a href="#ref-for-es-throw-39">(5)</a>
+    <li><a href="#ref-for-es-throw-40">5.5. Overload resolution algorithm</a> <a href="#ref-for-es-throw-41">(2)</a>
+    <li><a href="#ref-for-es-throw-42">5.6.1.1. Interface object [[Call]] method</a>
+    <li><a href="#ref-for-es-throw-43">5.6.1.2. Interface object [[HasInstance]] method</a>
+    <li><a href="#ref-for-es-throw-44">5.6.4.2. Named properties object [[DefineOwnProperty]] method</a>
+    <li><a href="#ref-for-es-throw-45">5.6.6. Attributes</a> <a href="#ref-for-es-throw-46">(2)</a> <a href="#ref-for-es-throw-47">(3)</a> <a href="#ref-for-es-throw-48">(4)</a>
+    <li><a href="#ref-for-es-throw-49">5.6.7. Operations</a> <a href="#ref-for-es-throw-50">(2)</a>
+    <li><a href="#ref-for-es-throw-51">5.6.7.1. Stringifiers</a>
+    <li><a href="#ref-for-es-throw-52">5.6.7.2. Serializers</a>
+    <li><a href="#ref-for-es-throw-53">5.6.8.1. @@iterator</a> <a href="#ref-for-es-throw-54">(2)</a>
+    <li><a href="#ref-for-es-throw-55">5.6.8.2. forEach</a> <a href="#ref-for-es-throw-56">(2)</a> <a href="#ref-for-es-throw-57">(3)</a>
+    <li><a href="#ref-for-es-throw-58">5.6.9.2. keys</a>
+    <li><a href="#ref-for-es-throw-59">5.6.9.3. values</a>
+    <li><a href="#ref-for-es-throw-60">5.6.9.5. Iterator prototype object</a>
+    <li><a href="#ref-for-es-throw-61">5.6.10. Maplike declarations</a> <a href="#ref-for-es-throw-62">(2)</a>
+    <li><a href="#ref-for-es-throw-63">5.6.10.1. size</a>
+    <li><a href="#ref-for-es-throw-64">5.6.10.4. get and has</a>
+    <li><a href="#ref-for-es-throw-65">5.6.10.6. delete</a>
+    <li><a href="#ref-for-es-throw-66">5.6.10.7. set</a>
+    <li><a href="#ref-for-es-throw-67">5.6.11. Setlike declarations</a> <a href="#ref-for-es-throw-68">(2)</a>
+    <li><a href="#ref-for-es-throw-69">5.6.11.1. size</a>
+    <li><a href="#ref-for-es-throw-70">5.6.11.4. has</a>
+    <li><a href="#ref-for-es-throw-71">5.6.11.5. add and delete</a>
+    <li><a href="#ref-for-es-throw-72">5.6.12. Initializing objects from iterables</a> <a href="#ref-for-es-throw-73">(2)</a> <a href="#ref-for-es-throw-74">(3)</a>
+    <li><a href="#ref-for-es-throw-75">5.8.1. Indexed and named properties</a> <a href="#ref-for-es-throw-76">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-initial-object">

@@ -219,7 +219,7 @@ TR: </xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@href="#ecmascript-throw"]'>
-    <a lt="es-throw"><xsl:value-of select='substring-before(., " ")'/> a <emu-val>TypeError</emu-val></a>
+    <a lt="es throw"><xsl:value-of select='substring-before(., " ")'/> a <emu-val>TypeError</emu-val></a>
   </xsl:template>
   
   <xsl:template match='h:p[@id="ecmascript-throw"]'>
