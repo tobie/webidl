@@ -434,7 +434,7 @@ Issue</xsl:text>
   
   <xsl:template match='h:div[@class="note" or @class="warning" or @class="ednote"]'>
     <xsl:choose>
-      <xsl:when test='.[parent::h:li] or .[count(h:p)&gt;1] or .[not(h:p)]'>
+      <xsl:when test='.[descendant::h:li] or .[count(h:p)&gt;1] or .[not(h:p)]'>
         <xsl:call-template name="wrapped-note-issue-advisement"/>
       </xsl:when>
       <xsl:otherwise>
