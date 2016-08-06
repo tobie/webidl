@@ -3104,7 +3104,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
       <td>Defines behavior for when an object is indexed for property
         assignment or creation.
      <tr>
-      <td><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="deleter" id="dfn-deleter">Deleters</dfn>
+      <td><dfn data-dfn-type="dfn" data-export="" data-lt="deleter" id="dfn-deleter">Deleters<a class="self-link" href="#dfn-deleter"></a></dfn>
       <td><code>deleter</code>
       <td>Defines behavior for when an object is indexed for property deletion.
      <tr>
@@ -3670,7 +3670,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
         by a description of how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-set-the-value-of-an-existing-indexed-property">set the value of an existing indexed property</dfn> and how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-set-the-value-of-a-new-indexed-property">set the value of a new indexed property</dfn> for a given property index and value. 
    </ul>
    <div class="note" role="note">
-    <p> Note that if an <a data-link-type="dfn" href="#dfn-indexed-property-getter" id="ref-for-dfn-indexed-property-getter-3">indexed property getter</a> or <a data-link-type="dfn" href="#dfn-setter" id="ref-for-dfn-setter-1">setter</a> is specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-13">operation</a> with an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-26">identifier</a>,
+    <p> Note that if an <a data-link-type="dfn" href="#dfn-indexed-property-getter" id="ref-for-dfn-indexed-property-getter-3">indexed property getter</a> or <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-2">setter</a> is specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-13">operation</a> with an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-26">identifier</a>,
         then indexing an object with an integer that is not a <a data-link-type="dfn" href="#dfn-supported-property-indices" id="ref-for-dfn-supported-property-indices-2">supported property index</a> does not necessarily elicit the same behavior as invoking the operation with that index.  The actual behavior in this
         case is language binding specific. </p>
     <p> In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL: </p>
@@ -3802,7 +3802,7 @@ deleter <i>type</i> (DOMString <i>identifier</i>);
         by a description of how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-delete-an-existing-named-property">delete an existing named property</dfn> for a given property name. 
    </ul>
    <p class="note" role="note">Note: As with <a href="#idl-indexed-properties">indexed properties</a>,
-if an <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-4">named property getter</a>, <a data-link-type="dfn" href="#dfn-setter" id="ref-for-dfn-setter-2">setter</a> or <a data-link-type="dfn" href="#dfn-deleter" id="ref-for-dfn-deleter-1">deleter</a> is specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-16">operation</a> with an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-28">identifier</a>,
+if an <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-4">named property getter</a>, <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-2">setter</a> or <a data-link-type="dfn" href="#dfn-named-property-deleter" id="ref-for-dfn-named-property-deleter-4">deleter</a> is specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-16">operation</a> with an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-28">identifier</a>,
 then indexing an object with a name that is not a <a data-link-type="dfn" href="#dfn-supported-property-names" id="ref-for-dfn-supported-property-names-2">supported property name</a> does not necessarily elicit the same behavior as invoking the operation with that name; the behavior
 is language binding specific.</p>
    <h4 class="heading settled" data-level="4.2.5" id="idl-static-attributes-and-operations"><span class="secno">4.2.5. </span><span class="content">Static attributes and operations</span><a class="self-link" href="#idl-static-attributes-and-operations"></a></h4>
@@ -5485,7 +5485,7 @@ To allow <span class="idlvalue">null</span>, a <a href="#idl-nullable-type">null
 written as <code>DOMString?</code> in IDL, needs to be used.</p>
    <p> Nothing in this specification requires a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-24">DOMString</a></code> value to be a valid UTF-16 string.  For example, a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-25">DOMString</a></code> value might include unmatched surrogate pair characters.  However, authors
     of specifications using Web IDL might want to obtain a sequence of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> given a particular sequence of <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-2">code units</a>.
-    The following algorithm defines a way to <dfn data-dfn-type="dfn" data-export="" data-lt="obtain Unicode|convert to a sequence of Unicode scalar values" id="dfn-obtain-unicode">convert a DOMString to a sequence of Unicode scalar values<a class="self-link" href="#dfn-obtain-unicode"></a></dfn>: </p>
+    The following algorithm defines a way to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="obtain Unicode|convert to a sequence of Unicode scalar values" id="dfn-obtain-unicode">convert a DOMString to a sequence of Unicode scalar values</dfn>: </p>
    <ol class="algorithm">
     <li>Let <var>S</var> be the <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-26">DOMString</a></code> value.
     <li>Let <var>n</var> be the length of <var>S</var>.
@@ -6647,7 +6647,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
    <ol class="algorithm">
     <li>Let <var>string</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-2">converting</a> <var>V</var> to a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-42">DOMString</a></code>.
     <li>Return an IDL <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-11">USVString</a></code> value
-        that is the result of <a data-link-type="dfn">converting string to a sequence of Unicode scalar values</a>.
+        that is the result of <a data-link-type="dfn" href="#dfn-obtain-unicode" id="ref-for-dfn-obtain-unicode-1">converting string to a sequence of Unicode scalar values</a>.
    </ol>
    <p id="USVString-to-es"> An IDL <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-12">USVString</a></code> value is <a data-link-type="dfn">converted</a> to an ECMAScript value by running the following algorithm: </p>
    <ol class="algorithm">
@@ -7543,7 +7543,7 @@ interface Window {
    <p> If the [<code class="idl"><a data-link-type="idl">Global</a></code>] or
     [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-53">extended attributes</a> is used on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-65">interface</a>, then: </p>
    <ul>
-    <li>The interface must not define a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-2">named property setter</a>.
+    <li>The interface must not define a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-3">named property setter</a>.
     <li>The interface must not also be declared with the [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-3">OverrideBuiltins</a></code>]
         extended attribute.
     <li>The interface must not <a data-link-type="dfn" href="#dfn-inherit" id="ref-for-dfn-inherit-11">inherit</a> from another interface with the
@@ -7655,8 +7655,8 @@ which would provide access to the array elements.</p>
    <p> See <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a> for the
     specific requirements that the use of [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-6">LegacyArrayClass</a></code>]
     entails. </p>
-   <div class="example" id="example-88158b22">
-    <a class="self-link" href="#example-88158b22"></a> 
+   <div class="example" id="example-ae511f8a">
+    <a class="self-link" href="#example-ae511f8a"></a> 
     <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-36">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-68">interfaces</a> that use [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-7">LegacyArrayClass</a></code>]. </p>
 <pre class="idl-example">[LegacyArrayClass]
 interface ItemList {
@@ -7681,7 +7681,7 @@ interface ImmutableItemList {
 <span class="nx">list</span><span class="p">.</span><span class="nx">unshift</span><span class="p">({</span> <span class="p">});</span>         <span class="c1">// Insert an item at index 0.</span>
 </pre>
     <p> <span class="idltype">ImmutableItemList</span> has a read only
-        length <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-46">attribute</a> and no indexed property <a data-link-type="dfn" href="#dfn-setter" id="ref-for-dfn-setter-3">setter</a>.  The
+        length <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-46">attribute</a> and no indexed property <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-3">setter</a>.  The
         mutating <emu-val>Array</emu-val> methods will generally not
         succeed on objects implementing <span class="idltype">ImmutableItemList</span>.
         The exact behavior depends on the definition of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-properties-of-the-array-prototype-object">the Array methods themselves</a> (<a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>, section 22.1.3). </p>
@@ -7868,7 +7868,7 @@ interface HTMLAudioElement : HTMLMediaElement {
     it indicates that an <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-5">interface object</a> will not exist for the interface in the ECMAScript binding. </p>
     <strong class="advisement"> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-5">NoInterfaceObject</a></code>] extended attribute
 should not be used on interfaces that are not
-solely used as <a data-link-type="dfn">supplemental</a> interfaces,
+solely used as <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-4">supplemental</a> interfaces,
 unless there are clear Web compatibility reasons for doing so.  Specification authors who
 wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
    <p> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-6">NoInterfaceObject</a></code>] extended attribute
@@ -8893,7 +8893,7 @@ when they do exist, they are not <a data-link-type="dfn" href="#dfn-function-obj
    </ol>
    <div class="note" role="note">
     <p> The <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-13">interface prototype object</a> of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-94">interface</a> that is defined with
-        the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-16">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-95">extended attribute</a> will be accessible if the interface is used as a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-4">non-supplemental interface</a>.
+        the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-16">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-95">extended attribute</a> will be accessible if the interface is used as a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-5">non-supplemental interface</a>.
         For example, with the following IDL: </p>
 <pre class="idl-example example" id="example-4d9a02f9"><a class="self-link" href="#example-4d9a02f9"></a>[NoInterfaceObject]
 interface Foo {
@@ -8908,7 +8908,7 @@ partial interface Window {
         of <span class="idltype">Foo</span> can expose the interface prototype
         object by gettings its internal <span class="prop">[[Prototype]]</span> property value – <code>Object.getPrototypeOf(window.foo)</code> in
         this example. </p>
-    <p> If the interface is used solely as a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-5">supplemental interface</a>,
+    <p> If the interface is used solely as a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-6">supplemental interface</a>,
         then there will be no way to access its interface prototype object, since no
         object will have the interface prototype object as its internal <span class="prop">[[Prototype]]</span> property value.  In such cases,
         it is an acceptable optimization for this object not to exist. </p>
@@ -10148,7 +10148,7 @@ C implements A;
     which global environment (or, by proxy, which global object) each platform
     object is associated with. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-primary-interface">primary interface</dfn> of a platform object
-    that implements one or more interfaces is the most-derived <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-6">non-supplemental interface</a> that it implements.  The value of the internal <span class="prop">[[Prototype]]</span> property of the platform object is the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-55">interface prototype object</a> of the <a data-link-type="dfn" href="#dfn-primary-interface" id="ref-for-dfn-primary-interface-1">primary interface</a> from the <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-48">platform object</a>’s associated global environment. </p>
+    that implements one or more interfaces is the most-derived <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-7">non-supplemental interface</a> that it implements.  The value of the internal <span class="prop">[[Prototype]]</span> property of the platform object is the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-55">interface prototype object</a> of the <a data-link-type="dfn" href="#dfn-primary-interface" id="ref-for-dfn-primary-interface-1">primary interface</a> from the <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-48">platform object</a>’s associated global environment. </p>
    <p> The global environment that a given <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-49">platform object</a> is associated with can <dfn data-dfn-for="global environment" data-dfn-type="dfn" data-export="" id="dfn-change-global-environment">change<a class="self-link" href="#dfn-change-global-environment"></a></dfn> after it has been created.  When
     the global environment associated with a platform object is changed, its internal <span class="prop">[[Prototype]]</span> property must be immediately
     updated to be the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-56">interface prototype object</a> of the <a data-link-type="dfn" href="#dfn-primary-interface" id="ref-for-dfn-primary-interface-2">primary interface</a> from the <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-50">platform object</a>’s newly associated global environment. </p>
@@ -10203,13 +10203,13 @@ C implements A;
     in the prototype chain, the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-12">named properties object</a>. </p>
    <p> It is permissible for an object to implement multiple interfaces that support indexed properties.
     However, if so, and there are conflicting definitions as to the object’s <a data-link-type="dfn" href="#dfn-supported-property-indices" id="ref-for-dfn-supported-property-indices-4">supported property indices</a>,
-    or if one of the interfaces is a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-7">supplemental interface</a> for the
+    or if one of the interfaces is a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-8">supplemental interface</a> for the
     platform object, then it is undefined what additional properties the object will appear to
     have, or what its exact behavior will be with regard to its indexed properties.
     The same applies for named properties. </p>
    <p> The <a data-link-type="dfn" href="#dfn-indexed-property-getter" id="ref-for-dfn-indexed-property-getter-8">indexed property getter</a> that is defined on the derived-most interface that the
     platform object implements is the one that defines the behavior
-    when indexing the object with an array index.  Similarly for <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-2">indexed property setters</a>.
+    when indexing the object with an array index.  Similarly for <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-4">indexed property setters</a>.
     This way, the definitions of these special operations from
     ancestor interfaces can be overridden. </p>
    <p> Platform objects implementing an interface that supports indexed or named properties cannot be fixed; if <code>Object.freeze</code>, <code>Object.seal</code> or <code>Object.preventExtensions</code> is called on one of these objects, the function
@@ -10278,7 +10278,7 @@ C implements A;
    </div>
    <p> Support for <a data-link-type="dfn" href="#dfn-getter" id="ref-for-dfn-getter-1">getters</a> is
     handled by the <a href="#getownproperty">platform object [[GetOwnProperty]] method</a> defined in section <a href="#getownproperty">§5.8.3 Platform object [[GetOwnProperty]] method</a>, and
-    for <a data-link-type="dfn" href="#dfn-setter" id="ref-for-dfn-setter-4">setters</a> by the <a href="#defineownproperty">platform object [[DefineOwnProperty]] method</a> defined in section <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> and the <a href="#platformobjectset">platform object [[Set]] method</a> defined in section <a href="#platformobjectset">§5.8.6 Platform object [[Set]] method</a>. </p>
+    for <a data-link-type="dfn" href="#dfn-setter" id="ref-for-dfn-setter-1">setters</a> by the <a href="#defineownproperty">platform object [[DefineOwnProperty]] method</a> defined in section <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> and the <a href="#platformobjectset">platform object [[Set]] method</a> defined in section <a href="#platformobjectset">§5.8.6 Platform object [[Set]] method</a>. </p>
    <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.8.2" data-lt="The PlatformObjectGetOwnProperty abstract operation" data-noexport="" id="getownproperty-guts"><span class="secno">5.8.2. </span><span class="content">The PlatformObjectGetOwnProperty abstract operation</span></h4>
    <p> The <span class="prop">PlatformObjectGetOwnProperty</span> abstract operation performs the following steps when called with an
     object <var>O</var>, a property name <var>P</var>, and a boolean <var>ignoreNamedProps</var> value: </p>
@@ -10298,7 +10298,7 @@ C implements A;
                         of performing the steps listed in the description of <var>operation</var> with <var>index</var> as the only argument value.
         <li>Let <var>desc</var> be a newly created <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.
         <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-50">converting</a> <var>value</var> to an ECMAScript value.
-        <li>If <var>O</var> implements an interface with an <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-3">indexed property setter</a>, then set <var>desc</var>.<span class="prop">[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to <emu-val>false</emu-val>.
+        <li>If <var>O</var> implements an interface with an <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-5">indexed property setter</a>, then set <var>desc</var>.<span class="prop">[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to <emu-val>false</emu-val>.
         <li>Set <var>desc</var>.<span class="prop">[[Enumerable]]</span> and <var>desc</var>.<span class="prop">[[Configurable]]</span> to <emu-val>true</emu-val>.
         <li>Return <var>desc</var>.
        </ol>
@@ -10317,7 +10317,7 @@ C implements A;
                 of performing the steps listed in the description of <var>operation</var> with <var>P</var> as the only argument value.
       <li>Let <var>desc</var> be a newly created <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">Property Descriptor</a> with no fields.
       <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-51">converting</a> <var>value</var> to an ECMAScript value.
-      <li>If <var>O</var> implements an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-3">named property setter</a>, then set <var>desc</var>.<span class="prop">[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to <emu-val>false</emu-val>.
+      <li>If <var>O</var> implements an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-4">named property setter</a>, then set <var>desc</var>.<span class="prop">[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to <emu-val>false</emu-val>.
       <li>If <var>O</var> implements an interface with the
                 [<code class="idl"><a data-link-type="idl" href="#LegacyUnenumerableNamedProperties" id="ref-for-LegacyUnenumerableNamedProperties-6">LegacyUnenumerableNamedProperties</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-106">extended attribute</a>,
                 then set <var>desc</var>.<span class="prop">[[Enumerable]]</span> to <emu-val>false</emu-val>,
@@ -10374,14 +10374,14 @@ C implements A;
         then: 
      <ol>
       <li>
-        If <var>O</var> <a data-link-type="dfn" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-13">supports indexed properties</a>, <var>P</var> is an <a data-link-type="dfn" href="#dfn-array-index-property-name" id="ref-for-dfn-array-index-property-name-2">array index property name</a>, and <var>O</var> implements an interface with an <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-4">indexed property setter</a>, then: 
+        If <var>O</var> <a data-link-type="dfn" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-13">supports indexed properties</a>, <var>P</var> is an <a data-link-type="dfn" href="#dfn-array-index-property-name" id="ref-for-dfn-array-index-property-name-2">array index property name</a>, and <var>O</var> implements an interface with an <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-6">indexed property setter</a>, then: 
        <ol>
         <li> <a href="#invoking-indexed-setter">Invoke the indexed
                         property setter</a> with <var>P</var> and <var>V</var>. 
         <li>Return <emu-val>true</emu-val>.
        </ol>
       <li>
-        If <var>O</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-9">supports named properties</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>P</var>) is String, <var>P</var> is not an <a data-link-type="dfn" href="#dfn-array-index-property-name" id="ref-for-dfn-array-index-property-name-3">array index property name</a>, and <var>O</var> implements an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-4">named property setter</a>, then: 
+        If <var>O</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-9">supports named properties</a>, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>P</var>) is String, <var>P</var> is not an <a data-link-type="dfn" href="#dfn-array-index-property-name" id="ref-for-dfn-array-index-property-name-3">array index property name</a>, and <var>O</var> implements an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-5">named property setter</a>, then: 
        <ol>
         <li> <a href="#invoking-named-setter">Invoke the named
                         property setter</a> with <var>P</var> and <var>V</var>. 
@@ -10400,7 +10400,7 @@ C implements A;
       If <var>O</var> <a data-link-type="dfn" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-15">supports indexed properties</a> and <var>P</var> is an <a data-link-type="dfn" href="#dfn-array-index-property-name" id="ref-for-dfn-array-index-property-name-4">array index property name</a>, then: 
      <ol>
       <li>If the result of calling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a>(<var>Desc</var>) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.
-      <li>If <var>O</var> does not implement an interface with an <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-5">indexed property setter</a>, then <a href="#Reject">Reject</a>.
+      <li>If <var>O</var> does not implement an interface with an <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-7">indexed property setter</a>, then <a href="#Reject">Reject</a>.
       <li><a href="#invoking-indexed-setter">Invoke the indexed
                 property setter</a> with <var>P</var> and <var>Desc</var>.<span class="prop">[[Value]]</span>.
       <li>Return <emu-val>true</emu-val>.
@@ -10414,9 +10414,9 @@ C implements A;
        If <var>O</var> implements an interface with the [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-12">OverrideBuiltins</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-108">extended attribute</a> or <var>O</var> does not have an own property
                 named <var>P</var>, then: 
        <ol>
-        <li>If <var>creating</var> is false and <var>O</var> does not implement an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-5">named property setter</a>, then <a href="#Reject">Reject</a>.
+        <li>If <var>creating</var> is false and <var>O</var> does not implement an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-6">named property setter</a>, then <a href="#Reject">Reject</a>.
         <li>
-         If <var>O</var> implements an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-6">named property setter</a>, then: 
+         If <var>O</var> implements an interface with a <a data-link-type="dfn" href="#dfn-named-property-setter" id="ref-for-dfn-named-property-setter-7">named property setter</a>, then: 
          <ol>
           <li>If the result of calling <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a>(<var>Desc</var>) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.
           <li> <a href="#invoking-named-setter">Invoke the named
@@ -10444,7 +10444,7 @@ C implements A;
       If <var>O</var> <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-13">supports named properties</a>, <var>O</var> does not implement an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-148">interface</a> with the
         [<code class="idl"><a data-link-type="idl">Global</a></code>] or [<code class="idl"><a data-link-type="idl">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-110">extended attribute</a> and the result of calling the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-3">named property visibility algorithm</a> with property name <var>P</var> and object <var>O</var> is true, then: 
      <ol>
-      <li>If <var>O</var> does not implement an interface with a <a data-link-type="dfn" href="#dfn-named-property-deleter" id="ref-for-dfn-named-property-deleter-4">named property deleter</a>, then <emu-val>false</emu-val>.
+      <li>If <var>O</var> does not implement an interface with a <a data-link-type="dfn" href="#dfn-named-property-deleter" id="ref-for-dfn-named-property-deleter-5">named property deleter</a>, then <emu-val>false</emu-val>.
       <li>Let <var>operation</var> be the operation used to declare the named property deleter.
       <li>
        If <var>operation</var> was defined without an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-87">identifier</a>, then: 
@@ -12995,16 +12995,7 @@ interface ExceptionThrower {
   <aside class="dfn-panel" data-for="dfn-setter">
    <b><a href="#dfn-setter">#dfn-setter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-setter-1">4.2.4.4. Indexed properties</a>
-    <li><a href="#ref-for-dfn-setter-2">4.2.4.5. Named properties</a>
-    <li><a href="#ref-for-dfn-setter-3">5.3.7. [LegacyArrayClass]</a>
-    <li><a href="#ref-for-dfn-setter-4">5.8.1. Indexed and named properties</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="dfn-deleter">
-   <b><a href="#dfn-deleter">#dfn-deleter</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dfn-deleter-1">4.2.4.5. Named properties</a>
+    <li><a href="#ref-for-dfn-setter-1">5.8.1. Indexed and named properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-stringifier">
@@ -13039,11 +13030,11 @@ interface ExceptionThrower {
   <aside class="dfn-panel" data-for="dfn-named-property-setter">
    <b><a href="#dfn-named-property-setter">#dfn-named-property-setter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-named-property-setter-1">4.2.4.5. Named properties</a>
-    <li><a href="#ref-for-dfn-named-property-setter-2">5.3.6. [Global] and [PrimaryGlobal]</a>
-    <li><a href="#ref-for-dfn-named-property-setter-3">5.8.2. The PlatformObjectGetOwnProperty abstract operation</a>
-    <li><a href="#ref-for-dfn-named-property-setter-4">5.8.6. Platform object [[Set]] method</a>
-    <li><a href="#ref-for-dfn-named-property-setter-5">5.8.7. Platform object [[DefineOwnProperty]] method</a> <a href="#ref-for-dfn-named-property-setter-6">(2)</a>
+    <li><a href="#ref-for-dfn-named-property-setter-1">4.2.4.5. Named properties</a> <a href="#ref-for-dfn-named-property-setter-2">(2)</a>
+    <li><a href="#ref-for-dfn-named-property-setter-3">5.3.6. [Global] and [PrimaryGlobal]</a>
+    <li><a href="#ref-for-dfn-named-property-setter-4">5.8.2. The PlatformObjectGetOwnProperty abstract operation</a>
+    <li><a href="#ref-for-dfn-named-property-setter-5">5.8.6. Platform object [[Set]] method</a>
+    <li><a href="#ref-for-dfn-named-property-setter-6">5.8.7. Platform object [[DefineOwnProperty]] method</a> <a href="#ref-for-dfn-named-property-setter-7">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-indexed-property-getter">
@@ -13059,19 +13050,20 @@ interface ExceptionThrower {
   <aside class="dfn-panel" data-for="dfn-indexed-property-setter">
    <b><a href="#dfn-indexed-property-setter">#dfn-indexed-property-setter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-indexed-property-setter-1">4.2.4.4. Indexed properties</a>
-    <li><a href="#ref-for-dfn-indexed-property-setter-2">5.8.1. Indexed and named properties</a>
-    <li><a href="#ref-for-dfn-indexed-property-setter-3">5.8.2. The PlatformObjectGetOwnProperty abstract operation</a>
-    <li><a href="#ref-for-dfn-indexed-property-setter-4">5.8.6. Platform object [[Set]] method</a>
-    <li><a href="#ref-for-dfn-indexed-property-setter-5">5.8.7. Platform object [[DefineOwnProperty]] method</a>
+    <li><a href="#ref-for-dfn-indexed-property-setter-1">4.2.4.4. Indexed properties</a> <a href="#ref-for-dfn-indexed-property-setter-2">(2)</a>
+    <li><a href="#ref-for-dfn-indexed-property-setter-3">5.3.7. [LegacyArrayClass]</a>
+    <li><a href="#ref-for-dfn-indexed-property-setter-4">5.8.1. Indexed and named properties</a>
+    <li><a href="#ref-for-dfn-indexed-property-setter-5">5.8.2. The PlatformObjectGetOwnProperty abstract operation</a>
+    <li><a href="#ref-for-dfn-indexed-property-setter-6">5.8.6. Platform object [[Set]] method</a>
+    <li><a href="#ref-for-dfn-indexed-property-setter-7">5.8.7. Platform object [[DefineOwnProperty]] method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-named-property-deleter">
    <b><a href="#dfn-named-property-deleter">#dfn-named-property-deleter</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dfn-named-property-deleter-1">4.2.4. Special operations</a> <a href="#ref-for-dfn-named-property-deleter-2">(2)</a>
-    <li><a href="#ref-for-dfn-named-property-deleter-3">4.2.4.5. Named properties</a>
-    <li><a href="#ref-for-dfn-named-property-deleter-4">5.8.8. Platform object [[Delete]] method</a>
+    <li><a href="#ref-for-dfn-named-property-deleter-3">4.2.4.5. Named properties</a> <a href="#ref-for-dfn-named-property-deleter-4">(2)</a>
+    <li><a href="#ref-for-dfn-named-property-deleter-5">5.8.8. Platform object [[Delete]] method</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-stringification-behavior">
@@ -13595,9 +13587,10 @@ interface ExceptionThrower {
    <b><a href="#dfn-supplemental-interface">#dfn-supplemental-interface</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dfn-supplemental-interface-1">4.8. Implements statements</a> <a href="#ref-for-dfn-supplemental-interface-2">(2)</a> <a href="#ref-for-dfn-supplemental-interface-3">(3)</a>
-    <li><a href="#ref-for-dfn-supplemental-interface-4">5.6.3. Interface prototype object</a> <a href="#ref-for-dfn-supplemental-interface-5">(2)</a>
-    <li><a href="#ref-for-dfn-supplemental-interface-6">5.8. Platform objects implementing interfaces</a>
-    <li><a href="#ref-for-dfn-supplemental-interface-7">5.8.1. Indexed and named properties</a>
+    <li><a href="#ref-for-dfn-supplemental-interface-4">5.3.13. [NoInterfaceObject]</a>
+    <li><a href="#ref-for-dfn-supplemental-interface-5">5.6.3. Interface prototype object</a> <a href="#ref-for-dfn-supplemental-interface-6">(2)</a>
+    <li><a href="#ref-for-dfn-supplemental-interface-7">5.8. Platform objects implementing interfaces</a>
+    <li><a href="#ref-for-dfn-supplemental-interface-8">5.8.1. Indexed and named properties</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-consequential-interfaces">
@@ -13959,6 +13952,12 @@ interface ExceptionThrower {
     <li><a href="#ref-for-idl-DOMString-42">5.2.18. USVString</a>
     <li><a href="#ref-for-idl-DOMString-43">5.3.20. [TreatNullAs]</a> <a href="#ref-for-idl-DOMString-44">(2)</a>
     <li><a href="#ref-for-idl-DOMString-45">Changes</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dfn-obtain-unicode">
+   <b><a href="#dfn-obtain-unicode">#dfn-obtain-unicode</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dfn-obtain-unicode-1">5.2.18. USVString</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="idl-ByteString">

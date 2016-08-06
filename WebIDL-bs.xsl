@@ -257,14 +257,14 @@ Boilerplate: omit issues-index
     <xsl:variable name='txt' select='replace(string($a), "\s*\n\s*", " ")'/>
     <xsl:variable name='singular' select='lower-case(replace($txt, "s$", ""))'/>
     <xsl:variable name='plural' select='lower-case(concat($singular, "s"))'/>
-    <xsl:variable name='lt' select='$dfn/@data-lt'/>
+    <xsl:variable name='lt' select='substring-before($dfn/@data-lt, "|")'/>
     <xsl:variable name='dfntxt' select='lower-case($dfn)'/>
     <xsl:choose>
       <xsl:when test='lower-case($txt) = $dfntxt or contains($lt, $txt) or $singular = $dfntxt or contains($lt, $singular) or $plural = $dfntxt or contains($lt, $plural)'>
         <xsl:text>[=</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:text>[=</xsl:text><xsl:value-of select='$dfn'/><xsl:text>|</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
+        <xsl:text>[=</xsl:text><xsl:value-of select='if ($lt) then $lt else $dfn'/><xsl:text>|</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
