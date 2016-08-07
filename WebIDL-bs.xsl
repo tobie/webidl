@@ -729,6 +729,14 @@ Issue</xsl:text>
 
   <xsl:template match='comment()[starts-with(., "JAVA")]' />
   
+  <xsl:template match='h:table'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="class"><xsl:value-of select='concat(@class, " data")'/></xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
   <xsl:template match='h:a[@href="#dfn-values-to-iterate-over"]'>
     <xsl:copy copy-namespaces="no">
       <xsl:copy-of select="@*"/>

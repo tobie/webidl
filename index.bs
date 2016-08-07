@@ -243,7 +243,7 @@ font-weight: bold;
         </pre>
         (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
     <li>IDL grammar snippets:
-        <table class="grammar">
+        <table class="grammar data">
             <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  // nothing</span></td></tr>
         </table>
         (Each grammar rule is assigned a number for reference, shown on the left.)</li>
@@ -1888,7 +1888,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     for a given kind of special operation what special keyword
     is used to declare it and what the purpose of the special operation is:
 </p>
-<table class="vert">
+<table class="vert data">
     <tr>
         <th>Special operation</th>
         <th>Keyword</th>
@@ -3199,7 +3199,7 @@ is language binding specific.
             in the following table and there is a “●” mark in the corresponding entry
             or there is a letter in the corresponding entry and the designated additional
         requirement below the table is satisfied:</p>
-        <table id="distinguishable-table" class="matrix">
+        <table id="distinguishable-table" class="matrix data">
             <tr>
                 <th class="corner"/>
                 <th>boolean</th>
@@ -4261,7 +4261,7 @@ entails in the ECMAScript language binding.
 
 Note: If an error name is not listed here, please file a bug as indicated at the top of this specification and it will be addressed shortly. Thanks!
 
-<table id="error-names" class="vert">
+<table id="error-names" class="vert data">
     <thead>
         <tr><th>Name</th><th>Description</th><th>Legacy [=DOMException|code=] name and value</th></tr>
     </thead>
@@ -5836,7 +5836,7 @@ representing [=DOMExceptions=].</p>
     references to objects that represent a buffer of data or a view on to a buffer of
     data.  The table below lists these types and the kind of buffer or view they represent.
 </p>
-<table class="vert">
+<table class="vert data">
     <tr><th>Type</th><th>Kind of buffer</th></tr>
     <tr><td><dfn id="idl-ArrayBuffer" idl>ArrayBuffer</dfn></td><td>An object that holds a pointer (which may be null) to a buffer of a fixed number of bytes</td></tr>
     <tr><td><dfn id="idl-DataView" idl>DataView</dfn></td><td>A view on to an {{ArrayBuffer}} that allows typed access to integers and floating point values stored at arbitrary offsets into the buffer</td></tr>
@@ -5968,7 +5968,7 @@ Issue: We should include an example of specification text that uses these types 
     matched against the following six grammar symbols to determine
     which form (or forms) it is in:
 </p>
-<table class="vert">
+<table class="vert data">
     <tr>
         <th>Grammar symbol</th>
         <th>Form</th>
@@ -14346,7 +14346,7 @@ on exception objects too.
     symbols that are matched by the regular expressions (using Perl 5 regular
     expression syntax [[!PERLRE]]) as follows:
 </p>
-<table class="grammar">
+<table class="grammar data">
     <tr>
         <td id="prod-integer" class="sym">integer</td>
         <td class="regex">=</td>
