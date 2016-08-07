@@ -2891,7 +2891,7 @@ interface Button {
     The default value is the value to be assumed when the operation is called with the
     corresponding argument omitted. </p>
 <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
-    <strong class="advisement"> It is strongly suggested not to use <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-4">default value</a> of <span class="idlvalue">true</span> for <emu-val>boolean</emu-val>-typed arguments,
+    <strong class="advisement"> It is strongly suggested not to use <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-4">default value</a> of <span class="idlvalue">true</span> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-2">boolean</a></code>-typed arguments,
 as this can be confusing for authors who might otherwise expect the default
 conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).</strong> 
    <p> If the type of an argument is a <a href="#idl-dictionary" id="ref-for-idl-dictionary-1">dictionary type</a> or a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-2">union type</a> that has a
@@ -3334,7 +3334,7 @@ interface Student {
     <li>a <em>list</em> of <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-2">serialized values</a>
     <li>a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-7">DOMString</a></code> value
     <li>an <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-5">unrestricted double</a></code> value
-    <li>a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-2">boolean</a></code> value
+    <li>a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-3">boolean</a></code> value
     <li>the <span class="idlvalue">null</span> value
    </ul>
    <p> How the <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-1">serialization behavior</a> is made available on an object in a language binding, and how exactly the abstract <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-3">serialized value</a> is converted into
@@ -3487,7 +3487,7 @@ can influence the serialization that <code>JSON.stringify</code> can produce.</p
     <dt><code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-3">float</a></code>
     <dd>converted by choosing the equivalent <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-5">double</a></code> value
     <dt><code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-6">double</a></code>
-    <dt><code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-3">boolean</a></code>
+    <dt><code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-4">boolean</a></code>
     <dt><code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-8">DOMString</a></code>
     <dd>the same value of the respective type
     <dt>an <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-9">enumeration type</a>
@@ -4549,7 +4549,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
     not have a specified value.  Dictionary members with default values are
     always considered to be present. </p>
     <strong class="advisement"> As with <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-8">operation argument default values</a>,
-is strongly suggested not to use of <span class="idlvalue">true</span> as the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-9">default value</a> for <emu-val>boolean</emu-val>-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-4">dictionary members</a>,
+is strongly suggested not to use of <span class="idlvalue">true</span> as the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-9">default value</a> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-5">boolean</a></code>-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-4">dictionary members</a>,
 as this can be confusing for authors who might otherwise expect the default
 conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).</strong> 
    <p> Each <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-5">dictionary member</a> (matching <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a>) is specified
@@ -5257,7 +5257,7 @@ Entry implements Observable;
    <p> The following types are known as <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-integer-type">integer types</dfn>: <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-1">byte</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-1">octet</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-1">short</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-1">unsigned short</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-1">long</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-5">unsigned long</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-2">long long</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-2">unsigned long long</a></code>. </p>
    <p> The following types are known as <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-numeric-type">numeric types</dfn>:
     the <a data-link-type="dfn" href="#dfn-integer-type" id="ref-for-dfn-integer-type-3">integer types</a>, <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-4">float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-5">unrestricted float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-8">double</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-6">unrestricted double</a></code>. </p>
-   <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-primitive-type">primitive types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-4">boolean</a></code> and the <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-1">numeric types</a>. </p>
+   <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-primitive-type">primitive types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-6">boolean</a></code> and the <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-1">numeric types</a>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-string-type">string types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-18">DOMString</a></code>, all <a href="#idl-enumeration">enumeration types</a>, <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-3">ByteString</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-4">USVString</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-exception-type">exception types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-4">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-2">DOMException</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-typed-array-type">typed array types</dfn> are <code class="idl"><a data-link-type="idl">Int8Array</a></code>, <code class="idl"><a data-link-type="idl">Int16Array</a></code>, <code class="idl"><a data-link-type="idl">Int32Array</a></code>, <code class="idl"><a data-link-type="idl">Uint8Array</a></code>, <code class="idl"><a data-link-type="idl">Uint16Array</a></code>, <code class="idl"><a data-link-type="idl">Uint32Array</a></code>, <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#Uint8ClampedArray">Uint8ClampedArray</a></code>, <code class="idl"><a data-link-type="idl">Float32Array</a></code> and <code class="idl"><a data-link-type="idl">Float64Array</a></code>. </p>
@@ -5388,10 +5388,10 @@ Entry implements Observable;
    <p> The particular type of an <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-5">any</a></code> value is known as its <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-specific-type">specific type</dfn>.
     (Values of <a href="#idl-union">union types</a> also have <a data-link-type="dfn" href="#dfn-specific-type" id="ref-for-dfn-specific-type-2">specific types</a>.) </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.2" data-lt="boolean" id="idl-boolean"><span class="secno">4.10.2. </span><span class="content">boolean</span><span id="dom-boolean"></span></h4>
-   <p> The <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-5">boolean</a></code> type has two values: <span class="idlvalue">true</span> and <span class="idlvalue">false</span>. </p>
-   <p> <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-6">boolean</a></code> constant values in IDL are
+   <p> The <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-7">boolean</a></code> type has two values: <span class="idlvalue">true</span> and <span class="idlvalue">false</span>. </p>
+   <p> <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-8">boolean</a></code> constant values in IDL are
     represented with the <code>true</code> and <code>false</code> tokens. </p>
-   <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-2">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-7">boolean</a></code> type is “Boolean”. </p>
+   <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-2">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-9">boolean</a></code> type is “Boolean”. </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.3" data-lt="byte" id="idl-byte"><span class="secno">4.10.3. </span><span class="content">byte</span><span id="dom-byte"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-2">byte</a></code> type is a signed integer
     type that has values in the range [−128, 127]. </p>
@@ -6162,7 +6162,7 @@ for Web pages.</p>
     <dt>The <emu-val>null</emu-val> value
     <dd> The IDL value is the <span class="idlvalue">null</span> <code class="idl"><a data-link-type="idl">object?</a></code> reference. 
     <dt>A <emu-val>Boolean</emu-val> value
-    <dd> The IDL value is the <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-8">boolean</a></code> value that represents the same truth value. 
+    <dd> The IDL value is the <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-10">boolean</a></code> value that represents the same truth value. 
     <dt>A <emu-val>Number</emu-val> value
     <dd> The IDL value is that which is obtained
         by following the rules for converting the <emu-val>Number</emu-val> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-10">unrestricted double</a></code> value,
@@ -6171,11 +6171,11 @@ for Web pages.</p>
     <dd> The IDL value is that which is obtained
         by following the rules for converting the <emu-val>String</emu-val> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-36">DOMString</a></code> value,
         as described in <a href="#es-DOMString">§5.2.16 DOMString</a>,. 
-    <dt>An <emu-val>object</emu-val> value
-    <dd> The IDL value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-6">object</a></code> value that
+    <dt>An <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-6">object</a></code> value
+    <dd> The IDL value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-7">object</a></code> value that
         references the same object. 
    </dl>
-   <p id="any-to-es"> An IDL <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-11">any</a></code> value is <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-1">converted to an ECMAScript value</a> as follows.  If the value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-7">object</a></code> reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val> value, then it is converted to the ECMAScript <emu-val>undefined</emu-val> value.  Otherwise,
+   <p id="any-to-es"> An IDL <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-11">any</a></code> value is <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-1">converted to an ECMAScript value</a> as follows.  If the value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-8">object</a></code> reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val> value, then it is converted to the ECMAScript <emu-val>undefined</emu-val> value.  Otherwise,
     the rules for converting the <a data-link-type="dfn" href="#dfn-specific-type" id="ref-for-dfn-specific-type-4">specific type</a> of the IDL <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-12">any</a></code> value
     as described in the remainder of this section are performed. </p>
    <h4 class="heading settled" data-level="5.2.2" id="es-void"><span class="secno">5.2.2. </span><span class="content">void</span><a class="self-link" href="#es-void"></a></h4>
@@ -6185,14 +6185,14 @@ for Web pages.</p>
     specifies a <code class="idl"><a data-link-type="idl">void</a></code> return type
     may return any value, which will be discarded. </p>
    <h4 class="heading settled" data-level="5.2.3" id="es-boolean"><span class="secno">5.2.3. </span><span class="content">boolean</span><a class="self-link" href="#es-boolean"></a></h4>
-   <p id="es-to-boolean"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-9">boolean</a></code> value
+   <p id="es-to-boolean"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-11">boolean</a></code> value
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>Let <var>x</var> be the result of computing <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-toboolean">ToBoolean</a>(<var>V</var>).
-    <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-10">boolean</a></code> value that is the one that represents the same truth value as the ECMAScript <emu-val>Boolean</emu-val> value <var>x</var>.
+    <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-12">boolean</a></code> value that is the one that represents the same truth value as the ECMAScript <emu-val>Boolean</emu-val> value <var>x</var>.
    </ol>
-   <p id="boolean-to-es"> The IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-11">boolean</a></code> value <span class="idlvalue">true</span> is <a data-link-type="dfn">converted</a> to
-    the ECMAScript <emu-val>true</emu-val> value and the IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-12">boolean</a></code> value <span class="idlvalue">false</span> is converted to the ECMAScript <emu-val>false</emu-val> value. </p>
+   <p id="boolean-to-es"> The IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-13">boolean</a></code> value <span class="idlvalue">true</span> is <a data-link-type="dfn">converted</a> to
+    the ECMAScript <emu-val>true</emu-val> value and the IDL <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-14">boolean</a></code> value <span class="idlvalue">false</span> is converted to the ECMAScript <emu-val>false</emu-val> value. </p>
    <h4 class="heading settled" data-level="5.2.4" id="es-byte"><span class="secno">5.2.4. </span><span class="content">byte</span><a class="self-link" href="#es-byte"></a></h4>
    <p id="es-to-byte"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-6">byte</a></code> value
     by running the following algorithm: </p>
@@ -6656,16 +6656,16 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.</p>
     <li>Return the <emu-val>String</emu-val> value that represents the same sequence of <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-8">code units</a> as <var>string</var>.
    </ol>
    <h4 class="heading settled" data-level="5.2.19" id="es-object"><span class="secno">5.2.19. </span><span class="content">object</span><a class="self-link" href="#es-object"></a></h4>
-   <p> IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-8">object</a></code> values are represented by ECMAScript <emu-val>Object</emu-val> values. </p>
-   <p id="es-to-object"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-9">object</a></code> value
+   <p> IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-9">object</a></code> values are represented by ECMAScript <emu-val>Object</emu-val> values. </p>
+   <p id="es-to-object"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-10">object</a></code> value
     by running the following algorithm: </p>
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-21">throw a <emu-val>TypeError</emu-val></a>.
-    <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-10">object</a></code> value that is a reference to the same object as <var>V</var>.
+    <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-11">object</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
-   <p id="object-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-16">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-11">object</a></code> value to an ECMAScript
+   <p id="object-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-16">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-12">object</a></code> value to an ECMAScript
     value is the <emu-val>Object</emu-val> value that represents a reference to the same object that the
-    IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-12">object</a></code> represents. </p>
+    IDL <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-13">object</a></code> represents. </p>
    <h4 class="heading settled" data-level="5.2.20" id="es-interface"><span class="secno">5.2.20. </span><span class="content">Interface types</span><a class="self-link" href="#es-interface"></a></h4>
    <p> IDL <a href="#idl-interface" id="ref-for-idl-interface-4">interface type</a> values are represented by ECMAScript <emu-val>Object</emu-val> or <emu-val>Function</emu-val> values. </p>
    <p id="es-to-interface"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <a href="#idl-interface" id="ref-for-idl-interface-5">interface type</a> value
@@ -6984,7 +6984,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
       If <var>V</var> is a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-13">platform object</a>, then: 
      <ol>
       <li>If <var>types</var> includes an <a href="#idl-interface" id="ref-for-idl-interface-10">interface type</a> that <var>V</var> implements, then return the IDL value that is a reference to the object <var>V</var>.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-13">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-14">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -6992,7 +6992,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      <ol>
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-4">RegExp</a></code>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-10">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-5">RegExp</a></code>.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-14">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-15">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -7000,7 +7000,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      <ol>
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-6">DOMException</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-8">Error</a></code>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-11">converting</a> <var>V</var> to that type.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-15">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-16">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -7008,7 +7008,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      <ol>
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-9">Error</a></code>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-12">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-10">Error</a></code>.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-16">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-17">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -7016,7 +7016,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      <ol>
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-13">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code>.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-17">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-18">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -7024,7 +7024,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      <ol>
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a></code>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-14">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a></code>.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-18">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-19">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -7032,14 +7032,14 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
      <ol>
       <li>If <var>types</var> includes a <a data-link-type="dfn" href="#dfn-typed-array-type" id="ref-for-dfn-typed-array-type-2">typed array type</a> whose name is the value of <var>V</var>’s [[TypedArrayName]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-15">converting</a> <var>V</var> to that type.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-19">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-20">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
       If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>V</var>) is true, then: 
      <ol>
       <li>If <var>types</var> includes a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-21">callback function</a> type, then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-16">converting</a> <var>V</var> to that callback function type.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-20">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-21">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
@@ -7066,14 +7066,14 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
       <li>If <var>types</var> includes a <a href="#idl-dictionary" id="ref-for-idl-dictionary-7">dictionary type</a>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-17">converting</a> <var>V</var> to that dictionary type.
       <li>If <var>types</var> includes a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-17">callback interface</a> type, then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-18">converting</a> <var>V</var> to that interface type.
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-21">object</a></code>, then return the IDL value
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-22">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
     <li>
       If <var>V</var> is a <emu-val>Boolean</emu-val> value, then: 
      <ol>
-      <li> If <var>types</var> includes a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-13">boolean</a></code>,
-                then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-19">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-14">boolean</a></code>. 
+      <li> If <var>types</var> includes a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-15">boolean</a></code>,
+                then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-19">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-16">boolean</a></code>. 
      </ol>
     <li>
       If <var>V</var> is a <emu-val>Number</emu-val> value, then: 
@@ -7085,11 +7085,11 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-21">converting</a> <var>V</var> to that type. 
     <li> If <var>types</var> includes a <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-4">numeric type</a>,
         then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-22">converting</a> <var>V</var> to that <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-5">numeric type</a>. 
-    <li> If <var>types</var> includes a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-15">boolean</a></code>,
-        then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-23">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-16">boolean</a></code>. 
+    <li> If <var>types</var> includes a <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-17">boolean</a></code>,
+        then return the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-23">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-18">boolean</a></code>. 
     <li> <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-32">Throw a <emu-val>TypeError</emu-val></a>. 
    </ol>
-   <p id="union-to-es"> An IDL union type value is <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-25">converted to an ECMAScript value</a> as follows.  If the value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-22">object</a></code> reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val> value, then it is converted to the ECMAScript <emu-val>undefined</emu-val> value.  Otherwise,
+   <p id="union-to-es"> An IDL union type value is <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-25">converted to an ECMAScript value</a> as follows.  If the value is an <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-23">object</a></code> reference to a special object that represents an ECMAScript <emu-val>undefined</emu-val> value, then it is converted to the ECMAScript <emu-val>undefined</emu-val> value.  Otherwise,
     the rules for converting the <a data-link-type="dfn" href="#dfn-specific-type" id="ref-for-dfn-specific-type-5">specific type</a> of the IDL union type value as described in this section (<a href="#es-type-mapping">§5.2 ECMAScript type mapping</a>). </p>
    <h4 class="heading settled" data-level="5.2.28" id="es-RegExp"><span class="secno">5.2.28. </span><span class="content">RegExp</span><a class="self-link" href="#es-RegExp"></a></h4>
    <p> IDL <code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-6">RegExp</a></code> values are represented by
@@ -7817,8 +7817,8 @@ wish to use this feature are strongly advised to discuss this on the <a href="ma
     must not be used on a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-19">callback interface</a>. </p>
    <p> See <a href="#named-constructors">§5.6.2 Named constructors</a> for details on how named constructors
     are to be implemented. </p>
-   <div class="example" id="example-a67db249">
-    <a class="self-link" href="#example-a67db249"></a> 
+   <div class="example" id="example-3cde8a77">
+    <a class="self-link" href="#example-3cde8a77"></a> 
     <p> The following IDL defines an interface that uses the
         [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-14">NamedConstructor</a></code>] extended
         attribute. </p>
@@ -7829,7 +7829,8 @@ interface HTMLAudioElement : HTMLMediaElement {
 };
 </pre>
     <p> An ECMAScript implementation that supports this interface will
-        allow the construction of <emu-val>HTMLAudioElement</emu-val> objects using the <emu-val>Audio</emu-val> constructor. </p>
+        allow the construction of HTMLAudioElement
+        objects using the Audio constructor. </p>
 <pre class="highlight"><span class="k">typeof</span> <span class="nx">Audio</span><span class="p">;</span>                   <span class="c1">// Evaluates to 'function'.</span>
         
 <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Audio</span><span class="p">();</span>           <span class="c1">// Creates a new object that implements</span>
@@ -8121,7 +8122,7 @@ interface Person {
     extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-14">take no arguments</a>. </p>
    <p> The [<code class="idl"><a data-link-type="idl" href="#SameObject" id="ref-for-SameObject-4">SameObject</a></code>]
     extended attribute must not
-    be used on anything other than a <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only-13">read only</a> <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-55">attribute</a> whose type is an <a href="#idl-interface" id="ref-for-idl-interface-14">interface type</a> or <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-23">object</a></code>. </p>
+    be used on anything other than a <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only-13">read only</a> <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-55">attribute</a> whose type is an <a href="#idl-interface" id="ref-for-idl-interface-14">interface type</a> or <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-24">object</a></code>. </p>
    <div class="example" id="example-2a4166cf">
     <a class="self-link" href="#example-2a4166cf"></a> 
     <p> As an example, this extended attribute is suitable for use on
@@ -8465,7 +8466,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li>an <a href="#idl-interface" id="ref-for-idl-interface-15">interface type</a> that <var>V</var> implements
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-24">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-25">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-26">nullable</a> version of any of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-24">union type</a> or a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-27">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-11">flattened member types</a>
@@ -8476,7 +8477,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-11">RegExp</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-25">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-26">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-28">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-25">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-29">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-12">flattened member types</a>
@@ -8487,7 +8488,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-12">RegExp</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-26">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-27">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-30">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-26">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-31">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-13">flattened member types</a>
@@ -8499,7 +8500,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-12">DOMException</a></code>
         <li><code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-15">Error</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-27">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-28">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-32">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-27">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-33">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-14">flattened member types</a>
@@ -8510,7 +8511,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-16">Error</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-28">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-29">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-34">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-28">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-35">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-15">flattened member types</a>
@@ -8521,7 +8522,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#ArrayBuffer">ArrayBuffer</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-29">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-30">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-36">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-29">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-37">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-16">flattened member types</a>
@@ -8532,7 +8533,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="https://www.khronos.org/registry/typedarray/specs/latest/#DataView">DataView</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-30">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-31">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-38">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-30">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-39">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-17">flattened member types</a>
@@ -8544,7 +8545,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
        <ul>
         <li>a <a data-link-type="dfn" href="#dfn-typed-array-type" id="ref-for-dfn-typed-array-type-3">typed array type</a> whose name
                         is equal to the value of <var>V</var>’s [[TypedArrayName]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-31">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-32">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-40">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-31">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-41">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-18">flattened member types</a>
@@ -8555,7 +8556,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li>a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-27">callback function</a> type
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-32">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-33">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-42">nullable</a> version of any of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-32">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-43">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-19">flattened member types</a>
@@ -8587,7 +8588,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
        <ul>
         <li>a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-24">callback interface</a> type
         <li>a <a href="#idl-dictionary" id="ref-for-idl-dictionary-10">dictionary type</a>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-33">object</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-34">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-46">nullable</a> version of any of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-34">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-47">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-21">flattened member types</a>
@@ -8597,8 +8598,8 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
         Otherwise: if <var>V</var> is a <emu-val>Boolean</emu-val> value,
                 and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-17">boolean</a></code>
-        <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-48">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-18">boolean</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-19">boolean</a></code>
+        <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-48">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-20">boolean</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-35">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-49">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-22">flattened member types</a>
        </ul>
@@ -8634,8 +8635,8 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
       <li>
         Otherwise: if there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-19">boolean</a></code>
-        <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-56">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-20">boolean</a></code>
+        <li><code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-21">boolean</a></code>
+        <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-56">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-22">boolean</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-39">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-57">nullable</a> union type
                         that has one of the above types in its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-26">flattened member types</a>
        </ul>
@@ -8769,7 +8770,8 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
     with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is an object called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-interface-prototype-object">interface prototype object</dfn>.  This object has properties
     that correspond to the <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-12">regular attributes</a> and <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-13">regular operations</a> defined on the interface,
     and is described in more detail in <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a>. </p>
-   <p class="note" role="note">Note: Since an interface object for a non-callback interface is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-4">function object</a> the <code>typeof</code> operator will return <emu-val>"function"</emu-val> when applied to
+   <p class="note" role="note">Note: Since an interface object for a non-callback interface is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-4">function object</a> the <code>typeof</code> operator will return
+"function" when applied to
 such an interface object.</p>
    <p> The internal <span class="esprop">[[Prototype]]</span> property
     of an interface object for a callback interface must be
@@ -10456,7 +10458,7 @@ C implements A;
        Otherwise, <var>operation</var> was defined with an identifier: 
        <ol>
         <li>Perform the steps listed in the description of <var>operation</var> with <var>P</var> as the only argument value.
-        <li>If <var>operation</var> was declared with a <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-6">return type</a> of <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-21">boolean</a></code> and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.
+        <li>If <var>operation</var> was declared with a <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-6">return type</a> of <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-23">boolean</a></code> and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.
        </ol>
       <li>Return <emu-val>true</emu-val>.
      </ol>
@@ -11924,8 +11926,8 @@ interface ExceptionThrower {
                     properties for interface members to appear on the object
                     itself rather than on the interface prototype object. </p>
       <li>
-       <p> Split out <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-22">boolean</a></code> from the other
-                    primitive types.  Made <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-23">boolean</a></code>,
+       <p> Split out <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-24">boolean</a></code> from the other
+                    primitive types.  Made <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-25">boolean</a></code>,
                     numeric types and <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-45">DOMString</a></code> distinguishable. </p>
       <li>
        <p> Required a getter to be present on an interface if it has a
@@ -13807,15 +13809,17 @@ interface ExceptionThrower {
    <b><a href="#idl-boolean">#idl-boolean</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-idl-boolean-1">4.2.1. Constants</a>
-    <li><a href="#ref-for-idl-boolean-2">4.2.4.3. Serializers</a> <a href="#ref-for-idl-boolean-3">(2)</a>
-    <li><a href="#ref-for-idl-boolean-4">4.10. Types</a>
-    <li><a href="#ref-for-idl-boolean-5">4.10.2. boolean</a> <a href="#ref-for-idl-boolean-6">(2)</a> <a href="#ref-for-idl-boolean-7">(3)</a>
-    <li><a href="#ref-for-idl-boolean-8">5.2.1. any</a>
-    <li><a href="#ref-for-idl-boolean-9">5.2.3. boolean</a> <a href="#ref-for-idl-boolean-10">(2)</a> <a href="#ref-for-idl-boolean-11">(3)</a> <a href="#ref-for-idl-boolean-12">(4)</a>
-    <li><a href="#ref-for-idl-boolean-13">5.2.27. Union types</a> <a href="#ref-for-idl-boolean-14">(2)</a> <a href="#ref-for-idl-boolean-15">(3)</a> <a href="#ref-for-idl-boolean-16">(4)</a>
-    <li><a href="#ref-for-idl-boolean-17">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-boolean-18">(2)</a> <a href="#ref-for-idl-boolean-19">(3)</a> <a href="#ref-for-idl-boolean-20">(4)</a>
-    <li><a href="#ref-for-idl-boolean-21">5.8.8. Platform object [[Delete]] method</a>
-    <li><a href="#ref-for-idl-boolean-22">Changes</a> <a href="#ref-for-idl-boolean-23">(2)</a>
+    <li><a href="#ref-for-idl-boolean-2">4.2.3. Operations</a>
+    <li><a href="#ref-for-idl-boolean-3">4.2.4.3. Serializers</a> <a href="#ref-for-idl-boolean-4">(2)</a>
+    <li><a href="#ref-for-idl-boolean-5">4.3. Dictionaries</a>
+    <li><a href="#ref-for-idl-boolean-6">4.10. Types</a>
+    <li><a href="#ref-for-idl-boolean-7">4.10.2. boolean</a> <a href="#ref-for-idl-boolean-8">(2)</a> <a href="#ref-for-idl-boolean-9">(3)</a>
+    <li><a href="#ref-for-idl-boolean-10">5.2.1. any</a>
+    <li><a href="#ref-for-idl-boolean-11">5.2.3. boolean</a> <a href="#ref-for-idl-boolean-12">(2)</a> <a href="#ref-for-idl-boolean-13">(3)</a> <a href="#ref-for-idl-boolean-14">(4)</a>
+    <li><a href="#ref-for-idl-boolean-15">5.2.27. Union types</a> <a href="#ref-for-idl-boolean-16">(2)</a> <a href="#ref-for-idl-boolean-17">(3)</a> <a href="#ref-for-idl-boolean-18">(4)</a>
+    <li><a href="#ref-for-idl-boolean-19">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-boolean-20">(2)</a> <a href="#ref-for-idl-boolean-21">(3)</a> <a href="#ref-for-idl-boolean-22">(4)</a>
+    <li><a href="#ref-for-idl-boolean-23">5.8.8. Platform object [[Delete]] method</a>
+    <li><a href="#ref-for-idl-boolean-24">Changes</a> <a href="#ref-for-idl-boolean-25">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="idl-byte">
@@ -13999,11 +14003,11 @@ interface ExceptionThrower {
    <ul>
     <li><a href="#ref-for-idl-object-1">4.10. Types</a>
     <li><a href="#ref-for-idl-object-2">4.10.18. object</a> <a href="#ref-for-idl-object-3">(2)</a> <a href="#ref-for-idl-object-4">(3)</a>
-    <li><a href="#ref-for-idl-object-5">5.2.1. any</a> <a href="#ref-for-idl-object-6">(2)</a> <a href="#ref-for-idl-object-7">(3)</a>
-    <li><a href="#ref-for-idl-object-8">5.2.19. object</a> <a href="#ref-for-idl-object-9">(2)</a> <a href="#ref-for-idl-object-10">(3)</a> <a href="#ref-for-idl-object-11">(4)</a> <a href="#ref-for-idl-object-12">(5)</a>
-    <li><a href="#ref-for-idl-object-13">5.2.27. Union types</a> <a href="#ref-for-idl-object-14">(2)</a> <a href="#ref-for-idl-object-15">(3)</a> <a href="#ref-for-idl-object-16">(4)</a> <a href="#ref-for-idl-object-17">(5)</a> <a href="#ref-for-idl-object-18">(6)</a> <a href="#ref-for-idl-object-19">(7)</a> <a href="#ref-for-idl-object-20">(8)</a> <a href="#ref-for-idl-object-21">(9)</a> <a href="#ref-for-idl-object-22">(10)</a>
-    <li><a href="#ref-for-idl-object-23">5.3.17. [SameObject]</a>
-    <li><a href="#ref-for-idl-object-24">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-object-25">(2)</a> <a href="#ref-for-idl-object-26">(3)</a> <a href="#ref-for-idl-object-27">(4)</a> <a href="#ref-for-idl-object-28">(5)</a> <a href="#ref-for-idl-object-29">(6)</a> <a href="#ref-for-idl-object-30">(7)</a> <a href="#ref-for-idl-object-31">(8)</a> <a href="#ref-for-idl-object-32">(9)</a> <a href="#ref-for-idl-object-33">(10)</a>
+    <li><a href="#ref-for-idl-object-5">5.2.1. any</a> <a href="#ref-for-idl-object-6">(2)</a> <a href="#ref-for-idl-object-7">(3)</a> <a href="#ref-for-idl-object-8">(4)</a>
+    <li><a href="#ref-for-idl-object-9">5.2.19. object</a> <a href="#ref-for-idl-object-10">(2)</a> <a href="#ref-for-idl-object-11">(3)</a> <a href="#ref-for-idl-object-12">(4)</a> <a href="#ref-for-idl-object-13">(5)</a>
+    <li><a href="#ref-for-idl-object-14">5.2.27. Union types</a> <a href="#ref-for-idl-object-15">(2)</a> <a href="#ref-for-idl-object-16">(3)</a> <a href="#ref-for-idl-object-17">(4)</a> <a href="#ref-for-idl-object-18">(5)</a> <a href="#ref-for-idl-object-19">(6)</a> <a href="#ref-for-idl-object-20">(7)</a> <a href="#ref-for-idl-object-21">(8)</a> <a href="#ref-for-idl-object-22">(9)</a> <a href="#ref-for-idl-object-23">(10)</a>
+    <li><a href="#ref-for-idl-object-24">5.3.17. [SameObject]</a>
+    <li><a href="#ref-for-idl-object-25">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-object-26">(2)</a> <a href="#ref-for-idl-object-27">(3)</a> <a href="#ref-for-idl-object-28">(4)</a> <a href="#ref-for-idl-object-29">(5)</a> <a href="#ref-for-idl-object-30">(6)</a> <a href="#ref-for-idl-object-31">(7)</a> <a href="#ref-for-idl-object-32">(8)</a> <a href="#ref-for-idl-object-33">(9)</a> <a href="#ref-for-idl-object-34">(10)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="idl-interface">

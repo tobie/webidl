@@ -1699,7 +1699,7 @@ symbol without needing to escape it.
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
 
 Advisement: It is strongly suggested not to use [=default value=]
-of <span class="idlvalue">true</span> for <emu-val>boolean</emu-val>-typed arguments,
+of <span class="idlvalue">true</span> for {{boolean}}-typed arguments,
 as this can be confusing for authors who might otherwise expect the default
 conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
 
@@ -3898,7 +3898,7 @@ Issue: Add example.
 Advisement: As with [=default value|operation argument default values=],
 is strongly suggested not to use of <span class="idlvalue">true</span> as the
 [=default value=] for
-<emu-val>boolean</emu-val>-typed
+{{boolean}}-typed
 [=dictionary members=],
 as this can be confusing for authors who might otherwise expect the default
 conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
@@ -6377,7 +6377,7 @@ for Web pages.
         {{DOMString}} value,
         as described in [[#es-DOMString]],.
     </dd>
-    <dt>An <emu-val>object</emu-val> value</dt>
+    <dt>An {{object}} value</dt>
     <dd>
         The IDL value is an
         {{object}} value that
@@ -9118,8 +9118,8 @@ mailing list before proceeding.
     </pre>
     <p>
         An ECMAScript implementation that supports this interface will
-        allow the construction of <emu-val>HTMLAudioElement</emu-val>
-        objects using the <emu-val>Audio</emu-val> constructor.
+        allow the construction of HTMLAudioElement
+        objects using the Audio constructor.
     </p>
     <pre highlight="js">
         typeof Audio;                   // Evaluates to 'function'.
@@ -10596,7 +10596,7 @@ appropriate exception or return normally. [[!HTML]]
 </p>
 
 Note: Since an interface object for a non-callback interface is a [=function object=] the <code>typeof</code> operator will return
-<emu-val>"function"</emu-val> when applied to
+"function" when applied to
 such an interface object.
 <p>
     The internal <span class="esprop">\[[Prototype]]</span> property

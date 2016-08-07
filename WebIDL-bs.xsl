@@ -355,12 +355,29 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:span[@class="esvalue"] | h:span[@class="estype"]'>
-    <xsl:if test='.="unsigned long"'>
-      <xsl:text>{{unsigned long}}</xsl:text>
-    </xsl:if>
-    <xsl:if test='.!="unsigned long"'>
-      <emu-val><xsl:apply-templates select="node()"/></emu-val>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test='.="""function"""'>
+        <xsl:text>"function"</xsl:text>
+      </xsl:when>
+      <xsl:when test='.="Audio"'>
+        <xsl:text>Audio</xsl:text>
+      </xsl:when>
+      <xsl:when test='.="boolean"'>
+        <xsl:text>{{boolean}}</xsl:text>
+      </xsl:when>
+      <xsl:when test='.="HTMLAudioElement"'>
+        <xsl:text>HTMLAudioElement</xsl:text>
+      </xsl:when>
+      <xsl:when test='.="object"'>
+        <xsl:text>{{object}}</xsl:text>
+      </xsl:when>
+      <xsl:when test='.="unsigned long"'>
+        <xsl:text>{{unsigned long}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <emu-val><xsl:apply-templates select="node()"/></emu-val>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match='h:var'>
