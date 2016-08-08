@@ -5841,23 +5841,23 @@ representing [=DOMExceptions=].</p>
 </p>
 <table class="vert data">
     <tr><th>Type</th><th>Kind of buffer</th></tr>
-    <tr><td><dfn id="idl-ArrayBuffer" idl>ArrayBuffer</dfn></td><td>An object that holds a pointer (which may be null) to a buffer of a fixed number of bytes</td></tr>
-    <tr><td><dfn id="idl-DataView" idl>DataView</dfn></td><td>A view on to an {{ArrayBuffer}} that allows typed access to integers and floating point values stored at arbitrary offsets into the buffer</td></tr>
+    <tr><td><dfn id="idl-ArrayBuffer" interface>ArrayBuffer</dfn></td><td>An object that holds a pointer (which may be null) to a buffer of a fixed number of bytes</td></tr>
+    <tr><td><dfn id="idl-DataView" interface>DataView</dfn></td><td>A view on to an {{ArrayBuffer}} that allows typed access to integers and floating point values stored at arbitrary offsets into the buffer</td></tr>
     <tr><td>
-            <dfn id="idl-Int8Array" idl>Int8Array</dfn>,<br/>
-            <dfn id="idl-Int16Array" idl>Int16Array</dfn>,<br/>
-        <dfn id="idl-Int32Array" idl>Int32Array</dfn></td>
+            <dfn id="idl-Int8Array" interface>Int8Array</dfn>,<br/>
+            <dfn id="idl-Int16Array" interface>Int16Array</dfn>,<br/>
+        <dfn id="idl-Int32Array" interface>Int32Array</dfn></td>
     <td>A view on to an {{ArrayBuffer}} that exposes it as an array of two’s complement signed integers of the given size in bits</td></tr>
     <tr><td>
-            <dfn id="idl-Uint8Array" idl>Uint8Array</dfn>,<br/>
-            <dfn id="idl-Uint16Array" idl>Uint16Array</dfn>,<br/>
-        <dfn id="idl-Uint32Array" idl>Uint32Array</dfn></td>
+            <dfn id="idl-Uint8Array" interface>Uint8Array</dfn>,<br/>
+            <dfn id="idl-Uint16Array" interface>Uint16Array</dfn>,<br/>
+        <dfn id="idl-Uint32Array" interface>Uint32Array</dfn></td>
     <td>A view on to an {{ArrayBuffer}} that exposes it as an array of unsigned integers of the given size in bits</td></tr>
-    <tr><td><dfn id="idl-Uint8ClampedArray" idl>Uint8ClampedArray</dfn></td>
+    <tr><td><dfn id="idl-Uint8ClampedArray" interface>Uint8ClampedArray</dfn></td>
     <td>A view on to an {{ArrayBuffer}} that exposes it as an array of unsigned 8 bit integers with clamped conversions</td></tr>
     <tr><td>
-            <dfn id="idl-Float32Array" idl>Float32Array</dfn>,<br/>
-        <dfn id="idl-Float64Array" idl>Float64Array</dfn></td>
+            <dfn id="idl-Float32Array" interface>Float32Array</dfn>,<br/>
+        <dfn id="idl-Float64Array" interface>Float64Array</dfn></td>
     <td>A view on to an {{ArrayBuffer}} that exposes it as an array of IEEE 754 floating point numbers of the given size in bits</td></tr>
 </table>
 

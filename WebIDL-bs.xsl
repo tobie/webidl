@@ -180,7 +180,7 @@ Boilerplate: omit issues-index
   <xsl:template match='h:span[@class="idltype"][@id]'>
     <dfn>
       <xsl:attribute name='id'><xsl:value-of select='@id'/></xsl:attribute>
-      <xsl:attribute name='idl' />
+      <xsl:attribute name='interface' />
       <xsl:apply-templates select="node()"/>
     </dfn>
   </xsl:template>
