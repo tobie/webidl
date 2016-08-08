@@ -284,23 +284,14 @@ Boilerplate: omit issues-index
     </xsl:choose>
   </xsl:template> 
   
-  <!-- Links with no HREF -->
+  <!-- Links with no HREF => [=foo=]-->
   <xsl:template match='h:a[not(@href)]'>
     <xsl:variable name='name' select='string(.)'/>
-    <xsl:variable name='escaped-name' select='replace($name, "\[\[", "\\[[")'/>
     <xsl:variable name='term' select='$options/x:links/x:term[@name=$name]'/>
     <xsl:if test='not($term)'>
       <xsl:message terminate='yes'>unknown term '<xsl:value-of select='$name'/>'</xsl:message>
     </xsl:if>
-    <xsl:choose>
-      <!-- TODO see what Bikeshed shorthand we could use here -->
-      <xsl:when test='@class'>
-        <a class="{@class}"><xsl:value-of select='$escaped-name'/></a>
-      </xsl:when>
-      <xsl:otherwise>
-        <a><xsl:value-of select='$escaped-name'/></a>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:text>[=</xsl:text><xsl:value-of select='$name'/><xsl:text>=]</xsl:text>
   </xsl:template>
   
   <!-- Links with class dnfref => [=foo=] -->

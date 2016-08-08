@@ -4319,8 +4319,8 @@ actual <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-i
    <p> Interfaces with iterable declarations must not
     have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a> named “entries”, “keys” or “values”,
     or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-3">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-2">consequential</a> interfaces that have interface members with these names. </p>
-   <div class="example" id="example-99a1c3af">
-    <a class="self-link" href="#example-99a1c3af"></a> 
+   <div class="example" id="example-860ed1e9">
+    <a class="self-link" href="#example-860ed1e9"></a> 
     <p>Consider the following interface <span class="idltype">SessionManager</span>, which allows access to
     a number of <span class="idltype">Session</span> objects:</p>
 <pre class="idl-example">interface SessionManager {
@@ -6044,7 +6044,7 @@ and possibly WindowProxy objects</a>.</strong>
     If an object has a class string, then the object must,
     at the time it is created, have a property whose name is the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol
     and whose value is the specified string. </p>
-   <p class="issue" id="issue-788163ca"><a class="self-link" href="#issue-788163ca"></a> Should define whether <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
+   <p class="issue" id="issue-aa652041"><a class="self-link" href="#issue-aa652041"></a> Should define whether <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
 All <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
 and configurable.</p>
    <p> If an object is defined to be a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-function-object">function object</dfn>, then
@@ -6065,8 +6065,8 @@ and configurable.</p>
     is thrown by an algorithm or abstract operation and it is not explicitly
     handled by the caller, then it is taken to end the algorithm and propagate out
     to its caller, and so on. </p>
-   <div class="example" id="example-e25ababf">
-    <a class="self-link" href="#example-e25ababf"></a> 
+   <div class="example" id="example-5bf29d16">
+    <a class="self-link" href="#example-5bf29d16"></a> 
     <p> Consider the following algorithm: </p>
     <ol class="algorithm">
      <li>Let <var>x</var> be the ECMAScript value passed in to this algorithm.
@@ -6137,10 +6137,10 @@ and configurable.</p>
    <p class="note" role="note">Note: This allows, for example, ECMAScript global environments for Web Workers to <a data-link-type="dfn" href="#dfn-expose" id="ref-for-dfn-expose-1">expose</a> different sets of supported interfaces from those exposed in environments
 for Web pages.</p>
    <p> Although at the time of this writing the ECMAScript specification does not reflect this,
-    every ECMAScript object must have an <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-associated-realm">associated <a class="external" data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a></dfn>. The mechanisms
+    every ECMAScript object must have an <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-associated-realm">associated <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a></dfn>. The mechanisms
     for associating objects with Realms are, for now, underspecified. However, we note that
     in the case of <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-9">platform objects</a>, the
-    associated Realm is equal to the object’s <a class="external" data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-realm">relevant Realm</a>, and
+    associated Realm is equal to the object’s <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-realm">relevant Realm</a>, and
     for non-exotic function objects (i.e. not callable proxies, and not bound functions)
     the associated Realm is equal to the value of the function object’s [[Realm]] internal
     slot. </p>
@@ -6919,9 +6919,9 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
    <p id="es-to-promise"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-promise" id="ref-for-idl-promise-3">Promise&lt;T></a></code> value as follows: </p>
    <ol class="algorithm">
     <li>
-     Let <var>resolve</var> be the original value of <a class="nocite" data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.resolve. 
+     Let <var>resolve</var> be the original value of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.resolve. 
      <p class="issue" id="issue-5afa3eb0"><a class="self-link" href="#issue-5afa3eb0"></a> ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.</p>
-    <li>Let <var>promise</var> be the result of calling <var>resolve</var> with <a class="nocite" data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <emu-val>this</emu-val> value and <var>V</var> as the single argument value.
+    <li>Let <var>promise</var> be the result of calling <var>resolve</var> with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <emu-val>this</emu-val> value and <var>V</var> as the single argument value.
     <li>Return the IDL <a href="#idl-promise" id="ref-for-idl-promise-4">promise type</a> value that is a reference to the
         same object as <var>promise</var>.
    </ol>
@@ -9243,8 +9243,8 @@ When in strict mode, such an assignment will result in a <emu-val>TypeError</emu
         <li>
          If the operation has a <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-5">return type</a> that is a <a href="#idl-promise" id="ref-for-idl-promise-8">promise type</a>, then: 
          <ol>
-          <li>Let <var>reject</var> be the initial value of <a class="nocite" data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.reject.
-          <li>Return the result of calling <var>reject</var> with <a class="nocite" data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <emu-val>this</emu-val> object and the exception as the single
+          <li>Let <var>reject</var> be the initial value of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a>.reject.
+          <li>Return the result of calling <var>reject</var> with <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-promise-constructor">%Promise%</a> as the <emu-val>this</emu-val> object and the exception as the single
                                 argument value.
          </ol>
         <li>Otherwise, end these steps and allow the exception to propagate.
