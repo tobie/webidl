@@ -294,8 +294,8 @@ Boilerplate: omit issues-index
     <xsl:text>[=</xsl:text><xsl:value-of select='$name'/><xsl:text>=]</xsl:text>
   </xsl:template>
   
-  <!-- Links with class dnfref => [=foo=] -->
-  <xsl:template match='h:a[@class="dfnref"] | h:a[@class="dfnre"]'>
+  <!-- Links with class dfnref => [=foo=] -->
+  <xsl:template match='h:a[@class="dfnref"] | h:a[@class="dfnre"] | h:a[@class="dnfref"] | h:a[@class="dfnref external"]'>
     <xsl:variable name='id' select='substring-after(@href, "#")'/>
     <xsl:variable name='dfn' select='//*[@id=$id]'/>
     <xsl:if test='$dfn/name() = "dfn" or $dfn/@dfn'>

@@ -227,7 +227,7 @@ font-weight: bold;
 <ul>
     <li>Defining instances of terms: <dfn id="dfn-example-term">example term</dfn></li>
     <li>Links to terms defined in this document: [=example term=]</li>
-    <li>Links to terms defined in other documents: <a class="dfnref external" href="#dfn-example-term">example term</a></li>
+    <li>Links to terms defined in other documents: [=example term=]</li>
     <li>Grammar symbols: <span class="sym">ExampleGrammarSymbol</span></li>
     <li>IDL and ECMAScript types: <span class="idltype">ExampleType</span></li>
     <li>Code snippets: <code>a = b + obj.f()</code></li>
@@ -3981,7 +3981,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
         whose [=inner type=] includes |D|</li>
     <li>the type is a <a href="#idl-sequence">sequence type</a> or <a href="#idl-frozen-array">frozen array</a>
         whose element type includes |D|</li>
-    <li>the type is a <a class="dnfref" href="#dfn-union-type">union type</a>,
+    <li>the type is a [=union type=],
         one of whose [=member types=]
         includes |D|</li>
     <li>the type is a dictionary, one of whose members or inherited members has
@@ -4491,7 +4491,7 @@ results in an exception being thrown.
 
 <p>
     No [=extended attributes=]
-    defined in this specification are applicable to <a class="dnfref" href="#dfn-enumeration">enumerations</a>.
+    defined in this specification are applicable to [=enumerations=].
 </p>
 
 <table class="grammar"><tr id="proddef-Enum"><td><span class="prod-number">[19]</span></td><td><a class="sym" href="#prod-Enum">Enum</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"enum" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-EnumValueList">EnumValueList</a> "}" ";"</span></td></tr><tr id="proddef-EnumValueList"><td><span class="prod-number">[20]</span></td><td><a class="sym" href="#prod-EnumValueList">EnumValueList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-string">string</a> <a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></span></td></tr><tr id="proddef-EnumValueListComma"><td><span class="prod-number">[21]</span></td><td><a class="sym" href="#prod-EnumValueListComma">EnumValueListComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-EnumValueListString">EnumValueListString</a> <br/> |
