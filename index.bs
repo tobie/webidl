@@ -14328,7 +14328,7 @@ on exception objects too.
 
 
 
-<h2 class="no-num">IDL grammar</h2>
+<h2 id="idl-grammar" class="no-num">IDL grammar</h2>
 
 <p>
     This section defines an LL(1) grammar whose start symbol,
@@ -14650,7 +14650,7 @@ and <span class="sym">","</span>.
 
 
 
-<h2 class="no-num">Changes</h2>
+<h2 id="changes" class="no-num">Changes</h2>
 
 <p><i>This section is informative.</i></p>
 

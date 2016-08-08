@@ -14,6 +14,8 @@
   <xsl:variable name='rev' select='substring-before(substring-after(substring-after($id, " "), " "), " ")'/>
   <xsl:variable name='tocpi' />
   
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXX STRUCTURE XXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
 <xsl:template match='processing-instruction("top")'>
 <xsl:text>
 </xsl:text>
@@ -131,12 +133,7 @@ Boilerplate: omit issues-index
     }
   </xsl:text>
 </style>
-
   </xsl:template>
-
-  <xsl:param name='now'>12340506<!--
-    <xsl:value-of select='translate(substring-before(substring-after(substring-after(substring-after($id, " "), " "), " "), " "), "/", "")'/>-->
-  </xsl:param>
 
   <xsl:template match='h:*'>
     <xsl:element name="{name()}" namespace="{namespace-uri()}">
@@ -145,6 +142,41 @@ Boilerplate: omit issues-index
     </xsl:element>
   </xsl:template>
   
+  <!-- Escape all the text -->
+  
+  <xsl:template match='text()'>
+    <xsl:value-of select='replace(., "\[\[", "\\[[")' />
+  </xsl:template>
+  
+  <!-- Remove tags, keep content -->
+  
+  <xsl:template match='h:div[@class="section"] | h:div[@id="sections"] | h:body'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
+  <xsl:template match='h:div[@id="appendices"]'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
+  <!-- Remove stuff -->
+
+  <xsl:template match='processing-instruction()|comment()'/>
+
+  <xsl:template match='h:div[@id="toc"] | h:head' />
+  
+  <xsl:template match='*'/>
+
+  <xsl:template match='comment()' />
+
+  <xsl:template match='comment()[starts-with(., "JAVA")]' />
+  
+  <xsl:template match='h:div[@class="section"][h:h2[text()="Abstract"]]'/>
+  
+  <xsl:template match='h:div[@id="references"]' />
+  
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXX DFN XXXXXXXXXXXXXXXXXXXXXXXXXX -->
+  
+  <!-- Turn SPAN.idltype with ids into DFNs -->
   <xsl:template match='h:span[@class="idltype"][@id]'>
     <dfn>
       <xsl:attribute name='id'><xsl:value-of select='@id'/></xsl:attribute>
@@ -152,37 +184,107 @@ Boilerplate: omit issues-index
       <xsl:apply-templates select="node()"/>
     </dfn>
   </xsl:template>
+  
+  <!-- Regular DFNs -->
+  
+  <xsl:template match='h:dfn'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:if test="@id">
+        <xsl:attribute name="id">
+          <xsl:value-of select='@id' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@data-dfn-for">
+        <xsl:attribute name="for">
+          <xsl:value-of select='@data-dfn-for' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@data-dfn-type">
+        <xsl:attribute name='{@data-dfn-type}' />
+      </xsl:if>
+      <xsl:if test="@data-export">
+        <xsl:attribute name="export" />
+      </xsl:if>
+      <xsl:if test="@data-lt and text() != @data-lt">
+        <xsl:attribute name="lt">
+          <xsl:value-of select='@data-lt' />
+        </xsl:attribute>
+      </xsl:if>
+      
+      <xsl:choose>
+        <xsl:when test='./*[1]'>
+          <xsl:apply-templates select="node()"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select='replace(., "\s*\n\s*", " ")'/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:copy>
+  </xsl:template>
+  
+  <!-- HEADINGS -->
+  
+  <xsl:template match='*[matches(name(), "h[1-6]")][parent::h:div[@class="section"][@id]]'>
+    <xsl:variable name='parent-id' select='parent::h:div[@class="section"]/@id' />
+    <xsl:copy copy-namespaces="no">
+      <xsl:if test="@id">
+        <xsl:attribute name="oldids">
+          <xsl:value-of select='@id' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:attribute name="id">
+        <xsl:value-of select='$parent-id' />
+      </xsl:attribute>
+      <xsl:if test="@data-dfn-type">
+        <xsl:attribute name="{@data-dfn-type}" />
+      </xsl:if>
+      <xsl:if test="name() = 'h4' and ancestor::*/@id = 'es-extended-attributes'">
+        <xsl:attribute name="extended-attribute" />
+        <xsl:attribute name="lt"><xsl:value-of select='replace(., "\[|\]", "")' /></xsl:attribute>
+      </xsl:if>
+      <xsl:if test='$parent-id="Global" or $parent-id="idl-legacy-callers" or $parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
+        <xsl:attribute name="dfn" />
+      </xsl:if>
+      <xsl:if test="@data-lt and text() != @data-lt">
+        <xsl:attribute name="lt">
+          <xsl:value-of select='@data-lt' />
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test='$parent-id="Global"'>
+          <xsl:attribute name="lt">Global|PrimaryGlobal</xsl:attribute>
+      </xsl:if>
+      <xsl:if test='ancestor::h:div[@id="appendices"]'>
+        <xsl:attribute name="class">no-num</xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
 
-  <xsl:template match='h:span[@class="idltype"][not(@id)]'>
-    <xsl:variable name='txt' select='string(.)'/>
-    <xsl:variable name='generatedid' select='concat("idl-", translate(., " ", "-"))'/>
-    <xsl:variable name='dfn' select='//h:dfn[.=$txt] | //*[@data-lt=$txt] | //*[@data-dfn-type][.=$txt] | //*[@id=$generatedid]'/>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXX ANCHORS XXXXXXXXXXXXXXXXXXXXXXXXXX -->
+  
+  <!-- References => [[foo]]-->
+  
+  <xsl:template match='h:a[starts-with(@href, "#ref-")]'>
     <xsl:choose>
-      <xsl:when test='.[child::h:dfn[text()="Error"]]'>
-        <xsl:text>{{Error}}</xsl:text>
+      <xsl:when test='text()="[TYPEDARRAYS]"'>
+        <xsl:text>[[!ECMA-262]]</xsl:text>
       </xsl:when>
-      <xsl:when test='$dfn and not(ancestor::h:a or child::h:dfn)'>
-        <xsl:text>{{</xsl:text>
-        <xsl:variable name='for' select='$dfn/@data-dfn-for'/>
-        <xsl:if test="$for">
-          <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
-        </xsl:if>
-        <xsl:value-of select='$txt' />
-        <xsl:text>}}</xsl:text>
+      <xsl:when test='text()="[DOM3CORE]"'>
+        <xsl:text>[[DOM-LEVEL-3-CORE]]</xsl:text>
+      </xsl:when>
+      <xsl:when test='text()="[XMLNS]"'>
+        <xsl:text>[[XML-NAMES]]</xsl:text>
+      </xsl:when>
+      <xsl:when test='matches(text(), "\[(ECMA-262|IEEE\-754|PERLRE|RFC2119|RFC2781|RFC3629|SECURE\-CONTEXTS|UNICODE|HTML)\]")'>
+        <xsl:value-of select='replace(., "\[", "[[!")'/><xsl:text>]</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <span>
-          <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-          <xsl:apply-templates select='node()'/>
-        </span>
+        <xsl:text>[</xsl:text><xsl:value-of select='.'/><xsl:text>]</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:template> 
   
-  <xsl:template match='h:a[@href="http://www.khronos.org/registry/typedarray/specs/latest/"]'>
-    <xsl:text>[=Typed Arrays=]</xsl:text>
-  </xsl:template>
-  
+  <!-- Links with no HREF -->
   <xsl:template match='h:a[not(@href)]'>
     <xsl:variable name='name' select='string(.)'/>
     <xsl:variable name='escaped-name' select='replace($name, "\[\[", "\\[[")'/>
@@ -191,6 +293,7 @@ Boilerplate: omit issues-index
       <xsl:message terminate='yes'>unknown term '<xsl:value-of select='$name'/>'</xsl:message>
     </xsl:if>
     <xsl:choose>
+      <!-- TODO see what Bikeshed shorthand we could use here -->
       <xsl:when test='@class'>
         <a class="{@class}"><xsl:value-of select='$escaped-name'/></a>
       </xsl:when>
@@ -200,53 +303,7 @@ Boilerplate: omit issues-index
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match='h:a[@class="xattr"]'>
-    <xsl:text>[{{</xsl:text><xsl:value-of select='replace(., "^\[|\]$", "")' /><xsl:text>}}]</xsl:text>
-  </xsl:template>
-  
-  <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
-    <xsl:text>[{{TreatNullAs}}]</xsl:text>
-  </xsl:template>
-
-  <xsl:template match='h:a[@class="idltype"]'>
-    <xsl:choose>
-      <xsl:when test='text()="unresticted float"'>
-        <xsl:text>{{unrestricted float}}</xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  
-  <xsl:template match='h:a[contains(@class, "external")][matches(@href, ".#")]'>
-    <xsl:variable name='hash' select='substring-after(@href, "#")'/>
-        <xsl:choose>
-          <xsl:when test='$hash="sec-code-realms"'>
-            <xsl:text>[=Realms|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
-          </xsl:when>
-          <xsl:when test='$hash="sec-ecmascript-data-types-and-values"'>
-            <xsl:text>[=Type|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>[=</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-  </xsl:template>
-  
-  <xsl:template match='h:a[@href="#ecmascript-throw"]'>
-    <a lt="es throw"><xsl:value-of select='substring-before(., " ")'/> a <emu-val>TypeError</emu-val></a>
-  </xsl:template>
-  
-  <xsl:template match='h:p[@id="ecmascript-throw"]'>
-    <p>
-      When an algorithm says to
-      <dfn lt="es throw" export="" id="ecmascript-throw">throw a <b><i>Something</i>Error</b></dfn>
-      then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
-      and to throw it, just as the algorithms in ECMA-262 do.
-    </p>
-  </xsl:template>
-
+  <!-- Links with class dnfref => [=foo=] -->
   <xsl:template match='h:a[@class="dfnref"]'>
     <xsl:variable name='id' select='substring-after(@href, "#")'/>
     <xsl:variable name='dfn' select='//*[@id=$id]'/>
@@ -284,23 +341,72 @@ Boilerplate: omit issues-index
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match='h:p[@class="norm"]'>
-    <p>
-      <i><xsl:apply-templates select='node()'/></i>
-    </p>
+  <!-- Links with class xattr => [{{foo}}] -->
+  <xsl:template match='h:a[@class="xattr"]'>
+    <xsl:text>[{{</xsl:text><xsl:value-of select='replace(., "^\[|\]$", "")' /><xsl:text>}}]</xsl:text>
   </xsl:template>
   
-  <xsl:template match='processing-instruction("productions")'>
-    <xsl:variable name='id' select='substring-before(., " ")'/>
-    <xsl:variable name='names' select='concat(" ", substring-after(., " "), " ")'/>
-    <table class='grammar'>
-      <xsl:call-template name='proddef'>
-        <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
-        <xsl:with-param name='pi' select='.'/>
-      </xsl:call-template>
-    </table>
+  <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
+    <xsl:text>[{{TreatNullAs}}]</xsl:text>
   </xsl:template>
 
+  <!-- Links with class idlclass => {{foo}}-->
+  <xsl:template match='h:a[@class="idltype"]'>
+    <xsl:choose>
+      <xsl:when test='text()="unresticted float"'>
+        <xsl:text>{{unrestricted float}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <!-- Spans with class idltype should also be linked => {{foo}} -->
+  <xsl:template match='h:span[@class="idltype"][not(@id)]'>
+    <xsl:variable name='txt' select='string(.)'/>
+    <xsl:variable name='generatedid' select='concat("idl-", translate(., " ", "-"))'/>
+    <xsl:variable name='dfn' select='//h:dfn[.=$txt] | //*[@data-lt=$txt] | //*[@data-dfn-type][.=$txt] | //*[@id=$generatedid]'/>
+    <xsl:choose>
+      <xsl:when test='.[child::h:dfn[text()="Error"]]'>
+        <xsl:text>{{Error}}</xsl:text>
+      </xsl:when>
+      <xsl:when test='$dfn and not(ancestor::h:a or child::h:dfn)'>
+        <xsl:text>{{</xsl:text>
+        <xsl:variable name='for' select='$dfn/@data-dfn-for'/>
+        <xsl:if test="$for">
+          <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
+        </xsl:if>
+        <xsl:value-of select='$txt' />
+        <xsl:text>}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- TODO should those be turned into links too? -->
+        <span>
+          <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
+          <xsl:apply-templates select='node()'/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <!-- Links with class external => [=foo=] -->
+  <xsl:template match='h:a[contains(@class, "external")][matches(@href, ".#")]'>
+    <xsl:variable name='hash' select='substring-after(@href, "#")'/>
+        <xsl:choose>
+          <xsl:when test='$hash="sec-code-realms"'>
+            <xsl:text>[=Realms|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
+          </xsl:when>
+          <xsl:when test='$hash="sec-ecmascript-data-types-and-values"'>
+            <xsl:text>[=Type|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>[=</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+  </xsl:template>
+  
+  <!-- Links to sections in the spec => [[#foo]] -->
   <xsl:template match='h:a[processing-instruction("sref")]'>
       <xsl:text>[[</xsl:text><xsl:value-of select='./@href'/><xsl:text>]]</xsl:text>
   </xsl:template>
@@ -314,45 +420,69 @@ Boilerplate: omit issues-index
   <xsl:template match='*[processing-instruction("sdir")]/text()[following-sibling::processing-instruction("sdir")][last()]'>
     <xsl:value-of select='replace(., "\s+$", "")'/>
   </xsl:template>
-
-  <xsl:template match='processing-instruction()|comment()'/>
-
-  <xsl:template match='h:div[@id="toc"] | h:head' />
   
-  <xsl:template match='h:dfn'>
+  <!-- Special casing links -->
+  <xsl:template match='h:a[@href="http://www.khronos.org/registry/typedarray/specs/latest/"]'>
+    <xsl:text>[=Typed Arrays=]</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#ecmascript-throw"]'>
+    <a lt="es throw"><xsl:value-of select='substring-before(., " ")'/> a <emu-val>TypeError</emu-val></a>
+  </xsl:template>
+  
+  <xsl:template match='h:p[@id="ecmascript-throw"]'>
+    <p>
+      When an algorithm says to
+      <dfn lt="es throw" export="" id="ecmascript-throw">throw a <b><i>Something</i>Error</b></dfn>
+      then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
+      and to throw it, just as the algorithms in ECMA-262 do.
+    </p>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-values-to-iterate-over"]'>
     <xsl:copy copy-namespaces="no">
-      <xsl:if test="@id">
-        <xsl:attribute name="id">
-          <xsl:value-of select='@id' />
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@data-dfn-for">
-        <xsl:attribute name="for">
-          <xsl:value-of select='@data-dfn-for' />
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@data-dfn-type">
-        <xsl:attribute name='{@data-dfn-type}' />
-      </xsl:if>
-      <xsl:if test="@data-export">
-        <xsl:attribute name="export" />
-      </xsl:if>
-      <xsl:if test="@data-lt and text() != @data-lt">
-        <xsl:attribute name="lt">
-          <xsl:value-of select='@data-lt' />
-        </xsl:attribute>
-      </xsl:if>
-      
-      <xsl:choose>
-        <xsl:when test='./*[1]'>
-          <xsl:apply-templates select="node()"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select='replace(., "\s*\n\s*", " ")'/>
-        </xsl:otherwise>
-      </xsl:choose>
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-flattened-union-member-type"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#dfn-flattened-union-member-types</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-supported-indexed-properties"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#dfn-support-indexed-properties</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-convert-idl-to-ecmascript"]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="href">#dfn-convert-idl-to-ecmascript-value</xsl:attribute>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@class="placeholder"]'>
+    <xsl:choose>
+      <xsl:when test='text()="[WEBIDL]"'>
+        <xsl:text>\[WEBIDL]</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:message terminate='yes'>Unexpected placeholder link '<xsl:value-of select='.'/></xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template> 
+  
+  <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX INLINE STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
   <xsl:template match='h:span[@class="esvalue"] | h:span[@class="estype"]'>
     <xsl:choose>
@@ -384,64 +514,29 @@ Boilerplate: omit issues-index
     <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
   </xsl:template>
   
-  <xsl:template match='text()'>
-    <xsl:value-of select='replace(., "\[\[", "\\[[")' />
-  </xsl:template>
-  
   <xsl:template match='h:span[@class="rfc2119"]'>
     <xsl:value-of select='lower-case(text())'/>
   </xsl:template>
+ 
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXX BLOCK STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
-  <xsl:template match='*[matches(name(), "h[1-6]")][parent::h:div[@class="section"][@id]]'>
-    <xsl:variable name='parent-id' select='parent::h:div[@class="section"]/@id' />
-    <xsl:copy copy-namespaces="no">
-      <xsl:if test="@id">
-        <xsl:attribute name="oldids">
-          <xsl:value-of select='@id' />
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:attribute name="id">
-        <xsl:value-of select='$parent-id' />
-      </xsl:attribute>
-      <xsl:if test="@data-dfn-type">
-        <xsl:attribute name="{@data-dfn-type}" />
-      </xsl:if>
-      <xsl:if test="name() = 'h4' and ancestor::*/@id = 'es-extended-attributes'">
-        <xsl:attribute name="extended-attribute" />
-        <xsl:attribute name="lt"><xsl:value-of select='replace(., "\[|\]", "")' /></xsl:attribute>
-      </xsl:if>
-      <xsl:if test='$parent-id="Global" or $parent-id="idl-legacy-callers" or $parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
-        <xsl:attribute name="dfn" />
-      </xsl:if>
-      <xsl:if test="@data-lt and text() != @data-lt">
-        <xsl:attribute name="lt">
-          <xsl:value-of select='@data-lt' />
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:if test='$parent-id="Global"'>
-          <xsl:attribute name="lt">Global|PrimaryGlobal</xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
+  <!--This section is informative -->
+  <xsl:template match='h:p[@class="norm"]'>
+    <p>
+      <i><xsl:apply-templates select='node()'/></i>
+    </p>
   </xsl:template>
   
-  <xsl:template match='h:div[@class="section"] | h:div[@id="sections"] | h:body'>
-    <xsl:apply-templates select='node()'/>
-  </xsl:template>
-  
-  <xsl:template match='h:h2[ancestor::h:div[@id="appendices"]]'>
+  <!--Style tables -->
+  <xsl:template match='h:table'>
     <xsl:copy copy-namespaces="no">
       <xsl:copy-of select="@*"/>
-      <xsl:attribute name="class">no-num</xsl:attribute>
+      <xsl:attribute name="class"><xsl:value-of select='concat(@class, " data")'/></xsl:attribute>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match='h:div[@id="appendices"]'>
-    <xsl:apply-templates select='node()'/>
-  </xsl:template>
-  
-  <xsl:template match='h:div[@class="section"][h:h2[text()="Abstract"]]'/>
+  <!--Notes examples and the like -->
   
   <xsl:template name='markdown-note-issue-advisement'>
     <xsl:text>    </xsl:text>
@@ -493,7 +588,9 @@ Issue</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
+  
+  <!-- Code blocks -->
+  
   <xsl:template match='x:codeblock'>
     <xsl:variable name='lang'>
       <xsl:choose>
@@ -524,41 +621,23 @@ Issue</xsl:text>
     </xsl:choose>
   </xsl:template>
   
+  <!-- Highliting script can pick those up without needing markup -->
   <xsl:template match='h:span[@class="comment"]'>
       <xsl:apply-templates select='node()'/>
   </xsl:template>
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXX GRAMMAR XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
-  <xsl:template match='h:div[@id="references"]' />
-  <xsl:template match='h:a[starts-with(@href, "#ref-")]'>
-    <xsl:choose>
-      <xsl:when test='text()="[TYPEDARRAYS]"'>
-        <xsl:text>[[!ECMA-262]]</xsl:text>
-      </xsl:when>
-      <xsl:when test='text()="[DOM3CORE]"'>
-        <xsl:text>[[DOM-LEVEL-3-CORE]]</xsl:text>
-      </xsl:when>
-      <xsl:when test='text()="[XMLNS]"'>
-        <xsl:text>[[XML-NAMES]]</xsl:text>
-      </xsl:when>
-      <xsl:when test='matches(text(), "\[(ECMA-262|IEEE\-754|PERLRE|RFC2119|RFC2781|RFC3629|SECURE\-CONTEXTS|UNICODE|HTML)\]")'>
-        <xsl:value-of select='replace(., "\[", "[[!")'/><xsl:text>]</xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text>[</xsl:text><xsl:value-of select='.'/><xsl:text>]</xsl:text>
-      </xsl:otherwise>
-    </xsl:choose>
+  <xsl:template match='processing-instruction("productions")'>
+    <xsl:variable name='id' select='substring-before(., " ")'/>
+    <xsl:variable name='names' select='concat(" ", substring-after(., " "), " ")'/>
+    <table class='grammar'>
+      <xsl:call-template name='proddef'>
+        <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
+        <xsl:with-param name='pi' select='.'/>
+      </xsl:call-template>
+    </table>
   </xsl:template>
-  
-  <xsl:template match='h:a[@class="placeholder"]'>
-    <xsl:choose>
-      <xsl:when test='text()="[WEBIDL]"'>
-        <xsl:text>\[WEBIDL]</xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:message terminate='yes'>Unexpected placeholder link '<xsl:value-of select='.'/></xsl:message>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template> 
   
   <xsl:template match='x:grammar'>
     <table class='grammar'>
@@ -740,49 +819,4 @@ Issue</xsl:text>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match='*'/>
-
-  <xsl:template match='comment()' />
-
-  <xsl:template match='comment()[starts-with(., "JAVA")]' />
-  
-  <xsl:template match='h:table'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="class"><xsl:value-of select='concat(@class, " data")'/></xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
-  </xsl:template>
-  
-  <xsl:template match='h:a[@href="#dfn-values-to-iterate-over"]'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#</xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
-  </xsl:template>
-  
-  <xsl:template match='h:a[@href="#dfn-flattened-union-member-type"]'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#dfn-flattened-union-member-types</xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
-  </xsl:template>
-  
-  <xsl:template match='h:a[@href="#dfn-supported-indexed-properties"]'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#dfn-support-indexed-properties</xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
-  </xsl:template>
-  
-  <xsl:template match='h:a[@href="#dfn-convert-idl-to-ecmascript"]'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#dfn-convert-idl-to-ecmascript-value</xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
-  </xsl:template>
 </xsl:stylesheet>
