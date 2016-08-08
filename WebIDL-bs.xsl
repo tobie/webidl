@@ -438,28 +438,26 @@ Boilerplate: omit issues-index
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match='h:a[@href="#dfn-flattened-union-member-type"]'>
+  <xsl:template match='h:blockquote[descendant::h:a[@href="#dfn-values-to-iterate-over"]]'>
     <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#dfn-flattened-union-member-types</xsl:attribute>
       <xsl:apply-templates select="node()"/>
+      <xsl:text>
+        
+        Issue: Fix reference to removed definition for "values to iterate over".
+      </xsl:text>
     </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:a[@href="#dfn-flattened-union-member-type"]'>
+    <xsl:text>[=flattened member types|</xsl:text><xsl:value-of select='.'/><xsl:text>=]</xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@href="#dfn-supported-indexed-properties"]'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#dfn-support-indexed-properties</xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
+     <xsl:text>[=support indexed properties|</xsl:text><xsl:value-of select='.'/><xsl:text>=]</xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@href="#dfn-convert-idl-to-ecmascript"]'>
-    <xsl:copy copy-namespaces="no">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="href">#dfn-convert-idl-to-ecmascript-value</xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:copy>
+    <xsl:text>[=converted to ECMAScript values|</xsl:text><xsl:value-of select='.'/><xsl:text>=]</xsl:text>
   </xsl:template>
   
   <xsl:template match='h:a[@class="placeholder"]'>

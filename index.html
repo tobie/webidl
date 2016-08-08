@@ -4319,8 +4319,8 @@ actual <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-i
    <p> Interfaces with iterable declarations must not
     have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a> named “entries”, “keys” or “values”,
     or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-3">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-2">consequential</a> interfaces that have interface members with these names. </p>
-   <div class="example" id="example-860ed1e9">
-    <a class="self-link" href="#example-860ed1e9"></a> 
+   <div class="example" id="example-920c90c1">
+    <a class="self-link" href="#example-920c90c1"></a> 
     <p>Consider the following interface <span class="idltype">SessionManager</span>, which allows access to
     a number of <span class="idltype">Session</span> objects:</p>
 <pre class="idl-example">interface SessionManager {
@@ -4339,6 +4339,7 @@ interface Session {
     <blockquote>
      <p> The <a class="dfnref" href="#">values to iterate over</a> are the open <span class="idltype">Session</span> objects
             on the <span class="idltype">SessionManager</span> sorted by username. </p>
+     <p class="issue" id="issue-d0d15dea"><a class="self-link" href="#issue-d0d15dea"></a> Fix reference to removed definition for "values to iterate over".</p>
     </blockquote>
     <p> In the ECMAScript language binding, the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-2">interface prototype object</a> for the <span class="idltype">SessionManager</span> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-44">interface</a> has a <code>values</code> method that is a function, which, when invoked,
         returns an iterator object that itself has a <code>next</code> method that returns the
@@ -5615,7 +5616,7 @@ is converted to an IDL callback function type value.  See <a href="#es-callback-
     from an existing type (called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-inner-type">inner type</dfn>),
     which just allows the additional value <span class="idlvalue">null</span> to be a member of its set of values. <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-11">Nullable types</a> are represented in IDL by placing a <span class="char">U+003F QUESTION MARK ("?")</span> character after an existing type.  The inner type must not
     be <code class="idl"><a data-link-type="idl" href="#idl-any" id="ref-for-idl-any-6">any</a></code>,
-    another nullable type, or a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-7">union type</a> that itself has <a data-link-type="dfn" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-2">includes a nullable type</a> or has a dictionary type as one of its <a class="dfnref" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-4">flattened member types</a>. </p>
+    another nullable type, or a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-7">union type</a> that itself has <a data-link-type="dfn" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-2">includes a nullable type</a> or has a dictionary type as one of its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-4">flattened member types</a>. </p>
    <p class="note" role="note">Note: Although dictionary types can in general be nullable, they cannot when used
 as the type of an operation argument or a dictionary member.</p>
    <p> Nullable type constant values in IDL are represented in the same way that
@@ -9676,7 +9677,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
     <li>its <em>index</em>, which is the current index into the values value to be iterated.
    </ol>
    <p class="note" role="note">Note: Default iterator objects are only used for <a data-link-type="dfn" href="#dfn-pair-iterator" id="ref-for-dfn-pair-iterator-10">pair iterators</a>; <a data-link-type="dfn" href="#dfn-value-iterator" id="ref-for-dfn-value-iterator-10">value iterators</a>, as they are currently
-restricted to iterating over an object’s <a class="dfnref" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-8">supported indexed properties</a>,
+restricted to iterating over an object’s <a data-link-type="dfn" href="#dfn-support-indexed-properties" id="ref-for-dfn-support-indexed-properties-8">supported indexed properties</a>,
 use standard ECMAScript Array iterator objects.</p>
    <p> When a <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-5">default iterator object</a> is first created,
     its index is set to 0. </p>
@@ -9837,7 +9838,7 @@ use standard ECMAScript Array iterator objects.</p>
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>map</var> passing <var>name</var> and <var>map</var> as arguments.
       <li>Let <var>keyArg</var> be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.
       <li>Let <var>keyIDL</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-28">converting</a> <var>keyArg</var> to an IDL value of type <var>keyType</var>.
-      <li>Let <var>key</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-44">converting</a> <var>keyIDL</var> to an ECMAScript value.
+      <li>Let <var>key</var> be the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-44">converting</a> <var>keyIDL</var> to an ECMAScript value.
       <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>map</var> as <var>thisArg</var> and the single value <var>key</var> as <var>argumentsList</var>.
      </ol>
    </ul>
@@ -9878,7 +9879,7 @@ use standard ECMAScript Array iterator objects.</p>
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>map</var> passing “delete” and <var>map</var> as arguments.
       <li>Let <var>keyArg</var> be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.
       <li>Let <var>keyIDL</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-29">converting</a> <var>keyArg</var> to an IDL value of type <var>keyType</var>.
-      <li>Let <var>key</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-45">converting</a> <var>keyIDL</var> to an ECMAScript value.
+      <li>Let <var>key</var> be the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-45">converting</a> <var>keyIDL</var> to an ECMAScript value.
       <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>map</var> as <var>thisArg</var> and the single value <var>key</var> as <var>argumentsList</var>.
      </ol>
    </ul>
@@ -9911,8 +9912,8 @@ use standard ECMAScript Array iterator objects.</p>
       <li>Let <var>valueArg</var> be the second argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.
       <li>Let <var>keyIDL</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-30">converting</a> <var>keyArg</var> to an IDL value of type <var>keyType</var>.
       <li>Let <var>valueIDL</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-31">converting</a> <var>valueArg</var> to an IDL value of type <var>valueType</var>.
-      <li>Let <var>key</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-46">converting</a> <var>keyIDL</var> to an ECMAScript value.
-      <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-47">converting</a> <var>valueIDL</var> to an ECMAScript value.
+      <li>Let <var>key</var> be the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-46">converting</a> <var>keyIDL</var> to an ECMAScript value.
+      <li>Let <var>value</var> be the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-47">converting</a> <var>valueIDL</var> to an ECMAScript value.
       <li>Let <var>result</var> be the result of calling the [[Call]] internal method of <var>function</var> with <var>map</var> as <var>thisArg</var> and <var>key</var> and <var>value</var> as <var>argumentsList</var>.
       <li>Assert: <var>result</var> is not an abrupt completion.
       <li>Return <var>O</var>.
@@ -10012,7 +10013,7 @@ use standard ECMAScript Array iterator objects.</p>
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>set</var> passing “has” and <var>set</var> as arguments.
       <li>Let <var>arg</var> be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.
       <li>Let <var>idlValue</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-32">converting</a> <var>arg</var> to an IDL value of type <var>type</var>.
-      <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-48">converting</a> <var>idlValue</var> to an ECMAScript value.
+      <li>Let <var>value</var> be the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-48">converting</a> <var>idlValue</var> to an ECMAScript value.
       <li>Return the result of calling the [[Call]] internal method of <var>function</var> with <var>set</var> as <var>thisArg</var> and the single value <var>value</var> as <var>argumentsList</var>.
      </ol>
    </ul>
@@ -10048,7 +10049,7 @@ use standard ECMAScript Array iterator objects.</p>
       <li>Let <var>function</var> be the result of calling the [[Get]] internal method of <var>set</var> passing <var>name</var> and <var>set</var> as arguments.
       <li>Let <var>arg</var> be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.
       <li>Let <var>idlValue</var> be the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-33">converting</a> <var>arg</var> to an IDL value of type <var>type</var>.
-      <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-49">converting</a> <var>idlValue</var> to an ECMAScript value.
+      <li>Let <var>value</var> be the result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-49">converting</a> <var>idlValue</var> to an ECMAScript value.
       <li>Let <var>result</var> be the result of calling the [[Call]] internal method of <var>function</var> with <var>set</var> as <var>thisArg</var> and the single value <var>value</var> as <var>argumentsList</var>.
       <li>Assert: <var>result</var> is not an abrupt completion.
       <li>

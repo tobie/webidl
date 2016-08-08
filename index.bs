@@ -3597,6 +3597,9 @@ actual [=array iterator objects=].
             are the open <span class="idltype">Session</span> objects
             on the <span class="idltype">SessionManager</span> sorted by username.
         </p>
+        
+        
+        Issue: Fix reference to removed definition for "values to iterate over".
     </blockquote>
     <p>
         In the ECMAScript language binding, the [=interface prototype object=]
@@ -5532,7 +5535,7 @@ is converted to an IDL callback function type value.  See
     another nullable type, or a [=union type=]
     that itself has [=includes a nullable type=]
     or has a dictionary type as one of its
-    <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>.
+    [=flattened member types|flattened member types=].
 </p>
 
 Note: Although dictionary types can in general be nullable, they cannot when used
@@ -12060,7 +12063,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
 Note: Default iterator objects are only used for [=pair iterators=];
 [=value iterators=], as they are currently
 restricted to iterating over an object’s
-<a class="dfnref" href="#dfn-support-indexed-properties">supported indexed properties</a>,
+[=support indexed properties|supported indexed properties=],
 use standard ECMAScript Array iterator objects.
 
 <p>
@@ -12306,7 +12309,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing |name| and |map| as arguments.</li>
             <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
             <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
-            <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
+            <li>Let |key| be the result of [=converted to ECMAScript values|converting=] |keyIDL| to an ECMAScript value.</li>
             <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
         </ol>
     </li>
@@ -12369,7 +12372,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |function| be the result of calling the \[[Get]] internal method of |map| passing “delete” and |map| as arguments.</li>
             <li>Let |keyArg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
             <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
-            <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
+            <li>Let |key| be the result of [=converted to ECMAScript values|converting=] |keyIDL| to an ECMAScript value.</li>
             <li>Return the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and the single value |key| as |argumentsList|.</li>
         </ol>
     </li>
@@ -12413,8 +12416,8 @@ use standard ECMAScript Array iterator objects.
             <li>Let |valueArg| be the second argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
             <li>Let |keyIDL| be the result of [=converted to an IDL value|converting=] |keyArg| to an IDL value of type |keyType|.</li>
             <li>Let |valueIDL| be the result of [=converted to an IDL value|converting=] |valueArg| to an IDL value of type |valueType|.</li>
-            <li>Let |key| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |keyIDL| to an ECMAScript value.</li>
-            <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |valueIDL| to an ECMAScript value.</li>
+            <li>Let |key| be the result of [=converted to ECMAScript values|converting=] |keyIDL| to an ECMAScript value.</li>
+            <li>Let |value| be the result of [=converted to ECMAScript values|converting=] |valueIDL| to an ECMAScript value.</li>
             <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |map| as |thisArg| and |key| and |value| as |argumentsList|.</li>
             <li>Assert: |result| is not an abrupt completion.</li>
             <li>Return |O|.</li>
@@ -12563,7 +12566,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing “has” and |set| as arguments.</li>
             <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
             <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |arg| to an IDL value of type |type|.</li>
-            <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
+            <li>Let |value| be the result of [=converted to ECMAScript values|converting=] |idlValue| to an ECMAScript value.</li>
             <li>Return the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
         </ol>
     </li>
@@ -12611,7 +12614,7 @@ use standard ECMAScript Array iterator objects.
             <li>Let |function| be the result of calling the \[[Get]] internal method of |set| passing |name| and |set| as arguments.</li>
             <li>Let |arg| be the first argument passed to this function, or <emu-val>undefined</emu-val> if not supplied.</li>
             <li>Let |idlValue| be the result of [=converted to an IDL value|converting=] |arg| to an IDL value of type |type|.</li>
-            <li>Let |value| be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> |idlValue| to an ECMAScript value.</li>
+            <li>Let |value| be the result of [=converted to ECMAScript values|converting=] |idlValue| to an ECMAScript value.</li>
             <li>Let |result| be the result of calling the \[[Call]] internal method of |function| with |set| as |thisArg| and the single value |value| as |argumentsList|.</li>
             <li>Assert: |result| is not an abrupt completion.</li>
             <li>
