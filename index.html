@@ -8148,19 +8148,19 @@ interface Person {
    <p> Whether a construct that the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-11">SecureContext</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-73">extended attribute</a> can be specified on is <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-available-only-in-secure-contexts">available only in secure contexts</dfn> is defined as follows: </p>
    <ul>
     <li>
-     <p>If the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-12">SecureContext</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-74">extended attribute</a> is specified on the construct, then it is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-2">available only in secure contexts</a>.</p>
+     <p>If the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-12">SecureContext</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-74">extended attribute</a> is specified on the construct, then it is <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-2">available only in secure contexts</a>.</p>
     <li>
-     <p>Otherwise, if the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-13">SecureContext</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-75">extended attribute</a> does not appear on a construct, then whether it is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-3">available only in secure contexts</a> depends on the type of construct:</p>
+     <p>Otherwise, if the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-13">SecureContext</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-75">extended attribute</a> does not appear on a construct, then whether it is <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-3">available only in secure contexts</a> depends on the type of construct:</p>
      <dl class="switch">
       <dt>interface
-      <dd>The interface or dictionary is not <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-4">available only in secure contexts</a>.
+      <dd>The interface or dictionary is not <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-4">available only in secure contexts</a>.
       <dt>partial interface
-      <dd>The partial interface is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-5">available only in secure contexts</a> if and only if the original interface definition is.
+      <dd>The partial interface is <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-5">available only in secure contexts</a> if and only if the original interface definition is.
       <dt>interface member
-      <dd>The interface member is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-6">available only in secure contexts</a> if and only if the interface or partial interface the member is declared on is.
+      <dd>The interface member is <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-6">available only in secure contexts</a> if and only if the interface or partial interface the member is declared on is.
      </dl>
    </ul>
-   <p class="note" role="note">Note: Whether a construct is <a class="dfnre" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-7">available only in secure contexts</a> influences whether it is <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed-1">exposed</a> in a given
+   <p class="note" role="note">Note: Whether a construct is <a data-link-type="dfn" href="#dfn-available-only-in-secure-contexts" id="ref-for-dfn-available-only-in-secure-contexts-7">available only in secure contexts</a> influences whether it is <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed-1">exposed</a> in a given
 ECMAScript global environment.</p>
    <p> If [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-14">SecureContext</a></code>] appears on an <a data-link-type="dfn" href="#dfn-overloaded" id="ref-for-dfn-overloaded-3">overloaded</a> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-58">operation</a>,
     then it must appear on all overloads. </p>

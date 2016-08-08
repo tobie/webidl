@@ -9662,30 +9662,30 @@ mailing list before proceeding.
         <p>If the [{{SecureContext}}]
             [=extended attribute=]
             is specified on the construct, then it is
-        <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</p>
+        [=available only in secure contexts=].</p>
     </li>
     <li>
         <p>Otherwise, if the [{{SecureContext}}]
             [=extended attribute=]
             does not appear on a construct, then whether it is
-            <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
+            [=available only in secure contexts=]
         depends on the type of construct:</p>
         <dl class="switch">
             <dt>interface</dt>
             <dd>The interface or dictionary is not
-                <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>.</dd>
+                [=available only in secure contexts=].</dd>
             <dt>partial interface</dt>
-            <dd>The partial interface is <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
+            <dd>The partial interface is [=available only in secure contexts=]
                 if and only if the original interface definition is.</dd>
             <dt>interface member</dt>
-            <dd>The interface member is <a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
+            <dd>The interface member is [=available only in secure contexts=]
                 if and only if the interface or partial interface the member is declared on is.</dd>
         </dl>
     </li>
 </ul>
 
 Note: Whether a construct is
-<a class="dfnre" href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a>
+[=available only in secure contexts=]
 influences whether it is [=exposed=] in a given
 ECMAScript global environment.
 

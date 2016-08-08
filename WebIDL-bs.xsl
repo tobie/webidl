@@ -295,7 +295,7 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <!-- Links with class dnfref => [=foo=] -->
-  <xsl:template match='h:a[@class="dfnref"]'>
+  <xsl:template match='h:a[@class="dfnref"] | h:a[@class="dfnre"]'>
     <xsl:variable name='id' select='substring-after(@href, "#")'/>
     <xsl:variable name='dfn' select='//*[@id=$id]'/>
     <xsl:if test='$dfn/name() = "dfn" or $dfn/@dfn'>
