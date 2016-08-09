@@ -6202,8 +6202,8 @@ Issue: The list above needs updating for the latest ES6 draft.
 </p>
 <p>
     When an algorithm says to
-    <dfn lt="es throw" export id="ecmascript-throw">throw a <b><i>Something</i>Error</b></dfn>
-    then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
+    <dfn lt="es throw" export id="ecmascript-throw">throw a <emu-val><i>Something</i>Error</emu-val></dfn>
+    then this means to construct a new ECMAScript <emu-val><i>Something</i>Error</emu-val> object
     and to throw it, just as the algorithms in ECMA-262 do.
 </p>
 <p>

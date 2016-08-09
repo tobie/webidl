@@ -261,6 +261,35 @@ Boilerplate: omit issues-index
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX ANCHORS XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
+  <xsl:template name='a-idl'>
+    <xsl:param name='txt'/>
+    <xsl:param name='for'/>
+    <xsl:text>{{</xsl:text>
+    <xsl:if test="$for">
+      <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
+    </xsl:if>
+    <xsl:value-of select='normalize-space($txt)' />
+    <xsl:text>}}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template name='a-xattr'>
+    <xsl:param name='txt'/>
+    <xsl:text>[</xsl:text>
+    <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='replace($txt, "^\[|\]$", "")' /></xsl:call-template>
+    <xsl:text>]</xsl:text>
+  </xsl:template>
+  
+  <xsl:template name='a-dfn'>
+    <xsl:param name='txt'/>
+    <xsl:param name='lt'/>
+    <xsl:text>[=</xsl:text>
+    <xsl:if test='$lt and $lt != ""'>
+      <xsl:value-of select='normalize-space($lt)' /><xsl:text>|</xsl:text>
+    </xsl:if>
+    <xsl:value-of select='normalize-space($txt)' />
+    <xsl:text>=]</xsl:text>
+  </xsl:template>
+  
   <!-- References => [[foo]]-->
   
   <xsl:template match='h:a[starts-with(@href, "#ref-")]'>
@@ -290,9 +319,7 @@ Boilerplate: omit issues-index
     <xsl:if test='not($term)'>
       <xsl:message terminate='yes'>unknown term '<xsl:value-of select='$name'/>'</xsl:message>
     </xsl:if>
-    <xsl:call-template name='a-dfn'>
-      <xsl:with-param name='txt' select='$name' />
-    </xsl:call-template>
+    <xsl:call-template name='a-dfn'><xsl:with-param name='txt' select='$name' /></xsl:call-template>
   </xsl:template>
   
   <!-- Links with class dfnref => [=foo=] -->
@@ -415,8 +442,8 @@ Boilerplate: omit issues-index
   <xsl:template match='h:p[@id="ecmascript-throw"]'>
     <p>
       When an algorithm says to
-      <dfn lt="es throw" export="" id="ecmascript-throw">throw a <b><i>Something</i>Error</b></dfn>
-      then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object
+      <dfn lt="es throw" export="" id="ecmascript-throw">throw a <emu-val><i>Something</i>Error</emu-val></dfn>
+      then this means to construct a new ECMAScript <emu-val><i>Something</i>Error</emu-val> object
       and to throw it, just as the algorithms in ECMA-262 do.
     </p>
   </xsl:template>
@@ -469,7 +496,7 @@ Boilerplate: omit issues-index
         <xsl:message terminate='yes'>Unexpected placeholder link '<xsl:value-of select='.'/></xsl:message>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template> 
+  </xsl:template>
   
   <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX INLINE STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
@@ -501,35 +528,6 @@ Boilerplate: omit issues-index
   <xsl:template name='code-idl'>
     <xsl:param name='txt'/>
     <code class="idl"><xsl:value-of select='normalize-space($txt)' /></code>
-  </xsl:template>
-  
-  <xsl:template name='a-idl'>
-    <xsl:param name='txt'/>
-    <xsl:param name='for'/>
-    <xsl:text>{{</xsl:text>
-    <xsl:if test="$for">
-      <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
-    </xsl:if>
-    <xsl:value-of select='normalize-space($txt)' />
-    <xsl:text>}}</xsl:text>
-  </xsl:template>
-  
-  <xsl:template name='a-xattr'>
-    <xsl:param name='txt'/>
-    <xsl:text>[</xsl:text>
-    <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='replace($txt, "^\[|\]$", "")' /></xsl:call-template>
-    <xsl:text>]</xsl:text>
-  </xsl:template>
-  
-  <xsl:template name='a-dfn'>
-    <xsl:param name='txt'/>
-    <xsl:param name='lt'/>
-    <xsl:text>[=</xsl:text>
-    <xsl:if test='$lt and $lt != ""'>
-      <xsl:value-of select='normalize-space($lt)' /><xsl:text>|</xsl:text>
-    </xsl:if>
-    <xsl:value-of select='normalize-space($txt)' />
-    <xsl:text>=]</xsl:text>
   </xsl:template>
  
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX BLOCK STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
