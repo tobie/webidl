@@ -304,6 +304,27 @@ Boilerplate: omit issues-index
     <xsl:text>=]</xsl:text>
   </xsl:template>
   
+  <xsl:template name='link-to-dfn'>
+    <xsl:param name="a" />
+    <xsl:param name="dfn" />
+    <xsl:variable name='txt' select='replace(string($a), "\s*\n\s*", " ")'/>
+    <xsl:variable name='singular' select='lower-case(replace($txt, "s$", ""))'/>
+    <xsl:variable name='plural' select='lower-case(concat($singular, "s"))'/>
+    <xsl:variable name='lt' select='substring-before($dfn/@data-lt, "|")'/>
+    <xsl:variable name='dfntxt' select='lower-case($dfn)'/>
+    <xsl:choose>
+      <xsl:when test='lower-case($txt) = $dfntxt or contains($lt, $txt) or $singular = $dfntxt or contains($lt, $singular) or $plural = $dfntxt or contains($lt, $plural)'>
+        <xsl:call-template name='a-dfn'><xsl:with-param name='txt' select='$txt' /></xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name='a-dfn'>
+          <xsl:with-param name='txt' select='$txt' />
+          <xsl:with-param name='lt' select='if ($lt) then $lt else $dfn' />
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
   <!-- References => [[foo]]-->
   
   <xsl:template match='h:a[starts-with(@href, "#ref-")]'>
@@ -354,27 +375,6 @@ Boilerplate: omit issues-index
       <xsl:with-param name='dfn' select='//*[@id=$id]/*[1]'/>
       <xsl:with-param name='a' select='.'/>
     </xsl:call-template>
-  </xsl:template>
-  
-  <xsl:template name='link-to-dfn'>
-    <xsl:param name="a" />
-    <xsl:param name="dfn" />
-    <xsl:variable name='txt' select='replace(string($a), "\s*\n\s*", " ")'/>
-    <xsl:variable name='singular' select='lower-case(replace($txt, "s$", ""))'/>
-    <xsl:variable name='plural' select='lower-case(concat($singular, "s"))'/>
-    <xsl:variable name='lt' select='substring-before($dfn/@data-lt, "|")'/>
-    <xsl:variable name='dfntxt' select='lower-case($dfn)'/>
-    <xsl:choose>
-      <xsl:when test='lower-case($txt) = $dfntxt or contains($lt, $txt) or $singular = $dfntxt or contains($lt, $singular) or $plural = $dfntxt or contains($lt, $plural)'>
-        <xsl:call-template name='a-dfn'><xsl:with-param name='txt' select='$txt' /></xsl:call-template>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:call-template name='a-dfn'>
-          <xsl:with-param name='txt' select='$txt' />
-          <xsl:with-param name='lt' select='if ($lt) then $lt else $dfn' />
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
   </xsl:template>
   
   <!-- Links with class xattr => [{{foo}}] -->
