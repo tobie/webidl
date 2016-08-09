@@ -4779,12 +4779,12 @@ interface GraphicsContext {
     The first is a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-simple-exception">simple exception</dfn>, which
     is identified by one of the following names: </p>
    <ul>
-    <li><code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-1">Error</a></code>
-    <li><span class="idltype"><dfn class="idl-code" data-dfn-type="interface" data-export="" id="evalerror">EvalError<a class="self-link" href="#evalerror"></a></dfn></span>
-    <li><span class="idltype"><dfn class="idl-code" data-dfn-type="interface" data-export="" id="rangeerror">RangeError<a class="self-link" href="#rangeerror"></a></dfn></span>
-    <li><span class="idltype"><dfn class="idl-code" data-dfn-type="interface" data-export="" id="referenceerror">ReferenceError<a class="self-link" href="#referenceerror"></a></dfn></span>
-    <li><span class="idltype"><dfn class="dfn-paneled idl-code" data-dfn-type="interface" data-export="" id="typeerror">TypeError</dfn></span>
-    <li><span class="idltype"><dfn class="idl-code" data-dfn-type="interface" data-export="" id="urierror">URIError<a class="self-link" href="#urierror"></a></dfn></span>
+    <li>"<dfn class="idl-code" data-dfn-type="exception" data-export="" id="exceptiondef-error"><code>Error</code><a class="self-link" href="#exceptiondef-error"></a></dfn>"
+    <li>"<dfn class="idl-code" data-dfn-type="exception" data-export="" id="exceptiondef-evalerror"><code>EvalError</code><a class="self-link" href="#exceptiondef-evalerror"></a></dfn>"
+    <li>"<dfn class="idl-code" data-dfn-type="exception" data-export="" id="exceptiondef-rangeerror"><code>RangeError</code><a class="self-link" href="#exceptiondef-rangeerror"></a></dfn>"
+    <li>"<dfn class="idl-code" data-dfn-type="exception" data-export="" id="exceptiondef-referenceerror"><code>ReferenceError</code><a class="self-link" href="#exceptiondef-referenceerror"></a></dfn>"
+    <li>"<dfn class="dfn-paneled idl-code" data-dfn-type="exception" data-export="" id="exceptiondef-typeerror"><code>TypeError</code></dfn>"
+    <li>"<dfn class="idl-code" data-dfn-type="exception" data-export="" id="exceptiondef-urierror"><code>URIError</code><a class="self-link" href="#exceptiondef-urierror"></a></dfn>"
    </ul>
    <p> These correspond to all of the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-error-objects">ECMAScript error objects</a> (apart from <emu-val>SyntaxError</emu-val>, which is deliberately omitted as
     it is for use only by the ECMAScript parser).
@@ -4803,9 +4803,9 @@ interface GraphicsContext {
     be one of the names listed in the <a data-link-type="dfn" href="#dfn-error-names-table" id="ref-for-dfn-error-names-table-1">error names table</a> below.  The table also indicates the <a data-link-type="dfn">DOMException</a>'s integer code
     for that error name, if it has one. </p>
    <p> There are two <a href="#idl-types">types</a> that can be used to refer to
-    exception objects: <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-2">Error</a></code>, which encompasses all exceptions,
+    exception objects: <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-1">Error</a></code>, which encompasses all exceptions,
     and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-1">DOMException</a></code> which includes just DOMException objects.
-    This allows for example an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-22">operation</a> to be declared to have a <a data-link-type="dfn">DOMException</a> <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-2">return type</a> or an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-15">attribute</a> to be of type <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-3">Error</a></code>. </p>
+    This allows for example an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-22">operation</a> to be declared to have a <a data-link-type="dfn">DOMException</a> <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-2">return type</a> or an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-15">attribute</a> to be of type <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-2">Error</a></code>. </p>
    <p> Exceptions can be <dfn class="dfn-paneled" data-dfn-for="exception" data-dfn-type="dfn" data-export="" id="dfn-create-exception">created</dfn> by providing its <a data-link-type="dfn" href="#dfn-exception-error-name" id="ref-for-dfn-exception-error-name-3">error name</a>.
     Exceptions can also be <dfn class="dfn-paneled" data-dfn-for="exception" data-dfn-type="dfn" data-export="" data-lt="throw|thrown" id="dfn-throw">thrown</dfn>, by providing the
     same details required to <a data-link-type="dfn" href="#dfn-create-exception" id="ref-for-dfn-create-exception-1">create</a> one. </p>
@@ -4815,7 +4815,7 @@ entails in the ECMAScript language binding.</p>
    <div class="example" id="example-fcbe120f">
     <a class="self-link" href="#example-fcbe120f"></a> 
     <p> Here is are some examples of wording to use to create and throw exceptions.
-        To throw a new <a data-link-type="dfn" href="#dfn-simple-exception" id="ref-for-dfn-simple-exception-3">simple exception</a> named <code class="idl"><a data-link-type="idl" href="#typeerror" id="ref-for-typeerror-1">TypeError</a></code>: </p>
+        To throw a new <a data-link-type="dfn" href="#dfn-simple-exception" id="ref-for-dfn-simple-exception-3">simple exception</a> named <code class="idl"><a data-link-type="idl" href="#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror-1">TypeError</a></code>: </p>
     <blockquote>
      <p><a data-link-type="dfn" href="#dfn-throw" id="ref-for-dfn-throw-1">Throw</a> a TypeError.</p>
     </blockquote>
@@ -5259,7 +5259,7 @@ Entry implements Observable;
     the <a data-link-type="dfn" href="#dfn-integer-type" id="ref-for-dfn-integer-type-3">integer types</a>, <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-4">float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-5">unrestricted float</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-8">double</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-double" id="ref-for-idl-unrestricted-double-6">unrestricted double</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-primitive-type">primitive types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-6">boolean</a></code> and the <a data-link-type="dfn" href="#dfn-numeric-type" id="ref-for-dfn-numeric-type-1">numeric types</a>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-string-type">string types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-18">DOMString</a></code>, all <a href="#idl-enumeration">enumeration types</a>, <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-3">ByteString</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-4">USVString</a></code>. </p>
-   <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-exception-type">exception types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-4">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-2">DOMException</a></code>. </p>
+   <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-exception-type">exception types</dfn> are <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-3">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-2">DOMException</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-typed-array-type">typed array types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-Int8Array" id="ref-for-idl-Int8Array-1">Int8Array</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Int16Array" id="ref-for-idl-Int16Array-1">Int16Array</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Int32Array" id="ref-for-idl-Int32Array-1">Int32Array</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Uint8Array" id="ref-for-idl-Uint8Array-1">Uint8Array</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Uint16Array" id="ref-for-idl-Uint16Array-1">Uint16Array</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Uint32Array" id="ref-for-idl-Uint32Array-1">Uint32Array</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Uint8ClampedArray" id="ref-for-idl-Uint8ClampedArray-1">Uint8ClampedArray</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-Float32Array" id="ref-for-idl-Float32Array-1">Float32Array</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-Float64Array" id="ref-for-idl-Float64Array-1">Float64Array</a></code>. </p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-buffer-source-type">buffer source types</dfn> are <code class="idl"><a data-link-type="idl" href="#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer-1">ArrayBuffer</a></code>, <code class="idl"><a data-link-type="idl" href="#idl-DataView" id="ref-for-idl-DataView-1">DataView</a></code>,
     and the <a data-link-type="dfn" href="#dfn-typed-array-type" id="ref-for-dfn-typed-array-type-1">typed array types</a>. </p>
@@ -5784,10 +5784,10 @@ sequence is used.</p>
    <p> There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-2">RegExp</a></code> value in IDL. </p>
    <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-27">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-3">RegExp</a></code> type is “RegExp”. </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.28" data-lt="Error" id="idl-Error"><span class="secno">4.10.28. </span><span class="content">Error</span><span id="dom-Error"></span></h4>
-   <p>The <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-5">Error</a></code> type corresponds to the
+   <p>The <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-4">Error</a></code> type corresponds to the
     set of all possible non-null references to exception objects, including <a data-link-type="dfn" href="#dfn-simple-exception" id="ref-for-dfn-simple-exception-4">simple exceptions</a> and <a data-link-type="dfn">DOMExceptions</a>.</p>
-   <p> There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-6">Error</a></code> value in IDL. </p>
-   <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-28">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-7">Error</a></code> type is “Error”. </p>
+   <p> There is no way to represent a constant <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-5">Error</a></code> value in IDL. </p>
+   <p> The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-28">type name</a> of the <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-6">Error</a></code> type is “Error”. </p>
    <h4 class="heading settled" data-level="4.10.29" id="idl-DOMException"><span class="secno">4.10.29. </span><span class="content">DOMException</span><a class="self-link" href="#idl-DOMException"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-3">DOMException</a></code> type corresponds to the
     set of all possible non-null references to objects
@@ -6998,7 +6998,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>
       If <var>V</var> is a <a data-link-type="dfn">DOMException</a> platform object, then: 
      <ol>
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-6">DOMException</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-8">Error</a></code>, then return the
+      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-6">DOMException</a></code> or <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-7">Error</a></code>, then return the
                 result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-11">converting</a> <var>V</var> to that type.
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-16">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
@@ -7006,8 +7006,8 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     <li>
       If <var>V</var> is a native <emu-val>Error</emu-val> object (that is, it has an [[ErrorData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>), then: 
      <ol>
-      <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-9">Error</a></code>, then return the
-                result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-12">converting</a> <var>V</var> to <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-10">Error</a></code>.
+      <li>If <var>types</var> includes <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-8">Error</a></code>, then return the
+                result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-12">converting</a> <var>V</var> to <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-9">Error</a></code>.
       <li>If <var>types</var> includes <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-17">object</a></code>, then return the IDL value
                 that is a reference to the object <var>V</var>.
      </ol>
@@ -7111,7 +7111,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
     value is the <emu-val>RegExp</emu-val> value that represents a reference to the same object that the
     IDL <code class="idl"><a data-link-type="idl" href="#idl-RegExp" id="ref-for-idl-RegExp-10">RegExp</a></code> represents. </p>
    <h4 class="heading settled" data-level="5.2.29" id="es-Error"><span class="secno">5.2.29. </span><span class="content">Error</span><a class="self-link" href="#es-Error"></a></h4>
-   <p> IDL <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-11">Error</a></code> values are represented
+   <p> IDL <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-10">Error</a></code> values are represented
     by native ECMAScript <emu-val>Error</emu-val> objects and
     platform objects for <a data-link-type="dfn">DOMExceptions</a>. </p>
    <p id="es-to-Error"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <span class="Error">Error</span> value
@@ -7119,11 +7119,11 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
    <ol class="algorithm">
     <li>If <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
         or <var>V</var> does not have an [[ErrorData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-33">throw a <emu-val>TypeError</emu-val></a>.
-    <li>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-12">Error</a></code> value that is a reference to the same object as <var>V</var>.
+    <li>Return the IDL <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-11">Error</a></code> value that is a reference to the same object as <var>V</var>.
    </ol>
-   <p id="Error-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-27">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-13">Error</a></code> value to an ECMAScript
+   <p id="Error-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-27">converting</a> an IDL <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-12">Error</a></code> value to an ECMAScript
     value is the <emu-val>Error</emu-val> value that represents a reference to the same object that the
-    IDL <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-14">Error</a></code> represents. </p>
+    IDL <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-13">Error</a></code> represents. </p>
    <h4 class="heading settled" data-level="5.2.30" id="es-DOMException"><span class="secno">5.2.30. </span><span class="content">DOMException</span><a class="self-link" href="#es-DOMException"></a></h4>
    <p> IDL <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-7">DOMException</a></code> values are represented
     by platform objects for <a data-link-type="dfn">DOMExceptions</a>. </p>
@@ -8498,7 +8498,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
         <li><code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-12">DOMException</a></code>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-15">Error</a></code>
+        <li><code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-14">Error</a></code>
         <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-28">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-32">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-27">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-33">nullable</a> union type
@@ -8509,7 +8509,7 @@ appropriate exception or return normally. <a data-link-type="biblio" href="#bibl
         Otherwise: if <var>V</var> is an <emu-val>Error</emu-val> object (that is, it has an [[ErrorData]] <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>) and
                 there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list, 
        <ul>
-        <li><code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-16">Error</a></code>
+        <li><code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-15">Error</a></code>
         <li><code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-29">object</a></code>
         <li>a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-34">nullable</a> version of either of the above types
         <li>a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-28">union type</a> or <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-35">nullable</a> union type
@@ -10137,7 +10137,7 @@ interface C { };
 C implements A;
 </pre>
     <p> Attempting to call <code>B.prototype.f</code> on an object that implements <span class="idltype">A</span> (but not <span class="idltype">B</span>) or one
-        that implements <span class="idltype">C</span> will result in a <code class="idl"><a data-link-type="idl" href="#typeerror" id="ref-for-typeerror-2">TypeError</a></code> being thrown.  However,
+        that implements <span class="idltype">C</span> will result in a <code class="idl"><a data-link-type="idl" href="#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror-2">TypeError</a></code> being thrown.  However,
         calling <code>A.prototype.f</code> on an object that implements <span class="idltype">B</span> or one that implements <span class="idltype">C</span> would succeed.  This is handled by the algorithm in <a href="#es-operations">§5.6.7 Operations</a> that defines how IDL operation invocation works in ECMAScript. </p>
     <p> Similar behavior is required for the getter and setter <emu-val>Function</emu-val> objects that correspond to an IDL <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-75">attributes</a>,
         and this is handled in <a href="#es-attributes">§5.6.6 Attributes</a>. </p>
@@ -11799,7 +11799,7 @@ interface ExceptionThrower {
                     functions, and all interface types. </p>
       <li>
        <p> Removed IDL exceptions, baked in <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-13">DOMException</a></code>,
-                    and added <code class="idl"><a data-link-type="idl" href="#idl-Error" id="ref-for-idl-Error-17">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-14">DOMException</a></code> as types. </p>
+                    and added <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-16">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-14">DOMException</a></code> as types. </p>
       <li>
        <p> Removed <span class="xattr">[MapLike]</span> and added
                     iterable, maplike and setlike declarations. </p>
@@ -12166,11 +12166,16 @@ interface ExceptionThrower {
    <li><a href="#EnforceRange">EnforceRange</a><span>, in §5.3.2</span>
    <li><a href="#dfn-enumeration">enumeration</a><span>, in §4.5</span>
    <li><a href="#dfn-enumeration-value">enumeration value</a><span>, in §4.5</span>
-   <li><a href="#idl-Error">Error</a><span>, in §4.10.27</span>
+   <li>
+    Error
+    <ul>
+     <li><a href="#exceptiondef-error">(exception)</a><span>, in §4.4</span>
+     <li><a href="#idl-Error">(interface)</a><span>, in §4.10.27</span>
+    </ul>
    <li><a href="#dfn-exception-error-name">error name</a><span>, in §4.4</span>
    <li><a href="#dfn-error-names-table">error names table</a><span>, in §4.4.1</span>
    <li><a href="#ecmascript-throw">es throw</a><span>, in §5</span>
-   <li><a href="#evalerror">EvalError</a><span>, in §4.4</span>
+   <li><a href="#exceptiondef-evalerror">EvalError</a><span>, in §4.4</span>
    <li><a href="#dfn-example-term">example term</a><span>, in §2.1</span>
    <li><a href="#dfn-exception">exception</a><span>, in §4.4</span>
    <li><a href="#es-exception-objects">Exception objects</a><span>, in §5.11.2</span>
@@ -12313,10 +12318,10 @@ interface ExceptionThrower {
    <li><a href="#PutForwards">PutForwards</a><span>, in §5.3.14</span>
    <li><a href="#dom-domexception-quota_exceeded_err">QUOTA_EXCEEDED_ERR</a><span>, in §4.4.1</span>
    <li><a href="#quotaexceedederror">QuotaExceededError</a><span>, in §4.4.1</span>
-   <li><a href="#rangeerror">RangeError</a><span>, in §4.4</span>
+   <li><a href="#exceptiondef-rangeerror">RangeError</a><span>, in §4.4</span>
    <li><a href="#dfn-read-only">read only</a><span>, in §4.2.2</span>
    <li><a href="#readonlyerror">ReadOnlyError</a><span>, in §4.4.1</span>
-   <li><a href="#referenceerror">ReferenceError</a><span>, in §4.4</span>
+   <li><a href="#exceptiondef-referenceerror">ReferenceError</a><span>, in §4.4</span>
    <li><a href="#idl-RegExp">RegExp</a><span>, in §4.10.26</span>
    <li><a href="#dfn-regular-attribute">regular attribute</a><span>, in §4.2.2</span>
    <li><a href="#dfn-regular-operation">regular operation</a><span>, in §4.2.3</span>
@@ -12378,7 +12383,7 @@ interface ExceptionThrower {
    <li><a href="#TreatNullAs">TreatNullAs</a><span>, in §5.3.19</span>
    <li><a href="#dfn-typed-array-type">typed array types</a><span>, in §4.10</span>
    <li><a href="#dfn-typedef">typedef</a><span>, in §4.7</span>
-   <li><a href="#typeerror">TypeError</a><span>, in §4.4</span>
+   <li><a href="#exceptiondef-typeerror">TypeError</a><span>, in §4.4</span>
    <li><a href="#dfn-type-name">type name</a><span>, in §4.10</span>
    <li><a href="#idl-Uint16Array">Uint16Array</a><span>, in §4.10.30</span>
    <li><a href="#idl-Uint32Array">Uint32Array</a><span>, in §4.10.30</span>
@@ -12396,7 +12401,7 @@ interface ExceptionThrower {
    <li><a href="#idl-unsigned-long-long">unsigned long long</a><span>, in §4.10.9</span>
    <li><a href="#idl-unsigned-short">unsigned short</a><span>, in §4.10.5</span>
    <li><a href="#dfn-perform-steps-once-promise-is-settled">upon settling</a><span>, in §5.2.26</span>
-   <li><a href="#urierror">URIError</a><span>, in §4.4</span>
+   <li><a href="#exceptiondef-urierror">URIError</a><span>, in §4.4</span>
    <li><a href="#dom-domexception-url_mismatch_err">URL_MISMATCH_ERR</a><span>, in §4.4.1</span>
    <li><a href="#urlmismatcherror">URLMismatchError</a><span>, in §4.4.1</span>
    <li><a href="#dfn-user-object">user object</a><span>, in §4.9</span>
@@ -13457,11 +13462,11 @@ interface ExceptionThrower {
     <li><a href="#ref-for-dfn-simple-exception-6">5.13. Creating and throwing exceptions</a> <a href="#ref-for-dfn-simple-exception-7">(2)</a> <a href="#ref-for-dfn-simple-exception-8">(3)</a> <a href="#ref-for-dfn-simple-exception-9">(4)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="typeerror">
-   <b><a href="#typeerror">#typeerror</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="exceptiondef-typeerror">
+   <b><a href="#exceptiondef-typeerror">#exceptiondef-typeerror</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typeerror-1">4.4. Exceptions</a>
-    <li><a href="#ref-for-typeerror-2">5.7. Implements statements</a>
+    <li><a href="#ref-for-exceptiondef-typeerror-1">4.4. Exceptions</a>
+    <li><a href="#ref-for-exceptiondef-typeerror-2">5.7. Implements statements</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-DOMException">
@@ -14167,13 +14172,13 @@ interface ExceptionThrower {
   <aside class="dfn-panel" data-for="idl-Error">
    <b><a href="#idl-Error">#idl-Error</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-idl-Error-1">4.4. Exceptions</a> <a href="#ref-for-idl-Error-2">(2)</a> <a href="#ref-for-idl-Error-3">(3)</a>
-    <li><a href="#ref-for-idl-Error-4">4.10. Types</a>
-    <li><a href="#ref-for-idl-Error-5">4.10.28. Error</a> <a href="#ref-for-idl-Error-6">(2)</a> <a href="#ref-for-idl-Error-7">(3)</a>
-    <li><a href="#ref-for-idl-Error-8">5.2.27. Union types</a> <a href="#ref-for-idl-Error-9">(2)</a> <a href="#ref-for-idl-Error-10">(3)</a>
-    <li><a href="#ref-for-idl-Error-11">5.2.29. Error</a> <a href="#ref-for-idl-Error-12">(2)</a> <a href="#ref-for-idl-Error-13">(3)</a> <a href="#ref-for-idl-Error-14">(4)</a>
-    <li><a href="#ref-for-idl-Error-15">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-Error-16">(2)</a>
-    <li><a href="#ref-for-idl-Error-17">Changes</a>
+    <li><a href="#ref-for-idl-Error-1">4.4. Exceptions</a> <a href="#ref-for-idl-Error-2">(2)</a>
+    <li><a href="#ref-for-idl-Error-3">4.10. Types</a>
+    <li><a href="#ref-for-idl-Error-4">4.10.28. Error</a> <a href="#ref-for-idl-Error-5">(2)</a> <a href="#ref-for-idl-Error-6">(3)</a>
+    <li><a href="#ref-for-idl-Error-7">5.2.27. Union types</a> <a href="#ref-for-idl-Error-8">(2)</a> <a href="#ref-for-idl-Error-9">(3)</a>
+    <li><a href="#ref-for-idl-Error-10">5.2.29. Error</a> <a href="#ref-for-idl-Error-11">(2)</a> <a href="#ref-for-idl-Error-12">(3)</a> <a href="#ref-for-idl-Error-13">(4)</a>
+    <li><a href="#ref-for-idl-Error-14">5.5. Overload resolution algorithm</a> <a href="#ref-for-idl-Error-15">(2)</a>
+    <li><a href="#ref-for-idl-Error-16">Changes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="idl-ArrayBuffer">

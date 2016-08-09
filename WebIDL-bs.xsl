@@ -268,7 +268,7 @@ Boilerplate: omit issues-index
     <xsl:if test="$for">
       <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
     </xsl:if>
-    <xsl:value-of select='normalize-space($txt)' />
+    <xsl:value-of select='replace(normalize-space($txt), "^Error$", "Error!!interface")' />
     <xsl:text>}}</xsl:text>
   </xsl:template>
   
@@ -383,8 +383,9 @@ Boilerplate: omit issues-index
     <xsl:variable name='generatedid' select='concat("idl-", translate(., " ", "-"))'/>
     <xsl:variable name='dfn' select='//h:dfn[.=$txt] | //*[@data-lt=$txt] | //*[@data-dfn-type][.=$txt] | //*[@id=$generatedid]'/>
     <xsl:choose>
-      <xsl:when test='.[child::h:dfn[text()="Error"]]'>
-        <xsl:call-template name='a-idl'><xsl:with-param name='txt'>Error</xsl:with-param></xsl:call-template>
+      <!-- Special-case exceptions -->
+      <xsl:when test='.[child::h:dfn][ancestor::h:div[@id="idl-exceptions"]]'>
+        <xsl:text>"</xsl:text><dfn exception=""><code><xsl:value-of select='.' /></code></dfn><xsl:text>"</xsl:text>
       </xsl:when>
       <xsl:when test='$dfn and not(ancestor::h:a or child::h:dfn)'>
         <xsl:call-template name='a-idl'>
@@ -393,6 +394,7 @@ Boilerplate: omit issues-index
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
+      
         <!-- TODO should those be turned into links too? -->
         <span>
           <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>

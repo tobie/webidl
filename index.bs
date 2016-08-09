@@ -4172,12 +4172,12 @@ over more than one section of the document, and sometimes multiple documents.
     is identified by one of the following names:
 </p>
 <ul>
-    <li>{{Error}}</li>
-    <li><span class="idltype"><dfn interface export>EvalError</dfn></span></li>
-    <li><span class="idltype"><dfn interface export>RangeError</dfn></span></li>
-    <li><span class="idltype"><dfn interface export>ReferenceError</dfn></span></li>
-    <li><span class="idltype"><dfn interface export>TypeError</dfn></span></li>
-    <li><span class="idltype"><dfn interface export>URIError</dfn></span></li>
+    <li>"<dfn exception><code>Error</code></dfn>"</li>
+    <li>"<dfn exception><code>EvalError</code></dfn>"</li>
+    <li>"<dfn exception><code>RangeError</code></dfn>"</li>
+    <li>"<dfn exception><code>ReferenceError</code></dfn>"</li>
+    <li>"<dfn exception><code>TypeError</code></dfn>"</li>
+    <li>"<dfn exception><code>URIError</code></dfn>"</li>
 </ul>
 <p>
     These correspond to all of the [=ECMAScript error objects=] (apart from
@@ -4205,12 +4205,12 @@ over more than one section of the document, and sometimes multiple documents.
 </p>
 <p>
     There are two <a href="#idl-types">types</a> that can be used to refer to
-    exception objects: {{Error}}, which encompasses all exceptions,
+    exception objects: {{Error!!interface}}, which encompasses all exceptions,
     and {{DOMException}} which includes just DOMException objects.
     This allows for example an [=operation=]
     to be declared to have a [=DOMException=]
     [=return type=] or an [=attribute=]
-    to be of type {{Error}}.
+    to be of type {{Error!!interface}}.
 </p>
 <p>
     Exceptions can be <dfn id="dfn-create-exception" for="exception" export>created</dfn> by providing its
@@ -4888,7 +4888,7 @@ Note: For example, that precludes the following:
 </p>
 <p>
     The <dfn id="dfn-exception-type" export>exception types</dfn> are
-    {{Error}} and {{DOMException}}.
+    {{Error!!interface}} and {{DOMException}}.
 </p>
 <p>
     The <dfn id="dfn-typed-array-type" export>typed array types</dfn> are
@@ -5801,17 +5801,17 @@ are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Ev
 
 <h4 oldids="dom-Error" id="idl-Error" interface>Error</h4>
 
-<p>The {{Error}} type corresponds to the
+<p>The {{Error!!interface}} type corresponds to the
     set of all possible non-null references to exception objects, including
     [=simple exceptions=]
 and [=DOMExceptions=].</p>
 <p>
-    There is no way to represent a constant {{Error}}
+    There is no way to represent a constant {{Error!!interface}}
     value in IDL.
 </p>
 <p>
     The [=type name=] of the
-    {{Error}} type is “Error”.
+    {{Error!!interface}} type is “Error”.
 </p>
 
 
@@ -7725,7 +7725,7 @@ Issue: Include an example of how to write spec text using this term.
         If |V| is a [=DOMException=] platform object, then:
         <ol>
             <li>If |types| includes {{DOMException}} or
-                {{Error}}, then return the
+                {{Error!!interface}}, then return the
                 result of [=converted to an IDL value|converting=]
                 |V| to that type.</li>
             <li>If |types| includes {{object}}, then return the IDL value
@@ -7735,9 +7735,9 @@ Issue: Include an example of how to write spec text using this term.
     <li>
         If |V| is a native <emu-val>Error</emu-val> object (that is, it has an \[[ErrorData]] [=internal slot=]), then:
         <ol>
-            <li>If |types| includes {{Error}}, then return the
+            <li>If |types| includes {{Error!!interface}}, then return the
                 result of [=converted to an IDL value|converting=]
-                |V| to {{Error}}.</li>
+                |V| to {{Error!!interface}}.</li>
             <li>If |types| includes {{object}}, then return the IDL value
                 that is a reference to the object |V|.</li>
         </ol>
@@ -7924,7 +7924,7 @@ Issue: Include an example of how to write spec text using this term.
 <h4 id="es-Error">Error</h4>
 
 <p>
-    IDL {{Error}} values are represented
+    IDL {{Error!!interface}} values are represented
     by native ECMAScript <emu-val>Error</emu-val> objects and
     platform objects for [=DOMExceptions=].
 </p>
@@ -7937,13 +7937,13 @@ Issue: Include an example of how to write spec text using this term.
 <ol class="algorithm">
     <li>If [=Type=](|V|) is not Object,
         or |V| does not have an \[[ErrorData]] [=internal slot=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.</li>
-    <li>Return the IDL {{Error}} value that is a reference to the same object as |V|.</li>
+    <li>Return the IDL {{Error!!interface}} value that is a reference to the same object as |V|.</li>
 </ol>
 <p id="Error-to-es">
     The result of [=converted to an ECMAScript value|converting=]
-    an IDL {{Error}} value to an ECMAScript
+    an IDL {{Error!!interface}} value to an ECMAScript
     value is the <emu-val>Error</emu-val> value that represents a reference to the same object that the
-    IDL {{Error}} represents.
+    IDL {{Error!!interface}} represents.
 </p>
 
 
@@ -10219,7 +10219,7 @@ appropriate exception or return normally. [[!HTML]]
                 there is an entry in |S| that has one of the following types at position |i| of its type list,
                 <ul>
                     <li>{{DOMException}}</li>
-                    <li>{{Error}}</li>
+                    <li>{{Error!!interface}}</li>
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
@@ -10232,7 +10232,7 @@ appropriate exception or return normally. [[!HTML]]
                 Otherwise: if |V| is an <emu-val>Error</emu-val> object (that is, it has an \[[ErrorData]] [=internal slot=]) and
                 there is an entry in |S| that has one of the following types at position |i| of its type list,
                 <ul>
-                    <li>{{Error}}</li>
+                    <li>{{Error!!interface}}</li>
                     <li>{{object}}</li>
                     <li>a [=nullable type|nullable=] version of either of the above types</li>
                     <li>a [=union type=] or [=nullable type|nullable=] union type
@@ -14800,7 +14800,7 @@ and <span class="sym">","</span>.
             <li>
                 <p>
                     Removed IDL exceptions, baked in {{DOMException}},
-                    and added {{Error}} and {{DOMException}}
+                    and added {{Error!!interface}} and {{DOMException}}
                     as types.
                 </p>
             </li>
