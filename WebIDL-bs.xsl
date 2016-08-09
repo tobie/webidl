@@ -334,23 +334,16 @@ Boilerplate: omit issues-index
   
   <!-- Links with class xattr => [{{foo}}] -->
   <xsl:template match='h:a[@class="xattr"]'>
-    <xsl:text>[{{</xsl:text><xsl:value-of select='replace(., "^\[|\]$", "")' /><xsl:text>}}]</xsl:text>
+    <xsl:call-template name='a-xattr'><xsl:with-param name='txt' select='.'/></xsl:call-template>
   </xsl:template>
   
   <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
-    <xsl:text>[{{TreatNullAs}}]</xsl:text>
+    <xsl:call-template name='a-xattr'><xsl:with-param name='txt'>TreatNullAs</xsl:with-param></xsl:call-template>
   </xsl:template>
 
   <!-- Links with class idlclass => {{foo}}-->
   <xsl:template match='h:a[@class="idltype"]'>
-    <xsl:choose>
-      <xsl:when test='text()="unresticted float"'>
-        <xsl:text>{{unrestricted float}}</xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text>{{</xsl:text><xsl:value-of select='replace(string(.), "\s*\n\s*", " ")'/><xsl:text>}}</xsl:text>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='replace(., "unresticted float", "unrestricted float")'/></xsl:call-template>
   </xsl:template>
   
   <!-- Spans with class idltype should also be linked => {{foo}} -->
@@ -360,16 +353,13 @@ Boilerplate: omit issues-index
     <xsl:variable name='dfn' select='//h:dfn[.=$txt] | //*[@data-lt=$txt] | //*[@data-dfn-type][.=$txt] | //*[@id=$generatedid]'/>
     <xsl:choose>
       <xsl:when test='.[child::h:dfn[text()="Error"]]'>
-        <xsl:text>{{Error}}</xsl:text>
+        <xsl:call-template name='a-idl'><xsl:with-param name='txt'>Error</xsl:with-param></xsl:call-template>
       </xsl:when>
       <xsl:when test='$dfn and not(ancestor::h:a or child::h:dfn)'>
-        <xsl:text>{{</xsl:text>
-        <xsl:variable name='for' select='$dfn/@data-dfn-for'/>
-        <xsl:if test="$for">
-          <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
-        </xsl:if>
-        <xsl:value-of select='$txt' />
-        <xsl:text>}}</xsl:text>
+        <xsl:call-template name='a-idl'>
+          <xsl:with-param name='txt' select='$txt'/>
+          <xsl:with-param name='for' select='$dfn/@data-dfn-for'/>
+        </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
         <!-- TODO should those be turned into links too? -->
@@ -481,17 +471,11 @@ Boilerplate: omit issues-index
       <xsl:when test='.="Audio"'>
         <xsl:text>Audio</xsl:text>
       </xsl:when>
-      <xsl:when test='.="boolean"'>
-        <xsl:text>{{boolean}}</xsl:text>
-      </xsl:when>
       <xsl:when test='.="HTMLAudioElement"'>
         <xsl:text>HTMLAudioElement</xsl:text>
       </xsl:when>
-      <xsl:when test='.="object"'>
-        <xsl:text>{{object}}</xsl:text>
-      </xsl:when>
-      <xsl:when test='.="unsigned long"'>
-        <xsl:text>{{unsigned long}}</xsl:text>
+      <xsl:when test='matches(., "^(object|boolean|unsigned long)$")'>
+        <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='.'/></xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
         <emu-val><xsl:apply-templates select="node()"/></emu-val>
@@ -506,6 +490,25 @@ Boilerplate: omit issues-index
   <xsl:template match='h:span[@class="rfc2119"]'>
     <xsl:value-of select='lower-case(text())'/>
   </xsl:template>
+  
+  <xsl:template name='a-idl'>
+    <xsl:param name='txt'/>
+    <xsl:param name='for'/>
+    <xsl:text>{{</xsl:text>
+    <xsl:if test="$for">
+      <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
+    </xsl:if>
+    <xsl:value-of select='replace($txt, "\s*\n\s*", " ")' />
+    <xsl:text>}}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template name='a-xattr'>
+    <xsl:param name='txt'/>
+    <xsl:text>[</xsl:text>
+    <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='replace($txt, "^\[|\]$", "")' /></xsl:call-template>
+    <xsl:text>]</xsl:text>
+  </xsl:template>
+  
  
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX BLOCK STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
