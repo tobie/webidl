@@ -9121,8 +9121,8 @@ mailing list before proceeding.
     </pre>
     <p>
         An ECMAScript implementation that supports this interface will
-        allow the construction of HTMLAudioElement
-        objects using the Audio constructor.
+        allow the construction of <code class="idl">HTMLAudioElement</code>
+        objects using the <code class="idl">Audio</code> constructor.
     </p>
     <pre highlight="js">
         typeof Audio;                   // Evaluates to 'function'.

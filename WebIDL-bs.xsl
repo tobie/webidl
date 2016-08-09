@@ -210,7 +210,6 @@ Boilerplate: omit issues-index
           <xsl:value-of select='@data-lt' />
         </xsl:attribute>
       </xsl:if>
-      
       <xsl:choose>
         <xsl:when test='./*[1]'>
           <xsl:apply-templates select="node()"/>
@@ -479,11 +478,8 @@ Boilerplate: omit issues-index
       <xsl:when test='.="""function"""'>
         <xsl:text>"function"</xsl:text>
       </xsl:when>
-      <xsl:when test='.="Audio"'>
-        <xsl:text>Audio</xsl:text>
-      </xsl:when>
-      <xsl:when test='.="HTMLAudioElement"'>
-        <xsl:text>HTMLAudioElement</xsl:text>
+      <xsl:when test='matches(., "^(HTMLAudioElement|Audio)$")'>
+        <xsl:call-template name='code-idl'><xsl:with-param name='txt' select='.'/></xsl:call-template>
       </xsl:when>
       <xsl:when test='matches(., "^(object|boolean|unsigned long)$")'>
         <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='.'/></xsl:call-template>
@@ -502,6 +498,11 @@ Boilerplate: omit issues-index
     <xsl:value-of select='lower-case(text())'/>
   </xsl:template>
   
+  <xsl:template name='code-idl'>
+    <xsl:param name='txt'/>
+    <code class="idl"><xsl:value-of select='normalize-space($txt)' /></code>
+  </xsl:template>
+  
   <xsl:template name='a-idl'>
     <xsl:param name='txt'/>
     <xsl:param name='for'/>
@@ -509,7 +510,7 @@ Boilerplate: omit issues-index
     <xsl:if test="$for">
       <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
     </xsl:if>
-    <xsl:value-of select='replace($txt, "\s*\n\s*", " ")' />
+    <xsl:value-of select='normalize-space($txt)' />
     <xsl:text>}}</xsl:text>
   </xsl:template>
   
