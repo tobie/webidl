@@ -3,7 +3,7 @@ var REMOVE_P_TAGS = false;
 var Reader = require('line-by-line');
 
 function printPre(buf, ws) {
-    if (buf[0] == '<pre class="metadata">' || buf[0] == '<pre class="anchors">') {
+    if (buf[0] == '<pre class="metadata">' || buf[0] == '<pre class="anchors">' || buf[0] == '<pre class="link-defaults">') {
         return buf.join("\n")
     }
     
