@@ -76,7 +76,7 @@ TR: </xsl:text>
 <xsl:text>Abstract: </xsl:text><xsl:value-of select="normalize-space(.)" /><xsl:text>
 </xsl:text>
     </xsl:for-each>
-<xsl:text>Ignored Vars: callback, op, ownDesc, exampleVariableName, target
+<xsl:text>Ignored Vars: callback, op, ownDesc, exampleVariableName, target, f, g
 Boilerplate: omit issues-index
 </xsl:text>
 </pre>
@@ -264,12 +264,26 @@ Boilerplate: omit issues-index
   <xsl:template name='a-idl'>
     <xsl:param name='txt'/>
     <xsl:param name='for'/>
-    <xsl:text>{{</xsl:text>
-    <xsl:if test="$for">
-      <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
-    </xsl:if>
-    <xsl:value-of select='replace(normalize-space($txt), "^Error$", "Error!!interface")' />
-    <xsl:text>}}</xsl:text>
+    <xsl:choose>
+      <xsl:when test='$txt instance of element() and $txt/h:var'>
+        <a interface='' lt='{substring-before(., "&lt;")}'>
+          <xsl:if test="$for">
+            <xsl:attribute name="for"><xsl:value-of select='$for' /></xsl:attribute>
+          </xsl:if>
+          <xsl:value-of select='$txt/text()[1]' />
+          <xsl:apply-templates select="$txt/h:var"/>
+          <xsl:value-of select='$txt/text()[2]' />
+        </a>
+      </xsl:when>
+      <xsl:otherwise>
+      <xsl:text>{{</xsl:text>
+        <xsl:if test="$for">
+          <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
+        </xsl:if>
+        <xsl:value-of select='replace(replace(normalize-space($txt), "^Error$", "Error!!interface"), "unresticted float", "unrestricted float")' />
+        <xsl:text>}}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template name='a-xattr'>
@@ -374,7 +388,7 @@ Boilerplate: omit issues-index
 
   <!-- Links with class idlclass => {{foo}}-->
   <xsl:template match='h:a[@class="idltype"]'>
-    <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='replace(., "unresticted float", "unrestricted float")'/></xsl:call-template>
+    <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='.'/></xsl:call-template>
   </xsl:template>
   
   <!-- Spans with class idltype should also be linked => {{foo}} -->
@@ -393,13 +407,23 @@ Boilerplate: omit issues-index
           <xsl:with-param name='for' select='$dfn/@data-dfn-for'/>
         </xsl:call-template>
       </xsl:when>
+      <xsl:when test='$txt="null"'>
+        <emu-val>null</emu-val>
+      </xsl:when>
+      <xsl:when test='$txt="Dictionary"'>
+        <xsl:call-template name='a-dfn'><xsl:with-param name='txt' select='.' /></xsl:call-template>
+      </xsl:when>
+      <xsl:when test='$txt="T?"'>
+        <xsl:call-template name='code-idl'><xsl:with-param name='txt'>|T|?</xsl:with-param></xsl:call-template>
+      </xsl:when>
+      <xsl:when test='not(ancestor::h:a) and matches($txt, "^(long long|FrozenArray&lt;T&gt;|sequence&lt;T&gt;|Promise&lt;T&gt;|unsigned long long)$")'>
+        <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='.'/></xsl:call-template>
+      </xsl:when>
+      <xsl:when test='matches($txt, "^(f|g)$")'>
+        <xsl:text>|</xsl:text><xsl:value-of select='$txt'/><xsl:text>|</xsl:text>
+      </xsl:when>
       <xsl:otherwise>
-      
-        <!-- TODO should those be turned into links too? -->
-        <span>
-          <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-          <xsl:apply-templates select='node()'/>
-        </span>
+        <xsl:call-template name='code-idl'><xsl:with-param name='txt' select='$txt'/></xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
