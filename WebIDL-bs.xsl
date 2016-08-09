@@ -291,7 +291,9 @@ Boilerplate: omit issues-index
     <xsl:if test='not($term)'>
       <xsl:message terminate='yes'>unknown term '<xsl:value-of select='$name'/>'</xsl:message>
     </xsl:if>
-    <xsl:text>[=</xsl:text><xsl:value-of select='$name'/><xsl:text>=]</xsl:text>
+    <xsl:call-template name='a-dfn'>
+      <xsl:with-param name='txt' select='$name' />
+    </xsl:call-template>
   </xsl:template>
   
   <!-- Links with class dfnref => [=foo=] -->
@@ -324,10 +326,13 @@ Boilerplate: omit issues-index
     <xsl:variable name='dfntxt' select='lower-case($dfn)'/>
     <xsl:choose>
       <xsl:when test='lower-case($txt) = $dfntxt or contains($lt, $txt) or $singular = $dfntxt or contains($lt, $singular) or $plural = $dfntxt or contains($lt, $plural)'>
-        <xsl:text>[=</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
+        <xsl:call-template name='a-dfn'><xsl:with-param name='txt' select='$txt' /></xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:text>[=</xsl:text><xsl:value-of select='if ($lt) then $lt else $dfn'/><xsl:text>|</xsl:text><xsl:value-of select='$txt'/><xsl:text>=]</xsl:text>
+        <xsl:call-template name='a-dfn'>
+          <xsl:with-param name='txt' select='$txt' />
+          <xsl:with-param name='lt' select='if ($lt) then $lt else $dfn' />
+        </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -374,17 +379,14 @@ Boilerplate: omit issues-index
   <!-- Links with class external => [=foo=] -->
   <xsl:template match='h:a[contains(@class, "external")][matches(@href, ".#")]'>
     <xsl:variable name='hash' select='substring-after(@href, "#")'/>
-        <xsl:choose>
-          <xsl:when test='$hash="sec-code-realms"'>
-            <xsl:text>[=Realms|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
-          </xsl:when>
-          <xsl:when test='$hash="sec-ecmascript-data-types-and-values"'>
-            <xsl:text>[=Type|</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>[=</xsl:text><xsl:value-of select='normalize-space(.)'/><xsl:text>=]</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
+    <xsl:variable name='lt'>
+      <xsl:if test='$hash="sec-code-realms"'>Realms</xsl:if>
+      <xsl:if test='$hash="sec-ecmascript-data-types-and-values"'>Type</xsl:if>
+    </xsl:variable>
+    <xsl:call-template name='a-dfn'>
+      <xsl:with-param name='txt' select='.' />
+      <xsl:with-param name='lt' select='$lt' />
+    </xsl:call-template>
   </xsl:template>
   
   <!-- Links to sections in the spec => [[#foo]] -->
@@ -404,7 +406,7 @@ Boilerplate: omit issues-index
   
   <!-- Special casing links -->
   <xsl:template match='h:a[@href="http://www.khronos.org/registry/typedarray/specs/latest/"]'>
-    <xsl:text>[=Typed Arrays=]</xsl:text>
+    <xsl:call-template name='a-dfn'><xsl:with-param name='txt'>Typed Arrays</xsl:with-param></xsl:call-template>
   </xsl:template>
   
   <xsl:template match='h:a[@href="#ecmascript-throw"]'>
@@ -439,15 +441,24 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:a[@href="#dfn-flattened-union-member-type"]'>
-    <xsl:text>[=flattened member types|</xsl:text><xsl:value-of select='.'/><xsl:text>=]</xsl:text>
+    <xsl:call-template name='a-dfn'>
+      <xsl:with-param name='txt' select='.' />
+      <xsl:with-param name='lt'>flattened member types</xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='h:a[@href="#dfn-supported-indexed-properties"]'>
-     <xsl:text>[=support indexed properties|</xsl:text><xsl:value-of select='.'/><xsl:text>=]</xsl:text>
+    <xsl:call-template name='a-dfn'>
+      <xsl:with-param name='txt' select='.' />
+      <xsl:with-param name='lt'>support indexed properties</xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='h:a[@href="#dfn-convert-idl-to-ecmascript"]'>
-    <xsl:text>[=converted to ECMAScript values|</xsl:text><xsl:value-of select='.'/><xsl:text>=]</xsl:text>
+    <xsl:call-template name='a-dfn'>
+      <xsl:with-param name='txt' select='.' />
+      <xsl:with-param name='lt'>converted to ECMAScript values</xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='h:a[@class="placeholder"]'>
@@ -509,6 +520,16 @@ Boilerplate: omit issues-index
     <xsl:text>]</xsl:text>
   </xsl:template>
   
+  <xsl:template name='a-dfn'>
+    <xsl:param name='txt'/>
+    <xsl:param name='lt'/>
+    <xsl:text>[=</xsl:text>
+    <xsl:if test='$lt and $lt != ""'>
+      <xsl:value-of select='normalize-space($lt)' /><xsl:text>|</xsl:text>
+    </xsl:if>
+    <xsl:value-of select='normalize-space($txt)' />
+    <xsl:text>=]</xsl:text>
+  </xsl:template>
  
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX BLOCK STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
