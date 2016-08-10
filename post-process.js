@@ -52,7 +52,7 @@ reader.on("line", function(line) {
     var opened = [], 
     closed = [],
     m,
-    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead)(\s[a-z0-9-]+="([^\"]|\\")*")*>/g;
+    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead)(?:\s[a-z0-9-]+="(?:[^\"]|\\")*")*(\/?)>/g;
     while (m = patt.exec(line)) {
         if (m && !m[1] && m[2]) {
             tags.push(m[2]);
@@ -69,7 +69,8 @@ reader.on("line", function(line) {
             if (m[2] == "blockquote") blockquote = true;
             if (m[2] == "li") li = true;
             if (m[2] == "dd") dd = true;
-        } else if (m && m[1] && m[2]) {
+        }
+        if (m && (m[1] || m[3]) && m[2]) {
             closed.push(m[2]);
             var last = tags.pop();
             if (last != m[2]) throw [count, JSON.stringify(last), JSON.stringify(m[2]), line].join(" ");
@@ -90,6 +91,9 @@ reader.on("line", function(line) {
     line = line.replace(/<[a-z1-6]+\s+[^>]+>/g, function(tag) {
         return tag.replace(/([a-z-]+)=""/g, "$1")
     });
+    
+    // <div /> => <div></div>
+    line = line.replace(/<div(\s+[^\/]+)\/>/, "<div$1></div>")
     
     if (intro || closed[0] == "html") {
         // don't print, we're trimming <html> tags
@@ -155,17 +159,19 @@ reader.on("end", function(line) {
     console.log('')
     console.log('<script>');
     console.log('    (function() {');
+    console.log('        function wrap(s) { return "<pre class=grammar>" + s + "</pre>"; }');
     console.log('        var output = "";');
-    console.log('        [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {');
+    console.log('        [].forEach.call(document.querySelectorAll("pre.grammar[id]"), pre => {');
     console.log('            var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {');
     console.log('                if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }');
     console.log('                if (m == ":") { return "::"; }');
     console.log('                return "<emu-nt><a href=\\"#prod-" +  m + "\\">" + m + "</a></emu-nt>"');
     console.log('            });');
     console.log('            pre.innerHTML = html;');
-    console.log('            if (pre.id) output += html + "\\n";');
+    console.log('            [].forEach.call(document.querySelectorAll("div[data-fill-with=\\"grammar-" + pre.id.replace("prod-", "") + "\\"]"), div => div.innerHTML = wrap(html))');
+    console.log('            output += html + "\\n";');
     console.log('        });');
-    console.log('        document.querySelector("#grammar-index").innerHTML = "<pre class=grammar>" + output + "</pre>";');
+    console.log('        document.querySelector("div[data-fill-with=\\"grammar-index\\"]").innerHTML = wrap(output);');
     console.log('    })();');
     console.log('</script>');
     console.log('')

@@ -709,7 +709,7 @@ Issue</xsl:text>
   </xsl:template>
   
   <xsl:template match='x:grammar'>
-    <div id="grammar-index"></div>
+    <div data-fill-with='grammar-index'></div>
   </xsl:template>
 
   <xsl:template name='proddef'>
@@ -717,18 +717,25 @@ Issue</xsl:text>
     <xsl:param name='pi'/>
     <xsl:for-each select='$prods'>
       <xsl:variable name='nt' select='@nt'/>
-      <pre class="grammar">
-        <xsl:if test='not($pi/preceding::processing-instruction("productions")[contains(concat(" ", substring-after(., " "), " "), concat(" ", $nt, " "))])'>
+      <xsl:if test='$pi/preceding::processing-instruction("productions")[contains(concat(" ", substring-after(., " "), " "), concat(" ", $nt, " "))]'>
+        <div data-fill-with="grammar-{@nt}">
+
+        </div><xsl:text>
+
+</xsl:text>
+      </xsl:if>
+      <xsl:if test='not($pi/preceding::processing-instruction("productions")[contains(concat(" ", substring-after(., " "), " "), concat(" ", $nt, " "))])'>
+        <pre class="grammar">
           <xsl:attribute name='id'>prod-<xsl:value-of select='@nt'/></xsl:attribute>
-        </xsl:if>
-        <xsl:value-of select='@nt'/><xsl:text> :</xsl:text>
-        <xsl:call-template name='bnf'>
-          <xsl:with-param name='s' select='string(.)'/>
-        </xsl:call-template>
-<xsl:text>
-</xsl:text>
-      </pre><xsl:text>
-</xsl:text>
+          <xsl:value-of select='@nt'/><xsl:text> :</xsl:text>
+          <xsl:call-template name='bnf'>
+            <xsl:with-param name='s' select='string(.)'/>
+          </xsl:call-template>
+  <xsl:text>
+  </xsl:text>
+        </pre><xsl:text>
+  </xsl:text>
+      </xsl:if>
     </xsl:for-each>
   </xsl:template>
 

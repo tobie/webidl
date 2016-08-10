@@ -1037,11 +1037,8 @@ is all of those defined in this document that are applicable to
     [{{Unforgeable}}].
 </p>
 
-<pre class="grammar">
-    CallbackOrInterface :
-        "callback" CallbackRestOrInterface
-        Interface
-</pre>
+<div data-fill-with="grammar-CallbackOrInterface"></div>
+
 <pre class="grammar" id="prod-CallbackRestOrInterface">
     CallbackRestOrInterface :
         CallbackRest
@@ -2021,31 +2018,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
         "..."
         ε
 </pre>
-<pre class="grammar">
-    ArgumentNameKeyword :
-        "attribute"
-        "callback"
-        "const"
-        "deleter"
-        "dictionary"
-        "enum"
-        "getter"
-        "implements"
-        "inherit"
-        "interface"
-        "iterable"
-        "legacycaller"
-        "maplike"
-        "partial"
-        "required"
-        "serializer"
-        "setlike"
-        "setter"
-        "static"
-        "stringifier"
-        "typedef"
-        "unrestricted"
-</pre>
+<div data-fill-with="grammar-ArgumentNameKeyword"></div>
+
 <pre class="grammar" id="prod-ReturnType">
     ReturnType :
         Type
@@ -3969,16 +3943,10 @@ This allows the default behavior of these operations to be overridden.
     [=iterable declaration=] or
     [=setlike declaration=].
 </p>
-<pre class="grammar">
-    ReadOnlyMember :
-        "readonly" ReadOnlyMemberRest
-</pre>
-<pre class="grammar">
-    ReadOnlyMemberRest :
-        AttributeRest
-        ReadWriteMaplike
-        ReadWriteSetlike
-</pre>
+<div data-fill-with="grammar-ReadOnlyMember"></div>
+
+<div data-fill-with="grammar-ReadOnlyMemberRest"></div>
+
 <pre class="grammar" id="prod-ReadWriteMaplike">
     ReadWriteMaplike :
         MaplikeRest
@@ -4068,16 +4036,10 @@ This allows the default behavior of these operations to be overridden.
     [=iterable declaration=] or
     [=maplike declaration=].
 </p>
-<pre class="grammar">
-    ReadOnlyMember :
-        "readonly" ReadOnlyMemberRest
-</pre>
-<pre class="grammar">
-    ReadOnlyMemberRest :
-        AttributeRest
-        ReadWriteMaplike
-        ReadWriteSetlike
-</pre>
+<div data-fill-with="grammar-ReadOnlyMember"></div>
+
+<div data-fill-with="grammar-ReadOnlyMemberRest"></div>
+
 <pre class="grammar" id="prod-ReadWriteSetlike">
     ReadWriteSetlike :
         SetlikeRest
@@ -4361,15 +4323,10 @@ over more than one section of the document, and sometimes multiple documents.
     [{{Clamp}}],
     [{{EnforceRange}}].
 </p>
-<pre class="grammar">
-    Partial :
-        "partial" PartialDefinition
-</pre>
-<pre class="grammar">
-    PartialDefinition :
-        PartialInterface
-        PartialDictionary
-</pre>
+<div data-fill-with="grammar-Partial"></div>
+
+<div data-fill-with="grammar-PartialDefinition"></div>
+
 <pre class="grammar" id="prod-Dictionary">
     Dictionary :
         "dictionary" identifier Inheritance "{" DictionaryMembers "}" ";"
@@ -4392,17 +4349,10 @@ over more than one section of the document, and sometimes multiple documents.
         "=" DefaultValue
         ε
 </pre>
-<pre class="grammar">
-    DefaultValue :
-        ConstValue
-        string
-        "[" "]"
-</pre>
-<pre class="grammar">
-    Inheritance :
-        ":" identifier
-        ε
-</pre>
+<div data-fill-with="grammar-DefaultValue"></div>
+
+<div data-fill-with="grammar-Inheritance"></div>
+
 
 <div class="example">
     <p>
@@ -4881,16 +4831,10 @@ Note: See also the similarly named [=callback interfaces=].
     [{{TreatNonObjectAsNull}}].
 </p>
 
-<pre class="grammar">
-    CallbackOrInterface :
-        "callback" CallbackRestOrInterface
-        Interface
-</pre>
-<pre class="grammar">
-    CallbackRestOrInterface :
-        CallbackRest
-        Interface
-</pre>
+<div data-fill-with="grammar-CallbackOrInterface"></div>
+
+<div data-fill-with="grammar-CallbackRestOrInterface"></div>
+
 <pre class="grammar" id="prod-CallbackRest">
     CallbackRest :
         identifier "=" ReturnType "(" ArgumentList ")" ";"
@@ -5309,11 +5253,8 @@ Note: For example, that precludes the following:
         BufferRelatedType Null
         "FrozenArray" "&lt;" Type "&gt;" Null
 </pre>
-<pre class="grammar">
-    ConstType :
-        PrimitiveType Null
-        identifier Null
-</pre>
+<div data-fill-with="grammar-ConstType"></div>
+
 <pre class="grammar" id="prod-PrimitiveType">
     PrimitiveType :
         UnsignedIntegerType
@@ -6156,36 +6097,14 @@ are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Ev
     type is formed by taking the type names of each member type, in order,
     and joining them with the string “Or”.
 </p>
-<pre class="grammar">
-    UnionType :
-        "(" UnionMemberType "or" UnionMemberType UnionMemberTypes ")"
-</pre>
-<pre class="grammar">
-    UnionMemberType :
-        NonAnyType
-        UnionType Null
-</pre>
-<pre class="grammar">
-    UnionMemberTypes :
-        "or" UnionMemberType UnionMemberTypes
-        ε
-</pre>
-<pre class="grammar">
-    NonAnyType :
-        PrimitiveType Null
-        PromiseType Null
-        "ByteString" Null
-        "DOMString" Null
-        "USVString" Null
-        identifier Null
-        "sequence" "&lt;" Type "&gt;" Null
-        "object" Null
-        "RegExp" Null
-        "Error" Null
-        "DOMException" Null
-        BufferRelatedType Null
-        "FrozenArray" "&lt;" Type "&gt;" Null
-</pre>
+<div data-fill-with="grammar-UnionType"></div>
+
+<div data-fill-with="grammar-UnionMemberType"></div>
+
+<div data-fill-with="grammar-UnionMemberTypes"></div>
+
+<div data-fill-with="grammar-NonAnyType"></div>
+
 
 
 
@@ -6536,11 +6455,8 @@ Issue: We should include an example of specification text that uses these types 
     IdentifierList :
         identifier Identifiers
 </pre>
-<pre class="grammar">
-    Identifiers :
-        "," identifier Identifiers
-        ε
-</pre>
+<div data-fill-with="grammar-Identifiers"></div>
+
 <pre class="grammar" id="prod-ExtendedAttributeNoArgs">
     ExtendedAttributeNoArgs :
         identifier
@@ -14874,7 +14790,7 @@ on exception objects too.
     matches an [=IDL fragment=]:
 </p>
 
-<div id="grammar-index"/>
+<div data-fill-with="grammar-index"></div>
 
 Note: The <emu-nt><a href="#prod-Other">Other</a></emu-nt>
 non-terminal matches any single terminal symbol except for
@@ -15561,17 +15477,19 @@ and <span class="sym">","</span>.
 
 <script>
     (function() {
+        function wrap(s) { return "<pre class=grammar>" + s + "</pre>"; }
         var output = "";
-        [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {
+        [].forEach.call(document.querySelectorAll("pre.grammar[id]"), pre => {
             var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {
                 if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }
                 if (m == ":") { return "::"; }
                 return "<emu-nt><a href=\"#prod-" +  m + "\">" + m + "</a></emu-nt>"
             });
             pre.innerHTML = html;
-            if (pre.id) output += html + "\n";
+            [].forEach.call(document.querySelectorAll("div[data-fill-with=\"grammar-" + pre.id.replace("prod-", "") + "\"]"), div => div.innerHTML = wrap(html))
+            output += html + "\n";
         });
-        document.querySelector("#grammar-index").innerHTML = "<pre class=grammar>" + output + "</pre>";
+        document.querySelector("div[data-fill-with=\"grammar-index\"]").innerHTML = wrap(output);
     })();
 </script>
 
