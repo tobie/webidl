@@ -131,6 +131,34 @@ Boilerplate: omit issues-index
     emu-val {
       font-weight: bold;
     }
+
+    emu-nt {
+      font-family: sans-serif;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    emu-t {
+      display: inline-block;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    emu-t a[href],
+    emu-nt a[href] {
+      color: inherit;
+      border-bottom: 1px solid transparent;
+    }
+
+    emu-t a[href]:focus,
+    emu-nt a[href]:focus,
+    emu-t a[href]:hover,
+    emu-nt a[href]:hover {
+      background: #f8f8f8;
+      background: rgba(75%, 75%, 75%, .25);
+      border-bottom: 3px solid #707070;
+      margin-bottom: -2px;
+    }
   </xsl:text>
 </style>
   </xsl:template>
@@ -323,6 +351,11 @@ Boilerplate: omit issues-index
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+  
+  <!-- Links with @class=sym => <emu-nt><a>-->
+  <xsl:template match='h:a[@class="sym"]'>
+    <emu-nt><a href="{@href}"><xsl:value-of select='.'/></a></emu-nt>
   </xsl:template>
   
   <!-- References => [[foo]]-->
@@ -669,18 +702,14 @@ Issue</xsl:text>
   <xsl:template match='processing-instruction("productions")'>
     <xsl:variable name='id' select='substring-before(., " ")'/>
     <xsl:variable name='names' select='concat(" ", substring-after(., " "), " ")'/>
-    <table class='grammar'>
-      <xsl:call-template name='proddef'>
-        <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
-        <xsl:with-param name='pi' select='.'/>
-      </xsl:call-template>
-    </table>
+    <xsl:call-template name='proddef'>
+      <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
+      <xsl:with-param name='pi' select='.'/>
+    </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='x:grammar'>
-    <table class='grammar'>
-      <xsl:apply-templates select='x:prod'/>
-    </table>
+    <div id="grammar-index"></div>
   </xsl:template>
 
   <xsl:template name='proddef'>
@@ -688,173 +717,37 @@ Issue</xsl:text>
     <xsl:param name='pi'/>
     <xsl:for-each select='$prods'>
       <xsl:variable name='nt' select='@nt'/>
-      <tr>
+      <pre class="grammar">
         <xsl:if test='not($pi/preceding::processing-instruction("productions")[contains(concat(" ", substring-after(., " "), " "), concat(" ", $nt, " "))])'>
-          <xsl:attribute name='id'>proddef-<xsl:value-of select='@nt'/></xsl:attribute>
+          <xsl:attribute name='id'>prod-<xsl:value-of select='@nt'/></xsl:attribute>
         </xsl:if>
-        <td><span class='prod-number'>[<xsl:value-of select='count(preceding-sibling::x:prod) + 1'/>]</span></td>
-        <td>
-          <a class='sym' href='#prod-{@nt}'><xsl:value-of select='@nt'/></a>
-          <xsl:if test='@whitespace="explicit"'>
-            <sub class='nt-attr'>explicit</sub>
-          </xsl:if>
-        </td>
-        <td class='prod-mid'>→</td>
-        <td class='prod-rhs'>
-          <span class='prod-lines'>
-            <xsl:call-template name='bnf'>
-              <xsl:with-param name='s' select='string(.)'/>
-            </xsl:call-template>
-          </span>
-        </td>
-      </tr>
+        <xsl:value-of select='@nt'/><xsl:text> :</xsl:text>
+        <xsl:call-template name='bnf'>
+          <xsl:with-param name='s' select='string(.)'/>
+        </xsl:call-template>
+<xsl:text>
+</xsl:text>
+      </pre><xsl:text>
+</xsl:text>
     </xsl:for-each>
   </xsl:template>
 
   <xsl:template match='x:prod'>
-    <tr id='prod-{@nt}'>
-      <td><span class='prod-number'>[<xsl:value-of select='count(preceding-sibling::x:prod) + 1'/>]</span></td>
-      <td>
-        <xsl:value-of select='@nt'/>
-        
-        <xsl:if test='@whitespace="explicit"'>
-          <sub class='nt-attr'>explicit</sub>
-        </xsl:if>
-      </td>
-      <td class='prod-mid'>→</td>
-      <td class='prod-rhs'>
-        <span class='prod-lines'>
-          <xsl:call-template name='bnf'>
-            <xsl:with-param name='s' select='string(.)'/>
-            <xsl:with-param name='links' select='../@links'/>
-          </xsl:call-template>
-        </span>
-      </td>
-    </tr>
+    <pre class="grammar" id='prod-{@nt}'><xsl:value-of select='@nt'/><xsl:text> :</xsl:text>
+      <xsl:call-template name='bnf'>
+        <xsl:with-param name='s' select='string(.)'/>
+      </xsl:call-template>
+<xsl:text>
+</xsl:text>
+      </pre><xsl:text>
+</xsl:text>
   </xsl:template>
 
   <xsl:template name='bnf'>
     <xsl:param name='s'/>
-    <xsl:param name='mode' select='0'/>
-    <xsl:param name='links'/>
-    <xsl:if test='$s != ""'>
-      <xsl:variable name='c' select='substring($s, 1, 1)'/>
-      <xsl:choose>
-        <xsl:when test='$mode = 0 and contains("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", $c)'>
-          <xsl:variable name='nt'>
-            <xsl:value-of select='$c'/>
-            <xsl:call-template name='bnf-nt'>
-              <xsl:with-param name='s' select='substring($s, 2)'/>
-            </xsl:call-template>
-          </xsl:variable>
-            <!--
-          <xsl:choose>
-            <xsl:when test='$links="off"'>
-              <xsl:value-of select='$nt'/>
-            </xsl:when>
-            <xsl:otherwise>
-            -->
-              <a class='sym' href='#prod-{$nt}'><xsl:value-of select='$nt'/></a>
-            <!--
-            </xsl:otherwise>
-          </xsl:choose>
-            -->
-          <xsl:call-template name='bnf'>
-            <xsl:with-param name='s' select='substring($s, string-length($nt) + 1)'/>
-            <xsl:with-param name='links' select='$links'/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:when test='$mode = 0 and $c = "|"'>
-          <!--div class='prod-line-subsequent'--><br/> |
-            <xsl:call-template name='bnf'>
-              <xsl:with-param name='s' select='substring($s, 2)'/>
-              <xsl:with-param name='links' select='$links'/>
-            </xsl:call-template>
-          <!--/div-->
-        </xsl:when>
-        <xsl:when test='$c = &#39;"&#39;'>
-          <xsl:value-of select='$c'/>
-          <xsl:variable name='newMode'>
-            <xsl:choose>
-              <xsl:when test='$mode = 1'>0</xsl:when>
-              <xsl:otherwise>1</xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <xsl:call-template name='bnf'>
-            <xsl:with-param name='s' select='substring($s, 2)'/>
-            <xsl:with-param name='mode' select='$newMode'/>
-            <xsl:with-param name='links' select='$links'/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:when test="$c = &#34;'&#34;">
-          <xsl:value-of select='$c'/>
-          <xsl:variable name='newMode'>
-            <xsl:choose>
-              <xsl:when test='$mode = 2'>0</xsl:when>
-              <xsl:otherwise>2</xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <xsl:call-template name='bnf'>
-            <xsl:with-param name='s' select='substring($s, 2)'/>
-            <xsl:with-param name='mode' select='$newMode'/>
-            <xsl:with-param name='links' select='$links'/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:when test="$c = '[' and $mode = 0">
-          <xsl:value-of select='$c'/>
-          <xsl:choose>
-            <xsl:when test='substring($s, 2, 1) = "]"'>
-              <xsl:text>]</xsl:text>
-              <xsl:call-template name='bnf'>
-                <xsl:with-param name='s' select='substring($s, 3)'/>
-                <xsl:with-param name='links' select='$links'/>
-              </xsl:call-template>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:variable name='newMode'>
-                <xsl:choose>
-                  <xsl:when test='$mode = 3'>0</xsl:when>
-                  <xsl:otherwise>3</xsl:otherwise>
-                </xsl:choose>
-              </xsl:variable>
-              <xsl:call-template name='bnf'>
-                <xsl:with-param name='s' select='substring($s, 2)'/>
-                <xsl:with-param name='mode' select='$newMode'/>
-                <xsl:with-param name='links' select='$links'/>
-              </xsl:call-template>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:when>
-        <xsl:when test="$c = ']' and $mode = 3">
-          <xsl:value-of select='$c'/>
-          <xsl:call-template name='bnf'>
-            <xsl:with-param name='s' select='substring($s, 2)'/>
-            <xsl:with-param name='links' select='$links'/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select='$c'/>
-          <xsl:call-template name='bnf'>
-            <xsl:with-param name='s' select='substring($s, 2)'/>
-            <xsl:with-param name='mode' select='$mode'/>
-            <xsl:with-param name='links' select='$links'/>
-          </xsl:call-template>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:if>
+    <xsl:for-each select='tokenize($s, "\s*\|\s*")'>
+<xsl:text>
+    </xsl:text><xsl:value-of select="normalize-space(.)" />
+    </xsl:for-each>
   </xsl:template>
-
-  <xsl:template name='bnf-nt'>
-    <xsl:param name='s'/>
-    <xsl:if test='$s != ""'>
-      <xsl:variable name='c' select='substring($s, 1, 1)'/>
-      <xsl:if test='contains("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz", $c)'>
-        <xsl:value-of select='$c'/>
-        <xsl:call-template name='bnf-nt'>
-          <xsl:with-param name='s' select='substring($s, 2)'/>
-        </xsl:call-template>
-      </xsl:if>
-    </xsl:if>
-  </xsl:template>
-
 </xsl:stylesheet>

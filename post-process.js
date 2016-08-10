@@ -151,7 +151,25 @@ reader.on("line", function(line) {
         dd = false;
     }
 })
-reader.on("end", function(line) { console.log("") })
+reader.on("end", function(line) {
+    console.log('')
+    console.log('<script>');
+    console.log('    (function() {');
+    console.log('        var output = "";');
+    console.log('        [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {');
+    console.log('            var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {');
+    console.log('                if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }');
+    console.log('                if (m == ":") { return "::"; }');
+    console.log('                return "<emu-nt><a href=\\"#prod-" +  m + "\\">" + m + "</a></emu-nt>"');
+    console.log('            });');
+    console.log('            pre.innerHTML = html;');
+    console.log('            output += html + "\\n";');
+    console.log('        });');
+    console.log('        document.querySelector("#grammar-index").innerHTML = "<pre class=grammar>" + output + "</pre>";');
+    console.log('    })();');
+    console.log('</script>');
+    console.log('')
+});
 
 function times(n, what) {
     var output = "";
