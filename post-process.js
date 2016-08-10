@@ -163,7 +163,7 @@ reader.on("end", function(line) {
     console.log('                return "<emu-nt><a href=\\"#prod-" +  m + "\\">" + m + "</a></emu-nt>"');
     console.log('            });');
     console.log('            pre.innerHTML = html;');
-    console.log('            output += html + "\\n";');
+    console.log('            if (pre.id) output += html + "\\n";');
     console.log('        });');
     console.log('        document.querySelector("#grammar-index").innerHTML = "<pre class=grammar>" + output + "</pre>";');
     console.log('    })();');

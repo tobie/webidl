@@ -15569,7 +15569,7 @@ and <span class="sym">","</span>.
                 return "<emu-nt><a href=\"#prod-" +  m + "\">" + m + "</a></emu-nt>"
             });
             pre.innerHTML = html;
-            output += html + "\n";
+            if (pre.id) output += html + "\n";
         });
         document.querySelector("#grammar-index").innerHTML = "<pre class=grammar>" + output + "</pre>";
     })();
