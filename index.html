@@ -1853,15 +1853,11 @@ are interoperable.</p>
     <p></p>
     <li>
      IDL grammar snippets: 
-     <table class="grammar data">
-      <tbody>
-       <tr>
-        <td><span class="prod-number">[5]</span>
-        <td><span class="sym">ExampleGrammarSymbol</span>
-        <td class="prod-mid">→
-        <td><span class="prod-lines">OtherSymbol "sometoken"<br> | AnotherSymbol<br> | ε  // nothing</span>
-     </table>
-      (Each grammar rule is assigned a number for reference, shown on the left.)
+<pre class="grammar no-index">ExampleGrammarSymbol :
+    OtherSymbol "sometoken"
+    AnotherSymbol
+    ε  // nothing
+</pre>
     <li>Non-normative notes:
         Note: This is a note.
     <li>
@@ -11166,15 +11162,16 @@ interface ExceptionThrower {
     (function() {
         function wrap(s) { return "<pre class=grammar>" + s + "</pre>"; }
         var output = "";
-        [].forEach.call(document.querySelectorAll("pre.grammar[id]"), pre => {
+        [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {
             var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {
                 if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }
                 if (m == ":") { return "::"; }
-                return "<emu-nt><a href=\"#prod-" +  m + "\">" + m + "</a></emu-nt>"
+                if (document.querySelector("#prod-" + m)) { return "<emu-nt><a href=\"#prod-" + m + "\">" + m + "</a></emu-nt>"; }
+                return "<emu-nt>" + m + "</emu-nt>"
             });
             pre.innerHTML = html;
             [].forEach.call(document.querySelectorAll("div[data-fill-with=\"grammar-" + pre.id.replace("prod-", "") + "\"]"), div => div.innerHTML = wrap(html))
-            output += html + "\n";
+            if (!(/\bno-index\b/).test(pre.className)) { output += html + "\n"; }
         });
         document.querySelector("div[data-fill-with=\"grammar-index\"]").innerHTML = wrap(output);
     })();

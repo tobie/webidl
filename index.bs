@@ -271,10 +271,13 @@ margin-bottom: -2px;
         </pre>
         (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
     <li>IDL grammar snippets:
-        <table class="grammar data">
-            <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br/> | AnotherSymbol<br/> | ε  // nothing</span></td></tr>
-        </table>
-        (Each grammar rule is assigned a number for reference, shown on the left.)</li>
+        <pre class="grammar no-index">
+            ExampleGrammarSymbol :
+                OtherSymbol "sometoken"
+                AnotherSymbol
+                ε  // nothing
+        </pre>
+    </li>
     <li>Non-normative notes:
         Note: This is a note.</li>
     <li>Non-normative examples: <div class="example"><p>This is an example.</p></div></li>
@@ -15479,15 +15482,16 @@ and <span class="sym">","</span>.
     (function() {
         function wrap(s) { return "<pre class=grammar>" + s + "</pre>"; }
         var output = "";
-        [].forEach.call(document.querySelectorAll("pre.grammar[id]"), pre => {
+        [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {
             var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {
                 if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }
                 if (m == ":") { return "::"; }
-                return "<emu-nt><a href=\"#prod-" +  m + "\">" + m + "</a></emu-nt>"
+                if (document.querySelector("#prod-" + m)) { return "<emu-nt><a href=\"#prod-" + m + "\">" + m + "</a></emu-nt>"; }
+                return "<emu-nt>" + m + "</emu-nt>"
             });
             pre.innerHTML = html;
             [].forEach.call(document.querySelectorAll("div[data-fill-with=\"grammar-" + pre.id.replace("prod-", "") + "\"]"), div => div.innerHTML = wrap(html))
-            output += html + "\n";
+            if (!(/\bno-index\b/).test(pre.className)) { output += html + "\n"; }
         });
         document.querySelector("div[data-fill-with=\"grammar-index\"]").innerHTML = wrap(output);
     })();

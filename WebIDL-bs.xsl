@@ -202,6 +202,19 @@ Boilerplate: omit issues-index
   
   <xsl:template match='h:div[@id="references"]' />
   
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXX BOILERPLATE XXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  <xsl:template match='h:div[@id="conventions"]/h:ul/h:li/h:table[@class="grammar"]'>
+    <pre class="grammar no-index">ExampleGrammarSymbol :
+    OtherSymbol "sometoken"
+    AnotherSymbol
+    ε  // nothing<xsl:text>
+</xsl:text></pre><xsl:text>
+</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match='h:div[@id="conventions"]/h:ul/h:li/text()[preceding-sibling::h:table[@class="grammar"]]' />
+  
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX DFN XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
   <!-- Turn SPAN.idltype with ids into DFNs -->
