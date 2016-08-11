@@ -159,6 +159,17 @@ Boilerplate: omit issues-index
       border-bottom: 3px solid #707070;
       margin-bottom: -2px;
     }
+    
+    .syntax {
+      padding: .5em;
+      border: .5em;
+      margin-left: 0;
+      border-left-style: solid;
+      page-break-inside: avoid;
+      border-color: #8CCBF2;
+      background: #DEF;
+      overflow: auto;
+    }
   </xsl:text>
 </style>
   </xsl:template>
@@ -708,6 +719,10 @@ Issue</xsl:text>
   <!-- Highliting script can pick those up without needing markup -->
   <xsl:template match='h:span[@class="comment"]'>
       <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
+  <xsl:template match='h:pre[@class="syntax"]'>
+    <pre highlight='idl' class="syntax"><xsl:apply-templates select='node()'/></pre>
   </xsl:template>
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX GRAMMAR XXXXXXXXXXXXXXXXXXXXXXXXXX -->

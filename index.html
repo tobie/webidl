@@ -1194,6 +1194,17 @@ background: rgba(75%, 75%, 75%, .25);
 border-bottom: 3px solid #707070;
 margin-bottom: -2px;
 }
+
+.syntax {
+padding: .5em;
+border: .5em;
+margin-left: 0;
+border-left-style: solid;
+page-break-inside: avoid;
+border-color: #8CCBF2;
+background: #DEF;
+overflow: auto;
+}
 </style>
 <style>/* style-md-lists */
 
@@ -1441,7 +1452,7 @@ margin-bottom: -2px;
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL (Second Edition)</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-10">10 August 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-11">11 August 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1845,8 +1856,8 @@ are interoperable.</p>
     <li>Algorithms use <a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">the conventions of the ECMAScript specification</a>, including the ! and ? notation for unwrapping completion records.
     <li>
      IDL informal syntax examples: 
-<pre class="syntax">interface <i>identifier</i> {
-  <em>interface-members…</em>
+<pre class="syntax highlight">interface <i>identifier</i> {
+  <em>interface<span class="o">-</span>members…</em>
 };
 </pre>
      <p>(Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</p>
@@ -1936,9 +1947,9 @@ interface Example {
     agnostic are discussed in <a href="#idl-extended-attributes">§4.11 Extended attributes</a>,
     while those specific to the ECMAScript language binding are discussed
     in <a href="#es-extended-attributes">§5.3 ECMAScript-specific extended attributes</a>. </p>
-<pre class="syntax">[<em>extended-attributes</em>]
+<pre class="syntax highlight">[<em>extended<span class="o">-</span>attributes</em>]
 interface <i>identifier</i> {
-  <i>interface-members…</i>
+  <i>interface<span class="o">-</span>members…</i>
 };
 </pre>
 <pre class="grammar" id="prod-Definitions">Definitions :
@@ -2009,39 +2020,39 @@ interface GraphicalWindow {
         the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token that appears
         directly after the <code>interface</code>, <code>dictionary</code>, <code>enum</code> or <code>callback</code> keyword
         determines the identifier of that definition. 
-<pre class="syntax">interface <em>interface-identifier</em> { <i>interface-members…</i> };
-partial interface <em>interface-identifier</em> { <i>interface-members…</i> };
-dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
-partial dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
-enum <em>enumeration-identifier</em> { <i>enumeration-values…</i> };
-callback <em>callback-identifier</em> = <i>callback-signature</i>;
+<pre class="syntax highlight">interface <em>interface<span class="o">-</span>identifier</em> { <i>interface<span class="o">-</span>members…</i> };
+partial interface <em>interface<span class="o">-</span>identifier</em> { <i>interface<span class="o">-</span>members…</i> };
+dictionary <em>dictionary<span class="o">-</span>identifier</em> { <i>dictionary<span class="o">-</span>members…</i> };
+partial dictionary <em>dictionary<span class="o">-</span>identifier</em> { <i>dictionary<span class="o">-</span>members…</i> };
+enum <em>enumeration<span class="o">-</span>identifier</em> { <i>enumeration<span class="o">-</span>values…</i> };
+callback <em>callback<span class="o">-</span>identifier</em> <span class="o">=</span> <i>callback<span class="o">-</span>signature</i>;
 </pre>
     <li>
       For <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-3">attributes</a>, <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-3">typedefs</a> and <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-2">dictionary members</a>,
         the final <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token before the
         semicolon at the end of the declaration determines the identifier. 
-<pre class="syntax">interface <i>identifier</i> {
-  attribute <i>type</i> <em>attribute-identifier</em>;
+<pre class="syntax highlight">interface <i>identifier</i> {
+  attribute <i>type</i> <em>attribute<span class="o">-</span>identifier</em>;
 };
             
-typedef <i>type</i> <em>typedef-identifier</em>;
+typedef <i>type</i> <em>typedef<span class="o">-</span>identifier</em>;
             
 dictionary <i>identifier</i> {
-  <i>type</i> <em>dictionary-member-identifier</em>;
+  <i>type</i> <em>dictionary<span class="o">-</span>member<span class="o">-</span>identifier</em>;
 };
 </pre>
     <li>
       For <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-2">constants</a>,
         the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token before the
         equals sign determines the identifier. 
-<pre class="syntax">const <i>type</i> <em>constant-identifier</em> = <i>value</i>;</pre>
+<pre class="syntax highlight">const <i>type</i> <em>constant<span class="o">-</span>identifier</em> <span class="o">=</span> <i>value</i>;</pre>
     <li>
       For <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-3">operations</a>, the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token that appears
         after the return type but before the opening parenthesis (that is,
         one that is matched as part of the <emu-nt><a href="#prod-OptionalIdentifier">OptionalIdentifier</a></emu-nt> grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
         there is no such <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token,
         then the operation does not have an identifier. 
-<pre class="syntax"><i>return-type</i> <em>operation-identifier</em>(<i>arguments…</i>);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <em>operation<span class="o">-</span>identifier</em>(<i>arguments…</i>);</pre>
    </ul>
    <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.</p>
    <p> For all of these constructs, the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-1">identifier</a> is the value of the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token with any leading <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed. </p>
@@ -2053,7 +2064,7 @@ identifier.</p>
     declaration, the identifier of an argument is specified immediately after its
     type and is given by either an <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token or by one of the keywords that match the <emu-nt><a href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a></emu-nt> symbol.  If one of these keywords is used, it need not be escaped with a leading
     underscore. </p>
-<pre class="syntax"><i>return-type</i> <i>operation-identifier</i>(<i>argument-type</i> <em>argument-identifier</em>, …);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>operation<span class="o">-</span>identifier</i>(<i>argument<span class="o">-</span>type</i> <em>argument<span class="o">-</span>identifier</em>, …);</pre>
 <pre class="grammar" id="prod-ArgumentNameKeyword">ArgumentNameKeyword :
     "attribute"
     "callback"
@@ -2149,8 +2160,8 @@ interface TextField {
     that have identity and which are encapsulations of state and behavior.
     An <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-interface">interface</dfn> is a definition (matching <emu-nt><a href="#prod-Interface">Interface</a></emu-nt> or <span class="sym">"callback"</span> <emu-nt><a href="#prod-Interface">Interface</a></emu-nt>) that declares some
     state and behavior that an object implementing that interface will expose. </p>
-<pre class="syntax">interface <i>identifier</i> {
-  <i>interface-members…</i>
+<pre class="syntax highlight">interface <i>identifier</i> {
+  <i>interface<span class="o">-</span>members…</i>
 };
 </pre>
    <p> An interface is a specification of a set of <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="interface member" id="dfn-interface-member">interface members</dfn> (matching <emu-nt><a href="#prod-InterfaceMembers">InterfaceMembers</a></emu-nt>),
@@ -2173,8 +2184,8 @@ interface TextField {
     An object that implements an interface that inherits from another
     also implements that inherited interface.  The object therefore will also
     have members that correspond to the interface members from the inherited interface. </p>
-<pre class="syntax">interface <i>identifier</i> : <em>identifier-of-inherited-interface</em> {
-  <i>interface-members…</i>
+<pre class="syntax highlight">interface <i>identifier</i> <span class="o">:</span> <em>identifier<span class="o">-</span><span class="k">of</span><span class="o">-</span>inherited<span class="o">-</span>interface</em> {
+  <i>interface<span class="o">-</span>members…</i>
 };
 </pre>
    <p> The order that members appear in has no significance except in the
@@ -2225,16 +2236,16 @@ interface B : A {
     also implement another interface. </p>
    <p> Each interface member can be preceded by a list of <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-3">extended attributes</a> (matching <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt>),
     which can control how the interface member will be handled in language bindings. </p>
-<pre class="syntax">interface <i>identifier</i> {
+<pre class="syntax highlight">interface <i>identifier</i> {
     
-  [<em>extended-attributes</em>]
-  const <i>type</i> <i>identifier</i> = <i>value</i>;
+  [<em>extended<span class="o">-</span>attributes</em>]
+  const <i>type</i> <i>identifier</i> <span class="o">=</span> <i>value</i>;
     
-  [<em>extended-attributes</em>]
+  [<em>extended<span class="o">-</span>attributes</em>]
   attribute <i>type</i> <i>identifier</i>;
     
-  [<em>extended-attributes</em>]
-  <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
+  [<em>extended<span class="o">-</span>attributes</em>]
+  <i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>arguments…</i>);
 };
 </pre>
    <p> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-callback-interface">callback interface</dfn> is
@@ -2242,8 +2253,8 @@ interface B : A {
     its definition.  Callback interfaces are ones that can be
     implemented by <a data-link-type="dfn" href="#dfn-user-object" id="ref-for-dfn-user-object-1">user objects</a> and not by <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-1">platform objects</a>,
     as described in <a href="#idl-objects">§4.9 Objects implementing interfaces</a>. </p>
-<pre class="syntax">callback interface <i>identifier</i> {
-  <i>interface-members…</i>
+<pre class="syntax highlight">callback interface <i>identifier</i> {
+  <i>interface<span class="o">-</span>members…</i>
 };
 </pre>
    <p class="note" role="note">Note: See also the similarly named <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-4">callback function</a> definition.</p>
@@ -2311,12 +2322,12 @@ interface A {
     as the identifier of an interface definition.  All of
     the members that appear on each of the partial interfaces are considered to be
     members of the interface itself. </p>
-<pre class="syntax">interface <em>SomeInterface</em> {
-  <i>interface-members…</i>
+<pre class="syntax highlight">interface <em>SomeInterface</em> {
+  <i>interface<span class="o">-</span>members…</i>
 };
     
 partial interface <em>SomeInterface</em> {
-  <i>interface-members…</i>
+  <i>interface<span class="o">-</span>members…</i>
 };
 </pre>
    <p class="note" role="note">Note: Partial interface definitions are intended for use as a specification
@@ -2466,7 +2477,7 @@ named integer codes in the style of an enumeration.  The Web platform
 is moving away from this design pattern in favor of the use of strings.
 Specification authors who wish to define constants are strongly advised to discuss
 this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
-<pre class="syntax">const <i>type</i> <i>identifier</i> = <i>value</i>;</pre>
+<pre class="syntax highlight">const <i>type</i> <i>identifier</i> <span class="o">=</span> <i>value</i>;</pre>
    <p> The <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-10">identifier</a> of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-4">constant</a> must not be the same as the identifier
     of another <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-2">interface member</a> defined on the same interface.
     The identifier also must not
@@ -2615,11 +2626,11 @@ empty sequence <code>[]</code> cannot be used as the value of a <a data-link-typ
     <li>
      <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-1">regular attributes</a>, which are those
         used to declare that objects implementing the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-17">interface</a> will have a data field member with the given <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-13">identifier</a> 
-<pre class="syntax">attribute <i>type</i> <i>identifier</i>;</pre>
+<pre class="syntax highlight">attribute <i>type</i> <i>identifier</i>;</pre>
     <li>
      <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-2">static attributes</a>, which are used
         to declare attributes that are not associated with a particular object implementing the interface 
-<pre class="syntax">static attribute <i>type</i> <i>identifier</i>;</pre>
+<pre class="syntax highlight">static attribute <i>type</i> <i>identifier</i>;</pre>
    </ol>
    <p> If an attribute has no <code>static</code> keyword, then it declares a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-regular-attribute">regular attribute</dfn>.  Otherwise,
     it declares a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-3">static attribute</a>. </p>
@@ -2644,7 +2655,7 @@ empty sequence <code>[]</code> cannot be used as the value of a <a data-link-typ
     is defined will not allow assignment to that attribute.  It is language
     binding specific whether assignment is simply disallowed by the language,
     ignored or an exception is thrown. </p>
-<pre class="syntax">readonly attribute <i>type</i> <i>identifier</i>;</pre>
+<pre class="syntax highlight">readonly attribute <i>type</i> <i>identifier</i>;</pre>
    <p> A <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-2">regular attribute</a> that is not <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only-2">read only</a> can be declared to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-inherit-getter">inherit its getter</dfn> from an ancestor interface.  This can be used to make a read only attribute
     in an ancestor interface be writable on a derived interface.  An attribute <a data-link-type="dfn" href="#dfn-inherit-getter" id="ref-for-dfn-inherit-getter-1">inherits its getter</a> if
     its declaration includes <code>inherit</code> in the declaration.
@@ -2653,18 +2664,18 @@ empty sequence <code>[]</code> cannot be used as the value of a <a data-link-typ
     of the one on which the inheriting attribute is defined.  The attribute
     whose getter is being inherited must be
     of the same type as the inheriting attribute, and <code>inherit</code> must not appear on a <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only-3">read only</a> attribute or a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-4">static attribute</a>. </p>
-<pre class="syntax">interface <i>Ancestor</i> {
+<pre class="syntax highlight">interface <i>Ancestor</i> {
   readonly attribute <i>TheType</i> <i>theIdentifier</i>;
 };
     
-interface <i>Derived</i> : <i>Ancestor</i> {
+interface <i>Derived</i> <span class="o">:</span> <i>Ancestor</i> {
   inherit attribute <i>TheType</i> <i>theIdentifier</i>;
 };
 </pre>
    <p> When the <code>stringifier</code> keyword is used
     in a <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-3">regular attribute</a> declaration, it indicates that objects implementing the
     interface will be stringified to the value of the attribute.  See <a href="#idl-stringifiers">§4.2.4.2 Stringifiers</a> for details. </p>
-<pre class="syntax">stringifier attribute DOMString <i>identifier</i>;</pre>
+<pre class="syntax highlight">stringifier attribute DOMString <i>identifier</i>;</pre>
    <p id="callback-attribute-exceptions"> If an implementation attempts to get or set the value of an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-7">attribute</a> on a <a data-link-type="dfn" href="#dfn-user-object" id="ref-for-dfn-user-object-4">user object</a> (for example, when a callback object has been supplied to the implementation),
     and that attempt results in an exception being thrown, then, unless otherwise specified, that
     exception will be propagated to the user code that caused the
@@ -2745,19 +2756,19 @@ interface Person : Animal {
      <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-1">regular operations</a>, which
         are those used to declare that objects implementing the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-20">interface</a> will have a method with
         the given <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-16">identifier</a> 
-<pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>arguments…</i>);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>arguments…</i>);</pre>
     <li>
      <a data-link-type="dfn" href="#dfn-special-operation" id="ref-for-dfn-special-operation-1">special operations</a>,
         which are used to declare special behavior on objects
         implementing the interface, such as object indexing and stringification 
-<pre class="syntax"><i>special-keywords…</i> <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-<i>special-keywords…</i> <i>return-type</i> (<i>arguments…</i>);
+<pre class="syntax highlight"><i>special<span class="o">-</span>keywords…</i> <i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>arguments…</i>);
+<i>special<span class="o">-</span>keywords…</i> <i><span class="nb">return</span><span class="o">-</span>type</i> (<i>arguments…</i>);
 </pre>
     <li>
      <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-2">static operations</a>,
         which are used to declare operations that are not associated with
         a particular object implementing the interface 
-<pre class="syntax">static <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);</pre>
+<pre class="syntax highlight">static <i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>arguments…</i>);</pre>
    </ol>
    <p> If an operation has an identifier but no <code>static</code> keyword, then it declares a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-regular-operation">regular operation</dfn>.
     If the operation has one or more <a data-link-type="dfn" href="#dfn-special-keyword" id="ref-for-dfn-special-keyword-1">special keywords</a> used in its declaration (that is, any keyword matching <emu-nt><a href="#prod-Special">Special</a></emu-nt>, or
@@ -2793,13 +2804,13 @@ as one of the keywords matching the <emu-nt><a href="#prod-ArgumentNameKeyword">
     then the identifier must identify an interface, <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-6">enumeration</a>, <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-9">callback function</a> or <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-9">typedef</a>.
     If the operation argument type is an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-21">identifier</a> not followed by <code>?</code>, then the identifier must
     identify any one of those definitions or a <a data-link-type="dfn" href="#dfn-dictionary" id="ref-for-dfn-dictionary-6">dictionary</a>. </p>
-<pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i> <i>identifier</i>, …);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i> <i>identifier</i>, …);</pre>
    <p> The identifier of each argument must not be the same
     as the identifier of another argument in the same operation declaration. </p>
    <p> Each argument can be preceded by a list of <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-9">extended attributes</a> (matching <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt>),
     which can control how a value passed as the argument will be handled in
     language bindings. </p>
-<pre class="syntax"><i>return-type</i> <i>identifier</i>([<em>extended-attributes</em>] <i>type</i> <i>identifier</i>, [<em>extended-attributes</em>] <i>type</i> <i>identifier</i>, …);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>([<em>extended<span class="o">-</span>attributes</em>] <i>type</i> <i>identifier</i>, [<em>extended<span class="o">-</span>attributes</em>] <i>type</i> <i>identifier</i>, …);</pre>
    <div class="example" id="example-bbd02fc8">
     <a class="self-link" href="#example-bbd02fc8"></a> 
     <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-16">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-4">regular operations</a> can be declared on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-23">interface</a>: </p>
@@ -2827,8 +2838,8 @@ interface Button {
     when invoking the operation.  An argument must not
     be declared with the <code>...</code> token unless it
     is the final argument in the operation’s argument list. </p>
-<pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i><em>...</em> <i>identifier</i>);
-<i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>type</i><em>...</em> <i>identifier</i>);
+<i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);
 </pre>
    <p> <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-10">Extended attributes</a> that <a data-link-type="dfn" href="#dfn-xattr-argument-list" id="ref-for-dfn-xattr-argument-list-1">take an argument list</a> ([<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-4">Constructor</a></code>] and
     [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-3">NamedConstructor</a></code>], of those
@@ -2862,13 +2873,13 @@ interface Button {
     when the operation is invoked.  The final argument in an
     operation must not explicitly be declared to be
     optional if the operation is <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic-3">variadic</a>. </p>
-<pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i>);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i>);</pre>
    <p> Optional arguments can also have a <dfn class="dfn-paneled" data-dfn-for="optional argument" data-dfn-type="dfn" data-export="" id="dfn-optional-argument-default-value">default value</dfn> specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span> and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
     then that gives the optional argument its <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-3">default value</a>.
     The implicitly optional final argument of a <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic-4">variadic</a> operation must not have a default value specified.
     The default value is the value to be assumed when the operation is called with the
     corresponding argument omitted. </p>
-<pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
+<pre class="syntax highlight"><i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> <span class="o">=</span> <i>value</i>);</pre>
     <strong class="advisement"> It is strongly suggested not to use <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-4">default value</a> of <span class="idlvalue">true</span> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-2">boolean</a></code>-typed arguments,
 as this can be confusing for authors who might otherwise expect the default
 conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).</strong> 
@@ -3116,8 +3127,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
    <p> When an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-28">interface</a> has one or more <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-1">legacy callers</a>, it indicates that objects that implement
     the interface can be called as if they were functions.  As mentioned above,
     legacy callers can be specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-9">operation</a> declared with the <code>legacycaller</code> keyword. </p>
-<pre class="syntax">legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-legacycaller <i>return-type</i> (<i>arguments…</i>);
+<pre class="syntax highlight">legacycaller <i><span class="nb">return</span><span class="o">-</span>type</i> <i>identifier</i>(<i>arguments…</i>);
+legacycaller <i><span class="nb">return</span><span class="o">-</span>type</i> (<i>arguments…</i>);
 </pre>
    <p> If multiple legacy callers are specified on an interface, overload resolution
     is used to determine which legacy caller is invoked when the object is called
@@ -3148,7 +3159,7 @@ the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> m
    <p> When an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-30">interface</a> has a <a data-link-type="dfn" href="#dfn-stringifier" id="ref-for-dfn-stringifier-1">stringifier</a>, it indicates that objects that implement
     the interface have a non-default conversion to a string.  As mentioned above,
     stringifiers can be specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-10">operation</a> declared with the <code>stringifier</code> keyword. </p>
-<pre class="syntax">stringifier DOMString <i>identifier</i>();
+<pre class="syntax highlight">stringifier DOMString <i>identifier</i>();
 stringifier DOMString ();
 </pre>
    <p> If an operation used to declare a stringifier does not have an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-23">identifier</a>, then prose
@@ -3162,7 +3173,8 @@ stringifier DOMString ();
     is declared using an operation with no identifier, then the
     operation’s <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-1">return type</a> and
     argument list can be omitted. </p>
-<pre class="syntax">stringifier;</pre>
+<pre class="syntax highlight">stringifier;
+</pre>
    <div class="example" id="example-b32153ca">
     <a class="self-link" href="#example-b32153ca"></a> 
     <p>The following two interfaces are equivalent:</p>
@@ -3183,7 +3195,7 @@ stringifier DOMString ();
     it is declared to be of type <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-5">DOMString</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-2">USVString</a></code>.
     It also must not be placed on
     a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-5">static attribute</a>. </p>
-<pre class="syntax">stringifier attribute DOMString <i>identifier</i>;</pre>
+<pre class="syntax highlight">stringifier attribute DOMString <i>identifier</i>;</pre>
 <pre class="grammar" id="prod-Stringifier">Stringifier :
     "stringifier" StringifierRest
 </pre>
@@ -3244,7 +3256,8 @@ interface Student {
    <p> When an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-31">interface</a> has a <a data-link-type="dfn" href="#dfn-serializer" id="ref-for-dfn-serializer-1">serializer</a>, it indicates that objects provide
     a way for them to be converted into a serialized form.  Serializers can be declared
     using the <code>serializer</code> keyword: </p>
-<pre class="syntax">serializer;</pre>
+<pre class="syntax highlight">serializer;
+</pre>
    <p> Prose accompanying an interface that declares a serializer in this
     way must define the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-serialization-behavior">serialization behavior</dfn> of the interface.  Serialization behavior is defined as returning
     a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-serialized-value">serialized value</dfn> of one of the following types: </p>
@@ -3270,8 +3283,8 @@ into an ECMAScript value that can be serialized to JSON by the <code>JSON.string
     <li>
      <p>A map with entries corresponding to zero or more attributes from the interface, and optionally
         attributes from an inherited interface:</p>
-<pre class="syntax">serializer = { <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
-serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
+<pre class="syntax highlight">serializer <span class="o">=</span> { <i>attribute<span class="o">-</span>identifier</i>, <i>attribute<span class="o">-</span>identifier</i>, … };
+serializer <span class="o">=</span> { inherit, <i>attribute<span class="o">-</span>identifier</i>, <i>attribute<span class="o">-</span>identifier</i>, … };
 </pre>
      <p>Each identifier must be the identifier of an attribute declared
             on the interface.  The identified attributes all must have a <a data-link-type="dfn" href="#dfn-serializable-type" id="ref-for-dfn-serializable-type-1">serializable type</a>.</p>
@@ -3299,8 +3312,8 @@ serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>
      <p>A map with entries corresponding to all attributes from the interface that have
             a <a data-link-type="dfn" href="#dfn-serializable-type" id="ref-for-dfn-serializable-type-2">serializable type</a>, and optionally
         attributes from an inherited interface:</p>
-<pre class="syntax">serializer = { attribute };
-serializer = { inherit, attribute };
+<pre class="syntax highlight">serializer <span class="o">=</span> { attribute };
+serializer <span class="o">=</span> { inherit, attribute };
 </pre>
      <p>The <code>inherit</code> keyword must not be used unless
             the interface inherits from another that defines a serializer, and the closest such interface
@@ -3326,7 +3339,8 @@ serializer = { inherit, attribute };
      </ol>
     <li>
      <p>A map with entries corresponding to the named properties:</p>
-<pre class="syntax">serializer = { getter };</pre>
+<pre class="syntax highlight">serializer <span class="o">=</span> { getter };
+</pre>
      <p>This form must not be used unless the interface or one it
             inherits from supports named properties and the return type of the named property getter
         is a serializable type.</p>
@@ -3345,7 +3359,7 @@ serializer = { inherit, attribute };
      </ol>
     <li>
      <p>A list of value of zero or more attributes on the interface:</p>
-<pre class="syntax">serializer = [ <i>attribute-identifier</i>, <i>attribute-identifier</i>, … ];</pre>
+<pre class="syntax highlight">serializer <span class="o">=</span> [ <i>attribute<span class="o">-</span>identifier</i>, <i>attribute<span class="o">-</span>identifier</i>, … ];</pre>
      <p>Each identifier must be the identifier of an attribute declared
             on the interface.  The identified attributes all must have a <a data-link-type="dfn" href="#dfn-serializable-type" id="ref-for-dfn-serializable-type-4">serializable type</a>.</p>
      <p>The <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-9">serialization behavior</a> for this
@@ -3362,7 +3376,8 @@ serializer = { inherit, attribute };
      </ol>
     <li>
      <p>A list with entries corresponding to the indexed properties:</p>
-<pre class="syntax">serializer = [ getter ];</pre>
+<pre class="syntax highlight">serializer <span class="o">=</span> [ getter ];
+</pre>
      <p>This form must not be used unless the interface or one it
             inherits from supports indexed properties and the return type of the indexed property getter
         is a serializable type.</p>
@@ -3382,7 +3397,7 @@ serializer = { inherit, attribute };
      </ol>
     <li>
      <p>A single attribute:</p>
-<pre class="syntax">serializer = <i>attribute-identifier</i>;</pre>
+<pre class="syntax highlight">serializer <span class="o">=</span> <i>attribute<span class="o">-</span>identifier</i>;</pre>
      <p>The identifier must be the identifier of an attribute declared
             on the interface, and this attribute must have a <a data-link-type="dfn" href="#dfn-serializable-type" id="ref-for-dfn-serializable-type-5">serializable type</a>.</p>
      <p>The <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-11">serialization behavior</a> for this
@@ -3439,7 +3454,7 @@ can influence the serialization that <code>JSON.stringify</code> can produce.</p
     <dd>converted by invoking the object’s serializer
    </dl>
    <p> Serializers can also be specified using an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-11">operation</a> with the <code>serializer</code> keyword: </p>
-<pre class="syntax">serializer <i>type</i> <i>identifier</i>();</pre>
+<pre class="syntax highlight">serializer <i>type</i> <i>identifier</i>();</pre>
    <p> Serializers declared with operations must
     be declared to take zero arguments and return a <a data-link-type="dfn" href="#dfn-serializable-type" id="ref-for-dfn-serializable-type-6">serializable type</a>. </p>
    <p> The <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-12">serialization behavior</a> of the interface with a serializer declared with an operation is the result of <a data-link-type="dfn" href="#dfn-convert-to-serialized-value" id="ref-for-dfn-convert-to-serialized-value-7">converting</a> the value returned from invoking the operation to a serialized value. </p>
@@ -3556,11 +3571,11 @@ interface Account {
     be declared to take a single <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-3">unsigned long</a></code> argument.
     Indexed property setters must
     be declared to take two arguments, where the first is an <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-4">unsigned long</a></code>. </p>
-<pre class="syntax">getter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>);
-setter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
+<pre class="syntax highlight">getter <i>type</i> <i>identifier</i>(unsigned <span class="nb">long</span> <i>identifier</i>);
+setter <i>type</i> <i>identifier</i>(unsigned <span class="nb">long</span> <i>identifier</i>, <i>type</i> <i>identifier</i>);
     
-getter <i>type</i> (unsigned long <i>identifier</i>);
-setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
+getter <i>type</i> (unsigned <span class="nb">long</span> <i>identifier</i>);
+setter <i>type</i> (unsigned <span class="nb">long</span> <i>identifier</i>, <i>type</i> <i>identifier</i>);
 </pre>
    <p> The following requirements apply to the definitions of indexed property getters and setters: </p>
    <ul>
@@ -3679,7 +3694,7 @@ setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</
     be declared to take a single <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-12">DOMString</a></code> argument.
     Named property setters must
     be declared to take two arguments, where the first is a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-13">DOMString</a></code>. </p>
-<pre class="syntax">getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
+<pre class="syntax highlight">getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
 setter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
 deleter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
     
@@ -4183,8 +4198,8 @@ are not distinguishable with any other type.</p>
    </div>
    <h4 class="heading settled" data-level="4.2.7" id="idl-iterable"><span class="secno">4.2.7. </span><span class="content">Iterable declarations</span><a class="self-link" href="#idl-iterable"></a></h4>
    <p> An <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-43">interface</a> can be declared to be <dfn data-dfn-type="dfn" data-export="" id="dfn-iterable">iterable<a class="self-link" href="#dfn-iterable"></a></dfn> by using an <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-iterable-declaration">iterable declaration</dfn> (matching <emu-nt><a href="#prod-Iterable">Iterable</a></emu-nt>) in the body of the interface. </p>
-<pre class="syntax">iterable&lt;<i>value-type</i>>;
-iterable&lt;<i>key-type</i>, <i>value-type</i>>;
+<pre class="syntax highlight">iterable<span class="o">&lt;</span><i>value<span class="o">-</span>type</i><span class="o">></span>;
+iterable<span class="o">&lt;</span><i>key<span class="o">-</span>type</i>, <i>value<span class="o">-</span>type</i><span class="o">></span>;
 </pre>
    <p> Objects implementing an interface that is declared to be iterable
     support being iterated over to obtain a sequence of values. </p>
@@ -4288,8 +4303,8 @@ interface Session {
 </pre>
    <h4 class="heading settled" data-level="4.2.8" id="idl-maplike"><span class="secno">4.2.8. </span><span class="content">Maplike declarations</span><a class="self-link" href="#idl-maplike"></a></h4>
    <p> An <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-45">interface</a> can be declared to be <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-maplike">maplike</dfn> by using a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-maplike-declaration">maplike declaration</dfn> (matching <emu-nt><a href="#prod-ReadWriteMaplike">ReadWriteMaplike</a></emu-nt> or <span class="sym">"readonly"</span> <emu-nt><a href="#prod-MaplikeRest">MaplikeRest</a></emu-nt>) in the body of the interface. </p>
-<pre class="syntax">readonly maplike&lt;<i>key-type</i>, <i>value-type</i>>;
-maplike&lt;<i>key-type</i>, <i>value-type</i>>;
+<pre class="syntax highlight">readonly maplike<span class="o">&lt;</span><i>key<span class="o">-</span>type</i>, <i>value<span class="o">-</span>type</i><span class="o">></span>;
+maplike<span class="o">&lt;</span><i>key<span class="o">-</span>type</i>, <i>value<span class="o">-</span>type</i><span class="o">></span>;
 </pre>
    <p> Objects implementing an interface that is declared to be maplike
     represent an ordered list of key–value pairs known as its <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-map-entries">map entries</dfn>.
@@ -4333,8 +4348,8 @@ This allows the default behavior of these operations to be overridden.</p>
    <p class="issue" id="issue-dbe4d1af"><a class="self-link" href="#issue-dbe4d1af"></a> Add example.</p>
    <h4 class="heading settled" data-level="4.2.9" id="idl-setlike"><span class="secno">4.2.9. </span><span class="content">Setlike declarations</span><a class="self-link" href="#idl-setlike"></a></h4>
    <p> An <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-46">interface</a> can be declared to be <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-setlike">setlike</dfn> by using a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-setlike-declaration">setlike declaration</dfn> (matching <emu-nt><a href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></emu-nt> or <span class="sym">"readonly"</span> <emu-nt><a href="#prod-SetlikeRest">SetlikeRest</a></emu-nt>) in the body of the interface. </p>
-<pre class="syntax">readonly setlike&lt;<i>type</i>>;
-setlike&lt;<i>type</i>>;
+<pre class="syntax highlight">readonly setlike<span class="o">&lt;</span><i>type</i><span class="o">></span>;
+setlike<span class="o">&lt;</span><i>type</i><span class="o">></span>;
 </pre>
    <p> Objects implementing an interface that is declared to be setlike
     represent an ordered list of values known as its <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-set-entries">set entries</dfn>.
@@ -4380,8 +4395,8 @@ This allows the default behavior of these operations to be overridden.</p>
     used to define an associative array data type with a fixed, ordered set of key–value pairs,
     termed <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-dictionary-member">dictionary members</dfn>,
     where keys are strings and values are of a particular type specified in the definition. </p>
-<pre class="syntax">dictionary <i>identifier</i> {
-  <i>dictionary-members…</i>
+<pre class="syntax highlight">dictionary <i>identifier</i> {
+  <i>dictionary<span class="o">-</span>members…</i>
 };
 </pre>
    <p> Dictionaries are always passed by value.  In language bindings where a dictionary is represented by an object of some kind, passing a
@@ -4394,12 +4409,12 @@ This allows the default behavior of these operations to be overridden.</p>
    <p> A dictionary must not be declared such that
     its inheritance hierarchy has a cycle.  That is, a dictionary <var>A</var> cannot inherit from itself, nor can it inherit from another
     dictionary <var>B</var> that inherits from <var>A</var>, and so on. </p>
-<pre class="syntax">dictionary <em>Base</em> {
-  <i>dictionary-members…</i>
+<pre class="syntax highlight">dictionary <em>Base</em> {
+  <i>dictionary<span class="o">-</span>members…</i>
 };
     
-dictionary <i>Derived</i> : <em>Base</em> {
-  <i>dictionary-members…</i>
+dictionary <i>Derived</i> <span class="o">:</span> <em>Base</em> {
+  <i>dictionary<span class="o">-</span>members…</i>
 };
 </pre>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-inherited-dictionaries">inherited dictionaries</dfn> of
@@ -4427,14 +4442,14 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     If the dictionary member type is an identifier
     not followed by <code>?</code>, then the identifier must
     identify any one of those definitions or a <a data-link-type="dfn" href="#dfn-dictionary" id="ref-for-dfn-dictionary-9">dictionary</a>. </p>
-<pre class="syntax">dictionary <i>identifier</i> {
+<pre class="syntax highlight">dictionary <i>identifier</i> {
   <i>type</i> <i>identifier</i>;
 };
 </pre>
    <p> If the identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span> and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
     then that gives the dictionary member its <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-10">default value</a>. </p>
-<pre class="syntax">dictionary <i>identifier</i> {
-  <i>type</i> <i>identifier</i> = <i>value</i>;
+<pre class="syntax highlight">dictionary <i>identifier</i> {
+  <i>type</i> <i>identifier</i> <span class="o">=</span> <i>value</i>;
 };
 </pre>
    <p> When a boolean literal token (<code>true</code> or <code>false</code>),
@@ -4447,7 +4462,7 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
    <p> If the type of the <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-6">dictionary member</a> is an <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-11">enumeration</a>, then its <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-13">default value</a> if specified must
     be one of the <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-2">enumeration’s values</a>. </p>
    <p> If the type of the dictionary member is preceded by the <code>required</code> keyword, the member is considered a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="required-dictionary-member">required dictionary member</dfn> and must be present on the dictionary.  A <a data-link-type="dfn" href="#required-dictionary-member" id="ref-for-required-dictionary-member-2">required dictionary member</a> must not have a default value. </p>
-<pre class="syntax">dictionary <i>identifier</i> {
+<pre class="syntax highlight">dictionary <i>identifier</i> {
   required <i>type</i> <i>identifier</i>;
 };
 </pre>
@@ -4471,12 +4486,12 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     identifier of a dictionary definition.  All of the members that appear on each
     of the partial dictionary definitions are considered to be members of
     the dictionary itself. </p>
-<pre class="syntax">dictionary <em>SomeDictionary</em> {
-  <i>dictionary-members…</i>
+<pre class="syntax highlight">dictionary <em>SomeDictionary</em> {
+  <i>dictionary<span class="o">-</span>members…</i>
 };
     
 partial dictionary <em>SomeDictionary</em> {
-  <i>dictionary-members…</i>
+  <i>dictionary<span class="o">-</span>members…</i>
 };
 </pre>
    <p class="note" role="note">Note: As with partial interface definitions, partial dictionary definitions are intended for use as a specification
@@ -4804,7 +4819,7 @@ entails in the ECMAScript language binding.</p>
    <p> An <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-enumeration">enumeration</dfn> is a definition (matching <emu-nt><a href="#prod-Enum">Enum</a></emu-nt>) used to declare a type
     whose valid values are a set of predefined strings.  Enumerations
     can be used to restrict the possible <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-17">DOMString</a></code> values that can be assigned to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-16">attribute</a> or passed to an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-23">operation</a>. </p>
-<pre class="syntax">enum <i>identifier</i> { <i>enumeration-values…</i> };</pre>
+<pre class="syntax highlight">enum <i>identifier</i> { <i>enumeration<span class="o">-</span>values…</i> };</pre>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="enumeration value" id="dfn-enumeration-value">enumeration values</dfn> are specified
     as a comma-separated list of <emu-nt><a href="#prod-string">string</a></emu-nt> literals.
     The list of <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-3">enumeration values</a> must not include duplicates. </p>
@@ -4872,7 +4887,7 @@ interface Meal {
 platform object provided functions.  Should we rename “callback functions” to
 just “functions” to make it clear that they can be used for both purposes?</p>
    <p> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-callback-function">callback function</dfn> is a definition (matching <span class="sym">"callback"</span> <emu-nt><a href="#prod-CallbackRest">CallbackRest</a></emu-nt>) used to declare a function type. </p>
-<pre class="syntax">callback <i>identifier</i> = <i>return-type</i> (<i>arguments…</i>);</pre>
+<pre class="syntax highlight">callback <i>identifier</i> <span class="o">=</span> <i><span class="nb">return</span><span class="o">-</span>type</i> (<i>arguments…</i>);</pre>
    <p class="note" role="note">Note: See also the similarly named <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-11">callback interfaces</a>.</p>
    <p> The <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-36">identifier</a> on the
     left of the equals sign gives the name of the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-14">callback function</a> and the return type and argument list (matching <emu-nt><a href="#prod-ReturnType">ReturnType</a></emu-nt> and <emu-nt><a href="#prod-ArgumentList">ArgumentList</a></emu-nt>) on the right side of the equals
@@ -4911,7 +4926,7 @@ interface AsyncOperations {
     used to declare a new name for a type.  This new name is not exposed
     by language bindings; it is purely used as a shorthand for referencing
     the type in the IDL. </p>
-<pre class="syntax">typedef <i>type</i> <i>identifier</i>;</pre>
+<pre class="syntax highlight">typedef <i>type</i> <i>identifier</i>;</pre>
    <p> The type being given a new name is specified after the <code>typedef</code> keyword (matching <emu-nt><a href="#prod-Type">Type</a></emu-nt>), and the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token following the
     type gives the name. </p>
    <p> The <emu-nt><a href="#prod-Type">Type</a></emu-nt> must not
@@ -4941,7 +4956,7 @@ interface Widget {
     (matching <emu-nt><a href="#prod-ImplementsStatement">ImplementsStatement</a></emu-nt>)
     used to declare that all objects implementing an interface <var>A</var> (identified by the first <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-38">identifier</a>)
     must additionally implement interface <var>B</var> (identified by the second identifier), including all other interfaces that <var>B</var> inherits from. </p>
-<pre class="syntax"><i>identifier-A</i> implements <i>identifier-B</i>;</pre>
+<pre class="syntax highlight"><i>identifier<span class="o">-</span>A</i> implements <i>identifier<span class="o">-</span>B</i>;</pre>
    <p> Transitively, if objects implementing <var>B</var> are declared with an <a data-link-type="dfn" href="#dfn-implements-statement" id="ref-for-dfn-implements-statement-2">implements statement</a> to additionally implement interface <var>C</var>, then all objects implementing <var>A</var> do additionally implement interface <var>C</var>. </p>
    <p> The two <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-39">identifiers</a> must
     identify two different interfaces. </p>
