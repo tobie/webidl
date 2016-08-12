@@ -443,7 +443,7 @@ Boilerplate: omit issues-index
     <xsl:call-template name='a-xattr'><xsl:with-param name='txt'>TreatNullAs</xsl:with-param></xsl:call-template>
   </xsl:template>
 
-  <!-- Links with class idlclass => {{foo}}-->
+  <!-- Links with class idltype => {{foo}}-->
   <xsl:template match='h:a[@class="idltype"]'>
     <xsl:call-template name='a-idl'><xsl:with-param name='txt' select='.'/></xsl:call-template>
   </xsl:template>
@@ -583,7 +583,7 @@ Boilerplate: omit issues-index
   
   <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX INLINE STYLES XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
-  <xsl:template match='h:span[@class="esvalue"] | h:span[@class="estype"]'>
+  <xsl:template match='h:span[@class="esvalue"] | h:span[@class="estype"] | h:span[@class="idlvalue"]'>
     <xsl:choose>
       <xsl:when test='.="""function"""'>
         <xsl:text>"function"</xsl:text>

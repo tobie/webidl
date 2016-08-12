@@ -1238,7 +1238,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
 <p>
     The value of the boolean literal tokens <code>true</code> and
     <code>false</code> are the IDL {{boolean}} values
-    <span class="idlvalue">true</span> and <span class="idlvalue">false</span>.
+    <emu-val>true</emu-val> and <emu-val>false</emu-val>.
 </p>
 <p>
     The value of an <emu-nt><a href="#prod-integer">integer</a></emu-nt> token is an integer
@@ -1328,7 +1328,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
 </p>
 <p>
     The value of the <code>null</code> token is the special
-    <span class="idlvalue">null</span> value that is a member of the
+    <emu-val>null</emu-val> value that is a member of the
     [=nullable types=].  The type of
     the <code>null</code> token is the same as the
     type of the constant, dictionary member or optional argument it is being used as the value of.
@@ -1837,9 +1837,9 @@ symbol without needing to escape it.
             <pre highlight="idl" class="syntax">return-type identifier(type identifier, optional type identifier = value);</pre>
 
 Advisement: It is strongly suggested not to use [=default value=]
-of <span class="idlvalue">true</span> for {{boolean}}-typed arguments,
+of <emu-val>true</emu-val> for {{boolean}}-typed arguments,
 as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
+conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
 
 <p>
     If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
@@ -2378,10 +2378,10 @@ mailing list before proceeding.
             Objects that implement the <code class="idl">Student</code>
             interface must stringify as follows.  If the value of the
             <span class="idlattr">familyName</span> attribute is
-            <span class="idlvalue">null</span>, the stringification of the
+            <emu-val>null</emu-val>, the stringification of the
             object is the value of the <span class="idlattr">givenName</span>
             attribute.  Otherwise, if the value of the
-            <span class="idlattr">familyName</span> attribute is not <span class="idlvalue">null</span>,
+            <span class="idlattr">familyName</span> attribute is not <emu-val>null</emu-val>,
             the stringification of the object is the concatenation of the
             value of the <span class="idlattr">givenName</span> attribute,
             a single space character, and the value of
@@ -2427,7 +2427,7 @@ mailing list before proceeding.
     <li>a {{DOMString}} value</li>
     <li>an {{unrestricted double}} value</li>
     <li>a {{boolean}} value</li>
-    <li>the <span class="idlvalue">null</span> value</li>
+    <li>the <emu-val>null</emu-val> value</li>
 </ul>
 <p>
     How the [=serialization behavior=]
@@ -2573,7 +2573,7 @@ into an ECMAScript value that can be serialized to JSON by the
             <li>While |i| is less than or equal to the greatest supported property index on the object:
                 <ol>
                     <li>Let |V| be the value of the indexed property with index |i|
-                        if |i| is a supported property index, or <span class="idlvalue">null</span> otherwise.</li>
+                        if |i| is a supported property index, or <emu-val>null</emu-val> otherwise.</li>
                     <li>Append to |list| the value that is the result of
                         [=converted to a serialized value|converting=]
                         |V| to a serialized value.</li>
@@ -2912,7 +2912,7 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
         operations with identifiers, the only additional prose
         that is necessary is that which describes what keys those sets
         have.  Assuming that the <code>get()</code> operation is
-        defined to return <span class="idlvalue">null</span> if an
+        defined to return <emu-val>null</emu-val> if an
         attempt is made to look up a non-existing entry in the
         <code class="idl">OrderedMap</code>, then the following
         two sentences would suffice:
@@ -4137,12 +4137,12 @@ Issue: Add example.
 </p>
 
 Advisement: As with [=default value|operation argument default values=],
-is strongly suggested not to use of <span class="idlvalue">true</span> as the
+is strongly suggested not to use of <emu-val>true</emu-val> as the
 [=default value=] for
 {{boolean}}-typed
 [=dictionary members=],
 as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlvalue">false</span>).
+conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
 
 <p>
     Each [=dictionary member=] (matching
@@ -5344,7 +5344,7 @@ Note: For example, that precludes the following:
 
 <p>
     The {{boolean}} type has two values:
-    <span class="idlvalue">true</span> and <span class="idlvalue">false</span>.
+    <emu-val>true</emu-val> and <emu-val>false</emu-val>.
 </p>
 <p>
     {{boolean}} constant values in IDL are
@@ -5601,9 +5601,9 @@ represent more closely matches an ECMAScript <emu-val>Number</emu-val>.
     string is required.
 </p>
 
-Note: Note also that <span class="idlvalue">null</span>
+Note: Note also that <emu-val>null</emu-val>
 is not a value of type {{DOMString}}.
-To allow <span class="idlvalue">null</span>, a
+To allow <emu-val>null</emu-val>, a
 <a href="#idl-nullable-type">nullable</a> {{DOMString}},
 written as <code>DOMString?</code> in IDL, needs to be used.
 
@@ -5752,7 +5752,7 @@ in the string.  When in doubt, use {{DOMString}}.
 </p>
 <p>
     To denote a type that includes all possible object references plus the
-    <span class="idlvalue">null</span> value, use the <a href="#dfn-nullable-type">nullable type</a>
+    <emu-val>null</emu-val> value, use the <a href="#dfn-nullable-type">nullable type</a>
     <code class="idl">object?</code>.
 </p>
 <p>
@@ -5791,7 +5791,7 @@ is converted to an IDL callback interface type value.  See
 </p>
 <p>
     To denote a type that includes all possible references to objects implementing
-    the given interface plus the <span class="idlvalue">null</span> value,
+    the given interface plus the <emu-val>null</emu-val> value,
     use a <a href="#dfn-nullable-type">nullable type</a>.
 </p>
 <p>
@@ -5876,7 +5876,7 @@ is converted to an IDL callback function type value.  See
 <p>
     A <dfn id="dfn-nullable-type" export>nullable type</dfn> is an IDL type constructed
     from an existing type (called the <dfn id="dfn-inner-type" export>inner type</dfn>),
-    which just allows the additional value <span class="idlvalue">null</span>
+    which just allows the additional value <emu-val>null</emu-val>
     to be a member of its set of values.  [=Nullable types=]
     are represented in IDL by placing a <span class="char">U+003F QUESTION MARK ("?")</span>
     character after an existing type.  The inner type must not
@@ -5901,8 +5901,8 @@ as the type of an operation argument or a dictionary member.
 </p>
 <div class="example">
     <p>
-        For example, a type that allows the values <span class="idlvalue">true</span>,
-        <span class="idlvalue">false</span> and <span class="idlvalue">null</span>
+        For example, a type that allows the values <emu-val>true</emu-val>,
+        <emu-val>false</emu-val> and <emu-val>null</emu-val>
         is written as <code class="idl">boolean?</code>:
     </p>
     <pre class="idl-example">
@@ -5913,9 +5913,9 @@ as the type of an operation argument or a dictionary member.
     <p>
         The following [=interface=] has two
         [=attributes=]: one whose value can
-        be a {{DOMString}} or the <span class="idlvalue">null</span>
+        be a {{DOMString}} or the <emu-val>null</emu-val>
         value, and another whose value can be a reference to a <code class="idl">Node</code>
-        object or the <span class="idlvalue">null</span> value:
+        object or the <emu-val>null</emu-val> value:
     </p>
     <pre class="idl-example">
         interface Node {
@@ -6207,7 +6207,7 @@ representing [=DOMExceptions=].</p>
 Note: These types all correspond to classes defined in ECMAScript.
 <p>
     To <dfn id="dfn-detach" for="ArrayBuffer" export>detach</dfn> an {{ArrayBuffer}}
-    is to set its buffer pointer to <span class="idlvalue">null</span>.
+    is to set its buffer pointer to <emu-val>null</emu-val>.
 </p>
 <p>
     There is no way to represent a constant value of any of these types in IDL.
@@ -6732,7 +6732,7 @@ for Web pages.
     </dd>
     <dt>The <emu-val>null</emu-val> value</dt>
     <dd>
-        The IDL value is the <span class="idlvalue">null</span>
+        The IDL value is the <emu-val>null</emu-val>
         {{object?}} reference.
     </dd>
     <dt>A <emu-val>Boolean</emu-val> value</dt>
@@ -6809,10 +6809,10 @@ for Web pages.
     <li>Return the IDL {{boolean}} value that is the one that represents the same truth value as the ECMAScript <emu-val>Boolean</emu-val> value |x|.</li>
 </ol>
 <p id="boolean-to-es">
-    The IDL {{boolean}} value <span class="idlvalue">true</span>
+    The IDL {{boolean}} value <emu-val>true</emu-val>
     is [=converted=] to
     the ECMAScript <emu-val>true</emu-val> value and the IDL {{boolean}}
-    value <span class="idlvalue">false</span> is converted to the ECMAScript
+    value <emu-val>false</emu-val> is converted to the ECMAScript
     <emu-val>false</emu-val> value.
 </p>
 
@@ -7756,12 +7756,12 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         that is annotated with [{{TreatNonObjectAsNull}}],
         then return the IDL
         [=nullable type=] <code class="idl">|T|?</code>
-        value <span class="idlvalue">null</span>.
+        value <emu-val>null</emu-val>.
     </li>
     <li>
         Otherwise, if |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>, then return the IDL
         [=nullable type=] <code class="idl">|T|?</code>
-        value <span class="idlvalue">null</span>.
+        value <emu-val>null</emu-val>.
     </li>
     <li>
         Otherwise, return the result of
@@ -7776,7 +7776,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
 <ul>
     <li>
         If the IDL [=nullable type=] <code class="idl">|T|?</code>
-        value is <span class="idlvalue">null</span>,
+        value is <emu-val>null</emu-val>,
         then the ECMAScript value is <emu-val>null</emu-val>.
     </li>
     <li>
@@ -8065,7 +8065,7 @@ Issue: Include an example of how to write spec text using this term.
     <li>If the [=union type=]
         [=includes a nullable type=] and
         |V| is <emu-val>null</emu-val> or <emu-val>undefined</emu-val>,
-        then return the IDL value <span class="idlvalue">null</span>.</li>
+        then return the IDL value <emu-val>null</emu-val>.</li>
     <li>
         Let |types| be the [=flattened member types=]
         of the [=union type=].
@@ -10120,7 +10120,7 @@ ECMAScript global environment.
     whose type is a [=nullable type|nullable=]
     [=callback function=]
     that is not an object will be converted to
-    the <span class="idlvalue">null</span> value.
+    the <emu-val>null</emu-val> value.
 </p>
 
 Advisement: Specifications should not use [{{TreatNonObjectAsNull}}]
@@ -10218,7 +10218,7 @@ such as <code>onclick</code> and <code>onerror</code>.
 </p>
 
 Note: This means that even an attribute of type <code class="idl">DOMString?</code> must not
-use [{{TreatNullAs}}], since <span class="idlvalue">null</span>
+use [{{TreatNullAs}}], since <emu-val>null</emu-val>
 is a valid value of that type.
 <p>
     The [{{TreatNullAs}}] extended attribute
@@ -13681,7 +13681,7 @@ use standard ECMAScript Array iterator objects.
                 <ol>
                     <li>Perform the steps listed in the description of |operation| with |P| as the only argument value.</li>
                     <li>If |operation| was declared with a [=return type=] of {{boolean}}
-                        and the steps returned <span class="idlvalue">false</span>, then <emu-val>false</emu-val>.</li>
+                        and the steps returned <emu-val>false</emu-val>, then <emu-val>false</emu-val>.</li>
                 </ol>
             </li>
             <li>Return <emu-val>true</emu-val>.</li>
