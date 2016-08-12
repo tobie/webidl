@@ -722,7 +722,7 @@ Issue</xsl:text>
   </xsl:template>
   
   <xsl:template match='h:pre[@class="syntax"]'>
-    <pre highlight='idl' class="syntax"><xsl:apply-templates select='node()'/></pre>
+    <pre highlight='idl' class="syntax"><xsl:value-of select='.'/></pre>
   </xsl:template>
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX GRAMMAR XXXXXXXXXXXXXXXXXXXXXXXXXX -->

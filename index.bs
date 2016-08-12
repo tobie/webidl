@@ -276,8 +276,8 @@ overflow: auto;
     <li>Algorithms use <a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">the conventions of the ECMAScript specification</a>, including the ! and ? notation for unwrapping completion records.</li>
     <li>IDL informal syntax examples:
         <pre highlight="idl" class="syntax">
-            interface <i>identifier</i> {
-              <em>interface-members…</em>
+            interface identifier {
+              interface-members…
             };
         </pre>
         (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</li>
@@ -412,9 +412,9 @@ overflow: auto;
 </p>
 
 <pre highlight="idl" class="syntax">
-    [<em>extended-attributes</em>]
-    interface <i>identifier</i> {
-      <i>interface-members…</i>
+    [extended-attributes]
+    interface identifier {
+      interface-members…
     };
 </pre>
 
@@ -524,12 +524,12 @@ overflow: auto;
         or <code>callback</code> keyword
         determines the identifier of that definition.
         <pre highlight="idl" class="syntax">
-            interface <em>interface-identifier</em> { <i>interface-members…</i> };
-            partial interface <em>interface-identifier</em> { <i>interface-members…</i> };
-            dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
-            partial dictionary <em>dictionary-identifier</em> { <i>dictionary-members…</i> };
-            enum <em>enumeration-identifier</em> { <i>enumeration-values…</i> };
-            callback <em>callback-identifier</em> = <i>callback-signature</i>;
+            interface interface-identifier { interface-members… };
+            partial interface interface-identifier { interface-members… };
+            dictionary dictionary-identifier { dictionary-members… };
+            partial dictionary dictionary-identifier { dictionary-members… };
+            enum enumeration-identifier { enumeration-values… };
+            callback callback-identifier = callback-signature;
         </pre>
     </li>
     <li>
@@ -539,14 +539,14 @@ overflow: auto;
         the final <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token before the
         semicolon at the end of the declaration determines the identifier.
         <pre highlight="idl" class="syntax">
-            interface <i>identifier</i> {
-              attribute <i>type</i> <em>attribute-identifier</em>;
+            interface identifier {
+              attribute type attribute-identifier;
             };
             
-            typedef <i>type</i> <em>typedef-identifier</em>;
+            typedef type typedef-identifier;
             
-            dictionary <i>identifier</i> {
-              <i>type</i> <em>dictionary-member-identifier</em>;
+            dictionary identifier {
+              type dictionary-member-identifier;
             };
         </pre>
     </li>
@@ -554,7 +554,7 @@ overflow: auto;
         For [=constants=],
         the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token before the
         equals sign determines the identifier.
-              <pre highlight="idl" class="syntax">const <i>type</i> <em>constant-identifier</em> = <i>value</i>;</pre>
+              <pre highlight="idl" class="syntax">const type constant-identifier = value;</pre>
     </li>
     <li>
         For [=operations=], the
@@ -564,7 +564,7 @@ overflow: auto;
         grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
         there is no such <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token,
         then the operation does not have an identifier.
-              <pre highlight="idl" class="syntax"><i>return-type</i> <em>operation-identifier</em>(<i>arguments…</i>);</pre>
+              <pre highlight="idl" class="syntax">return-type operation-identifier(arguments…);</pre>
     </li>
 </ul>
 
@@ -590,7 +590,7 @@ identifier.
     symbol.  If one of these keywords is used, it need not be escaped with a leading
     underscore.
 </p>
-          <pre highlight="idl" class="syntax"><i>return-type</i> <i>operation-identifier</i>(<i>argument-type</i> <em>argument-identifier</em>, …);</pre>
+          <pre highlight="idl" class="syntax">return-type operation-identifier(argument-type argument-identifier, …);</pre>
 <pre class="grammar" id="prod-ArgumentNameKeyword">
     ArgumentNameKeyword :
         "attribute"
@@ -730,8 +730,8 @@ in later sections.
     state and behavior that an object implementing that interface will expose.
 </p>
 <pre highlight="idl" class="syntax">
-    interface <i>identifier</i> {
-      <i>interface-members…</i>
+    interface identifier {
+      interface-members…
     };
 </pre>
 <p>
@@ -767,8 +767,8 @@ in later sections.
     have members that correspond to the interface members from the inherited interface.
 </p>
 <pre highlight="idl" class="syntax">
-    interface <i>identifier</i> : <em>identifier-of-inherited-interface</em> {
-      <i>interface-members…</i>
+    interface identifier : identifier-of-inherited-interface {
+      interface-members…
     };
 </pre>
 <p>
@@ -848,16 +848,16 @@ in later sections.
     which can control how the interface member will be handled in language bindings.
 </p>
 <pre highlight="idl" class="syntax">
-    interface <i>identifier</i> {
+    interface identifier {
     
-      [<em>extended-attributes</em>]
-      const <i>type</i> <i>identifier</i> = <i>value</i>;
+      [extended-attributes]
+      const type identifier = value;
     
-      [<em>extended-attributes</em>]
-      attribute <i>type</i> <i>identifier</i>;
+      [extended-attributes]
+      attribute type identifier;
     
-      [<em>extended-attributes</em>]
-      <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
+      [extended-attributes]
+      return-type identifier(arguments…);
     };
 </pre>
 
@@ -871,8 +871,8 @@ in later sections.
     as described in [[#idl-objects]].
 </p>
 <pre highlight="idl" class="syntax">
-    callback interface <i>identifier</i> {
-      <i>interface-members…</i>
+    callback interface identifier {
+      interface-members…
     };
 </pre>
 
@@ -981,12 +981,12 @@ for the property's existence.
     members of the interface itself.
 </p>
 <pre highlight="idl" class="syntax">
-    interface <em>SomeInterface</em> {
-      <i>interface-members…</i>
+    interface SomeInterface {
+      interface-members…
     };
     
-    partial interface <em>SomeInterface</em> {
-      <i>interface-members…</i>
+    partial interface SomeInterface {
+      interface-members…
     };
 </pre>
 
@@ -1195,7 +1195,7 @@ Specification authors who wish to define constants are strongly advised to discu
 this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
 mailing list before proceeding.
 
-            <pre highlight="idl" class="syntax">const <i>type</i> <i>identifier</i> = <i>value</i>;</pre>
+            <pre highlight="idl" class="syntax">const type identifier = value;</pre>
 <p>
     The [=identifier=] of a
     [=constant=]
@@ -1434,10 +1434,10 @@ empty sequence <code>[]</code> cannot be used as the value of a
     <li>[=regular attributes=], which are those
         used to declare that objects implementing the [=interface=]
         will have a data field member with the given [=identifier=]
-              <pre highlight="idl" class="syntax">attribute <i>type</i> <i>identifier</i>;</pre></li>
+              <pre highlight="idl" class="syntax">attribute type identifier;</pre></li>
     <li>[=static attributes=], which are used
         to declare attributes that are not associated with a particular object implementing the interface
-              <pre highlight="idl" class="syntax">static attribute <i>type</i> <i>identifier</i>;</pre></li>
+              <pre highlight="idl" class="syntax">static attribute type identifier;</pre></li>
 </ol>
 <p>
     If an attribute has no <code>static</code> keyword, then it declares a
@@ -1481,7 +1481,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
     binding specific whether assignment is simply disallowed by the language,
     ignored or an exception is thrown.
 </p>
-            <pre highlight="idl" class="syntax">readonly attribute <i>type</i> <i>identifier</i>;</pre>
+            <pre highlight="idl" class="syntax">readonly attribute type identifier;</pre>
 <p>
     A [=regular attribute=]
     that is not [=read only=]
@@ -1499,12 +1499,12 @@ empty sequence <code>[]</code> cannot be used as the value of a
     attribute or a [=static attribute=].
 </p>
 <pre highlight="idl" class="syntax">
-    interface <i>Ancestor</i> {
-      readonly attribute <i>TheType</i> <i>theIdentifier</i>;
+    interface Ancestor {
+      readonly attribute TheType theIdentifier;
     };
     
-    interface <i>Derived</i> : <i>Ancestor</i> {
-      inherit attribute <i>TheType</i> <i>theIdentifier</i>;
+    interface Derived : Ancestor {
+      inherit attribute TheType theIdentifier;
     };
 </pre>
 
@@ -1515,7 +1515,7 @@ empty sequence <code>[]</code> cannot be used as the value of a
     interface will be stringified to the value of the attribute.  See
     [[#idl-stringifiers]] for details.
 </p>
-            <pre highlight="idl" class="syntax">stringifier attribute DOMString <i>identifier</i>;</pre>
+            <pre highlight="idl" class="syntax">stringifier attribute DOMString identifier;</pre>
 <p id="callback-attribute-exceptions">
     If an implementation attempts to get or set the value of an
     [=attribute=] on a
@@ -1635,18 +1635,18 @@ empty sequence <code>[]</code> cannot be used as the value of a
         are those used to declare that objects implementing the
         [=interface=] will have a method with
         the given [=identifier=]
-              <pre highlight="idl" class="syntax"><i>return-type</i> <i>identifier</i>(<i>arguments…</i>);</pre></li>
+              <pre highlight="idl" class="syntax">return-type identifier(arguments…);</pre></li>
     <li>[=special operations=],
         which are used to declare special behavior on objects
         implementing the interface, such as object indexing and stringification
     <pre highlight="idl" class="syntax">
-        <i>special-keywords…</i> <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-        <i>special-keywords…</i> <i>return-type</i> (<i>arguments…</i>);
+        special-keywords… return-type identifier(arguments…);
+        special-keywords… return-type (arguments…);
     </pre></li>
     <li>[=static operations=],
         which are used to declare operations that are not associated with
         a particular object implementing the interface
-              <pre highlight="idl" class="syntax">static <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);</pre></li>
+              <pre highlight="idl" class="syntax">static return-type identifier(arguments…);</pre></li>
 </ol>
 <p>
     If an operation has an identifier but no <code>static</code>
@@ -1719,7 +1719,7 @@ symbol without needing to escape it.
     not followed by <code>?</code>, then the identifier must
     identify any one of those definitions or a [=dictionary=].
 </p>
-            <pre highlight="idl" class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i> <i>identifier</i>, …);</pre>
+            <pre highlight="idl" class="syntax">return-type identifier(type identifier, type identifier, …);</pre>
 <p>
     The identifier of each argument must not be the same
     as the identifier of another argument in the same operation declaration.
@@ -1731,7 +1731,7 @@ symbol without needing to escape it.
     which can control how a value passed as the argument will be handled in
     language bindings.
 </p>
-            <pre highlight="idl" class="syntax"><i>return-type</i> <i>identifier</i>([<em>extended-attributes</em>] <i>type</i> <i>identifier</i>, [<em>extended-attributes</em>] <i>type</i> <i>identifier</i>, …);</pre>
+            <pre highlight="idl" class="syntax">return-type identifier([extended-attributes] type identifier, [extended-attributes] type identifier, …);</pre>
 
 <div class="example">
     <p>
@@ -1769,8 +1769,8 @@ symbol without needing to escape it.
     is the final argument in the operation’s argument list.
 </p>
 <pre highlight="idl" class="syntax">
-    <i>return-type</i> <i>identifier</i>(<i>type</i><em>...</em> <i>identifier</i>);
-    <i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, <i>type</i><em>...</em> <i>identifier</i>);
+    return-type identifier(type... identifier);
+    return-type identifier(type identifier, type... identifier);
 </pre>
 <p>
     [=Extended attributes=]
@@ -1822,7 +1822,7 @@ symbol without needing to escape it.
     operation must not explicitly be declared to be
     optional if the operation is [=variadic=].
 </p>
-            <pre highlight="idl" class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i>);</pre>
+            <pre highlight="idl" class="syntax">return-type identifier(type identifier, optional type identifier);</pre>
 
 <p>
     Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" for="optional argument" export>default value</dfn>
@@ -1834,7 +1834,7 @@ symbol without needing to escape it.
     The default value is the value to be assumed when the operation is called with the
     corresponding argument omitted.
 </p>
-            <pre highlight="idl" class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
+            <pre highlight="idl" class="syntax">return-type identifier(type identifier, optional type identifier = value);</pre>
 
 Advisement: It is strongly suggested not to use [=default value=]
 of <span class="idlvalue">true</span> for {{boolean}}-typed arguments,
@@ -2209,8 +2209,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     declared with the <code>legacycaller</code> keyword.
 </p>
 <pre highlight="idl" class="syntax">
-    legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>);
-    legacycaller <i>return-type</i> (<i>arguments…</i>);
+    legacycaller return-type identifier(arguments…);
+    legacycaller return-type (arguments…);
 </pre>
 <p>
     If multiple legacy callers are specified on an interface, overload resolution
@@ -2268,7 +2268,7 @@ mailing list before proceeding.
     declared with the <code>stringifier</code> keyword.
 </p>
 <pre highlight="idl" class="syntax">
-    stringifier DOMString <i>identifier</i>();
+    stringifier DOMString identifier();
     stringifier DOMString ();
 </pre>
 <p>
@@ -2314,7 +2314,7 @@ mailing list before proceeding.
     It also must not be placed on
     a [=static attribute=].
 </p>
-              <pre highlight="idl" class="syntax">stringifier attribute DOMString <i>identifier</i>;</pre>
+              <pre highlight="idl" class="syntax">stringifier attribute DOMString identifier;</pre>
 
 <pre class="grammar" id="prod-Stringifier">
     Stringifier :
@@ -2455,8 +2455,8 @@ into an ECMAScript value that can be serialized to JSON by the
         <p>A map with entries corresponding to zero or more attributes from the interface, and optionally
         attributes from an inherited interface:</p>
         <pre highlight="idl" class="syntax">
-            serializer = { <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
-            serializer = { inherit, <i>attribute-identifier</i>, <i>attribute-identifier</i>, … };
+            serializer = { attribute-identifier, attribute-identifier, … };
+            serializer = { inherit, attribute-identifier, attribute-identifier, … };
         </pre>
         <p>Each identifier must be the identifier of an attribute declared
             on the interface.  The identified attributes all must have a
@@ -2540,7 +2540,7 @@ into an ECMAScript value that can be serialized to JSON by the
     </li>
     <li>
         <p>A list of value of zero or more attributes on the interface:</p>
-                  <pre highlight="idl" class="syntax">serializer = [ <i>attribute-identifier</i>, <i>attribute-identifier</i>, … ];</pre>
+                  <pre highlight="idl" class="syntax">serializer = [ attribute-identifier, attribute-identifier, … ];</pre>
         <p>Each identifier must be the identifier of an attribute declared
             on the interface.  The identified attributes all must have a
         [=serializable type=].</p>
@@ -2585,7 +2585,7 @@ into an ECMAScript value that can be serialized to JSON by the
     </li>
     <li>
         <p>A single attribute:</p>
-                  <pre highlight="idl" class="syntax">serializer = <i>attribute-identifier</i>;</pre>
+                  <pre highlight="idl" class="syntax">serializer = attribute-identifier;</pre>
         <p>The identifier must be the identifier of an attribute declared
             on the interface, and this attribute must have a
         [=serializable type=].</p>
@@ -2656,7 +2656,7 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
     Serializers can also be specified using an [=operation=]
     with the <code>serializer</code> keyword:
 </p>
-              <pre highlight="idl" class="syntax">serializer <i>type</i> <i>identifier</i>();</pre>
+              <pre highlight="idl" class="syntax">serializer type identifier();</pre>
 <p>
     Serializers declared with operations must
     be declared to take zero arguments and return a [=serializable type=].
@@ -2822,11 +2822,11 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
     be declared to take two arguments, where the first is an {{unsigned long}}.
 </p>
 <pre highlight="idl" class="syntax">
-    getter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>);
-    setter <i>type</i> <i>identifier</i>(unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
+    getter type identifier(unsigned long identifier);
+    setter type identifier(unsigned long identifier, type identifier);
     
-    getter <i>type</i> (unsigned long <i>identifier</i>);
-    setter <i>type</i> (unsigned long <i>identifier</i>, <i>type</i> <i>identifier</i>);
+    getter type (unsigned long identifier);
+    setter type (unsigned long identifier, type identifier);
 </pre>
 <p>
     The following requirements apply to the definitions of indexed property getters and setters:
@@ -2998,13 +2998,13 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
     be declared to take two arguments, where the first is a {{DOMString}}.
 </p>
 <pre highlight="idl" class="syntax">
-    getter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
-    setter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
-    deleter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);
+    getter type identifier(DOMString identifier);
+    setter type identifier(DOMString identifier, type identifier);
+    deleter type identifier(DOMString identifier);
     
-    getter <i>type</i> (DOMString <i>identifier</i>);
-    setter <i>type</i> (DOMString <i>identifier</i>, <i>type</i> <i>identifier</i>);
-    deleter <i>type</i> (DOMString <i>identifier</i>);
+    getter type (DOMString identifier);
+    setter type (DOMString identifier, type identifier);
+    deleter type (DOMString identifier);
 </pre>
 <p>
     The following requirements apply to the definitions of named property getters, setters and deleters:
@@ -3704,8 +3704,8 @@ are not distinguishable with any other type.
     (matching <emu-nt><a href="#prod-Iterable">Iterable</a></emu-nt>) in the body of the interface.
 </p>
 <pre highlight="idl" class="syntax">
-    iterable&lt;<i>value-type</i>&gt;;
-    iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;
+    iterable&lt;value-type&gt;;
+    iterable&lt;key-type, value-type&gt;;
 </pre>
 <p>
     Objects implementing an interface that is declared to be iterable
@@ -3894,8 +3894,8 @@ actual [=array iterator objects=].
     <span class="sym">"readonly"</span> <emu-nt><a href="#prod-MaplikeRest">MaplikeRest</a></emu-nt>) in the body of the interface.
 </p>
 <pre highlight="idl" class="syntax">
-    readonly maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;
-    maplike&lt;<i>key-type</i>, <i>value-type</i>&gt;;
+    readonly maplike&lt;key-type, value-type&gt;;
+    maplike&lt;key-type, value-type&gt;;
 </pre>
 <p>
     Objects implementing an interface that is declared to be maplike
@@ -3988,8 +3988,8 @@ Issue: Add example.
     <span class="sym">"readonly"</span> <emu-nt><a href="#prod-SetlikeRest">SetlikeRest</a></emu-nt>) in the body of the interface.
 </p>
 <pre highlight="idl" class="syntax">
-    readonly setlike&lt;<i>type</i>&gt;;
-    setlike&lt;<i>type</i>&gt;;
+    readonly setlike&lt;type&gt;;
+    setlike&lt;type&gt;;
 </pre>
 <p>
     Objects implementing an interface that is declared to be setlike
@@ -4083,8 +4083,8 @@ Issue: Add example.
     where keys are strings and values are of a particular type specified in the definition.
 </p>
 <pre highlight="idl" class="syntax">
-    dictionary <i>identifier</i> {
-      <i>dictionary-members…</i>
+    dictionary identifier {
+      dictionary-members…
     };
 </pre>
 <p>
@@ -4105,12 +4105,12 @@ Issue: Add example.
     dictionary |B| that inherits from |A|, and so on.
 </p>
 <pre highlight="idl" class="syntax">
-    dictionary <em>Base</em> {
-      <i>dictionary-members…</i>
+    dictionary Base {
+      dictionary-members…
     };
     
-    dictionary <i>Derived</i> : <em>Base</em> {
-      <i>dictionary-members…</i>
+    dictionary Derived : Base {
+      dictionary-members…
     };
 </pre>
 <p>
@@ -4162,8 +4162,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     identify any one of those definitions or a [=dictionary=].
 </p>
 <pre highlight="idl" class="syntax">
-    dictionary <i>identifier</i> {
-      <i>type</i> <i>identifier</i>;
+    dictionary identifier {
+      type identifier;
     };
 </pre>
 <p>
@@ -4172,8 +4172,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     then that gives the dictionary member its [=default value=].
 </p>
 <pre highlight="idl" class="syntax">
-    dictionary <i>identifier</i> {
-      <i>type</i> <i>identifier</i> = <i>value</i>;
+    dictionary identifier {
+      type identifier = value;
     };
 </pre>
 <p>
@@ -4203,8 +4203,8 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     [=required dictionary member=] must not have a default value.
 </p>
 <pre highlight="idl" class="syntax">
-    dictionary <i>identifier</i> {
-      required <i>type</i> <i>identifier</i>;
+    dictionary identifier {
+      required type identifier;
     };
 </pre>
 <p>
@@ -4236,12 +4236,12 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <span class="idlval
     the dictionary itself.
 </p>
 <pre highlight="idl" class="syntax">
-    dictionary <em>SomeDictionary</em> {
-      <i>dictionary-members…</i>
+    dictionary SomeDictionary {
+      dictionary-members…
     };
     
-    partial dictionary <em>SomeDictionary</em> {
-      <i>dictionary-members…</i>
+    partial dictionary SomeDictionary {
+      dictionary-members…
     };
 </pre>
 
@@ -4721,7 +4721,7 @@ Note: If an error name is not listed here, please file a bug as indicated at the
     [=attribute=] or passed to an
     [=operation=].
 </p>
-          <pre highlight="idl" class="syntax">enum <i>identifier</i> { <i>enumeration-values…</i> };</pre>
+          <pre highlight="idl" class="syntax">enum identifier { enumeration-values… };</pre>
 <p>
     The <dfn id="dfn-enumeration-value" export lt="enumeration value">enumeration values</dfn> are specified
     as a comma-separated list of <emu-nt><a href="#prod-string">string</a></emu-nt> literals.
@@ -4826,7 +4826,7 @@ just “functions” to make it clear that they can be used for both purposes?
     A <dfn id="dfn-callback-function" export>callback function</dfn> is a definition (matching
     <span class="sym">"callback"</span> <emu-nt><a href="#prod-CallbackRest">CallbackRest</a></emu-nt>) used to declare a function type.
 </p>
-          <pre highlight="idl" class="syntax">callback <i>identifier</i> = <i>return-type</i> (<i>arguments…</i>);</pre>
+          <pre highlight="idl" class="syntax">callback identifier = return-type (arguments…);</pre>
 
 Note: See also the similarly named [=callback interfaces=].
 <p>
@@ -4892,7 +4892,7 @@ Note: See also the similarly named [=callback interfaces=].
     by language bindings; it is purely used as a shorthand for referencing
     the type in the IDL.
 </p>
-          <pre highlight="idl" class="syntax">typedef <i>type</i> <i>identifier</i>;</pre>
+          <pre highlight="idl" class="syntax">typedef type identifier;</pre>
 <p>
     The type being given a new name is specified after the <code>typedef</code>
     keyword (matching <emu-nt><a href="#prod-Type">Type</a></emu-nt>), and the
@@ -4950,7 +4950,7 @@ Note: See also the similarly named [=callback interfaces=].
     (identified by the second identifier), including all other interfaces that
     |B| inherits from.
 </p>
-          <pre highlight="idl" class="syntax"><i>identifier-A</i> implements <i>identifier-B</i>;</pre>
+          <pre highlight="idl" class="syntax">identifier-A implements identifier-B;</pre>
 <p>
     Transitively, if objects implementing |B|
     are declared with an [=implements statement=]
