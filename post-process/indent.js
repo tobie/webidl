@@ -1,12 +1,11 @@
 var argv = process.argv;
 
 if (argv.indexOf("-h") > 0 || argv.indexOf("--help") > 0) {
-    console.log("$ node ./indent.js [--remove-p-tags]")
+    console.log("$ node ./indent.js [--markdownify]")
     process.exit();
 }
 
-var REMOVE_P_TAGS = argv.indexOf("--remove-p-tags") > -1 ;
-
+var MARKDOWNIFY = argv.indexOf("--markdownify") > -1 ;
 function printPre(buf, ws) {
     if (buf[0] == '<pre class="metadata">' || buf[0] == '<pre class="anchors">' || buf[0] == '<pre class="link-defaults">') {
         return buf.join("\n")
@@ -38,116 +37,182 @@ function printPre(buf, ws) {
     });
     output.push(closing_tag);
     return output.map(line => ws + line).join("\n")
-} 
-
+}
+var currentTag = null;
 var tags = [];
 var count = 0;
 var p = false;
-var p_has_attribute;
 var pre = false;
 var pre_buffer = [];
-var li = false;
-var dd = false;
-var blockquote = false;
+var dt = false;
+var dt_buffer = [];
 var intro = true;
-var penultimate_line = null;
-var antepenultimate_line = null;
+
 var byline = require('byline');
 process.stdin.setEncoding('utf8');
 var reader = byline(process.stdin, { keepEmptyLines: true });
 reader.on("data", function(line) {
+    tags.forEach(tag => tag.line++);
     var raw_line = line; 
     count++;
     var opened = [], 
     closed = [],
     m,
-    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead)(\s[a-z0-9-]+="(?:[^\"]|\\")*")*(\/?)>/g;
+    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead|h[1-6])(\s[a-z0-9-]+(?:="(?:[^\"]|\\")*")?)*>/g;
     while (m = patt.exec(line)) {
         if (m && !m[1] && m[2]) {
-            tags.push(m[2]);
+            currentTag = {
+                name: m[2],
+                line: 0,
+                hasAttributes: !!m[3]
+            };
+            tags.push(currentTag);
             opened.push(m[2]);
             if (m[2] == "p") {
                 p = true;
-                p_has_attribute = !!m[3];
             }
             if (m[2] == "pre") {
                 pre = true;
                 pre_buffer.length = 0;
                 intro = false; // first metadata block
             }
-            if (m[2] == "blockquote") blockquote = true;
-            if (m[2] == "li") li = true;
-            if (m[2] == "dd") dd = true;
+            if (m[2] == "dt") dt = true;
         }
-        if (m && (m[1] || m[4]) && m[2]) {
+        if (m && m[1] && m[2]) {
             closed.push(m[2]);
-            var last = tags.pop();
-            if (last != m[2]) throw [count, JSON.stringify(last), JSON.stringify(m[2]), line].join(" ");
+            currentTag = tags.pop();
+            currentTag.line = -1;
+            if (currentTag.name != m[2]) throw [count, JSON.stringify(currentTag), JSON.stringify(m[2]), line].join(" ");
         }
     }
-    var length = tags.length - 1 // account for html tag we want to remove
-    var d = opened.length - closed.length
-    var ws, TAB_SIZE = 4; 
-    if (d > 0) {
-        ws = times((length - d) * TAB_SIZE);
-    } else if (d == 0) {
-        ws = times(length * TAB_SIZE);
-    } else if (d < 0) {
-        ws = times(length * TAB_SIZE);
-    }
-    
+
     if (intro || closed[0] == "html") {
         // don't print, we're trimming <html> tags
     } else if (pre) {
         // buffer it
         pre_buffer.push(line);
     } else {
-        if (p) {
-            line = line.trim();
+        line = line.trim();
+        if (currentTag.name == "p") {
             if (line) { // avoid empty lines
-                if (REMOVE_P_TAGS && !p_has_attribute) {
-                    if (line != "<p>" && line != "</p>") {
-                        console.log(ws.replace(/^    /, "") + line);                            
-                    }
-                } else {
-                    console.log(ws + line);
-                }
+                pad(line);
+            }
+        } else if (currentTag.name == "dt") {
+            if (line != "<dt>" && line != "</dt>") {
+                dt_buffer.push(line)
             }
         } else {
-            console.log(ws + line.trim());
+            pad(line);
         }
     }
 
     if (closed.indexOf("pre") > -1) {
         if (pre_buffer.length == 1) {
-            console.log(ws + pre_buffer[0].trim());
+            console.log(parentPad(tags) + pre_buffer[0].trim());
         } else {
-            console.log(printPre(pre_buffer, ws));
+            console.log(printPre(pre_buffer, parentPad(tags)));
         }
         pre_buffer.length = 0;
         pre = false;
     }
-    if (closed.indexOf("p") > -1) {
-        p = false;
-    }
-    if (closed.indexOf("blockquote") > -1) {
-        blockquote = false;
-    }
     
-    if (closed.indexOf("li") > -1) {
-        li = false;
-    }
-    
-    if (closed.indexOf("li") > -1) {
-        dd = false;
+    if (closed.indexOf("dt") > -1) {
+        if (MARKDOWNIFY) {
+            console.log(parentPad(tags) + " :  " + dt_buffer.join(" "));
+        } else {
+            console.log(parentPad(tags) + "<dt>" + dt_buffer.join(" ") + "</dt>");
+        }
+        dt_buffer.length = 0;
+        dt = false;
     }
 });
 
-function times(n, what) {
-    var output = "";
-    n = Math.max(0, n);
-    while (n--) {
-        output += what || " ";
+function pad(line) {
+    var output;
+    
+    if (currentTag.line == 0) {
+        if (!shouldSkipTagLines(currentTag)) {
+            output = parentPad(tags.slice(0, -1));
+            if (shouldPrintTags(currentTag)) {
+                output += line;
+            }
+            console.log(output)
+        }
+    } else if (currentTag.line == -1) {
+        if (!shouldSkipTagLines(currentTag)) {
+            output = parentPad(tags.slice(0));
+            if (shouldPrintTags(currentTag)) {
+                output += line;
+            }
+            console.log(output)
+        }
+    } else {
+        console.log(parentPad(tags.slice(0)) + line);
     }
+}
+
+function shouldPrintTags(tag) {
+    if (MARKDOWNIFY && /^(dl|dt|dd|ul|ol|li|p)$/.test(tag.name) && !tag.hasAttributes) {
+        return false;
+    }
+    return true;
+}
+
+function shouldSkipTagLines(tag) {
+    // nested lists
+    if (MARKDOWNIFY &&
+        /^(dl|ul|ol)$/.test(tag.name) &&
+        tags.filter(tag => tag.name == "dl" || tag.name == "li").length > 0 && 
+        !tag.hasAttributes) {
+        return true;
+    }
+    
+    if (MARKDOWNIFY &&
+        /^(li|dd)$/.test(tag.name) &&
+        !tag.hasAttributes) {
+        return true;
+    }
+    
+    return false;
+}
+
+function parentPad(tags) {
+    var output = ""
+    tags.forEach((tag, i) => {
+        switch(tag.name) {
+            case "html":
+                output += "";
+                break;
+            case "p": 
+            case "ul": 
+            case "ul": 
+            case "dl": 
+                output += (tag.hasAttributes || !MARKDOWNIFY) ? "    " : "";
+                break;
+            case "dt":
+                if (MARKDOWNIFY) {
+                    output += " :  ";
+                } else {
+                    output += "    ";
+                }
+                break;
+            case "dd":
+                if (tag.line == 1 && MARKDOWNIFY) {
+                    output += " :: ";
+                } else {
+                    output += "    ";
+                }
+                break;
+            case "li":
+                if (tag.line == 1 && MARKDOWNIFY) {
+                    output += (tags[i - 1].name == "ol" ? "1.  " : "*   ");
+                } else {
+                    output += "    ";
+                }
+                break;
+            default:
+                output += "    " ;
+        }
+    });
     return output;
 }
