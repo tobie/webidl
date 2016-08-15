@@ -2,12 +2,15 @@ all : index.html
 
 index.html : index.bs
 	bikeshed spec index.bs
-	node "./check-anchors.js"
+	node ./check-anchors.js
 
-index.bs : index.xml WebIDL-bs.xsl
+index-pre.bs : index.xml WebIDL-bs.xsl
 	java  -jar saxon9he.jar -warnings:silent -s:index.xml -xsl:WebIDL-bs.xsl -o:index-pre.bs
-	node "./post-process.js" > index.bs
-
+	
+index.bs : index-pre.bs
+	(node ./post-process/empty-tags.js < index-pre.bs) | node ./post-process/clean-attr.js |  node ./post-process/indent.js > index.bs
+	cat ./post-process/scripts.html >> index.bs
+		
 index.ids : index.xml
 	./xref.pl -d index.xml http://heycam.github.io/webidl/ > index.ids
 

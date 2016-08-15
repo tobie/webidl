@@ -1,7 +1,3 @@
-var REMOVE_P_TAGS = false;
-
-var Reader = require('line-by-line');
-
 function printPre(buf, ws) {
     if (buf[0] == '<pre class="metadata">' || buf[0] == '<pre class="anchors">' || buf[0] == '<pre class="link-defaults">') {
         return buf.join("\n")
@@ -45,14 +41,19 @@ var li = false;
 var dd = false;
 var blockquote = false;
 var intro = true;
-var reader = new Reader('index-pre.bs');
-reader.on("line", function(line) {
+var penultimate_line = null;
+var antepenultimate_line = null;
+var REMOVE_P_TAGS = false
+var byline = require('byline');
+process.stdin.setEncoding('utf8');
+var reader = byline(process.stdin, { keepEmptyLines: true });
+reader.on("data", function(line) {
+    var raw_line = line; 
     count++;
-    //console.log(tags)
     var opened = [], 
     closed = [],
     m,
-    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead)(?:\s[a-z0-9-]+="(?:[^\"]|\\")*")*(\/?)>/g;
+    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead)(\s[a-z0-9-]+="(?:[^\"]|\\")*")*(\/?)>/g;
     while (m = patt.exec(line)) {
         if (m && !m[1] && m[2]) {
             tags.push(m[2]);
@@ -70,7 +71,7 @@ reader.on("line", function(line) {
             if (m[2] == "li") li = true;
             if (m[2] == "dd") dd = true;
         }
-        if (m && (m[1] || m[3]) && m[2]) {
+        if (m && (m[1] || m[4]) && m[2]) {
             closed.push(m[2]);
             var last = tags.pop();
             if (last != m[2]) throw [count, JSON.stringify(last), JSON.stringify(m[2]), line].join(" ");
@@ -87,14 +88,6 @@ reader.on("line", function(line) {
         ws = times(length * TAB_SIZE);
     }
     
-    // Cleanup empty string tags (e.g. <dfn export=""> => <dfn export>).
-    line = line.replace(/<[a-z1-6]+\s+[^>]+>/g, function(tag) {
-        return tag.replace(/([a-z-]+)=""/g, "$1")
-    });
-    
-    // <div /> => <div></div>
-    line = line.replace(/<div(\s+[^\/]+)\/>/, "<div$1></div>")
-    
     if (intro || closed[0] == "html") {
         // don't print, we're trimming <html> tags
     } else if (pre) {
@@ -105,12 +98,19 @@ reader.on("line", function(line) {
             line = line.trim();
             if (line) { // avoid empty lines
                 if (REMOVE_P_TAGS && !p_has_attribute) {
-                    if (line == "<p>" || line == "</p>") {
-                        // don't print
+                    if (line == "<p>") {
+                        if (/\S+/.test(penultimate_line)) console.log("");
+                    } else if (line == "</p>") {
+                        console.log("");
+                        if (/\S+/.test(penultimate_line)) console.log("");
                     } else {
                         // watch out for inline tags
-                        line = line.replace(/<\/?p>/, "");
-                        console.log(ws.replace(/^    /, "") + line);
+                        if (/<\/?p>/.test(line)) {
+                            line = line.replace(/<\/?p>/g, "\n");
+                            console.log(ws.replace(/^    /, "") + line);                            
+                        } else {
+                            console.log(ws.replace(/^    /, "") + line);                            
+                        }
                     }
                 } else {
                     console.log(ws + line);
@@ -123,19 +123,12 @@ reader.on("line", function(line) {
             console.log(ws + line.trim());
         }
     }
-    
-    
-    //if (opened.length || closed.length) {
-    //console.log(times(tags.length * 2) + "opened  ", JSON.stringify(opened))
-    //console.log(times(tags.length * 2) + "closed", JSON.stringify(closed))
-    //console.log(JSON.stringify(tags))
-    //}
+
     if (closed.indexOf("pre") > -1) {
         if (pre_buffer.length == 1) {
             console.log(pre_buffer[0]);
         } else {
             console.log(printPre(pre_buffer, ws));
-            // console.log(pre_buffer.join("\n"));
         }
         pre_buffer.length = 0;
         pre = false;
@@ -154,28 +147,6 @@ reader.on("line", function(line) {
     if (closed.indexOf("li") > -1) {
         dd = false;
     }
-})
-reader.on("end", function(line) {
-    console.log('')
-    console.log('<script>');
-    console.log('    (function() {');
-    console.log('        function wrap(s) { return "<pre class=grammar>" + s + "</pre>"; }');
-    console.log('        var output = "";');
-    console.log('        [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {');
-    console.log('            var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {');
-    console.log('                if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }');
-    console.log('                if (m == ":") { return "::"; }');
-    console.log('                if (document.querySelector("#prod-" + m)) { return "<emu-nt><a href=\\"#prod-" + m + "\\">" + m + "</a></emu-nt>"; }');
-    console.log('                return "<emu-nt>" + m + "</emu-nt>"');
-    console.log('            });');
-    console.log('            pre.innerHTML = html;');
-    console.log('            [].forEach.call(document.querySelectorAll("div[data-fill-with=\\"grammar-" + pre.id.replace("prod-", "") + "\\"]"), div => div.innerHTML = wrap(html))');
-    console.log('            if (!(/\\bno-index\\b/).test(pre.className)) { output += html + "\\n"; }');
-    console.log('        });');
-    console.log('        document.querySelector("div[data-fill-with=\\"grammar-index\\"]").innerHTML = wrap(output);');
-    console.log('    })();');
-    console.log('</script>');
-    console.log('')
 });
 
 function times(n, what) {
