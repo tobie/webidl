@@ -1,3 +1,12 @@
+var argv = process.argv;
+
+if (argv.indexOf("-h") > 0 || argv.indexOf("--help") > 0) {
+    console.log("$ node ./indent.js [--remove-p-tags]")
+    process.exit();
+}
+
+var REMOVE_P_TAGS = argv.indexOf("--remove-p-tags") > -1 ;
+
 function printPre(buf, ws) {
     if (buf[0] == '<pre class="metadata">' || buf[0] == '<pre class="anchors">' || buf[0] == '<pre class="link-defaults">') {
         return buf.join("\n")
@@ -43,7 +52,6 @@ var blockquote = false;
 var intro = true;
 var penultimate_line = null;
 var antepenultimate_line = null;
-var REMOVE_P_TAGS = false
 var byline = require('byline');
 process.stdin.setEncoding('utf8');
 var reader = byline(process.stdin, { keepEmptyLines: true });
@@ -98,28 +106,14 @@ reader.on("data", function(line) {
             line = line.trim();
             if (line) { // avoid empty lines
                 if (REMOVE_P_TAGS && !p_has_attribute) {
-                    if (line == "<p>") {
-                        if (/\S+/.test(penultimate_line)) console.log("");
-                    } else if (line == "</p>") {
-                        console.log("");
-                        if (/\S+/.test(penultimate_line)) console.log("");
-                    } else {
-                        // watch out for inline tags
-                        if (/<\/?p>/.test(line)) {
-                            line = line.replace(/<\/?p>/g, "\n");
-                            console.log(ws.replace(/^    /, "") + line);                            
-                        } else {
-                            console.log(ws.replace(/^    /, "") + line);                            
-                        }
+                    if (line != "<p>" && line != "</p>") {
+                        console.log(ws.replace(/^    /, "") + line);                            
                     }
                 } else {
                     console.log(ws + line);
                 }
             }
         } else {
-            if (/\S+\s*<\/(li|dd)>\s*$/.test(line) && !(/^\s*<(li|dd)/).test(line)) {
-                ws += "    ";
-            }
             console.log(ws + line.trim());
         }
     }
