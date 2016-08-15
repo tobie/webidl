@@ -126,7 +126,7 @@ reader.on("data", function(line) {
 
     if (closed.indexOf("pre") > -1) {
         if (pre_buffer.length == 1) {
-            console.log(pre_buffer[0]);
+            console.log(ws + pre_buffer[0].trim());
         } else {
             console.log(printPre(pre_buffer, ws));
         }

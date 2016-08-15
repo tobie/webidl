@@ -2056,7 +2056,8 @@ dictionary identifier {
 <pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type operation<span class="o">-</span>identifier(arguments…);
 </pre>
    </ul>
-   <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.</p>
+   <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a</p>
+   <p><a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.</p>
    <p> For all of these constructs, the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-1">identifier</a> is the value of the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token with any leading <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed. </p>
    <p class="note" role="note">Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
 like a reserved word so that, for example, an interface named “interface” can be
@@ -2486,7 +2487,8 @@ this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.o
     of another <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-2">interface member</a> defined on the same interface.
     The identifier also must not
     be “length”, “name” or “prototype”. </p>
-   <p class="note" role="note">Note: These three names are the names of properties that exist on all <emu-val>Function</emu-val> objects.</p>
+   <p class="note" role="note">Note: These three names are the names of properties that exist on all</p>
+   <p><emu-val>Function</emu-val> objects.</p>
    <p> The type of a constant (matching <emu-nt><a href="#prod-ConstType">ConstType</a></emu-nt>)
     must not be any type other than
     a <a data-link-type="dfn" href="#dfn-primitive-type" id="ref-for-dfn-primitive-type-1">primitive type</a> or a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-1">nullable</a> primitive type.
@@ -3288,7 +3290,8 @@ interface Student {
    <p> How the <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-1">serialization behavior</a> is made available on an object in a language binding, and how exactly the abstract <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-3">serialized value</a> is converted into
     an appropriate concrete value, is language binding specific. </p>
    <p class="note" role="note">Note: In the ECMAScript language binding, <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-2">serialization behavior</a> is exposed as a <code>toJSON</code> method which returns the <a data-link-type="dfn" href="#dfn-serialized-value" id="ref-for-dfn-serialized-value-4">serialized value</a> converted
-into an ECMAScript value that can be serialized to JSON by the <code>JSON.stringify</code> function.  See <a href="#es-serializer">§5.6.7.2 Serializers</a> for details.</p>
+into an ECMAScript value that can be serialized to JSON by the</p>
+   <p><code>JSON.stringify</code> function.  See <a href="#es-serializer">§5.6.7.2 Serializers</a> for details.</p>
    <p> <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-3">Serialization behavior</a> can also be specified directly in IDL, rather than separately as prose.
     This is done by following the <code>serializer</code> keyword with
     a <span class="char">U+003D EQUALS SIGN ("=")</span> character and
@@ -3427,7 +3430,9 @@ serializer <span class="o">=</span> { inherit, attribute };
    <p class="note" role="note">Note: Entries are added to maps in a particular order so that in the ECMAScript language binding
 it is defined what order properties are added to objects.  This is because this order
 can influence the serialization that <code>JSON.stringify</code> can produce.</p>
-   <p>The list of <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="serializable type" id="dfn-serializable-type">serializable types</dfn> and how they are <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="converted to a serialized value|converted to serialized values" id="dfn-convert-to-serialized-value">converted to serialized values</dfn> is as follows:</p>
+   <p>The list of <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="serializable type" id="dfn-serializable-type">serializable types</dfn> and how they are </p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="converted to a serialized value|converted to serialized values" id="dfn-convert-to-serialized-value">converted to serialized values</dfn> is as follows:</p>
+   <p></p>
    <dl class="switch">
     <dt><code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-1">long long</a></code>
     <dd>converted by choosing the closest equivalent <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-3">double</a></code> value
@@ -3631,8 +3636,8 @@ setter type (unsigned <span class="nb">long</span> identifier, type identifier);
 <span class="nx">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>         <span class="c1">// Evaluates to undefined, since there is no property "5".</span>
 </pre>
    </div>
-   <div class="example" id="example-e382266c">
-    <a class="self-link" href="#example-e382266c"></a> 
+   <div class="example" id="example-84e2e76b">
+    <a class="self-link" href="#example-84e2e76b"></a> 
     <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-23">IDL fragment</a> defines an interface <code class="idl">OrderedMap</code> which allows
         retrieving and setting values by name or by index number: </p>
 <pre class="idl-example">interface OrderedMap {
@@ -4254,8 +4259,8 @@ actual <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-i
    <p> Interfaces with iterable declarations must not
     have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a> named “entries”, “keys” or “values”,
     or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-3">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-2">consequential</a> interfaces that have interface members with these names. </p>
-   <div class="example" id="example-7f097f36">
-    <a class="self-link" href="#example-7f097f36"></a> 
+   <div class="example" id="example-42a9319d">
+    <a class="self-link" href="#example-42a9319d"></a> 
     <p>Consider the following interface <code class="idl">SessionManager</code>, which allows access to
     a number of <code class="idl">Session</code> objects:</p>
 <pre class="idl-example">interface SessionManager {
@@ -4336,7 +4341,8 @@ maplike<span class="o">&lt;</span>key<span class="o">-</span>type, value<span cl
     appropriate for the language binding.  If the <code>readonly</code> keyword is not used, then it also supports an API for modifying
     the map entries. </p>
    <p class="note" role="note">Note: In the ECMAScript language binding, the API for interacting
-with the map entries is similar to that available on ECMAScript <emu-val>Map</emu-val> objects.  If the <code>readonly</code> keyword is used, this includes “entries”, “forEach”, “get”, “has”,
+with the map entries is similar to that available on ECMAScript</p>
+   <p><emu-val>Map</emu-val> objects.  If the <code>readonly</code> keyword is used, this includes “entries”, “forEach”, “get”, “has”,
 “keys”, “values”, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
 For read–write maplikes, it also includes “clear”, “delete” and
 “set” methods.</p>
@@ -4381,7 +4387,8 @@ setlike<span class="o">&lt;</span>type<span class="o">></span>;
     appropriate for the language binding.  If the <code>readonly</code> keyword is not used, then it also supports an API for modifying
     the set entries. </p>
    <p class="note" role="note">Note: In the ECMAScript language binding, the API for interacting
-with the set entries is similar to that available on ECMAScript <emu-val>Set</emu-val> objects.  If the <code>readonly</code> keyword is used, this includes “entries”, “forEach”, “has”,
+with the set entries is similar to that available on ECMAScript</p>
+   <p><emu-val>Set</emu-val> objects.  If the <code>readonly</code> keyword is used, this includes “entries”, “forEach”, “has”,
 “keys”, “values”, <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> methods and a “size” getter.
 For read–write setlikes, it also includes “add”, “clear”, and “delete” methods.</p>
    <p> Setlike interfaces must not
@@ -4846,10 +4853,11 @@ entails in the ECMAScript language binding.</p>
 and that multiple words be separated using dashes or not be
 separated at all, unless there is a specific reason to use another
 value naming scheme.  For example, an enumeration value that
-indicates an object should be created could be named <code>"createobject"</code> or <code>'create-object"</code>.
+indicates an object should be created could be named</strong> 
+   <p><code>"createobject"</code> or <code>'create-object"</code>.
 Consider related uses of enumeration values when deciding whether
 to dash-separate or not separate enumeration value words so that
-similar APIs are consistent.</strong> 
+similar APIs are consistent.</p>
    <p> The behavior when a string value that is not one a valid enumeration value
     is used when assigning to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-17">attribute</a>,
     or passed as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-24">operation</a> argument,
@@ -5292,7 +5300,8 @@ represent more closely matches an ECMAScript <emu-val>Number</emu-val>.</strong>
     special casing that sequence type in various situations where a
     string is required. </p>
    <p class="note" role="note">Note: Note also that <emu-val>null</emu-val> is not a value of type <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-22">DOMString</a></code>.
-To allow <emu-val>null</emu-val>, a <a href="#idl-nullable-type">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-23">DOMString</a></code>,
+To allow <emu-val>null</emu-val>, a</p>
+   <p><a href="#idl-nullable-type">nullable</a> <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-23">DOMString</a></code>,
 written as <code>DOMString?</code> in IDL, needs to be used.</p>
    <p> Nothing in this specification requires a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-24">DOMString</a></code> value to be a valid UTF-16 string.  For example, a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-25">DOMString</a></code> value might include unmatched surrogate pair characters.  However, authors
     of specifications using Web IDL might want to obtain a sequence of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> given a particular sequence of <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-2">code units</a>.
@@ -5352,8 +5361,9 @@ written as <code>DOMString?</code> in IDL, needs to be used.</p>
 that use bytes and strings interchangably, such as HTTP.  In general,
 strings should be represented with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-30">DOMString</a></code> values, even if it is expected
 that values of the string will always be in ASCII or some
-8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-typedarray-objects">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
-8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a></strong> 
+8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>,</strong> 
+   <p><a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-typedarray-objects">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
+8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a></p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.17" data-lt="USVString" id="idl-USVString"><span class="secno">4.10.17. </span><span class="content">USVString</span><span id="dom-USVString"></span></h4>
    <p> The <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-5">USVString</a></code> type
     corresponds to the set of all possible sequences of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a>,
@@ -5512,7 +5522,10 @@ sequence is used.</p>
      </ol>
     <li>Return <var>S</var>.
    </ol>
-   <p class="note" role="note">Note: For example, the <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-6">flattened member types</a> of the <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-13">union type</a> <code>(Node or (sequence&lt;long> or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double> or NodeList)>)</code> are the six types <code>Node</code>, <code>sequence&lt;long></code>, <code>Event</code>, <code>XMLHttpRequest</code>, <code>DOMString</code> and <code>sequence&lt;(sequence&lt;double> or NodeList)></code>.</p>
+   <p class="note" role="note">Note: For example, the <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-6">flattened member types</a> of the <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-13">union type</a></p>
+   <p><code>(Node or (sequence&lt;long> or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double> or NodeList)>)</code> are the six types <code>Node</code>, <code>sequence&lt;long></code>, <code>Event</code>,</p>
+   <p><code>XMLHttpRequest</code>, <code>DOMString</code> and</p>
+   <p><code>sequence&lt;(sequence&lt;double> or NodeList)></code>.</p>
    <p> The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-number-of-nullable-member-types">number of nullable member types</dfn> of a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-14">union type</a> is an integer
     determined as follows: </p>
    <ol class="algorithm">
@@ -6605,8 +6618,8 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
       <li>Set <var>i</var> to <var>i</var> + 1.
      </ol>
    </ol>
-   <div class="example" id="example-e77ec674">
-    <a class="self-link" href="#example-e77ec674"></a> 
+   <div class="example" id="example-44d99af6">
+    <a class="self-link" href="#example-44d99af6"></a> 
     <p> The following <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-55">interface</a> defines
         an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-43">attribute</a> of a sequence
         type as well as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-48">operation</a> with an argument of a sequence type. </p>
@@ -6646,7 +6659,6 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
         
 <span class="c1">// This evaluates to false, since a new Array object is returned each call.</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">getSupportedImageCodecs</span><span class="p">()</span> <span class="o">==</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getSupportedImageCodecs</span><span class="p">();</span>
-        
         
 <span class="c1">// An Array of Numbers...</span>
 <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mf">62.5</span><span class="p">];</span>
@@ -7515,7 +7527,8 @@ interface ImmutableItemList {
     It must not be used on a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-7">static attribute</a>. </p>
     <strong class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-5">LenientThis</a></code>]
 unless required for compatibility reasons.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
+wish to use this feature are strongly advised to discuss this on the</strong> 
+   <p><a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</p>
    <p> See the <a href="#es-attributes">Attributes</a> section for how
     [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-6">LenientThis</a></code>]
     is to be implemented. </p>
@@ -7626,7 +7639,8 @@ interface HTMLAudioElement : HTMLMediaElement {
 should not be used on interfaces that are not
 solely used as <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-4">supplemental</a> interfaces,
 unless there are clear Web compatibility reasons for doing so.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
+wish to use this feature are strongly advised to discuss this on the</strong> 
+   <p><a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</p>
    <p> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-6">NoInterfaceObject</a></code>] extended attribute
     must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-11">take no arguments</a>. </p>
    <p> If the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-7">NoInterfaceObject</a></code>] extended attribute
@@ -7695,8 +7709,8 @@ interface Query {
     the <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-8">named property getter</a>. </p>
    <p> See <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of
     [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-7">OverrideBuiltins</a></code>] entails. </p>
-   <div class="example" id="example-e3f1ab57">
-    <a class="self-link" href="#example-e3f1ab57"></a> 
+   <div class="example" id="example-ae74cfdc">
+    <a class="self-link" href="#example-ae74cfdc"></a> 
     <p> The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-38">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-74">interfaces</a>,
         one that has a <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-9">named property getter</a> and one that does not. </p>
 <pre class="idl-example">interface StringMap {
@@ -7726,7 +7740,6 @@ interface StringMap2 {
         
 <span class="c1">// This fetches the "toString" property from the object’s prototype chain.</span>
 <span class="nx">map1</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
-        
         
 <span class="c1">// Obtain an instance of StringMap2.  Assume that it also has "abc", "length"</span>
 <span class="c1">// and "toString" as supported property names.</span>
@@ -7953,11 +7966,12 @@ ECMAScript global environment.</p>
     <strong class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-6">TreatNonObjectAsNull</a></code>]
 unless required to specify the behavior of legacy APIs or for consistency with these
 APIs.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.  At the time of writing, the only known
+wish to use this feature are strongly advised to discuss this on the</strong> 
+   <p><a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.  At the time of writing, the only known
 valid use of [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-7">TreatNonObjectAsNull</a></code>]
 is for the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-24">callback functions</a> used as the type
 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a> (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 6.1.6.1)
-such as <code>onclick</code> and <code>onerror</code>.</strong> 
+such as <code>onclick</code> and <code>onerror</code>.</p>
    <p> See <a href="#es-nullable-type">§5.2.24 Nullable types — T?</a> for the specific requirements that the use of
     [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-8">TreatNonObjectAsNull</a></code>] entails. </p>
    <div class="example" id="example-e23213c7">
@@ -10524,7 +10538,8 @@ C implements A;
 various native <emu-val>Error</emu-val> objects that the
 ECMAScript specification defines, apart from responding differently
 to being passed to Object.prototype.toString and it having a “code” property.
-If an implementation places non-standard properties on native <emu-val>Error</emu-val> objects, exposing for example
+If an implementation places non-standard properties on native</p>
+   <p><emu-val>Error</emu-val> objects, exposing for example
 stack traces or error line numbers, then these ought to be exposed
 on exception objects too.</p>
    <h3 class="heading settled" data-level="5.13" id="es-creating-throwing-exceptions"><span class="secno">5.13. </span><span class="content">Creating and throwing exceptions</span><a class="self-link" href="#es-creating-throwing-exceptions"></a></h3>
@@ -10872,7 +10887,10 @@ interface ExceptionThrower {
    <p> The following LL(1) grammar, starting with <emu-nt><a href="#prod-Definitions">Definitions</a></emu-nt>,
     matches an <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-49">IDL fragment</a>: </p>
    <div data-fill-with="grammar-index"></div>
-   <p class="note" role="note">Note: The <emu-nt><a href="#prod-Other">Other</a></emu-nt> non-terminal matches any single terminal symbol except for <span class="sym">"("</span>, <span class="sym">")"</span>, <span class="sym">"["</span>, <span class="sym">"]"</span>, <span class="sym">"{"</span>, <span class="sym">"}"</span> and <span class="sym">","</span>.</p>
+   <p class="note" role="note">Note: The <emu-nt><a href="#prod-Other">Other</a></emu-nt> non-terminal matches any single terminal symbol except for</p>
+   <p><span class="sym">"("</span>, <span class="sym">")"</span>,</p>
+   <p><span class="sym">"["</span>, <span class="sym">"]"</span>,</p>
+   <p><span class="sym">"{"</span>, <span class="sym">"}"</span> and <span class="sym">","</span>.</p>
    <p> While the <emu-nt><a href="#prod-ExtendedAttribute">ExtendedAttribute</a></emu-nt> non-terminal matches any non-empty sequence of terminal symbols (as long as any
     parentheses, square brackets or braces are balanced, and the <span class="sym">","</span> token appears only within those balanced brackets),
     only a subset of those

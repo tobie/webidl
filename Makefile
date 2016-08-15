@@ -8,7 +8,12 @@ index-pre.bs : index.xml WebIDL-bs.xsl
 	java  -jar saxon9he.jar -warnings:silent -s:index.xml -xsl:WebIDL-bs.xsl -o:index-pre.bs
 	
 index.bs : index-pre.bs
-	(node ./post-process/empty-tags.js < index-pre.bs) | node ./post-process/clean-attr.js |  node ./post-process/indent.js > index.bs
+	(node ./post-process/empty-tags.js < index-pre.bs) \
+	| node ./post-process/clean-attr.js \
+	| node ./post-process/indent.js \
+	| node ./post-process/line-breaks.js \
+	| node ./post-process/air.js \
+	> index.bs
 	cat ./post-process/scripts.html >> index.bs
 		
 index.ids : index.xml
