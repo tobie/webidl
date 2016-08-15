@@ -5,7 +5,7 @@ var reader = byline(process.stdin, { keepEmptyLines: true });
 reader.on("data", function(line) {
     if (/^<h[1-6]/.test(line)) {
         console.log("");
-    } else if (/^<[a-z]/.test(line) && /\S/.test(previous_line)) {
+    } else if (/^<(div|pre|ol|ul|dl|blockquote|p|table)/.test(line) && /\S/.test(previous_line)) {
         console.log("");
     } 
     console.log(line);

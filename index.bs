@@ -370,7 +370,9 @@ overflow: auto;
 </p>
 
 <dl>
-    <dt><dfn id="dfn-conforming-set-of-idl-fragments" export>conforming set of IDL fragments</dfn></dt>
+    <dt>
+        <dfn id="dfn-conforming-set-of-idl-fragments" export>conforming set of IDL fragments</dfn>
+    </dt>
     <dd>
         <p>
             A set of [=IDL fragments=] is considered
@@ -380,7 +382,9 @@ overflow: auto;
             criteria in this specification that apply to IDL fragments.
         </p>
     </dd>
-    <dt><dfn id="dfn-conforming-implementation" export>conforming implementation</dfn></dt>
+    <dt>
+        <dfn id="dfn-conforming-implementation" export>conforming implementation</dfn>
+    </dt>
     <dd>
         <p>
             A user agent is considered to be a
@@ -391,7 +395,9 @@ overflow: auto;
             bindings that the user agent supports.
         </p>
     </dd>
-    <dt><dfn id="dfn-conforming-ecmascript-implementation" export>conforming ECMAScript implementation</dfn></dt>
+    <dt>
+        <dfn id="dfn-conforming-ecmascript-implementation" export>conforming ECMAScript implementation</dfn>
+    </dt>
     <dd>
         <p>
             A user agent is considered to be a
@@ -604,7 +610,6 @@ overflow: auto;
 </ul>
 
 Note: Operations can have no identifier when they are being used to declare a
-
 <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
 
 <p>
@@ -1275,7 +1280,6 @@ mailing list before proceeding.
 </p>
 
 Note: These three names are the names of properties that exist on all
-
 <emu-val>Function</emu-val> objects.
 
 <p>
@@ -1326,16 +1330,24 @@ empty sequence <code>[]</code> cannot be used as the value of a
     <li>
         Let |base| be the base of the number based on the characters that follow the optional leading <span class="char">U+002D HYPHEN-MINUS ("-")</span> character:
         <dl class="switch">
-            <dt><span class="char">U+0030 DIGIT ZERO ("0")</span>, <span class="char">U+0058 LATIN CAPITAL LETTER X ("X")</span></dt>
-            <dt><span class="char">U+0030 DIGIT ZERO ("0")</span>, <span class="char">U+0078 LATIN SMALL LETTER X ("x")</span></dt>
+            <dt>
+                <span class="char">U+0030 DIGIT ZERO ("0")</span>, <span class="char">U+0058 LATIN CAPITAL LETTER X ("X")</span>
+            </dt>
+            <dt>
+                <span class="char">U+0030 DIGIT ZERO ("0")</span>, <span class="char">U+0078 LATIN SMALL LETTER X ("x")</span>
+            </dt>
             <dd>
                 The base is 16.
             </dd>
-            <dt><span class="char">U+0030 DIGIT ZERO ("0")</span></dt>
+            <dt>
+                <span class="char">U+0030 DIGIT ZERO ("0")</span>
+            </dt>
             <dd>
                 The base is 8.
             </dd>
-            <dt><span class="char">Otherwise</span></dt>
+            <dt>
+                <span class="char">Otherwise</span>
+            </dt>
             <dd>
                 The base is 10.
             </dd>
@@ -1399,27 +1411,39 @@ empty sequence <code>[]</code> cannot be used as the value of a
 </p>
 
 <dl class="switch">
-    <dt>Type {{unrestricted float}}, constant value <code>Infinity</code></dt>
+    <dt>
+        Type {{unrestricted float}}, constant value <code>Infinity</code>
+    </dt>
     <dd>
         The value is the IEEE 754 single-precision positive infinity value.
     </dd>
-    <dt>Type {{unrestricted double}}, constant value <code>Infinity</code></dt>
+    <dt>
+        Type {{unrestricted double}}, constant value <code>Infinity</code>
+    </dt>
     <dd>
         The value is the IEEE 754 double-precision positive infinity value.
     </dd>
-    <dt>Type {{unrestricted float}}, constant value <code>-Infinity</code></dt>
+    <dt>
+        Type {{unrestricted float}}, constant value <code>-Infinity</code>
+    </dt>
     <dd>
         The value is the IEEE 754 single-precision negative infinity value.
     </dd>
-    <dt>Type {{unrestricted double}}, constant value <code>-Infinity</code></dt>
+    <dt>
+        Type {{unrestricted double}}, constant value <code>-Infinity</code>
+    </dt>
     <dd>
         The value is the IEEE 754 double-precision negative infinity value.
     </dd>
-    <dt>Type {{unrestricted float}}, constant value <code>NaN</code></dt>
+    <dt>
+        Type {{unrestricted float}}, constant value <code>NaN</code>
+    </dt>
     <dd>
         The value is the IEEE 754 single-precision NaN value with the bit pattern 0x7fc00000.
     </dd>
-    <dt>Type {{unrestricted double}}, constant value <code>NaN</code></dt>
+    <dt>
+        Type {{unrestricted double}}, constant value <code>NaN</code>
+    </dt>
     <dd>
         The value is the IEEE 754 double-precision NaN value with the bit pattern 0x7ff8000000000000.
     </dd>
@@ -2057,16 +2081,24 @@ conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu
     <li>
         Depending on the type of the argument:
         <dl class="switch">
-            <dt>{{DOMString}}</dt>
-            <dt>an [=enumeration=] type</dt>
+            <dt>
+                {{DOMString}}
+            </dt>
+            <dt>
+                an [=enumeration=] type
+            </dt>
             <dd>
                 The value of the <emu-nt><a href="#prod-string">string</a></emu-nt> token is the sequence of 16 bit unsigned integer code units (hereafter referred to just as <dfn id="dfn-code-unit">code units</dfn>) corresponding to the UTF-16 encoding of |S|.
             </dd>
-            <dt>{{ByteString}}</dt>
+            <dt>
+                {{ByteString}}
+            </dt>
             <dd>
                 The value of the <emu-nt><a href="#prod-string">string</a></emu-nt> token is the sequence of 8 bit unsigned integer code units corresponding to the UTF-8 encoding of |S|.
             </dd>
-            <dt>{{USVString}}</dt>
+            <dt>
+                {{USVString}}
+            </dt>
             <dd>
                 The value of the <emu-nt><a href="#prod-string">string</a></emu-nt> token is |S|.
             </dd>
@@ -2675,7 +2707,6 @@ Note: In the ECMAScript language binding,
 is exposed as a <code>toJSON</code> method which returns the
 [=serialized value=] converted
 into an ECMAScript value that can be serialized to JSON by the
-
 <code>JSON.stringify</code> function.  See [[#es-serializer]] for details.
 
 <p>
@@ -2945,69 +2976,99 @@ can influence the serialization that <code>JSON.stringify</code> can produce.
 </p>
 
 <dl class="switch">
-    <dt>{{long long}}</dt>
+    <dt>
+        {{long long}}
+    </dt>
     <dd>
         converted by choosing the closest equivalent {{double}} value
         (as when <a href="#es-long-long">converting a <code class="idl">long long</code> to an ECMAScript <emu-val>Number</emu-val> value</a>)
     </dd>
-    <dt>{{unsigned long long}}</dt>
+    <dt>
+        {{unsigned long long}}
+    </dt>
     <dd>
         converted by choosing the closest equivalent {{double}} value
         (as when <a href="#es-unsigned-long-long">converting a <code class="idl">unsigned long long</code> to an ECMAScript <emu-val>Number</emu-val> value</a>)
     </dd>
-    <dt>any other [=integer type=]</dt>
-    <dt>{{float}}</dt>
+    <dt>
+        any other [=integer type=]
+    </dt>
+    <dt>
+        {{float}}
+    </dt>
     <dd>
         converted by choosing the equivalent {{double}} value
     </dd>
-    <dt>{{double}}</dt>
-    <dt>{{boolean}}</dt>
-    <dt>{{DOMString}}</dt>
+    <dt>
+        {{double}}
+    </dt>
+    <dt>
+        {{boolean}}
+    </dt>
+    <dt>
+        {{DOMString}}
+    </dt>
     <dd>
         the same value of the respective type
     </dd>
-    <dt>an [=enumeration|enumeration type=]</dt>
+    <dt>
+        an [=enumeration|enumeration type=]
+    </dt>
     <dd>
         the equivalent {{DOMString}} value
     </dd>
-    <dt>a {{USVString}}</dt>
+    <dt>
+        a {{USVString}}
+    </dt>
     <dd>
         the {{DOMString}} produced by
         encoding the given sequence of [=Unicode scalar values=] in
         UTF-16
     </dd>
-    <dt>a {{ByteString}}</dt>
+    <dt>
+        a {{ByteString}}
+    </dt>
     <dd>
         the equivalent {{DOMString}} value where each code unit has the same value as the corresponding byte value
     </dd>
-    <dt>a [=nullable type|nullable=] serializable type</dt>
+    <dt>
+        a [=nullable type|nullable=] serializable type
+    </dt>
     <dd>
         converted to <emu-val>null</emu-val> if that is its value,
         otherwise converted as per its [=inner type=]
     </dd>
-    <dt>a [=union type=] where
+    <dt>
+        a [=union type=] where
         all of its [=member types=]
-    are serializable types</dt>
+        are serializable types
+    </dt>
     <dd>
         converted as per its [=specific type=]
     </dd>
-    <dt>a <a href="#idl-sequence">sequence type</a> that
-    has a serializable type as its element type</dt>
+    <dt>
+        a <a href="#idl-sequence">sequence type</a> that
+        has a serializable type as its element type
+    </dt>
     <dd>
         converted to a list where each element is the result of converting its
         corresponding sequence element to a serialized value
     </dd>
-    <dt>a [=dictionary=] where
+    <dt>
+        a [=dictionary=] where
         all of its [=dictionary members|members=] have
-    serializable types</dt>
+        serializable types
+    </dt>
     <dd>
         converted to a map consisting of an entry for each dictionary member
         that is present, where the entry’s key is the identifier of the dictionary
         member and its value is the result of converting the dictionary member’s
         value to a serializable type
     </dd>
-    <dt>an <a href="#idl-interface">interface</a> type that has a
-    [=serializer=]</dt>
+    <dt>
+        an <a href="#idl-interface">interface</a> type that has a
+        [=serializer=]
+    </dt>
     <dd>
         converted by invoking the object’s serializer
     </dd>
@@ -3590,8 +3651,12 @@ is language binding specific.
 </p>
 
 <dl>
-    <dt>For regular operations</dt>
-    <dt>For static operations</dt>
+    <dt>
+        For regular operations
+    </dt>
+    <dt>
+        For static operations
+    </dt>
     <dd>
         <ul>
             <li>
@@ -3605,7 +3670,9 @@ is language binding specific.
             </li>
         </ul>
     </dd>
-    <dt>For legacy callers</dt>
+    <dt>
+        For legacy callers
+    </dt>
     <dd>
         <ul>
             <li>
@@ -3616,7 +3683,9 @@ is language binding specific.
             </li>
         </ul>
     </dd>
-    <dt>For constructors</dt>
+    <dt>
+        For constructors
+    </dt>
     <dd>
         <ul>
             <li>
@@ -3627,7 +3696,9 @@ is language binding specific.
             </li>
         </ul>
     </dd>
-    <dt>For named constructors</dt>
+    <dt>
+        For named constructors
+    </dt>
     <dd>
         <ul>
             <li>
@@ -3641,7 +3712,9 @@ is language binding specific.
             </li>
         </ul>
     </dd>
-    <dt>For callback functions</dt>
+    <dt>
+        For callback functions
+    </dt>
     <dd>
         <ul>
             <li>
@@ -3711,23 +3784,31 @@ is language binding specific.
     <li>
         Let |F| be a set with elements as follows, according to the kind of effective overload set:
         <dl class="switch">
-            <dt>For regular operations</dt>
+            <dt>
+                For regular operations
+            </dt>
             <dd>
                 The elements of |F| are the [=regular operations=] with
                 identifier |A| defined on interface |I|.
             </dd>
-            <dt>For static operations</dt>
+            <dt>
+                For static operations
+            </dt>
             <dd>
                 The elements of |F| are the [=static operations=] with
                 identifier |A| defined on interface |I|.
             </dd>
-            <dt>For constructors</dt>
+            <dt>
+                For constructors
+            </dt>
             <dd>
                 The elements of |F| are the
                 <emu-nt><a href="#Constructor">[Constructor]</a></emu-nt>
                 [=extended attributes=] on interface |I|.
             </dd>
-            <dt>For named constructors</dt>
+            <dt>
+                For named constructors
+            </dt>
             <dd>
                 The elements of |F| are the
                 <emu-nt><a href="#NamedConstructor">[NamedConstructor]</a></emu-nt>
@@ -3735,12 +3816,16 @@ is language binding specific.
                 [=takes a named argument list|named argument lists’=]
                 identifiers are |A|.
             </dd>
-            <dt>For legacy callers</dt>
+            <dt>
+                For legacy callers
+            </dt>
             <dd>
                 The elements of |F| are the [=legacy callers=]
                 defined on interface |I|.
             </dd>
-            <dt>For callback functions</dt>
+            <dt>
+                For callback functions
+            </dt>
             <dd>
                 The single element of |F| is the callback function itself, |C|.
             </dd>
@@ -4403,7 +4488,6 @@ actual [=array iterator objects=].
 
 Note: In the ECMAScript language binding, the API for interacting
 with the map entries is similar to that available on ECMAScript
-
 <emu-val>Map</emu-val> objects.  If the <code>readonly</code>
 keyword is used, this includes “entries”, “forEach”, “get”, “has”,
 “keys”, “values”, [=@@iterator=] methods and a “size” getter.
@@ -4504,7 +4588,6 @@ Issue: Add example.
 
 Note: In the ECMAScript language binding, the API for interacting
 with the set entries is similar to that available on ECMAScript
-
 <emu-val>Set</emu-val> objects.  If the <code>readonly</code>
 keyword is used, this includes “entries”, “forEach”, “has”,
 “keys”, “values”, [=@@iterator=] methods and a “size” getter.
@@ -5294,7 +5377,6 @@ and that multiple words be separated using dashes or not be
 separated at all, unless there is a specific reason to use another
 value naming scheme.  For example, an enumeration value that
 indicates an object should be created could be named
-
 <code>"createobject"</code> or <code>'create-object"</code>.
 Consider related uses of enumeration values when deciding whether
 to dash-separate or not separate enumeration value words so that
@@ -6230,7 +6312,6 @@ represent more closely matches an ECMAScript <emu-val>Number</emu-val>.
 Note: Note also that <emu-val>null</emu-val>
 is not a value of type {{DOMString}}.
 To allow <emu-val>null</emu-val>, a
-
 <a href="#idl-nullable-type">nullable</a> {{DOMString}},
 written as <code>DOMString?</code> in IDL, needs to be used.
 
@@ -6267,17 +6348,23 @@ written as <code>DOMString?</code> in IDL, needs to be used.
             <li>
                 Depending on the value of |c|:
                 <dl class="switch">
-                    <dt>|c| &lt; 0xD800 or |c| &gt; 0xDFFF</dt>
+                    <dt>
+                        |c| &lt; 0xD800 or |c| &gt; 0xDFFF
+                    </dt>
                     <dd>
                         Append to |U| the Unicode character with code point |c|.
                     </dd>
                     
-                    <dt>0xDC00 ≤ |c| ≤ 0xDFFF</dt>
+                    <dt>
+                        0xDC00 ≤ |c| ≤ 0xDFFF
+                    </dt>
                     <dd>
                         Append to |U| a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.
                     </dd>
                     
-                    <dt>0xD800 ≤ |c| ≤ 0xDBFF</dt>
+                    <dt>
+                        0xD800 ≤ |c| ≤ 0xDBFF
+                    </dt>
                     <dd>
                         <ol class="only">
                             <li>
@@ -6367,7 +6454,6 @@ strings should be represented with
 {{DOMString}} values, even if it is expected
 that values of the string will always be in ASCII or some
 8 bit character encoding.  <a href="#idl-sequence">Sequences</a>,
-
 <a href="#idl-frozen-array">frozen arrays</a> or [=Typed Arrays=]
 with {{octet}} or {{byte}}
 elements should be used for holding
@@ -6743,12 +6829,9 @@ sequence is used.
 
 Note: For example, the [=flattened member types=]
 of the [=union type=]
-
 <code>(Node or (sequence&lt;long&gt; or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;)</code>
 are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Event</code>,
-
 <code>XMLHttpRequest</code>, <code>DOMString</code> and
-
 <code>sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;</code>.
 
 <p>
@@ -7539,25 +7622,33 @@ for Web pages.
 </p>
 
 <dl class="switch">
-    <dt>The <emu-val>undefined</emu-val> value</dt>
+    <dt>
+        The <emu-val>undefined</emu-val> value
+    </dt>
     <dd>
         The IDL value is an
         {{object}} reference
         to a special object that represents the ECMAScript
         <emu-val>undefined</emu-val> value.
     </dd>
-    <dt>The <emu-val>null</emu-val> value</dt>
+    <dt>
+        The <emu-val>null</emu-val> value
+    </dt>
     <dd>
         The IDL value is the <emu-val>null</emu-val>
         {{object?}} reference.
     </dd>
-    <dt>A <emu-val>Boolean</emu-val> value</dt>
+    <dt>
+        A <emu-val>Boolean</emu-val> value
+    </dt>
     <dd>
         The IDL value is the
         {{boolean}}
         value that represents the same truth value.
     </dd>
-    <dt>A <emu-val>Number</emu-val> value</dt>
+    <dt>
+        A <emu-val>Number</emu-val> value
+    </dt>
     <dd>
         The IDL value is that which is obtained
         by following the rules for converting the
@@ -7565,7 +7656,9 @@ for Web pages.
         {{unrestricted double}} value,
         as described in [[#es-unrestricted-double]],.
     </dd>
-    <dt>A <emu-val>String</emu-val> value</dt>
+    <dt>
+        A <emu-val>String</emu-val> value
+    </dt>
     <dd>
         The IDL value is that which is obtained
         by following the rules for converting the
@@ -7573,7 +7666,9 @@ for Web pages.
         {{DOMString}} value,
         as described in [[#es-DOMString]],.
     </dd>
-    <dt>An {{object}} value</dt>
+    <dt>
+        An {{object}} value
+    </dt>
     <dd>
         The IDL value is an
         {{object}} value that
@@ -8803,12 +8898,18 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
                     <li>
                         Let |value| be an ECMAScript value, depending on [=Type=](|V|):
                         <dl class="switch">
-                            <dt>Undefined</dt>
-                            <dt>Null</dt>
+                            <dt>
+                                Undefined
+                            </dt>
+                            <dt>
+                                Null
+                            </dt>
                             <dd>
                                 |value| is <emu-val>undefined</emu-val>.
                             </dd>
-                            <dt>anything else</dt>
+                            <dt>
+                                anything else
+                            </dt>
                             <dd>
                                 |value| is the result of calling the <span class="prop">\[[Get]]</span> internal method on |V| with property name |key|.
                             </dd>
@@ -10255,19 +10356,25 @@ Issue: Include an example of how to write spec text using this term.
             implicitly, depending on the type of construct:
         </p>
         <dl class="switch">
-            <dt>interface</dt>
+            <dt>
+                interface
+            </dt>
             <dd>
                 The [=exposure set=] of the interface
                 only contains the
                 [=primary global interface=].
             </dd>
-            <dt>partial interface</dt>
+            <dt>
+                partial interface
+            </dt>
             <dd>
                 The [=exposure set=] of the partial
                 interface is the [=exposure set=] of the original
                 interface definition.
             </dd>
-            <dt>interface member</dt>
+            <dt>
+                interface member
+            </dt>
             <dd>
                 The [=exposure set=] of the interface member
                 is the [=exposure set=] of the interface or
@@ -10921,7 +11028,6 @@ which would provide access to the array elements.
 Advisement: Specifications should not use [{{LenientThis}}]
 unless required for compatibility reasons.  Specification authors who
 wish to use this feature are strongly advised to discuss this on the
-
 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
 mailing list before proceeding.
 
@@ -11109,7 +11215,6 @@ should not be used on interfaces that are not
 solely used as [=supplemental interfaces|supplemental=] interfaces,
 unless there are clear Web compatibility reasons for doing so.  Specification authors who
 wish to use this feature are strongly advised to discuss this on the
-
 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
 mailing list before proceeding.
 
@@ -11611,17 +11716,23 @@ mailing list before proceeding.
             depends on the type of construct:
         </p>
         <dl class="switch">
-            <dt>interface</dt>
+            <dt>
+                interface
+            </dt>
             <dd>
                 The interface or dictionary is not
                 [=available only in secure contexts=].
             </dd>
-            <dt>partial interface</dt>
+            <dt>
+                partial interface
+            </dt>
             <dd>
                 The partial interface is [=available only in secure contexts=]
                 if and only if the original interface definition is.
             </dd>
-            <dt>interface member</dt>
+            <dt>
+                interface member
+            </dt>
             <dd>
                 The interface member is [=available only in secure contexts=]
                 if and only if the interface or partial interface the member is declared on is.
@@ -11697,7 +11808,6 @@ Advisement: Specifications should not use [{{TreatNonObjectAsNull}}]
 unless required to specify the behavior of legacy APIs or for consistency with these
 APIs.  Specification authors who
 wish to use this feature are strongly advised to discuss this on the
-
 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
 mailing list before proceeding.  At the time of writing, the only known
 valid use of [{{TreatNonObjectAsNull}}]
@@ -13947,20 +14057,26 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
             <li>
                 Depending on where <code>stringifier</code> was specified:
                 <dl class="switch">
-                    <dt>on an [=attribute=]</dt>
+                    <dt>
+                        on an [=attribute=]
+                    </dt>
                     <dd>
                         Set |V| to the result of performing the actions listed in the description of the attribute that occur when getting
                         (or those listed in the description of the inherited attribute, if this attribute is declared to
                         [=inherit its getter=]),
                         with |O| as the object.
                     </dd>
-                    <dt>on an [=operation=] with an identifier</dt>
+                    <dt>
+                        on an [=operation=] with an identifier
+                    </dt>
                     <dd>
                         Set |V| to the result of performing the actions listed in the description
                         of the operation, using |O| as the <emu-val>this</emu-val> value
                         and passing no arguments.
                     </dd>
-                    <dt>on an [=operation=] with no identifier</dt>
+                    <dt>
+                        on an [=operation=] with no identifier
+                    </dt>
                     <dd>
                         Set |V| to the result of performing the [=stringification behavior=]
                         of the interface.
@@ -14052,7 +14168,9 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     <li>
         Depending on how <code>serializer</code> was specified:
         <dl class="switch">
-            <dt>on an [=operation=] with an identifier</dt>
+            <dt>
+                on an [=operation=] with an identifier
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14062,7 +14180,9 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                     </li>
                 </ol>
             </dd>
-            <dt>as a keyword, either with or without a [=serialization pattern=]</dt>
+            <dt>
+                as a keyword, either with or without a [=serialization pattern=]
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14100,7 +14220,9 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
     <li>
         Depending on the type of |S|:
         <dl class="switch">
-            <dt>a map</dt>
+            <dt>
+                a map
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14126,7 +14248,9 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                     </li>
                 </ol>
             </dd>
-            <dt>a list</dt>
+            <dt>
+                a list
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14155,7 +14279,9 @@ being thrown.  When not in strict mode, the assignment attempt will be ignored.
                     </li>
                 </ol>
             </dd>
-            <dt>any other serialized value</dt>
+            <dt>
+                any other serialized value
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14916,7 +15042,9 @@ use standard ECMAScript Array iterator objects.
     <li>
         Let |result| be a value determined by the value of |kind|:
         <dl class="switch">
-            <dt>key</dt>
+            <dt>
+                key
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14930,7 +15058,9 @@ use standard ECMAScript Array iterator objects.
                     </li>
                 </ol>
             </dd>
-            <dt>value</dt>
+            <dt>
+                value
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -14944,7 +15074,9 @@ use standard ECMAScript Array iterator objects.
                     </li>
                 </ol>
             </dd>
-            <dt>key+value</dt>
+            <dt>
+                key+value
+            </dt>
             <dd>
                 <ol class="algorithm">
                     <li>
@@ -17534,7 +17666,6 @@ various native <emu-val>Error</emu-val> objects that the
 ECMAScript specification defines, apart from responding differently
 to being passed to Object.prototype.toString and it having a “code” property.
 If an implementation places non-standard properties on native
-
 <emu-val>Error</emu-val> objects, exposing for example
 stack traces or error line numbers, then these ought to be exposed
 on exception objects too.
@@ -17602,11 +17733,15 @@ on exception objects too.
     <li>
         Let |args| be a list of ECMAScript values.
         <dl class="switch">
-            <dt>|E| is [=DOMException=]</dt>
+            <dt>
+                |E| is [=DOMException=]
+            </dt>
             <dd>
                 |args| is (<emu-val>undefined</emu-val>, |N|).
             </dd>
-            <dt>|E| is a [=simple exception=]</dt>
+            <dt>
+                |E| is a [=simple exception=]
+            </dt>
             <dd>
                 |args| is (|M|)
             </dd>
@@ -17618,12 +17753,16 @@ on exception objects too.
     <li>
         Let |X| be an object determined based on the type of |E|:
         <dl class="switch">
-            <dt>|E| is [=DOMException=]</dt>
+            <dt>
+                |E| is [=DOMException=]
+            </dt>
             <dd>
                 |X| is the [=DOMException constructor object=]
                 from the global environment |G|.
             </dd>
-            <dt>|E| is a [=simple exception=]</dt>
+            <dt>
+                |E| is a [=simple exception=]
+            </dt>
             <dd>
                 |X| is the constructor for the corresponding ECMAScript error
                 from the global environment |G|.
@@ -18102,11 +18241,8 @@ on exception objects too.
 
 Note: The <emu-nt><a href="#prod-Other">Other</a></emu-nt>
 non-terminal matches any single terminal symbol except for
-
 <span class="sym">"("</span>, <span class="sym">")"</span>,
-
 <span class="sym">"["</span>, <span class="sym">"]"</span>,
-
 <span class="sym">"{"</span>, <span class="sym">"}"</span>
 and <span class="sym">","</span>.
 
