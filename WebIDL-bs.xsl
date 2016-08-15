@@ -206,6 +206,10 @@ Boilerplate: omit issues-index
   <xsl:template match='h:dl[@class="changes"]/h:dd'>
     <xsl:apply-templates select='node()'/>
   </xsl:template>
+
+  <xsl:template match='h:p[parent::h:li][not(following-sibling::*)][not(preceding-sibling::*)]'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
   
   <!-- Remove stuff -->
 
