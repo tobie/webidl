@@ -66,13 +66,14 @@ reader.on("data", function(line) {
                 line: 0,
                 hasAttributes: !!m[3]
             };
+            
             tags.push(currentTag);
             opened.push(m[2]);
             if (m[2] == "p") {
                 p = true;
-                if (m[3] ==  'class="note"') currentTag.prefix = "Note: ";
-                if (m[3] ==  'class="ednote"') currentTag.prefix = "Issue: ";
-                if (m[3] ==  'class="advisement"') currentTag.prefix = "Advisement: ";
+                if (m[3] == ' class="note"') currentTag.prefix = "Note: ";
+                if (m[3] == ' class="ednote"') currentTag.prefix = "Issue: ";
+                if (m[3] == ' class="advisement"') currentTag.prefix = "Advisement: ";
             }
             if (m[2] == "pre") {
                 pre = true;
@@ -88,8 +89,8 @@ reader.on("data", function(line) {
             if (currentTag.name != m[2]) throw [count, JSON.stringify(currentTag), JSON.stringify(m[2]), line].join(" ");
         }
     }
-
-    if (intro || closed[0] == "html") {
+    //console.log(tags)
+    if (!currentTag || intro || closed[0] == "html") {
         // don't print, we're trimming <html> tags
     } else if (pre) {
         // buffer it
@@ -128,12 +129,24 @@ reader.on("data", function(line) {
         dt_buffer.length = 0;
         dt = false;
     }
+    
+    if (currentTag && currentTag.line == -1) {
+        var parent = tags[tags.length - 1];
+        if (parent && parent.name == "li") {
+            parent.childNodes = parent.childNodes || [];
+            parent.childNodes.push(currentTag);
+        }
+        currentTag = tags[tags.length - 1];
+    }
 });
 
 function pad(line) {
     var output;
     
     if (currentTag.line == 0) {
+        if (shouldAddPadLine(currentTag)) {
+            console.log(parentPad(tags.slice(0, -1)));
+        }
         if (!shouldSkipTagLines(currentTag)) {
             output = parentPad(tags.slice(0, -1));
             if (shouldPrintTags(currentTag)) {
@@ -150,6 +163,9 @@ function pad(line) {
             console.log(output)
         }
     } else {
+        if (isLiWithMultipleChildNodes(currentTag)) {
+            console.log(parentPad(tags.slice(0)));
+        }
         console.log(parentPad(tags.slice(0)) + line);
     }
 }
@@ -161,11 +177,31 @@ function shouldPrintTags(tag) {
     return true;
 }
 
+function isLiWithMultipleChildNodes(tag) {
+    var children = currentTag && currentTag.childNodes;
+    var last_child = children && children[children.length - 1];
+    if (MARKDOWNIFY && last_child && !last_child.used) {
+        last_child.used = true;
+        return true;
+    }
+    return false;
+}
+
+function shouldAddPadLine(tag) {
+    var parent = tags[tags.length - 2];
+    if (MARKDOWNIFY &&
+            parent &&
+            parent.childNodes) {
+        return true;
+    }
+    return false;
+}
+
 function shouldSkipTagLines(tag) {
     // nested lists
     if (MARKDOWNIFY &&
         /^(dl|ul|ol)$/.test(tag.name) &&
-        tags.filter(tag => tag.name == "dl" || tag.name == "li").length > 0 && 
+        (tags.filter(tag => tag.name == "dl" || tag.name == "li").length > 0) && 
         !tag.hasAttributes) {
         return true;
     }
@@ -199,7 +235,7 @@ function parentPad(tags) {
                     output += "    ";
                 }
                 break;
-            case "ul": 
+            case "ol": 
             case "ul": 
             case "dl": 
                 output += (tag.hasAttributes || !MARKDOWNIFY) ? "    " : "";

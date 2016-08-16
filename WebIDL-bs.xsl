@@ -170,6 +170,10 @@ Boilerplate: omit issues-index
       background: #DEF;
       overflow: auto;
     }
+    
+    dt p {
+      display: inline;
+    }
   </xsl:text>
 </style>
   </xsl:template>
@@ -556,10 +560,9 @@ Boilerplate: omit issues-index
   <xsl:template match='h:blockquote[descendant::h:a[@href="#dfn-values-to-iterate-over"]]'>
     <xsl:copy copy-namespaces="no">
       <xsl:apply-templates select="node()"/>
-      <xsl:text>
-        
-        Issue: Fix reference to removed definition for "values to iterate over".
-      </xsl:text>
+      <p class="issue">
+        Fix reference to removed definition for "values to iterate over".
+      </p>
     </xsl:copy>
   </xsl:template>
   
