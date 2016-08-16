@@ -180,6 +180,12 @@ border-bottom: 3px solid #707070;
 margin-bottom: -2px;
 }
 
+/* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
+pre.grammar {
+padding-bottom: 1px
+}
+/* end bug fix */
+
 .syntax {
 padding: .5em;
 border: .5em;
@@ -189,6 +195,10 @@ page-break-inside: avoid;
 border-color: #8CCBF2;
 background: #DEF;
 overflow: auto;
+}
+
+dt p {
+display: inline;
 }
 </style>
 

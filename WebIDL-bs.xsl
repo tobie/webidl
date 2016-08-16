@@ -160,6 +160,12 @@ Boilerplate: omit issues-index
       margin-bottom: -2px;
     }
     
+    /* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
+    pre.grammar {
+      padding-bottom: 1px
+    }
+    /* end bug fix */
+    
     .syntax {
       padding: .5em;
       border: .5em;
