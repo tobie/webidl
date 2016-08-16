@@ -70,6 +70,9 @@ reader.on("data", function(line) {
             opened.push(m[2]);
             if (m[2] == "p") {
                 p = true;
+                if (m[3] ==  'class="note"') currentTag.prefix = "Note: ";
+                if (m[3] ==  'class="ednote"') currentTag.prefix = "Issue: ";
+                if (m[3] ==  'class="advisement"') currentTag.prefix = "Advisement: ";
             }
             if (m[2] == "pre") {
                 pre = true;
@@ -152,7 +155,7 @@ function pad(line) {
 }
 
 function shouldPrintTags(tag) {
-    if (MARKDOWNIFY && /^(dl|dt|dd|ul|ol|li|p)$/.test(tag.name) && !tag.hasAttributes) {
+    if (MARKDOWNIFY && /^(dl|dt|dd|ul|ol|li|p)$/.test(tag.name) && (tag.prefix || !tag.hasAttributes)) {
         return false;
     }
     return true;
@@ -183,7 +186,19 @@ function parentPad(tags) {
             case "html":
                 output += "";
                 break;
-            case "p": 
+            case "p":
+                if (MARKDOWNIFY) {
+                    if (tag.prefix) {
+                        output += tag.line == 1 ? tag.prefix : "";
+                    } else if (tag.hasAttributes) {
+                        output += "    ";
+                    } else {
+                        output += "";
+                    }
+                } else {
+                    output += "    ";
+                }
+                break;
             case "ul": 
             case "ul": 
             case "dl": 

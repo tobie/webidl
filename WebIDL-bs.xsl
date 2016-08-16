@@ -648,32 +648,14 @@ Boilerplate: omit issues-index
   <!--Notes examples and the like -->
   
   <xsl:template name='markdown-note-issue-advisement'>
-    <xsl:text>    </xsl:text>
-    <xsl:choose>
-      <xsl:when test='@class="note"'>
-          <xsl:text>
-Note</xsl:text>
-      </xsl:when>
-      <xsl:when test='@class="warning"'>
-          <xsl:text>
-Advisement</xsl:text>
-      </xsl:when>
-      <xsl:when test='@class="ednote"'>
-          <xsl:text>
-Issue</xsl:text>
-      </xsl:when>
-    </xsl:choose>
-    <xsl:text>: </xsl:text>
-    <xsl:for-each select="h:p/node()">
+    <xsl:variable name='class'>
       <xsl:choose>
-        <xsl:when test="position()=1">
-            <xsl:value-of select='replace(., "^\s+", "")'/>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:apply-templates select='.'/>
-        </xsl:otherwise>
+        <xsl:when test='@class="warning"'>advisement</xsl:when>
+        <xsl:when test='@class="ednote"'>issue</xsl:when>
+        <xsl:otherwise><xsl:value-of select='@class'/></xsl:otherwise>
       </xsl:choose>
-    </xsl:for-each>
+    </xsl:variable>
+    <p class='{$class}'><xsl:apply-templates select='./h:p/node()'/></p>
   </xsl:template>
 
   <xsl:template name="wrapped-note-issue-advisement">
