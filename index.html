@@ -3285,9 +3285,9 @@ a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-at
     ReturnType OperationRest
     ";"
 </pre>
-   <div class="example" id="example-4b0c7eec">
-    <a class="self-link" href="#example-4b0c7eec"></a> 
-    <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-20">IDL fragment</a> defines an interface that will stringify to the value of its <span class="idlattr">name</span> attribute:</p>
+   <div class="example" id="example-ead7f26c">
+    <a class="self-link" href="#example-ead7f26c"></a> 
+    <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-20">IDL fragment</a> defines an interface that will stringify to the value of its <code class="idl">name</code> attribute:</p>
 <pre class="idl-example">[Constructor]
 interface Student {
   attribute unsigned long id;
@@ -3317,12 +3317,12 @@ interface Student {
     <p>Thus, prose is required to explain the stringification behavior, such
     as the following paragraph:</p>
     <blockquote>
-     <p>Objects that implement the <code class="idl">Student</code> interface must stringify as follows.  If the value of the <span class="idlattr">familyName</span> attribute is <emu-val>null</emu-val>, the stringification of the
-        object is the value of the <span class="idlattr">givenName</span> attribute.  Otherwise, if the value of the <span class="idlattr">familyName</span> attribute is not <emu-val>null</emu-val>,
+     <p>Objects that implement the <code class="idl">Student</code> interface must stringify as follows.  If the value of the <code class="idl">familyName</code> attribute is <emu-val>null</emu-val>, the stringification of the
+        object is the value of the <code class="idl">givenName</code> attribute.  Otherwise, if the value of the <code class="idl">familyName</code> attribute is not <emu-val>null</emu-val>,
         the stringification of the object is the concatenation of the
-        value of the <span class="idlattr">givenName</span> attribute,
+        value of the <code class="idl">givenName</code> attribute,
         a single space character, and the value of
-        the <span class="idlattr">familyName</span> attribute.</p>
+        the <code class="idl">familyName</code> attribute.</p>
     </blockquote>
     <p>An ECMAScript implementation of the IDL would behave as follows:</p>
 <pre class="highlight"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">();</span>
@@ -8402,13 +8402,13 @@ a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callbac
    <p>See the <a href="#es-attributes">Attributes</a> section for how
 [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards-12">PutForwards</a></code>]
 is to be implemented.</p>
-   <div class="example" id="example-b4881a9f">
-    <a class="self-link" href="#example-b4881a9f"></a> 
+   <div class="example" id="example-c8a4fb20">
+    <a class="self-link" href="#example-c8a4fb20"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-39">IDL fragment</a> defines interfaces for names and people.
     The [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards-13">PutForwards</a></code>] extended
-    attribute is used on the <span class="idlattr">name</span> attribute
+    attribute is used on the <code class="idl">name</code> attribute
     of the <code class="idl">Person</code> interface to indicate
-    that assignments to that attribute result in assignments to the <span class="idlattr">full</span> attribute of the <code class="idl">Person</code> object:</p>
+    that assignments to that attribute result in assignments to the <code class="idl">full</code> attribute of the <code class="idl">Person</code> object:</p>
 <pre class="idl-example">interface Name {
   attribute DOMString full;
   attribute DOMString family;

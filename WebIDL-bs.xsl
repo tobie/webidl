@@ -656,7 +656,10 @@ Boilerplate: omit issues-index
   <xsl:template match='h:span[@class="regex-slash"]'>
     <xsl:value-of select='.' />
   </xsl:template>
-  
+
+  <xsl:template match='h:span[@class="idlattr"]'>
+    <code class="idl"><xsl:value-of select='.' /></code>
+  </xsl:template>
   
   <xsl:template match='h:td[@class="regex"]'>
     <td><code class="regex"><xsl:apply-templates select="node()"/></code></td>

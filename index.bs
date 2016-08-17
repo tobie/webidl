@@ -2238,7 +2238,7 @@ a [=static attribute=].
     
     The following [=IDL fragment=]
     defines an interface that will stringify to the value of its
-    <span class="idlattr">name</span> attribute:
+    <code class="idl">name</code> attribute:
     
     <pre class="idl-example">
         [Constructor]
@@ -2283,15 +2283,15 @@ a [=static attribute=].
         
         Objects that implement the <code class="idl">Student</code>
         interface must stringify as follows.  If the value of the
-        <span class="idlattr">familyName</span> attribute is
+        <code class="idl">familyName</code> attribute is
         <emu-val>null</emu-val>, the stringification of the
-        object is the value of the <span class="idlattr">givenName</span>
+        object is the value of the <code class="idl">givenName</code>
         attribute.  Otherwise, if the value of the
-        <span class="idlattr">familyName</span> attribute is not <emu-val>null</emu-val>,
+        <code class="idl">familyName</code> attribute is not <emu-val>null</emu-val>,
         the stringification of the object is the concatenation of the
-        value of the <span class="idlattr">givenName</span> attribute,
+        value of the <code class="idl">givenName</code> attribute,
         a single space character, and the value of
-        the <span class="idlattr">familyName</span> attribute.
+        the <code class="idl">familyName</code> attribute.
         
     </blockquote>
     
@@ -8978,10 +8978,10 @@ is to be implemented.
     
     The following [=IDL fragment=] defines interfaces for names and people.
     The [{{PutForwards}}] extended
-    attribute is used on the <span class="idlattr">name</span> attribute
+    attribute is used on the <code class="idl">name</code> attribute
     of the <code class="idl">Person</code> interface to indicate
     that assignments to that attribute result in assignments to the
-    <span class="idlattr">full</span> attribute of the
+    <code class="idl">full</code> attribute of the
     <code class="idl">Person</code> object:
     
     <pre class="idl-example">
