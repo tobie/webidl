@@ -202,6 +202,10 @@ urlPrefix: https://tc39.github.io/ecma262/
         dt p {
             display: inline;
         }
+        
+        .char {
+            font-size: 85%
+        }
 </style>
 
 

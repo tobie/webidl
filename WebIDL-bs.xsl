@@ -181,6 +181,10 @@ Boilerplate: omit issues-index
     dt p {
         display: inline;
     }
+    
+    .char {
+        font-size: 85%
+    }
 </xsl:text>
 </style>
   </xsl:template>
