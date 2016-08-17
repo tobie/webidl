@@ -653,6 +653,11 @@ Boilerplate: omit issues-index
     <xsl:value-of select='.' />
   </xsl:template>
   
+  
+  <xsl:template match='h:td[@class="regex"]'>
+    <td><code class="regex"><xsl:apply-templates select="node()"/></code></td>
+  </xsl:template>
+  
   <xsl:template match='h:var'>
     <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
   </xsl:template>
