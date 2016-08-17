@@ -260,7 +260,7 @@ The following typographic conventions are used in this document:
 *   Defining instances of terms: <dfn id="dfn-example-term">example term</dfn>
 *   Links to terms defined in this document: [=example term=]
 *   Links to terms defined in other documents: [=example term=]
-*   Grammar symbols: <span class="sym">ExampleGrammarSymbol</span>
+*   Grammar symbols: <emu-t>ExampleGrammarSymbol</emu-t>
 *   IDL and ECMAScript types: <code class="idl">ExampleType</code>
 *   Code snippets: <code>a = b + obj.f()</code>
 *   Unicode characters: <span class="char">U+0030 DIGIT ZERO ("0")</span>
@@ -681,7 +681,7 @@ describe object oriented systems.  In such systems, objects are entities
 that have identity and which are encapsulations of state and behavior.
 An <dfn id="dfn-interface" export>interface</dfn> is a definition (matching
 <emu-nt><a href="#prod-Interface">Interface</a></emu-nt> or
-<span class="sym">"callback"</span> <emu-nt><a href="#prod-Interface">Interface</a></emu-nt>) that declares some
+<emu-t>callback</emu-t> <emu-nt><a href="#prod-Interface">Interface</a></emu-nt>) that declares some
 state and behavior that an object implementing that interface will expose.
 
 <pre highlight="idl" class="syntax">
@@ -917,7 +917,7 @@ be defined on a [=callback interface=].
 
 The IDL for interfaces can be split into multiple parts by using
 <dfn id="dfn-partial-interface" export>partial interface</dfn> definitions
-(matching <span class="sym">"partial"</span> <emu-nt><a href="#prod-PartialInterface">PartialInterface</a></emu-nt>).
+(matching <emu-t>partial</emu-t> <emu-nt><a href="#prod-PartialInterface">PartialInterface</a></emu-nt>).
 The [=identifier=] of a partial
 interface definition must be the same
 as the identifier of an interface definition.  All of
@@ -1352,9 +1352,9 @@ The following extended attributes are applicable to constants:
 
 An <dfn id="dfn-attribute" export>attribute</dfn> is an [=interface member=]
 (matching
-<span class="sym">"inherit"</span> <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>,
-<span class="sym">"static"</span> <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>,
-<span class="sym">"stringifier"</span> <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>,
+<emu-t>inherit</emu-t> <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>,
+<emu-t>static</emu-t> <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>,
+<emu-t>stringifier</emu-t> <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>,
 or <emu-nt><a href="#prod-ReadOnly">ReadOnly</a></emu-nt> <emu-nt><a href="#prod-AttributeRest">AttributeRest</a></emu-nt>)
 that is used to declare data fields with a given type and
 [=identifier=] whose value can
@@ -1545,9 +1545,9 @@ are applicable only to regular attributes:
 <h4 id="idl-operations">Operations</h4>
 
 An <dfn id="dfn-operation" export>operation</dfn> is an [=interface member=]
-(matching <span class="sym">"static"</span> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>,
-<span class="sym">"stringifier"</span> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>,
-<span class="sym">"serializer"</span> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>,
+(matching <emu-t>static</emu-t> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>,
+<emu-t>stringifier</emu-t> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>,
+<emu-t>serializer</emu-t> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>,
 <emu-nt><a href="#prod-ReturnType">ReturnType</a></emu-nt> <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt> or
 <emu-nt><a href="#prod-SpecialOperation">SpecialOperation</a></emu-nt>)
 that defines a behavior that can be invoked on objects implementing the interface.
@@ -3673,7 +3673,7 @@ The following extended attributes are applicable to [=iterable declarations=]:
 An [=interface=] can be declared to be
 <dfn id="dfn-maplike" export>maplike</dfn> by using a <dfn id="dfn-maplike-declaration" export>maplike declaration</dfn>
 (matching <emu-nt><a href="#prod-ReadWriteMaplike">ReadWriteMaplike</a></emu-nt> or
-<span class="sym">"readonly"</span> <emu-nt><a href="#prod-MaplikeRest">MaplikeRest</a></emu-nt>) in the body of the interface.
+<emu-t>readonly</emu-t> <emu-nt><a href="#prod-MaplikeRest">MaplikeRest</a></emu-nt>) in the body of the interface.
 
 <pre highlight="idl" class="syntax">
     readonly maplike&lt;key-type, value-type&gt;;
@@ -3761,7 +3761,7 @@ defined in this specification are applicable to [=maplike declarations=].
 An [=interface=] can be declared to be
 <dfn id="dfn-setlike" export>setlike</dfn> by using a <dfn id="dfn-setlike-declaration" export>setlike declaration</dfn>
 (matching <emu-nt><a href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></emu-nt> or
-<span class="sym">"readonly"</span> <emu-nt><a href="#prod-SetlikeRest">SetlikeRest</a></emu-nt>) in the body of the interface.
+<emu-t>readonly</emu-t> <emu-nt><a href="#prod-SetlikeRest">SetlikeRest</a></emu-nt>) in the body of the interface.
 
 <pre highlight="idl" class="syntax">
     readonly setlike&lt;type&gt;;
@@ -3988,7 +3988,7 @@ if at least one of the following is true:
 
 As with interfaces, the IDL for dictionaries can be split into multiple parts
 by using <dfn id="dfn-partial-dictionary" export>partial dictionary</dfn> definitions
-(matching <span class="sym">"partial"</span> <emu-nt><a href="#prod-Dictionary">Dictionary</a></emu-nt>).
+(matching <emu-t>partial</emu-t> <emu-nt><a href="#prod-Dictionary">Dictionary</a></emu-nt>).
 The [=identifier=] of a partial
 dictionary definition must be the same as the
 identifier of a dictionary definition.  All of the members that appear on each
@@ -4572,7 +4572,7 @@ defined in this specification are applicable to [=enumerations=].
 </p>
 
 A <dfn id="dfn-callback-function" export>callback function</dfn> is a definition (matching
-<span class="sym">"callback"</span> <emu-nt><a href="#prod-CallbackRest">CallbackRest</a></emu-nt>) used to declare a function type.
+<emu-t>callback</emu-t> <emu-nt><a href="#prod-CallbackRest">CallbackRest</a></emu-nt>) used to declare a function type.
 
 <pre highlight="idl" class="syntax">callback identifier = return-type (arguments…);</pre>
 
@@ -9914,7 +9914,7 @@ In addition, for every [{{NamedConstructor}}]
 extended attribute on an [=exposed=] interface, a corresponding property must
 exist on the ECMAScript global object.  The name of the property is the
 <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> that occurs directly after the
-“<span class="sym">=</span>”, and its value is an object called a
+“<emu-t>=</emu-t>”, and its value is an object called a
 <dfn id="dfn-named-constructor" export>named constructor</dfn>, which allows
 construction of objects that implement the interface.  The property has the
 attributes <span class="descriptor">{ \[[Writable]]: <emu-val>true</emu-val>, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>.
@@ -13070,21 +13070,21 @@ expression syntax [[!PERLRE]]) as follows:
 The tokenizer operates on a sequence of Unicode characters
 [[!UNICODE]].
 When tokenizing, the longest possible match must be used.  For example, if the input
-text is “<span class="input">a1</span>”, it is tokenized as a single <span class="sym">identifier</span>,
-and not as a separate <span class="sym">identifier</span> and <span class="sym">integer</span>.
+text is “<span class="input">a1</span>”, it is tokenized as a single <emu-t><a href="#prod-identifier">identifier</a></emu-t>,
+and not as a separate <emu-t><a href="#prod-identifier">identifier</a></emu-t> and <emu-t><a href="#prod-integer">integer</a></emu-t>.
 If the longest possible match could match one of the above named terminal symbols or
 one of the quoted terminal symbols from the grammar, it must be tokenized as the quoted
 terminal symbol.  Thus, the input text “<span class="input">long</span>” is tokenized as the quoted terminal symbol
-<span class="sym">"long"</span> rather than an <span class="sym">identifier</span> called “long”,
+<emu-t>long</emu-t> rather than an <emu-t><a href="#prod-identifier">identifier</a></emu-t> called “long”,
 and “<span class="input">.</span>” is tokenized as the quoted terminal symbol
-<span class="sym">"."</span> rather than an <span class="sym">other</span>.
+<emu-t>.</emu-t> rather than an <emu-t><a href="#prod-other">other</a></emu-t>.
 
 The IDL syntax is case sensitive, both for the quoted terminal symbols
 used in the grammar and the values used for
-<span class="sym">identifier</span> terminals.  Thus, for
+<emu-t><a href="#prod-identifier">identifier</a></emu-t> terminals.  Thus, for
 example, the input text “<span class="input">Const</span>” is tokenized as
-an <span class="sym">identifier</span> rather than the quoted
-terminal symbol <span class="sym">"const"</span>, an
+an <emu-t><a href="#prod-identifier">identifier</a></emu-t> rather than the quoted
+terminal symbol <emu-t>const</emu-t>, an
 [=interface=] with
 [=identifier=]
 “A” is distinct from one named “a”, and an
@@ -13093,10 +13093,10 @@ terminal symbol <span class="sym">"const"</span>, an
 the [{{Constructor}}]
 extended attribute.
 
-Implicitly, any number of <span class="sym">whitespace</span> and
-<span class="sym">comment</span> terminals are allowed between every other terminal
-in the input text being parsed.  Such <span class="sym">whitespace</span> and
-<span class="sym">comment</span> terminals are ignored while parsing.
+Implicitly, any number of <emu-t><a href="#prod-whitespace">whitespace</a></emu-t> and
+<emu-t><a href="#prod-comment">comment</a></emu-t> terminals are allowed between every other terminal
+in the input text being parsed.  Such <emu-t><a href="#prod-whitespace">whitespace</a></emu-t> and
+<emu-t><a href="#prod-comment">comment</a></emu-t> terminals are ignored while parsing.
 
 The following LL(1) grammar, starting with <emu-nt><a href="#prod-Definitions">Definitions</a></emu-nt>,
 matches an [=IDL fragment=]:
@@ -13105,15 +13105,15 @@ matches an [=IDL fragment=]:
 
 Note: The <emu-nt><a href="#prod-Other">Other</a></emu-nt>
 non-terminal matches any single terminal symbol except for
-<span class="sym">"("</span>, <span class="sym">")"</span>,
-<span class="sym">"["</span>, <span class="sym">"]"</span>,
-<span class="sym">"{"</span>, <span class="sym">"}"</span>
-and <span class="sym">","</span>.
+<emu-t>(</emu-t>, <emu-t>)</emu-t>,
+<emu-t>[</emu-t>, <emu-t>]</emu-t>,
+<emu-t>{</emu-t>, <emu-t>}</emu-t>
+and <emu-t>,</emu-t>.
 
 While the <emu-nt><a href="#prod-ExtendedAttribute">ExtendedAttribute</a></emu-nt>
 non-terminal matches any non-empty sequence of terminal symbols (as long as any
 parentheses, square brackets or braces are balanced, and the
-<span class="sym">","</span> token appears only within those balanced brackets),
+<emu-t>,</emu-t> token appears only within those balanced brackets),
 only a subset of those
 possible sequences are used by the [=extended attributes=]
 defined in this specification — see
@@ -13364,6 +13364,9 @@ Changes appendix</a>.
         [].forEach.call(document.querySelectorAll("pre.grammar"), pre => {
             var html = pre.textContent.replace(/("[^"]+")|([a-zA-Z]+)|(:)/g, m => {
                 if (/^"/.test(m)) { return "<emu-t>" + m.replace(/^"|"$/g, "") + "</emu-t>"; }
+                if (/^(integer|float|identifier|string|whitespace|comment|other)$/.test(m)) {
+                  return "<emu-t><a href=\"#prod-" + m + "\">" + m + "</a></emu-t>";
+                }
                 if (m == ":") { return "::"; }
                 if (document.querySelector("#prod-" + m)) {
                   return "<emu-nt><a href=\"#prod-" + m + "\">" + m + "</a></emu-nt>";

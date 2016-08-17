@@ -637,6 +637,18 @@ Boilerplate: omit issues-index
     </xsl:choose>
   </xsl:template>
   
+  <xsl:template match='h:span[@class="sym"]'>
+    <xsl:variable name='txt' select='replace(., """", "")'/>
+      <xsl:choose>
+        <xsl:when test='matches($txt, "^(integer|float|identifier|string|whitespace|comment|other)$")'>
+          <emu-t><a href="#prod-{$txt}"><xsl:value-of select='$txt' /></a></emu-t>
+        </xsl:when>
+        <xsl:otherwise>
+          <emu-t><xsl:value-of select='$txt' /></emu-t>
+        </xsl:otherwise>
+      </xsl:choose>
+  </xsl:template>
+  
   <xsl:template match='h:var'>
     <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
   </xsl:template>
