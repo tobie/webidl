@@ -221,6 +221,10 @@ Boilerplate: omit issues-index
     <xsl:apply-templates select='node()'/>
   </xsl:template>
   
+  <xsl:template match='h:p[parent::h:dd][not(following-sibling::*)][not(preceding-sibling::*)]'>
+    <xsl:apply-templates select='node()'/>
+  </xsl:template>
+  
   <!-- Remove stuff -->
 
   <xsl:template match='processing-instruction()|comment()'/>

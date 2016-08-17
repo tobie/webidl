@@ -13,6 +13,7 @@ index-pre.bs : index.xml WebIDL-bs.xsl
 	
 index.bs : index-pre.bs
 	(node ./post-process/intro.js < index-pre.bs) \
+	| node ./post-process/rm-blanklines.js \
 	| node ./post-process/empty-tags.js \
 	| node ./post-process/clean-attr.js \
 	| node ./post-process/indent.js --markdownify \
