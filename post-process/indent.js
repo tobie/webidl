@@ -53,12 +53,11 @@ process.stdin.setEncoding('utf8');
 var reader = byline(process.stdin, { keepEmptyLines: true });
 reader.on("data", function(line) {
     tags.forEach(tag => tag.line++);
-    var raw_line = line; 
     count++;
     var opened = [], 
     closed = [],
     m,
-    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead|h[1-6])(\s[a-z0-9-]+(?:="(?:[^\"]|\\")*")?)*>/g;
+    patt = /<(\/?)(html|pre|p|div|blockquote|ol|ul|li|dl|dd|dt|table|td|th|tr|tbody|thead|h[1-6]|script|style)(\s[a-z0-9-]+(?:="(?:[^\"]|\\")*")?)*>/g;
     while (m = patt.exec(line)) {
         if (m && !m[1] && m[2]) {
             currentTag = {
@@ -95,6 +94,8 @@ reader.on("data", function(line) {
     } else if (pre) {
         // buffer it
         pre_buffer.push(line);
+    } else if (currentTag.name == "style" || currentTag.name == "script") {
+        pad(line);
     } else {
         line = line.trim();
         if (currentTag.name == "p") {
@@ -132,7 +133,7 @@ reader.on("data", function(line) {
     
     if (currentTag && currentTag.line == -1) {
         var parent = tags[tags.length - 1];
-        if (parent && parent.name == "li") {
+        if (parent && (/^li$/).test(parent.name)) {
             parent.childNodes = parent.childNodes || [];
             parent.childNodes.push(currentTag);
         }
@@ -211,6 +212,15 @@ function shouldSkipTagLines(tag) {
         !tag.hasAttributes) {
         return true;
     }
+    var parent = tags[tags.length - 2];
+    if (MARKDOWNIFY &&
+        tag.name == "p" &&
+        parent &&
+        /^(li|dd)$/.test(parent.name) &&
+        !parent.childNodes &&
+        !tag.hasAttributes) {
+        return true;
+    }
     
     return false;
 }
@@ -225,7 +235,10 @@ function parentPad(tags) {
             case "p":
                 if (MARKDOWNIFY) {
                     if (tag.prefix) {
-                        output += tag.line == 1 ? tag.prefix : "";
+                        if (!tag.prefixed) {
+                            tag.prefixed = true;
+                            output += tag.prefix;
+                        }
                     } else if (tag.hasAttributes) {
                         output += "    ";
                     } else {
@@ -248,14 +261,16 @@ function parentPad(tags) {
                 }
                 break;
             case "dd":
-                if (tag.line == 1 && MARKDOWNIFY) {
+                if (!tag.prefixed && MARKDOWNIFY) {
+                    tag.prefixed = true;
                     output += " :: ";
                 } else {
                     output += "    ";
                 }
                 break;
             case "li":
-                if (tag.line == 1 && MARKDOWNIFY) {
+                if (!tag.prefixed && MARKDOWNIFY) {
+                    tag.prefixed = true;
                     output += (tags[i - 1].name == "ol" ? "1.  " : "*   ");
                 } else {
                     output += "    ";

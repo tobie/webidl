@@ -147,59 +147,61 @@ urlPrefix: http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapi
 urlPrefix: https://tc39.github.io/ecma262/
     type: dfn
         text: typed arrays; url: sec-typedarray-objects
-</pre><style>
-emu-val {
-font-weight: bold;
-}
+</pre>
 
-emu-nt {
-font-family: sans-serif;
-font-style: italic;
-white-space: nowrap;
-}
-
-emu-t {
-display: inline-block;
-font-weight: bold;
-white-space: nowrap;
-}
-
-emu-t a[href],
-emu-nt a[href] {
-color: inherit;
-border-bottom: 1px solid transparent;
-}
-
-emu-t a[href]:focus,
-emu-nt a[href]:focus,
-emu-t a[href]:hover,
-emu-nt a[href]:hover {
-background: #f8f8f8;
-background: rgba(75%, 75%, 75%, .25);
-border-bottom: 3px solid #707070;
-margin-bottom: -2px;
-}
-
-/* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
-pre.grammar {
-padding-bottom: 1px
-}
-/* end bug fix */
-
-.syntax {
-padding: .5em;
-border: .5em;
-margin-left: 0;
-border-left-style: solid;
-page-break-inside: avoid;
-border-color: #8CCBF2;
-background: #DEF;
-overflow: auto;
-}
-
-dt p {
-display: inline;
-}
+<style>
+        emu-val {
+            font-weight: bold;
+        }
+        
+        emu-nt {
+            font-family: sans-serif;
+            font-style: italic;
+            white-space: nowrap;
+        }
+        
+        emu-t {
+            display: inline-block;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        emu-t a[href],
+        emu-nt a[href] {
+            color: inherit;
+            border-bottom: 1px solid transparent;
+        }
+        
+        emu-t a[href]:focus,
+        emu-nt a[href]:focus,
+        emu-t a[href]:hover,
+        emu-nt a[href]:hover {
+            background: #f8f8f8;
+            background: rgba(75%, 75%, 75%, .25);
+            border-bottom: 3px solid #707070;
+            margin-bottom: -2px;
+        }
+        
+        /* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
+        pre.grammar {
+            padding-bottom: 1px
+        }
+        /* end bug fix */
+        
+        .syntax {
+            padding: .5em;
+            border: .5em;
+            margin-left: 0;
+            border-left-style: solid;
+            page-break-inside: avoid;
+            border-color: #8CCBF2;
+            background: #DEF;
+            overflow: auto;
+        }
+        
+        dt p {
+            display: inline;
+        }
 </style>
 
 
@@ -280,18 +282,20 @@ The following typographic conventions are used in this document:
             AnotherSymbol
             ε  // nothing
     </pre>
-*   
+*   Non-normative notes:
+    
     Note: This is a note.
     
-*   Non-normative examples: <div class="example">
+*   Non-normative examples:
+    <div class="example">
         
         This is an example.
-        
     </div>
-*   
+*   Normative warnings:
+    
     Advisement: This is a warning.
     
-    Code blocks:
+*   Code blocks:
     <pre class="idl-example example">
         // This is an IDL code block.
         interface Example {
@@ -2343,8 +2347,7 @@ a <span class="char">U+003D EQUALS SIGN ("=")</span> character and
 a <dfn id="dfn-serialization-pattern" export>serialization pattern</dfn>,
 which can take one of the following six forms:
 
-*   
-    A map with entries corresponding to zero or more attributes from the interface, and optionally
+*   A map with entries corresponding to zero or more attributes from the interface, and optionally
     attributes from an inherited interface:
     
     <pre highlight="idl" class="syntax">
@@ -2377,8 +2380,7 @@ which can take one of the following six forms:
                 |V| to a serialized value.
         1.  Return |map|.
     </ol>
-*   
-    A map with entries corresponding to all attributes from the interface that have
+*   A map with entries corresponding to all attributes from the interface that have
     a [=serializable type=], and optionally
     attributes from an inherited interface:
     
@@ -2410,8 +2412,7 @@ which can take one of the following six forms:
                 |V| to a serialized value.
         1.  Return |map|.
     </ol>
-*   
-    A map with entries corresponding to the named properties:
+*   A map with entries corresponding to the named properties:
     
     <pre highlight="idl" class="syntax">serializer = { getter };</pre>
     
@@ -2431,8 +2432,7 @@ which can take one of the following six forms:
                 |V| to a serialized value.
         1.  Return |map|.
     </ol>
-*   
-    A list of value of zero or more attributes on the interface:
+*   A list of value of zero or more attributes on the interface:
     
     <pre highlight="idl" class="syntax">serializer = [ attribute-identifier, attribute-identifier, … ];</pre>
     
@@ -2452,8 +2452,7 @@ which can take one of the following six forms:
                 |V| to a serialized value.
         1.  Return |list|.
     </ol>
-*   
-    A list with entries corresponding to the indexed properties:
+*   A list with entries corresponding to the indexed properties:
     
     <pre highlight="idl" class="syntax">serializer = [ getter ];</pre>
     
@@ -2476,8 +2475,7 @@ which can take one of the following six forms:
             1.  Set |i| to |i| + 1.
         1.  Return |map|.
     </ol>
-*   
-    A single attribute:
+*   A single attribute:
     
     <pre highlight="idl" class="syntax">serializer = attribute-identifier;</pre>
     
@@ -3057,21 +3055,21 @@ the inputs to the algorithm needed to compute the set.
 
  :  For regular operations
  :  For static operations
-    *   the [=interface=] on which the [=operations=] are to be found
+ :: *   the [=interface=] on which the [=operations=] are to be found
     *   the [=identifier=] of the operations
     *   the number of arguments to be passed
  :  For legacy callers
-    *   the [=interface=] on which the [=legacy callers=] are to be found
+ :: *   the [=interface=] on which the [=legacy callers=] are to be found
     *   the number of arguments to be passed
  :  For constructors
-    *   the [=interface=] on which the <a href="#Constructor">[Constructor]</a> [=extended attributes=] are to be found
+ :: *   the [=interface=] on which the <a href="#Constructor">[Constructor]</a> [=extended attributes=] are to be found
     *   the number of arguments to be passed
  :  For named constructors
-    *   the [=interface=] on which the <a href="#NamedConstructor">[NamedConstructor]</a> [=extended attributes=] are to be found
+ :: *   the [=interface=] on which the <a href="#NamedConstructor">[NamedConstructor]</a> [=extended attributes=] are to be found
     *   the [=identifier=] of the named constructors
     *   the number of arguments to be passed
  :  For callback functions
-    *   the [=callback function=]
+ :: *   the [=callback function=]
     *   the number of arguments to be passed
 
 An effective overload set is used, among other things, to determine whether there are ambiguities in the
@@ -3203,8 +3201,7 @@ at most one of the two [=includes a nullable type=]
 or is a <a href="#idl-dictionary">dictionary type</a>,
 and at least one of the following three conditions is true:
 
-1.  
-    The two types (taking their [=inner types=]
+1.  The two types (taking their [=inner types=]
     if they are [=nullable types=]) appear
     in the following table and there is a “●” mark in the corresponding entry
     or there is a letter in the corresponding entry and the designated additional
@@ -8007,8 +8004,7 @@ for a given construct is defined as follows:
     is specified on the construct, then the [=exposure set=]
     is the set of all interfaces that have a [=global name=]
     that is listed in the extended attribute's argument.
-*   
-    If the [{{Exposed}}]
+*   If the [{{Exposed}}]
     [=extended attribute=]
     does not appear on a construct, then its
     [=exposure set=] is defined
@@ -9164,8 +9160,7 @@ is defined as follows:
     [=extended attribute=]
     is specified on the construct, then it is
     [=available only in secure contexts=].
-*   
-    Otherwise, if the [{{SecureContext}}]
+*   Otherwise, if the [{{SecureContext}}]
     [=extended attribute=]
     does not appear on a construct, then whether it is
     [=available only in secure contexts=]
@@ -10661,8 +10656,7 @@ the following characteristics:
     where |B| is <emu-val>false</emu-val> if the stringifier is
     [=unforgeable=] on the interface,
     and <emu-val>true</emu-val> otherwise.
-*   
-    The value of the property is a <emu-val>Function</emu-val> object, which behaves as follows:
+*   The value of the property is a <emu-val>Function</emu-val> object, which behaves as follows:
     
     <ol class="algorithm">
         1.  Let |O| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
@@ -11280,8 +11274,7 @@ with the following characteristics:
 *   The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
     where |G| is the interface’s <dfn id="dfn-map-size-getter" export>map size getter</dfn>,
     defined below.
-*   
-    The [=map size getter=] is
+*   The [=map size getter=] is
     a <emu-val>Function</emu-val> object whose
     behavior when invoked is as follows:
     
@@ -11500,8 +11493,7 @@ with the following characteristics:
 *   The property has attributes <span class="descriptor">{ \[[Get]]: |G|, \[[Enumerable]]: <emu-val>false</emu-val>, \[[Configurable]]: <emu-val>true</emu-val> }</span>,
     where |G| is the interface’s <dfn id="dfn-set-size-getter" export>set size getter</dfn>,
     defined below.
-*   
-    The [=set size getter=] is
+*   The [=set size getter=] is
     a <emu-val>Function</emu-val> object whose
     behavior when invoked is as follows:
     
@@ -12462,8 +12454,7 @@ return an IDL value or throw an exception.
     
     1.  If [=!=] [=IsCallable=](|F|) is <emu-val>false</emu-val>:
         
-        1.  
-            If the callback function's return type is {{void}},
+        1.  If the callback function's return type is {{void}},
             return.
             
             Note: This is only possible when the callback function came from an attribute
@@ -13162,8 +13153,7 @@ Changes appendix</a>.
 *   Removed <code class="idl">T[]</code> array types.
 *   Allowed <span class="xattr">[NewObject]</span> to be used on things with
     a promise type.
-*   
-    Fix various cases in which maplike/setlike were operating on the wrong objects.
+*   Fix various cases in which maplike/setlike were operating on the wrong objects.
     
     Disallow maplike, setlike and iterable declarations from appearing more than
     once on an interface and its inherited and consequential interfaces.

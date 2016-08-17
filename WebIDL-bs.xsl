@@ -125,62 +125,63 @@ Boilerplate: omit issues-index
         text: typed arrays; url: sec-typedarray-objects
 </xsl:text>
 </pre>
+<xsl:text>
 
-<style>
-  <xsl:text>
+</xsl:text>
+<style><xsl:text>
     emu-val {
-      font-weight: bold;
+        font-weight: bold;
     }
-
+    
     emu-nt {
-      font-family: sans-serif;
-      font-style: italic;
-      white-space: nowrap;
+        font-family: sans-serif;
+        font-style: italic;
+        white-space: nowrap;
     }
-
+    
     emu-t {
-      display: inline-block;
-      font-weight: bold;
-      white-space: nowrap;
+        display: inline-block;
+        font-weight: bold;
+        white-space: nowrap;
     }
-
+    
     emu-t a[href],
     emu-nt a[href] {
-      color: inherit;
-      border-bottom: 1px solid transparent;
+        color: inherit;
+        border-bottom: 1px solid transparent;
     }
-
+    
     emu-t a[href]:focus,
     emu-nt a[href]:focus,
     emu-t a[href]:hover,
     emu-nt a[href]:hover {
-      background: #f8f8f8;
-      background: rgba(75%, 75%, 75%, .25);
-      border-bottom: 3px solid #707070;
-      margin-bottom: -2px;
+        background: #f8f8f8;
+        background: rgba(75%, 75%, 75%, .25);
+        border-bottom: 3px solid #707070;
+        margin-bottom: -2px;
     }
     
     /* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
     pre.grammar {
-      padding-bottom: 1px
+        padding-bottom: 1px
     }
     /* end bug fix */
     
     .syntax {
-      padding: .5em;
-      border: .5em;
-      margin-left: 0;
-      border-left-style: solid;
-      page-break-inside: avoid;
-      border-color: #8CCBF2;
-      background: #DEF;
-      overflow: auto;
+        padding: .5em;
+        border: .5em;
+        margin-left: 0;
+        border-left-style: solid;
+        page-break-inside: avoid;
+        border-color: #8CCBF2;
+        background: #DEF;
+        overflow: auto;
     }
     
     dt p {
-      display: inline;
+        display: inline;
     }
-  </xsl:text>
+</xsl:text>
 </style>
   </xsl:template>
 
@@ -252,6 +253,15 @@ Boilerplate: omit issues-index
 </xsl:text>
   </xsl:template>
   
+  <xsl:template match='h:div[@class="example"][ancestor::h:div[@id="conventions"]]'>
+    <xsl:text>
+    </xsl:text>
+    <xsl:copy copy-namespaces="no">
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match='h:div[@id="conventions"]/h:ul/h:li/text()[preceding-sibling::h:table[@class="grammar"]]' />
   
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX DFN XXXXXXXXXXXXXXXXXXXXXXXXXX -->
@@ -684,6 +694,11 @@ Boilerplate: omit issues-index
   
   <xsl:template match='h:div[@class="note" or @class="warning" or @class="ednote"]'>
     <xsl:choose>
+      <xsl:when test='ancestor::h:div[@id="conventions"]'>
+<xsl:text>
+</xsl:text>  
+        <xsl:call-template name="markdown-note-issue-advisement"/>
+      </xsl:when>
       <xsl:when test='.[descendant::h:li] or .[count(h:p)&gt;1] or .[not(h:p)]'>
         <xsl:call-template name="wrapped-note-issue-advisement"/>
       </xsl:when>
@@ -711,6 +726,10 @@ Boilerplate: omit issues-index
     <xsl:choose>
       <xsl:when test='$lang="idl"'>
         <xsl:choose>
+          <xsl:when test='ancestor::h:div[@id="conventions"]'>
+              <xsl:text>
+ </xsl:text><pre class='idl-example example'><xsl:apply-templates select='node()'/></pre>
+          </xsl:when>
           <xsl:when test='ancestor::*[@class="example"]'>
               <pre class='idl-example'><xsl:apply-templates select='node()'/></pre>
           </xsl:when>

@@ -1163,58 +1163,59 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed 1.0.0" name="generator">
-<style>emu-val {
-font-weight: bold;
-}
-
-emu-nt {
-font-family: sans-serif;
-font-style: italic;
-white-space: nowrap;
-}
-
-emu-t {
-display: inline-block;
-font-weight: bold;
-white-space: nowrap;
-}
-
-emu-t a[href],
-emu-nt a[href] {
-color: inherit;
-border-bottom: 1px solid transparent;
-}
-
-emu-t a[href]:focus,
-emu-nt a[href]:focus,
-emu-t a[href]:hover,
-emu-nt a[href]:hover {
-background: #f8f8f8;
-background: rgba(75%, 75%, 75%, .25);
-border-bottom: 3px solid #707070;
-margin-bottom: -2px;
-}
-
-/* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
-pre.grammar {
-padding-bottom: 1px
-}
-/* end bug fix */
-
-.syntax {
-padding: .5em;
-border: .5em;
-margin-left: 0;
-border-left-style: solid;
-page-break-inside: avoid;
-border-color: #8CCBF2;
-background: #DEF;
-overflow: auto;
-}
-
-dt p {
-display: inline;
-}
+<style>
+        emu-val {
+            font-weight: bold;
+        }
+        
+        emu-nt {
+            font-family: sans-serif;
+            font-style: italic;
+            white-space: nowrap;
+        }
+        
+        emu-t {
+            display: inline-block;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        emu-t a[href],
+        emu-nt a[href] {
+            color: inherit;
+            border-bottom: 1px solid transparent;
+        }
+        
+        emu-t a[href]:focus,
+        emu-nt a[href]:focus,
+        emu-t a[href]:hover,
+        emu-nt a[href]:hover {
+            background: #f8f8f8;
+            background: rgba(75%, 75%, 75%, .25);
+            border-bottom: 3px solid #707070;
+            margin-bottom: -2px;
+        }
+        
+        /* start bug fix, see: https://github.com/tobie/webidl/issues/24 */
+        pre.grammar {
+            padding-bottom: 1px
+        }
+        /* end bug fix */
+        
+        .syntax {
+            padding: .5em;
+            border: .5em;
+            margin-left: 0;
+            border-left-style: solid;
+            page-break-inside: avoid;
+            border-color: #8CCBF2;
+            background: #DEF;
+            overflow: auto;
+        }
+        
+        dt p {
+            display: inline;
+        }
 </style>
 <style>/* style-md-lists */
 
@@ -1889,16 +1890,18 @@ for ECMAScript Edition 6 are given.</p>
     ε  // nothing
 </pre>
     <li data-md="">
+     <p>Non-normative notes:</p>
      <p class="note" role="note">Note: This is a note.</p>
     <li data-md="">
-     <p>Non-normative examples: </p>
-     <div class="example" id="example-4f9d1df8">
-      <a class="self-link" href="#example-4f9d1df8"></a>
-      <p></p>
+     <p>Non-normative examples:</p>
+     <div class="example" id="example-5cc05ab4">
+      <a class="self-link" href="#example-5cc05ab4"></a> 
       <p>This is an example.</p>
      </div>
     <li data-md="">
+     <p>Normative warnings:</p>
       <strong class="advisement"> This is a warning.</strong> 
+    <li data-md="">
      <p>Code blocks:</p>
 <pre class="idl-example example" id="example-dface6e3"><a class="self-link" href="#example-dface6e3"></a>// This is an IDL code block.
 interface Example {
@@ -3964,6 +3967,7 @@ the inputs to the algorithm needed to compute the set.</p>
      <p>For regular operations</p>
     <dt data-md="">
      <p>For static operations</p>
+    <dd data-md="">
      <ul>
       <li data-md="">
        <p>the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-37">interface</a> on which the <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-19">operations</a> are to be found</p>
@@ -3974,6 +3978,7 @@ the inputs to the algorithm needed to compute the set.</p>
      </ul>
     <dt data-md="">
      <p>For legacy callers</p>
+    <dd data-md="">
      <ul>
       <li data-md="">
        <p>the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-38">interface</a> on which the <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-6">legacy callers</a> are to be found</p>
@@ -3982,6 +3987,7 @@ the inputs to the algorithm needed to compute the set.</p>
      </ul>
     <dt data-md="">
      <p>For constructors</p>
+    <dd data-md="">
      <ul>
       <li data-md="">
        <p>the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-39">interface</a> on which the <a href="#Constructor" id="ref-for-Constructor-8">[Constructor]</a> <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-12">extended attributes</a> are to be found</p>
@@ -3990,6 +3996,7 @@ the inputs to the algorithm needed to compute the set.</p>
      </ul>
     <dt data-md="">
      <p>For named constructors</p>
+    <dd data-md="">
      <ul>
       <li data-md="">
        <p>the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-40">interface</a> on which the <a href="#NamedConstructor" id="ref-for-NamedConstructor-6">[NamedConstructor]</a> <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-13">extended attributes</a> are to be found</p>
@@ -4000,6 +4007,7 @@ the inputs to the algorithm needed to compute the set.</p>
      </ul>
     <dt data-md="">
      <p>For callback functions</p>
+    <dd data-md="">
      <ul>
       <li data-md="">
        <p>the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-12">callback function</a></p>
