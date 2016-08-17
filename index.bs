@@ -13033,37 +13033,37 @@ expression syntax [[!PERLRE]]) as follows:
     <tr>
         <td id="prod-integer" class="sym">integer</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)<span class="regex-slash">/</span></td>
+        <td class="regex">/-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)/</td>
     </tr>
     <tr>
         <td id="prod-float" class="sym">float</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>-?(([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([Ee][+-]?[0-9]+)?|[0-9]+[Ee][+-]?[0-9]+)<span class="regex-slash">/</span></td>
+        <td class="regex">/-?(([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([Ee][+-]?[0-9]+)?|[0-9]+[Ee][+-]?[0-9]+)/</td>
     </tr>
     <tr>
         <td id="prod-identifier" class="sym">identifier</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>_?[A-Za-z][0-9A-Z_a-z-]*<span class="regex-slash">/</span></td>
+        <td class="regex">/_?[A-Za-z][0-9A-Z_a-z-]*/</td>
     </tr>
     <tr>
         <td id="prod-string" class="sym">string</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>"[^"]*"<span class="regex-slash">/</span></td>
+        <td class="regex">/"[^"]*"/</td>
     </tr>
     <tr>
         <td id="prod-whitespace" class="sym">whitespace</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>[\t\n\r ]+<span class="regex-slash">/</span></td>
+        <td class="regex">/[\t\n\r ]+/</td>
     </tr>
     <tr>
         <td id="prod-comment" class="sym">comment</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>\/\/.*|\/\*(.|\n)*?\*\/<span class="regex-slash">/</span></td>
+        <td class="regex">/\/\/.*|\/\*(.|\n)*?\*\//</td>
     </tr>
     <tr>
         <td id="prod-other" class="sym">other</td>
         <td class="regex">=</td>
-        <td class="regex"><span class="regex-slash">/</span>[^\t\n\r 0-9A-Za-z]<span class="regex-slash">/</span></td>
+        <td class="regex">/[^\t\n\r 0-9A-Za-z]/</td>
     </tr>
 </table>
 

@@ -649,6 +649,10 @@ Boilerplate: omit issues-index
       </xsl:choose>
   </xsl:template>
   
+  <xsl:template match='h:span[@class="regex-slash"]'>
+    <xsl:value-of select='.' />
+  </xsl:template>
+  
   <xsl:template match='h:var'>
     <xsl:text>|</xsl:text><xsl:apply-templates select="node()"/><xsl:text>|</xsl:text>
   </xsl:template>
