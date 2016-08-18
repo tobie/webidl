@@ -7,6 +7,7 @@ index.html : index.bs
 	node ./check-structure.js raw-index.html > raw-index.struc
 	node ./check-structure.js index.html > index.struc
 	diff raw-index.struc index.struc -B
+	sed -e 's|<\(/*\)emu-[^>]*>|<\1code>|g' index.html > html-diff.html
 
 index-pre.bs : index.xml WebIDL-bs.xsl
 	java  -jar saxon9he.jar -warnings:silent -s:index.xml -xsl:WebIDL-bs.xsl -o:index-pre.bs
