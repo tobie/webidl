@@ -4782,6 +4782,10 @@ on that dictionary’s <a data-link-type="dfn" href="#dfn-inherited-dictionaries
 <pre class="grammar" id="prod-DictionaryMember">DictionaryMember :
     Required Type identifier Default ";"
 </pre>
+<pre class="grammar" id="prod-Required">Required :
+    "required"
+    ε
+</pre>
 <pre class="grammar" id="prod-PartialDictionary">PartialDictionary :
     "dictionary" identifier "{" DictionaryMembers "}" ";"
 </pre>
@@ -5871,6 +5875,19 @@ byte values using that reference.</p>
    <p class="note" role="note">Note: See <a href="#es-buffer-source-types">§5.2.31 Buffer source types</a> below for
 how interacting with buffer source types works in the ECMAScript language binding.</p>
    <p class="issue" id="issue-2379a917"><a class="self-link" href="#issue-2379a917"></a> We should include an example of specification text that uses these types and terms. </p>
+<pre class="grammar" id="prod-BufferRelatedType">BufferRelatedType :
+    "ArrayBuffer"
+    "DataView"
+    "Int8Array"
+    "Int16Array"
+    "Int32Array"
+    "Uint8Array"
+    "Uint16Array"
+    "Uint32Array"
+    "Uint8ClampedArray"
+    "Float32Array"
+    "Float64Array"
+</pre>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.31" data-lt="FrozenArray|FrozenArray<T>" id="idl-frozen-array"><span class="secno">4.10.31. </span><span class="content">Frozen arrays — FrozenArray&lt;<var>T</var>></span><span id="dom-FrozenArray"></span></h4>
    <p>A <dfn data-dfn-type="dfn" data-export="" id="dfn-frozen-array-type">frozen array type<a class="self-link" href="#dfn-frozen-array-type"></a></dfn> is a parameterized
 type whose values are references to objects that hold a fixed length array

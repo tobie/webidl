@@ -206,6 +206,13 @@ Boilerplate: omit issues-index
   
   <xsl:template match='h:div[@class="section"] | h:div[@id="sections"] | h:body'>
     <xsl:apply-templates select='node()'/>
+    <!-- BufferRelatedType special casing -->
+    <xsl:if test='@id = "idl-buffer-source-types"'>
+      <xsl:call-template name='proddef'>
+        <xsl:with-param name='prods' select='//*[@id="grammar"]/x:prod[@nt="BufferRelatedType"]'/>
+        <xsl:with-param name='pi' select='.'/>
+      </xsl:call-template>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match='h:div[@id="appendices"]'>
@@ -795,7 +802,7 @@ Boilerplate: omit issues-index
   
   <xsl:template match='processing-instruction("productions")'>
     <xsl:variable name='id' select='substring-before(., " ")'/>
-    <xsl:variable name='names' select='concat(" ", substring-after(., " "), " ")'/>
+    <xsl:variable name='names' select='replace(concat(" ", substring-after(., " "), " "), " DictionaryMember ", " DictionaryMember Required ")'/>
     <xsl:call-template name='proddef'>
       <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
       <xsl:with-param name='pi' select='.'/>
@@ -852,3 +859,5 @@ Boilerplate: omit issues-index
     </xsl:for-each>
   </xsl:template>
 </xsl:stylesheet>
+
+

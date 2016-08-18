@@ -4119,6 +4119,12 @@ The following extended attributes are applicable to dictionary members:
         Required Type identifier Default ";"
 </pre>
 
+<pre class="grammar" id="prod-Required">
+    Required :
+        "required"
+        ε
+</pre>
+
 <pre class="grammar" id="prod-PartialDictionary">
     PartialDictionary :
         "dictionary" identifier "{" DictionaryMembers "}" ";"
@@ -5794,6 +5800,21 @@ how interacting with buffer source types works in the ECMAScript language bindin
 <p class="issue">
     We should include an example of specification text that uses these types and terms.
 </p>
+
+<pre class="grammar" id="prod-BufferRelatedType">
+    BufferRelatedType :
+        "ArrayBuffer"
+        "DataView"
+        "Int8Array"
+        "Int16Array"
+        "Int32Array"
+        "Uint8Array"
+        "Uint16Array"
+        "Uint32Array"
+        "Uint8ClampedArray"
+        "Float32Array"
+        "Float64Array"
+</pre>
 
 
 <h4 oldids="dom-FrozenArray" id="idl-frozen-array" interface lt="FrozenArray|FrozenArray&lt;T&gt;">Frozen arrays — FrozenArray&lt;|T|&gt;</h4>
