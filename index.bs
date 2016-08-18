@@ -7568,7 +7568,7 @@ platform objects for [=DOMExceptions=].
 <p id="es-to-Error">
     An ECMAScript value |V| is
     [=converted=]
-    to an IDL <span class="Error">Error</span> value
+    to an IDL {{Error}} value
     by running the following algorithm:
 </p>
 

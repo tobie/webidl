@@ -664,6 +664,12 @@ Boilerplate: omit issues-index
   <xsl:template match='h:span[@class="prop" or @class="esprop"]'>
     <xsl:text>\</xsl:text><xsl:value-of select='.' />
   </xsl:template>
+
+  <xsl:template match='h:span[@class="Error"]'>
+    <xsl:text>{{Error}}</xsl:text>
+  </xsl:template>
+
+  
   
   <xsl:template match='h:td[@class="regex"]'>
     <td><code class="regex"><xsl:apply-templates select="node()"/></code></td>
