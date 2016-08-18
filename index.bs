@@ -6036,12 +6036,12 @@ Objects defined in this section have internal properties as described in
 ECMA-262 [=sections 9.1=] and
 [=9.3.1=] unless otherwise specified, in which case one or
 more of the following are redefined in accordance with the rules for exotic objects:
-<span class="prop">\[[Call]]</span>,
-<span class="prop">\[[Set]]</span>,
-<span class="prop">\[[DefineOwnProperty]]</span>,
-<span class="prop">\[[GetOwnProperty]]</span>,
-<span class="prop">\[[Delete]]</span> and
-<span class="prop">\[[HasInstance]]</span>.
+\[[Call]],
+\[[Set]],
+\[[DefineOwnProperty]],
+\[[GetOwnProperty]],
+\[[Delete]] and
+\[[HasInstance]].
 
 Other specifications may override the definitions
 of any internal method of a [=platform object=]
@@ -6054,10 +6054,10 @@ for security or compatibility.  The expectation is that this will be used
 for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
 and possibly WindowProxy objects</a>.
 
-Unless otherwise specified, the <span class="prop">\[[Extensible]]</span> internal property
+Unless otherwise specified, the \[[Extensible]] internal property
 of objects defined in this section has the value <emu-val>true</emu-val>.
 
-Unless otherwise specified, the <span class="prop">\[[Prototype]]</span> internal property
+Unless otherwise specified, the \[[Prototype]] internal property
 of objects defined in this section is the <emu-val>Object</emu-val> prototype object.
 
 Some objects described in this section are defined to have a <dfn id="dfn-class-string" export>class string</dfn>,
@@ -6075,11 +6075,11 @@ and whose value is the specified string.
 If an object is defined to be a <dfn id="dfn-function-object" export>function object</dfn>, then
 it has characteristics as follows:
 
-*   Its <span class="prop">\[[Prototype]]</span> internal property is
+*   Its \[[Prototype]] internal property is
     [=%FunctionPrototype%=] unless otherwise specified.
-*   Its <span class="prop">\[[Get]]</span> internal property is set as described in [=ECMA-262 section 9.1.8=].
-*   Its <span class="prop">\[[Construct]]</span> internal property is set as described in [=ECMA-262 section 19.2.2.3=].
-*   Its <span class="prop">@@hasInstance</span> property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.
+*   Its \[[Get]] internal property is set as described in [=ECMA-262 section 9.1.8=].
+*   Its \[[Construct]] internal property is set as described in [=ECMA-262 section 19.2.2.3=].
+*   Its \@@hasInstance property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.
 
 <p class="issue">
     The list above needs updating for the latest ES6 draft.
@@ -6161,7 +6161,7 @@ Each [=Realms|ECMAScript global environment=] ([[!ECMA-262]], section 8.2)
 must have its own unique set of each of
 the [=initial objects=], created
 before control enters any ECMAScript execution context associated with the
-environment, but after the global object for that environment is created.  The <span class="prop">\[[Prototype]]</span>s
+environment, but after the global object for that environment is created.  The \[[Prototype]]s
 of all initial objects in a given global environment must come from
 that same global environment.
 
@@ -7023,7 +7023,7 @@ the object (or its prototype chain) correspond to [=dictionary members=].
                      :  Null
                      :: |value| is <emu-val>undefined</emu-val>.
                      :  anything else
-                     :: |value| is the result of calling the <span class="prop">\[[Get]]</span> internal method on |V| with property name |key|.
+                     :: |value| is the result of calling the \[[Get]] internal method on |V| with property name |key|.
                 </dl>
             1.  If |value| is not <emu-val>undefined</emu-val>, then:
                 1.  Let |idlValue| be the result of [=converted to an IDL value|converting=] |value| to an IDL value whose type is the type |member| is declared to be of.
@@ -7380,7 +7380,7 @@ must be followed:
             return <emu-val>undefined</emu-val>.
         1.  Otherwise, return the result of performing any steps that were required to be run if the promise was rejected,
             with |reason| as the rejection reason.
-    1.  Let |then| be the result of calling the internal <span class="prop">\[[Get]]</span> method of |promise| with property name “then”.
+    1.  Let |then| be the result of calling the internal \[[Get]] method of |promise| with property name “then”.
     1.  If |then| is not [=callable=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Return the result of calling |then| with |promise| as the <emu-val>this</emu-val> value and |onFulfilled| and |onRejected|
         as its two arguments.
@@ -7831,7 +7831,7 @@ If the [{{Constructor}}]
 [=extended attribute=]
 appears on an [=interface=], it indicates that
 the [=interface object=] for this interface
-will have an <span class="prop">\[[Construct]]</span> internal method,
+will have an \[[Construct]] internal method,
 allowing objects implementing the interface to be constructed.
 
 Multiple [{{Constructor}}] extended
@@ -7885,12 +7885,12 @@ for an interface is to be implemented.
     </pre>
     
     An ECMAScript implementation supporting these interfaces would
-    have a <span class="prop">\[[Construct]]</span> property on the
+    have a \[[Construct]] property on the
     <code class="idl">Circle</code> interface object which would
     return a new object that implements the interface.  It would take
     either zero or one argument.  The
     <code class="idl">NodeList</code> interface object would not
-    have a <span class="prop">\[[Construct]]</span> property.
+    have a \[[Construct]] property.
     
     <pre highlight="js">
         var x = new Circle();      // The uses the zero-argument constructor to create a
@@ -8397,7 +8397,7 @@ If the [{{LegacyArrayClass}}]
 [=extended attribute=]
 appears on an [=interface=]
 that is not defined to [=inherit=]
-from another, it indicates that the internal <span class="prop">\[[Prototype]]</span>
+from another, it indicates that the internal \[[Prototype]]
 property of its [=interface prototype object=]
 will be the <emu-val>Array</emu-val> prototype object rather than
 the <emu-val>Object</emu-val> prototype object.  This allows
@@ -9937,15 +9937,15 @@ defined on that interface, as described in sections
 [[#es-constants]] and
 [[#es-operations]].
 
-The <span class="prop">\[[Prototype]]</span> internal property of
+The \[[Prototype]] internal property of
 an interface object for a non-callback interface is determined as
 follows:
 
 1.  If the interface inherits from some other interface, the value
-    of <span class="prop">\[[Prototype]]</span> is the interface
+    of \[[Prototype]] is the interface
     object for that other interface.
 1.  If the interface doesn't inherit from any other interface,
-    the value of <span class="prop">\[[Prototype]]</span> is
+    the value of \[[Prototype]] is
     [=%FunctionPrototype%=].
 
 An interface object for a non-callback interface must have a property named “prototype”
@@ -9961,7 +9961,7 @@ Note: Since an interface object for a non-callback interface is a [=function obj
 "function" when applied to
 such an interface object.
 
-The internal <span class="esprop">\[[Prototype]]</span> property
+The internal \[[Prototype]] property
 of an interface object for a callback interface must be
 the Object.prototype object.
 
@@ -9979,7 +9979,7 @@ can be called as a function to create an object that implements that
 interface.  Interfaces that do not have a constructor will throw
 an exception when called as a function.
 
-The internal <span class="prop">\[[Call]]</span> method
+The internal \[[Call]] method
 of the interface object behaves as follows, assuming
 |arg|<sub>0..|n|−1</sub> is the list
 of argument values passed to the constructor, and |I|
@@ -10005,7 +10005,7 @@ is the [=interface=]:
         |I|.
 </ol>
 
-If the internal <span class="prop">\[[Call]]</span> method
+If the internal \[[Call]] method
 of the [=interface object=]
 returns normally, then it must
 return an object that implements interface |I|.
@@ -10039,21 +10039,21 @@ whose value is the identifier of the corresponding interface.
 
 <h5 id="es-interface-hasinstance">Interface object \[[HasInstance]] method</h5>
 
-The internal <span class="prop">\[[HasInstance]]</span> method of every
+The internal \[[HasInstance]] method of every
 [=interface object=]
 |A| must behave as follows,
 assuming |V| is the object
-argument passed to <span class="prop">\[[HasInstance]]</span>:
+argument passed to \[[HasInstance]]:
 
 <ol class="algorithm">
     1.  If |V| is not an object, return <emu-val>false</emu-val>.
-    1.  Let |O| be the result of calling the <span class="prop">\[[Get]]</span> method of |A| with property name “prototype”.
+    1.  Let |O| be the result of calling the \[[Get]] method of |A| with property name “prototype”.
     1.  If |O| is not an object, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a> exception.
     1.  If |V| is a platform object that implements the
         interface for which |O| is the [=interface prototype object=],
         return <emu-val>true</emu-val>.
     1.  Repeat:
-        1.  Set |V| to the value of the <span class="prop">\[[Prototype]]</span> internal property of |V|.
+        1.  Set |V| to the value of the \[[Prototype]] internal property of |V|.
         1.  If |V| is <emu-val>null</emu-val>, return <emu-val>false</emu-val>.
         1.  If |O| and |V| refer to the same object,
             return <emu-val>true</emu-val>.
@@ -10068,7 +10068,7 @@ that exists due to one or more
 [=extended attributes=]
 with a given [=identifier=]
 is a [=function object=].
-It must have a <span class="prop">\[[Call]]</span>
+It must have a \[[Call]]
 internal property, which allows construction of objects that
 implement the interface on which the
 [{{NamedConstructor}}]
@@ -10098,7 +10098,7 @@ extended attribute appears:
         |I|.
 </ol>
 
-If the internal <span class="prop">\[[Call]]</span> method
+If the internal \[[Call]] method
 of the [=named constructor=]
 returns normally, then it must
 return an object that implements interface |I|.
@@ -10162,7 +10162,7 @@ is a reference to the interface object for the interface.
 
 The [=interface prototype object=]
 for a given interface |A| must have an internal
-<span class="prop">\[[Prototype]]</span> property whose value is returned from
+\[[Prototype]] property whose value is returned from
 the following steps:
 
 <ol class="algorithm">
@@ -10206,7 +10206,7 @@ the following steps:
     the [=interface object=]
     (since it does not exist as <code>window.Foo</code>).  However, an instance
     of <code class="idl">Foo</code> can expose the interface prototype
-    object by gettings its internal <span class="prop">\[[Prototype]]</span>
+    object by gettings its internal \[[Prototype]]
     property value – <code>Object.getPrototypeOf(window.foo)</code> in
     this example.
     
@@ -10214,7 +10214,7 @@ the following steps:
     [=supplemental interface=],
     then there will be no way to access its interface prototype object, since no
     object will have the interface prototype object as its internal
-    <span class="prop">\[[Prototype]]</span> property value.  In such cases,
+    \[[Prototype]] property value.  In such cases,
     it is an acceptable optimization for this object not to exist.
     
 </div>
@@ -10256,7 +10256,7 @@ interface.
 
 The [=named properties object=]
 for a given interface |A| must have an internal
-<span class="prop">\[[Prototype]]</span> property whose value is returned from
+\[[Prototype]] property whose value is returned from
 the following steps:
 
 <ol class="algorithm">
@@ -10277,7 +10277,7 @@ is the concatenation of the [=interface=]’s
 
 <h5 id="named-properties-object-getownproperty">Named properties object \[[GetOwnProperty]] method</h5>
 
-The internal <span class="prop">\[[GetOwnProperty]]</span> method of every
+The internal \[[GetOwnProperty]] method of every
 [=named properties object=]
 must behave as follows when called with object |O|
 and property name |P|:
@@ -10304,15 +10304,15 @@ and property name |P|:
             of performing the steps listed in the description of |operation| with |P| as the only argument value.
         
         1.  Let |desc| be a newly created [=Property Descriptor=] with no fields.
-        1.  Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to an ECMAScript value|converting=]
+        1.  Set |desc|.\[[Value]] to the result of [=converted to an ECMAScript value|converting=]
             |value| to an ECMAScript value.
         1.  If |A| implements an interface with the
             [{{LegacyUnenumerableNamedProperties}}]
             [=extended attribute=],
-            then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
+            then set |desc|.\[[Enumerable]] to <emu-val>false</emu-val>,
             otherwise set it to <emu-val>true</emu-val>.
-        1.  Set |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val> and
-            |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.
+        1.  Set |desc|.\[[Writable]] to <emu-val>true</emu-val> and
+            |desc|.\[[Configurable]] to <emu-val>true</emu-val>.
         1.  Return |desc|.
     
     1.  Return the result of calling the [=default [[GetOwnProperty]] internal method=] on |O| passing |P| as the argument.
@@ -10321,7 +10321,7 @@ and property name |P|:
 
 <h5 id="named-properties-object-defineownproperty">Named properties object \[[DefineOwnProperty]] method</h5>
 
-The internal <span class="prop">\[[DefineOwnProperty]]</span> method of every
+The internal \[[DefineOwnProperty]] method of every
 [=named properties object=]
 must behave as follows when called with object |O|
 and property name |P|.
@@ -10336,7 +10336,7 @@ otherwise return <emu-val>false</emu-val>”.
 
 <h5 id="named-properties-object-delete">Named properties object \[[Delete]] method</h5>
 
-The internal <span class="prop">\[[Delete]]</span> method of every
+The internal \[[Delete]] method of every
 [=named properties object=]
 must behave as follows when called with object |O| and
 property name |P|.
@@ -10485,11 +10485,11 @@ The characteristics of this property are as follows:
                 extended attribute, then return <emu-val>undefined</emu-val>.
             1.  If the attribute is declared with a [{{PutForwards}}]
                 extended attribute, then:
-                1.  Let |Q| be the result of calling the <span class="prop">\[[Get]]</span> method
+                1.  Let |Q| be the result of calling the \[[Get]] method
                     on |O| using the identifier of the attribute as the property name.
                 1.  If |Q| is not an object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
                 1.  Let |A| be the attribute identified by the [{{PutForwards}}] extended attribute.
-                1.  Call the <span class="prop">\[[Put]]</span> method on |Q|
+                1.  Call the \[[Put]] method on |Q|
                     using the identifier of |A| as the property name and |V| as the value.
                 1.  Return <emu-val>undefined</emu-val>.
         1.  Let |idlValue| be an IDL value determined as follows:
@@ -11745,7 +11745,7 @@ object is associated with.
 
 The <dfn id="dfn-primary-interface" export>primary interface</dfn> of a platform object
 that implements one or more interfaces is the most-derived [=supplemental interfaces|non-supplemental interface=]
-that it implements.  The value of the internal <span class="prop">\[[Prototype]]</span>
+that it implements.  The value of the internal \[[Prototype]]
 property of the platform object is the [=interface prototype object=]
 of the [=primary interface=]
 from the [=platform object=]’s associated global environment.
@@ -11753,7 +11753,7 @@ from the [=platform object=]’s associated global environment.
 The global environment that a given [=platform object=]
 is associated with can <dfn id="dfn-change-global-environment" for="global environment" export>change</dfn> after it has been created.  When
 the global environment associated with a platform object is changed, its internal
-<span class="prop">\[[Prototype]]</span> property must be immediately
+\[[Prototype]] property must be immediately
 updated to be the [=interface prototype object=]
 of the [=primary interface=]
 from the [=platform object=]’s newly associated global environment.
@@ -11812,7 +11812,7 @@ If a [=platform object=] implements an [=interface=] that
 the object will appear to have additional properties that correspond to the
 object’s indexed and named properties.  These properties are not “real” own
 properties on the object, but are made to look like they are by being exposed
-by the <span class="prop">\[[GetOwnProperty]]</span> internal method.
+by the \[[GetOwnProperty]] internal method.
 
 However, when the [{{Global}}] or
 [{{PrimaryGlobal}}]
@@ -11884,11 +11884,11 @@ operates as follows, with property name |P| and object |O|:
     1.  If |O| implements an interface that has the [{{OverrideBuiltins}}]
         [=extended attribute=], then return true.
     1.  If |O| has an own property named |P|, then return false.
-    1.  Initialize |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |O|.
+    1.  Initialize |prototype| to be the value of the internal \[[Prototype]] property of |O|.
     1.  While |prototype| is not null:
         1.  If |prototype| is not a [=named properties object=],
             and |prototype| has an own property named |P|, then return false.
-        1.  Set |prototype| to be the value of the internal <span class="prop">\[[Prototype]]</span> property of |prototype|.
+        1.  Set |prototype| to be the value of the internal \[[Prototype]] property of |prototype|.
     1.  Return true.
 </ol>
 
@@ -11922,7 +11922,7 @@ defined in section [[#platformobjectset]].
 
 <h4 id="getownproperty-guts" dfn>The PlatformObjectGetOwnProperty abstract operation</h4>
 
-The <span class="prop">PlatformObjectGetOwnProperty</span>
+The \PlatformObjectGetOwnProperty
 abstract operation performs the following steps when called with an
 object |O|, a property name |P|, and a boolean
 |ignoreNamedProps| value:
@@ -11943,12 +11943,12 @@ object |O|, a property name |P|, and a boolean
                 of performing the steps listed in the description of |operation| with |index| as the only argument value.
             
             1.  Let |desc| be a newly created [=Property Descriptor=] with no fields.
-            1.  Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to an ECMAScript value|converting=]
+            1.  Set |desc|.\[[Value]] to the result of [=converted to an ECMAScript value|converting=]
                 |value| to an ECMAScript value.
             1.  If |O| implements an interface with an [=indexed property setter=], then set
-                |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
+                |desc|.\[[Writable]] to <emu-val>true</emu-val>, otherwise set it to
                 <emu-val>false</emu-val>.
-            1.  Set |desc|.<span class="prop">\[[Enumerable]]</span> and |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.
+            1.  Set |desc|.\[[Enumerable]] and |desc|.\[[Configurable]] to <emu-val>true</emu-val>.
             1.  Return |desc|.
         1.  Set |ignoreNamedProps| to true.
     
@@ -11967,17 +11967,17 @@ object |O|, a property name |P|, and a boolean
             of performing the steps listed in the description of |operation| with |P| as the only argument value.
         
         1.  Let |desc| be a newly created [=Property Descriptor=] with no fields.
-        1.  Set |desc|.<span class="prop">\[[Value]]</span> to the result of [=converted to an ECMAScript value|converting=]
+        1.  Set |desc|.\[[Value]] to the result of [=converted to an ECMAScript value|converting=]
             |value| to an ECMAScript value.
         1.  If |O| implements an interface with a [=named property setter=], then set
-            |desc|.<span class="prop">\[[Writable]]</span> to <emu-val>true</emu-val>, otherwise set it to
+            |desc|.\[[Writable]] to <emu-val>true</emu-val>, otherwise set it to
             <emu-val>false</emu-val>.
         1.  If |O| implements an interface with the
             [{{LegacyUnenumerableNamedProperties}}]
             [=extended attribute=],
-            then set |desc|.<span class="prop">\[[Enumerable]]</span> to <emu-val>false</emu-val>,
+            then set |desc|.\[[Enumerable]] to <emu-val>false</emu-val>,
             otherwise set it to <emu-val>true</emu-val>.
-        1.  Set |desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.
+        1.  Set |desc|.\[[Configurable]] to <emu-val>true</emu-val>.
         1.  Return |desc|.
     
     1.  Return the result of calling the [=default [[GetOwnProperty]] internal method=] on |O| passing |P| as the argument.
@@ -11986,7 +11986,7 @@ object |O|, a property name |P|, and a boolean
 
 <h4 id="getownproperty">Platform object \[[GetOwnProperty]] method</h4>
 
-The internal <span class="prop">\[[GetOwnProperty]]</span> method of every
+The internal \[[GetOwnProperty]] method of every
 [=platform object=] |O| that implements an [=interface=]
 which [=support indexed properties|supports indexed=] or
 [=support named properties|named properties=]
@@ -12047,7 +12047,7 @@ To <dfn id="invoke-named-setter" export lt="invoke the named property setter">in
 
 <h4 id="platformobjectset">Platform object \[[Set]] method</h4>
 
-The internal <span class="prop">\[[Set]]</span> method of every
+The internal \[[Set]] method of every
 [=platform object=] |O| that implements an [=interface=]
 which [=support indexed properties|supports indexed=] or
 [=support named properties|named properties=]
@@ -12078,7 +12078,7 @@ ECMAScript language value |Receiver|:
 
 <h4 id="defineownproperty">Platform object \[[DefineOwnProperty]] method</h4>
 
-The internal <span class="prop">\[[DefineOwnProperty]]</span> method of every
+The internal \[[DefineOwnProperty]] method of every
 [=platform object=] |O| that implements an [=interface=]
 which [=support indexed properties|supports indexed=] or
 [=support named properties|named properties=]
@@ -12091,7 +12091,7 @@ Property Descriptor |Desc| and boolean flag |Throw|.
         1.  If the result of calling [=IsDataDescriptor=](|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.
         1.  If |O| does not implement an interface with an [=indexed property setter=], then <a href="#Reject">Reject</a>.
         1.  <a href="#invoking-indexed-setter">Invoke the indexed
-            property setter</a> with |P| and |Desc|.<span class="prop">\[[Value]]</span>.
+            property setter</a> with |P| and |Desc|.\[[Value]].
         1.  Return <emu-val>true</emu-val>.
     
     1.  If |O| [=support named properties|supports named properties=],
@@ -12109,19 +12109,19 @@ Property Descriptor |Desc| and boolean flag |Throw|.
                 1.  If the result of calling [=IsDataDescriptor=](|Desc|) is <emu-val>false</emu-val>, then <a href="#Reject">Reject</a>.
                 1.  <a href="#invoking-named-setter">Invoke the named
                     property setter</a> with |P| and
-                    |Desc|.<span class="prop">\[[Value]]</span>.
+                    |Desc|.\[[Value]].
                 1.  Return <emu-val>true</emu-val>.
     
     1.  If |O| does not implement an [=interface=] with the
         [{{Global}}] or [{{PrimaryGlobal}}] [=extended attribute=],
-        then set |Desc|.<span class="prop">\[[Configurable]]</span> to <emu-val>true</emu-val>.
+        then set |Desc|.\[[Configurable]] to <emu-val>true</emu-val>.
     1.  Call the [=default [[DefineOwnProperty]] internal method=] on |O| passing |P|, |Desc|, and |Throw| as arguments.
 </ol>
 
 
 <h4 id="delete">Platform object \[[Delete]] method</h4>
 
-The internal <span class="prop">\[[Delete]]</span> method of every
+The internal \[[Delete]] method of every
 [=platform object=] |O| that implements an [=interface=]
 which [=support indexed properties|supports indexed=] or
 [=support named properties|named properties=]
@@ -12161,12 +12161,12 @@ must behave as follows when called with property name |P|.
 
 <h4 id="call">Platform object \[[Call]] method</h4>
 
-The internal <span class="prop">\[[Call]]</span> method of every
+The internal \[[Call]] method of every
 [=platform object=] |O| that implements an [=interface=]
 |I| with at least one [=legacy caller=]
 must behave as follows, assuming
 |arg|<sub>0..|n|−1</sub> is the list of argument
-values passed to <span class="prop">\[[Call]]</span>:
+values passed to \[[Call]]:
 
 <ol class="algorithm">
     1.  Initialize |S| to the [=effective overload set=]
@@ -12227,14 +12227,14 @@ is considered to be a user object implementing a callback interface:
         the callable object itself.
     *   Otherwise, the object is not [=callable=].
         The implementation of the operation (or set of overloaded operations) is
-        the result of invoking the internal <span class="prop">\[[Get]]</span> method
+        the result of invoking the internal \[[Get]] method
         on the object with a property name that is the [=identifier=]
         of the operation.
 *   Otherwise, the interface is not a [=single operation callback interface=].
     Any object that is not a native
     <emu-val>RegExp</emu-val> object is considered to implement the interface.
     For each operation declared on the interface with a given [=identifier=], the implementation
-    is the result of invoking <span class="prop">\[[Get]]</span> on the object with a
+    is the result of invoking \[[Get]] on the object with a
     property name that is that identifier.
 
 Note that ECMAScript objects need not have
@@ -12544,7 +12544,7 @@ The property has the attributes <span class="descriptor">{ \[[Writable]]: <emu-
 <h4 id="es-DOMException-constructor-object">DOMException constructor object</h4>
 
 The DOMException constructor object must be a [=function object=]
-but with a <span class="prop">\[[Prototype]]</span> value of [=%Error%=].
+but with a \[[Prototype]] value of [=%Error%=].
 
 For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
 there must be a property on the DOMException constructor object
@@ -12583,7 +12583,7 @@ When the DOMException function is called with arguments |message| and |name|, th
 <h4 id="es-DOMException-prototype-object">DOMException prototype object</h4>
 
 The DOMException prototype object must
-have an internal <span class="prop">\[[Prototype]]</span> property whose value is [=%ErrorPrototype%=].
+have an internal \[[Prototype]] property whose value is [=%ErrorPrototype%=].
 
 The [=class string=] of the
 [=DOMException prototype object=]
@@ -12616,7 +12616,7 @@ either normally or as part of a <code>new</code> expression, then the global env
 of the newly created object is associated with must be the same as for the
 [=DOMException constructor object=] itself.
 
-The value of the internal <span class="prop">\[[Prototype]]</span>
+The value of the internal \[[Prototype]]
 property of a [=DOMException=]
 object must be the [=DOMException prototype object=]
 from the global environment the exception object is associated with.
