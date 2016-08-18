@@ -487,11 +487,11 @@ and [=dictionary member=] has an
 <dfn id="dfn-identifier" export>identifier</dfn>, as do some
 [=operations=].
 The identifier is determined by an
-<emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token somewhere
+<emu-t><a href="#prod-identifier">identifier</a></emu-t> token somewhere
 in the declaration:
 
 *   For [=named definitions=],
-    the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token that appears
+    the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
     directly after the <code>interface</code>,
     <code>dictionary</code>, <code>enum</code>
     or <code>callback</code> keyword
@@ -507,7 +507,7 @@ in the declaration:
 *   For [=attributes=],
     [=typedefs=]
     and [=dictionary members=],
-    the final <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token before the
+    the final <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     semicolon at the end of the declaration determines the identifier.
     <pre highlight="idl" class="syntax">
         interface identifier {
@@ -521,15 +521,15 @@ in the declaration:
         };
     </pre>
 *   For [=constants=],
-    the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token before the
+    the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     equals sign determines the identifier.
     <pre highlight="idl" class="syntax">const type constant-identifier = value;</pre>
 *   For [=operations=], the
-    <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token that appears
+    <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
     after the return type but before the opening parenthesis (that is,
     one that is matched as part of the <emu-nt><a href="#prod-OptionalIdentifier">OptionalIdentifier</a></emu-nt>
     grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
-    there is no such <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token,
+    there is no such <emu-t><a href="#prod-identifier">identifier</a></emu-t> token,
     then the operation does not have an identifier.
     <pre highlight="idl" class="syntax">return-type operation-identifier(arguments…);</pre>
 
@@ -537,7 +537,7 @@ Note: Operations can have no identifier when they are being used to declare a
 <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
 
 For all of these constructs, the [=identifier=]
-is the value of the <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token with any leading
+is the value of the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token with any leading
 <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed.
 
 Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
@@ -547,7 +547,7 @@ identifier.
 
 Operation arguments can take a slightly wider set of identifiers.  In an operation
 declaration, the identifier of an argument is specified immediately after its
-type and is given by either an <emu-nt><a href="#prod-identifier">identifier</a></emu-nt>
+type and is given by either an <emu-t><a href="#prod-identifier">identifier</a></emu-t>
 token or by one of the keywords that match the <emu-nt><a href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a></emu-nt>
 symbol.  If one of these keywords is used, it need not be escaped with a leading
 underscore.
@@ -580,7 +580,7 @@ underscore.
         "unrestricted"
 </pre>
 
-If an <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token is used, then the
+If an <emu-t><a href="#prod-identifier">identifier</a></emu-t> token is used, then the
 [=identifier=] of the operation argument
 is the value of that token with any leading
 <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed.
@@ -1165,8 +1165,8 @@ constant declaration gives the value of the constant, which can be
 one of the two boolean literal tokens (<code>true</code>
 and <code>false</code>),
 the <code>null</code> token, an
-<emu-nt><a href="#prod-integer">integer</a></emu-nt> token,
-a <emu-nt><a href="#prod-float">float</a></emu-nt> token,
+<emu-t><a href="#prod-integer">integer</a></emu-t> token,
+a <emu-t><a href="#prod-float">float</a></emu-t> token,
 or one of the three special floating point constant values
 (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>).
 
@@ -1179,11 +1179,11 @@ The value of the boolean literal tokens <code>true</code> and
 <code>false</code> are the IDL {{boolean}} values
 <emu-val>true</emu-val> and <emu-val>false</emu-val>.
 
-The value of an <emu-nt><a href="#prod-integer">integer</a></emu-nt> token is an integer
+The value of an <emu-t><a href="#prod-integer">integer</a></emu-t> token is an integer
 whose value is determined as follows:
 
 <ol class="algorithm">
-    1.  Let |S| be the sequence of characters matched by the <emu-nt><a href="#prod-integer">integer</a></emu-nt> token.
+    1.  Let |S| be the sequence of characters matched by the <emu-t><a href="#prod-integer">integer</a></emu-t> token.
     1.  Let |sign| be −1 if |S| begins with <span class="char">U+002D HYPHEN-MINUS ("-")</span>, and 1 otherwise.
     1.  Let |base| be the base of the number based on the characters that follow the optional leading <span class="char">U+002D HYPHEN-MINUS ("-")</span> character:
         <dl class="switch">
@@ -1200,32 +1200,32 @@ whose value is determined as follows:
     1.  Return |sign| × |number|.
 </ol>
 
-The type of an <emu-nt><a href="#prod-integer">integer</a></emu-nt> token is the same
+The type of an <emu-t><a href="#prod-integer">integer</a></emu-t> token is the same
 as the type of the constant, dictionary member or optional argument it is being used as the value of.
-The value of the <emu-nt><a href="#prod-integer">integer</a></emu-nt> token must not
+The value of the <emu-t><a href="#prod-integer">integer</a></emu-t> token must not
 lie outside the valid range of values for its type, as given in
 [[#idl-types]].
 
 <p id="float-token-value">
-    The value of a <emu-nt><a href="#prod-float">float</a></emu-nt> token is
+    The value of a <emu-t><a href="#prod-float">float</a></emu-t> token is
     either an IEEE 754 single-precision floating point number or an IEEE 754
     double-precision floating point number, depending on the type of the
     constant, dictionary member or optional argument it is being used as the value for, determined as follows:
 </p>
 
 <ol class="algorithm">
-    1.  Let |S| be the sequence of characters matched by the <emu-nt><a href="#prod-float">float</a></emu-nt> token.
+    1.  Let |S| be the sequence of characters matched by the <emu-t><a href="#prod-float">float</a></emu-t> token.
     1.  Let |value| be the Mathematical Value that would be obtained if |S| were
         parsed as an ECMAScript [=NumericLiteral=].
-    1.  If the <emu-nt><a href="#prod-float">float</a></emu-nt> token is being
+    1.  If the <emu-t><a href="#prod-float">float</a></emu-t> token is being
         used as the value for a {{float}} or
         {{unrestricted float}}, then
-        the value of the <emu-nt><a href="#prod-float">float</a></emu-nt> token
+        the value of the <emu-t><a href="#prod-float">float</a></emu-t> token
         is the IEEE 754 single-precision floating point number closest to
-        |result|.  Otherwise, the <emu-nt><a href="#prod-float">float</a></emu-nt> token is being
+        |result|.  Otherwise, the <emu-t><a href="#prod-float">float</a></emu-t> token is being
         used as the value for a {{double}} or
         {{unrestricted double}}, and
-        the value of the <emu-nt><a href="#prod-float">float</a></emu-nt> token
+        the value of the <emu-t><a href="#prod-float">float</a></emu-t> token
         is the IEEE 754 double-precision floating point number closest to
         |result|.
         [[!IEEE-754]]
@@ -1253,9 +1253,9 @@ value for:
      :: The value is the IEEE 754 double-precision NaN value with the bit pattern 0x7ff8000000000000.
 </dl>
 
-The type of a <emu-nt><a href="#prod-float">float</a></emu-nt> token is the same
+The type of a <emu-t><a href="#prod-float">float</a></emu-t> token is the same
 as the type of the constant, dictionary member or optional argument it is being used as the value of.  The value of the
-<emu-nt><a href="#prod-float">float</a></emu-nt> token must not
+<emu-t><a href="#prod-float">float</a></emu-t> token must not
 lie outside the valid range of values for its type, as given in
 [[#idl-types]].
 Also, <code>Infinity</code>, <code>-Infinity</code> and <code>NaN</code> must not
@@ -1780,30 +1780,30 @@ unless otherwise specified.
 
 When a boolean literal token (<code>true</code> or <code>false</code>),
 the <code>null</code> token,
-an <emu-nt><a href="#prod-integer">integer</a></emu-nt> token, a
-<emu-nt><a href="#prod-float">float</a></emu-nt> token or one of
+an <emu-t><a href="#prod-integer">integer</a></emu-t> token, a
+<emu-t><a href="#prod-float">float</a></emu-t> token or one of
 the three special floating point literal values (<code>Infinity</code>,
 <code>-Infinity</code> or <code>NaN</code>) is used as the
 [=default value=],
 it is interpreted in the same way as for a [=constant=].
 
 <p id="string-literal">
-    Optional argument default values can also be specified using a <emu-nt><a href="#prod-string">string</a></emu-nt>
+    Optional argument default values can also be specified using a <emu-t><a href="#prod-string">string</a></emu-t>
     token, whose value is a [=string type=]
     determined as follows:
 </p>
 
 <ol class="algorithm">
-    1.  Let |S| be the sequence of [=Unicode scalar values=] matched by the <emu-nt><a href="#prod-string">string</a></emu-nt> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.
+    1.  Let |S| be the sequence of [=Unicode scalar values=] matched by the <emu-t><a href="#prod-string">string</a></emu-t> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.
     1.  Depending on the type of the argument:
         <dl class="switch">
              :  {{DOMString}}
              :  an [=enumeration=] type
-             :: The value of the <emu-nt><a href="#prod-string">string</a></emu-nt> token is the sequence of 16 bit unsigned integer code units (hereafter referred to just as <dfn id="dfn-code-unit">code units</dfn>) corresponding to the UTF-16 encoding of |S|.
+             :: The value of the <emu-t><a href="#prod-string">string</a></emu-t> token is the sequence of 16 bit unsigned integer code units (hereafter referred to just as <dfn id="dfn-code-unit">code units</dfn>) corresponding to the UTF-16 encoding of |S|.
              :  {{ByteString}}
-             :: The value of the <emu-nt><a href="#prod-string">string</a></emu-nt> token is the sequence of 8 bit unsigned integer code units corresponding to the UTF-8 encoding of |S|.
+             :: The value of the <emu-t><a href="#prod-string">string</a></emu-t> token is the sequence of 8 bit unsigned integer code units corresponding to the UTF-8 encoding of |S|.
              :  {{USVString}}
-             :: The value of the <emu-nt><a href="#prod-string">string</a></emu-nt> token is |S|.
+             :: The value of the <emu-t><a href="#prod-string">string</a></emu-t> token is |S|.
         </dl>
 </ol>
 
@@ -3120,11 +3120,11 @@ extended attribute’s [=takes a named argument list|named argument list=].
                 identifier |A| defined on interface |I|.
              :  For constructors
              :: The elements of |F| are the
-                <emu-nt><a href="#Constructor">[Constructor]</a></emu-nt>
+                [{{Constructor}}]
                 [=extended attributes=] on interface |I|.
              :  For named constructors
              :: The elements of |F| are the
-                <emu-nt><a href="#NamedConstructor">[NamedConstructor]</a></emu-nt>
+                [{{NamedConstructor}}]
                 [=extended attributes=] on interface |I| whose
                 [=takes a named argument list|named argument lists’=]
                 identifiers are |A|.
@@ -3917,7 +3917,7 @@ Each [=dictionary member=] (matching
 <emu-nt><a href="#prod-DictionaryMember">DictionaryMember</a></emu-nt>) is specified
 as a type (matching <emu-nt><a href="#prod-Type">Type</a></emu-nt>) followed by an
 [=identifier=]
-(given by an <emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token following
+(given by an <emu-t><a href="#prod-identifier">identifier</a></emu-t> token following
 the type).  The identifier is the key name of the key–value pair.
 If the <emu-nt><a href="#prod-Type">Type</a></emu-nt>
 is an [=identifier=]
@@ -3947,11 +3947,11 @@ then that gives the dictionary member its [=default value=].
 
 When a boolean literal token (<code>true</code> or <code>false</code>),
 the <code>null</code> token,
-an <emu-nt><a href="#prod-integer">integer</a></emu-nt> token, a
-<emu-nt><a href="#prod-float">float</a></emu-nt> token,
+an <emu-t><a href="#prod-integer">integer</a></emu-t> token, a
+<emu-t><a href="#prod-float">float</a></emu-t> token,
 one of the three special floating point literal values (<code>Infinity</code>,
 <code>-Infinity</code> or <code>NaN</code>),
-a <emu-nt><a href="#prod-string">string</a></emu-nt> token or
+a <emu-t><a href="#prod-string">string</a></emu-t> token or
 the two token sequence <code>[]</code> used as the
 [=default value=],
 it is interpreted in the same way as for an [=operation=]’s
@@ -4485,7 +4485,7 @@ can be used to restrict the possible
 <pre highlight="idl" class="syntax">enum identifier { enumeration-values… };</pre>
 
 The <dfn id="dfn-enumeration-value" export lt="enumeration value">enumeration values</dfn> are specified
-as a comma-separated list of <emu-nt><a href="#prod-string">string</a></emu-nt> literals.
+as a comma-separated list of <emu-t><a href="#prod-string">string</a></emu-t> literals.
 The list of [=enumeration values=]
 must not include duplicates.
 
@@ -4648,7 +4648,7 @@ the type in the IDL.
 
 The type being given a new name is specified after the <code>typedef</code>
 keyword (matching <emu-nt><a href="#prod-Type">Type</a></emu-nt>), and the
-<emu-nt><a href="#prod-identifier">identifier</a></emu-nt> token following the
+<emu-t><a href="#prod-identifier">identifier</a></emu-t> token following the
 type gives the name.
 
 The <emu-nt><a href="#prod-Type">Type</a></emu-nt> must not
@@ -5078,7 +5078,7 @@ The {{byte}} type is a signed integer
 type that has values in the range [−128, 127].
 
 {{byte}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5091,7 +5091,7 @@ The {{octet}} type is an unsigned integer
 type that has values in the range [0, 255].
 
 {{octet}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5104,7 +5104,7 @@ The {{short}} type is a signed integer
 type that has values in the range [−32768, 32767].
 
 {{short}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5117,7 +5117,7 @@ The {{unsigned short}} type is an unsigned integer
 type that has values in the range [0, 65535].
 
 {{unsigned short}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5130,7 +5130,7 @@ The {{long}} type is a signed integer
 type that has values in the range [−2147483648, 2147483647].
 
 {{long}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5143,7 +5143,7 @@ The {{unsigned long}} type is an unsigned integer
 type that has values in the range [0, 4294967295].
 
 {{unsigned long}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5156,7 +5156,7 @@ The {{long long}} type is a signed integer
 type that has values in the range [−9223372036854775808, 9223372036854775807].
 
 {{long long}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5169,7 +5169,7 @@ The {{unsigned long long}} type is an unsigned integer
 type that has values in the range [0, 18446744073709551615].
 
 {{unsigned long long}} constant values in IDL are
-represented with <emu-nt><a href="#prod-integer">integer</a></emu-nt>
+represented with <emu-t><a href="#prod-integer">integer</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5183,7 +5183,7 @@ type that corresponds to the set of finite single-precision 32 bit
 IEEE 754 floating point numbers.  [[!IEEE-754]]
 
 {{float}} constant values in IDL are
-represented with <emu-nt><a href="#prod-float">float</a></emu-nt>
+represented with <emu-t><a href="#prod-float">float</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5203,7 +5203,7 @@ type that corresponds to the set of all possible single-precision 32 bit
 IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
 
 {{unrestricted float}} constant values in IDL are
-represented with <emu-nt><a href="#prod-float">float</a></emu-nt>
+represented with <emu-t><a href="#prod-float">float</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5217,7 +5217,7 @@ type that corresponds to the set of finite double-precision 64 bit
 IEEE 754 floating point numbers.  [[!IEEE-754]]
 
 {{double}} constant values in IDL are
-represented with <emu-nt><a href="#prod-float">float</a></emu-nt>
+represented with <emu-t><a href="#prod-float">float</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5231,7 +5231,7 @@ type that corresponds to the set of all possible double-precision 64 bit
 IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
 
 {{unrestricted double}} constant values in IDL are
-represented with <emu-nt><a href="#prod-float">float</a></emu-nt>
+represented with <emu-t><a href="#prod-float">float</a></emu-t>
 tokens.
 
 The [=type name=] of the
@@ -5305,7 +5305,7 @@ The following algorithm defines a way to
 There is no way to represent a constant {{DOMString}}
 value in IDL, although {{DOMString}} [=dictionary member=]
 and [=optional argument|operation optional argument=] default values
-can be specified using a <emu-nt><a href="#prod-string">string</a></emu-nt> literal.
+can be specified using a <emu-t><a href="#prod-string">string</a></emu-t> literal.
 
 The [=type name=] of the
 {{DOMString}} type is “String”.
@@ -5349,7 +5349,7 @@ surrogate code points.
 There is no way to represent a constant {{USVString}}
 value in IDL, although {{USVString}} [=dictionary member=]
 and [=optional argument|operation optional argument=] default values
-can be specified using a <emu-nt><a href="#prod-string">string</a></emu-nt> literal.
+can be specified using a <emu-t><a href="#prod-string">string</a></emu-t> literal.
 
 The [=type name=] of the
 {{USVString}} type is “USVString”.
@@ -5436,7 +5436,7 @@ refer to a type whose values are the set of strings (sequences of
 Like {{DOMString}}, there is no way to represent a constant [=enumeration=]
 value in IDL, although enumeration-typed [=dictionary member=]
 [=default values=] can be specified using a
-<emu-nt><a href="#prod-string">string</a></emu-nt> literal.
+<emu-t><a href="#prod-string">string</a></emu-t> literal.
 
 The [=type name=] of an enumeration type
 is the [=identifier=] of the enumeration.
@@ -8662,8 +8662,8 @@ The [{{NamedConstructor}}]
 extended attribute must either
 [=takes an identifier|take an identifier=] or
 [=takes a named argument list|take a named argument list=].
-The first form, <code>[NamedConstructor=<emu-nt><a href="#prod-identifier">identifier</a></emu-nt>]</code>, has the same meaning as
-using an empty argument list, <code>[NamedConstructor=<emu-nt><a href="#prod-identifier">identifier</a></emu-nt>()]</code>.  For each
+The first form, <code>[NamedConstructor=<emu-t><a href="#prod-identifier">identifier</a></emu-t>]</code>, has the same meaning as
+using an empty argument list, <code>[NamedConstructor=<emu-t><a href="#prod-identifier">identifier</a></emu-t>()]</code>.  For each
 [{{NamedConstructor}}] extended attribute
 on the interface, there will be a way to construct an object that implements
 the interface by passing the specified arguments to the constructor function
@@ -9938,7 +9938,7 @@ The characteristics of an interface object are described in [[#interface-object]
 In addition, for every [{{NamedConstructor}}]
 extended attribute on an [=exposed=] interface, a corresponding property must
 exist on the ECMAScript global object.  The name of the property is the
-<emu-nt><a href="#prod-identifier">identifier</a></emu-nt> that occurs directly after the
+<emu-t><a href="#prod-identifier">identifier</a></emu-t> that occurs directly after the
 “<emu-t>=</emu-t>”, and its value is an object called a
 <dfn id="dfn-named-constructor" export>named constructor</dfn>, which allows
 construction of objects that implement the interface.  The property has the

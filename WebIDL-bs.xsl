@@ -426,9 +426,23 @@ Boilerplate: omit issues-index
     </xsl:choose>
   </xsl:template>
   
-  <!-- Links with @class=sym => <emu-nt><a>-->
+  <!-- Links with @class=sym => <emu-nt><a /><emu-nt>-->
   <xsl:template match='h:a[@class="sym"]'>
-    <emu-nt><a href="{@href}"><xsl:value-of select='.'/></a></emu-nt>
+    <xsl:variable name='txt' select='.'/>
+    <xsl:choose>
+      <xsl:when test='//*[@id="grammar"]/x:prod[@nt=$txt]'>
+        <emu-nt><a href="{@href}"><xsl:value-of select='.'/></a></emu-nt>
+      </xsl:when>
+      <xsl:when test='matches($txt, "^(integer|float|identifier|string|whitespace|comment|other)$")'>
+        <emu-t><a href="#prod-{$txt}"><xsl:value-of select='$txt' /></a></emu-t>
+      </xsl:when>
+      <xsl:when test='$txt = "[NamedConstructor]" or $txt = "[Constructor]"'>
+        <xsl:call-template name='a-xattr'><xsl:with-param name='txt' select='$txt'/></xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:message terminate='yes'>unknown grammar token '<xsl:value-of select='$txt'/>'</xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <!-- References => [[foo]]-->
@@ -484,6 +498,7 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <!-- Links with class xattr => [{{foo}}] -->
+  
   <xsl:template match='h:a[@class="xattr"]'>
     <xsl:call-template name='a-xattr'><xsl:with-param name='txt' select='.'/></xsl:call-template>
   </xsl:template>
