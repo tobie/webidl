@@ -491,6 +491,12 @@ Boilerplate: omit issues-index
   <xsl:template match='h:a[@class="xattr"][text()="[TreatNullAs=EmptyString]"]'>
     <xsl:call-template name='a-xattr'><xsl:with-param name='txt'>TreatNullAs</xsl:with-param></xsl:call-template>
   </xsl:template>
+  
+  <!-- Spans with class xattr => [<code class="idl">Foo</code>] -->
+  <xsl:template match='h:span[@class="xattr"]'>
+    <xsl:text>[</xsl:text><code class="idl"><xsl:value-of select='replace(., "\[|\]", "")'/></code><xsl:text>]</xsl:text>
+  </xsl:template>
+  
 
   <!-- Links with class idltype => {{foo}}-->
   <xsl:template match='h:a[@class="idltype"]'>

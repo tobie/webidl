@@ -268,7 +268,7 @@ The following typographic conventions are used in this document:
 *   IDL and ECMAScript types: <code class="idl">ExampleType</code>
 *   Code snippets: <code>a = b + obj.f()</code>
 *   Unicode characters: <span class="char">U+0030 DIGIT ZERO ("0")</span>
-*   Extended attributes: <span class="xattr">[ExampleExtendedAttribute]</span>
+*   Extended attributes: [<code class="idl">ExampleExtendedAttribute</code>]
 *   Variable names in prose and algorithms: |exampleVariableName|.
 *   Algorithms use <a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">the conventions of the ECMAScript specification</a>, including the ! and ? notation for unwrapping completion records.
 *   IDL informal syntax examples:
@@ -13114,7 +13114,7 @@ terminal symbol <emu-t>const</emu-t>, an
 [=identifier=]
 “A” is distinct from one named “a”, and an
 [=extended attribute=]
-<span class="xattr">[constructor]</span> will not be recognized as
+[<code class="idl">constructor</code>] will not be recognized as
 the [{{Constructor}}]
 extended attribute.
 
@@ -13159,11 +13159,11 @@ Changes appendix</a>.
 *   Fixed unions containing a sequence and a dictionary to try the
     sequence first when given an object, just like overload
     resolution does.
-*   Removed support for <span class="xattr">[Constructor]</span> on dictionaries.
-*   Added the <span class="xattr">[LenientSetter]</span> extended attribute.
-*   Added the <span class="xattr">[SecureContext]</span> extended attribute.
-*   Changed from <span class="xattr">[Unscopeable]</span> to
-    <span class="xattr">[Unscopable]</span> to match ES6 better.
+*   Removed support for [<code class="idl">Constructor</code>] on dictionaries.
+*   Added the [<code class="idl">LenientSetter</code>] extended attribute.
+*   Added the [<code class="idl">SecureContext</code>] extended attribute.
+*   Changed from [<code class="idl">Unscopeable</code>] to
+    [<code class="idl">Unscopable</code>] to match ES6 better.
 *   Removed the term "unenumerable" and its associated prose and replaced it by the
     extended attribute [LegacyUnenumerableNamedProperties].
 *   Allowed object internal methods to be overridden by other specifications.
@@ -13174,9 +13174,9 @@ Changes appendix</a>.
 *   Disallowed “length” and “name” from being used as identifiers of
     constants.
 *   Added a <a interface lt="FrozenArray">FrozenArray&lt;|T|&gt;</a> type.
-*   Renamed <span class="xattr">[ArrayClass]</span> to <span class="xattr">[LegacyArrayClass]</span>.
+*   Renamed [<code class="idl">ArrayClass</code>] to [<code class="idl">LegacyArrayClass</code>].
 *   Removed <code class="idl">T[]</code> array types.
-*   Allowed <span class="xattr">[NewObject]</span> to be used on things with
+*   Allowed [<code class="idl">NewObject</code>] to be used on things with
     a promise type.
 *   Fix various cases in which maplike/setlike were operating on the wrong objects.
     
@@ -13200,12 +13200,12 @@ Changes appendix</a>.
 *   Removed IDL exceptions, baked in {{DOMException}},
     and added {{Error!!interface}} and {{DOMException}}
     as types.
-*   Removed <span class="xattr">[MapLike]</span> and added
+*   Removed [<code class="idl">MapLike</code>] and added
     iterable, maplike and setlike declarations.
 *   Removed the custom Object.prototype.toString definition and instead
     defined class strings to influence the @@toStringTag property
     on objects.
-*   Added the <span class="xattr">[Unscopeable]</span> extended attribute.
+*   Added the [<code class="idl">Unscopeable</code>] extended attribute.
 *   Rewrote ES to IDL sequence conversion so that any iterable is
     convertible to a sequence.
 *   Added grammar production for <a interface lt="Promise">Promise&lt;|T|&gt;</a> types
@@ -13216,9 +13216,9 @@ Changes appendix</a>.
     sequence-typed operation argument default values and
     dictionary member default values.
 *   Added promise types.
-*   Added the <span class="xattr">[NewObject]</span> and
-    <span class="xattr">[SameObject]</span> extended attributes.
-*   Allowed <span class="xattr">[Constructor]</span> to be specified
+*   Added the [<code class="idl">NewObject</code>] and
+    [<code class="idl">SameObject</code>] extended attributes.
+*   Allowed [<code class="idl">Constructor</code>] to be specified
     on dictionaries.
 *   Added a <emu-val>RegExp</emu-val> type.
 *   Added iterators that can be declared on interfaces.
@@ -13251,17 +13251,17 @@ Changes appendix</a>.
     constructors configurable.
 *   Added a way to mark dictionary members as required.
 *   Allowed hyphens in identifiers after the first character.
-*   Fix <span class="xattr">[Exposed]</span> text to make it
+*   Fix [<code class="idl">Exposed</code>] text to make it
     clear that the value on the interface, if any, is used as the
     value for its members by default.
 *   Fixed the grammar for extended attributes that take an identifier list,
-    such as <span class="xattr">[Exposed]</span>.
+    such as [<code class="idl">Exposed</code>].
 *   Add a term "unenumerable" to allow named properties to be exposed as
     properties with \[[Enumerable]] set to false.
-*   Added the <span class="xattr">[Exposed]</span> and
-    <span class="xattr">[PrimaryGlobal]</span> extended attributes and
-    allowed an identifier to be used with <span class="xattr">[Global]</span>.
-*   Removed <span class="xattr">[TreatUndefinedAs]</span>.
+*   Added the [<code class="idl">Exposed</code>] and
+    [<code class="idl">PrimaryGlobal</code>] extended attributes and
+    allowed an identifier to be used with [<code class="idl">Global</code>].
+*   Removed [<code class="idl">TreatUndefinedAs</code>].
 *   Renamed [TreatNonCallableAsNull] to [TreatNonObjectAsNull]
     and changed its semantics to allow any object.  Changed
     callback function invocation to be a no-op when the object is
@@ -13280,8 +13280,8 @@ Changes appendix</a>.
 *   Defined how callbacks influence the incumbent script.
 *   Changed how callback functions are invoked to support missing
     optional arguments.
-*   Renamed <span class="xattr">[NamedPropertiesObject]</span> to
-    <span class="xattr">[Global]</span>, which now also causes
+*   Renamed [<code class="idl">NamedPropertiesObject</code>] to
+    [<code class="idl">Global</code>], which now also causes
     properties for interface members to appear on the object
     itself rather than on the interface prototype object.
 *   Split out {{boolean}} from the other
@@ -13289,7 +13289,7 @@ Changes appendix</a>.
     numeric types and {{DOMString}} distinguishable.
 *   Required a getter to be present on an interface if it has a
     setter, creator or delete.
-*   Extended <span class="xattr">[Unforgeable]</span> to apply to operations
+*   Extended [<code class="idl">Unforgeable</code>] to apply to operations
     and interfaces.
 *   Allowed all operation arguments to be specified as being optional and
     changed back to the behavior of <emu-val>undefined</emu-val>
@@ -13298,7 +13298,7 @@ Changes appendix</a>.
     take this into account, as well as allowing an <emu-val>undefined</emu-val>
     value passed as the argument value at the distinguishing index to select the overload
     with an optional argument at that index.
-    Also removed <span class="xattr">[TreatUndefinedAs=Missing]</span>.
+    Also removed [<code class="idl">TreatUndefinedAs=Missing</code>].
 *   Changed the ECMAScript to IDL dictionary conversion algorithm
     to treat a property with the value <emu-val>undefined</emu-val>
     as missing.
@@ -13327,7 +13327,7 @@ Changes appendix</a>.
     the callback interface had more than one operation.
 *   Further tweaked the overload resolution algorithm and union type conversion
     algorithm for consistency.
-*   Lifted the restriction on <span class="xattr">[Unforgeable]</span> appearing
+*   Lifted the restriction on [<code class="idl">Unforgeable</code>] appearing
     on an IDL attribute if another interface inherits from the one the attribute
     is declared on, but required that the inheriting interface not have an
     attribute with the same identifier.
@@ -13353,7 +13353,7 @@ Changes appendix</a>.
     dictionary types from being used inside nullable types and from being
     considered distinguishable from nullable types.
 *   Always consider dictionary members with default values as present.
-*   Tweak <span class="xattr">[Clamp]</span> algorithms for clarity.
+*   Tweak [<code class="idl">Clamp</code>] algorithms for clarity.
 *   Require exception objects to have \[[Class]] “Error” and suggest that they
     have any non-standard properties that native Error objects do.
 *   Fixed a bug in the whitespace token regular expression.

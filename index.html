@@ -1874,7 +1874,7 @@ for ECMAScript Edition 6 are given.</p>
     <li data-md="">
      <p>Unicode characters: <span class="char">U+0030 DIGIT ZERO ("0")</span></p>
     <li data-md="">
-     <p>Extended attributes: <span class="xattr">[ExampleExtendedAttribute]</span></p>
+     <p>Extended attributes: [<code class="idl">ExampleExtendedAttribute</code>]</p>
     <li data-md="">
      <p>Variable names in prose and algorithms: <var>exampleVariableName</var>.</p>
     <li data-md="">
@@ -12307,7 +12307,7 @@ and “<span class="input">.</span>” is tokenized as the quoted terminal symbo
 used in the grammar and the values used for <emu-t><a href="#prod-identifier">identifier</a></emu-t> terminals.  Thus, for
 example, the input text “<span class="input">Const</span>” is tokenized as
 an <emu-t><a href="#prod-identifier">identifier</a></emu-t> rather than the quoted
-terminal symbol <emu-t>const</emu-t>, an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-155">interface</a> with <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-91">identifier</a> “A” is distinct from one named “a”, and an <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-113">extended attribute</a> <span class="xattr">[constructor]</span> will not be recognized as
+terminal symbol <emu-t>const</emu-t>, an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-155">interface</a> with <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-91">identifier</a> “A” is distinct from one named “a”, and an <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-113">extended attribute</a> [<code class="idl">constructor</code>] will not be recognized as
 the [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-24">Constructor</a></code>]
 extended attribute.</p>
    <p>Implicitly, any number of <emu-t><a href="#prod-whitespace">whitespace</a></emu-t> and <emu-t><a href="#prod-comment">comment</a></emu-t> terminals are allowed between every other terminal
@@ -12332,13 +12332,14 @@ Changes appendix</a>.</p>
 sequence first when given an object, just like overload
 resolution does.</p>
     <li data-md="">
-     <p>Removed support for <span class="xattr">[Constructor]</span> on dictionaries.</p>
+     <p>Removed support for [<code class="idl">Constructor</code>] on dictionaries.</p>
     <li data-md="">
-     <p>Added the <span class="xattr">[LenientSetter]</span> extended attribute.</p>
+     <p>Added the [<code class="idl">LenientSetter</code>] extended attribute.</p>
     <li data-md="">
-     <p>Added the <span class="xattr">[SecureContext]</span> extended attribute.</p>
+     <p>Added the [<code class="idl">SecureContext</code>] extended attribute.</p>
     <li data-md="">
-     <p>Changed from <span class="xattr">[Unscopeable]</span> to <span class="xattr">[Unscopable]</span> to match ES6 better.</p>
+     <p>Changed from [<code class="idl">Unscopeable</code>] to
+[<code class="idl">Unscopable</code>] to match ES6 better.</p>
     <li data-md="">
      <p>Removed the term "unenumerable" and its associated prose and replaced it by the
 extended attribute [LegacyUnenumerableNamedProperties].</p>
@@ -12356,11 +12357,11 @@ constants.</p>
     <li data-md="">
      <p>Added a <a class="idl-code" data-link-type="interface" href="#idl-frozen-array" id="ref-for-idl-frozen-array-11">FrozenArray&lt;<var>T</var>></a> type.</p>
     <li data-md="">
-     <p>Renamed <span class="xattr">[ArrayClass]</span> to <span class="xattr">[LegacyArrayClass]</span>.</p>
+     <p>Renamed [<code class="idl">ArrayClass</code>] to [<code class="idl">LegacyArrayClass</code>].</p>
     <li data-md="">
      <p>Removed <code class="idl">T[]</code> array types.</p>
     <li data-md="">
-     <p>Allowed <span class="xattr">[NewObject]</span> to be used on things with
+     <p>Allowed [<code class="idl">NewObject</code>] to be used on things with
 a promise type.</p>
     <li data-md="">
      <p>Fix various cases in which maplike/setlike were operating on the wrong objects.</p>
@@ -12389,14 +12390,14 @@ functions, and all interface types.</p>
      <p>Removed IDL exceptions, baked in <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-13">DOMException</a></code>,
 and added <code class="idl"><a class="idl-code" data-link-type="interface" href="#idl-Error" id="ref-for-idl-Error-16">Error</a></code> and <code class="idl"><a data-link-type="idl" href="#dfn-DOMException" id="ref-for-dfn-DOMException-14">DOMException</a></code> as types.</p>
     <li data-md="">
-     <p>Removed <span class="xattr">[MapLike]</span> and added
+     <p>Removed [<code class="idl">MapLike</code>] and added
 iterable, maplike and setlike declarations.</p>
     <li data-md="">
      <p>Removed the custom Object.prototype.toString definition and instead
 defined class strings to influence the @@toStringTag property
 on objects.</p>
     <li data-md="">
-     <p>Added the <span class="xattr">[Unscopeable]</span> extended attribute.</p>
+     <p>Added the [<code class="idl">Unscopeable</code>] extended attribute.</p>
     <li data-md="">
      <p>Rewrote ES to IDL sequence conversion so that any iterable is
 convertible to a sequence.</p>
@@ -12413,9 +12414,10 @@ dictionary member default values.</p>
     <li data-md="">
      <p>Added promise types.</p>
     <li data-md="">
-     <p>Added the <span class="xattr">[NewObject]</span> and <span class="xattr">[SameObject]</span> extended attributes.</p>
+     <p>Added the [<code class="idl">NewObject</code>] and
+[<code class="idl">SameObject</code>] extended attributes.</p>
     <li data-md="">
-     <p>Allowed <span class="xattr">[Constructor]</span> to be specified
+     <p>Allowed [<code class="idl">Constructor</code>] to be specified
 on dictionaries.</p>
     <li data-md="">
      <p>Added a <emu-val>RegExp</emu-val> type.</p>
@@ -12465,20 +12467,21 @@ constructors configurable.</p>
     <li data-md="">
      <p>Allowed hyphens in identifiers after the first character.</p>
     <li data-md="">
-     <p>Fix <span class="xattr">[Exposed]</span> text to make it
+     <p>Fix [<code class="idl">Exposed</code>] text to make it
 clear that the value on the interface, if any, is used as the
 value for its members by default.</p>
     <li data-md="">
      <p>Fixed the grammar for extended attributes that take an identifier list,
-such as <span class="xattr">[Exposed]</span>.</p>
+such as [<code class="idl">Exposed</code>].</p>
     <li data-md="">
      <p>Add a term "unenumerable" to allow named properties to be exposed as
 properties with [[Enumerable]] set to false.</p>
     <li data-md="">
-     <p>Added the <span class="xattr">[Exposed]</span> and <span class="xattr">[PrimaryGlobal]</span> extended attributes and
-allowed an identifier to be used with <span class="xattr">[Global]</span>.</p>
+     <p>Added the [<code class="idl">Exposed</code>] and
+[<code class="idl">PrimaryGlobal</code>] extended attributes and
+allowed an identifier to be used with [<code class="idl">Global</code>].</p>
     <li data-md="">
-     <p>Removed <span class="xattr">[TreatUndefinedAs]</span>.</p>
+     <p>Removed [<code class="idl">TreatUndefinedAs</code>].</p>
     <li data-md="">
      <p>Renamed [TreatNonCallableAsNull] to [TreatNonObjectAsNull]
 and changed its semantics to allow any object.  Changed
@@ -12509,7 +12512,8 @@ or accessing an attribute.</p>
      <p>Changed how callback functions are invoked to support missing
 optional arguments.</p>
     <li data-md="">
-     <p>Renamed <span class="xattr">[NamedPropertiesObject]</span> to <span class="xattr">[Global]</span>, which now also causes
+     <p>Renamed [<code class="idl">NamedPropertiesObject</code>] to
+[<code class="idl">Global</code>], which now also causes
 properties for interface members to appear on the object
 itself rather than on the interface prototype object.</p>
     <li data-md="">
@@ -12520,7 +12524,7 @@ numeric types and <code class="idl"><a data-link-type="idl" href="#idl-DOMString
      <p>Required a getter to be present on an interface if it has a
 setter, creator or delete.</p>
     <li data-md="">
-     <p>Extended <span class="xattr">[Unforgeable]</span> to apply to operations
+     <p>Extended [<code class="idl">Unforgeable</code>] to apply to operations
 and interfaces.</p>
     <li data-md="">
      <p>Allowed all operation arguments to be specified as being optional and
@@ -12528,7 +12532,7 @@ changed back to the behavior of <emu-val>undefined</emu-val> being treated as a 
 effective overload set and overload resolution algorithms to
 take this into account, as well as allowing an <emu-val>undefined</emu-val> value passed as the argument value at the distinguishing index to select the overload
 with an optional argument at that index.
-Also removed <span class="xattr">[TreatUndefinedAs=Missing]</span>.</p>
+Also removed [<code class="idl">TreatUndefinedAs=Missing</code>].</p>
     <li data-md="">
      <p>Changed the ECMAScript to IDL dictionary conversion algorithm
 to treat a property with the value <emu-val>undefined</emu-val> as missing.</p>
@@ -12565,7 +12569,7 @@ the callback interface had more than one operation.</p>
      <p>Further tweaked the overload resolution algorithm and union type conversion
 algorithm for consistency.</p>
     <li data-md="">
-     <p>Lifted the restriction on <span class="xattr">[Unforgeable]</span> appearing
+     <p>Lifted the restriction on [<code class="idl">Unforgeable</code>] appearing
 on an IDL attribute if another interface inherits from the one the attribute
 is declared on, but required that the inheriting interface not have an
 attribute with the same identifier.</p>
@@ -12601,7 +12605,7 @@ considered distinguishable from nullable types.</p>
     <li data-md="">
      <p>Always consider dictionary members with default values as present.</p>
     <li data-md="">
-     <p>Tweak <span class="xattr">[Clamp]</span> algorithms for clarity.</p>
+     <p>Tweak [<code class="idl">Clamp</code>] algorithms for clarity.</p>
     <li data-md="">
      <p>Require exception objects to have [[Class]] “Error” and suggest that they
 have any non-standard properties that native Error objects do.</p>
