@@ -177,7 +177,7 @@ Boilerplate: omit issues-index
         background: #DEF;
         overflow: auto;
     }
-    
+
     dt p {
         display: inline;
     }
@@ -197,9 +197,10 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <!-- Escape all the text -->
-  
+
   <xsl:template match='text()'>
-    <xsl:value-of select='replace(., "\[\[", "\\[[")' />
+    <xsl:variable name='txt' select='replace(., "[\(]Red text is used to highlight specific parts of the syntax discussed in surrounding prose[\.][\)]", "(Specific parts of the syntax discussed in surrounding prose are highlighted.)")' />
+    <xsl:value-of select='replace($txt, "\[\[", "\\[[")' />
   </xsl:template>
   
   <!-- Remove tags, keep content -->
@@ -816,7 +817,17 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:pre[@class="syntax"]'>
-    <pre highlight='idl' class="syntax"><xsl:value-of select='.'/></pre>
+    <pre highlight='idl' class="syntax">
+      <xsl:apply-templates select='node()'/>
+    </pre>
+  </xsl:template>
+  
+  <xsl:template match='*[name() != "em"][ancestor::h:pre[@class="syntax"]]'>
+    <xsl:value-of select='.'/>
+  </xsl:template>
+  
+  <xsl:template match='h:em[ancestor::h:pre[@class="syntax"]]'>
+    <mark><xsl:value-of select='.'/></mark>
   </xsl:template>
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX GRAMMAR XXXXXXXXXXXXXXXXXXXXXXXXXX -->

@@ -198,7 +198,7 @@ urlPrefix: https://tc39.github.io/ecma262/
             background: #DEF;
             overflow: auto;
         }
-        
+    
         dt p {
             display: inline;
         }
@@ -274,11 +274,11 @@ The following typographic conventions are used in this document:
 *   IDL informal syntax examples:
     <pre highlight="idl" class="syntax">
         interface identifier {
-          interface-members…
+          <mark>interface-members…</mark>
         };
     </pre>
     
-    (Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)
+    (Specific parts of the syntax discussed in surrounding prose are highlighted.)
 *   IDL grammar snippets:
     <pre class="grammar no-index">
         ExampleGrammarSymbol :
@@ -390,7 +390,7 @@ while those specific to the ECMAScript language binding are discussed
 in [[#es-extended-attributes]].
 
 <pre highlight="idl" class="syntax">
-    [extended-attributes]
+    [<mark>extended-attributes</mark>]
     interface identifier {
       interface-members…
     };
@@ -497,12 +497,12 @@ in the declaration:
     or <code>callback</code> keyword
     determines the identifier of that definition.
     <pre highlight="idl" class="syntax">
-        interface interface-identifier { interface-members… };
-        partial interface interface-identifier { interface-members… };
-        dictionary dictionary-identifier { dictionary-members… };
-        partial dictionary dictionary-identifier { dictionary-members… };
-        enum enumeration-identifier { enumeration-values… };
-        callback callback-identifier = callback-signature;
+        interface <mark>interface-identifier</mark> { interface-members… };
+        partial interface <mark>interface-identifier</mark> { interface-members… };
+        dictionary <mark>dictionary-identifier</mark> { dictionary-members… };
+        partial dictionary <mark>dictionary-identifier</mark> { dictionary-members… };
+        enum <mark>enumeration-identifier</mark> { enumeration-values… };
+        callback <mark>callback-identifier</mark> = callback-signature;
     </pre>
 *   For [=attributes=],
     [=typedefs=]
@@ -511,19 +511,19 @@ in the declaration:
     semicolon at the end of the declaration determines the identifier.
     <pre highlight="idl" class="syntax">
         interface identifier {
-          attribute type attribute-identifier;
+          attribute type <mark>attribute-identifier</mark>;
         };
         
-        typedef type typedef-identifier;
+        typedef type <mark>typedef-identifier</mark>;
         
         dictionary identifier {
-          type dictionary-member-identifier;
+          type <mark>dictionary-member-identifier</mark>;
         };
     </pre>
 *   For [=constants=],
     the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     equals sign determines the identifier.
-    <pre highlight="idl" class="syntax">const type constant-identifier = value;</pre>
+    <pre highlight="idl" class="syntax">const type <mark>constant-identifier</mark> = value;</pre>
 *   For [=operations=], the
     <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
     after the return type but before the opening parenthesis (that is,
@@ -531,7 +531,7 @@ in the declaration:
     grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
     there is no such <emu-t><a href="#prod-identifier">identifier</a></emu-t> token,
     then the operation does not have an identifier.
-    <pre highlight="idl" class="syntax">return-type operation-identifier(arguments…);</pre>
+    <pre highlight="idl" class="syntax">return-type <mark>operation-identifier</mark>(arguments…);</pre>
 
 Note: Operations can have no identifier when they are being used to declare a
 <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
@@ -552,7 +552,7 @@ token or by one of the keywords that match the <emu-nt><a href="#prod-ArgumentNa
 symbol.  If one of these keywords is used, it need not be escaped with a leading
 underscore.
 
-<pre highlight="idl" class="syntax">return-type operation-identifier(argument-type argument-identifier, …);</pre>
+<pre highlight="idl" class="syntax">return-type operation-identifier(argument-type <mark>argument-identifier</mark>, …);</pre>
 
 <pre class="grammar" id="prod-ArgumentNameKeyword">
     ArgumentNameKeyword :
@@ -723,7 +723,7 @@ also implements that inherited interface.  The object therefore will also
 have members that correspond to the interface members from the inherited interface.
 
 <pre highlight="idl" class="syntax">
-    interface identifier : identifier-of-inherited-interface {
+    interface identifier : <mark>identifier-of-inherited-interface</mark> {
       interface-members…
     };
 </pre>
@@ -801,13 +801,13 @@ which can control how the interface member will be handled in language bindings.
 <pre highlight="idl" class="syntax">
     interface identifier {
     
-      [extended-attributes]
+      [<mark>extended-attributes</mark>]
       const type identifier = value;
     
-      [extended-attributes]
+      [<mark>extended-attributes</mark>]
       attribute type identifier;
     
-      [extended-attributes]
+      [<mark>extended-attributes</mark>]
       return-type identifier(arguments…);
     };
 </pre>
@@ -929,11 +929,11 @@ the members that appear on each of the partial interfaces are considered to be
 members of the interface itself.
 
 <pre highlight="idl" class="syntax">
-    interface SomeInterface {
+    interface <mark>SomeInterface</mark> {
       interface-members…
     };
     
-    partial interface SomeInterface {
+    partial interface <mark>SomeInterface</mark> {
       interface-members…
     };
 </pre>
@@ -1648,7 +1648,7 @@ Each argument can be preceded by a list of
 which can control how a value passed as the argument will be handled in
 language bindings.
 
-<pre highlight="idl" class="syntax">return-type identifier([extended-attributes] type identifier, [extended-attributes] type identifier, …);</pre>
+<pre highlight="idl" class="syntax">return-type identifier([<mark>extended-attributes</mark>] type identifier, [<mark>extended-attributes</mark>] type identifier, …);</pre>
 
 <div class="example">
     
@@ -1685,8 +1685,8 @@ be declared with the <code>...</code> token unless it
 is the final argument in the operation’s argument list.
 
 <pre highlight="idl" class="syntax">
-    return-type identifier(type... identifier);
-    return-type identifier(type identifier, type... identifier);
+    return-type identifier(type<mark>...</mark> identifier);
+    return-type identifier(type identifier, type<mark>...</mark> identifier);
 </pre>
 
 [=Extended attributes=]
@@ -3876,11 +3876,11 @@ its inheritance hierarchy has a cycle.  That is, a dictionary
 dictionary |B| that inherits from |A|, and so on.
 
 <pre highlight="idl" class="syntax">
-    dictionary Base {
+    dictionary <mark>Base</mark> {
       dictionary-members…
     };
     
-    dictionary Derived : Base {
+    dictionary Derived : <mark>Base</mark> {
       dictionary-members…
     };
 </pre>
@@ -4000,11 +4000,11 @@ of the partial dictionary definitions are considered to be members of
 the dictionary itself.
 
 <pre highlight="idl" class="syntax">
-    dictionary SomeDictionary {
+    dictionary <mark>SomeDictionary</mark> {
       dictionary-members…
     };
     
-    partial dictionary SomeDictionary {
+    partial dictionary <mark>SomeDictionary</mark> {
       dictionary-members…
     };
 </pre>

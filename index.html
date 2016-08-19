@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
             background: #DEF;
             overflow: auto;
         }
-        
+    
         dt p {
             display: inline;
         }
@@ -1467,7 +1467,7 @@ Possible extra rowspan handling
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL (Second Edition)</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-18">18 August 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-19">19 August 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1882,10 +1882,10 @@ for ECMAScript Edition 6 are given.</p>
     <li data-md="">
      <p>IDL informal syntax examples:</p>
 <pre class="syntax highlight">interface identifier {
-  interface<span class="o">-</span>members…
+  <mark>interface<span class="o">-</span>members…</mark>
 };
 </pre>
-     <p>(Red text is used to highlight specific parts of the syntax discussed in surrounding prose.)</p>
+     <p>(Specific parts of the syntax discussed in surrounding prose are highlighted.)</p>
     <li data-md="">
      <p>IDL grammar snippets:</p>
 <pre class="grammar no-index">ExampleGrammarSymbol :
@@ -1976,7 +1976,7 @@ The extended attributes defined by this specification that are language binding
 agnostic are discussed in <a href="#idl-extended-attributes">§4.11 Extended attributes</a>,
 while those specific to the ECMAScript language binding are discussed
 in <a href="#es-extended-attributes">§5.3 ECMAScript-specific extended attributes</a>.</p>
-<pre class="syntax highlight">[extended<span class="o">-</span>attributes]
+<pre class="syntax highlight">[<mark>extended<span class="o">-</span>attributes</mark>]
 interface identifier {
   interface<span class="o">-</span>members…
 };
@@ -2049,41 +2049,39 @@ in the declaration:</p>
 the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
 directly after the <code>interface</code>, <code>dictionary</code>, <code>enum</code> or <code>callback</code> keyword
 determines the identifier of that definition.</p>
-<pre class="syntax highlight">interface interface<span class="o">-</span>identifier { interface<span class="o">-</span>members… };
-partial interface interface<span class="o">-</span>identifier { interface<span class="o">-</span>members… };
-dictionary dictionary<span class="o">-</span>identifier { dictionary<span class="o">-</span>members… };
-partial dictionary dictionary<span class="o">-</span>identifier { dictionary<span class="o">-</span>members… };
-enum enumeration<span class="o">-</span>identifier { enumeration<span class="o">-</span>values… };
-callback callback<span class="o">-</span>identifier <span class="o">=</span> callback<span class="o">-</span>signature;
+<pre class="syntax highlight">interface <mark>interface<span class="o">-</span>identifier</mark> { interface<span class="o">-</span>members… };
+partial interface <mark>interface<span class="o">-</span>identifier</mark> { interface<span class="o">-</span>members… };
+dictionary <mark>dictionary<span class="o">-</span>identifier</mark> { dictionary<span class="o">-</span>members… };
+partial dictionary <mark>dictionary<span class="o">-</span>identifier</mark> { dictionary<span class="o">-</span>members… };
+enum <mark>enumeration<span class="o">-</span>identifier</mark> { enumeration<span class="o">-</span>values… };
+callback <mark>callback<span class="o">-</span>identifier</mark> <span class="o">=</span> callback<span class="o">-</span>signature;
 </pre>
     <li data-md="">
      <p>For <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-3">attributes</a>, <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-3">typedefs</a> and <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-2">dictionary members</a>,
 the final <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
 semicolon at the end of the declaration determines the identifier.</p>
 <pre class="syntax highlight">interface identifier {
-  attribute type attribute<span class="o">-</span>identifier;
+  attribute type <mark>attribute<span class="o">-</span>identifier</mark>;
 };
         
-typedef type typedef<span class="o">-</span>identifier;
+typedef type <mark>typedef<span class="o">-</span>identifier</mark>;
         
 dictionary identifier {
-  type dictionary<span class="o">-</span>member<span class="o">-</span>identifier;
+  type <mark>dictionary<span class="o">-</span>member<span class="o">-</span>identifier</mark>;
 };
 </pre>
     <li data-md="">
      <p>For <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-2">constants</a>,
 the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
 equals sign determines the identifier.</p>
-<pre class="syntax highlight">const type constant<span class="o">-</span>identifier <span class="o">=</span> value;
-</pre>
+<pre class="syntax highlight">const type <mark>constant<span class="o">-</span>identifier</mark> <span class="o">=</span> value;</pre>
     <li data-md="">
      <p>For <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-3">operations</a>, the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
 after the return type but before the opening parenthesis (that is,
 one that is matched as part of the <emu-nt><a href="#prod-OptionalIdentifier">OptionalIdentifier</a></emu-nt> grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
 there is no such <emu-t><a href="#prod-identifier">identifier</a></emu-t> token,
 then the operation does not have an identifier.</p>
-<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type operation<span class="o">-</span>identifier(arguments…);
-</pre>
+<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type <mark>operation<span class="o">-</span>identifier</mark>(arguments…);</pre>
    </ul>
    <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.</p>
    <p>For all of these constructs, the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-1">identifier</a> is the value of the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token with any leading <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed.</p>
@@ -2095,8 +2093,7 @@ identifier.</p>
 declaration, the identifier of an argument is specified immediately after its
 type and is given by either an <emu-t><a href="#prod-identifier">identifier</a></emu-t> token or by one of the keywords that match the <emu-nt><a href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a></emu-nt> symbol.  If one of these keywords is used, it need not be escaped with a leading
 underscore.</p>
-<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type operation<span class="o">-</span>identifier(argument<span class="o">-</span>type argument<span class="o">-</span>identifier, …);
-</pre>
+<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type operation<span class="o">-</span>identifier(argument<span class="o">-</span>type <mark>argument<span class="o">-</span>identifier</mark>, …);</pre>
 <pre class="grammar" id="prod-ArgumentNameKeyword">ArgumentNameKeyword :
     "attribute"
     "callback"
@@ -2216,7 +2213,7 @@ then that identifier identifies the inherited interface.
 An object that implements an interface that inherits from another
 also implements that inherited interface.  The object therefore will also
 have members that correspond to the interface members from the inherited interface.</p>
-<pre class="syntax highlight">interface identifier <span class="o">:</span> identifier<span class="o">-</span><span class="k">of</span><span class="o">-</span>inherited<span class="o">-</span>interface {
+<pre class="syntax highlight">interface identifier <span class="o">:</span> <mark>identifier<span class="o">-</span><span class="k">of</span><span class="o">-</span>inherited<span class="o">-</span>interface</mark> {
   interface<span class="o">-</span>members…
 };
 </pre>
@@ -2270,13 +2267,13 @@ also implement another interface.</p>
 which can control how the interface member will be handled in language bindings.</p>
 <pre class="syntax highlight">interface identifier {
     
-  [extended<span class="o">-</span>attributes]
+  [<mark>extended<span class="o">-</span>attributes</mark>]
   const type identifier <span class="o">=</span> value;
     
-  [extended<span class="o">-</span>attributes]
+  [<mark>extended<span class="o">-</span>attributes</mark>]
   attribute type identifier;
     
-  [extended<span class="o">-</span>attributes]
+  [<mark>extended<span class="o">-</span>attributes</mark>]
   <span class="nb">return</span><span class="o">-</span>type identifier(arguments…);
 };
 </pre>
@@ -2354,11 +2351,11 @@ interface definition must be the same
 as the identifier of an interface definition.  All of
 the members that appear on each of the partial interfaces are considered to be
 members of the interface itself.</p>
-<pre class="syntax highlight">interface SomeInterface {
+<pre class="syntax highlight">interface <mark>SomeInterface</mark> {
   interface<span class="o">-</span>members…
 };
     
-partial interface SomeInterface {
+partial interface <mark>SomeInterface</mark> {
   interface<span class="o">-</span>members…
 };
 </pre>
@@ -2879,8 +2876,7 @@ as the identifier of another argument in the same operation declaration.</p>
    <p>Each argument can be preceded by a list of <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-9">extended attributes</a> (matching <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt>),
 which can control how a value passed as the argument will be handled in
 language bindings.</p>
-<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type identifier([extended<span class="o">-</span>attributes] type identifier, [extended<span class="o">-</span>attributes] type identifier, …);
-</pre>
+<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type identifier([<mark>extended<span class="o">-</span>attributes</mark>] type identifier, [<mark>extended<span class="o">-</span>attributes</mark>] type identifier, …);</pre>
    <div class="example" id="example-2b98e6e1">
     <a class="self-link" href="#example-2b98e6e1"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-16">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-4">regular operations</a> can be declared on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-23">interface</a>:</p>
@@ -2908,8 +2904,8 @@ argument in the operation declaration.  The final argument can also be omitted
 when invoking the operation.  An argument must not
 be declared with the <code>...</code> token unless it
 is the final argument in the operation’s argument list.</p>
-<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type identifier(type... identifier);
-<span class="nb">return</span><span class="o">-</span>type identifier(type identifier, type... identifier);
+<pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type identifier(type<mark>...</mark> identifier);
+<span class="nb">return</span><span class="o">-</span>type identifier(type identifier, type<mark>...</mark> identifier);
 </pre>
    <p><a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-10">Extended attributes</a> that <a data-link-type="dfn" href="#dfn-xattr-argument-list" id="ref-for-dfn-xattr-argument-list-1">take an argument list</a> ([<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-4">Constructor</a></code>] and
 [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-3">NamedConstructor</a></code>], of those
@@ -4615,11 +4611,11 @@ must identify a dictionary.</p>
    <p>A dictionary must not be declared such that
 its inheritance hierarchy has a cycle.  That is, a dictionary <var>A</var> cannot inherit from itself, nor can it inherit from another
 dictionary <var>B</var> that inherits from <var>A</var>, and so on.</p>
-<pre class="syntax highlight">dictionary Base {
+<pre class="syntax highlight">dictionary <mark>Base</mark> {
   dictionary<span class="o">-</span>members…
 };
     
-dictionary Derived <span class="o">:</span> Base {
+dictionary Derived <span class="o">:</span> <mark>Base</mark> {
   dictionary<span class="o">-</span>members…
 };
 </pre>
@@ -4698,11 +4694,11 @@ dictionary definition must be the same as the
 identifier of a dictionary definition.  All of the members that appear on each
 of the partial dictionary definitions are considered to be members of
 the dictionary itself.</p>
-<pre class="syntax highlight">dictionary SomeDictionary {
+<pre class="syntax highlight">dictionary <mark>SomeDictionary</mark> {
   dictionary<span class="o">-</span>members…
 };
     
-partial dictionary SomeDictionary {
+partial dictionary <mark>SomeDictionary</mark> {
   dictionary<span class="o">-</span>members…
 };
 </pre>
