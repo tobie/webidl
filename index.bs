@@ -6100,7 +6100,7 @@ it has characteristics as follows:
     [=%FunctionPrototype%=] unless otherwise specified.
 *   Its \[[Get]] internal property is set as described in [=ECMA-262 section 9.1.8=].
 *   Its \[[Construct]] internal property is set as described in [=ECMA-262 section 19.2.2.3=].
-*   Its \@@hasInstance property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.
+*   Its @@hasInstance property is set as described in [=ECMA-262 section 19.2.3.8=], unless otherwise specified.
 
 <p class="issue">
     The list above needs updating for the latest ES6 draft.
@@ -11943,7 +11943,7 @@ defined in section [[#platformobjectset]].
 
 <h4 id="getownproperty-guts" dfn>The PlatformObjectGetOwnProperty abstract operation</h4>
 
-The \PlatformObjectGetOwnProperty
+The PlatformObjectGetOwnProperty
 abstract operation performs the following steps when called with an
 object |O|, a property name |P|, and a boolean
 |ignoreNamedProps| value:
@@ -12827,7 +12827,7 @@ not caught there, to its caller, and so on.
         } catch (e) {
           // The string "abc" is caught here, since as part of the conversion
           // from the native object to a string, the anonymous function
-          // was invoked, and none of the \[[DefaultValue]], ToPrimitive or
+          // was invoked, and none of the [[DefaultValue]], ToPrimitive or
           // ToString algorithms are defined to catch the exception.
         }
         
@@ -12835,13 +12835,13 @@ not caught there, to its caller, and so on.
           d.type = { toString: { } };
         } catch (e) {
           // An exception is caught here, since an attempt is made to invoke
-          // \[[Call]] on the native object that is the value of toString
+          // [[Call]] on the native object that is the value of toString
           // property.
         }
         
         d.type = et;
         // An uncaught NotSupportedError DOMException is thrown here, since the
-        // \[[DefaultValue]] algorithm attempts to get the value of the
+        // [[DefaultValue]] algorithm attempts to get the value of the
         // "valueOf" property on the ExceptionThrower object.  The exception
         // propagates out of this block of code.
     </pre>

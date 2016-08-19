@@ -6073,7 +6073,7 @@ it has characteristics as follows:</p>
     <li data-md="">
      <p>Its [[Construct]] internal property is set as described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</p>
     <li data-md="">
-     <p>Its \@@hasInstance property is set as described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</p>
+     <p>Its @@hasInstance property is set as described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</p>
    </ul>
    <p class="issue" id="issue-459a816a"><a class="self-link" href="#issue-459a816a"></a> The list above needs updating for the latest ES6 draft. </p>
    <p id="ecmascript-abstractop"> Algorithms in this section use the conventions described in <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262 section 5.2</a>, such as the use of steps and substeps, the use of mathematical
@@ -11280,7 +11280,7 @@ and <var>prototype</var> has an own property named <var>P</var>, then return fal
 handled by the <a href="#getownproperty">platform object [[GetOwnProperty]] method</a> defined in section <a href="#getownproperty">§5.8.3 Platform object [[GetOwnProperty]] method</a>, and
 for <a data-link-type="dfn" href="#dfn-setter" id="ref-for-dfn-setter-1">setters</a> by the <a href="#defineownproperty">platform object [[DefineOwnProperty]] method</a> defined in section <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> and the <a href="#platformobjectset">platform object [[Set]] method</a> defined in section <a href="#platformobjectset">§5.8.6 Platform object [[Set]] method</a>.</p>
    <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="5.8.2" data-lt="The PlatformObjectGetOwnProperty abstract operation" data-noexport="" id="getownproperty-guts"><span class="secno">5.8.2. </span><span class="content">The PlatformObjectGetOwnProperty abstract operation</span></h4>
-   <p>The \PlatformObjectGetOwnProperty
+   <p>The PlatformObjectGetOwnProperty
 abstract operation performs the following steps when called with an
 object <var>O</var>, a property name <var>P</var>, and a boolean <var>ignoreNamedProps</var> value:</p>
    <ol class="algorithm">
@@ -12073,8 +12073,8 @@ an ECMAScript <emu-val>Function</emu-val> is invoked due
 to requirements in this section and that <emu-val>Function</emu-val> ends due to an exception being thrown, that exception
 must propagate to the caller, and if
 not caught there, to its caller, and so on.</p>
-   <div class="example" id="example-ff0c0887">
-    <a class="self-link" href="#example-ff0c0887"></a> 
+   <div class="example" id="example-8fd4d7f9">
+    <a class="self-link" href="#example-8fd4d7f9"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-45">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-154">interfaces</a> and an <a data-link-type="dfn" href="#dfn-exception" id="ref-for-dfn-exception-1">exception</a>.
     The <code>valueOf</code> attribute on <code class="idl">ExceptionThrower</code> is defined to throw an exception whenever an attempt is made
     to get its value.</p>
@@ -12097,7 +12097,7 @@ interface ExceptionThrower {
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// The string "abc" is caught here, since as part of the conversion</span>
   <span class="c1">// from the native object to a string, the anonymous function</span>
-  <span class="c1">// was invoked, and none of the \[[DefaultValue]], ToPrimitive or</span>
+  <span class="c1">// was invoked, and none of the [[DefaultValue]], ToPrimitive or</span>
   <span class="c1">// ToString algorithms are defined to catch the exception.</span>
 <span class="p">}</span>
         
@@ -12105,13 +12105,13 @@ interface ExceptionThrower {
   <span class="nx">d</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">toString</span><span class="o">:</span> <span class="p">{</span> <span class="p">}</span> <span class="p">};</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// An exception is caught here, since an attempt is made to invoke</span>
-  <span class="c1">// \[[Call]] on the native object that is the value of toString</span>
+  <span class="c1">// [[Call]] on the native object that is the value of toString</span>
   <span class="c1">// property.</span>
 <span class="p">}</span>
         
 <span class="nx">d</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">et</span><span class="p">;</span>
 <span class="c1">// An uncaught NotSupportedError DOMException is thrown here, since the</span>
-<span class="c1">// \[[DefaultValue]] algorithm attempts to get the value of the</span>
+<span class="c1">// [[DefaultValue]] algorithm attempts to get the value of the</span>
 <span class="c1">// "valueOf" property on the ExceptionThrower object.  The exception</span>
 <span class="c1">// propagates out of this block of code.</span>
 </pre>

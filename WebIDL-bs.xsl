@@ -198,9 +198,8 @@ Boilerplate: omit issues-index
   
   <!-- Escape all the text -->
 
-  <xsl:template match='text()'>
-    <xsl:variable name='txt' select='replace(., "[\(]Red text is used to highlight specific parts of the syntax discussed in surrounding prose[\.][\)]", "(Specific parts of the syntax discussed in surrounding prose are highlighted.)")' />
-    <xsl:value-of select='replace($txt, "\[\[", "\\[[")' />
+  <xsl:template match='text()[not(ancestor::x:codeblock)]'>
+    <xsl:value-of select='replace(., "\[\[", "\\[[")' />
   </xsl:template>
   
   <!-- Remove tags, keep content -->
@@ -275,6 +274,10 @@ Boilerplate: omit issues-index
   </xsl:template>
 
   <xsl:template match='h:div[@id="conventions"]/h:ul/h:li/text()[preceding-sibling::h:table[@class="grammar"]]' />
+  
+  <xsl:template match='h:div[@id="conventions"]/h:ul/h:li/text()[preceding-sibling::h:pre[@class="syntax"]]'>
+    <xsl:value-of select='replace(., "[\(]Red text is used to highlight specific parts of the syntax discussed in surrounding prose[\.][\)]", "(Specific parts of the syntax discussed in surrounding prose are highlighted.)")' />
+  </xsl:template>
   
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX DFN XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
@@ -691,7 +694,7 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:span[@class="prop" or @class="esprop"]'>
-    <xsl:text>\</xsl:text><xsl:value-of select='.' />
+    <xsl:apply-templates select="node()"/>
   </xsl:template>
 
   <xsl:template match='h:span[@class="Error"]'>
