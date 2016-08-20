@@ -1406,7 +1406,7 @@ Possible extra rowspan handling
         .dfn-paneled { cursor: pointer; }
         </style>
 <style>/* style-syntax-highlighting */
-
+pre.idl.highlight { color: #708090; }
         .highlight:not(.idl) { background: hsl(24, 20%, 95%); }
         code.highlight { padding: .1em; border-radius: .3em; }
         pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
@@ -1795,11 +1795,11 @@ are interoperable.</p>
     <li>
      <a href="#common"><span class="secno">6</span> <span class="content">Common definitions</span></a>
      <ol class="toc">
-      <li><a href="#common-ArrayBufferView"><span class="secno">6.1</span> <span class="content">ArrayBufferView</span></a>
-      <li><a href="#common-BufferSource"><span class="secno">6.2</span> <span class="content">BufferSource</span></a>
-      <li><a href="#common-DOMTimeStamp"><span class="secno">6.3</span> <span class="content">DOMTimeStamp</span></a>
-      <li><a href="#common-Function"><span class="secno">6.4</span> <span class="content">Function</span></a>
-      <li><a href="#common-Function0"><span class="secno">6.5</span> <span class="content">VoidFunction</span></a>
+      <li><a href="#ArrayBufferView"><span class="secno">6.1</span> <span class="content">ArrayBufferView</span></a>
+      <li><a href="#BufferSource"><span class="secno">6.2</span> <span class="content">BufferSource</span></a>
+      <li><a href="#DOMTimeStamp"><span class="secno">6.3</span> <span class="content">DOMTimeStamp</span></a>
+      <li><a href="#Function"><span class="secno">6.4</span> <span class="content">Function</span></a>
+      <li><a href="#VoidFunction"><span class="secno">6.5</span> <span class="content">VoidFunction</span></a>
      </ol>
     <li><a href="#extensibility"><span class="secno">7</span> <span class="content">Extensibility</span></a>
     <li><a href="#referencing"><span class="secno">8</span> <span class="content">Referencing this specification</span></a>
@@ -1816,6 +1816,7 @@ are interoperable.</p>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
@@ -1823,6 +1824,7 @@ are interoperable.</p>
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
       <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
+    <li><a href="#idl-index"><span class="secno"></span> <span class="content">IDL Index</span></a>
    </ol>
   </nav>
   <main>
@@ -1907,9 +1909,9 @@ for ECMAScript Edition 6 are given.</p>
       <strong class="advisement"> This is a warning.</strong> 
     <li data-md="">
      <p>Code blocks:</p>
-<pre class="idl-example example" id="example-dface6e3"><a class="self-link" href="#example-dface6e3"></a>// This is an IDL code block.
-interface Example {
-  attribute long something;
+<pre class="idl non-normative highlight def">// This is an IDL code block.
+<span class="kt">interface</span> <span class="nv">Example</span> {
+  <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">something</span>;
 };
 </pre>
 <pre class="highlight"><span class="c1">// This is an ECMAScript code block.</span>
@@ -1997,31 +1999,31 @@ interface identifier {
     "callback" CallbackRestOrInterface
     Interface
 </pre>
-   <div class="example" id="example-30a9207c">
-    <a class="self-link" href="#example-30a9207c"></a> 
+   <div class="example" id="example-10e88a94">
+    <a class="self-link" href="#example-10e88a94"></a> 
     <p>The following is an example of an <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-5">IDL fragment</a>.</p>
-<pre class="idl-example">interface Paint { };
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Paint</span> { };
         
-interface SolidColor : Paint {
-  attribute double red;
-  attribute double green;
-  attribute double blue;
+<span class="kt">interface</span> <span class="nv">SolidColor</span> : <span class="n">Paint</span> {
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">red</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">green</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">blue</span>;
 };
         
-interface Pattern : Paint {
-  attribute DOMString imageURL;
+<span class="kt">interface</span> <span class="nv">Pattern</span> : <span class="n">Paint</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">imageURL</span>;
 };
         
-[Constructor]
-interface GraphicalWindow {
-  readonly attribute unsigned long width;
-  readonly attribute unsigned long height;
+[<span class="nv">Constructor</span>]
+<span class="kt">interface</span> <span class="nv">GraphicalWindow</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">width</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">height</span>;
         
-  attribute Paint currentPaint;
+  <span class="kt">attribute</span> <span class="n">Paint</span> <span class="nv">currentPaint</span>;
         
-  void drawRectangle(double x, double y, double width, double height);
+  <span class="kt">void</span> <span class="nv">drawRectangle</span>(<span class="kt">double</span> <span class="nv">x</span>, <span class="kt">double</span> <span class="nv">y</span>, <span class="kt">double</span> <span class="nv">width</span>, <span class="kt">double</span> <span class="nv">height</span>);
         
-  void drawText(double x, double y, DOMString text);
+  <span class="kt">void</span> <span class="nv">drawText</span>(<span class="kt">double</span> <span class="nv">x</span>, <span class="kt">double</span> <span class="nv">y</span>, <span class="kt">DOMString</span> <span class="nv">text</span>);
 };
 </pre>
     <p>Here, four <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-2">interfaces</a> are being defined.
@@ -2136,47 +2138,47 @@ be the same as the identifier of any other <a data-link-type="dfn" href="#dfn-in
 to a <a data-link-type="dfn" href="#dfn-definition" id="ref-for-dfn-definition-2">definition</a> need not appear after
 the declaration of the referenced definition.  References can also be made
 across <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-8">IDL fragments</a>.</p>
-   <div class="example" id="example-217c2963">
-    <a class="self-link" href="#example-217c2963"></a> 
+   <div class="example" id="example-8d322aa3">
+    <a class="self-link" href="#example-8d322aa3"></a> 
     <p>Therefore, the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-9">IDL fragment</a> is valid:</p>
-<pre class="idl-example">interface B : A {
-  void f(SequenceOfLongs x);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">B</span> : <span class="n">A</span> {
+  <span class="kt">void</span> <span class="nv">f</span>(<span class="n">SequenceOfLongs</span> <span class="nv">x</span>);
 };
         
-interface A {
+<span class="kt">interface</span> <span class="nv">A</span> {
 };
         
-typedef sequence&lt;long> SequenceOfLongs;
+<span class="kt">typedef</span> <span class="kt">sequence</span>&lt;<span class="kt">long</span>> <span class="nv">SequenceOfLongs</span>;
 </pre>
    </div>
-   <div class="example" id="example-65034bd3">
-    <a class="self-link" href="#example-65034bd3"></a> 
+   <div class="example" id="example-65df835c">
+    <a class="self-link" href="#example-65df835c"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-10">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-6">identifiers</a> are given to definitions and <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-1">interface members</a>.</p>
-<pre class="idl-example">// Typedef identifier: "number"
-typedef double number;
+<pre class="idl highlight def">// Typedef identifier: "number"
+<span class="kt">typedef</span> <span class="kt">double</span> <span class="nv">number</span>;
         
 // Interface identifier: "System"
-interface System {
+<span class="kt">interface</span> <span class="nv">System</span> {
         
   // Operation identifier:          "createObject"
   // Operation argument identifier: "interface"
-  object createObject(DOMString _interface);
+  <span class="kt">object</span> <span class="nv">createObject</span>(<span class="kt">DOMString</span> <span class="nv">_interface</span>);
         
   // Operation argument identifier: "interface"
-  sequence&lt;object> getObjects(DOMString interface);
+  <span class="kt">sequence</span>&lt;<span class="kt">object</span>> <span class="nv">getObjects</span>(<span class="kt">DOMString</span> <span class="nv">interface</span>);
         
   // Operation has no identifier; it declares a getter.
-  getter DOMString (DOMString keyName);
+  <span class="kt">getter</span> <span class="kt">DOMString</span> (<span class="kt">DOMString</span> <span class="nv">keyName</span>);
 };
         
 // Interface identifier: "TextField"
-interface TextField {
+<span class="kt">interface</span> <span class="nv">TextField</span> {
         
   // Attribute identifier: "const"
-  attribute boolean _const;
+  <span class="kt">attribute</span> <span class="kt">boolean</span> <span class="nv">_const</span>;
         
   // Attribute identifier: "value"
-  attribute DOMString? _value;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span>? <span class="nv">_value</span>;
 };
 </pre>
     <p>Note that while the second <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-4">attribute</a> on the <code class="idl">TextField</code> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-6">interface</a> need not have been escaped with an underscore (because “value” is
@@ -2224,17 +2226,17 @@ one from an inherited interface.  Objects that implement the derived
 interface will expose the member on the derived interface.  It is
 language binding specific whether the overridden member can be
 accessed on the object.</p>
-   <div class="example" id="example-3f987f4f">
-    <a class="self-link" href="#example-3f987f4f"></a> 
+   <div class="example" id="example-f75e6580">
+    <a class="self-link" href="#example-f75e6580"></a> 
     <p>Consider the following two interfaces.</p>
-<pre class="idl-example">interface A {
-  void f();
-  void g();
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">f</span>();
+  <span class="kt">void</span> <span class="nv">g</span>();
 };
         
-interface B : A {
-  void f();
-  void g(DOMString x);
+<span class="kt">interface</span> <span class="nv">B</span> : <span class="n">A</span> {
+  <span class="kt">void</span> <span class="nv">f</span>();
+  <span class="kt">void</span> <span class="nv">g</span>(<span class="kt">DOMString</span> <span class="nv">x</span>);
 };
 </pre>
     <p>In the ECMAScript language binding, an instance of <code class="idl">B</code> will have a prototype chain that looks like the following:</p>
@@ -2317,14 +2319,14 @@ be defined on a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-f
     <p>Specification authors wanting to define APIs that take ECMAScript objects
     as “property bag” like function arguments are suggested to use <a href="#idl-dictionaries">dictionary types</a> rather than <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-5">callback interfaces</a>.</p>
     <p>For example, instead of this:</p>
-<pre class="idl-example example" id="example-0b0329b1"><a class="self-link" href="#example-0b0329b1"></a>callback interface Options {
-  attribute DOMString? option1;
-  attribute DOMString? option2;
-  attribute long? option3;
+<pre class="idl highlight def"><span class="kt">callback</span> <span class="kt">interface</span> <span class="nv">Options</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span>? <span class="nv">option1</span>;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span>? <span class="nv">option2</span>;
+  <span class="kt">attribute</span> <span class="kt">long</span>? <span class="nv">option3</span>;
 };
         
-interface A {
-  void doTask(DOMString type, Options options);
+<span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">doTask</span>(<span class="kt">DOMString</span> <span class="nv">type</span>, <span class="n">Options</span> <span class="nv">options</span>);
 };
 </pre>
     <p>to be used like this:</p>
@@ -2333,14 +2335,14 @@ interface A {
 <span class="nx">a</span><span class="p">.</span><span class="nx">doTask</span><span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="p">{</span> <span class="nx">option1</span><span class="o">:</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="nx">option3</span><span class="o">:</span> <span class="mi">100</span> <span class="p">});</span>
 </pre>
     <p>instead write the following:</p>
-<pre class="idl-example example" id="example-c4f53fc9"><a class="self-link" href="#example-c4f53fc9"></a>dictionary Options {
-  DOMString? option1;
-  DOMString? option2;
-  long? option3;
+<pre class="idl highlight def"><span class="kt">dictionary</span> <span class="nv">Options</span> {
+  <span class="kt">DOMString</span>? <span class="nv">option1</span>;
+  <span class="kt">DOMString</span>? <span class="nv">option2</span>;
+  <span class="kt">long</span>? <span class="nv">option3</span>;
 };
         
-interface A {
-  void doTask(DOMString type, Options options);
+<span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">doTask</span>(<span class="kt">DOMString</span> <span class="nv">type</span>, <span class="n">Options</span> <span class="nv">options</span>);
 };
 </pre>
    </div>
@@ -2435,38 +2437,38 @@ in the language.</p>
     ":" identifier
     ε
 </pre>
-   <div class="example" id="example-62ff5879">
-    <a class="self-link" href="#example-62ff5879"></a> 
+   <div class="example" id="example-70b5ea57">
+    <a class="self-link" href="#example-70b5ea57"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-12">IDL fragment</a> demonstrates the definition of two mutually referential <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-12">interfaces</a>.
     Both <code class="idl">Human</code> and <code class="idl">Dog</code> inherit from <code class="idl">Animal</code>.  Objects that implement
     either of those two interfaces will thus have a <code>name</code> attribute.</p>
-<pre class="idl-example">interface Animal {
-  attribute DOMString name;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Animal</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
 };
         
-interface Human : Animal {
-  attribute Dog? pet;
+<span class="kt">interface</span> <span class="nv">Human</span> : <span class="n">Animal</span> {
+  <span class="kt">attribute</span> <span class="n">Dog</span>? <span class="nv">pet</span>;
 };
         
-interface Dog : Animal {
-  attribute Human? owner;
+<span class="kt">interface</span> <span class="nv">Dog</span> : <span class="n">Animal</span> {
+  <span class="kt">attribute</span> <span class="n">Human</span>? <span class="nv">owner</span>;
 };
 </pre>
    </div>
-   <div class="example" id="example-b8b8b5f7">
-    <a class="self-link" href="#example-b8b8b5f7"></a> 
+   <div class="example" id="example-32e63f6d">
+    <a class="self-link" href="#example-32e63f6d"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-13">IDL fragment</a> defines
     simplified versions of a few DOM <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-13">interfaces</a>, one of which
     is a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-6">callback interface</a>.</p>
-<pre class="idl-example">interface Node {
-  readonly attribute DOMString nodeName;
-  readonly attribute Node? parentNode;
-  Node appendChild(Node newChild);
-  void addEventListener(DOMString type, EventListener listener);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Node</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">nodeName</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Node</span>? <span class="nv">parentNode</span>;
+  <span class="n">Node</span> <span class="nv">appendChild</span>(<span class="n">Node</span> <span class="nv">newChild</span>);
+  <span class="kt">void</span> <span class="nv">addEventListener</span>(<span class="kt">DOMString</span> <span class="nv">type</span>, <span class="n">EventListener</span> <span class="nv">listener</span>);
 };
         
-callback interface EventListener {
-  void handleEvent(Event event);
+<span class="kt">callback</span> <span class="kt">interface</span> <span class="nv">EventListener</span> {
+  <span class="kt">void</span> <span class="nv">handleEvent</span>(<span class="n">Event</span> <span class="nv">event</span>);
 };
 </pre>
     <p>Since the <code class="idl">EventListener</code> interface is annotated
@@ -2475,7 +2477,7 @@ callback interface EventListener {
         
 <span class="kd">var</span> <span class="nx">listener</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">handleEvent</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
+    <span class="c1">// ...</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>            <span class="c1">// This works.</span>
@@ -2489,10 +2491,10 @@ callback interface EventListener {
   <span class="nx">nodeName</span><span class="o">:</span> <span class="s2">"span"</span><span class="p">,</span>
   <span class="nx">parentNode</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="nx">appendChild</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newchild</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
+    <span class="c1">// ...</span>
   <span class="p">},</span>
   <span class="nx">addEventListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
+    <span class="c1">// ...</span>
   <span class="p">}</span>
 <span class="p">};</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newNode</span><span class="p">);</span>  <span class="c1">// This will throw a TypeError exception.</span>
@@ -2630,8 +2632,8 @@ particular instances of the <a data-link-type="dfn" href="#dfn-interface" id="re
     allow <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-8">constants</a> to be accessed
     through objects implementing the IDL <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-16">interfaces</a> on which the <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-9">constants</a> are declared.
     For example, with the following IDL:</p>
-<pre class="idl-example example" id="example-4c10c2d4"><a class="self-link" href="#example-4c10c2d4"></a>interface A {
-  const short rambaldi = 47;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">const</span> <span class="kt">short</span> <span class="nv">rambaldi</span> = 47;
 };
 </pre>
     <p>the constant value can be accessed in ECMAScript  either as <code>A.rambaldi</code> or <code>instanceOfA.rambaldi</code>.</p>
@@ -2662,14 +2664,14 @@ particular instances of the <a data-link-type="dfn" href="#dfn-interface" id="re
     PrimitiveType Null
     identifier Null
 </pre>
-   <div class="example" id="example-45e8bc9d">
-    <a class="self-link" href="#example-45e8bc9d"></a> 
+   <div class="example" id="example-e2a5bc75">
+    <a class="self-link" href="#example-e2a5bc75"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-14">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-10">constants</a> of the above types can be defined.</p>
-<pre class="idl-example">interface Util {
-  const boolean DEBUG = false;
-  const octet LF = 10;
-  const unsigned long BIT_MASK = 0x0000fc00;
-  const double AVOGADRO = 6.022e23;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Util</span> {
+  <span class="kt">const</span> <span class="kt">boolean</span> <span class="nv">DEBUG</span> = <span class="kt">false</span>;
+  <span class="kt">const</span> <span class="kt">octet</span> <span class="nv">LF</span> = 10;
+  <span class="kt">const</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">BIT_MASK</span> = 0x0000fc00;
+  <span class="kt">const</span> <span class="kt">double</span> <span class="nv">AVOGADRO</span> = 6.022e23;
 };
 </pre>
    </div>
@@ -2790,23 +2792,23 @@ interface will be stringified to the value of the attribute.  See <a href="#idl-
     "readonly"
     ε
 </pre>
-   <div class="example" id="example-24a0104e">
-    <a class="self-link" href="#example-24a0104e"></a> 
+   <div class="example" id="example-51b5e94b">
+    <a class="self-link" href="#example-51b5e94b"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-15">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-8">attributes</a> can be declared on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-19">interface</a>:</p>
-<pre class="idl-example">interface Animal {
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Animal</span> {
         
   // A simple attribute that can be set to any string value.
-  readonly attribute DOMString name;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
         
   // An attribute whose value can be assigned to.
-  attribute unsigned short age;
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">short</span> <span class="nv">age</span>;
 };
         
-interface Person : Animal {
+<span class="kt">interface</span> <span class="nv">Person</span> : <span class="n">Animal</span> {
         
   // An attribute whose getter behavior is inherited from Animal, and need not be
   // specified in the description of Person.
-  inherit attribute DOMString name;
+  <span class="kt">inherit</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
 };
 </pre>
    </div>
@@ -2877,22 +2879,22 @@ as the identifier of another argument in the same operation declaration.</p>
 which can control how a value passed as the argument will be handled in
 language bindings.</p>
 <pre class="syntax highlight"><span class="nb">return</span><span class="o">-</span>type identifier([<mark>extended<span class="o">-</span>attributes</mark>] type identifier, [<mark>extended<span class="o">-</span>attributes</mark>] type identifier, …);</pre>
-   <div class="example" id="example-2b98e6e1">
-    <a class="self-link" href="#example-2b98e6e1"></a> 
+   <div class="example" id="example-0230bcc3">
+    <a class="self-link" href="#example-0230bcc3"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-16">IDL fragment</a> demonstrates how <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-4">regular operations</a> can be declared on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-23">interface</a>:</p>
-<pre class="idl-example">interface Dimensions {
-  attribute unsigned long width;
-  attribute unsigned long height;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Dimensions</span> {
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">width</span>;
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">height</span>;
 };
         
-interface Button {
+<span class="kt">interface</span> <span class="nv">Button</span> {
         
   // An operation that takes no arguments and returns a boolean.
-  boolean isMouseOver();
+  <span class="kt">boolean</span> <span class="nv">isMouseOver</span>();
         
   // Overloaded operations.
-  void setDimensions(Dimensions size);
-  void setDimensions(unsigned long width, unsigned long height);
+  <span class="kt">void</span> <span class="nv">setDimensions</span>(<span class="n">Dimensions</span> <span class="nv">size</span>);
+  <span class="kt">void</span> <span class="nv">setDimensions</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">width</span>, <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">height</span>);
 };
 </pre>
    </div>
@@ -2910,15 +2912,15 @@ is the final argument in the operation’s argument list.</p>
    <p><a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-10">Extended attributes</a> that <a data-link-type="dfn" href="#dfn-xattr-argument-list" id="ref-for-dfn-xattr-argument-list-1">take an argument list</a> ([<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-4">Constructor</a></code>] and
 [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-3">NamedConstructor</a></code>], of those
 defined in this specification) and <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-10">callback functions</a> are also considered to be <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic-1">variadic</a> when the <code>...</code> token is used in their argument lists.</p>
-   <div class="example" id="example-d7882bcf">
-    <a class="self-link" href="#example-d7882bcf"></a> 
+   <div class="example" id="example-b2714cd4">
+    <a class="self-link" href="#example-b2714cd4"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-17">IDL fragment</a> defines an interface that has
     two variadic operations:</p>
-<pre class="idl-example">interface IntegerSet {
-  readonly attribute unsigned long cardinality;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">IntegerSet</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">cardinality</span>;
         
-  void union(long... ints);
-  void intersection(long... ints);
+  <span class="kt">void</span> <span class="nv">union</span>(<span class="kt">long</span>... <span class="nv">ints</span>);
+  <span class="kt">void</span> <span class="nv">intersection</span>(<span class="kt">long</span>... <span class="nv">ints</span>);
 };
 </pre>
     <p>In the ECMAScript binding, variadic operations are implemented by
@@ -3002,17 +3004,17 @@ two token value <code>[]</code>, which represents an empty sequence
 value.  The type of this value is the same the type of the optional
 argument it is being used as the default value of.  That type
 must be a <a href="#idl-sequence" id="ref-for-idl-sequence-2">sequence type</a> or a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-5">nullable type</a>.</p>
-   <div class="example" id="example-e53f650e">
-    <a class="self-link" href="#example-e53f650e"></a> 
+   <div class="example" id="example-a0ce97f3">
+    <a class="self-link" href="#example-a0ce97f3"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-18">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-24">interface</a> with a single <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-6">operation</a> that can be invoked with two different argument list lengths:</p>
-<pre class="idl-example">interface ColorCreator {
-  object createColor(double v1, double v2, double v3, optional double alpha);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">ColorCreator</span> {
+  <span class="kt">object</span> <span class="nv">createColor</span>(<span class="kt">double</span> <span class="nv">v1</span>, <span class="kt">double</span> <span class="nv">v2</span>, <span class="kt">double</span> <span class="nv">v3</span>, <span class="kt">optional</span> <span class="kt">double</span> <span class="nv">alpha</span>);
 };
 </pre>
     <p>It is equivalent to an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-25">interface</a> that has two <a data-link-type="dfn" href="#dfn-overloaded" id="ref-for-dfn-overloaded-1">overloaded</a> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-7">operations</a>:</p>
-<pre class="idl-example">interface ColorCreator {
-  object createColor(double v1, double v2, double v3);
-  object createColor(double v1, double v2, double v3, double alpha);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">ColorCreator</span> {
+  <span class="kt">object</span> <span class="nv">createColor</span>(<span class="kt">double</span> <span class="nv">v1</span>, <span class="kt">double</span> <span class="nv">v2</span>, <span class="kt">double</span> <span class="nv">v3</span>);
+  <span class="kt">object</span> <span class="nv">createColor</span>(<span class="kt">double</span> <span class="nv">v1</span>, <span class="kt">double</span> <span class="nv">v2</span>, <span class="kt">double</span> <span class="nv">v3</span>, <span class="kt">double</span> <span class="nv">alpha</span>);
 };
 </pre>
    </div>
@@ -3138,14 +3140,14 @@ object behavior.  When special operations are declared using
 operations with no identifier, then in language bindings that do
 not support the particular kind of special operations there simply
 will not be such functionality.</p>
-   <div class="example" id="example-83c52a02">
-    <a class="self-link" href="#example-83c52a02"></a> 
+   <div class="example" id="example-c6ac990a">
+    <a class="self-link" href="#example-c6ac990a"></a> 
     <p>The following IDL fragment defines an interface with a getter and a setter:</p>
-<pre class="idl-example">interface Dictionary {
-  readonly attribute unsigned long propertyCount;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Dictionary</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">propertyCount</span>;
         
-  getter double (DOMString propertyName);
-  setter void (DOMString propertyName, double propertyValue);
+  <span class="kt">getter</span> <span class="kt">double</span> (<span class="kt">DOMString</span> <span class="nv">propertyName</span>);
+  <span class="kt">setter</span> <span class="kt">void</span> (<span class="kt">DOMString</span> <span class="nv">propertyName</span>, <span class="kt">double</span> <span class="nv">propertyValue</span>);
 };
 </pre>
     <p>In language bindings that do not support property getters and setters,
@@ -3155,24 +3157,24 @@ will not be such functionality.</p>
    <p>Defining a special operation  with an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-22">identifier</a> is equivalent to separating the special operation out into its own
 declaration without an identifier.  This approach is allowed to
 simplify prose descriptions of an interface’s operations.</p>
-   <div class="example" id="example-a493b657">
-    <a class="self-link" href="#example-a493b657"></a> 
+   <div class="example" id="example-1ecd0685">
+    <a class="self-link" href="#example-1ecd0685"></a> 
     <p>The following two interfaces are equivalent:</p>
-<pre class="idl-example">interface Dictionary {
-  readonly attribute unsigned long propertyCount;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Dictionary</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">propertyCount</span>;
         
-  getter double getProperty(DOMString propertyName);
-  setter void setProperty(DOMString propertyName, double propertyValue);
+  <span class="kt">getter</span> <span class="kt">double</span> <span class="nv">getProperty</span>(<span class="kt">DOMString</span> <span class="nv">propertyName</span>);
+  <span class="kt">setter</span> <span class="kt">void</span> <span class="nv">setProperty</span>(<span class="kt">DOMString</span> <span class="nv">propertyName</span>, <span class="kt">double</span> <span class="nv">propertyValue</span>);
 };
 </pre>
-<pre class="idl-example">interface Dictionary {
-  readonly attribute unsigned long propertyCount;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Dictionary</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">propertyCount</span>;
         
-  double getProperty(DOMString propertyName);
-  void setProperty(DOMString propertyName, double propertyValue);
+  <span class="kt">double</span> <span class="nv">getProperty</span>(<span class="kt">DOMString</span> <span class="nv">propertyName</span>);
+  <span class="kt">void</span> <span class="nv">setProperty</span>(<span class="kt">DOMString</span> <span class="nv">propertyName</span>, <span class="kt">double</span> <span class="nv">propertyValue</span>);
         
-  getter double (DOMString propertyName);
-  setter void (DOMString propertyName, double propertyValue);
+  <span class="kt">getter</span> <span class="kt">double</span> (<span class="kt">DOMString</span> <span class="nv">propertyName</span>);
+  <span class="kt">setter</span> <span class="kt">void</span> (<span class="kt">DOMString</span> <span class="nv">propertyName</span>, <span class="kt">double</span> <span class="nv">propertyValue</span>);
 };
 </pre>
    </div>
@@ -3215,12 +3217,12 @@ only so that legacy Web platform features can be specified.  Legacy callers
 should not be used in specifications unless required to
 specify the behavior of legacy APIs, and even then this should be discussed on
 the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong> 
-   <div class="example" id="example-66eb7976">
-    <a class="self-link" href="#example-66eb7976"></a> 
+   <div class="example" id="example-bcd58627">
+    <a class="self-link" href="#example-bcd58627"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-19">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-29">interface</a> with a <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-2">legacy caller</a>.</p>
-<pre class="idl-example">interface NumberQuadrupler {
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">NumberQuadrupler</span> {
   // This operation simply returns four times the given number x.
-  legacycaller double compute(double x);
+  <span class="kt">legacycaller</span> <span class="kt">double</span> <span class="nv">compute</span>(<span class="kt">double</span> <span class="nv">x</span>);
 };
 </pre>
     <p>An ECMAScript implementation supporting this interface would
@@ -3251,15 +3253,15 @@ operation’s <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-re
 argument list can be omitted.</p>
 <pre class="syntax highlight">stringifier;
 </pre>
-   <div class="example" id="example-e379c56e">
-    <a class="self-link" href="#example-e379c56e"></a> 
+   <div class="example" id="example-e46cce0d">
+    <a class="self-link" href="#example-e46cce0d"></a> 
     <p>The following two interfaces are equivalent:</p>
-<pre class="idl-example">interface A {
-  stringifier DOMString ();
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">stringifier</span> <span class="kt">DOMString</span> ();
 };
 </pre>
-<pre class="idl-example">interface A {
-  stringifier;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">stringifier</span>;
 };
 </pre>
    </div>
@@ -3281,13 +3283,13 @@ a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-at
     ReturnType OperationRest
     ";"
 </pre>
-   <div class="example" id="example-ead7f26c">
-    <a class="self-link" href="#example-ead7f26c"></a> 
+   <div class="example" id="example-ce4b2b4b">
+    <a class="self-link" href="#example-ce4b2b4b"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-20">IDL fragment</a> defines an interface that will stringify to the value of its <code class="idl">name</code> attribute:</p>
-<pre class="idl-example">[Constructor]
-interface Student {
-  attribute unsigned long id;
-  stringifier attribute DOMString name;
+<pre class="idl highlight def">[<span class="nv">Constructor</span>]
+<span class="kt">interface</span> <span class="nv">Student</span> {
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">id</span>;
+  <span class="kt">stringifier</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
 };
 </pre>
     <p>In the ECMAScript binding, using a <code class="idl">Student</code> object in a context where a string is expected will result in the
@@ -3301,13 +3303,13 @@ interface Student {
 </pre>
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-21">IDL fragment</a> defines an interface that has custom stringification behavior that is
     not specified in the IDL itself.</p>
-<pre class="idl-example">[Constructor]
-interface Student {
-  attribute unsigned long id;
-  attribute DOMString? familyName;
-  attribute DOMString givenName;
+<pre class="idl highlight def">[<span class="nv">Constructor</span>]
+<span class="kt">interface</span> <span class="nv">Student</span> {
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">id</span>;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span>? <span class="nv">familyName</span>;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">givenName</span>;
         
-  stringifier DOMString ();
+  <span class="kt">stringifier</span> <span class="kt">DOMString</span> ();
 };
 </pre>
     <p>Thus, prose is required to explain the stringification behavior, such
@@ -3623,23 +3625,23 @@ be declared to take zero arguments and return a <a data-link-type="dfn" href="#d
     "," identifier Identifiers
     ε
 </pre>
-   <div class="example" id="example-c8289a42">
-    <a class="self-link" href="#example-c8289a42"></a> 
+   <div class="example" id="example-c4c78735">
+    <a class="self-link" href="#example-c4c78735"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-22">IDL fragment</a> defines
     an interface <code class="idl">Transaction</code> that has a <a data-link-type="dfn" href="#dfn-serializer" id="ref-for-dfn-serializer-3">serializer</a> defines in prose:</p>
-<pre class="idl-example">interface Transaction {
-  readonly attribute Account from;
-  readonly attribute Account to;
-  readonly attribute double amount;
-  readonly attribute DOMString description;
-  readonly attribute unsigned long number;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Transaction</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Account</span> <span class="nv">from</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Account</span> <span class="nv">to</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">amount</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">description</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">number</span>;
         
-  serializer;
+  <span class="kt">serializer</span>;
 };
         
-interface Account {
-  DOMString name;
-  unsigned long number;
+<span class="kt">interface</span> <span class="nv">Account</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">number</span>;
 };
 </pre>
     <p>The serializer could be defined as follows:</p>
@@ -3667,21 +3669,21 @@ and whose value is the <a data-link-type="dfn" href="#dfn-serialized-value" id="
     </blockquote>
     <p>If it was acceptable for <code class="idl">Account</code> objects to be serializable
     on their own, then <a data-link-type="dfn" href="#dfn-serialization-pattern" id="ref-for-dfn-serialization-pattern-3">serialization patterns</a> could be used to avoid having to define the <a data-link-type="dfn" href="#dfn-serialization-behavior" id="ref-for-dfn-serialization-behavior-14">serialization behavior</a> in prose:</p>
-<pre class="idl-example">interface Transaction {
-  readonly attribute Account from;
-  readonly attribute Account to;
-  readonly attribute double amount;
-  readonly attribute DOMString description;
-  readonly attribute unsigned long number;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Transaction</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Account</span> <span class="nv">from</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Account</span> <span class="nv">to</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">amount</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">description</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">number</span>;
         
-  serializer = { from, to, amount, description };
+  <span class="kt">serializer</span> = { from, to, amount, description };
 };
         
-interface Account {
-  DOMString name;
-  unsigned long number;
+<span class="kt">interface</span> <span class="nv">Account</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">number</span>;
         
-  serializer = number;
+  <span class="kt">serializer</span> = number;
 };
 </pre>
     <p>In the ECMAScript language binding, there would exist a <code>toJSON</code> method on <code class="idl">Transaction</code> objects:</p>
@@ -3741,8 +3743,8 @@ by a description of how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-exp
     then indexing an object with an integer that is not a <a data-link-type="dfn" href="#dfn-supported-property-indices" id="ref-for-dfn-supported-property-indices-2">supported property index</a> does not necessarily elicit the same behavior as invoking the operation with that index.  The actual behavior in this
     case is language binding specific.</p>
     <p>In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:</p>
-<pre class="idl-example example" id="example-ec4b73ca"><a class="self-link" href="#example-ec4b73ca"></a>interface A {
-  getter DOMString toWord(unsigned long index);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">getter</span> <span class="kt">DOMString</span> <span class="nv">toWord</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>);
 };
 </pre>
     <p>Assume that an object implementing <code class="idl">A</code> has <a data-link-type="dfn" href="#dfn-supported-property-indices" id="ref-for-dfn-supported-property-indices-3">supported property indices</a> in the range 0 ≤ <var>index</var> &lt; 2.  Also assume that toWord is defined to return
@@ -3757,18 +3759,18 @@ by a description of how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-exp
 <span class="nx">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>         <span class="c1">// Evaluates to undefined, since there is no property "5".</span>
 </pre>
    </div>
-   <div class="example" id="example-44f55055">
-    <a class="self-link" href="#example-44f55055"></a> 
+   <div class="example" id="example-aad230ff">
+    <a class="self-link" href="#example-aad230ff"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-23">IDL fragment</a> defines an interface <code class="idl">OrderedMap</code> which allows
     retrieving and setting values by name or by index number:</p>
-<pre class="idl-example">interface OrderedMap {
-  readonly attribute unsigned long size;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">OrderedMap</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">size</span>;
         
-  getter any getByIndex(unsigned long index);
-  setter void setByIndex(unsigned long index, any value);
+  <span class="kt">getter</span> <span class="kt">any</span> <span class="nv">getByIndex</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>);
+  <span class="kt">setter</span> <span class="kt">void</span> <span class="nv">setByIndex</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>, <span class="kt">any</span> <span class="nv">value</span>);
         
-  getter any get(DOMString name);
-  setter void set(DOMString name, any value);
+  <span class="kt">getter</span> <span class="kt">any</span> <span class="nv">get</span>(<span class="kt">DOMString</span> <span class="nv">name</span>);
+  <span class="kt">setter</span> <span class="kt">void</span> <span class="nv">set</span>(<span class="kt">DOMString</span> <span class="nv">name</span>, <span class="kt">any</span> <span class="nv">value</span>);
 };
 </pre>
     <p>Since all of the special operations are declared using
@@ -3891,19 +3893,19 @@ declared on <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-d
     ReadOnly AttributeRest
     ReturnType OperationRest
 </pre>
-   <div class="example" id="example-4e502f08">
-    <a class="self-link" href="#example-4e502f08"></a> 
+   <div class="example" id="example-dfc0c33d">
+    <a class="self-link" href="#example-dfc0c33d"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-24">IDL fragment</a> defines an interface <code class="idl">Circle</code> that has a static
     operation declared on it:</p>
-<pre class="idl-example">interface Point { /* ... */ };
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Point</span> { /* ... */ };
         
-interface Circle {
-  attribute double cx;
-  attribute double cy;
-  attribute double radius;
+<span class="kt">interface</span> <span class="nv">Circle</span> {
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">cx</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">cy</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">radius</span>;
         
-  static readonly attribute long triangulationCount;
-  static Point triangulate(Circle c1, Circle c2, Circle c3);
+  <span class="kt">static</span> <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">triangulationCount</span>;
+  <span class="kt">static</span> <span class="n">Point</span> <span class="nv">triangulate</span>(<span class="n">Circle</span> <span class="nv">c1</span>, <span class="n">Circle</span> <span class="nv">c2</span>, <span class="n">Circle</span> <span class="nv">c3</span>);
 };
 </pre>
     <p>In the ECMAScript language binding, the <emu-val>Function</emu-val> object for <code>triangulate</code> and the accessor property for <code>triangulationCount</code> will exist on the <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-1">interface object</a> for <code class="idl">Circle</code>:</p>
@@ -3939,17 +3941,17 @@ the notion of an <em>effective overload set</em> is used.</p>
    <p><a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-17">Operations</a> and <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-4">legacy callers</a> must not be overloaded across <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-36">interface</a> and <a data-link-type="dfn" href="#dfn-partial-interface" id="ref-for-dfn-partial-interface-6">partial interface</a> definitions.</p>
    <div class="note" role="note">
     <p>For example, the overloads for both <var>f</var> and <var>g</var> are disallowed:</p>
-<pre class="idl-example example" id="example-d1ceb570"><a class="self-link" href="#example-d1ceb570"></a>interface A {
-  void f();
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">f</span>();
 };
         
-partial interface A {
-  void f(double x);
-  void g();
+<span class="kt">partial</span> <span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">double</span> <span class="nv">x</span>);
+  <span class="kt">void</span> <span class="nv">g</span>();
 };
         
-partial interface A {
-  void g(DOMString x);
+<span class="kt">partial</span> <span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">g</span>(<span class="kt">DOMString</span> <span class="nv">x</span>);
 };
 </pre>
     <p>Note that the [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-6">Constructor</a></code>] and
@@ -4135,14 +4137,14 @@ and “required” otherwise.</p>
     <li data-md="">
      <p>The effective overload set is <var>S</var>.</p>
    </ol>
-   <div class="example" id="example-0c6cde68">
-    <a class="self-link" href="#example-0c6cde68"></a> 
+   <div class="example" id="example-14a27807">
+    <a class="self-link" href="#example-14a27807"></a> 
     <p>For the following interface:</p>
-<pre class="idl-example">interface A {
-  /* f1 */ void f(DOMString a);
-  /* f2 */ void f(Node a, DOMString b, double... c);
-  /* f3 */ void f();
-  /* f4 */ void f(Event a, DOMString b, optional DOMString c, double... d);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  /* f1 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">DOMString</span> <span class="nv">a</span>);
+  /* f2 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="n">Node</span> <span class="nv">a</span>, <span class="kt">DOMString</span> <span class="nv">b</span>, <span class="kt">double</span>... <span class="nv">c</span>);
+  /* f3 */ <span class="kt">void</span> <span class="nv">f</span>();
+  /* f4 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="n">Event</span> <span class="nv">a</span>, <span class="kt">DOMString</span> <span class="nv">b</span>, <span class="kt">optional</span> <span class="kt">DOMString</span> <span class="nv">c</span>, <span class="kt">double</span>... <span class="nv">d</span>);
 };
 </pre>
     <p>assuming <code class="idl">Node</code> and <code class="idl">Event</code> are two other interfaces of which no object can implement both,
@@ -4366,15 +4368,15 @@ are not distinguishable with any other type.</p>
 must be an index <var>i</var> such
 that for each pair of entries the types at index <var>i</var> are <a data-link-type="dfn" href="#dfn-distinguishable" id="ref-for-dfn-distinguishable-1">distinguishable</a>.
 The lowest such index is termed the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-distinguishing-argument-index">distinguishing argument index</dfn> for the entries of the effective overload set with the given type list length.</p>
-   <div class="example" id="example-a6d14427">
-    <a class="self-link" href="#example-a6d14427"></a> 
+   <div class="example" id="example-b858493b">
+    <a class="self-link" href="#example-b858493b"></a> 
     <p>Consider the effective overload set shown in the previous example.
     There are multiple entries in the set with type lists 2, 3 and 4.
     For each of these type list lengths, the <a data-link-type="dfn" href="#dfn-distinguishing-argument-index" id="ref-for-dfn-distinguishing-argument-index-1">distinguishing argument index</a> is 0, since <code class="idl">Node</code> and <code class="idl">Event</code> are <a data-link-type="dfn" href="#dfn-distinguishable" id="ref-for-dfn-distinguishable-2">distinguishable</a>.</p>
     <p>The following use of overloading however is invalid:</p>
-<pre class="idl-example">interface B {
-  void f(DOMString x);
-  void f(double x);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">B</span> {
+  <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">DOMString</span> <span class="nv">x</span>);
+  <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">double</span> <span class="nv">x</span>);
 };
 </pre>
     <p>since <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-14">DOMString</a></code> and <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-7">double</a></code> are not distinguishable.</p>
@@ -4383,13 +4385,13 @@ The lowest such index is termed the <dfn class="dfn-paneled" data-dfn-type="dfn"
 all of the entries’ type lists must be the same
 and the booleans in the corresponding list indicating argument optionality must
 be the same.</p>
-   <div class="example" id="example-2809998e">
-    <a class="self-link" href="#example-2809998e"></a> 
+   <div class="example" id="example-5f69b5b4">
+    <a class="self-link" href="#example-5f69b5b4"></a> 
     <p>The following is invalid:</p>
-<pre class="idl-example">interface B {
-  /* f1 */ void f(DOMString w);
-  /* f2 */ void f(long w, double x, Node y, Node z);
-  /* f3 */ void f(double w, double x, DOMString y, Node z);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">B</span> {
+  /* f1 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">DOMString</span> <span class="nv">w</span>);
+  /* f2 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">long</span> <span class="nv">w</span>, <span class="kt">double</span> <span class="nv">x</span>, <span class="n">Node</span> <span class="nv">y</span>, <span class="n">Node</span> <span class="nv">z</span>);
+  /* f3 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">double</span> <span class="nv">w</span>, <span class="kt">double</span> <span class="nv">x</span>, <span class="kt">DOMString</span> <span class="nv">y</span>, <span class="n">Node</span> <span class="nv">z</span>);
 };
 </pre>
     <p>For argument count 4, the effective overload set is:</p>
@@ -4438,19 +4440,19 @@ actual <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-array-i
    <p>Interfaces with iterable declarations must not
 have any <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a> named “entries”, “keys” or “values”,
 or have any <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-3">inherited</a> or <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-2">consequential</a> interfaces that have interface members with these names.</p>
-   <div class="example" id="example-c7d36943">
-    <a class="self-link" href="#example-c7d36943"></a> 
+   <div class="example" id="example-7edb4f56">
+    <a class="self-link" href="#example-7edb4f56"></a> 
     <p>Consider the following interface <code class="idl">SessionManager</code>, which allows access to
     a number of <code class="idl">Session</code> objects:</p>
-<pre class="idl-example">interface SessionManager {
-  Session getSessionForUser(DOMString username);
-  readonly attribute unsigned long sessionCount;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">SessionManager</span> {
+  <span class="n">Session</span> <span class="nv">getSessionForUser</span>(<span class="kt">DOMString</span> <span class="nv">username</span>);
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">sessionCount</span>;
         
-  iterable&lt;Session>;
+  <span class="kt">iterable</span>&lt;<span class="n">Session</span>>;
 };
         
-interface Session {
-  readonly attribute DOMString username;
+<span class="kt">interface</span> <span class="nv">Session</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">username</span>;
   // ...
 };
 </pre>
@@ -4712,24 +4714,24 @@ ordered lexicographically by the Unicode codepoints that comprise their
 identifiers.</p>
    <div class="note" role="note">
     <p>For example, with the following definitions:</p>
-<pre class="idl-example example" id="example-f7dd96f8"><a class="self-link" href="#example-f7dd96f8"></a>dictionary B : A {
-  long b;
-  long a;
+<pre class="idl highlight def"><span class="kt">dictionary</span> <span class="nv">B</span> : <span class="n">A</span> {
+  <span class="kt">long</span> <span class="nv">b</span>;
+  <span class="kt">long</span> <span class="nv">a</span>;
 };
         
-dictionary A {
-  long c;
-  long g;
+<span class="kt">dictionary</span> <span class="nv">A</span> {
+  <span class="kt">long</span> <span class="nv">c</span>;
+  <span class="kt">long</span> <span class="nv">g</span>;
 };
         
-dictionary C : B {
-  long e;
-  long f;
+<span class="kt">dictionary</span> <span class="nv">C</span> : <span class="n">B</span> {
+  <span class="kt">long</span> <span class="nv">e</span>;
+  <span class="kt">long</span> <span class="nv">f</span>;
 };
         
-partial dictionary A {
-  long h;
-  long d;
+<span class="kt">partial</span> <span class="kt">dictionary</span> <span class="nv">A</span> {
+  <span class="kt">long</span> <span class="nv">h</span>;
+  <span class="kt">long</span> <span class="nv">d</span>;
 };
 </pre>
     <p>the order of the <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-8">dictionary members</a> of a dictionary value of type <code class="idl">C</code> is
@@ -4739,8 +4741,8 @@ partial dictionary A {
     a dictionary value to a platform object depends on the order
     the dictionary members are fetched.  For example, consider the
     following additional interface:</p>
-<pre class="idl-example example" id="example-081655c2"><a class="self-link" href="#example-081655c2"></a>interface Something {
-  void f(A a);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Something</span> {
+  <span class="kt">void</span> <span class="nv">f</span>(<span class="n">A</span> <span class="nv">a</span>);
 };
 </pre>
     <p>and this ECMAScript code:</p>
@@ -4793,26 +4795,26 @@ on that dictionary’s <a data-link-type="dfn" href="#dfn-inherited-dictionaries
 </pre>
    <div data-fill-with="grammar-DefaultValue"></div>
    <div data-fill-with="grammar-Inheritance"></div>
-   <div class="example" id="example-febd8e70">
-    <a class="self-link" href="#example-febd8e70"></a> 
+   <div class="example" id="example-3f670ffa">
+    <a class="self-link" href="#example-3f670ffa"></a> 
     <p>One use of dictionary types is to allow a number of optional arguments to
     an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-21">operation</a> without being
     constrained as to the order they are specified at the call site.  For example,
     consider the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-25">IDL fragment</a>:</p>
-<pre class="idl-example">[Constructor]
-interface Point {
-  attribute double x;
-  attribute double y;
+<pre class="idl highlight def">[<span class="nv">Constructor</span>]
+<span class="kt">interface</span> <span class="nv">Point</span> {
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">x</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">y</span>;
 };
         
-dictionary PaintOptions {
-  DOMString? fillPattern = "black";
-  DOMString? strokePattern = null;
-  Point position;
+<span class="kt">dictionary</span> <span class="nv">PaintOptions</span> {
+  <span class="kt">DOMString</span>? <span class="nv">fillPattern</span> = "black";
+  <span class="kt">DOMString</span>? <span class="nv">strokePattern</span> = <span class="kt">null</span>;
+  <span class="n">Point</span> <span class="nv">position</span>;
 };
         
-interface GraphicsContext {
-  void drawRectangle(double width, double height, optional PaintOptions options);
+<span class="kt">interface</span> <span class="nv">GraphicsContext</span> {
+  <span class="kt">void</span> <span class="nv">drawRectangle</span>(<span class="kt">double</span> <span class="nv">width</span>, <span class="kt">double</span> <span class="nv">height</span>, <span class="kt">optional</span> <span class="n">PaintOptions</span> <span class="nv">options</span>);
 };
 </pre>
     <p>In an ECMAScript implementation of the IDL, an <emu-val>Object</emu-val> can be passed in for the optional <code class="idl">PaintOptions</code> dictionary:</p>
@@ -4933,7 +4935,7 @@ and legacy code values.</p>
       <td>The object can not be found here.
       <td><dfn class="idl-code" data-dfn-for="DOMException" data-dfn-type="const" data-export="" id="dom-domexception-not_found_err"><code>NOT_FOUND_ERR</code><a class="self-link" href="#dom-domexception-not_found_err"></a></dfn> (8)
      <tr>
-      <td>"<dfn class="dfn-paneled idl-code" data-dfn-type="exception" data-export="" id="notsupportederror"><code>NotSupportedError</code></dfn>"
+      <td>"<dfn class="idl-code" data-dfn-type="exception" data-export="" id="notsupportederror"><code>NotSupportedError</code><a class="self-link" href="#notsupportederror"></a></dfn>"
       <td>The operation is not supported.
       <td><dfn class="idl-code" data-dfn-for="DOMException" data-dfn-type="const" data-export="" id="dom-domexception-not_supported_err"><code>NOT_SUPPORTED_ERR</code><a class="self-link" href="#dom-domexception-not_supported_err"></a></dfn> (9)
      <tr>
@@ -5072,16 +5074,16 @@ results in an exception being thrown.</p>
     string EnumValueListComma
     ε
 </pre>
-   <div class="example" id="example-186b5bea">
-    <a class="self-link" href="#example-186b5bea"></a> 
+   <div class="example" id="example-8060815d">
+    <a class="self-link" href="#example-8060815d"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-26">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-13">enumeration</a> that is used as the type of an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-19">attribute</a> and an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-26">operation</a> argument:</p>
-<pre class="idl-example">enum MealType { "rice", "noodles", "other" };
+<pre class="idl highlight def"><span class="kt">enum</span> <span class="nv">MealType</span> { <span class="s">"rice"</span>, <span class="s">"noodles"</span>, <span class="s">"other"</span> };
         
-interface Meal {
-  attribute MealType type;
-  attribute double size;     // in grams
+<span class="kt">interface</span> <span class="nv">Meal</span> {
+  <span class="kt">attribute</span> <span class="n">MealType</span> <span class="nv">type</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">size</span>;     // in grams
         
-  void initialize(MealType type, double size);
+  <span class="kt">void</span> <span class="nv">initialize</span>(<span class="n">MealType</span> <span class="nv">type</span>, <span class="kt">double</span> <span class="nv">size</span>);
 };
 </pre>
     <p>An ECMAScript implementation would restrict the strings that can be
@@ -5121,15 +5123,15 @@ be used as the type of a <a data-link-type="dfn" href="#dfn-constant" id="ref-fo
 <pre class="grammar" id="prod-CallbackRest">CallbackRest :
     identifier "=" ReturnType "(" ArgumentList ")" ";"
 </pre>
-   <div class="example" id="example-68747176">
-    <a class="self-link" href="#example-68747176"></a> 
+   <div class="example" id="example-534bed43">
+    <a class="self-link" href="#example-534bed43"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-27">IDL fragment</a> defines
     a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-16">callback function</a> used for an API that
     invokes a user-defined function when an operation is complete.</p>
-<pre class="idl-example">callback AsyncOperationCallback = void (DOMString status);
+<pre class="idl highlight def"><span class="kt">callback</span> <span class="nv">AsyncOperationCallback</span> = <span class="kt">void</span> (<span class="kt">DOMString</span> <span class="nv">status</span>);
         
-interface AsyncOperations {
-  void performOperation(AsyncOperationCallback whenFinished);
+<span class="kt">interface</span> <span class="nv">AsyncOperations</span> {
+  <span class="kt">void</span> <span class="nv">performOperation</span>(<span class="n">AsyncOperationCallback</span> <span class="nv">whenFinished</span>);
 };
 </pre>
     <p>In the ECMAScript language binding, a <emu-val>Function</emu-val> object is
@@ -5156,19 +5158,19 @@ identify the same or another <a data-link-type="dfn" href="#dfn-typedef" id="ref
 <pre class="grammar" id="prod-Typedef">Typedef :
     "typedef" Type identifier ";"
 </pre>
-   <div class="example" id="example-49f3209f">
-    <a class="self-link" href="#example-49f3209f"></a> 
+   <div class="example" id="example-c0e6c806">
+    <a class="self-link" href="#example-c0e6c806"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-28">IDL fragment</a> demonstrates the use of <a data-link-type="dfn" href="#dfn-typedef" id="ref-for-dfn-typedef-13">typedefs</a> to allow the use of a short <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-37">identifier</a> instead of a long <a href="#idl-sequence" id="ref-for-idl-sequence-5">sequence type</a>.</p>
-<pre class="idl-example">interface Point {
-  attribute double x;
-  attribute double y;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Point</span> {
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">x</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">y</span>;
 };
         
-typedef sequence&lt;Point> Points;
+<span class="kt">typedef</span> <span class="kt">sequence</span>&lt;<span class="n">Point</span>> <span class="nv">Points</span>;
         
-interface Widget {
-  boolean pointWithinBounds(Point p);
-  boolean allPointsWithinBounds(Points ps);
+<span class="kt">interface</span> <span class="nv">Widget</span> {
+  <span class="kt">boolean</span> <span class="nv">pointWithinBounds</span>(<span class="n">Point</span> <span class="nv">p</span>);
+  <span class="kt">boolean</span> <span class="nv">allPointsWithinBounds</span>(<span class="n">Points</span> <span class="nv">ps</span>);
 };
 </pre>
    </div>
@@ -5201,24 +5203,24 @@ An interface <var>A</var> is considered to be a <a data-link-type="dfn" href="#d
     <p>Specification authors are discouraged from writing <a data-link-type="dfn" href="#dfn-implements-statement" id="ref-for-dfn-implements-statement-4">implements statements</a> where the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-47">interface</a> on the left-hand side
     is a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-3">supplemental interface</a>.
     For example, if author 1 writes:</p>
-<pre class="idl-example example" id="example-7b3487a5"><a class="self-link" href="#example-7b3487a5"></a>interface Window { ... };
-interface SomeFunctionality { ... };
-Window implements SomeFunctionality;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Window</span> { /* ... */ };
+<span class="kt">interface</span> <span class="nv">SomeFunctionality</span> { /* ... */ };
+<span class="n">Window</span> <span class="kt">implements</span> <span class="n">SomeFunctionality</span>;
 </pre>
     <p>and author 2 later writes:</p>
-<pre class="idl-example example" id="example-2597d350"><a class="self-link" href="#example-2597d350"></a>interface Gizmo { ... };
-interface MoreFunctionality { ... };
-SomeFunctionality implements MoreFunctionality;
-Gizmo implements SomeFunctionality;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Gizmo</span> { /* ... */ };
+<span class="kt">interface</span> <span class="nv">MoreFunctionality</span> { /* ... */ };
+<span class="n">SomeFunctionality</span> <span class="kt">implements</span> <span class="n">MoreFunctionality</span>;
+<span class="n">Gizmo</span> <span class="kt">implements</span> <span class="n">SomeFunctionality</span>;
 </pre>
     <p>then it might be the case that author 2 is unaware of exactly which
     interfaces already are used on the left-hand side of an <code>implements SomeFunctionality</code> statement, and so has
     required more objects implement <code class="idl">MoreFunctionality</code> than he or she expected.</p>
     <p>Better in this case would be for author 2 to write:</p>
-<pre class="idl-example example" id="example-b45beb45"><a class="self-link" href="#example-b45beb45"></a>interface Gizmo { ... };
-interface MoreFunctionality { ... };
-Gizmo implements SomeFunctionality;
-Gizmo implements MoreFunctionality;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Gizmo</span> { /* ... */ };
+<span class="kt">interface</span> <span class="nv">MoreFunctionality</span> { /* ... */ };
+<span class="n">Gizmo</span> <span class="kt">implements</span> <span class="n">SomeFunctionality</span>;
+<span class="n">Gizmo</span> <span class="kt">implements</span> <span class="n">MoreFunctionality</span>;
 </pre>
    </div>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-consequential-interfaces">consequential interfaces</dfn> of an interface <var>A</var> are:</p>
@@ -5240,23 +5242,23 @@ of those consequential interfaces or on the original interface itself.</p>
 <pre class="grammar" id="prod-ImplementsStatement">ImplementsStatement :
     identifier "implements" identifier ";"
 </pre>
-   <div class="example" id="example-1da23402">
-    <a class="self-link" href="#example-1da23402"></a> 
+   <div class="example" id="example-e5ae10d1">
+    <a class="self-link" href="#example-e5ae10d1"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-29">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-48">interfaces</a>, stating
     that one interface is always implemented on objects implementing the other.</p>
-<pre class="idl-example">interface Entry {
-  readonly attribute unsigned short entryType;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Entry</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">short</span> <span class="nv">entryType</span>;
   // ...
 };
         
-interface Observable {
-  void addEventListener(DOMString type,
-                        EventListener listener,
-                        boolean useCapture);
+<span class="kt">interface</span> <span class="nv">Observable</span> {
+  <span class="kt">void</span> <span class="nv">addEventListener</span>(<span class="kt">DOMString</span> <span class="nv">type</span>,
+                        <span class="n">EventListener</span> <span class="nv">listener</span>,
+                        <span class="kt">boolean</span> <span class="nv">useCapture</span>);
   // ...
 };
         
-Entry implements Observable;
+<span class="n">Entry</span> <span class="kt">implements</span> <span class="n">Observable</span>;
 </pre>
     <p>An ECMAScript implementation would thus have an “addEventListener”
     property in the prototype chain of every <code class="idl">Entry</code>:</p>
@@ -5660,18 +5662,18 @@ constant values of their <a data-link-type="dfn" href="#dfn-inner-type" id="ref-
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-23">type name</a> of a nullable type
 is the concatenation of the type name of the inner type <var>T</var> and
 the string “OrNull”.</p>
-   <div class="example" id="example-420b0a25">
-    <a class="self-link" href="#example-420b0a25"></a> 
+   <div class="example" id="example-6d74456e">
+    <a class="self-link" href="#example-6d74456e"></a> 
     <p>For example, a type that allows the values <emu-val>true</emu-val>, <emu-val>false</emu-val> and <emu-val>null</emu-val> is written as <code class="idl">boolean?</code>:</p>
-<pre class="idl-example">interface MyConstants {
-  const boolean? ARE_WE_THERE_YET = false;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">MyConstants</span> {
+  <span class="kt">const</span> <span class="kt">boolean</span>? <span class="nv">ARE_WE_THERE_YET</span> = <span class="kt">false</span>;
 };
 </pre>
     <p>The following <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-51">interface</a> has two <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-21">attributes</a>: one whose value can
     be a <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-35">DOMString</a></code> or the <emu-val>null</emu-val> value, and another whose value can be a reference to a <code class="idl">Node</code> object or the <emu-val>null</emu-val> value:</p>
-<pre class="idl-example">interface Node {
-  readonly attribute DOMString? namespaceURI;
-  readonly attribute Node? parentNode;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Node</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span>? <span class="nv">namespaceURI</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Node</span>? <span class="nv">parentNode</span>;
   // ...
 };
 </pre>
@@ -7144,17 +7146,17 @@ at index <var>j</var> is <var>S</var><sub><var>j</var></sub>.</p>
        <p>Set <var>i</var> to <var>i</var> + 1.</p>
      </ol>
    </ol>
-   <div class="example" id="example-5e1c5b2f">
-    <a class="self-link" href="#example-5e1c5b2f"></a> 
+   <div class="example" id="example-9df7fdcf">
+    <a class="self-link" href="#example-9df7fdcf"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-55">interface</a> defines
     an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-43">attribute</a> of a sequence
     type as well as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-48">operation</a> with an argument of a sequence type.</p>
-<pre class="idl-example">interface Canvas {
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Canvas</span> {
         
-  sequence&lt;DOMString> getSupportedImageCodecs();
+  <span class="kt">sequence</span>&lt;<span class="kt">DOMString</span>> <span class="nv">getSupportedImageCodecs</span>();
         
-  void drawPolygon(sequence&lt;double> coordinates);
-  sequence&lt;double> getLastDrawnPolygon();
+  <span class="kt">void</span> <span class="nv">drawPolygon</span>(<span class="kt">sequence</span>&lt;<span class="kt">double</span>> <span class="nv">coordinates</span>);
+  <span class="kt">sequence</span>&lt;<span class="kt">double</span>> <span class="nv">getLastDrawnPolygon</span>();
         
   // ...
 };
@@ -7613,15 +7615,15 @@ extended attribute.</p>
    <p>See the rules for converting ECMAScript values to the various IDL integer
 types in <a href="#es-type-mapping">§5.2 ECMAScript type mapping</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Clamp" id="ref-for-Clamp-31">Clamp</a></code>] entails.</p>
-   <div class="example" id="example-38a0f09e">
-    <a class="self-link" href="#example-38a0f09e"></a> 
+   <div class="example" id="example-a5a19a98">
+    <a class="self-link" href="#example-a5a19a98"></a> 
     <p>In the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-34">IDL fragment</a>,
     two <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-50">operations</a> are declared that
     take three <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-13">octet</a></code> arguments; one uses
     the [<code class="idl"><a data-link-type="idl" href="#Clamp" id="ref-for-Clamp-32">Clamp</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-40">extended attribute</a> on all three arguments, while the other does not:</p>
-<pre class="idl-example">interface GraphicsContext {
-  void setColor(octet red, octet green, octet blue);
-  void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">GraphicsContext</span> {
+  <span class="kt">void</span> <span class="nv">setColor</span>(<span class="kt">octet</span> <span class="nv">red</span>, <span class="kt">octet</span> <span class="nv">green</span>, <span class="kt">octet</span> <span class="nv">blue</span>);
+  <span class="kt">void</span> <span class="nv">setColorClamped</span>([<span class="nv">Clamp</span>] <span class="kt">octet</span> <span class="nv">red</span>, [<span class="nv">Clamp</span>] <span class="kt">octet</span> <span class="nv">green</span>, [<span class="nv">Clamp</span>] <span class="kt">octet</span> <span class="nv">blue</span>);
 };
 </pre>
     <p>In an ECMAScript implementation of the IDL, a call to setColorClamped with <emu-val>Number</emu-val> values that are out of range for an <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-14">octet</a></code> are clamped to the range [0, 255].</p>
@@ -7662,23 +7664,23 @@ extended attributes must not be specified on the same interface.</p>
 must not be used on a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-18">callback interface</a>.</p>
    <p>See <a href="#es-interface-call">§5.6.1.1 Interface object [[Call]] method</a> for details on how a constructor
 for an interface is to be implemented.</p>
-   <div class="example" id="example-5274a042">
-    <a class="self-link" href="#example-5274a042"></a> 
+   <div class="example" id="example-822c2430">
+    <a class="self-link" href="#example-822c2430"></a> 
     <p>The following IDL defines two interfaces.  The second has the
     [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-18">Constructor</a></code>] extended
     attribute, while the first does not.</p>
-<pre class="idl-example">interface NodeList {
-  Node item(unsigned long index);
-  readonly attribute unsigned long length;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">NodeList</span> {
+  <span class="n">Node</span> <span class="nv">item</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>);
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">length</span>;
 };
         
-[Constructor,
- Constructor(double radius)]
-interface Circle {
-  attribute double r;
-  attribute double cx;
-  attribute double cy;
-  readonly attribute double circumference;
+[<span class="nv">Constructor</span>,
+ <span class="nv">Constructor</span>(<span class="kt">double</span> <span class="nv">radius</span>)]
+<span class="kt">interface</span> <span class="nv">Circle</span> {
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">r</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">cx</span>;
+  <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">cy</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">double</span> <span class="nv">circumference</span>;
 };
 </pre>
     <p>An ECMAScript implementation supporting these interfaces would
@@ -7715,15 +7717,15 @@ extended attribute.</p>
    <p>See the rules for converting ECMAScript values to the various IDL integer
 types in <a href="#es-type-mapping">§5.2 ECMAScript type mapping</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#EnforceRange" id="ref-for-EnforceRange-32">EnforceRange</a></code>] entails.</p>
-   <div class="example" id="example-f8a0b6d6">
-    <a class="self-link" href="#example-f8a0b6d6"></a> 
+   <div class="example" id="example-72979d73">
+    <a class="self-link" href="#example-72979d73"></a> 
     <p>In the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-35">IDL fragment</a>,
     two <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-52">operations</a> are declared that
     take three <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-15">octet</a></code> arguments; one uses
     the [<code class="idl"><a data-link-type="idl" href="#EnforceRange" id="ref-for-EnforceRange-33">EnforceRange</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-43">extended attribute</a> on all three arguments, while the other does not:</p>
-<pre class="idl-example">interface GraphicsContext {
-  void setColor(octet red, octet green, octet blue);
-  void setColorEnforcedRange([EnforceRange] octet red, [EnforceRange] octet green, [EnforceRange] octet blue);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">GraphicsContext</span> {
+  <span class="kt">void</span> <span class="nv">setColor</span>(<span class="kt">octet</span> <span class="nv">red</span>, <span class="kt">octet</span> <span class="nv">green</span>, <span class="kt">octet</span> <span class="nv">blue</span>);
+  <span class="kt">void</span> <span class="nv">setColorEnforcedRange</span>([<span class="nv">EnforceRange</span>] <span class="kt">octet</span> <span class="nv">red</span>, [<span class="nv">EnforceRange</span>] <span class="kt">octet</span> <span class="nv">green</span>, [<span class="nv">EnforceRange</span>] <span class="kt">octet</span> <span class="nv">blue</span>);
 };
 </pre>
     <p>In an ECMAScript implementation of the IDL, a call to setColorEnforcedRange with <emu-val>Number</emu-val> values that are out of range for an <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-16">octet</a></code> will result in an exception being
@@ -7807,49 +7809,49 @@ decision to create properties for an interface or interface member
 can be made once, at the time the <a data-link-type="dfn" href="#dfn-initial-object" id="ref-for-dfn-initial-object-3">initial objects</a> are created.</p>
    <p>See <a href="#es-interfaces">§5.6 Interfaces</a>, <a href="#es-constants">§5.6.5 Constants</a>, <a href="#es-attributes">§5.6.6 Attributes</a>, <a href="#es-operations">§5.6.7 Operations</a> and <a href="#es-iterators">§5.6.8 Common iterator behavior</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-16">Exposed</a></code>] entails.</p>
-   <div class="example" id="example-280ab5d2">
-    <a class="self-link" href="#example-280ab5d2"></a> 
+   <div class="example" id="example-36b60cff">
+    <a class="self-link" href="#example-36b60cff"></a> 
     <p>[<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-17">Exposed</a></code>]
     is intended to be used to control whether interfaces or individual interface
     members are available for use only in workers, only in the <code class="idl">Window</code>,
     or in both.</p>
     <p>The following IDL fragment shows how that might be achieved:</p>
-<pre class="idl-example">[PrimaryGlobal]
-interface Window {
-  ...
+<pre class="idl highlight def">[<span class="nv">PrimaryGlobal</span>]
+<span class="kt">interface</span> <span class="nv">Window</span> {
+  // ...
 };
         
 // By using the same identifier Worker for both SharedWorkerGlobalScope
 // and DedicatedWorkerGlobalScope, both can be addressed in an [Exposed]
 // extended attribute at once.
-[Global=Worker]
-interface SharedWorkerGlobalScope : WorkerGlobalScope {
-  ...
+[<span class="nv">Global</span>=<span class="n">Worker</span>]
+<span class="kt">interface</span> <span class="nv">SharedWorkerGlobalScope</span> : <span class="n">WorkerGlobalScope</span> {
+  // ...
 };
         
-[Global=Worker]
-interface DedicatedWorkerGlobalScope : WorkerGlobalScope {
-  ...
+[<span class="nv">Global</span>=<span class="n">Worker</span>]
+<span class="kt">interface</span> <span class="nv">DedicatedWorkerGlobalScope</span> : <span class="n">WorkerGlobalScope</span> {
+  // ...
 };
         
 // MathUtils is available for use in workers and on the main thread.
-[Exposed=(Window,Worker)]
-interface MathUtils {
-  static double someComplicatedFunction(double x, double y);
+[<span class="nv">Exposed</span>=(<span class="n">Window</span>,<span class="n">Worker</span>)]
+<span class="kt">interface</span> <span class="nv">MathUtils</span> {
+  <span class="kt">static</span> <span class="kt">double</span> <span class="nv">someComplicatedFunction</span>(<span class="kt">double</span> <span class="nv">x</span>, <span class="kt">double</span> <span class="nv">y</span>);
 };
         
 // WorkerUtils is only available in workers.  Evaluating WorkerUtils
 // in the global scope of a worker would give you its interface object, while
 // doing so on the main thread will give you a ReferenceError.
-[Exposed=Worker]
-interface WorkerUtils {
-  static void setPriority(double x);
+[<span class="nv">Exposed</span>=<span class="n">Worker</span>]
+<span class="kt">interface</span> <span class="nv">WorkerUtils</span> {
+  <span class="kt">static</span> <span class="kt">void</span> <span class="nv">setPriority</span>(<span class="kt">double</span> <span class="nv">x</span>);
 };
         
 // Node is only available on the main thread.  Evaluating Node
 // in the global scope of a worker would give you a ReferenceError.
-interface Node {
-  ...
+<span class="kt">interface</span> <span class="nv">Node</span> {
+  // ...
 };
 </pre>
    </div>
@@ -7865,15 +7867,15 @@ extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" i
 [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-5">ImplicitThis</a></code>] entails.</p>
    <p class="note" role="note">Note: The [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-6">ImplicitThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-50">extended attribute</a> is intended for use on the <code class="idl">Window</code> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-61">interface</a> as defined
 in HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).</p>
-   <div class="example" id="example-f6bc1b56">
-    <a class="self-link" href="#example-f6bc1b56"></a> 
+   <div class="example" id="example-61a5c8ff">
+    <a class="self-link" href="#example-61a5c8ff"></a> 
     <p>In the following example, the <code class="idl">Window</code> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-62">interface</a> is defined
     with the [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-7">ImplicitThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-51">extended attribute</a>.</p>
-<pre class="idl-example">[ImplicitThis]
-interface Window {
-  ...
-  attribute DOMString name;
-  void alert(DOMString message);
+<pre class="idl highlight def">[<span class="nv">ImplicitThis</span>]
+<span class="kt">interface</span> <span class="nv">Window</span> {
+  // ...
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
+  <span class="kt">void</span> <span class="nv">alert</span>(<span class="kt">DOMString</span> <span class="nv">message</span>);
 };
 </pre>
     <p>Since the <code class="idl">Window</code> object is used as
@@ -7985,8 +7987,8 @@ is declared on, if any, is known as the <dfn class="dfn-paneled" data-dfn-type="
 entails for named properties,
 and <a href="#es-constants">§5.6.5 Constants</a>, <a href="#es-attributes">§5.6.6 Attributes</a> and <a href="#es-operations">§5.6.7 Operations</a> for the requirements relating to the location of properties
 corresponding to <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-15">interface members</a>.</p>
-   <div class="example" id="example-0908c4fc">
-    <a class="self-link" href="#example-0908c4fc"></a> 
+   <div class="example" id="example-32532ed6">
+    <a class="self-link" href="#example-32532ed6"></a> 
     <p>The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-27">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-59">extended attribute</a> is intended
     to be used by the <code class="idl">Window</code> interface as defined in
     HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).  ([<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-28">Global</a></code>]
@@ -7995,10 +7997,10 @@ corresponding to <a data-link-type="dfn" href="#dfn-interface-member" id="ref-fo
     ECMAScript global object, variable declarations or assignments to the named properties
     will result in them being replaced by the new value.  Variable declarations for
     attributes will not create a property that replaces the existing one.</p>
-<pre class="idl-example">[PrimaryGlobal]
-interface Window {
-  getter any (DOMString name);
-  attribute DOMString name;
+<pre class="idl highlight def">[<span class="nv">PrimaryGlobal</span>]
+<span class="kt">interface</span> <span class="nv">Window</span> {
+  <span class="kt">getter</span> <span class="kt">any</span> (<span class="kt">DOMString</span> <span class="nv">name</span>);
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
   // ...
 };
 </pre>
@@ -8046,20 +8048,20 @@ which would provide access to the array elements.</p>
    <p>See <a href="#interface-prototype-object">§5.6.3 Interface prototype object</a> for the
 specific requirements that the use of [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-6">LegacyArrayClass</a></code>]
 entails.</p>
-   <div class="example" id="example-a542c649">
-    <a class="self-link" href="#example-a542c649"></a> 
+   <div class="example" id="example-d513947b">
+    <a class="self-link" href="#example-d513947b"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-36">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-68">interfaces</a> that use [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-7">LegacyArrayClass</a></code>].</p>
-<pre class="idl-example">[LegacyArrayClass]
-interface ItemList {
-  attribute unsigned long length;
-  getter object getItem(unsigned long index);
-  setter object setItem(unsigned long index, object item);
+<pre class="idl highlight def">[<span class="nv">LegacyArrayClass</span>]
+<span class="kt">interface</span> <span class="nv">ItemList</span> {
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">length</span>;
+  <span class="kt">getter</span> <span class="kt">object</span> <span class="nv">getItem</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>);
+  <span class="kt">setter</span> <span class="kt">object</span> <span class="nv">setItem</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>, <span class="kt">object</span> <span class="nv">item</span>);
 };
         
-[LegacyArrayClass]
-interface ImmutableItemList {
-  readonly attribute unsigned long length;
-  getter object getItem(unsigned long index);
+[<span class="nv">LegacyArrayClass</span>]
+<span class="kt">interface</span> <span class="nv">ImmutableItemList</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">length</span>;
+  <span class="kt">getter</span> <span class="kt">object</span> <span class="nv">getItem</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">index</span>);
 };
 </pre>
     <p>In an ECMAScript implementation of the above two interfaces,
@@ -8116,14 +8118,14 @@ or [<code class="idl"><a data-link-type="idl" href="#Replaceable" id="ref-for-Re
    <p>See the <a href="#es-attributes">Attributes</a> section for how
 [<code class="idl"><a data-link-type="idl" href="#LenientSetter" id="ref-for-LenientSetter-6">LenientSetter</a></code>]
 is to be implemented.</p>
-   <div class="example" id="example-304906a3">
-    <a class="self-link" href="#example-304906a3"></a> 
+   <div class="example" id="example-eae58d96">
+    <a class="self-link" href="#example-eae58d96"></a> 
     <p>The following IDL fragment defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#LenientSetter" id="ref-for-LenientSetter-7">LenientSetter</a></code>] extended
     attribute.</p>
-<pre class="idl-example">interface Example {
-  [LenientSetter] readonly attribute DOMString x;
-  readonly attribute DOMString y;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Example</span> {
+  [<span class="nv">LenientSetter</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">x</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">y</span>;
 };
 </pre>
     <p>An ECMAScript implementation that supports this interface will
@@ -8154,14 +8156,14 @@ wish to use this feature are strongly advised to discuss this on the <a href="ma
    <p>See the <a href="#es-attributes">Attributes</a> section for how
 [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-6">LenientThis</a></code>]
 is to be implemented.</p>
-   <div class="example" id="example-26289c7e">
-    <a class="self-link" href="#example-26289c7e"></a> 
+   <div class="example" id="example-6bbb4d9a">
+    <a class="self-link" href="#example-6bbb4d9a"></a> 
     <p>The following IDL fragment defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-7">LenientThis</a></code>] extended
     attribute.</p>
-<pre class="idl-example">interface Example {
-  [LenientThis] attribute DOMString x;
-  attribute DOMString y;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Example</span> {
+  [<span class="nv">LenientThis</span>] <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">x</span>;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">y</span>;
 };
 </pre>
     <p>An ECMAScript implementation that supports this interface will
@@ -8208,14 +8210,14 @@ and must not be one of the <a data-link-type="dfn" href="#dfn-reserved-identifie
 must not be used on a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-19">callback interface</a>.</p>
    <p>See <a href="#named-constructors">§5.6.2 Named constructors</a> for details on how named constructors
 are to be implemented.</p>
-   <div class="example" id="example-8837216a">
-    <a class="self-link" href="#example-8837216a"></a> 
+   <div class="example" id="example-e96ebd3b">
+    <a class="self-link" href="#example-e96ebd3b"></a> 
     <p>The following IDL defines an interface that uses the
     [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-14">NamedConstructor</a></code>] extended
     attribute.</p>
-<pre class="idl-example">[NamedConstructor=Audio,
- NamedConstructor=Audio(DOMString src)]
-interface HTMLAudioElement : HTMLMediaElement {
+<pre class="idl highlight def">[<span class="nv">NamedConstructor</span>=<span class="n">Audio</span>,
+ <span class="nv">NamedConstructor</span>=<span class="n">Audio</span>(<span class="kt">DOMString</span> <span class="nv">src</span>)]
+<span class="kt">interface</span> <span class="nv">HTMLAudioElement</span> : <span class="n">HTMLMediaElement</span> {
   // ...
 };
 </pre>
@@ -8242,15 +8244,15 @@ extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" i
 extended attribute must not
 be used on anything other than a <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-9">regular</a> or <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-8">static</a> <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-56">operation</a> whose <a data-link-type="dfn" href="#dfn-return-type" id="ref-for-dfn-return-type-4">return type</a> is an <a href="#idl-interface" id="ref-for-idl-interface-11">interface type</a> or
 a <a data-link-type="dfn" href="#dfn-promise-type" id="ref-for-dfn-promise-type-1">promise type</a>.</p>
-   <div class="example" id="example-7764357f">
-    <a class="self-link" href="#example-7764357f"></a> 
+   <div class="example" id="example-d1d0e5d7">
+    <a class="self-link" href="#example-d1d0e5d7"></a> 
     <p>As an example, this extended attribute is suitable for use on
     the <a href="http://dom.spec.whatwg.org/#dom-document-createelement">createElement</a> operation on the <a href="http://dom.spec.whatwg.org/#document"><code class="idl">Document</code></a> interface (<a data-link-type="biblio" href="#biblio-dom">[DOM]</a>, section 6.5),
     since a new object should always be returned when
     it is called.</p>
-<pre class="idl-example">interface Document : Node {
-  [NewObject] Element createElement(DOMString localName);
-  ...
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Document</span> : <span class="n">Node</span> {
+  [<span class="nv">NewObject</span>] <span class="n">Element</span> <span class="nv">createElement</span>(<span class="kt">DOMString</span> <span class="nv">localName</span>);
+  // ...
 };
 </pre>
    </div>
@@ -8280,17 +8282,17 @@ from an interface that has the [<code class="idl"><a data-link-type="idl" href="
 attribute specified.</p>
    <p>See <a href="#es-interfaces">§5.6 Interfaces</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-12">NoInterfaceObject</a></code>] entails.</p>
-   <div class="example" id="example-fd59243d">
-    <a class="self-link" href="#example-fd59243d"></a> 
+   <div class="example" id="example-02a4ce35">
+    <a class="self-link" href="#example-02a4ce35"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-37">IDL fragment</a> defines two interfaces, one whose interface object
     is exposed on the ECMAScript global object, and one whose isn’t:</p>
-<pre class="idl-example">interface Storage {
-  void addEntry(unsigned long key, any value);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Storage</span> {
+  <span class="kt">void</span> <span class="nv">addEntry</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">key</span>, <span class="kt">any</span> <span class="nv">value</span>);
 };
         
-[NoInterfaceObject]
-interface Query {
-  any lookupEntry(unsigned long key);
+[<span class="nv">NoInterfaceObject</span>]
+<span class="kt">interface</span> <span class="nv">Query</span> {
+  <span class="kt">any</span> <span class="nv">lookupEntry</span>(<span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">key</span>);
 };
 </pre>
     <p>An ECMAScript implementation of the above IDL would allow
@@ -8330,19 +8332,19 @@ be the part of the interface definition that defines
 the <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-8">named property getter</a>.</p>
    <p>See <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#OverrideBuiltins" id="ref-for-OverrideBuiltins-7">OverrideBuiltins</a></code>] entails.</p>
-   <div class="example" id="example-1b2d7a04">
-    <a class="self-link" href="#example-1b2d7a04"></a> 
+   <div class="example" id="example-b5beab36">
+    <a class="self-link" href="#example-b5beab36"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-38">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-74">interfaces</a>,
     one that has a <a data-link-type="dfn" href="#dfn-named-property-getter" id="ref-for-dfn-named-property-getter-9">named property getter</a> and one that does not.</p>
-<pre class="idl-example">interface StringMap {
-  readonly attribute unsigned long length;
-  getter DOMString lookup(DOMString key);
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">StringMap</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">length</span>;
+  <span class="kt">getter</span> <span class="kt">DOMString</span> <span class="nv">lookup</span>(<span class="kt">DOMString</span> <span class="nv">key</span>);
 };
         
-[OverrideBuiltins]
-interface StringMap2 {
-  readonly attribute unsigned long length;
-  getter DOMString lookup(DOMString key);
+[<span class="nv">OverrideBuiltins</span>]
+<span class="kt">interface</span> <span class="nv">StringMap2</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">length</span>;
+  <span class="kt">getter</span> <span class="kt">DOMString</span> <span class="nv">lookup</span>(<span class="kt">DOMString</span> <span class="nv">key</span>);
 };
 </pre>
     <p>In an ECMAScript implementation of these two interfaces,
@@ -8424,22 +8426,22 @@ a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callbac
    <p>See the <a href="#es-attributes">Attributes</a> section for how
 [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards-12">PutForwards</a></code>]
 is to be implemented.</p>
-   <div class="example" id="example-c8a4fb20">
-    <a class="self-link" href="#example-c8a4fb20"></a> 
+   <div class="example" id="example-da8475eb">
+    <a class="self-link" href="#example-da8475eb"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-39">IDL fragment</a> defines interfaces for names and people.
     The [<code class="idl"><a data-link-type="idl" href="#PutForwards" id="ref-for-PutForwards-13">PutForwards</a></code>] extended
     attribute is used on the <code class="idl">name</code> attribute
     of the <code class="idl">Person</code> interface to indicate
     that assignments to that attribute result in assignments to the <code class="idl">full</code> attribute of the <code class="idl">Person</code> object:</p>
-<pre class="idl-example">interface Name {
-  attribute DOMString full;
-  attribute DOMString family;
-  attribute DOMString given;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Name</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">full</span>;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">family</span>;
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">given</span>;
 };
         
-interface Person {
-  [PutForwards=full] readonly attribute Name name;
-  attribute unsigned short age;
+<span class="kt">interface</span> <span class="nv">Person</span> {
+  [<span class="nv">PutForwards</span>=<span class="n">full</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">Name</span> <span class="nv">name</span>;
+  <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">short</span> <span class="nv">age</span>;
 };
 </pre>
     <p>In the ECMAScript binding, this would allow assignments to the
@@ -8474,12 +8476,12 @@ must not be used on an attribute declared on
 a <a data-link-type="dfn" href="#dfn-callback-interface" id="ref-for-dfn-callback-interface-22">callback interface</a>.</p>
    <p>See <a href="#es-attributes">§5.6.6 Attributes</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Replaceable" id="ref-for-Replaceable-10">Replaceable</a></code>] entails.</p>
-   <div class="example" id="example-5eabc068">
-    <a class="self-link" href="#example-5eabc068"></a> 
+   <div class="example" id="example-eb913857">
+    <a class="self-link" href="#example-eb913857"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-40">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-77">interface</a> with an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-57">operation</a> that increments a counter, and an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-52">attribute</a> that exposes the counter’s value, which is initially 0:</p>
-<pre class="idl-example">interface Counter {
-  [Replaceable] readonly attribute unsigned long value;
-  void increment();
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Counter</span> {
+  [<span class="nv">Replaceable</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nv">value</span>;
+  <span class="kt">void</span> <span class="nv">increment</span>();
 };
 </pre>
     <p>Assigning to the “value” property
@@ -8516,14 +8518,14 @@ extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" i
    <p>The [<code class="idl"><a data-link-type="idl" href="#SameObject" id="ref-for-SameObject-4">SameObject</a></code>]
 extended attribute must not
 be used on anything other than a <a data-link-type="dfn" href="#dfn-read-only" id="ref-for-dfn-read-only-13">read only</a> <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-55">attribute</a> whose type is an <a href="#idl-interface" id="ref-for-idl-interface-14">interface type</a> or <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-24">object</a></code>.</p>
-   <div class="example" id="example-c4d31719">
-    <a class="self-link" href="#example-c4d31719"></a> 
+   <div class="example" id="example-41be4efa">
+    <a class="self-link" href="#example-41be4efa"></a> 
     <p>As an example, this extended attribute is suitable for use on
     the <a href="http://dom.spec.whatwg.org/#dom-document-implementation">implementation</a> attribute on the <a href="http://dom.spec.whatwg.org/#document"><code class="idl">Document</code></a> interface (<a data-link-type="biblio" href="#biblio-dom">[DOM]</a>, section 6.5),
     since the same object is always returned for a given <code class="idl">Document</code> object.</p>
-<pre class="idl-example">interface Document : Node {
-  [SameObject] readonly attribute DOMImplementation implementation;
-  ...
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Document</span> : <span class="n">Node</span> {
+  [<span class="nv">SameObject</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="n">DOMImplementation</span> <span class="nv">implementation</span>;
+  // ...
 };
 </pre>
    </div>
@@ -8570,23 +8572,23 @@ interface member is declared on.</p>
    <p>An interface without the [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-16">SecureContext</a></code>] extended attribute
 must not <a data-link-type="dfn" href="#dfn-inherit" id="ref-for-dfn-inherit-14">inherit</a> from another interface
 that does specify [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-17">SecureContext</a></code>].</p>
-   <div class="example" id="example-7681346e">
-    <a class="self-link" href="#example-7681346e"></a> 
+   <div class="example" id="example-c30601e5">
+    <a class="self-link" href="#example-c30601e5"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-41">IDL fragment</a> defines an interface
     with one <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-59">operation</a> that is executable from all
     contexts, and two which are executable only from secure contexts.</p>
-<pre class="idl-example">interface PowerfulFeature {
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">PowerfulFeature</span> {
   // This call will succeed in all contexts.
-  Promise &lt;Result> calculateNotSoSecretResult();
+  <span class="kt">Promise</span> &lt;<span class="n">Result</span>> <span class="nv">calculateNotSoSecretResult</span>();
         
   // This operation will not be exposed to a non-secure context. In such a context,
   // there will be no "calculateSecretResult" property on PowerfulFeature.prototype.
-  [SecureContext] Promise&lt;Result> calculateSecretResult();
+  [<span class="nv">SecureContext</span>] <span class="kt">Promise</span>&lt;<span class="n">Result</span>> <span class="nv">calculateSecretResult</span>();
         
   // The same applies here: the attribute will not be exposed to a non-secure context,
   // and in a non-secure context there will be no "secretBoolean" property on
   // PowerfulFeature.prototype.
-  [SecureContext] readonly attribute boolean secretBoolean;
+  [<span class="nv">SecureContext</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">boolean</span> <span class="nv">secretBoolean</span>;
 };
 </pre>
    </div>
@@ -8604,18 +8606,18 @@ of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-ha
 such as <code>onclick</code> and <code>onerror</code>.</strong> 
    <p>See <a href="#es-nullable-type">§5.2.24 Nullable types — T?</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-8">TreatNonObjectAsNull</a></code>] entails.</p>
-   <div class="example" id="example-f31816a9">
-    <a class="self-link" href="#example-f31816a9"></a> 
+   <div class="example" id="example-8ff99472">
+    <a class="self-link" href="#example-8ff99472"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-42">IDL fragment</a> defines an interface that has one
     attribute whose type is a [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-9">TreatNonObjectAsNull</a></code>]-annotated <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-25">callback function</a> and another whose type is a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-26">callback function</a> without the <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-77">extended attribute</a>:</p>
-<pre class="idl-example">callback OccurrenceHandler = void (DOMString details);
+<pre class="idl highlight def"><span class="kt">callback</span> <span class="nv">OccurrenceHandler</span> = <span class="kt">void</span> (<span class="kt">DOMString</span> <span class="nv">details</span>);
         
-[TreatNonObjectAsNull]
-callback ErrorHandler = void (DOMString details);
+[<span class="nv">TreatNonObjectAsNull</span>]
+<span class="kt">callback</span> <span class="nv">ErrorHandler</span> = <span class="kt">void</span> (<span class="kt">DOMString</span> <span class="nv">details</span>);
         
-interface Manager {
-  attribute OccurrenceHandler? handler1;
-  attribute ErrorHandler? handler2;
+<span class="kt">interface</span> <span class="nv">Manager</span> {
+  <span class="kt">attribute</span> <span class="n">OccurrenceHandler</span>? <span class="nv">handler1</span>;
+  <span class="kt">attribute</span> <span class="n">ErrorHandler</span>? <span class="nv">handler2</span>;
 };
 </pre>
     <p>In an ECMAScript implementation, assigning a value that is not
@@ -8663,17 +8665,17 @@ also must not be specified on an operation on
 a non-callback interface.</p>
    <p>See <a href="#es-DOMString">§5.2.16 DOMString</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs-14">TreatNullAs</a></code>] entails.</p>
-   <div class="example" id="example-414a01a5">
-    <a class="self-link" href="#example-414a01a5"></a> 
+   <div class="example" id="example-02d27ada">
+    <a class="self-link" href="#example-02d27ada"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-43">IDL fragment</a> defines an interface that has one
     attribute with the [<code class="idl"><a data-link-type="idl" href="#TreatNullAs" id="ref-for-TreatNullAs-15">TreatNullAs</a></code>]
     extended attribute, and one operation with an argument that has
     the extended attribute:</p>
-<pre class="idl-example">interface Dog {
-  attribute DOMString name;
-  [TreatNullAs=EmptyString] attribute DOMString owner;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Dog</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">name</span>;
+  [<span class="nv">TreatNullAs</span>=<span class="n">EmptyString</span>] <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">owner</span>;
         
-  boolean isMemberOfBreed([TreatNullAs=EmptyString] DOMString breedName);
+  <span class="kt">boolean</span> <span class="nv">isMemberOfBreed</span>([<span class="nv">TreatNullAs</span>=<span class="n">EmptyString</span>] <span class="kt">DOMString</span> <span class="nv">breedName</span>);
 };
 </pre>
     <p>An ECMAScript implementation implementing the <code class="idl">Dog</code> interface would convert a <emu-val>null</emu-val> value
@@ -8731,14 +8733,14 @@ the same <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifi
    <p class="note" role="note">Note: For example, the following is disallowed:</p>
    <p>See <a href="#es-attributes">§5.6.6 Attributes</a>, <a href="#es-operations">§5.6.7 Operations</a>, <a href="#es-platform-objects">§5.8 Platform objects implementing interfaces</a>, <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-12">Unforgeable</a></code>] entails.</p>
-   <div class="example" id="example-9bc978a5">
-    <a class="self-link" href="#example-9bc978a5"></a> 
+   <div class="example" id="example-786d94a4">
+    <a class="self-link" href="#example-786d94a4"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-44">IDL fragment</a> defines
     an interface that has two <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-61">attributes</a>,
     one of which is designated as [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-13">Unforgeable</a></code>]:</p>
-<pre class="idl-example">interface System {
-  [Unforgeable] readonly attribute DOMString username;
-  readonly attribute long long loginTime;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">System</span> {
+  [<span class="nv">Unforgeable</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">username</span>;
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">long</span> <span class="kt">long</span> <span class="nv">loginTime</span>;
 };
 </pre>
     <p>In an ECMAScript implementation of the interface, the username attribute will be exposed as a non-configurable property on the
@@ -8780,9 +8782,9 @@ anything other than a <a data-link-type="dfn" href="#dfn-regular-attribute" id="
 [<code class="idl"><a data-link-type="idl" href="#Unscopable" id="ref-for-Unscopable-4">Unscopable</a></code>] entails.</p>
    <div class="note" role="note">
     <p>For example, with the following IDL:</p>
-<pre class="idl-example example" id="example-9c2713e6"><a class="self-link" href="#example-9c2713e6"></a>interface Thing {
-  void f();
-  [Unscopable] g();
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Thing</span> {
+  <span class="kt">void</span> <span class="nv">f</span>();
+  [<span class="nv">Unscopable</span>] <span class="n">g</span>();
 };
 </pre>
     <p>the “f” property an be referenced with a bare identifier
@@ -9437,12 +9439,12 @@ extended attribute, then return <a data-link-type="dfn" href="https://tc39.githu
     <p>The <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-13">interface prototype object</a> of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-94">interface</a> that is defined with
     the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-16">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-95">extended attribute</a> will be accessible if the interface is used as a <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-5">non-supplemental interface</a>.
     For example, with the following IDL:</p>
-<pre class="idl-example example" id="example-4d9a02f9"><a class="self-link" href="#example-4d9a02f9"></a>[NoInterfaceObject]
-interface Foo {
+<pre class="idl highlight def">[<span class="nv">NoInterfaceObject</span>]
+<span class="kt">interface</span> <span class="nv">Foo</span> {
 };
         
-partial interface Window {
-  attribute Foo foo;
+<span class="kt">partial</span> <span class="kt">interface</span> <span class="nv">Window</span> {
+  <span class="kt">attribute</span> <span class="n">Foo</span> <span class="nv">foo</span>;
 };
 </pre>
     <p>it is not possible to access the interface prototype object through
@@ -10231,7 +10233,10 @@ the initial value of the “forEach” data property of <a data-link-type="dfn" 
 then the <emu-val>Function</emu-val> must
 have the same behavior as one that would exist assuming the interface had
 this <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-76">operation</a> instead of the <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-12">iterable declaration</a>:</p>
-<pre class="idl-example example" id="example-c57cfe96"><a class="self-link" href="#example-c57cfe96"></a>void forEach(Function callback, optional any thisArg);</pre>
+<pre class="idl highlight def"><span class="kt">interface</span> <dfn class="nv idl-code" data-dfn-type="interface" data-export="" id="iterable">Iterable<a class="self-link" href="#iterable"></a></dfn> {
+  <span class="kt">void</span> <dfn class="nv idl-code" data-dfn-for="Iterable" data-dfn-type="method" data-export="" data-lt="forEach(callback, thisArg)|forEach(callback)" id="dom-iterable-foreach">forEach<a class="self-link" href="#dom-iterable-foreach"></a></dfn>(<a class="n" data-link-type="idl-name" href="#Function" id="ref-for-Function-1">Function</a> <dfn class="nv idl-code" data-dfn-for="Iterable/forEach(callback, thisArg), Iterable/forEach(callback)" data-dfn-type="argument" data-export="" id="dom-iterable-foreach-callback-thisarg-callback">callback<a class="self-link" href="#dom-iterable-foreach-callback-thisarg-callback"></a></dfn>, <span class="kt">optional</span> <span class="kt">any</span> <dfn class="nv idl-code" data-dfn-for="Iterable/forEach(callback, thisArg), Iterable/forEach(callback)" data-dfn-type="argument" data-export="" id="dom-iterable-foreach-callback-thisarg-thisarg">thisArg<a class="self-link" href="#dom-iterable-foreach-callback-thisarg-thisarg"></a></dfn>);
+};
+</pre>
    <p>with the following prose definition:</p>
    <ol class="algorithm">
     <li data-md="">
@@ -11091,15 +11096,15 @@ and similarly with their setters.</p>
     due to an implements statement, the <emu-val>this</emu-val> value is
     checked to ensure that it is an object that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-136">interface</a> corresponding to the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-54">interface prototype object</a> that the property is on.</p>
     <p>For example, consider the following IDL:</p>
-<pre class="idl-example example" id="example-33f6c0be"><a class="self-link" href="#example-33f6c0be"></a>interface A {
-  void f();
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
+  <span class="kt">void</span> <span class="nv">f</span>();
 };
         
-interface B { };
-B implements A;
+<span class="kt">interface</span> <span class="nv">B</span> { };
+<span class="n">B</span> <span class="kt">implements</span> <span class="n">A</span>;
         
-interface C { };
-C implements A;
+<span class="kt">interface</span> <span class="nv">C</span> { };
+<span class="n">C</span> <span class="kt">implements</span> <span class="n">A</span>;
 </pre>
     <p>Attempting to call <code>B.prototype.f</code> on an object that implements <code class="idl">A</code> (but not <code class="idl">B</code>) or one
     that implements <code class="idl">C</code> will result in a <code class="idl"><a data-link-type="idl" href="#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror-2">TypeError</a></code> being thrown.  However,
@@ -12030,20 +12035,20 @@ optional user agent-defined message <var>M</var>.</p>
     ones that are associated with the global environment
     where that <emu-val>Function</emu-val> object originated.
     For example, consider the IDL:</p>
-<pre class="idl-example example" id="example-9a3e09e9"><a class="self-link" href="#example-9a3e09e9"></a>interface A {
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> {
         
   /**
    * Calls computeSquareRoot on m, passing x as its argument.
    */
-  double doComputation(MathUtils m, double x);
+  <span class="kt">double</span> <span class="nv">doComputation</span>(<span class="n">MathUtils</span> <span class="nv">m</span>, <span class="kt">double</span> <span class="nv">x</span>);
 };
         
-interface MathUtils {
+<span class="kt">interface</span> <span class="nv">MathUtils</span> {
   /**
-   * If x is negative, throws a <a href="#notsupportederror" id="ref-for-notsupportederror-1">NotSupportedError</a>.  Otherwise, returns
+   * If x is negative, throws a NotSupportedError.  Otherwise, returns
    * the square root of x.
    */
-  double computeSquareRoot(double x);
+  <span class="kt">double</span> <span class="nv">computeSquareRoot</span>(<span class="kt">double</span> <span class="nv">x</span>);
 };
 </pre>
     <p>If we pass a <code class="idl">MathUtils</code> object from
@@ -12073,18 +12078,18 @@ an ECMAScript <emu-val>Function</emu-val> is invoked due
 to requirements in this section and that <emu-val>Function</emu-val> ends due to an exception being thrown, that exception
 must propagate to the caller, and if
 not caught there, to its caller, and so on.</p>
-   <div class="example" id="example-8fd4d7f9">
-    <a class="self-link" href="#example-8fd4d7f9"></a> 
+   <div class="example" id="example-7c99a68e">
+    <a class="self-link" href="#example-7c99a68e"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-45">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-154">interfaces</a> and an <a data-link-type="dfn" href="#dfn-exception" id="ref-for-dfn-exception-1">exception</a>.
     The <code>valueOf</code> attribute on <code class="idl">ExceptionThrower</code> is defined to throw an exception whenever an attempt is made
     to get its value.</p>
-<pre class="idl-example">interface Dahut {
-  attribute DOMString type;
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">Dahut</span> {
+  <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">type</span>;
 };
         
-interface ExceptionThrower {
+<span class="kt">interface</span> <span class="nv">ExceptionThrower</span> {
   // This attribute always throws a NotSupportedError and never returns a value.
-  attribute long valueOf;
+  <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">valueOf</span>;
 };
 </pre>
     <p>Assuming an ECMAScript implementation supporting this interface,
@@ -12118,30 +12123,30 @@ interface ExceptionThrower {
    </div>
    <h2 class="heading settled" data-level="6" id="common"><span class="secno">6. </span><span class="content">Common definitions</span><a class="self-link" href="#common"></a></h2>
    <p>This section specifies some common definitions that all <a data-link-type="dfn" href="#dfn-conforming-implementation" id="ref-for-dfn-conforming-implementation-2">conforming implementations</a> must support.</p>
-   <h3 class="heading settled" data-level="6.1" id="common-ArrayBufferView"><span class="secno">6.1. </span><span class="content">ArrayBufferView</span><a class="self-link" href="#common-ArrayBufferView"></a></h3>
-<pre class="idl-example example" id="example-f7b268ac"><a class="self-link" href="#example-f7b268ac"></a>typedef (Int8Array or Int16Array or Int32Array or
-         Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
-         Float32Array or Float64Array or DataView) <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="ArrayBufferView">ArrayBufferView</dfn>;
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="6.1" data-lt="ArrayBufferView" id="ArrayBufferView"><span class="secno">6.1. </span><span class="content">ArrayBufferView</span><span id="common-ArrayBufferView"></span></h3>
+<pre class="idl highlight def"><span class="kt">typedef</span> (<span class="kt">Int8Array</span> <span class="kt">or</span> <span class="kt">Int16Array</span> <span class="kt">or</span> <span class="kt">Int32Array</span> <span class="kt">or</span>
+         <span class="kt">Uint8Array</span> <span class="kt">or</span> <span class="kt">Uint16Array</span> <span class="kt">or</span> <span class="kt">Uint32Array</span> <span class="kt">or</span> <span class="kt">Uint8ClampedArray</span> <span class="kt">or</span>
+         <span class="kt">Float32Array</span> <span class="kt">or</span> <span class="kt">Float64Array</span> <span class="kt">or</span> <span class="kt">DataView</span>) <a class="nv idl-code" data-link-type="typedef" href="#ArrayBufferView" id="ref-for-ArrayBufferView-1">ArrayBufferView</a>;
 </pre>
-   <p>The <code class="idl"><a data-link-type="idl" href="#ArrayBufferView" id="ref-for-ArrayBufferView-1">ArrayBufferView</a></code> typedef is used to represent
+   <p>The <code class="idl"><a data-link-type="idl" href="#ArrayBufferView" id="ref-for-ArrayBufferView-2">ArrayBufferView</a></code> typedef is used to represent
 objects that provide a view on to an <code class="idl"><a data-link-type="idl" href="#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer-18">ArrayBuffer</a></code>.</p>
-   <h3 class="heading settled" data-level="6.2" id="common-BufferSource"><span class="secno">6.2. </span><span class="content">BufferSource</span><a class="self-link" href="#common-BufferSource"></a></h3>
-<pre class="idl-example example" id="example-25e02dcf"><a class="self-link" href="#example-25e02dcf"></a>typedef (ArrayBufferView or ArrayBuffer) <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="BufferSource">BufferSource</dfn>;</pre>
-   <p>The <code class="idl"><a data-link-type="idl" href="#BufferSource" id="ref-for-BufferSource-2">BufferSource</a></code> typedef is used to represent objects
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="6.2" data-lt="BufferSource" id="BufferSource"><span class="secno">6.2. </span><span class="content">BufferSource</span><span id="common-BufferSource"></span></h3>
+<pre class="idl highlight def"><span class="kt">typedef</span> (<a class="n" data-link-type="idl-name" href="#ArrayBufferView" id="ref-for-ArrayBufferView-3">ArrayBufferView</a> <span class="kt">or</span> <span class="kt">ArrayBuffer</span>) <a class="nv idl-code" data-link-type="typedef" href="#BufferSource" id="ref-for-BufferSource-2">BufferSource</a>;</pre>
+   <p>The <code class="idl"><a data-link-type="idl" href="#BufferSource" id="ref-for-BufferSource-3">BufferSource</a></code> typedef is used to represent objects
 that are either themselves an <code class="idl"><a data-link-type="idl" href="#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer-19">ArrayBuffer</a></code> or which
 provide a view on to an <code class="idl"><a data-link-type="idl" href="#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer-20">ArrayBuffer</a></code>.</p>
-   <h3 class="heading settled" data-level="6.3" id="common-DOMTimeStamp"><span class="secno">6.3. </span><span class="content">DOMTimeStamp</span><a class="self-link" href="#common-DOMTimeStamp"></a></h3>
-<pre class="idl-example example" id="example-f968e26b"><a class="self-link" href="#example-f968e26b"></a>typedef unsigned long long <dfn class="dfn-paneled idl-code" data-dfn-type="typedef" data-export="" id="DOMTimeStamp">DOMTimeStamp</dfn>;</pre>
-   <p>The <code class="idl"><a data-link-type="idl" href="#DOMTimeStamp" id="ref-for-DOMTimeStamp-1">DOMTimeStamp</a></code> type is used for representing
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="6.3" data-lt="DOMTimeStamp" id="DOMTimeStamp"><span class="secno">6.3. </span><span class="content">DOMTimeStamp</span><span id="common-DOMTimeStamp"></span></h3>
+<pre class="idl highlight def"><span class="kt">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <a class="nv idl-code" data-link-type="typedef" href="#DOMTimeStamp" id="ref-for-DOMTimeStamp-1">DOMTimeStamp</a>;</pre>
+   <p>The <code class="idl"><a data-link-type="idl" href="#DOMTimeStamp" id="ref-for-DOMTimeStamp-2">DOMTimeStamp</a></code> type is used for representing
 a number of milliseconds, either as an absolute time (relative to some epoch)
 or as a relative amount of time.  Specifications that use this type will need
 to define how the number of milliseconds is to be interpreted.</p>
-   <h3 class="heading settled" data-level="6.4" id="common-Function"><span class="secno">6.4. </span><span class="content">Function</span><a class="self-link" href="#common-Function"></a></h3>
-<pre class="idl-example example" id="example-4d679d72"><a class="self-link" href="#example-4d679d72"></a>callback <dfn class="dfn-paneled idl-code" data-dfn-type="callback" data-export="" id="Function">Function</dfn> = any (any... arguments);</pre>
-   <p>The <code class="idl"><a data-link-type="idl" href="#Function" id="ref-for-Function-1">Function</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-29">callback function</a> type is used for representing function values with no restriction on what arguments
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="6.4" data-lt="Function" id="Function"><span class="secno">6.4. </span><span class="content">Function</span><span id="common-Function"></span></h3>
+<pre class="idl highlight def"><span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#Function">Function</a> = <span class="kt">any</span> (<span class="kt">any</span>... <a class="nv idl-code" data-link-type="argument" href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>);</pre>
+   <p>The <code class="idl"><a data-link-type="idl" href="#Function" id="ref-for-Function-2">Function</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-29">callback function</a> type is used for representing function values with no restriction on what arguments
 are passed to it or what kind of value is returned from it.</p>
-   <h3 class="heading settled" data-level="6.5" id="common-Function0"><span class="secno">6.5. </span><span class="content">VoidFunction</span><a class="self-link" href="#common-Function0"></a></h3>
-<pre class="idl-example example" id="example-0900dd4f"><a class="self-link" href="#example-0900dd4f"></a>callback <dfn class="dfn-paneled idl-code" data-dfn-type="callback" data-export="" id="VoidFunction">VoidFunction</dfn> = void ();</pre>
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="6.5" data-lt="VoidFunction" id="VoidFunction"><span class="secno">6.5. </span><span class="content">VoidFunction</span><span id="common-Function0"></span></h3>
+<pre class="idl highlight def"><span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#VoidFunction">VoidFunction</a> = <span class="kt">void</span> ();</pre>
    <p>The <code class="idl"><a data-link-type="idl" href="#VoidFunction" id="ref-for-VoidFunction-1">VoidFunction</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-30">callback function</a> type is used for representing function values that take no arguments and do not
 return any value.</p>
    <h2 class="heading settled" data-level="7" id="extensibility"><span class="secno">7. </span><span class="content">Extensibility</span><a class="self-link" href="#extensibility"></a></h2>
@@ -12707,7 +12712,7 @@ this was to the right.)</p>
    <li><a href="#add-map-elements-from-iterable">add map elements from an iterable</a><span>, in §5.6.12</span>
    <li><a href="#idl-any">any</a><span>, in §4.10</span>
    <li><a href="#idl-ArrayBuffer">ArrayBuffer</a><span>, in §4.10.30</span>
-   <li><a href="#ArrayBufferView">ArrayBufferView</a><span>, in §6.1</span>
+   <li><a href="#ArrayBufferView">ArrayBufferView</a><span>, in §6</span>
    <li><a href="#dfn-array-index-property-name">array index property name</a><span>, in §5.8.1</span>
    <li><a href="#dfn-associated-realm">associated Realm</a><span>, in §5.1</span>
    <li><a href="#dfn-attribute">attribute</a><span>, in §4.2.2</span>
@@ -12715,7 +12720,7 @@ this was to the right.)</p>
    <li><a href="#dfn-attribute-setter">attribute setter</a><span>, in §5.6.6</span>
    <li><a href="#dfn-available-only-in-secure-contexts">available only in secure contexts</a><span>, in §5.3.18</span>
    <li><a href="#idl-boolean">boolean</a><span>, in §4.10.1</span>
-   <li><a href="#BufferSource">BufferSource</a><span>, in §6.2</span>
+   <li><a href="#BufferSource">BufferSource</a><span>, in §6.1</span>
    <li><a href="#dfn-buffer-source-type">buffer source types</a><span>, in §4.10</span>
    <li><a href="#idl-byte">byte</a><span>, in §4.10.2</span>
    <li><a href="#idl-ByteString">ByteString</a><span>, in §4.10.15</span>
@@ -12776,7 +12781,7 @@ this was to the right.)</p>
    <li><a href="#dfn-DOMException-constructor-object">DOMException constructor object</a><span>, in §5.11</span>
    <li><a href="#dfn-DOMException-prototype-object">DOMException prototype object</a><span>, in §5.11.1</span>
    <li><a href="#idl-DOMString">DOMString</a><span>, in §4.10.14</span>
-   <li><a href="#DOMTimeStamp">DOMTimeStamp</a><span>, in §6.3</span>
+   <li><a href="#DOMTimeStamp">DOMTimeStamp</a><span>, in §6.2</span>
    <li><a href="#idl-double">double</a><span>, in §4.10.12</span>
    <li><a href="#dfn-effective-overload-set">effective overload set</a><span>, in §4.2.6</span>
    <li><a href="#encodingerror">EncodingError</a><span>, in §4.4.1</span>
@@ -12806,12 +12811,14 @@ this was to the right.)</p>
    <li><a href="#idl-float">float</a><span>, in §4.10.10</span>
    <li><a href="#idl-Float32Array">Float32Array</a><span>, in §4.10.30</span>
    <li><a href="#idl-Float64Array">Float64Array</a><span>, in §4.10.30</span>
+   <li><a href="#dom-iterable-foreach">forEach(callback)</a><span>, in §5.6.8.2</span>
+   <li><a href="#dom-iterable-foreach">forEach(callback, thisArg)</a><span>, in §5.6.8.2</span>
    <li><a href="#dfn-forwards-to-the-internal-map-object">forwards to the internal map object</a><span>, in §5.6.10</span>
    <li><a href="#dfn-forwards-to-the-internal-set-object">forwards to the internal set object</a><span>, in §5.6.11</span>
    <li><a href="#idl-frozen-array">FrozenArray</a><span>, in §4.10.30</span>
    <li><a href="#idl-frozen-array">FrozenArray&lt;T></a><span>, in §4.10.30</span>
    <li><a href="#dfn-frozen-array-type">frozen array type</a><span>, in §4.10.31</span>
-   <li><a href="#Function">Function</a><span>, in §6.4</span>
+   <li><a href="#Function">Function</a><span>, in §6.3</span>
    <li><a href="#dfn-function-object">function object</a><span>, in §5</span>
    <li><a href="#dfn-get-buffer-source-copy">get a copy of the buffer source</a><span>, in §4.10.30</span>
    <li><a href="#dfn-get-buffer-source-reference">get a reference to the buffer source</a><span>, in §4.10.30</span>
@@ -12865,6 +12872,7 @@ this was to the right.)</p>
    <li><a href="#invoke">invoke</a><span>, in §5.10</span>
    <li><a href="#invoke-indexed-setter">invoke the indexed property setter</a><span>, in §5.8.4</span>
    <li><a href="#invoke-named-setter">invoke the named property setter</a><span>, in §5.8.5</span>
+   <li><a href="#iterable">Iterable</a><span>, in §5.6.8.2</span>
    <li><a href="#dfn-iterable">iterable</a><span>, in §4.2.7</span>
    <li><a href="#dfn-iterable-declaration">iterable declaration</a><span>, in §4.2.7</span>
    <li><a href="#dfn-iterator-prototype-object">iterator prototype object</a><span>, in §5.6.9.5</span>
@@ -13027,9 +13035,23 @@ this was to the right.)</p>
    <li><a href="#dfn-value-pairs-to-iterate-over">value pairs to iterate over</a><span>, in §4.2.7</span>
    <li><a href="#dfn-variadic">variadic</a><span>, in §4.2.3</span>
    <li><a href="#versionerror">VersionError</a><span>, in §4.4.1</span>
-   <li><a href="#VoidFunction">VoidFunction</a><span>, in §6.5</span>
+   <li><a href="#VoidFunction">VoidFunction</a><span>, in §6.4</span>
    <li><a href="#dom-domexception-wrong_document_err">WRONG_DOCUMENT_ERR</a><span>, in §4.4.1</span>
    <li><a href="#wrongdocumenterror">WrongDocumentError</a><span>, in §4.4.1</span>
+  </ul>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[WebIDL-1]</a> defines the following terms:
+    <ul>
+     <li><a href="https://heycam.github.io/webidl/#Function">Function</a>
+     <li><a href="https://heycam.github.io/webidl/#VoidFunction">VoidFunction</a>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[worklets-1]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>
+    </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
@@ -13052,6 +13074,10 @@ this was to the right.)</p>
    <dd>Mike West. <a href="https://w3c.github.io/webappsec-secure-contexts/">Secure Contexts</a>. 19 July 2016. WD. URL: <a href="https://w3c.github.io/webappsec-secure-contexts/">https://w3c.github.io/webappsec-secure-contexts/</a>
    <dt id="biblio-unicode">[UNICODE]
    <dd><a href="http://www.unicode.org/versions/latest/">The Unicode Standard</a>. URL: <a href="http://www.unicode.org/versions/latest/">http://www.unicode.org/versions/latest/</a>
+   <dt id="biblio-webidl-1">[WebIDL-1]
+   <dd>Cameron McCormack; Boris Zbarsky. <a href="https://heycam.github.io/webidl/">WebIDL Level 1</a>. 8 March 2016. CR. URL: <a href="https://heycam.github.io/webidl/">https://heycam.github.io/webidl/</a>
+   <dt id="biblio-worklets-1">[WORKLETS-1]
+   <dd>Ian Kilpatrick. <a href="https://drafts.css-houdini.org/worklets/">Worklets Level 1</a>. 7 June 2016. WD. URL: <a href="https://drafts.css-houdini.org/worklets/">https://drafts.css-houdini.org/worklets/</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
@@ -13066,6 +13092,20 @@ this was to the right.)</p>
    <dt id="biblio-xml-names">[XML-NAMES]
    <dd>Tim Bray; et al. <a href="https://www.w3.org/TR/xml-names">Namespaces in XML 1.0 (Third Edition)</a>. 8 December 2009. REC. URL: <a href="https://www.w3.org/TR/xml-names">https://www.w3.org/TR/xml-names</a>
   </dl>
+  <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
+<pre class="idl def"><span class="kt">interface</span> <a class="nv" href="#iterable">Iterable</a> {
+  <span class="kt">void</span> <a class="nv" href="#dom-iterable-foreach">forEach</a>(<a class="n" data-link-type="idl-name" href="#Function">Function</a> <a class="nv" href="#dom-iterable-foreach-callback-thisarg-callback">callback</a>, <span class="kt">optional</span> <span class="kt">any</span> <a class="nv" href="#dom-iterable-foreach-callback-thisarg-thisarg">thisArg</a>);
+};
+
+<span class="kt">typedef</span> (<span class="kt">Int8Array</span> <span class="kt">or</span> <span class="kt">Int16Array</span> <span class="kt">or</span> <span class="kt">Int32Array</span> <span class="kt">or</span>
+         <span class="kt">Uint8Array</span> <span class="kt">or</span> <span class="kt">Uint16Array</span> <span class="kt">or</span> <span class="kt">Uint32Array</span> <span class="kt">or</span> <span class="kt">Uint8ClampedArray</span> <span class="kt">or</span>
+         <span class="kt">Float32Array</span> <span class="kt">or</span> <span class="kt">Float64Array</span> <span class="kt">or</span> <span class="kt">DataView</span>) <a class="nv idl-code" data-link-type="typedef" href="#ArrayBufferView">ArrayBufferView</a>;
+
+<span class="kt">typedef</span> (<a class="n" data-link-type="idl-name" href="#ArrayBufferView">ArrayBufferView</a> <span class="kt">or</span> <span class="kt">ArrayBuffer</span>) <a class="nv idl-code" data-link-type="typedef" href="#BufferSource">BufferSource</a>;
+<span class="kt">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <a class="nv idl-code" data-link-type="typedef" href="#DOMTimeStamp">DOMTimeStamp</a>;
+<span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#Function">Function</a> = <span class="kt">any</span> (<span class="kt">any</span>... <a class="nv idl-code" data-link-type="argument" href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>);
+<span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#VoidFunction">VoidFunction</a> = <span class="kt">void</span> ();
+</pre>
   <aside class="dfn-panel" data-for="dfn-example-term">
    <b><a href="#dfn-example-term">#dfn-example-term</a></b><b>Referenced in:</b>
    <ul>
@@ -14132,12 +14172,6 @@ this was to the right.)</p>
    <b><a href="#indexsizeerror">#indexsizeerror</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-indexsizeerror-1">4.4. Exceptions</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="notsupportederror">
-   <b><a href="#notsupportederror">#notsupportederror</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-notsupportederror-1">5.13. Creating and throwing exceptions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="syntaxerror">
@@ -15792,26 +15826,28 @@ this was to the right.)</p>
   <aside class="dfn-panel" data-for="ArrayBufferView">
    <b><a href="#ArrayBufferView">#ArrayBufferView</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ArrayBufferView-1">6.1. ArrayBufferView</a>
+    <li><a href="#ref-for-ArrayBufferView-1">6.1. ArrayBufferView</a> <a href="#ref-for-ArrayBufferView-2">(2)</a>
+    <li><a href="#ref-for-ArrayBufferView-3">6.2. BufferSource</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="BufferSource">
    <b><a href="#BufferSource">#BufferSource</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-BufferSource-1">4.10.30. Buffer source types</a>
-    <li><a href="#ref-for-BufferSource-2">6.2. BufferSource</a>
+    <li><a href="#ref-for-BufferSource-2">6.2. BufferSource</a> <a href="#ref-for-BufferSource-3">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="DOMTimeStamp">
    <b><a href="#DOMTimeStamp">#DOMTimeStamp</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-DOMTimeStamp-1">6.3. DOMTimeStamp</a>
+    <li><a href="#ref-for-DOMTimeStamp-1">6.3. DOMTimeStamp</a> <a href="#ref-for-DOMTimeStamp-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="Function">
    <b><a href="#Function">#Function</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Function-1">6.4. Function</a>
+    <li><a href="#ref-for-Function-1">5.6.8.2. forEach</a>
+    <li><a href="#ref-for-Function-2">6.4. Function</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="VoidFunction">

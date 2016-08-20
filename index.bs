@@ -300,7 +300,7 @@ The following typographic conventions are used in this document:
     Advisement: This is a warning.
     
 *   Code blocks:
-    <pre class="idl-example example">
+    <pre class="idl non-normative">
         // This is an IDL code block.
         interface Example {
           attribute long something;
@@ -422,7 +422,7 @@ in [[#es-extended-attributes]].
     
     The following is an example of an [=IDL fragment=].
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Paint { };
         
         interface SolidColor : Paint {
@@ -622,7 +622,7 @@ across [=IDL fragments=].
     
     Therefore, the following [=IDL fragment=] is valid:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface B : A {
           void f(SequenceOfLongs x);
         };
@@ -640,7 +640,7 @@ across [=IDL fragments=].
     demonstrates how [=identifiers=]
     are given to definitions and [=interface members=].
     
-    <pre class="idl-example">
+    <pre class="idl">
         // Typedef identifier: "number"
         typedef double number;
         
@@ -741,7 +741,7 @@ accessed on the object.
     
     Consider the following two interfaces.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface A {
           void f();
           void g();
@@ -884,7 +884,7 @@ be defined on a [=callback interface=].
     
     For example, instead of this:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         callback interface Options {
           attribute DOMString? option1;
           attribute DOMString? option2;
@@ -906,7 +906,7 @@ be defined on a [=callback interface=].
     
     instead write the following:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         dictionary Options {
           DOMString? option1;
           DOMString? option2;
@@ -1055,7 +1055,7 @@ The following extended attributes are applicable to interfaces:
     inherit from <code class="idl">Animal</code>.  Objects that implement
     either of those two interfaces will thus have a <code>name</code> attribute.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Animal {
           attribute DOMString name;
         };
@@ -1076,7 +1076,7 @@ The following extended attributes are applicable to interfaces:
     simplified versions of a few DOM [=interfaces=], one of which
     is a [=callback interface=].
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Node {
           readonly attribute DOMString nodeName;
           readonly attribute Node? parentNode;
@@ -1098,7 +1098,7 @@ The following extended attributes are applicable to interfaces:
         
         var listener = {
           handleEvent: function(event) {
-            ...
+            // ...
           }
         };
         node.addEventListener("click", listener);            // This works.
@@ -1115,10 +1115,10 @@ The following extended attributes are applicable to interfaces:
           nodeName: "span",
           parentNode: null,
           appendChild: function(newchild) {
-            ...
+            // ...
           },
           addEventListener: function(type, listener) {
-            ...
+            // ...
           }
         };
         node.appendChild(newNode);  // This will throw a TypeError exception.
@@ -1287,7 +1287,7 @@ on which they appear.  It is language binding specific whether
     on which the [=constants=] are declared.
     For example, with the following IDL:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface A {
           const short rambaldi = 47;
         };
@@ -1341,7 +1341,7 @@ The following extended attributes are applicable to constants:
     demonstrates how [=constants=]
     of the above types can be defined.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Util {
           const boolean DEBUG = false;
           const octet LF = 10;
@@ -1526,7 +1526,7 @@ are applicable only to regular attributes:
     demonstrates how [=attributes=]
     can be declared on an [=interface=]:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Animal {
         
           // A simple attribute that can be set to any string value.
@@ -1656,7 +1656,7 @@ language bindings.
     demonstrates how [=regular operations=]
     can be declared on an [=interface=]:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Dimensions {
           attribute unsigned long width;
           attribute unsigned long height;
@@ -1702,7 +1702,7 @@ when the <code>...</code> token is used in their argument lists.
     The following [=IDL fragment=] defines an interface that has
     two variadic operations:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface IntegerSet {
           readonly attribute unsigned long cardinality;
         
@@ -1827,7 +1827,7 @@ must be a
     with a single [=operation=]
     that can be invoked with two different argument list lengths:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface ColorCreator {
           object createColor(double v1, double v2, double v3, optional double alpha);
         };
@@ -1837,7 +1837,7 @@ must be a
     that has two [=overloaded=]
     [=operations=]:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface ColorCreator {
           object createColor(double v1, double v2, double v3);
           object createColor(double v1, double v2, double v3, double alpha);
@@ -2021,7 +2021,7 @@ will not be such functionality.
     
     The following IDL fragment defines an interface with a getter and a setter:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Dictionary {
           readonly attribute unsigned long propertyCount;
         
@@ -2045,7 +2045,7 @@ simplify prose descriptions of an interface’s operations.
     
     The following two interfaces are equivalent:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Dictionary {
           readonly attribute unsigned long propertyCount;
         
@@ -2053,7 +2053,7 @@ simplify prose descriptions of an interface’s operations.
           setter void setProperty(DOMString propertyName, double propertyValue);
         };
     </pre>
-    <pre class="idl-example">
+    <pre class="idl">
         interface Dictionary {
           readonly attribute unsigned long propertyCount;
         
@@ -2143,7 +2143,7 @@ mailing list before proceeding.
     defines an [=interface=]
     with a [=legacy caller=].
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface NumberQuadrupler {
           // This operation simply returns four times the given number x.
           legacycaller double compute(double x);
@@ -2199,12 +2199,12 @@ argument list can be omitted.
     
     The following two interfaces are equivalent:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface A {
           stringifier DOMString ();
         };
     </pre>
-    <pre class="idl-example">
+    <pre class="idl">
         interface A {
           stringifier;
         };
@@ -2240,7 +2240,7 @@ a [=static attribute=].
     defines an interface that will stringify to the value of its
     <code class="idl">name</code> attribute:
     
-    <pre class="idl-example">
+    <pre class="idl">
         [Constructor]
         interface Student {
           attribute unsigned long id;
@@ -2265,7 +2265,7 @@ a [=static attribute=].
     defines an interface that has custom stringification behavior that is
     not specified in the IDL itself.
     
-    <pre class="idl-example">
+    <pre class="idl">
         [Constructor]
         interface Student {
           attribute unsigned long id;
@@ -2601,7 +2601,7 @@ the value returned from invoking the operation to a serialized value.
     an interface <code class="idl">Transaction</code> that has a
     [=serializer=] defines in prose:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Transaction {
           readonly attribute Account from;
           readonly attribute Account to;
@@ -2613,8 +2613,8 @@ the value returned from invoking the operation to a serialized value.
         };
         
         interface Account {
-          DOMString name;
-          unsigned long number;
+          attribute DOMString name;
+          attribute unsigned long number;
         };
     </pre>
     
@@ -2650,7 +2650,7 @@ the value returned from invoking the operation to a serialized value.
     could be used to avoid having to define the [=serialization behavior=]
     in prose:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Transaction {
           readonly attribute Account from;
           readonly attribute Account to;
@@ -2662,8 +2662,8 @@ the value returned from invoking the operation to a serialized value.
         };
         
         interface Account {
-          DOMString name;
-          unsigned long number;
+          attribute DOMString name;
+          attribute unsigned long number;
         
           serializer = number;
         };
@@ -2747,7 +2747,7 @@ The following requirements apply to the definitions of indexed property getters 
     
     In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface A {
           getter DOMString toWord(unsigned long index);
         };
@@ -2776,7 +2776,7 @@ The following requirements apply to the definitions of indexed property getters 
     <code class="idl">OrderedMap</code> which allows
     retrieving and setting values by name or by index number:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface OrderedMap {
           readonly attribute unsigned long size;
         
@@ -2955,7 +2955,7 @@ declared on [=callback interfaces=].
     <code class="idl">Circle</code> that has a static
     operation declared on it:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Point { /* ... */ };
         
         interface Circle {
@@ -3023,7 +3023,7 @@ and [=partial interface=] definitions.
     For example, the overloads for both |f| and |g|
     are disallowed:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface A {
           void f();
         };
@@ -3173,7 +3173,7 @@ extended attribute’s [=takes a named argument list|named argument list=].
     
     For the following interface:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface A {
           /* f1 */ void f(DOMString a);
           /* f2 */ void f(Node a, DOMString b, double... c);
@@ -3443,7 +3443,7 @@ for the entries of the effective overload set with the given type list length.
     
     The following use of overloading however is invalid:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface B {
           void f(DOMString x);
           void f(double x);
@@ -3466,7 +3466,7 @@ be the same.
     
     The following is invalid:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface B {
           /* f1 */ void f(DOMString w);
           /* f2 */ void f(long w, double x, Node y, Node z);
@@ -3577,7 +3577,7 @@ interfaces that have interface members with these names.
     Consider the following interface <code class="idl">SessionManager</code>, which allows access to
     a number of <code class="idl">Session</code> objects:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface SessionManager {
           Session getSessionForUser(DOMString username);
           readonly attribute unsigned long sessionCount;
@@ -4024,7 +4024,7 @@ identifiers.
     
     For example, with the following definitions:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         dictionary B : A {
           long b;
           long a;
@@ -4056,7 +4056,7 @@ identifiers.
     the dictionary members are fetched.  For example, consider the
     following additional interface:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface Something {
           void f(A a);
         };
@@ -4147,7 +4147,7 @@ The following extended attributes are applicable to dictionary members:
     constrained as to the order they are specified at the call site.  For example,
     consider the following [=IDL fragment=]:
     
-    <pre class="idl-example">
+    <pre class="idl">
         [Constructor]
         interface Point {
           attribute double x;
@@ -4541,7 +4541,7 @@ defined in this specification are applicable to [=enumerations=].
     that is used as the type of an [=attribute=]
     and an [=operation=] argument:
     
-    <pre class="idl-example">
+    <pre class="idl">
         enum MealType { "rice", "noodles", "other" };
         
         interface Meal {
@@ -4615,7 +4615,7 @@ The following extended attribute is applicable to callback functions:
     a [=callback function=] used for an API that
     invokes a user-defined function when an operation is complete.
     
-    <pre class="idl-example">
+    <pre class="idl">
         callback AsyncOperationCallback = void (DOMString status);
         
         interface AsyncOperations {
@@ -4670,7 +4670,7 @@ defined in this specification are applicable to [=typedefs=].
     [=identifier=] instead of a long
     <a href="#idl-sequence">sequence type</a>.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Point {
           attribute double x;
           attribute double y;
@@ -4735,17 +4735,17 @@ An interface |A| is considered to be a
     is a [=supplemental interface=].
     For example, if author 1 writes:
     
-    <pre class="idl-example example">
-        interface Window { ... };
-        interface SomeFunctionality { ... };
+    <pre class="idl">
+        interface Window { /* ... */ };
+        interface SomeFunctionality { /* ... */ };
         Window implements SomeFunctionality;
     </pre>
     
     and author 2 later writes:
     
-    <pre class="idl-example example">
-        interface Gizmo { ... };
-        interface MoreFunctionality { ... };
+    <pre class="idl">
+        interface Gizmo { /* ... */ };
+        interface MoreFunctionality { /* ... */ };
         SomeFunctionality implements MoreFunctionality;
         Gizmo implements SomeFunctionality;
     </pre>
@@ -4758,9 +4758,9 @@ An interface |A| is considered to be a
     
     Better in this case would be for author 2 to write:
     
-    <pre class="idl-example example">
-        interface Gizmo { ... };
-        interface MoreFunctionality { ... };
+    <pre class="idl">
+        interface Gizmo { /* ... */ };
+        interface MoreFunctionality { /* ... */ };
         Gizmo implements SomeFunctionality;
         Gizmo implements MoreFunctionality;
     </pre>
@@ -4796,7 +4796,7 @@ defined in this specification are applicable to
     defines two [=interfaces=], stating
     that one interface is always implemented on objects implementing the other.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Entry {
           readonly attribute unsigned short entryType;
           // ...
@@ -5496,7 +5496,7 @@ the string “OrNull”.
     <emu-val>false</emu-val> and <emu-val>null</emu-val>
     is written as <code class="idl">boolean?</code>:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface MyConstants {
           const boolean? ARE_WE_THERE_YET = false;
         };
@@ -5508,7 +5508,7 @@ the string “OrNull”.
     value, and another whose value can be a reference to a <code class="idl">Node</code>
     object or the <emu-val>null</emu-val> value:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Node {
           readonly attribute DOMString? namespaceURI;
           readonly attribute Node? parentNode;
@@ -7274,7 +7274,7 @@ iterable |iterable| and an iterator getter
     type as well as an [=operation=]
     with an argument of a sequence type.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Canvas {
         
           sequence&lt;DOMString&gt; getSupportedImageCodecs();
@@ -7820,7 +7820,7 @@ for the specific requirements that the use of
     the [{{Clamp}}] [=extended attribute=]
     on all three arguments, while the other does not:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface GraphicsContext {
           void setColor(octet red, octet green, octet blue);
           void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
@@ -7889,7 +7889,7 @@ for an interface is to be implemented.
     [{{Constructor}}] extended
     attribute, while the first does not.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface NodeList {
           Node item(unsigned long index);
           readonly attribute unsigned long length;
@@ -7966,7 +7966,7 @@ for the specific requirements that the use of
     the [{{EnforceRange}}] [=extended attribute=]
     on all three arguments, while the other does not:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface GraphicsContext {
           void setColor(octet red, octet green, octet blue);
           void setColorEnforcedRange([EnforceRange] octet red, [EnforceRange] octet green, [EnforceRange] octet blue);
@@ -8114,10 +8114,10 @@ for the specific requirements that the use of
     
     The following IDL fragment shows how that might be achieved:
     
-    <pre class="idl-example">
+    <pre class="idl">
         [PrimaryGlobal]
         interface Window {
-          ...
+          // ...
         };
         
         // By using the same identifier Worker for both SharedWorkerGlobalScope
@@ -8125,12 +8125,12 @@ for the specific requirements that the use of
         // extended attribute at once.
         [Global=Worker]
         interface SharedWorkerGlobalScope : WorkerGlobalScope {
-          ...
+          // ...
         };
         
         [Global=Worker]
         interface DedicatedWorkerGlobalScope : WorkerGlobalScope {
-          ...
+          // ...
         };
         
         // MathUtils is available for use in workers and on the main thread.
@@ -8150,7 +8150,7 @@ for the specific requirements that the use of
         // Node is only available on the main thread.  Evaluating Node
         // in the global scope of a worker would give you a ReferenceError.
         interface Node {
-          ...
+          // ...
         };
     </pre>
 </div>
@@ -8189,10 +8189,10 @@ in HTML5 ([[HTML5]], section 5.2).
     with the [{{ImplicitThis}}]
     [=extended attribute=].
     
-    <pre class="idl-example">
+    <pre class="idl">
         [ImplicitThis]
         interface Window {
-          ...
+          // ...
           attribute DOMString name;
           void alert(DOMString message);
         };
@@ -8370,7 +8370,7 @@ corresponding to [=interface members=].
     will result in them being replaced by the new value.  Variable declarations for
     attributes will not create a property that replaces the existing one.
     
-    <pre class="idl-example">
+    <pre class="idl">
         [PrimaryGlobal]
         interface Window {
           getter any (DOMString name);
@@ -8448,7 +8448,7 @@ entails.
     defines two [=interfaces=]
     that use [{{LegacyArrayClass}}].
     
-    <pre class="idl-example">
+    <pre class="idl">
         [LegacyArrayClass]
         interface ItemList {
           attribute unsigned long length;
@@ -8559,7 +8559,7 @@ is to be implemented.
     [{{LenientSetter}}] extended
     attribute.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Example {
           [LenientSetter] readonly attribute DOMString x;
           readonly attribute DOMString y;
@@ -8616,7 +8616,7 @@ is to be implemented.
     [{{LenientThis}}] extended
     attribute.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Example {
           [LenientThis] attribute DOMString x;
           attribute DOMString y;
@@ -8689,7 +8689,7 @@ are to be implemented.
     [{{NamedConstructor}}] extended
     attribute.
     
-    <pre class="idl-example">
+    <pre class="idl">
         [NamedConstructor=Audio,
          NamedConstructor=Audio(DOMString src)]
         interface HTMLAudioElement : HTMLMediaElement {
@@ -8747,10 +8747,10 @@ a [=promise type=].
     since a new object should always be returned when
     it is called.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Document : Node {
           [NewObject] Element createElement(DOMString localName);
-          ...
+          // ...
         };
     </pre>
 </div>
@@ -8806,7 +8806,7 @@ for the specific requirements that the use of
     The following [=IDL fragment=] defines two interfaces, one whose interface object
     is exposed on the ECMAScript global object, and one whose isn’t:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Storage {
           void addEntry(unsigned long key, any value);
         };
@@ -8878,7 +8878,7 @@ for the specific requirements that the use of
     one that has a [=named property getter=]
     and one that does not.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface StringMap {
           readonly attribute unsigned long length;
           getter DOMString lookup(DOMString key);
@@ -9005,7 +9005,7 @@ is to be implemented.
     <code class="idl">full</code> attribute of the
     <code class="idl">Person</code> object:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Name {
           attribute DOMString full;
           attribute DOMString family;
@@ -9077,7 +9077,7 @@ for the specific requirements that the use of
     that increments a counter, and an [=attribute=]
     that exposes the counter’s value, which is initially 0:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Counter {
           [Replaceable] readonly attribute unsigned long value;
           void increment();
@@ -9144,10 +9144,10 @@ or {{object}}.
     since the same object is always returned for a given
     <code class="idl">Document</code> object.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Document : Node {
           [SameObject] readonly attribute DOMImplementation implementation;
-          ...
+          // ...
         };
     </pre>
 </div>
@@ -9227,7 +9227,7 @@ that does specify [{{SecureContext}}].
     with one [=operation=] that is executable from all
     contexts, and two which are executable only from secure contexts.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface PowerfulFeature {
           // This call will succeed in all contexts.
           Promise &lt;Result&gt; calculateNotSoSecretResult();
@@ -9279,7 +9279,7 @@ for the specific requirements that the use of
     [=callback function=] and another whose type is a
     [=callback function=] without the [=extended attribute=]:
     
-    <pre class="idl-example">
+    <pre class="idl">
         callback OccurrenceHandler = void (DOMString details);
         
         [TreatNonObjectAsNull]
@@ -9362,7 +9362,7 @@ for the specific requirements that the use of
     extended attribute, and one operation with an argument that has
     the extended attribute:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Dog {
           attribute DOMString name;
           [TreatNullAs=EmptyString] attribute DOMString owner;
@@ -9473,7 +9473,7 @@ for the specific requirements that the use of
     an interface that has two [=attributes=],
     one of which is designated as [{{Unforgeable}}]:
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface System {
           [Unforgeable] readonly attribute DOMString username;
           readonly attribute long long loginTime;
@@ -9538,7 +9538,7 @@ for the specific requirements that the use of
     
     For example, with the following IDL:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface Thing {
           void f();
           [Unscopable] g();
@@ -10213,7 +10213,7 @@ the following steps:
     [=supplemental interfaces|non-supplemental interface=].
     For example, with the following IDL:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         [NoInterfaceObject]
         interface Foo {
         };
@@ -10943,7 +10943,11 @@ have the same behavior as one that would exist assuming the interface had
 this [=operation=] instead of the
 [=iterable declaration=]:
 
-<pre class="idl-example example">void forEach(Function callback, optional any thisArg);</pre>
+<pre class="idl">
+  interface Iterable {
+    void forEach(Function callback, optional any thisArg);
+  };
+</pre>
 
 with the following prose definition:
 
@@ -11728,7 +11732,7 @@ and similarly with their setters.
     
     For example, consider the following IDL:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface A {
           void f();
         };
@@ -12741,7 +12745,7 @@ the following steps must be followed:
     where that <emu-val>Function</emu-val> object originated.
     For example, consider the IDL:
     
-    <pre class="idl-example example">
+    <pre class="idl">
         interface A {
         
           /**
@@ -12804,7 +12808,7 @@ not caught there, to its caller, and so on.
     is defined to throw an exception whenever an attempt is made
     to get its value.
     
-    <pre class="idl-example">
+    <pre class="idl">
         interface Dahut {
           attribute DOMString type;
         };
@@ -12855,30 +12859,30 @@ This section specifies some common definitions that all
 must support.
 
 
-<h3 id="common-ArrayBufferView">ArrayBufferView</h3>
+<h3 id="ArrayBufferView" typedef oldids="common-ArrayBufferView">ArrayBufferView</h3>
 
-<pre class="idl-example example">
+<pre class="idl">
     typedef (Int8Array or Int16Array or Int32Array or
              Uint8Array or Uint16Array or Uint32Array or Uint8ClampedArray or
-             Float32Array or Float64Array or DataView) <dfn id="ArrayBufferView" typedef>ArrayBufferView</dfn>;
+             Float32Array or Float64Array or DataView) ArrayBufferView;
 </pre>
 
 The {{ArrayBufferView}} typedef is used to represent
 objects that provide a view on to an {{ArrayBuffer}}.
 
 
-<h3 id="common-BufferSource">BufferSource</h3>
+<h3 id="BufferSource" typedef oldids="common-BufferSource">BufferSource</h3>
 
-<pre class="idl-example example">typedef (ArrayBufferView or ArrayBuffer) <dfn id="BufferSource" typedef>BufferSource</dfn>;</pre>
+<pre class="idl">typedef (ArrayBufferView or ArrayBuffer) BufferSource;</pre>
 
 The {{BufferSource}} typedef is used to represent objects
 that are either themselves an {{ArrayBuffer}} or which
 provide a view on to an {{ArrayBuffer}}.
 
 
-<h3 id="common-DOMTimeStamp">DOMTimeStamp</h3>
+<h3 id="DOMTimeStamp" typedef oldids="common-DOMTimeStamp">DOMTimeStamp</h3>
 
-<pre class="idl-example example">typedef unsigned long long <dfn id="DOMTimeStamp" typedef>DOMTimeStamp</dfn>;</pre>
+<pre class="idl">typedef unsigned long long DOMTimeStamp;</pre>
 
 The {{DOMTimeStamp}} type is used for representing
 a number of milliseconds, either as an absolute time (relative to some epoch)
@@ -12886,18 +12890,18 @@ or as a relative amount of time.  Specifications that use this type will need
 to define how the number of milliseconds is to be interpreted.
 
 
-<h3 id="common-Function">Function</h3>
+<h3 id="Function" typedef oldids="common-Function">Function</h3>
 
-<pre class="idl-example example">callback <dfn id="Function" callback>Function</dfn> = any (any... arguments);</pre>
+<pre class="idl">callback Function = any (any... arguments);</pre>
 
 The {{Function}} [=callback function=]
 type is used for representing function values with no restriction on what arguments
 are passed to it or what kind of value is returned from it.
 
 
-<h3 id="common-Function">VoidFunction</h3>
+<h3 id="VoidFunction" typedef oldids="common-Function">VoidFunction</h3>
 
-<pre class="idl-example example">callback <dfn id="VoidFunction" callback>VoidFunction</dfn> = void ();</pre>
+<pre class="idl">callback VoidFunction = void ();</pre>
 
 The {{VoidFunction}} [=callback function=]
 type is used for representing function values that take no arguments and do not
@@ -13376,6 +13380,7 @@ Changes appendix</a>.
     so that all optional arguments to the left of one with a
     default value must also have default values.  (Previously,
     this was to the right.)
+
 
 
 

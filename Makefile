@@ -20,6 +20,7 @@ index.bs : index-pre.bs
 	| node ./post-process/indent.js --markdownify \
 	| node ./post-process/line-breaks.js \
 	| node ./post-process/air.js \
+	| node ./post-process/dic.js \
 	> index.bs
 	cat ./post-process/scripts.html >> index.bs
 	# raw-index.bs

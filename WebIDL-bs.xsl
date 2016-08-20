@@ -349,6 +349,11 @@ Boilerplate: omit issues-index
       <xsl:if test='$parent-id="Global" or $parent-id="idl-legacy-callers" or $parent-id="create-frozen-array-from-iterable" or $parent-id="create-sequence-from-iterable" or $parent-id="es-exception-objects" or $parent-id="getownproperty-guts" or $parent-id="idl-callback-function" or $parent-id="idl-dictionary" or $parent-id="idl-interface"'>
         <xsl:attribute name="dfn" />
       </xsl:if>
+      <xsl:if test='matches(., "ArrayBufferView|BufferSource|DOMTimeStamp|Function|VoidFunction")'>
+        <xsl:attribute name="typedef" />
+        <xsl:attribute name="oldids" select="$parent-id" />
+        <xsl:attribute name="id" select="text()" />
+      </xsl:if>
       <xsl:if test="@data-lt and text() != @data-lt">
         <xsl:attribute name="lt">
           <xsl:value-of select='@data-lt' />
@@ -362,6 +367,10 @@ Boilerplate: omit issues-index
       </xsl:if>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match='h:dfn[matches(@id, "ArrayBufferView|BufferSource|DOMTimeStamp|Function|VoidFunction")]'>
+    <xsl:apply-templates select="node()"/>
   </xsl:template>
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX ANCHORS XXXXXXXXXXXXXXXXXXXXXXXXXX -->
@@ -798,13 +807,13 @@ Boilerplate: omit issues-index
         <xsl:choose>
           <xsl:when test='ancestor::h:div[@id="conventions"]'>
               <xsl:text>
- </xsl:text><pre class='idl-example example'><xsl:apply-templates select='node()'/></pre>
+ </xsl:text><pre class='idl non-normative'><xsl:apply-templates select='node()'/></pre>
           </xsl:when>
           <xsl:when test='ancestor::*[@class="example"]'>
-              <pre class='idl-example'><xsl:apply-templates select='node()'/></pre>
+              <pre class='idl'><xsl:apply-templates select='node()'/></pre>
           </xsl:when>
           <xsl:otherwise>
-              <pre class='idl-example example'><xsl:apply-templates select='node()'/></pre>
+              <pre class='idl'><xsl:apply-templates select='node()'/></pre>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:when>
