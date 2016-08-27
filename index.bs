@@ -187,17 +187,6 @@ urlPrefix: https://tc39.github.io/ecma262/
             padding-bottom: 1px
         }
         /* end bug fix */
-        
-        .syntax {
-            padding: .5em;
-            border: .5em;
-            margin-left: 0;
-            border-left-style: solid;
-            page-break-inside: avoid;
-            border-color: #8CCBF2;
-            background: #DEF;
-            overflow: auto;
-        }
     
         dt p {
             display: inline;
@@ -272,9 +261,9 @@ The following typographic conventions are used in this document:
 *   Variable names in prose and algorithms: |exampleVariableName|.
 *   Algorithms use <a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">the conventions of the ECMAScript specification</a>, including the ! and ? notation for unwrapping completion records.
 *   IDL informal syntax examples:
-    <pre highlight="idl" class="syntax">
+    <pre class="idl syntax non-normative">
         interface identifier {
-          <mark>interface-members…</mark>
+          <mark>/* interface_members... */</mark>
         };
     </pre>
     
@@ -389,10 +378,10 @@ agnostic are discussed in [[#idl-extended-attributes]],
 while those specific to the ECMAScript language binding are discussed
 in [[#es-extended-attributes]].
 
-<pre highlight="idl" class="syntax">
-    [<mark>extended-attributes</mark>]
+<pre class="idl syntax non-normative">
+    [<mark>extended_attributes</mark>]
     interface identifier {
-      interface-members…
+      /* interface_members... */
     };
 </pre>
 
@@ -496,34 +485,34 @@ in the declaration:
     <code>dictionary</code>, <code>enum</code>
     or <code>callback</code> keyword
     determines the identifier of that definition.
-    <pre highlight="idl" class="syntax">
-        interface <mark>interface-identifier</mark> { interface-members… };
-        partial interface <mark>interface-identifier</mark> { interface-members… };
-        dictionary <mark>dictionary-identifier</mark> { dictionary-members… };
-        partial dictionary <mark>dictionary-identifier</mark> { dictionary-members… };
-        enum <mark>enumeration-identifier</mark> { enumeration-values… };
-        callback <mark>callback-identifier</mark> = callback-signature;
+    <pre class="idl syntax non-normative">
+        interface <mark>interface_identifier</mark> { /* interface_members... */ };
+        partial interface <mark>interface_identifier</mark> { /* interface_members... */ };
+        dictionary <mark>dictionary_identifier</mark> { /* dictionary_members... */ };
+        partial dictionary <mark>dictionary_identifier</mark> { /* dictionary_members... */ };
+        enum <mark>enumeration_identifier</mark> { "enum", "values" /* , ... */ };
+        callback <mark>callback_identifier</mark> = return_type (/* arguments... */);
     </pre>
 *   For [=attributes=],
     [=typedefs=]
     and [=dictionary members=],
     the final <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     semicolon at the end of the declaration determines the identifier.
-    <pre highlight="idl" class="syntax">
+    <pre class="idl syntax non-normative">
         interface identifier {
-          attribute type <mark>attribute-identifier</mark>;
+          attribute type <mark>attribute_identifier</mark>;
         };
         
-        typedef type <mark>typedef-identifier</mark>;
+        typedef type <mark>typedef_identifier</mark>;
         
         dictionary identifier {
-          type <mark>dictionary-member-identifier</mark>;
+          type <mark>dictionary_member_identifier</mark>;
         };
     </pre>
 *   For [=constants=],
     the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     equals sign determines the identifier.
-    <pre highlight="idl" class="syntax">const type <mark>constant-identifier</mark> = value;</pre>
+    <pre class="idl syntax non-normative">const type <mark>constant_identifier</mark> = 42;</pre>
 *   For [=operations=], the
     <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
     after the return type but before the opening parenthesis (that is,
@@ -531,7 +520,11 @@ in the declaration:
     grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
     there is no such <emu-t><a href="#prod-identifier">identifier</a></emu-t> token,
     then the operation does not have an identifier.
-    <pre highlight="idl" class="syntax">return-type <mark>operation-identifier</mark>(arguments…);</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          return_type <mark>operation_identifier</mark>(/* arguments... */);
+        };
+    </pre>
 
 Note: Operations can have no identifier when they are being used to declare a
 <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
@@ -552,7 +545,11 @@ token or by one of the keywords that match the <emu-nt><a href="#prod-ArgumentNa
 symbol.  If one of these keywords is used, it need not be escaped with a leading
 underscore.
 
-<pre highlight="idl" class="syntax">return-type operation-identifier(argument-type <mark>argument-identifier</mark>, …);</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      return_type operation_identifier(argument_type <mark>argument_identifier</mark> /* , ... */);
+    };
+</pre>
 
 <pre class="grammar" id="prod-ArgumentNameKeyword">
     ArgumentNameKeyword :
@@ -688,9 +685,9 @@ An <dfn id="dfn-interface" export>interface</dfn> is a definition (matching
 <emu-t>callback</emu-t> <emu-nt><a href="#prod-Interface">Interface</a></emu-nt>) that declares some
 state and behavior that an object implementing that interface will expose.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     interface identifier {
-      interface-members…
+      /* interface_members... */
     };
 </pre>
 
@@ -722,9 +719,9 @@ An object that implements an interface that inherits from another
 also implements that inherited interface.  The object therefore will also
 have members that correspond to the interface members from the inherited interface.
 
-<pre highlight="idl" class="syntax">
-    interface identifier : <mark>identifier-of-inherited-interface</mark> {
-      interface-members…
+<pre class="idl syntax non-normative">
+    interface identifier : <mark>identifier_of_inherited_interface</mark> {
+      /* interface_members... */
     };
 </pre>
 
@@ -798,17 +795,17 @@ Each interface member can be preceded by a list of [=extended attributes=] (matc
 <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt>),
 which can control how the interface member will be handled in language bindings.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     interface identifier {
     
-      [<mark>extended-attributes</mark>]
-      const type identifier = value;
+      [<mark>extended_attributes</mark>]
+      const type constant_identifier = 42;
     
-      [<mark>extended-attributes</mark>]
+      [<mark>extended_attributes</mark>]
       attribute type identifier;
     
-      [<mark>extended-attributes</mark>]
-      return-type identifier(arguments…);
+      [<mark>extended_attributes</mark>]
+      return_type identifier(/* arguments... */);
     };
 </pre>
 
@@ -820,9 +817,9 @@ implemented by [=user objects=]
 and not by [=platform objects=],
 as described in [[#idl-objects]].
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     callback interface identifier {
-      interface-members…
+      /* interface_members... */
     };
 </pre>
 
@@ -928,13 +925,13 @@ as the identifier of an interface definition.  All of
 the members that appear on each of the partial interfaces are considered to be
 members of the interface itself.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     interface <mark>SomeInterface</mark> {
-      interface-members…
+      /* interface_members... */
     };
     
     partial interface <mark>SomeInterface</mark> {
-      interface-members…
+      /* interface_members... */
     };
 </pre>
 
@@ -1139,7 +1136,7 @@ Specification authors who wish to define constants are strongly advised to discu
 this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
 mailing list before proceeding.
 
-<pre highlight="idl" class="syntax">const type identifier = value;</pre>
+<pre class="idl syntax non-normative">const type constant_identifier = 42;</pre>
 
 The [=identifier=] of a
 [=constant=]
@@ -1367,10 +1364,18 @@ be retrieved and (in some cases) changed.  There are two kinds of attributes:
 1.  [=regular attributes=], which are those
     used to declare that objects implementing the [=interface=]
     will have a data field member with the given [=identifier=]
-    <pre highlight="idl" class="syntax">attribute type identifier;</pre>
+        <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          attribute type identifier;
+        };
+    </pre>
 1.  [=static attributes=], which are used
     to declare attributes that are not associated with a particular object implementing the interface
-    <pre highlight="idl" class="syntax">static attribute type identifier;</pre>
+        <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          static attribute type identifier;
+        };
+    </pre>
 
 If an attribute has no <code>static</code> keyword, then it declares a
 <dfn id="dfn-regular-attribute" export>regular attribute</dfn>.  Otherwise,
@@ -1408,7 +1413,11 @@ is defined will not allow assignment to that attribute.  It is language
 binding specific whether assignment is simply disallowed by the language,
 ignored or an exception is thrown.
 
-<pre highlight="idl" class="syntax">readonly attribute type identifier;</pre>
+    <pre class="idl syntax non-normative">
+    interface interface_identifier {
+      readonly attribute type identifier;
+    };
+</pre>
 
 A [=regular attribute=]
 that is not [=read only=]
@@ -1425,7 +1434,7 @@ of the same type as the inheriting attribute, and <code>inherit</code>
 must not appear on a [=read only=]
 attribute or a [=static attribute=].
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     interface Ancestor {
       readonly attribute TheType theIdentifier;
     };
@@ -1441,7 +1450,11 @@ declaration, it indicates that objects implementing the
 interface will be stringified to the value of the attribute.  See
 [[#idl-stringifiers]] for details.
 
-<pre highlight="idl" class="syntax">stringifier attribute DOMString identifier;</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      stringifier attribute DOMString identifier;
+    };
+</pre>
 
 <p id="callback-attribute-exceptions">
     If an implementation attempts to get or set the value of an
@@ -1561,18 +1574,28 @@ There are three kinds of operation:
     are those used to declare that objects implementing the
     [=interface=] will have a method with
     the given [=identifier=]
-    <pre highlight="idl" class="syntax">return-type identifier(arguments…);</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          return_type identifier(/* arguments... */);
+        };
+    </pre>
 1.  [=special operations=],
     which are used to declare special behavior on objects
     implementing the interface, such as object indexing and stringification
-    <pre highlight="idl" class="syntax">
-        special-keywords… return-type identifier(arguments…);
-        special-keywords… return-type (arguments…);
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          /* special_keywords... */ return_type identifier(/* arguments... */);
+          /* special_keywords... */ return_type (/* arguments... */);
+        };
     </pre>
 1.  [=static operations=],
     which are used to declare operations that are not associated with
     a particular object implementing the interface
-    <pre highlight="idl" class="syntax">static return-type identifier(arguments…);</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          static return_type identifier(/* arguments... */);
+        };
+    </pre>
 
 If an operation has an identifier but no <code>static</code>
 keyword, then it declares a <dfn id="dfn-regular-operation" export>regular operation</dfn>.
@@ -1637,7 +1660,11 @@ If the operation argument type is an [=identifier=]
 not followed by <code>?</code>, then the identifier must
 identify any one of those definitions or a [=dictionary=].
 
-<pre highlight="idl" class="syntax">return-type identifier(type identifier, type identifier, …);</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      return_type identifier(type identifier, type identifier /* , ... */);
+    };
+</pre>
 
 The identifier of each argument must not be the same
 as the identifier of another argument in the same operation declaration.
@@ -1648,7 +1675,11 @@ Each argument can be preceded by a list of
 which can control how a value passed as the argument will be handled in
 language bindings.
 
-<pre highlight="idl" class="syntax">return-type identifier([<mark>extended-attributes</mark>] type identifier, [<mark>extended-attributes</mark>] type identifier, …);</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      return_type identifier([<mark>extended_attributes</mark>] type identifier, [<mark>extended_attributes</mark>] type identifier /* , ... */);
+    };
+</pre>
 
 <div class="example">
     
@@ -1684,9 +1715,11 @@ when invoking the operation.  An argument must not
 be declared with the <code>...</code> token unless it
 is the final argument in the operation’s argument list.
 
-<pre highlight="idl" class="syntax">
-    return-type identifier(type<mark>...</mark> identifier);
-    return-type identifier(type identifier, type<mark>...</mark> identifier);
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      return_type identifier(type<mark>...</mark> identifier);
+      return_type identifier(type identifier, type<mark>...</mark> identifier);
+    };
 </pre>
 
 [=Extended attributes=]
@@ -1736,7 +1769,11 @@ when the operation is invoked.  The final argument in an
 operation must not explicitly be declared to be
 optional if the operation is [=variadic=].
 
-<pre highlight="idl" class="syntax">return-type identifier(type identifier, optional type identifier);</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      return_type identifier(type identifier, optional type identifier);
+    };
+</pre>
 
 Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" for="optional argument" export>default value</dfn>
 specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
@@ -1747,7 +1784,11 @@ operation must not have a default value specified.
 The default value is the value to be assumed when the operation is called with the
 corresponding argument omitted.
 
-<pre highlight="idl" class="syntax">return-type identifier(type identifier, optional type identifier = value);</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      return_type identifier(type identifier, optional type identifier = "value");
+    };
+</pre>
 
 Advisement: It is strongly suggested not to use [=default value=]
 of <emu-val>true</emu-val> for {{boolean}}-typed arguments,
@@ -2118,9 +2159,11 @@ the interface can be called as if they were functions.  As mentioned above,
 legacy callers can be specified using an [=operation=]
 declared with the <code>legacycaller</code> keyword.
 
-<pre highlight="idl" class="syntax">
-    legacycaller return-type identifier(arguments…);
-    legacycaller return-type (arguments…);
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      legacycaller return_type identifier(/* arguments... */);
+      legacycaller return_type (/* arguments... */);
+    };
 </pre>
 
 If multiple legacy callers are specified on an interface, overload resolution
@@ -2172,9 +2215,11 @@ the interface have a non-default conversion to a string.  As mentioned above,
 stringifiers can be specified using an [=operation=]
 declared with the <code>stringifier</code> keyword.
 
-<pre highlight="idl" class="syntax">
-    stringifier DOMString identifier();
-    stringifier DOMString ();
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      stringifier DOMString identifier();
+      stringifier DOMString ();
+    };
 </pre>
 
 If an operation used to declare a stringifier does not have an
@@ -2193,7 +2238,11 @@ is declared using an operation with no identifier, then the
 operation’s [=return type=] and
 argument list can be omitted.
 
-<pre highlight="idl" class="syntax">stringifier;</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      stringifier;
+    };
+</pre>
 
 <div class="example">
     
@@ -2220,7 +2269,11 @@ it is declared to be of type {{DOMString}} or {{USVString}}.
 It also must not be placed on
 a [=static attribute=].
 
-<pre highlight="idl" class="syntax">stringifier attribute DOMString identifier;</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      stringifier attribute DOMString identifier;
+    };
+</pre>
 
 <pre class="grammar" id="prod-Stringifier">
     Stringifier :
@@ -2315,7 +2368,11 @@ When an [=interface=] has a
 a way for them to be converted into a serialized form.  Serializers can be declared
 using the <code>serializer</code> keyword:
 
-<pre highlight="idl" class="syntax">serializer;</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      serializer;
+    };
+</pre>
 
 Prose accompanying an interface that declares a serializer in this
 way must define the
@@ -2354,9 +2411,11 @@ which can take one of the following six forms:
 *   A map with entries corresponding to zero or more attributes from the interface, and optionally
     attributes from an inherited interface:
     
-    <pre highlight="idl" class="syntax">
-        serializer = { attribute-identifier, attribute-identifier, … };
-        serializer = { inherit, attribute-identifier, attribute-identifier, … };
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          serializer = { attribute_identifier, attribute_identifier /* , ... */ };
+          serializer = { inherit, attribute_identifier, attribute_identifier /* , ... */ };
+        };
     </pre>
     
     Each identifier must be the identifier of an attribute declared
@@ -2388,9 +2447,11 @@ which can take one of the following six forms:
     a [=serializable type=], and optionally
     attributes from an inherited interface:
     
-    <pre highlight="idl" class="syntax">
-        serializer = { attribute };
-        serializer = { inherit, attribute };
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          serializer = { attribute };
+          serializer = { inherit, attribute };
+        };
     </pre>
     
     The <code>inherit</code> keyword must not be used unless
@@ -2418,7 +2479,11 @@ which can take one of the following six forms:
     </ol>
 *   A map with entries corresponding to the named properties:
     
-    <pre highlight="idl" class="syntax">serializer = { getter };</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          serializer = { getter };
+        };
+    </pre>
     
     This form must not be used unless the interface or one it
     inherits from supports named properties and the return type of the named property getter
@@ -2438,7 +2503,11 @@ which can take one of the following six forms:
     </ol>
 *   A list of value of zero or more attributes on the interface:
     
-    <pre highlight="idl" class="syntax">serializer = [ attribute-identifier, attribute-identifier, … ];</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          serializer = [ attribute_identifier, attribute_identifier /* , ... */ ];
+        };
+    </pre>
     
     Each identifier must be the identifier of an attribute declared
     on the interface.  The identified attributes all must have a
@@ -2458,7 +2527,11 @@ which can take one of the following six forms:
     </ol>
 *   A list with entries corresponding to the indexed properties:
     
-    <pre highlight="idl" class="syntax">serializer = [ getter ];</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          serializer = [ getter ];
+        };
+    </pre>
     
     This form must not be used unless the interface or one it
     inherits from supports indexed properties and the return type of the indexed property getter
@@ -2481,7 +2554,11 @@ which can take one of the following six forms:
     </ol>
 *   A single attribute:
     
-    <pre highlight="idl" class="syntax">serializer = attribute-identifier;</pre>
+    <pre class="idl syntax non-normative">
+        interface interface_identifier {
+          serializer = attribute_identifier;
+        };
+    </pre>
     
     The identifier must be the identifier of an attribute declared
     on the interface, and this attribute must have a
@@ -2545,7 +2622,11 @@ The list of <dfn id="dfn-serializable-type" export lt="serializable type">serial
 Serializers can also be specified using an [=operation=]
 with the <code>serializer</code> keyword:
 
-<pre highlight="idl" class="syntax">serializer type identifier();</pre>
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      serializer identifier();
+    };
+</pre>
 
 Serializers declared with operations must
 be declared to take zero arguments and return a [=serializable type=].
@@ -2708,12 +2789,14 @@ be declared to take a single {{unsigned long}} argument.
 Indexed property setters must
 be declared to take two arguments, where the first is an {{unsigned long}}.
 
-<pre highlight="idl" class="syntax">
-    getter type identifier(unsigned long identifier);
-    setter type identifier(unsigned long identifier, type identifier);
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      getter type identifier(unsigned long identifier);
+      setter type identifier(unsigned long identifier, type identifier);
     
-    getter type (unsigned long identifier);
-    setter type (unsigned long identifier, type identifier);
+      getter type (unsigned long identifier);
+      setter type (unsigned long identifier, type identifier);
+    };
 </pre>
 
 The following requirements apply to the definitions of indexed property getters and setters:
@@ -2873,14 +2956,16 @@ be declared to take a single {{DOMString}} argument.
 Named property setters must
 be declared to take two arguments, where the first is a {{DOMString}}.
 
-<pre highlight="idl" class="syntax">
-    getter type identifier(DOMString identifier);
-    setter type identifier(DOMString identifier, type identifier);
-    deleter type identifier(DOMString identifier);
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      getter type identifier(DOMString identifier);
+      setter type identifier(DOMString identifier, type identifier);
+      deleter type identifier(DOMString identifier);
     
-    getter type (DOMString identifier);
-    setter type (DOMString identifier, type identifier);
-    deleter type (DOMString identifier);
+      getter type (DOMString identifier);
+      setter type (DOMString identifier, type identifier);
+      deleter type (DOMString identifier);
+    };
 </pre>
 
 The following requirements apply to the definitions of named property getters, setters and deleters:
@@ -3498,9 +3583,11 @@ An [=interface=] can be declared to be
 <dfn id="dfn-iterable" export>iterable</dfn> by using an <dfn id="dfn-iterable-declaration" export>iterable declaration</dfn>
 (matching <emu-nt><a href="#prod-Iterable">Iterable</a></emu-nt>) in the body of the interface.
 
-<pre highlight="idl" class="syntax">
-    iterable&lt;value-type&gt;;
-    iterable&lt;key-type, value-type&gt;;
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      iterable&lt;value_type&gt;;
+      iterable&lt;key_type, value_type&gt;;
+    };
 </pre>
 
 Objects implementing an interface that is declared to be iterable
@@ -3679,9 +3766,11 @@ An [=interface=] can be declared to be
 (matching <emu-nt><a href="#prod-ReadWriteMaplike">ReadWriteMaplike</a></emu-nt> or
 <emu-t>readonly</emu-t> <emu-nt><a href="#prod-MaplikeRest">MaplikeRest</a></emu-nt>) in the body of the interface.
 
-<pre highlight="idl" class="syntax">
-    readonly maplike&lt;key-type, value-type&gt;;
-    maplike&lt;key-type, value-type&gt;;
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      readonly maplike&lt;key_type, value_type&gt;;
+      maplike&lt;key_type, value_type&gt;;
+    };
 </pre>
 
 Objects implementing an interface that is declared to be maplike
@@ -3767,9 +3856,11 @@ An [=interface=] can be declared to be
 (matching <emu-nt><a href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></emu-nt> or
 <emu-t>readonly</emu-t> <emu-nt><a href="#prod-SetlikeRest">SetlikeRest</a></emu-nt>) in the body of the interface.
 
-<pre highlight="idl" class="syntax">
-    readonly setlike&lt;type&gt;;
-    setlike&lt;type&gt;;
+<pre class="idl syntax non-normative">
+    interface interface_identifier {
+      readonly setlike&lt;type&gt;;
+      setlike&lt;type&gt;;
+    };
 </pre>
 
 Objects implementing an interface that is declared to be setlike
@@ -3855,9 +3946,9 @@ used to define an associative array data type with a fixed, ordered set of key�
 termed <dfn id="dfn-dictionary-member" export>dictionary members</dfn>,
 where keys are strings and values are of a particular type specified in the definition.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     dictionary identifier {
-      dictionary-members…
+      /* dictionary_members... */
     };
 </pre>
 
@@ -3875,13 +3966,13 @@ its inheritance hierarchy has a cycle.  That is, a dictionary
 |A| cannot inherit from itself, nor can it inherit from another
 dictionary |B| that inherits from |A|, and so on.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     dictionary <mark>Base</mark> {
-      dictionary-members…
+      /* dictionary_members... */
     };
     
     dictionary Derived : <mark>Base</mark> {
-      dictionary-members…
+      /* dictionary_members... */
     };
 </pre>
 
@@ -3929,7 +4020,7 @@ If the dictionary member type is an identifier
 not followed by <code>?</code>, then the identifier must
 identify any one of those definitions or a [=dictionary=].
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     dictionary identifier {
       type identifier;
     };
@@ -3939,9 +4030,9 @@ If the identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</
 and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
 then that gives the dictionary member its [=default value=].
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     dictionary identifier {
-      type identifier = value;
+      type identifier = "value";
     };
 </pre>
 
@@ -3968,7 +4059,7 @@ If the type of the dictionary member is preceded by the
 and must be present on the dictionary.  A
 [=required dictionary member=] must not have a default value.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     dictionary identifier {
       required type identifier;
     };
@@ -3999,13 +4090,13 @@ identifier of a dictionary definition.  All of the members that appear on each
 of the partial dictionary definitions are considered to be members of
 the dictionary itself.
 
-<pre highlight="idl" class="syntax">
+<pre class="idl syntax non-normative">
     dictionary <mark>SomeDictionary</mark> {
-      dictionary-members…
+      /* dictionary_members... */
     };
     
     partial dictionary <mark>SomeDictionary</mark> {
-      dictionary-members…
+      /* dictionary_members... */
     };
 </pre>
 
@@ -4482,7 +4573,7 @@ can be used to restrict the possible
 [=attribute=] or passed to an
 [=operation=].
 
-<pre highlight="idl" class="syntax">enum identifier { enumeration-values… };</pre>
+<pre class="idl syntax non-normative">enum identifier { "enum", "values" /* , ... */ };</pre>
 
 The <dfn id="dfn-enumeration-value" export lt="enumeration value">enumeration values</dfn> are specified
 as a comma-separated list of <emu-t><a href="#prod-string">string</a></emu-t> literals.
@@ -4584,7 +4675,7 @@ defined in this specification are applicable to [=enumerations=].
 A <dfn id="dfn-callback-function" export>callback function</dfn> is a definition (matching
 <emu-t>callback</emu-t> <emu-nt><a href="#prod-CallbackRest">CallbackRest</a></emu-nt>) used to declare a function type.
 
-<pre highlight="idl" class="syntax">callback identifier = return-type (arguments…);</pre>
+<pre class="idl syntax non-normative">callback identifier = return_type (/* arguments... */);</pre>
 
 Note: See also the similarly named [=callback interfaces=].
 
@@ -4644,7 +4735,7 @@ used to declare a new name for a type.  This new name is not exposed
 by language bindings; it is purely used as a shorthand for referencing
 the type in the IDL.
 
-<pre highlight="idl" class="syntax">typedef type identifier;</pre>
+<pre class="idl syntax non-normative">typedef type identifier;</pre>
 
 The type being given a new name is specified after the <code>typedef</code>
 keyword (matching <emu-nt><a href="#prod-Type">Type</a></emu-nt>), and the
@@ -4696,7 +4787,7 @@ must additionally implement interface |B|
 (identified by the second identifier), including all other interfaces that
 |B| inherits from.
 
-<pre highlight="idl" class="syntax">identifier-A implements identifier-B;</pre>
+<pre class="idl syntax non-normative">identifier_A implements identifier_B;</pre>
 
 Transitively, if objects implementing |B|
 are declared with an [=implements statement=]
@@ -10943,10 +11034,10 @@ have the same behavior as one that would exist assuming the interface had
 this [=operation=] instead of the
 [=iterable declaration=]:
 
-<pre class="idl">
-  interface Iterable {
-    void forEach(Function callback, optional any thisArg);
-  };
+    <pre class="idl non-normative">
+      interface Iterable {
+        void forEach(Function callback, optional any thisArg);
+      };
 </pre>
 
 with the following prose definition:
@@ -13380,7 +13471,6 @@ Changes appendix</a>.
     so that all optional arguments to the left of one with a
     default value must also have default values.  (Previously,
     this was to the right.)
-
 
 
 

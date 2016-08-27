@@ -17,16 +17,18 @@ index.bs : index-pre.bs
 	| node ./post-process/rm-blanklines.js \
 	| node ./post-process/empty-tags.js \
 	| node ./post-process/clean-attr.js \
+	| node ./post-process/dic.js \
 	| node ./post-process/indent.js --markdownify \
 	| node ./post-process/line-breaks.js \
 	| node ./post-process/air.js \
-	| node ./post-process/dic.js \
 	> index.bs
 	cat ./post-process/scripts.html >> index.bs
 	# raw-index.bs
 	(node ./post-process/intro.js < index-pre.bs) \
+	| node ./post-process/rm-blanklines.js \
 	| node ./post-process/empty-tags.js \
 	| node ./post-process/clean-attr.js \
+	| node ./post-process/dic.js \
 	| node ./post-process/indent.js \
 	| node ./post-process/line-breaks.js \
 	| node ./post-process/air.js \

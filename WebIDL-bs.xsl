@@ -166,17 +166,6 @@ Boilerplate: omit issues-index
         padding-bottom: 1px
     }
     /* end bug fix */
-    
-    .syntax {
-        padding: .5em;
-        border: .5em;
-        margin-left: 0;
-        border-left-style: solid;
-        page-break-inside: avoid;
-        border-color: #8CCBF2;
-        background: #DEF;
-        overflow: auto;
-    }
 
     dt p {
         display: inline;
@@ -479,6 +468,7 @@ Boilerplate: omit issues-index
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template> 
+  
   
   <!-- Links with no HREF => [=foo=]-->
   <xsl:template match='h:a[not(@href)]'>
@@ -829,18 +819,34 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:pre[@class="syntax"]'>
-    <pre highlight='idl' class="syntax">
+    <pre class='idl syntax non-normative'>
       <xsl:apply-templates select='node()'/>
     </pre>
   </xsl:template>
   
   <xsl:template match='*[name() != "em"][ancestor::h:pre[@class="syntax"]]'>
-    <xsl:value-of select='.'/>
+    <xsl:apply-templates select='node()'/>
   </xsl:template>
   
   <xsl:template match='h:em[ancestor::h:pre[@class="syntax"]]'>
-    <mark><xsl:value-of select='.'/></mark>
+    <mark><xsl:apply-templates select='node()'/></mark>
   </xsl:template>
+	
+  <xsl:template match='h:i[ancestor::h:pre[@class="syntax"]][text()="value"]'>
+    <xsl:text>"value"</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match='text()[ancestor::h:pre[@class="syntax"]]'>
+    <xsl:variable name='s1' select='replace(., "-", "_")' />
+    <xsl:variable name='s2' select='replace($s1, " \.\.\. ", " /* ... */ ")' />
+    <xsl:variable name='s3' select='replace($s2, ", …", " /* , ... */")' />
+    <xsl:variable name='s4' select='replace($s3, "…", "...")' />
+    <xsl:variable name='s5' select='replace($s4, "(special_keywords|arguments|(interface|dictionary)_members)...", "/* $1... */")' />
+    <xsl:variable name='s6' select='replace($s5, "callback_signature", "return_type (/* arguments... */)")' />
+    <xsl:variable name='s7' select='replace($s6, "enumeration_values...", """enum"", ""values"" /* , ... */")' />
+    <xsl:value-of select='$s7'/>
+  </xsl:template>
+
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX GRAMMAR XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
@@ -848,7 +854,9 @@ Boilerplate: omit issues-index
     <xsl:variable name='id' select='substring-before(., " ")'/>
     <xsl:variable name='names' select='replace(concat(" ", substring-after(., " "), " "), " DictionaryMember ", " DictionaryMember Required ")'/>
     <xsl:call-template name='proddef'>
+
       <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
+
       <xsl:with-param name='pi' select='.'/>
     </xsl:call-template>
   </xsl:template>
@@ -856,7 +864,6 @@ Boilerplate: omit issues-index
   <xsl:template match='x:grammar'>
     <div data-fill-with='grammar-index'></div>
   </xsl:template>
-
   <xsl:template name='proddef'>
     <xsl:param name='prods'/>
     <xsl:param name='pi'/>
