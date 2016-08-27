@@ -5281,7 +5281,24 @@ where <var>C</var> is a consequential interface of <var>A</var>.</p>
 be any member defined on any of its consequential interfaces
 whose identifier is the same as any other member defined on any
 of those consequential interfaces or on the original interface itself.</p>
-   <p class="note" role="note">Note: For example, that precludes the following:</p>
+   <div class="note" role="note">
+    <p>For example, that precludes the following:</p>
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A</span> { <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">x</span>; };
+<span class="kt">interface</span> <span class="nv">B</span> { <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">x</span>; };
+<span class="n">A</span> <span class="kt">implements</span> <span class="n">B</span>;  // B::x would clash with A::x
+        
+<span class="kt">interface</span> <span class="nv">C</span> { <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">y</span>; };
+<span class="kt">interface</span> <span class="nv">D</span> { <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">y</span>; };
+<span class="kt">interface</span> <span class="nv">E</span> : <span class="n">D</span> { };
+<span class="n">C</span> <span class="kt">implements</span> <span class="n">E</span>;  // D::y would clash with C::y
+        
+<span class="kt">interface</span> <span class="nv">F</span> { };
+<span class="kt">interface</span> <span class="nv">H</span> { <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">z</span>; };
+<span class="kt">interface</span> <span class="nv">I</span> { <span class="kt">attribute</span> <span class="kt">long</span> <span class="nv">z</span>; };
+<span class="n">F</span> <span class="kt">implements</span> <span class="n">H</span>;
+<span class="n">F</span> <span class="kt">implements</span> <span class="n">I</span>;  // H::z and I::z would clash when mixed in to F
+</pre>
+   </div>
    <p>No <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-20">extended attributes</a> defined in this specification are applicable to <a data-link-type="dfn" href="#dfn-implements-statement" id="ref-for-dfn-implements-statement-5">implements statements</a>.</p>
 <pre class="grammar" id="prod-ImplementsStatement">ImplementsStatement :
     identifier "implements" identifier ";"
@@ -8774,7 +8791,42 @@ appear on an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-opera
 it must appear on all operations with
 the same <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-53">identifier</a> on that interface.</p>
    <p>If an attribute or operation <var>X</var> is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-1">unforgeable</a> on an interface <var>A</var>, and <var>A</var> is one of the <a data-link-type="dfn" href="#dfn-inherited-interfaces" id="ref-for-dfn-inherited-interfaces-15">inherited interfaces</a> of another interface <var>B</var>, then <var>B</var> and all of its <a data-link-type="dfn" href="#dfn-consequential-interfaces" id="ref-for-dfn-consequential-interfaces-20">consequential interfaces</a> must not have a non-static attribute or <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-10">regular operation</a> with the same <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-54">identifier</a> as <var>X</var>.</p>
-   <p class="note" role="note">Note: For example, the following is disallowed:</p>
+   <div class="note" role="note">
+    <p>For example, the following is disallowed:</p>
+<pre class="idl highlight def"><span class="kt">interface</span> <span class="nv">A1</span> {
+  [<span class="nv">Unforgeable</span>] <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">x</span>;
+};
+<span class="kt">interface</span> <span class="nv">B1</span> : <span class="n">A1</span> {
+  <span class="kt">void</span> <span class="nv">x</span>();  // Invalid; would be shadowed by A1’s x.
+};
+        
+<span class="kt">interface</span> <span class="nv">B2</span> : <span class="n">A1</span> { };
+<span class="n">B2</span> <span class="kt">implements</span> <span class="n">Mixin</span>;
+<span class="kt">interface</span> <span class="nv">Mixin</span> {
+  <span class="kt">void</span> <span class="nv">x</span>();  // Invalid; B2’s copy of x would be shadowed by A1’s x.
+};
+        
+[<span class="nv">Unforgeable</span>]
+<span class="kt">interface</span> <span class="nv">A2</span> {
+  <span class="kt">readonly</span> <span class="kt">attribute</span> <span class="kt">DOMString</span> <span class="nv">x</span>;
+};
+<span class="kt">interface</span> <span class="nv">B3</span> : <span class="n">A2</span> {
+  <span class="kt">void</span> <span class="nv">x</span>();  // Invalid; would be shadowed by A2’s x.
+};
+        
+<span class="kt">interface</span> <span class="nv">B4</span> : <span class="n">A2</span> { };
+<span class="n">B4</span> <span class="kt">implements</span> <span class="n">Mixin</span>;
+<span class="kt">interface</span> <span class="nv">Mixin</span> {
+  <span class="kt">void</span> <span class="nv">x</span>();  // Invalid; B4’s copy of x would be shadowed by A2’s x.
+};
+        
+<span class="kt">interface</span> <span class="nv">A3</span> { };
+<span class="n">A3</span> <span class="kt">implements</span> <span class="n">A2</span>;
+<span class="kt">interface</span> <span class="nv">B5</span> : <span class="n">A3</span> {
+  <span class="kt">void</span> <span class="nv">x</span>();  // Invalid; would be shadowed by A3’s mixed-in copy of A2’s x.
+};
+</pre>
+   </div>
    <p>See <a href="#es-attributes">§5.6.6 Attributes</a>, <a href="#es-operations">§5.6.7 Operations</a>, <a href="#es-platform-objects">§5.8 Platform objects implementing interfaces</a>, <a href="#indexed-and-named-properties">§5.8.1 Indexed and named properties</a> and <a href="#defineownproperty">§5.8.7 Platform object [[DefineOwnProperty]] method</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Unforgeable" id="ref-for-Unforgeable-12">Unforgeable</a></code>] entails.</p>
    <div class="example" id="example-786d94a4">

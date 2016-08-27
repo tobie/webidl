@@ -768,7 +768,7 @@ Boilerplate: omit issues-index
 </xsl:text>  
         <xsl:call-template name="markdown-note-issue-advisement"/>
       </xsl:when>
-      <xsl:when test='.[descendant::h:li] or .[count(h:p)&gt;1] or .[not(h:p)]'>
+      <xsl:when test='.[descendant::h:li] or .[count(*)&gt;1] or .[not(h:p)]'>
         <xsl:call-template name="wrapped-note-issue-advisement"/>
       </xsl:when>
       <xsl:otherwise>

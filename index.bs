@@ -4870,7 +4870,27 @@ be any member defined on any of its consequential interfaces
 whose identifier is the same as any other member defined on any
 of those consequential interfaces or on the original interface itself.
 
-Note: For example, that precludes the following:
+<div class="note">
+    
+    For example, that precludes the following:
+    
+    <pre class="idl">
+        interface A { attribute long x; };
+        interface B { attribute long x; };
+        A implements B;  // B::x would clash with A::x
+        
+        interface C { attribute long y; };
+        interface D { attribute long y; };
+        interface E : D { };
+        C implements E;  // D::y would clash with C::y
+        
+        interface F { };
+        interface H { attribute long z; };
+        interface I { attribute long z; };
+        F implements H;
+        F implements I;  // H::z and I::z would clash when mixed in to F
+    </pre>
+</div>
 
 No [=extended attributes=]
 defined in this specification are applicable to
@@ -9548,7 +9568,45 @@ must not have a non-static attribute or
 [=regular operation=] with the same
 [=identifier=] as |X|.
 
-Note: For example, the following is disallowed:
+<div class="note">
+    
+    For example, the following is disallowed:
+    
+    <pre class="idl">
+        interface A1 {
+          [Unforgeable] readonly attribute DOMString x;
+        };
+        interface B1 : A1 {
+          void x();  // Invalid; would be shadowed by A1's x.
+        };
+        
+        interface B2 : A1 { };
+        B2 implements Mixin;
+        interface Mixin {
+          void x();  // Invalid; B2's copy of x would be shadowed by A1's x.
+        };
+        
+        [Unforgeable]
+        interface A2 {
+          readonly attribute DOMString x;
+        };
+        interface B3 : A2 {
+          void x();  // Invalid; would be shadowed by A2's x.
+        };
+        
+        interface B4 : A2 { };
+        B4 implements Mixin;
+        interface Mixin {
+          void x();  // Invalid; B4's copy of x would be shadowed by A2's x.
+        };
+        
+        interface A3 { };
+        A3 implements A2;
+        interface B5 : A3 {
+          void x();  // Invalid; would be shadowed by A3's mixed-in copy of A2's x.
+        };
+    </pre>
+</div>
 
 See [[#es-attributes]],
 [[#es-operations]],
