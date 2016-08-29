@@ -195,6 +195,26 @@ urlPrefix: https://tc39.github.io/ecma262/
         .char {
             font-size: 85%
         }
+        
+        #distinguishable-table {
+          font-size: 80%;
+        }
+        #distinguishable-table td {
+          text-align: center;
+        }
+        #distinguishable-table th:first-child {
+          white-space: nowrap;
+        }
+        #distinguishable-table tr:first-child th {
+          vertical-align: top;
+          text-align: center;
+        }
+        #distinguishable-table th {
+          text-align: right;
+        }
+        #distinguishable-table .belowdiagonal {
+          background: #ddd;
+        }
 </style>
 
 
@@ -3296,7 +3316,7 @@ and at least one of the following three conditions is true:
     or there is a letter in the corresponding entry and the designated additional
     requirement below the table is satisfied:
     
-    <table id="distinguishable-table" class="matrix data">
+    <table id="distinguishable-table" class="matrix data complex">
         <tr>
             <th class="corner"></th>
             <th>boolean</th>

@@ -174,6 +174,26 @@ Boilerplate: omit issues-index
     .char {
         font-size: 85%
     }
+    
+    #distinguishable-table {
+      font-size: 80%;
+    }
+    #distinguishable-table td {
+      text-align: center;
+    }
+    #distinguishable-table th:first-child {
+      white-space: nowrap;
+    }
+    #distinguishable-table tr:first-child th {
+      vertical-align: top;
+      text-align: center;
+    }
+    #distinguishable-table th {
+      text-align: right;
+    }
+    #distinguishable-table .belowdiagonal {
+      background: #ddd;
+    }
 </xsl:text>
 </style>
   </xsl:template>
@@ -732,11 +752,19 @@ Boilerplate: omit issues-index
   <xsl:template match='h:table'>
     <xsl:copy copy-namespaces="no">
       <xsl:copy-of select="@*"/>
-      <xsl:attribute name="class"><xsl:value-of select='concat(@class, " data")'/></xsl:attribute>
+      <xsl:attribute name="class">
+        <xsl:choose>
+          <xsl:when test='@id="distinguishable-table"'>
+            <xsl:value-of select='concat(@class, " data complex")'/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select='concat(@class, " data")'/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
-  </xsl:template>
-  
+  </xsl:template>  
   <!--Notes examples and the like -->
   
   <xsl:template name='markdown-note-issue-advisement'>

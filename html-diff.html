@@ -1209,6 +1209,26 @@ Possible extra rowspan handling
         .char {
             font-size: 85%
         }
+        
+        #distinguishable-table {
+          font-size: 80%;
+        }
+        #distinguishable-table td {
+          text-align: center;
+        }
+        #distinguishable-table th:first-child {
+          white-space: nowrap;
+        }
+        #distinguishable-table tr:first-child th {
+          vertical-align: top;
+          text-align: center;
+        }
+        #distinguishable-table th {
+          text-align: right;
+        }
+        #distinguishable-table .belowdiagonal {
+          background: #ddd;
+        }
 </style>
 <style>/* style-md-lists */
 
@@ -1456,7 +1476,7 @@ pre.idl.highlight { color: #708090; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL (Second Edition)</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-27">27 August 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-08-29">29 August 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -4203,7 +4223,7 @@ and at least one of the following three conditions is true:</p>
 in the following table and there is a “●” mark in the corresponding entry
 or there is a letter in the corresponding entry and the designated additional
 requirement below the table is satisfied:</p>
-     <table class="matrix data" id="distinguishable-table">
+     <table class="matrix data complex" id="distinguishable-table">
       <tbody>
        <tr>
         <th class="corner">
