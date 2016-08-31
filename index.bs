@@ -281,7 +281,7 @@ The following typographic conventions are used in this document:
 *   Variable names in prose and algorithms: |exampleVariableName|.
 *   Algorithms use <a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">the conventions of the ECMAScript specification</a>, including the ! and ? notation for unwrapping completion records.
 *   IDL informal syntax examples:
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface identifier {
           <mark>/* interface_members... */</mark>
         };
@@ -309,7 +309,7 @@ The following typographic conventions are used in this document:
     Advisement: This is a warning.
     
 *   Code blocks:
-    <pre class="idl non-normative">
+    <pre highlight="webidl">
         // This is an IDL code block.
         interface Example {
           attribute long something;
@@ -398,7 +398,7 @@ agnostic are discussed in [[#idl-extended-attributes]],
 while those specific to the ECMAScript language binding are discussed
 in [[#es-extended-attributes]].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     [<mark>extended_attributes</mark>]
     interface identifier {
       /* interface_members... */
@@ -431,7 +431,7 @@ in [[#es-extended-attributes]].
     
     The following is an example of an [=IDL fragment=].
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Paint { };
         
         interface SolidColor : Paint {
@@ -505,7 +505,7 @@ in the declaration:
     <code>dictionary</code>, <code>enum</code>
     or <code>callback</code> keyword
     determines the identifier of that definition.
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface <mark>interface_identifier</mark> { /* interface_members... */ };
         partial interface <mark>interface_identifier</mark> { /* interface_members... */ };
         dictionary <mark>dictionary_identifier</mark> { /* dictionary_members... */ };
@@ -518,7 +518,7 @@ in the declaration:
     and [=dictionary members=],
     the final <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     semicolon at the end of the declaration determines the identifier.
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface identifier {
           attribute type <mark>attribute_identifier</mark>;
         };
@@ -532,7 +532,7 @@ in the declaration:
 *   For [=constants=],
     the <emu-t><a href="#prod-identifier">identifier</a></emu-t> token before the
     equals sign determines the identifier.
-    <pre class="idl syntax non-normative">const type <mark>constant_identifier</mark> = 42;</pre>
+    <pre highlight="webidl" class="syntax">const type <mark>constant_identifier</mark> = 42;</pre>
 *   For [=operations=], the
     <emu-t><a href="#prod-identifier">identifier</a></emu-t> token that appears
     after the return type but before the opening parenthesis (that is,
@@ -540,7 +540,7 @@ in the declaration:
     grammar symbol in an <emu-nt><a href="#prod-OperationRest">OperationRest</a></emu-nt>) determines the identifier of the operation.  If
     there is no such <emu-t><a href="#prod-identifier">identifier</a></emu-t> token,
     then the operation does not have an identifier.
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           return_type <mark>operation_identifier</mark>(/* arguments... */);
         };
@@ -565,7 +565,7 @@ token or by one of the keywords that match the <emu-nt><a href="#prod-ArgumentNa
 symbol.  If one of these keywords is used, it need not be escaped with a leading
 underscore.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       return_type operation_identifier(argument_type <mark>argument_identifier</mark> /* , ... */);
     };
@@ -639,7 +639,7 @@ across [=IDL fragments=].
     
     Therefore, the following [=IDL fragment=] is valid:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface B : A {
           void f(SequenceOfLongs x);
         };
@@ -657,7 +657,7 @@ across [=IDL fragments=].
     demonstrates how [=identifiers=]
     are given to definitions and [=interface members=].
     
-    <pre class="idl">
+    <pre highlight="webidl">
         // Typedef identifier: "number"
         typedef double number;
         
@@ -705,7 +705,7 @@ An <dfn id="dfn-interface" export>interface</dfn> is a definition (matching
 <emu-t>callback</emu-t> <emu-nt><a href="#prod-Interface">Interface</a></emu-nt>) that declares some
 state and behavior that an object implementing that interface will expose.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface identifier {
       /* interface_members... */
     };
@@ -739,7 +739,7 @@ An object that implements an interface that inherits from another
 also implements that inherited interface.  The object therefore will also
 have members that correspond to the interface members from the inherited interface.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface identifier : <mark>identifier_of_inherited_interface</mark> {
       /* interface_members... */
     };
@@ -758,7 +758,7 @@ accessed on the object.
     
     Consider the following two interfaces.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           void f();
           void g();
@@ -815,7 +815,7 @@ Each interface member can be preceded by a list of [=extended attributes=] (matc
 <emu-nt><a href="#prod-ExtendedAttributeList">ExtendedAttributeList</a></emu-nt>),
 which can control how the interface member will be handled in language bindings.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface identifier {
     
       [<mark>extended_attributes</mark>]
@@ -837,7 +837,7 @@ implemented by [=user objects=]
 and not by [=platform objects=],
 as described in [[#idl-objects]].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     callback interface identifier {
       /* interface_members... */
     };
@@ -901,7 +901,7 @@ be defined on a [=callback interface=].
     
     For example, instead of this:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         callback interface Options {
           attribute DOMString? option1;
           attribute DOMString? option2;
@@ -923,7 +923,7 @@ be defined on a [=callback interface=].
     
     instead write the following:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         dictionary Options {
           DOMString? option1;
           DOMString? option2;
@@ -945,7 +945,7 @@ as the identifier of an interface definition.  All of
 the members that appear on each of the partial interfaces are considered to be
 members of the interface itself.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface <mark>SomeInterface</mark> {
       /* interface_members... */
     };
@@ -1072,7 +1072,7 @@ The following extended attributes are applicable to interfaces:
     inherit from <code class="idl">Animal</code>.  Objects that implement
     either of those two interfaces will thus have a <code>name</code> attribute.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Animal {
           attribute DOMString name;
         };
@@ -1093,7 +1093,7 @@ The following extended attributes are applicable to interfaces:
     simplified versions of a few DOM [=interfaces=], one of which
     is a [=callback interface=].
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Node {
           readonly attribute DOMString nodeName;
           readonly attribute Node? parentNode;
@@ -1156,7 +1156,7 @@ Specification authors who wish to define constants are strongly advised to discu
 this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
 mailing list before proceeding.
 
-<pre class="idl syntax non-normative">const type constant_identifier = 42;</pre>
+<pre highlight="webidl" class="syntax">const type constant_identifier = 42;</pre>
 
 The [=identifier=] of a
 [=constant=]
@@ -1304,7 +1304,7 @@ on which they appear.  It is language binding specific whether
     on which the [=constants=] are declared.
     For example, with the following IDL:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           const short rambaldi = 47;
         };
@@ -1358,7 +1358,7 @@ The following extended attributes are applicable to constants:
     demonstrates how [=constants=]
     of the above types can be defined.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Util {
           const boolean DEBUG = false;
           const octet LF = 10;
@@ -1384,14 +1384,14 @@ be retrieved and (in some cases) changed.  There are two kinds of attributes:
 1.  [=regular attributes=], which are those
     used to declare that objects implementing the [=interface=]
     will have a data field member with the given [=identifier=]
-        <pre class="idl syntax non-normative">
+        <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           attribute type identifier;
         };
     </pre>
 1.  [=static attributes=], which are used
     to declare attributes that are not associated with a particular object implementing the interface
-        <pre class="idl syntax non-normative">
+        <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           static attribute type identifier;
         };
@@ -1433,7 +1433,7 @@ is defined will not allow assignment to that attribute.  It is language
 binding specific whether assignment is simply disallowed by the language,
 ignored or an exception is thrown.
 
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
     interface interface_identifier {
       readonly attribute type identifier;
     };
@@ -1454,7 +1454,7 @@ of the same type as the inheriting attribute, and <code>inherit</code>
 must not appear on a [=read only=]
 attribute or a [=static attribute=].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface Ancestor {
       readonly attribute TheType theIdentifier;
     };
@@ -1470,7 +1470,7 @@ declaration, it indicates that objects implementing the
 interface will be stringified to the value of the attribute.  See
 [[#idl-stringifiers]] for details.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       stringifier attribute DOMString identifier;
     };
@@ -1559,7 +1559,7 @@ are applicable only to regular attributes:
     demonstrates how [=attributes=]
     can be declared on an [=interface=]:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Animal {
         
           // A simple attribute that can be set to any string value.
@@ -1594,7 +1594,7 @@ There are three kinds of operation:
     are those used to declare that objects implementing the
     [=interface=] will have a method with
     the given [=identifier=]
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           return_type identifier(/* arguments... */);
         };
@@ -1602,7 +1602,7 @@ There are three kinds of operation:
 1.  [=special operations=],
     which are used to declare special behavior on objects
     implementing the interface, such as object indexing and stringification
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           /* special_keywords... */ return_type identifier(/* arguments... */);
           /* special_keywords... */ return_type (/* arguments... */);
@@ -1611,7 +1611,7 @@ There are three kinds of operation:
 1.  [=static operations=],
     which are used to declare operations that are not associated with
     a particular object implementing the interface
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           static return_type identifier(/* arguments... */);
         };
@@ -1680,7 +1680,7 @@ If the operation argument type is an [=identifier=]
 not followed by <code>?</code>, then the identifier must
 identify any one of those definitions or a [=dictionary=].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       return_type identifier(type identifier, type identifier /* , ... */);
     };
@@ -1695,7 +1695,7 @@ Each argument can be preceded by a list of
 which can control how a value passed as the argument will be handled in
 language bindings.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       return_type identifier([<mark>extended_attributes</mark>] type identifier, [<mark>extended_attributes</mark>] type identifier /* , ... */);
     };
@@ -1707,7 +1707,7 @@ language bindings.
     demonstrates how [=regular operations=]
     can be declared on an [=interface=]:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Dimensions {
           attribute unsigned long width;
           attribute unsigned long height;
@@ -1735,7 +1735,7 @@ when invoking the operation.  An argument must not
 be declared with the <code>...</code> token unless it
 is the final argument in the operation’s argument list.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       return_type identifier(type<mark>...</mark> identifier);
       return_type identifier(type identifier, type<mark>...</mark> identifier);
@@ -1755,7 +1755,7 @@ when the <code>...</code> token is used in their argument lists.
     The following [=IDL fragment=] defines an interface that has
     two variadic operations:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface IntegerSet {
           readonly attribute unsigned long cardinality;
         
@@ -1789,7 +1789,7 @@ when the operation is invoked.  The final argument in an
 operation must not explicitly be declared to be
 optional if the operation is [=variadic=].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       return_type identifier(type identifier, optional type identifier);
     };
@@ -1804,7 +1804,7 @@ operation must not have a default value specified.
 The default value is the value to be assumed when the operation is called with the
 corresponding argument omitted.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       return_type identifier(type identifier, optional type identifier = "value");
     };
@@ -1888,7 +1888,7 @@ must be a
     with a single [=operation=]
     that can be invoked with two different argument list lengths:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface ColorCreator {
           object createColor(double v1, double v2, double v3, optional double alpha);
         };
@@ -1898,7 +1898,7 @@ must be a
     that has two [=overloaded=]
     [=operations=]:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface ColorCreator {
           object createColor(double v1, double v2, double v3);
           object createColor(double v1, double v2, double v3, double alpha);
@@ -2082,7 +2082,7 @@ will not be such functionality.
     
     The following IDL fragment defines an interface with a getter and a setter:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Dictionary {
           readonly attribute unsigned long propertyCount;
         
@@ -2106,7 +2106,7 @@ simplify prose descriptions of an interface’s operations.
     
     The following two interfaces are equivalent:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Dictionary {
           readonly attribute unsigned long propertyCount;
         
@@ -2114,7 +2114,7 @@ simplify prose descriptions of an interface’s operations.
           setter void setProperty(DOMString propertyName, double propertyValue);
         };
     </pre>
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Dictionary {
           readonly attribute unsigned long propertyCount;
         
@@ -2179,7 +2179,7 @@ the interface can be called as if they were functions.  As mentioned above,
 legacy callers can be specified using an [=operation=]
 declared with the <code>legacycaller</code> keyword.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       legacycaller return_type identifier(/* arguments... */);
       legacycaller return_type (/* arguments... */);
@@ -2206,7 +2206,7 @@ mailing list before proceeding.
     defines an [=interface=]
     with a [=legacy caller=].
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface NumberQuadrupler {
           // This operation simply returns four times the given number x.
           legacycaller double compute(double x);
@@ -2235,7 +2235,7 @@ the interface have a non-default conversion to a string.  As mentioned above,
 stringifiers can be specified using an [=operation=]
 declared with the <code>stringifier</code> keyword.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       stringifier DOMString identifier();
       stringifier DOMString ();
@@ -2258,7 +2258,7 @@ is declared using an operation with no identifier, then the
 operation’s [=return type=] and
 argument list can be omitted.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       stringifier;
     };
@@ -2268,12 +2268,12 @@ argument list can be omitted.
     
     The following two interfaces are equivalent:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           stringifier DOMString ();
         };
     </pre>
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           stringifier;
         };
@@ -2289,7 +2289,7 @@ it is declared to be of type {{DOMString}} or {{USVString}}.
 It also must not be placed on
 a [=static attribute=].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       stringifier attribute DOMString identifier;
     };
@@ -2313,7 +2313,7 @@ a [=static attribute=].
     defines an interface that will stringify to the value of its
     <code class="idl">name</code> attribute:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [Constructor]
         interface Student {
           attribute unsigned long id;
@@ -2338,7 +2338,7 @@ a [=static attribute=].
     defines an interface that has custom stringification behavior that is
     not specified in the IDL itself.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [Constructor]
         interface Student {
           attribute unsigned long id;
@@ -2388,7 +2388,7 @@ When an [=interface=] has a
 a way for them to be converted into a serialized form.  Serializers can be declared
 using the <code>serializer</code> keyword:
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       serializer;
     };
@@ -2431,7 +2431,7 @@ which can take one of the following six forms:
 *   A map with entries corresponding to zero or more attributes from the interface, and optionally
     attributes from an inherited interface:
     
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           serializer = { attribute_identifier, attribute_identifier /* , ... */ };
           serializer = { inherit, attribute_identifier, attribute_identifier /* , ... */ };
@@ -2467,7 +2467,7 @@ which can take one of the following six forms:
     a [=serializable type=], and optionally
     attributes from an inherited interface:
     
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           serializer = { attribute };
           serializer = { inherit, attribute };
@@ -2499,7 +2499,7 @@ which can take one of the following six forms:
     </ol>
 *   A map with entries corresponding to the named properties:
     
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           serializer = { getter };
         };
@@ -2523,7 +2523,7 @@ which can take one of the following six forms:
     </ol>
 *   A list of value of zero or more attributes on the interface:
     
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           serializer = [ attribute_identifier, attribute_identifier /* , ... */ ];
         };
@@ -2547,7 +2547,7 @@ which can take one of the following six forms:
     </ol>
 *   A list with entries corresponding to the indexed properties:
     
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           serializer = [ getter ];
         };
@@ -2574,7 +2574,7 @@ which can take one of the following six forms:
     </ol>
 *   A single attribute:
     
-    <pre class="idl syntax non-normative">
+    <pre highlight="webidl" class="syntax">
         interface interface_identifier {
           serializer = attribute_identifier;
         };
@@ -2642,7 +2642,7 @@ The list of <dfn id="dfn-serializable-type" export lt="serializable type">serial
 Serializers can also be specified using an [=operation=]
 with the <code>serializer</code> keyword:
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       serializer identifier();
     };
@@ -2702,7 +2702,7 @@ the value returned from invoking the operation to a serialized value.
     an interface <code class="idl">Transaction</code> that has a
     [=serializer=] defines in prose:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Transaction {
           readonly attribute Account from;
           readonly attribute Account to;
@@ -2751,7 +2751,7 @@ the value returned from invoking the operation to a serialized value.
     could be used to avoid having to define the [=serialization behavior=]
     in prose:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Transaction {
           readonly attribute Account from;
           readonly attribute Account to;
@@ -2809,7 +2809,7 @@ be declared to take a single {{unsigned long}} argument.
 Indexed property setters must
 be declared to take two arguments, where the first is an {{unsigned long}}.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       getter type identifier(unsigned long identifier);
       setter type identifier(unsigned long identifier, type identifier);
@@ -2850,7 +2850,7 @@ The following requirements apply to the definitions of indexed property getters 
     
     In the ECMAScript language binding, a regular property lookup is done.  For example, take the following IDL:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           getter DOMString toWord(unsigned long index);
         };
@@ -2879,7 +2879,7 @@ The following requirements apply to the definitions of indexed property getters 
     <code class="idl">OrderedMap</code> which allows
     retrieving and setting values by name or by index number:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface OrderedMap {
           readonly attribute unsigned long size;
         
@@ -2976,7 +2976,7 @@ be declared to take a single {{DOMString}} argument.
 Named property setters must
 be declared to take two arguments, where the first is a {{DOMString}}.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       getter type identifier(DOMString identifier);
       setter type identifier(DOMString identifier, type identifier);
@@ -3060,7 +3060,7 @@ declared on [=callback interfaces=].
     <code class="idl">Circle</code> that has a static
     operation declared on it:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Point { /* ... */ };
         
         interface Circle {
@@ -3128,7 +3128,7 @@ and [=partial interface=] definitions.
     For example, the overloads for both |f| and |g|
     are disallowed:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           void f();
         };
@@ -3278,7 +3278,7 @@ extended attribute’s [=takes a named argument list|named argument list=].
     
     For the following interface:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           /* f1 */ void f(DOMString a);
           /* f2 */ void f(Node a, DOMString b, double... c);
@@ -3548,7 +3548,7 @@ for the entries of the effective overload set with the given type list length.
     
     The following use of overloading however is invalid:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface B {
           void f(DOMString x);
           void f(double x);
@@ -3571,7 +3571,7 @@ be the same.
     
     The following is invalid:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface B {
           /* f1 */ void f(DOMString w);
           /* f2 */ void f(long w, double x, Node y, Node z);
@@ -3603,7 +3603,7 @@ An [=interface=] can be declared to be
 <dfn id="dfn-iterable" export>iterable</dfn> by using an <dfn id="dfn-iterable-declaration" export>iterable declaration</dfn>
 (matching <emu-nt><a href="#prod-Iterable">Iterable</a></emu-nt>) in the body of the interface.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       iterable&lt;value_type&gt;;
       iterable&lt;key_type, value_type&gt;;
@@ -3684,7 +3684,7 @@ interfaces that have interface members with these names.
     Consider the following interface <code class="idl">SessionManager</code>, which allows access to
     a number of <code class="idl">Session</code> objects:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface SessionManager {
           Session getSessionForUser(DOMString username);
           readonly attribute unsigned long sessionCount;
@@ -3786,7 +3786,7 @@ An [=interface=] can be declared to be
 (matching <emu-nt><a href="#prod-ReadWriteMaplike">ReadWriteMaplike</a></emu-nt> or
 <emu-t>readonly</emu-t> <emu-nt><a href="#prod-MaplikeRest">MaplikeRest</a></emu-nt>) in the body of the interface.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       readonly maplike&lt;key_type, value_type&gt;;
       maplike&lt;key_type, value_type&gt;;
@@ -3876,7 +3876,7 @@ An [=interface=] can be declared to be
 (matching <emu-nt><a href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></emu-nt> or
 <emu-t>readonly</emu-t> <emu-nt><a href="#prod-SetlikeRest">SetlikeRest</a></emu-nt>) in the body of the interface.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     interface interface_identifier {
       readonly setlike&lt;type&gt;;
       setlike&lt;type&gt;;
@@ -3966,7 +3966,7 @@ used to define an associative array data type with a fixed, ordered set of key�
 termed <dfn id="dfn-dictionary-member" export>dictionary members</dfn>,
 where keys are strings and values are of a particular type specified in the definition.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     dictionary identifier {
       /* dictionary_members... */
     };
@@ -3986,7 +3986,7 @@ its inheritance hierarchy has a cycle.  That is, a dictionary
 |A| cannot inherit from itself, nor can it inherit from another
 dictionary |B| that inherits from |A|, and so on.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     dictionary <mark>Base</mark> {
       /* dictionary_members... */
     };
@@ -4040,7 +4040,7 @@ If the dictionary member type is an identifier
 not followed by <code>?</code>, then the identifier must
 identify any one of those definitions or a [=dictionary=].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     dictionary identifier {
       type identifier;
     };
@@ -4050,7 +4050,7 @@ If the identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</
 and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
 then that gives the dictionary member its [=default value=].
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     dictionary identifier {
       type identifier = "value";
     };
@@ -4079,7 +4079,7 @@ If the type of the dictionary member is preceded by the
 and must be present on the dictionary.  A
 [=required dictionary member=] must not have a default value.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     dictionary identifier {
       required type identifier;
     };
@@ -4110,7 +4110,7 @@ identifier of a dictionary definition.  All of the members that appear on each
 of the partial dictionary definitions are considered to be members of
 the dictionary itself.
 
-<pre class="idl syntax non-normative">
+<pre highlight="webidl" class="syntax">
     dictionary <mark>SomeDictionary</mark> {
       /* dictionary_members... */
     };
@@ -4135,7 +4135,7 @@ identifiers.
     
     For example, with the following definitions:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         dictionary B : A {
           long b;
           long a;
@@ -4167,7 +4167,7 @@ identifiers.
     the dictionary members are fetched.  For example, consider the
     following additional interface:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Something {
           void f(A a);
         };
@@ -4258,7 +4258,7 @@ The following extended attributes are applicable to dictionary members:
     constrained as to the order they are specified at the call site.  For example,
     consider the following [=IDL fragment=]:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [Constructor]
         interface Point {
           attribute double x;
@@ -4593,7 +4593,7 @@ can be used to restrict the possible
 [=attribute=] or passed to an
 [=operation=].
 
-<pre class="idl syntax non-normative">enum identifier { "enum", "values" /* , ... */ };</pre>
+<pre highlight="webidl" class="syntax">enum identifier { "enum", "values" /* , ... */ };</pre>
 
 The <dfn id="dfn-enumeration-value" export lt="enumeration value">enumeration values</dfn> are specified
 as a comma-separated list of <emu-t><a href="#prod-string">string</a></emu-t> literals.
@@ -4652,7 +4652,7 @@ defined in this specification are applicable to [=enumerations=].
     that is used as the type of an [=attribute=]
     and an [=operation=] argument:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         enum MealType { "rice", "noodles", "other" };
         
         interface Meal {
@@ -4695,7 +4695,7 @@ defined in this specification are applicable to [=enumerations=].
 A <dfn id="dfn-callback-function" export>callback function</dfn> is a definition (matching
 <emu-t>callback</emu-t> <emu-nt><a href="#prod-CallbackRest">CallbackRest</a></emu-nt>) used to declare a function type.
 
-<pre class="idl syntax non-normative">callback identifier = return_type (/* arguments... */);</pre>
+<pre highlight="webidl" class="syntax">callback identifier = return_type (/* arguments... */);</pre>
 
 Note: See also the similarly named [=callback interfaces=].
 
@@ -4726,7 +4726,7 @@ The following extended attribute is applicable to callback functions:
     a [=callback function=] used for an API that
     invokes a user-defined function when an operation is complete.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         callback AsyncOperationCallback = void (DOMString status);
         
         interface AsyncOperations {
@@ -4755,7 +4755,7 @@ used to declare a new name for a type.  This new name is not exposed
 by language bindings; it is purely used as a shorthand for referencing
 the type in the IDL.
 
-<pre class="idl syntax non-normative">typedef type identifier;</pre>
+<pre highlight="webidl" class="syntax">typedef type identifier;</pre>
 
 The type being given a new name is specified after the <code>typedef</code>
 keyword (matching <emu-nt><a href="#prod-Type">Type</a></emu-nt>), and the
@@ -4781,7 +4781,7 @@ defined in this specification are applicable to [=typedefs=].
     [=identifier=] instead of a long
     <a href="#idl-sequence">sequence type</a>.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Point {
           attribute double x;
           attribute double y;
@@ -4807,7 +4807,7 @@ must additionally implement interface |B|
 (identified by the second identifier), including all other interfaces that
 |B| inherits from.
 
-<pre class="idl syntax non-normative">identifier_A implements identifier_B;</pre>
+<pre highlight="webidl" class="syntax">identifier_A implements identifier_B;</pre>
 
 Transitively, if objects implementing |B|
 are declared with an [=implements statement=]
@@ -4846,7 +4846,7 @@ An interface |A| is considered to be a
     is a [=supplemental interface=].
     For example, if author 1 writes:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Window { /* ... */ };
         interface SomeFunctionality { /* ... */ };
         Window implements SomeFunctionality;
@@ -4854,7 +4854,7 @@ An interface |A| is considered to be a
     
     and author 2 later writes:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Gizmo { /* ... */ };
         interface MoreFunctionality { /* ... */ };
         SomeFunctionality implements MoreFunctionality;
@@ -4869,7 +4869,7 @@ An interface |A| is considered to be a
     
     Better in this case would be for author 2 to write:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Gizmo { /* ... */ };
         interface MoreFunctionality { /* ... */ };
         Gizmo implements SomeFunctionality;
@@ -4894,7 +4894,7 @@ of those consequential interfaces or on the original interface itself.
     
     For example, that precludes the following:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A { attribute long x; };
         interface B { attribute long x; };
         A implements B;  // B::x would clash with A::x
@@ -4927,7 +4927,7 @@ defined in this specification are applicable to
     defines two [=interfaces=], stating
     that one interface is always implemented on objects implementing the other.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Entry {
           readonly attribute unsigned short entryType;
           // ...
@@ -5627,7 +5627,7 @@ the string “OrNull”.
     <emu-val>false</emu-val> and <emu-val>null</emu-val>
     is written as <code class="idl">boolean?</code>:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface MyConstants {
           const boolean? ARE_WE_THERE_YET = false;
         };
@@ -5639,7 +5639,7 @@ the string “OrNull”.
     value, and another whose value can be a reference to a <code class="idl">Node</code>
     object or the <emu-val>null</emu-val> value:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Node {
           readonly attribute DOMString? namespaceURI;
           readonly attribute Node? parentNode;
@@ -7405,7 +7405,7 @@ iterable |iterable| and an iterator getter
     type as well as an [=operation=]
     with an argument of a sequence type.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Canvas {
         
           sequence&lt;DOMString&gt; getSupportedImageCodecs();
@@ -7951,7 +7951,7 @@ for the specific requirements that the use of
     the [{{Clamp}}] [=extended attribute=]
     on all three arguments, while the other does not:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface GraphicsContext {
           void setColor(octet red, octet green, octet blue);
           void setColorClamped([Clamp] octet red, [Clamp] octet green, [Clamp] octet blue);
@@ -8020,7 +8020,7 @@ for an interface is to be implemented.
     [{{Constructor}}] extended
     attribute, while the first does not.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface NodeList {
           Node item(unsigned long index);
           readonly attribute unsigned long length;
@@ -8097,7 +8097,7 @@ for the specific requirements that the use of
     the [{{EnforceRange}}] [=extended attribute=]
     on all three arguments, while the other does not:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface GraphicsContext {
           void setColor(octet red, octet green, octet blue);
           void setColorEnforcedRange([EnforceRange] octet red, [EnforceRange] octet green, [EnforceRange] octet blue);
@@ -8245,7 +8245,7 @@ for the specific requirements that the use of
     
     The following IDL fragment shows how that might be achieved:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [PrimaryGlobal]
         interface Window {
           // ...
@@ -8320,7 +8320,7 @@ in HTML5 ([[HTML5]], section 5.2).
     with the [{{ImplicitThis}}]
     [=extended attribute=].
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [ImplicitThis]
         interface Window {
           // ...
@@ -8501,7 +8501,7 @@ corresponding to [=interface members=].
     will result in them being replaced by the new value.  Variable declarations for
     attributes will not create a property that replaces the existing one.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [PrimaryGlobal]
         interface Window {
           getter any (DOMString name);
@@ -8579,7 +8579,7 @@ entails.
     defines two [=interfaces=]
     that use [{{LegacyArrayClass}}].
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [LegacyArrayClass]
         interface ItemList {
           attribute unsigned long length;
@@ -8690,7 +8690,7 @@ is to be implemented.
     [{{LenientSetter}}] extended
     attribute.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Example {
           [LenientSetter] readonly attribute DOMString x;
           readonly attribute DOMString y;
@@ -8747,7 +8747,7 @@ is to be implemented.
     [{{LenientThis}}] extended
     attribute.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Example {
           [LenientThis] attribute DOMString x;
           attribute DOMString y;
@@ -8820,7 +8820,7 @@ are to be implemented.
     [{{NamedConstructor}}] extended
     attribute.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [NamedConstructor=Audio,
          NamedConstructor=Audio(DOMString src)]
         interface HTMLAudioElement : HTMLMediaElement {
@@ -8878,7 +8878,7 @@ a [=promise type=].
     since a new object should always be returned when
     it is called.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Document : Node {
           [NewObject] Element createElement(DOMString localName);
           // ...
@@ -8937,7 +8937,7 @@ for the specific requirements that the use of
     The following [=IDL fragment=] defines two interfaces, one whose interface object
     is exposed on the ECMAScript global object, and one whose isn’t:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Storage {
           void addEntry(unsigned long key, any value);
         };
@@ -9009,7 +9009,7 @@ for the specific requirements that the use of
     one that has a [=named property getter=]
     and one that does not.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface StringMap {
           readonly attribute unsigned long length;
           getter DOMString lookup(DOMString key);
@@ -9136,7 +9136,7 @@ is to be implemented.
     <code class="idl">full</code> attribute of the
     <code class="idl">Person</code> object:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Name {
           attribute DOMString full;
           attribute DOMString family;
@@ -9208,7 +9208,7 @@ for the specific requirements that the use of
     that increments a counter, and an [=attribute=]
     that exposes the counter’s value, which is initially 0:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Counter {
           [Replaceable] readonly attribute unsigned long value;
           void increment();
@@ -9275,7 +9275,7 @@ or {{object}}.
     since the same object is always returned for a given
     <code class="idl">Document</code> object.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Document : Node {
           [SameObject] readonly attribute DOMImplementation implementation;
           // ...
@@ -9358,7 +9358,7 @@ that does specify [{{SecureContext}}].
     with one [=operation=] that is executable from all
     contexts, and two which are executable only from secure contexts.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface PowerfulFeature {
           // This call will succeed in all contexts.
           Promise &lt;Result&gt; calculateNotSoSecretResult();
@@ -9410,7 +9410,7 @@ for the specific requirements that the use of
     [=callback function=] and another whose type is a
     [=callback function=] without the [=extended attribute=]:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         callback OccurrenceHandler = void (DOMString details);
         
         [TreatNonObjectAsNull]
@@ -9493,7 +9493,7 @@ for the specific requirements that the use of
     extended attribute, and one operation with an argument that has
     the extended attribute:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Dog {
           attribute DOMString name;
           [TreatNullAs=EmptyString] attribute DOMString owner;
@@ -9592,7 +9592,7 @@ must not have a non-static attribute or
     
     For example, the following is disallowed:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A1 {
           [Unforgeable] readonly attribute DOMString x;
         };
@@ -9642,7 +9642,7 @@ for the specific requirements that the use of
     an interface that has two [=attributes=],
     one of which is designated as [{{Unforgeable}}]:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface System {
           [Unforgeable] readonly attribute DOMString username;
           readonly attribute long long loginTime;
@@ -9707,7 +9707,7 @@ for the specific requirements that the use of
     
     For example, with the following IDL:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Thing {
           void f();
           [Unscopable] g();
@@ -10382,7 +10382,7 @@ the following steps:
     [=supplemental interfaces|non-supplemental interface=].
     For example, with the following IDL:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         [NoInterfaceObject]
         interface Foo {
         };
@@ -11112,7 +11112,7 @@ have the same behavior as one that would exist assuming the interface had
 this [=operation=] instead of the
 [=iterable declaration=]:
 
-    <pre class="idl non-normative">
+    <pre highlight="webidl">
       interface Iterable {
         void forEach(Function callback, optional any thisArg);
       };
@@ -11901,7 +11901,7 @@ and similarly with their setters.
     
     For example, consider the following IDL:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
           void f();
         };
@@ -12914,7 +12914,7 @@ the following steps must be followed:
     where that <emu-val>Function</emu-val> object originated.
     For example, consider the IDL:
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface A {
         
           /**
@@ -12977,7 +12977,7 @@ not caught there, to its caller, and so on.
     is defined to throw an exception whenever an attempt is made
     to get its value.
     
-    <pre class="idl">
+    <pre highlight="webidl">
         interface Dahut {
           attribute DOMString type;
         };

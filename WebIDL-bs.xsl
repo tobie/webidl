@@ -810,7 +810,7 @@ Boilerplate: omit issues-index
   <xsl:template match='x:codeblock'>
     <xsl:variable name='lang'>
       <xsl:choose>
-        <xsl:when test='@language="idl"'>idl</xsl:when>
+        <xsl:when test='@language="idl"'>webidl</xsl:when>
         <xsl:when test='@language="es"'>js</xsl:when>
         <xsl:when test='@language="java"'>java</xsl:when>
         <xsl:when test='@language="c"'>c</xsl:when>
@@ -821,19 +821,12 @@ Boilerplate: omit issues-index
       </xsl:choose>
     </xsl:variable>
     <xsl:choose>
-      <xsl:when test='$lang="idl"'>
-        <xsl:choose>
-          <xsl:when test='ancestor::h:div[@id="conventions"]'>
-              <xsl:text>
- </xsl:text><pre class='idl non-normative'><xsl:apply-templates select='node()'/></pre>
-          </xsl:when>
-          <xsl:when test='ancestor::*[@class="example"]'>
-              <pre class='idl'><xsl:apply-templates select='node()'/></pre>
-          </xsl:when>
-          <xsl:otherwise>
-              <pre class='idl'><xsl:apply-templates select='node()'/></pre>
-          </xsl:otherwise>
-        </xsl:choose>
+      <xsl:when test='$lang="webidl" and ancestor::h:div[@id="conventions"]'>
+        <xsl:text>
+        </xsl:text><pre highlight='{$lang}'><xsl:apply-templates select='node()'/></pre>
+      </xsl:when>
+      <xsl:when test='$lang="webidl" and not(ancestor::*[@class="example"]) and not(ancestor::*[@class="note"])'>
+        <pre class='idl'><xsl:apply-templates select='node()'/></pre>
       </xsl:when>
       <xsl:otherwise>
           <pre highlight='{$lang}'><xsl:apply-templates select='node()'/></pre>
@@ -847,7 +840,7 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:pre[@class="syntax"]'>
-    <pre class='idl syntax non-normative'>
+    <pre highlight='webidl' class='syntax'>
       <xsl:apply-templates select='node()'/>
     </pre>
   </xsl:template>

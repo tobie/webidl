@@ -5,7 +5,7 @@ var LINES = [
     ["unsigned long number;", "attribute unsigned long number;"],
     ["...", "// ..."],
     ['<pre class="idl">void forEach(Function callback, optional any thisArg);</pre>',
-        '<pre class="idl non-normative">\n  interface Iterable {\n    void forEach(Function callback, optional any thisArg);\n  };\n</pre>'],
+        '<pre highlight="webidl">\n  interface Iterable {\n    void forEach(Function callback, optional any thisArg);\n  };\n</pre>'],
 ]
   
 var WRAP = [
@@ -70,11 +70,11 @@ function escapeRegExp(string){
 
 var regexes = LINES.map(pair => [new RegExp("^(\\s*)" + escapeRegExp(pair[0]) + "(\\s*)$", ""), "$1" + pair[1] + "$2"]);
 regexes.push.apply(regexes, WRAP.map(str => [
-    new RegExp("^(\\s*<pre class=\"idl syntax non-normative\">)" + escapeRegExp(str) + "(</pre>\\s*)$", ""),
+    new RegExp("^(\\s*<pre highlight=\"webidl\" class=\"syntax\">)" + escapeRegExp(str) + "(</pre>\\s*)$", ""),
     "$1interface interface_identifier {\n  " + str + "\n};$2"
 ]));
 regexes.push.apply(regexes, WRAP_FIRST.map(str => [
-    new RegExp("^(\\s*<pre class=\"idl syntax non-normative\">)" + escapeRegExp(str) + "(\\s*)$", ""),
+    new RegExp("^(\\s*<pre highlight=\"webidl\" class=\"syntax\">)" + escapeRegExp(str) + "(\\s*)$", ""),
     "$1interface interface_identifier {\n  " + str + "$2"
 ]));
 regexes.push.apply(regexes, MIDDLE.map(str => [
