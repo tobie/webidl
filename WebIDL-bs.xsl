@@ -639,7 +639,7 @@ Boilerplate: omit issues-index
   <xsl:template match='processing-instruction("sdir")' />
   
   <xsl:template match='*[processing-instruction("sdir")]/text()[following-sibling::processing-instruction("sdir")][last()]'>
-    <xsl:value-of select='replace(., "\s+$", "")'/>
+    <xsl:value-of select='replace(., ",?\s+$", "")'/>
   </xsl:template>
   
   <!-- Special casing links -->

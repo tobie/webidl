@@ -6464,13 +6464,13 @@ ECMAScript value type.
         by following the rules for converting the
         <emu-val>Number</emu-val> to an IDL
         {{unrestricted double}} value,
-        as described in [[#es-unrestricted-double]],.
+        as described in [[#es-unrestricted-double]].
      :  A <emu-val>String</emu-val> value
      :: The IDL value is that which is obtained
         by following the rules for converting the
         <emu-val>String</emu-val> to an IDL
         {{DOMString}} value,
-        as described in [[#es-DOMString]],.
+        as described in [[#es-DOMString]].
      :  An {{object}} value
      :: The IDL value is an
         {{object}} value that
