@@ -201,7 +201,7 @@ Boilerplate: omit issues-index
     .csstransforms #distinguishable-table tr:first-child th {
       text-align: left;
       border: none;
-      height: 140px;
+      height: 100px;
       padding: 0;
     }
     
@@ -209,12 +209,13 @@ Boilerplate: omit issues-index
       text-align: center;
       width: 30px;
       padding: 10px 5px;
+      height: 19px
     }
 
     /* Firefox needs the extra DIV for some reason, otherwise the text disappears if you rotate */
     .csstransforms #distinguishable-table tr:first-child th div {
-      -webkit-transform: translate(26px, 51px) rotate(315deg);
-      transform: translate(26px, 51px) rotate(315deg);
+      -webkit-transform: translate(26px, 31px) rotate(315deg);
+      transform: translate(26px, 31px) rotate(315deg);
       width: 30px;
     }
 
