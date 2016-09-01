@@ -177,22 +177,57 @@ Boilerplate: omit issues-index
     
     #distinguishable-table {
       font-size: 80%;
+      border-collapse: collapse;
     }
-    #distinguishable-table td {
-      text-align: center;
-    }
-    #distinguishable-table th:first-child {
-      white-space: nowrap;
-    }
-    #distinguishable-table tr:first-child th {
-      vertical-align: top;
-      text-align: center;
-    }
+    
     #distinguishable-table th {
       text-align: right;
     }
+    
+    #distinguishable-table tr:first-child th {
+      white-space: nowrap;
+      text-align: center;
+    }
+    
     #distinguishable-table .belowdiagonal {
       background: #ddd;
+    }
+
+    #distinguishable-table td {
+      text-align: center;
+      padding: 5px 10px;
+    }
+    
+    .csstransforms #distinguishable-table tr:first-child th {
+      text-align: left;
+      border: none;
+      height: 140px;
+      padding: 0;
+    }
+    
+    .csstransforms #distinguishable-table td {
+      text-align: center;
+      width: 30px;
+      padding: 10px 5px;
+    }
+
+    /* Firefox needs the extra DIV for some reason, otherwise the text disappears if you rotate */
+    .csstransforms #distinguishable-table tr:first-child th div {
+      -webkit-transform: translate(26px, 51px) rotate(315deg);
+      transform: translate(26px, 51px) rotate(315deg);
+      width: 30px;
+    }
+
+    .csstransforms #distinguishable-table tr:first-child th div span {
+      border-bottom: 1px solid #ccc;
+      padding: 5px 10px;
+      display: block;
+      min-width: 120px;
+      text-align: left
+    }
+    
+    .csstransforms #distinguishable-table tr:first-child th:last-child div span {
+      border-bottom: none;
     }
 </xsl:text>
 </style>
@@ -764,7 +799,18 @@ Boilerplate: omit issues-index
       </xsl:attribute>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
-  </xsl:template>  
+  </xsl:template>
+  
+  <xsl:template match='h:table[@id="distinguishable-table"]/h:tr[1]/h:th[not(@class="corner")]'>
+    <th>
+      <div>
+        <span><xsl:apply-templates select="node()"/></span>
+      </div>
+    </th>
+  </xsl:template>
+  
+  <xsl:template match='h:table[@id="distinguishable-table"]/h:tr[1]/h:th/h:br' />
+
   <!--Notes examples and the like -->
   
   <xsl:template name='markdown-note-issue-advisement'>
@@ -875,9 +921,7 @@ Boilerplate: omit issues-index
     <xsl:variable name='id' select='substring-before(., " ")'/>
     <xsl:variable name='names' select='replace(concat(" ", substring-after(., " "), " "), " DictionaryMember ", " DictionaryMember Required ")'/>
     <xsl:call-template name='proddef'>
-
       <xsl:with-param name='prods' select='//*[@id=$id]/x:prod[contains($names, concat(" ", @nt, " "))]'/>
-
       <xsl:with-param name='pi' select='.'/>
     </xsl:call-template>
   </xsl:template>
@@ -885,6 +929,7 @@ Boilerplate: omit issues-index
   <xsl:template match='x:grammar'>
     <div data-fill-with='grammar-index'></div>
   </xsl:template>
+
   <xsl:template name='proddef'>
     <xsl:param name='prods'/>
     <xsl:param name='pi'/>

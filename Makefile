@@ -22,7 +22,7 @@ index.bs : index-pre.bs
 	| node ./post-process/line-breaks.js \
 	| node ./post-process/air.js \
 	> index.bs
-	cat ./post-process/scripts.html >> index.bs
+	sed -e 's|\(\[[A-Z_-][A-Z_-]*\]\)|\\\1|g' ./post-process/scripts.html >> index.bs
 	# raw-index.bs
 	(node ./post-process/intro.js < index-pre.bs) \
 	| node ./post-process/rm-blanklines.js \
@@ -33,7 +33,7 @@ index.bs : index-pre.bs
 	| node ./post-process/line-breaks.js \
 	| node ./post-process/air.js \
 	> raw-index.bs
-	cat ./post-process/scripts.html >> raw-index.bs
+	sed -e 's|\(\[[A-Z_-][A-Z_-]*\]\)|\\\1|g' ./post-process/scripts.html >> raw-index.bs
 		
 index.ids : index.xml
 	./xref.pl -d index.xml http://heycam.github.io/webidl/ > index.ids
