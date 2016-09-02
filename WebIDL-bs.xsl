@@ -26,6 +26,9 @@ Shortname: WebIDL
 Level: 2
 Status: ED
 Group: webplatform
+Mailing list: public-script-coord@w3.org
+Mailing List Archives: https://lists.w3.org/Archives/Public/public-script-coord/
+Repository: heycam/webidl
 !Participate: </xsl:text>
 <a href="https://github.com/heycam/webidl"><xsl:text>GitHub</xsl:text></a>
 <xsl:text> (</xsl:text>
@@ -76,7 +79,7 @@ TR: </xsl:text>
 </xsl:text>
     </xsl:for-each>
 <xsl:text>Ignored Vars: callback, op, ownDesc, exampleVariableName, target, f, g
-Boilerplate: omit issues-index
+Boilerplate: omit issues-index, omit conformance
 </xsl:text>
 </pre>
 <xsl:text>
@@ -267,6 +270,25 @@ Boilerplate: omit issues-index
         <xsl:with-param name='pi' select='.'/>
       </xsl:call-template>
     </xsl:if>
+    <xsl:if test='@id = "conformance"'>
+      
+      <h3 id="conformant-algorithms">Conformant Algorithms</h3><xsl:text>
+      </xsl:text>
+      <p>
+        Requirements phrased in the imperative as part of algorithms (such as
+        “strip any leading space characters” or “return false and abort these
+        steps”) are to be interpreted with the meaning of the key word (“must”,
+        “should”, “may”, etc) used in introducing the algorithm.
+      </p>
+
+      <p>
+        Conformance requirements phrased as algorithms or specific steps can be
+        implemented in any manner, so long as the end result is <dfn lt="processing equivalence" id="dfn-processing-equivalence">equivalent</dfn>. In
+        particular, the algorithms defined in this specification are intended to
+        be easy to understand and are not intended to be performant. Implementers
+        are encouraged to optimize.
+      </p>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match='h:div[@id="appendices"]'>
@@ -292,6 +314,8 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <!-- Remove stuff -->
+  
+  <xsl:template match='h:div[@class="section"][child::h:h2[@id="sotd"]]'/>
 
   <xsl:template match='processing-instruction()|comment()'/>
 

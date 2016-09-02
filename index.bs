@@ -4,6 +4,9 @@ Shortname: WebIDL
 Level: 2
 Status: ED
 Group: webplatform
+Mailing list: public-script-coord@w3.org
+Mailing List Archives: https://lists.w3.org/Archives/Public/public-script-coord/
+Repository: heycam/webidl
 !Participate: <a href="https://github.com/heycam/webidl">GitHub</a> (<a href="https://github.com/heycam/webidl/issues/new">new issue</a>, <a href="https://github.com/heycam/webidl/issues">open issues</a>, <a href="https://www.w3.org/Bugs/Public/buglist.cgi?product=WebAppsWG&amp;component=WebIDL&amp;resolution=---">legacy bug tracker</a>)
 ED: https://heycam.github.io/webidl/
 TR: http://www.w3.org/TR/WebIDL/
@@ -31,7 +34,7 @@ Abstract: and that newly published specifications reference this
 Abstract: document to ensure conforming implementations of interfaces
 Abstract: are interoperable.
 Ignored Vars: callback, op, ownDesc, exampleVariableName, target, f, g
-Boilerplate: omit issues-index
+Boilerplate: omit issues-index, omit conformance
 </pre>
 
 <pre class="anchors">
@@ -264,26 +267,6 @@ urlPrefix: https://tc39.github.io/ecma262/
 </style>
 
 
-<h2 id="sotd">Status of This Document</h2>
-
-This is the Second Edition of Web IDL, branched off from the
-Candidate Recommendation of the First Edition.  This Second
-Edition includes new features that could not have been added
-to the First Edition without delaying its progress along the
-Recommendation track.
-
-This document is produced by the
-<a href="https://www.w3.org/WebPlatform/WG/">Web Platform Working Group</a>
-in the W3C <a href="http://www.w3.org/Interaction/">Interaction Domain</a>.
-Changes made to this document can be found in the specification’s
-commit log on GitHub:
-<a href="https://github.com/heycam/webidl/commits/gh-pages/index.xml">recent changes</a>,
-<a href="https://github.com/heycam/webidl/commits/gh-pages/Overview.xml">older changes</a>.
-
-There is a <a href="https://www.w3.org/Bugs/Public/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=WebAppsWG&amp;component=WebIDL&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse%20same%20sort%20as%20last%20time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">bug tracker</a>
-for the specification.
-
-
 <h2 id="introduction">Introduction</h2>
 
 <i>This section is informative.</i>
@@ -409,6 +392,20 @@ The following conformance classes are defined by this specification:
     required- and shall-level
     criteria in this specification that apply to implementations for the ECMAScript
     language binding.
+
+
+<h3 id="conformant-algorithms">Conformant Algorithms</h3>
+
+Requirements phrased in the imperative as part of algorithms (such as
+“strip any leading space characters” or “return false and abort these
+steps”) are to be interpreted with the meaning of the key word (“must”,
+“should”, “may”, etc) used in introducing the algorithm.
+
+Conformance requirements phrased as algorithms or specific steps can be
+implemented in any manner, so long as the end result is <dfn lt="processing equivalence" id="dfn-processing-equivalence">equivalent</dfn>. In
+particular, the algorithms defined in this specification are intended to
+be easy to understand and are not intended to be performant. Implementers
+are encouraged to optimize.
 
 
 <h2 id="idl">Interface definition language</h2>
