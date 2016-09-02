@@ -5694,7 +5694,7 @@ be {{any}},
 another nullable type, or a [=union type=]
 that itself has [=includes a nullable type=]
 or has a dictionary type as one of its
-[=flattened member types|flattened member types=].
+[=flattened member types=].
 
 Note: Although dictionary types can in general be nullable, they cannot when used
 as the type of an operation argument or a dictionary member.

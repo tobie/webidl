@@ -466,7 +466,7 @@ Boilerplate: omit issues-index
     <xsl:param name='txt'/>
     <xsl:param name='lt'/>
     <xsl:text>[=</xsl:text>
-    <xsl:if test='$lt and $lt != ""'>
+    <xsl:if test='$lt and $lt != "" and $lt != $txt'>
       <xsl:value-of select='normalize-space($lt)' /><xsl:text>|</xsl:text>
     </xsl:if>
     <xsl:value-of select='normalize-space($txt)' />
