@@ -1164,6 +1164,10 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed 1.0.0" name="generator">
 <style>
+        .mute {
+          color: #9D937D
+        }
+        
         emu-val {
             font-weight: bold;
         }
@@ -1175,9 +1179,15 @@ Possible extra rowspan handling
         }
         
         emu-t {
+            font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
             display: inline-block;
             font-weight: bold;
             white-space: nowrap;
+        }
+        
+        emu-t.symbol {
+            font-family: sans-serif;
+            font-weight: bold;
         }
         
         emu-t a[href],
@@ -1512,7 +1522,7 @@ pre.idl.highlight { color: #708090; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL (Second Edition)</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-09-01">1 September 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-09-02">2 September 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -12434,33 +12444,33 @@ expression syntax <a data-link-type="biblio" href="#biblio-perlre">[PERLRE]</a>)
    <table class="grammar data">
     <tbody>
      <tr>
-      <td class="sym" id="prod-integer">integer
+      <td id="prod-integer"><code>integer</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)/</code>
+      <td><code class="regex"><span class="mute">/</span>-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)<span class="mute">/</span></code>
      <tr>
-      <td class="sym" id="prod-float">float
+      <td id="prod-float"><code>float</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/-?(([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([Ee][+-]?[0-9]+)?|[0-9]+[Ee][+-]?[0-9]+)/</code>
+      <td><code class="regex"><span class="mute">/</span>-?(([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([Ee][+-]?[0-9]+)?|[0-9]+[Ee][+-]?[0-9]+)<span class="mute">/</span></code>
      <tr>
-      <td class="sym" id="prod-identifier">identifier
+      <td id="prod-identifier"><code>identifier</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/_?[A-Za-z][0-9A-Z_a-z-]*/</code>
+      <td><code class="regex"><span class="mute">/</span>_?[A-Za-z][0-9A-Z_a-z-]*<span class="mute">/</span></code>
      <tr>
-      <td class="sym" id="prod-string">string
+      <td id="prod-string"><code>string</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/"[^"]*"/</code>
+      <td><code class="regex"><span class="mute">/</span>"[^"]*"<span class="mute">/</span></code>
      <tr>
-      <td class="sym" id="prod-whitespace">whitespace
+      <td id="prod-whitespace"><code>whitespace</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/[\t\n\r ]+/</code>
+      <td><code class="regex"><span class="mute">/</span>[\t\n\r ]+<span class="mute">/</span></code>
      <tr>
-      <td class="sym" id="prod-comment">comment
+      <td id="prod-comment"><code>comment</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/\/\/.*|\/\*(.|\n)*?\*\//</code>
+      <td><code class="regex"><span class="mute">/</span>\/\/.*|\/\*(.|\n)*?\*\/<span class="mute">/</span></code>
      <tr>
-      <td class="sym" id="prod-other">other
+      <td id="prod-other"><code>other</code>
       <td><code class="regex">=</code>
-      <td><code class="regex">/[^\t\n\r 0-9A-Za-z]/</code>
+      <td><code class="regex"><span class="mute">/</span>[^\t\n\r 0-9A-Za-z]<span class="mute">/</span></code>
    </table>
    <p>The tokenizer operates on a sequence of Unicode characters <a data-link-type="biblio" href="#biblio-unicode">[UNICODE]</a>.
 When tokenizing, the longest possible match must be used.  For example, if the input

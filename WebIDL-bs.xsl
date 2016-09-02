@@ -129,6 +129,10 @@ Boilerplate: omit issues-index
 
 </xsl:text>
 <style><xsl:text>
+    .mute {
+      color: #9D937D
+    }
+    
     emu-val {
         font-weight: bold;
     }
@@ -140,9 +144,15 @@ Boilerplate: omit issues-index
     }
     
     emu-t {
+        font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
         display: inline-block;
         font-weight: bold;
         white-space: nowrap;
+    }
+    
+    emu-t.symbol {
+        font-family: sans-serif;
+        font-weight: bold;
     }
     
     emu-t a[href],
@@ -492,7 +502,7 @@ Boilerplate: omit issues-index
         <emu-nt><a href="{@href}"><xsl:value-of select='.'/></a></emu-nt>
       </xsl:when>
       <xsl:when test='matches($txt, "^(integer|float|identifier|string|whitespace|comment|other)$")'>
-        <emu-t><a href="#prod-{$txt}"><xsl:value-of select='$txt' /></a></emu-t>
+        <emu-t class="symbol"><a href="#prod-{$txt}"><xsl:value-of select='$txt' /></a></emu-t>
       </xsl:when>
       <xsl:when test='$txt = "[NamedConstructor]" or $txt = "[Constructor]"'>
         <xsl:call-template name='a-xattr'><xsl:with-param name='txt' select='$txt'/></xsl:call-template>
@@ -741,7 +751,7 @@ Boilerplate: omit issues-index
   </xsl:template>
   
   <xsl:template match='h:span[@class="regex-slash"]'>
-    <xsl:value-of select='.' />
+    <span class="mute"><xsl:value-of select='.' /></span>
   </xsl:template>
 
   <xsl:template match='h:span[@class="idlattr"]'>
@@ -975,6 +985,15 @@ Boilerplate: omit issues-index
 <xsl:text>
     </xsl:text><xsl:value-of select="normalize-space(.)" />
     </xsl:for-each>
+  </xsl:template>
+  
+  <xsl:template match='h:table[@class="grammar"]/h:tr/h:td[1]'>
+    <xsl:copy copy-namespaces="no">
+      <xsl:attribute name="id">
+        <xsl:value-of select='@id' />
+      </xsl:attribute>
+      <emu-t class="symbol"><xsl:apply-templates select="node()" /></emu-t>
+    </xsl:copy>
   </xsl:template>
 </xsl:stylesheet>
 
