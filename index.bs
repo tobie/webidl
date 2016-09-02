@@ -351,9 +351,9 @@ The following typographic conventions are used in this document:
         This is an example.
     </div>
 *   Normative warnings:
-    
-    Advisement: This is a warning.
-    
+    <p class="advisement">
+        This is a warning.
+    </p>
 *   Code blocks:
     <pre highlight="webidl">
         // This is an IDL code block.
@@ -1195,12 +1195,14 @@ A <dfn id="dfn-constant" export>constant</dfn> is a declaration (matching
 <emu-nt><a href="#prod-Const">Const</a></emu-nt>) used to bind a constant value to a name.
 Constants can appear on [=interfaces=].
 
-Advisement: Constants have in the past primarily been used to define
-named integer codes in the style of an enumeration.  The Web platform
-is moving away from this design pattern in favor of the use of strings.
-Specification authors who wish to define constants are strongly advised to discuss
-this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
-mailing list before proceeding.
+<p class="advisement">
+    Constants have in the past primarily been used to define
+    named integer codes in the style of an enumeration.  The Web platform
+    is moving away from this design pattern in favor of the use of strings.
+    Specification authors who wish to define constants are strongly advised to discuss
+    this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
+    mailing list before proceeding.
+</p>
 
 <pre highlight="webidl" class="syntax">const type constant_identifier = 42;</pre>
 
@@ -1856,10 +1858,12 @@ corresponding argument omitted.
     };
 </pre>
 
-Advisement: It is strongly suggested not to use [=default value=]
-of <emu-val>true</emu-val> for {{boolean}}-typed arguments,
-as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
+<p class="advisement">
+    It is strongly suggested not to use [=default value=]
+    of <emu-val>true</emu-val> for {{boolean}}-typed arguments,
+    as this can be confusing for authors who might otherwise expect the default
+    conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
+</p>
 
 If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
 or a [=union type=] that has a
@@ -2239,12 +2243,14 @@ as if it were a function.
 Legacy callers must not be defined to return a
 <a href="#idl-promise">promise type</a>.
 
-Advisement: Legacy callers are universally recognised as an undesirable feature.  They exist
-only so that legacy Web platform features can be specified.  Legacy callers
-should not be used in specifications unless required to
-specify the behavior of legacy APIs, and even then this should be discussed on
-the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
-mailing list before proceeding.
+<p class="advisement">
+    Legacy callers are universally recognised as an undesirable feature.  They exist
+    only so that legacy Web platform features can be specified.  Legacy callers
+    should not be used in specifications unless required to
+    specify the behavior of legacy APIs, and even then this should be discussed on
+    the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
+    mailing list before proceeding.
+</p>
 
 <div class="example">
     
@@ -4086,13 +4092,15 @@ the value to use for the dictionary member when passing a value to a
 not have a specified value.  Dictionary members with default values are
 always considered to be present.
 
-Advisement: As with [=default value|operation argument default values=],
-is strongly suggested not to use of <emu-val>true</emu-val> as the
-[=default value=] for
-{{boolean}}-typed
-[=dictionary members=],
-as this can be confusing for authors who might otherwise expect the default
-conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
+<p class="advisement">
+    As with [=default value|operation argument default values=],
+    is strongly suggested not to use of <emu-val>true</emu-val> as the
+    [=default value=] for
+    {{boolean}}-typed
+    [=dictionary members=],
+    as this can be confusing for authors who might otherwise expect the default
+    conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
+</p>
 
 Each [=dictionary member=] (matching
 <emu-nt><a href="#prod-DictionaryMember">DictionaryMember</a></emu-nt>) is specified
@@ -4670,15 +4678,17 @@ as a comma-separated list of <emu-t class="symbol"><a href="#prod-string">string
 The list of [=enumeration values=]
 must not include duplicates.
 
-Advisement: It is strongly suggested that enumeration values be all lowercase,
-and that multiple words be separated using dashes or not be
-separated at all, unless there is a specific reason to use another
-value naming scheme.  For example, an enumeration value that
-indicates an object should be created could be named
-<code>"createobject"</code> or <code>'create-object"</code>.
-Consider related uses of enumeration values when deciding whether
-to dash-separate or not separate enumeration value words so that
-similar APIs are consistent.
+<p class="advisement">
+    It is strongly suggested that enumeration values be all lowercase,
+    and that multiple words be separated using dashes or not be
+    separated at all, unless there is a specific reason to use another
+    value naming scheme.  For example, an enumeration value that
+    indicates an object should be created could be named
+    <code>"createobject"</code> or <code>'create-object"</code>.
+    Consider related uses of enumeration values when deciding whether
+    to dash-separate or not separate enumeration value words so that
+    similar APIs are consistent.
+</p>
 
 The behavior when a string value that is not one a valid enumeration value
 is used when assigning to an [=attribute=],
@@ -5390,11 +5400,13 @@ tokens.
 The [=type name=] of the
 {{float}} type is “Float”.
 
-Advisement: Unless there are specific reasons to use a 32 bit floating point type,
-specifications should use
-{{double}} rather than {{float}},
-since the set of values that a {{double}} can
-represent more closely matches an ECMAScript <emu-val>Number</emu-val>.
+<p class="advisement">
+    Unless there are specific reasons to use a 32 bit floating point type,
+    specifications should use
+    {{double}} rather than {{float}},
+    since the set of values that a {{double}} can
+    represent more closely matches an ECMAScript <emu-val>Number</emu-val>.
+</p>
 
 
 <h4 oldids="dom-unrestrictedfloat" id="idl-unrestricted-float" interface>unrestricted float</h4>
@@ -5525,18 +5537,20 @@ value in IDL.
 The [=type name=] of the
 {{ByteString}} type is “ByteString”.
 
-Advisement: Specifications should only use
-{{ByteString}} for interfacing with protocols
-that use bytes and strings interchangably, such as HTTP.  In general,
-strings should be represented with
-{{DOMString}} values, even if it is expected
-that values of the string will always be in ASCII or some
-8 bit character encoding.  <a href="#idl-sequence">Sequences</a>,
-<a href="#idl-frozen-array">frozen arrays</a> or [=Typed Arrays=]
-with {{octet}} or {{byte}}
-elements should be used for holding
-8 bit data rather than {{ByteString}}.
-[[!ECMA-262]]
+<p class="advisement">
+    Specifications should only use
+    {{ByteString}} for interfacing with protocols
+    that use bytes and strings interchangably, such as HTTP.  In general,
+    strings should be represented with
+    {{DOMString}} values, even if it is expected
+    that values of the string will always be in ASCII or some
+    8 bit character encoding.  <a href="#idl-sequence">Sequences</a>,
+    <a href="#idl-frozen-array">frozen arrays</a> or [=Typed Arrays=]
+    with {{octet}} or {{byte}}
+    elements should be used for holding
+    8 bit data rather than {{ByteString}}.
+    [[!ECMA-262]]
+</p>
 
 
 <h4 oldids="dom-USVString" id="idl-USVString" interface>USVString</h4>
@@ -5555,13 +5569,15 @@ can be specified using a <emu-t class="symbol"><a href="#prod-string">string</a>
 The [=type name=] of the
 {{USVString}} type is “USVString”.
 
-Advisement: Specifications should only use
-{{USVString}} for APIs that perform
-text processing and need a string of Unicode
-scalar values to operate on.  Most APIs that use strings
-should instead be using {{DOMString}},
-which does not make any interpretations of the [=code units=]
-in the string.  When in doubt, use {{DOMString}}.
+<p class="advisement">
+    Specifications should only use
+    {{USVString}} for APIs that perform
+    text processing and need a string of Unicode
+    scalar values to operate on.  Most APIs that use strings
+    should instead be using {{DOMString}},
+    which does not make any interpretations of the [=code units=]
+    in the string.  When in doubt, use {{DOMString}}.
+</p>
 
 
 <h4 oldids="dom-object" id="idl-object" interface>object</h4>
@@ -6269,12 +6285,14 @@ Other specifications may override the definitions
 of any internal method of a [=platform object=]
 that is an instance of an [=interface=].
 
-Advisement: As overriding internal ECMAScript object methods is a low level operation and
-can result in objects that behave differently from ordinary objects,
-this facility should not be used unless necessary
-for security or compatibility.  The expectation is that this will be used
-for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
-and possibly WindowProxy objects</a>.
+<p class="advisement">
+    As overriding internal ECMAScript object methods is a low level operation and
+    can result in objects that behave differently from ordinary objects,
+    this facility should not be used unless necessary
+    for security or compatibility.  The expectation is that this will be used
+    for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
+    and possibly WindowProxy objects</a>.
+</p>
 
 Unless otherwise specified, the \[[Extensible]] internal property
 of objects defined in this section has the value <emu-val>true</emu-val>.
@@ -8801,11 +8819,13 @@ must
 It must not be used on a
 [=static attribute=].
 
-Advisement: Specifications should not use [{{LenientThis}}]
-unless required for compatibility reasons.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the
-<a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
-mailing list before proceeding.
+<p class="advisement">
+    Specifications should not use [{{LenientThis}}]
+    unless required for compatibility reasons.  Specification authors who
+    wish to use this feature are strongly advised to discuss this on the
+    <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
+    mailing list before proceeding.
+</p>
 
 See the <a href="#es-attributes">Attributes</a> section for how
 [{{LenientThis}}]
@@ -8966,13 +8986,15 @@ it indicates that an
 [=interface object=]
 will not exist for the interface in the ECMAScript binding.
 
-Advisement: The [{{NoInterfaceObject}}] extended attribute
-should not be used on interfaces that are not
-solely used as [=supplemental interfaces|supplemental=] interfaces,
-unless there are clear Web compatibility reasons for doing so.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the
-<a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
-mailing list before proceeding.
+<p class="advisement">
+    The [{{NoInterfaceObject}}] extended attribute
+    should not be used on interfaces that are not
+    solely used as [=supplemental interfaces|supplemental=] interfaces,
+    unless there are clear Web compatibility reasons for doing so.  Specification authors who
+    wish to use this feature are strongly advised to discuss this on the
+    <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
+    mailing list before proceeding.
+</p>
 
 The [{{NoInterfaceObject}}] extended attribute
 must [=takes no arguments|take no arguments=].
@@ -9457,17 +9479,19 @@ whose type is a [=nullable type|nullable=]
 that is not an object will be converted to
 the <emu-val>null</emu-val> value.
 
-Advisement: Specifications should not use [{{TreatNonObjectAsNull}}]
-unless required to specify the behavior of legacy APIs or for consistency with these
-APIs.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the
-<a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
-mailing list before proceeding.  At the time of writing, the only known
-valid use of [{{TreatNonObjectAsNull}}]
-is for the [=callback functions=] used as the type
-of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
-([[HTML5]], section 6.1.6.1)
-such as <code>onclick</code> and <code>onerror</code>.
+<p class="advisement">
+    Specifications should not use [{{TreatNonObjectAsNull}}]
+    unless required to specify the behavior of legacy APIs or for consistency with these
+    APIs.  Specification authors who
+    wish to use this feature are strongly advised to discuss this on the
+    <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
+    mailing list before proceeding.  At the time of writing, the only known
+    valid use of [{{TreatNonObjectAsNull}}]
+    is for the [=callback functions=] used as the type
+    of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
+    ([[HTML5]], section 6.1.6.1)
+    such as <code>onclick</code> and <code>onerror</code>.
+</p>
 
 See [[#es-nullable-type]]
 for the specific requirements that the use of

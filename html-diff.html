@@ -1956,7 +1956,7 @@ for ECMAScript Edition 6 are given.</p>
      </div>
     <li data-md="">
      <p>Normative warnings:</p>
-     <p><strong class="advisement"> This is a warning.</strong></p>
+     <p class="advisement"> This is a warning. </p>
     <li data-md="">
      <p>Code blocks:</p>
 <pre class="highlight">// This is an IDL code block.
@@ -2559,11 +2559,11 @@ in the language.</p>
    <h4 class="heading settled" data-level="4.2.1" id="idl-constants"><span class="secno">4.2.1. </span><span class="content">Constants</span><a class="self-link" href="#idl-constants"></a></h4>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-constant">constant</dfn> is a declaration (matching <code><a href="#prod-Const">Const</a></code>) used to bind a constant value to a name.
 Constants can appear on <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-14">interfaces</a>.</p>
-   <p><strong class="advisement"> Constants have in the past primarily been used to define
-named integer codes in the style of an enumeration.  The Web platform
-is moving away from this design pattern in favor of the use of strings.
-Specification authors who wish to define constants are strongly advised to discuss
-this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong></p>
+   <p class="advisement"> Constants have in the past primarily been used to define
+    named integer codes in the style of an enumeration.  The Web platform
+    is moving away from this design pattern in favor of the use of strings.
+    Specification authors who wish to define constants are strongly advised to discuss
+    this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. </p>
 <pre class="syntax highlight"><span class="kt">const</span> <span class="n">type</span> <span class="nv">constant_identifier</span> = 42;</pre>
    <p>The <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-10">identifier</a> of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-4">constant</a> must not be the same as the identifier
 of another <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-2">interface member</a> defined on the same interface.
@@ -3030,9 +3030,9 @@ corresponding argument omitted.</p>
   <span class="n">return_type</span> <span class="nv">identifier</span>(<span class="n">type</span> <span class="nv">identifier</span>, <span class="kt">optional</span> <span class="n">type</span> <span class="nv">identifier</span> = "value");
 };
 </pre>
-   <p><strong class="advisement"> It is strongly suggested not to use <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-4">default value</a> of <code>true</code> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-2">boolean</a></code>-typed arguments,
-as this can be confusing for authors who might otherwise expect the default
-conversion of <code>undefined</code> to be used (i.e., <code>false</code>).</strong></p>
+   <p class="advisement"> It is strongly suggested not to use <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-4">default value</a> of <code>true</code> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-2">boolean</a></code>-typed arguments,
+    as this can be confusing for authors who might otherwise expect the default
+    conversion of <code>undefined</code> to be used (i.e., <code>false</code>). </p>
    <p>If the type of an argument is a <a href="#idl-dictionary" id="ref-for-idl-dictionary-1">dictionary type</a> or a <a data-link-type="dfn" href="#dfn-union-type" id="ref-for-dfn-union-type-2">union type</a> that has a
 dictionary type as one of its <a data-link-type="dfn" href="#dfn-flattened-union-member-types" id="ref-for-dfn-flattened-union-member-types-2">flattened member types</a>,
 and that dictionary type and its ancestors have no <a data-link-type="dfn" href="#required-dictionary-member" id="ref-for-required-dictionary-member-1">required members</a>,
@@ -3294,11 +3294,11 @@ legacy callers can be specified using an <a data-link-type="dfn" href="#dfn-oper
 is used to determine which legacy caller is invoked when the object is called
 as if it were a function.</p>
    <p>Legacy callers must not be defined to return a <a href="#idl-promise" id="ref-for-idl-promise-1">promise type</a>.</p>
-   <p><strong class="advisement"> Legacy callers are universally recognised as an undesirable feature.  They exist
-only so that legacy Web platform features can be specified.  Legacy callers
-should not be used in specifications unless required to
-specify the behavior of legacy APIs, and even then this should be discussed on
-the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong></p>
+   <p class="advisement"> Legacy callers are universally recognised as an undesirable feature.  They exist
+    only so that legacy Web platform features can be specified.  Legacy callers
+    should not be used in specifications unless required to
+    specify the behavior of legacy APIs, and even then this should be discussed on
+    the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. </p>
    <div class="example" id="example-12e296cf">
     <a class="self-link" href="#example-12e296cf"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-19">IDL fragment</a> defines an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-29">interface</a> with a <a data-link-type="dfn" href="#idl-legacy-callers" id="ref-for-idl-legacy-callers-2">legacy caller</a>.</p>
@@ -4759,10 +4759,10 @@ Dictionary members can also optionally have a <dfn data-dfn-for="dictionary memb
 the value to use for the dictionary member when passing a value to a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-6">platform object</a> that does
 not have a specified value.  Dictionary members with default values are
 always considered to be present.</p>
-   <p><strong class="advisement"> As with <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-8">operation argument default values</a>,
-is strongly suggested not to use of <code>true</code> as the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-9">default value</a> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-5">boolean</a></code>-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-4">dictionary members</a>,
-as this can be confusing for authors who might otherwise expect the default
-conversion of <code>undefined</code> to be used (i.e., <code>false</code>).</strong></p>
+   <p class="advisement"> As with <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-8">operation argument default values</a>,
+    is strongly suggested not to use of <code>true</code> as the <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-9">default value</a> for <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-5">boolean</a></code>-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-4">dictionary members</a>,
+    as this can be confusing for authors who might otherwise expect the default
+    conversion of <code>undefined</code> to be used (i.e., <code>false</code>). </p>
    <p>Each <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-5">dictionary member</a> (matching <code><a href="#prod-DictionaryMember">DictionaryMember</a></code>) is specified
 as a type (matching <code><a href="#prod-Type">Type</a></code>) followed by an <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-33">identifier</a> (given by an <code><a href="#prod-identifier">identifier</a></code> token following
 the type).  The identifier is the key name of the key–value pair.
@@ -5169,14 +5169,14 @@ can be used to restrict the possible <code class="idl"><a data-link-type="idl" h
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="enumeration value" id="dfn-enumeration-value">enumeration values</dfn> are specified
 as a comma-separated list of <code><a href="#prod-string">string</a></code> literals.
 The list of <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-3">enumeration values</a> must not include duplicates.</p>
-   <p><strong class="advisement"> It is strongly suggested that enumeration values be all lowercase,
-and that multiple words be separated using dashes or not be
-separated at all, unless there is a specific reason to use another
-value naming scheme.  For example, an enumeration value that
-indicates an object should be created could be named <code>"createobject"</code> or <code>'create-object"</code>.
-Consider related uses of enumeration values when deciding whether
-to dash-separate or not separate enumeration value words so that
-similar APIs are consistent.</strong></p>
+   <p class="advisement"> It is strongly suggested that enumeration values be all lowercase,
+    and that multiple words be separated using dashes or not be
+    separated at all, unless there is a specific reason to use another
+    value naming scheme.  For example, an enumeration value that
+    indicates an object should be created could be named <code>"createobject"</code> or <code>'create-object"</code>.
+    Consider related uses of enumeration values when deciding whether
+    to dash-separate or not separate enumeration value words so that
+    similar APIs are consistent. </p>
    <p>The behavior when a string value that is not one a valid enumeration value
 is used when assigning to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-17">attribute</a>,
 or passed as an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-24">operation</a> argument,
@@ -5606,10 +5606,10 @@ IEEE 754 floating point numbers. <a data-link-type="biblio" href="#biblio-ieee-7
    <p><code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-6">float</a></code> constant values in IDL are
 represented with <code><a href="#prod-float">float</a></code> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-11">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-7">float</a></code> type is “Float”.</p>
-   <p><strong class="advisement"> Unless there are specific reasons to use a 32 bit floating point type,
-specifications should use <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-9">double</a></code> rather than <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-8">float</a></code>,
-since the set of values that a <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-10">double</a></code> can
-represent more closely matches an ECMAScript <code>Number</code>.</strong></p>
+   <p class="advisement"> Unless there are specific reasons to use a 32 bit floating point type,
+    specifications should use <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-9">double</a></code> rather than <code class="idl"><a data-link-type="idl" href="#idl-float" id="ref-for-idl-float-8">float</a></code>,
+    since the set of values that a <code class="idl"><a data-link-type="idl" href="#idl-double" id="ref-for-idl-double-10">double</a></code> can
+    represent more closely matches an ECMAScript <code>Number</code>. </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.12" data-lt="unrestricted float" id="idl-unrestricted-float"><span class="secno">4.10.12. </span><span class="content">unrestricted float</span><span id="dom-unrestrictedfloat"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-unrestricted-float" id="ref-for-idl-unrestricted-float-6">unrestricted float</a></code> type is a floating point numeric
 type that corresponds to the set of all possible single-precision 32 bit
@@ -5715,12 +5715,12 @@ corresponds to the set of all possible sequences of bytes.
 Such sequences might be interpreted as UTF-8 encoded strings <a data-link-type="biblio" href="#biblio-rfc3629">[RFC3629]</a> or strings in some other 8-bit-per-code-unit encoding, although this is not required.</p>
    <p>There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-5">ByteString</a></code> value in IDL.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-16">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-6">ByteString</a></code> type is “ByteString”.</p>
-   <p><strong class="advisement"> Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-7">ByteString</a></code> for interfacing with protocols
-that use bytes and strings interchangably, such as HTTP.  In general,
-strings should be represented with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-30">DOMString</a></code> values, even if it is expected
-that values of the string will always be in ASCII or some
-8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-typedarray-objects">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
-8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a></strong></p>
+   <p class="advisement"> Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-7">ByteString</a></code> for interfacing with protocols
+    that use bytes and strings interchangably, such as HTTP.  In general,
+    strings should be represented with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-30">DOMString</a></code> values, even if it is expected
+    that values of the string will always be in ASCII or some
+    8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-6">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-typedarray-objects">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
+    8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-8">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a> </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.17" data-lt="USVString" id="idl-USVString"><span class="secno">4.10.17. </span><span class="content">USVString</span><span id="dom-USVString"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-5">USVString</a></code> type
 corresponds to the set of all possible sequences of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a>,
@@ -5729,11 +5729,11 @@ surrogate code points.</p>
    <p>There is no way to represent a constant <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-6">USVString</a></code> value in IDL, although <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-7">USVString</a></code> <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-10">dictionary member</a> and <a data-link-type="dfn" href="#dfn-optional-argument" id="ref-for-dfn-optional-argument-9">operation optional argument</a> default values
 can be specified using a <code><a href="#prod-string">string</a></code> literal.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-17">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-8">USVString</a></code> type is “USVString”.</p>
-   <p><strong class="advisement"> Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-9">USVString</a></code> for APIs that perform
-text processing and need a string of Unicode
-scalar values to operate on.  Most APIs that use strings
-should instead be using <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-31">DOMString</a></code>,
-which does not make any interpretations of the <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-4">code units</a> in the string.  When in doubt, use <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-32">DOMString</a></code>.</strong></p>
+   <p class="advisement"> Specifications should only use <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-9">USVString</a></code> for APIs that perform
+    text processing and need a string of Unicode
+    scalar values to operate on.  Most APIs that use strings
+    should instead be using <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-31">DOMString</a></code>,
+    which does not make any interpretations of the <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-4">code units</a> in the string.  When in doubt, use <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-32">DOMString</a></code>. </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="4.10.18" data-lt="object" id="idl-object"><span class="secno">4.10.18. </span><span class="content">object</span><span id="dom-object"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-object" id="ref-for-idl-object-2">object</a></code> type corresponds to the set of
 all possible non-null object references.</p>
@@ -6186,12 +6186,12 @@ more of the following are redefined in accordance with the rules for exotic obje
 [[HasInstance]].</p>
    <p>Other specifications may override the definitions
 of any internal method of a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-8">platform object</a> that is an instance of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-52">interface</a>.</p>
-   <p><strong class="advisement"> As overriding internal ECMAScript object methods is a low level operation and
-can result in objects that behave differently from ordinary objects,
-this facility should not be used unless necessary
-for security or compatibility.  The expectation is that this will be used
-for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
-and possibly WindowProxy objects</a>.</strong></p>
+   <p class="advisement"> As overriding internal ECMAScript object methods is a low level operation and
+    can result in objects that behave differently from ordinary objects,
+    this facility should not be used unless necessary
+    for security or compatibility.  The expectation is that this will be used
+    for <a href="https://github.com/annevk/html-cross-origin-objects/">Location objects
+    and possibly WindowProxy objects</a>. </p>
    <p>Unless otherwise specified, the [[Extensible]] internal property
 of objects defined in this section has the value <code>true</code>.</p>
    <p>Unless otherwise specified, the [[Prototype]] internal property
@@ -8289,9 +8289,9 @@ object that implements the <a data-link-type="dfn" href="#dfn-interface" id="ref
    <p>The [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-4">LenientThis</a></code>] extended attribute
 must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-9">take no arguments</a>.
 It must not be used on a <a data-link-type="dfn" href="#dfn-static-attribute" id="ref-for-dfn-static-attribute-7">static attribute</a>.</p>
-   <p><strong class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-5">LenientThis</a></code>]
-unless required for compatibility reasons.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong></p>
+   <p class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-5">LenientThis</a></code>]
+    unless required for compatibility reasons.  Specification authors who
+    wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. </p>
    <p>See the <a href="#es-attributes">Attributes</a> section for how
 [<code class="idl"><a data-link-type="idl" href="#LenientThis" id="ref-for-LenientThis-6">LenientThis</a></code>]
 is to be implemented.</p>
@@ -8398,11 +8398,11 @@ a <a data-link-type="dfn" href="#dfn-promise-type" id="ref-for-dfn-promise-type-
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="extended-attribute" data-export="" data-level="5.3.13" data-lt="NoInterfaceObject" id="NoInterfaceObject"><span class="secno">5.3.13. </span><span class="content">[NoInterfaceObject]</span></h4>
    <p>If the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-4">NoInterfaceObject</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-66">extended attribute</a> appears on an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-72">interface</a>,
 it indicates that an <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-5">interface object</a> will not exist for the interface in the ECMAScript binding.</p>
-   <p><strong class="advisement"> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-5">NoInterfaceObject</a></code>] extended attribute
-should not be used on interfaces that are not
-solely used as <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-4">supplemental</a> interfaces,
-unless there are clear Web compatibility reasons for doing so.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.</strong></p>
+   <p class="advisement"> The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-5">NoInterfaceObject</a></code>] extended attribute
+    should not be used on interfaces that are not
+    solely used as <a data-link-type="dfn" href="#dfn-supplemental-interface" id="ref-for-dfn-supplemental-interface-4">supplemental</a> interfaces,
+    unless there are clear Web compatibility reasons for doing so.  Specification authors who
+    wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding. </p>
    <p>The [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-6">NoInterfaceObject</a></code>] extended attribute
 must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-11">take no arguments</a>.</p>
    <p>If the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-7">NoInterfaceObject</a></code>] extended attribute
@@ -8735,14 +8735,14 @@ that does specify [<code class="idl"><a data-link-type="idl" href="#SecureContex
    <p>If the [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-5">TreatNonObjectAsNull</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-76">extended attribute</a> appears on a <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-22">callback function</a>,
 then it indicates that any value assigned to an <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-56">attribute</a> whose type is a <a data-link-type="dfn" href="#dfn-nullable-type" id="ref-for-dfn-nullable-type-24">nullable</a> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-23">callback function</a> that is not an object will be converted to
 the <code>null</code> value.</p>
-   <p><strong class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-6">TreatNonObjectAsNull</a></code>]
-unless required to specify the behavior of legacy APIs or for consistency with these
-APIs.  Specification authors who
-wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.  At the time of writing, the only known
-valid use of [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-7">TreatNonObjectAsNull</a></code>]
-is for the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-24">callback functions</a> used as the type
-of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a> (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 6.1.6.1)
-such as <code>onclick</code> and <code>onerror</code>.</strong></p>
+   <p class="advisement"> Specifications should not use [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-6">TreatNonObjectAsNull</a></code>]
+    unless required to specify the behavior of legacy APIs or for consistency with these
+    APIs.  Specification authors who
+    wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.  At the time of writing, the only known
+    valid use of [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-7">TreatNonObjectAsNull</a></code>]
+    is for the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-24">callback functions</a> used as the type
+    of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a> (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 6.1.6.1)
+    such as <code>onclick</code> and <code>onerror</code>. </p>
    <p>See <a href="#es-nullable-type">§5.2.24 Nullable types — T?</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-8">TreatNonObjectAsNull</a></code>] entails.</p>
    <div class="example" id="example-5b770cce">

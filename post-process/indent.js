@@ -72,7 +72,6 @@ reader.on("data", function(line) {
                 p = true;
                 if (m[3] == ' class="note"') currentTag.prefix = "Note: ";
                 if (m[3] == ' class="ednote"') currentTag.prefix = "Issue: ";
-                if (m[3] == ' class="advisement"') currentTag.prefix = "Advisement: ";
             }
             if (m[2] == "pre") {
                 pre = true;
