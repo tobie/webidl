@@ -1,5 +1,5 @@
 <pre class="metadata">
-Title: Web IDL (Second Edition)
+Title: Web IDL
 Shortname: WebIDL
 Level: 2
 Status: ED

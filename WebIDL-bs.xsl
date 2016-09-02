@@ -21,8 +21,7 @@
 </xsl:text>
 <pre class="metadata">
 <xsl:text>
-Title: </xsl:text><xsl:value-of select='//h:title'/>
-<xsl:text>
+Title: Web IDL
 Shortname: WebIDL
 Level: 2
 Status: ED
@@ -919,12 +918,12 @@ Boilerplate: omit issues-index
     <xsl:variable name='s2' select='replace($s1, " \.\.\. ", " /* ... */ ")' />
     <xsl:variable name='s3' select='replace($s2, ", …", " /* , ... */")' />
     <xsl:variable name='s4' select='replace($s3, "…", "...")' />
+
     <xsl:variable name='s5' select='replace($s4, "(special_keywords|arguments|(interface|dictionary)_members)...", "/* $1... */")' />
     <xsl:variable name='s6' select='replace($s5, "callback_signature", "return_type (/* arguments... */)")' />
     <xsl:variable name='s7' select='replace($s6, "enumeration_values...", """enum"", ""values"" /* , ... */")' />
     <xsl:value-of select='$s7'/>
   </xsl:template>
-
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX GRAMMAR XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
