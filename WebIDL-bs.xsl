@@ -74,6 +74,8 @@ TR: </xsl:text>
 <xsl:text>
 </xsl:text>
   </xsl:for-each>
+<xsl:text>Editor: Tobie Langel 78102, http://www.tobie.me, tobie@codespeaks.com
+</xsl:text>
   <xsl:for-each select='tokenize(replace(//*[h:h2[text()="Abstract"]]/h:p, "^\s+|\s+$", ""), "\n")'>
 <xsl:text>Abstract: </xsl:text><xsl:value-of select="normalize-space(.)" /><xsl:text>
 </xsl:text>
