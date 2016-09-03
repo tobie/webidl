@@ -6,10 +6,11 @@ function getSortedAnchors(window) {
 var argv = process.argv;
 
 if (argv.indexOf("-h") > 0 || argv.indexOf("--help") > 0) {
-    console.log("$ node ./check-anchors.js [--show-added] [--show-examples] [--show-issues] [--show-refs-for] [--show-refs] [--show-proddefs]")
+    console.log("$ node ./check-anchors.js path/to/old/file path/to/new/file [--show-added] [--show-examples] [--show-issues] [--show-refs-for] [--show-refs] [--show-proddefs]")
     process.exit();
 }
- 
+var oldFile = process.argv[2];
+var bikeshedPort = process.argv[3];
 var allowAll = _ => true;
 var filterExamples = argv.indexOf("--show-examples") > 0 ? allowAll : id => !(/^example/).test(id);
 var filterIssues = argv.indexOf("--show-issues") > 0 ? allowAll : id => !(/^issue-/).test(id);
@@ -17,14 +18,14 @@ var filterRefsFor = argv.indexOf("--show-refs-for") > 0 ? allowAll : id => !(/^r
 var filterRefs = argv.indexOf("--show-refs") > 0 ? allowAll : id => !(/^ref-/).test(id);
 var filterProdDefs = argv.indexOf("--show-proddefs") > 0 ? allowAll : id => !(/^proddef-/).test(id);
 
-console.log("Parsing bikeshed port...")
+console.log("Parsing bikeshed port... (" + bikeshedPort + ")")
 jsdom.env({
-  file: "index.html",
+  file: bikeshedPort,
   done: function (err, bikeshedWindow) {
     var bikeshedAnchors = getSortedAnchors(bikeshedWindow);
-    console.log("Parsing old version...\n")
+    console.log("Parsing old version... (" + oldFile + ")")
     jsdom.env({
-      file: "oldindex.html",
+      file: oldFile,
       done: function (err, oldWindow) {
         var oldAnchors = getSortedAnchors(oldWindow)
         console.log("Anchors missing from the Bikeshed port:")

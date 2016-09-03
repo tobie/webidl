@@ -1,0 +1,13 @@
+{
+  "name": "webidl-bikeshed-helper",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Helpers to convert the Web IDL to Bikeshed",
+  "scripts": {
+    "check-anchors": "node ./check-anchors.js"
+  },
+  "dependencies": {
+    "byline": "^5.0.0",
+    "jsdom": "^9.5.0"
+  }
+}

@@ -22,18 +22,21 @@ function dicFromDfns(dfns) {
 var argv = process.argv;
 
 if (argv.indexOf("-h") > 0 || argv.indexOf("--help") > 0) {
-    console.log("$ node ./check-dfn-contract.js")
+    console.log("$ node ./check-dfn-contract.js path/to/old/file path/to/new/file")
     process.exit();
 }
 
-console.log("Parsing bikeshed port...")
+var oldFile = process.argv[2];
+var bikeshedPort = process.argv[3];
+
+console.log("Parsing bikeshed port... (" + bikeshedPort + ")")
 jsdom.env({
-  file: "index.html",
+  file: bikeshedPort,
   done: function (err, bikeshedWindow) {
     var bikeshedDfns = dicFromDfns(getDfns(bikeshedWindow));
-    console.log("Parsing old version...\n")
+    console.log("Parsing old version... (" + oldFile + ")")
     jsdom.env({
-      file: "oldindex.html",
+      file: oldFile,
       done: function (err, oldWindow) {
         var oldDfns = dicFromDfns(getDfns(oldWindow));
         console.log("DFNs missing from the Bikeshed port:")
