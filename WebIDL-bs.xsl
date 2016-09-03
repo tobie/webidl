@@ -358,7 +358,7 @@ Boilerplate: omit issues-index, omit conformance
   <xsl:template match='h:div[@id="conventions"]/h:ul/h:li/text()[preceding-sibling::h:pre[@class="syntax"]]'>
     <xsl:value-of select='replace(., "[\(]Red text is used to highlight specific parts of the syntax discussed in surrounding prose[\.][\)]", "(Specific parts of the syntax discussed in surrounding prose are highlighted.)")' />
   </xsl:template>
-  
+
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXX DFN XXXXXXXXXXXXXXXXXXXXXXXXXX -->
   
   <!-- Turn SPAN.idltype with ids into DFNs -->
@@ -458,6 +458,7 @@ Boilerplate: omit issues-index, omit conformance
   <xsl:template name='a-idl'>
     <xsl:param name='txt'/>
     <xsl:param name='for'/>
+    <xsl:param name='display-text'/>
     <xsl:choose>
       <xsl:when test='$txt instance of element() and $txt/h:var'>
         <a interface='' lt='{substring-before(., "&lt;")}'>
@@ -475,6 +476,9 @@ Boilerplate: omit issues-index, omit conformance
           <xsl:value-of select='$for' /><xsl:text>/</xsl:text>
         </xsl:if>
         <xsl:value-of select='replace(replace(normalize-space($txt), "^Error$", "Error!!interface"), "unresticted float", "unrestricted float")' />
+        <xsl:if test="$display-text">
+          <xsl:text>|</xsl:text><xsl:value-of select='$display-text' />
+        </xsl:if>
         <xsl:text>}}</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
