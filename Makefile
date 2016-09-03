@@ -4,6 +4,7 @@ index.html : index.bs
 	bikeshed spec index.bs
 	bikeshed spec raw-index.bs >/dev/null
 	node ./check-anchors.js
+	node ./check-dfn-contract.js
 	node ./check-structure.js raw-index.html > raw-index.struc
 	node ./check-structure.js index.html > index.struc
 	diff raw-index.struc index.struc -B
