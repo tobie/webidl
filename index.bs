@@ -9,7 +9,7 @@ Mailing List Archives: https://lists.w3.org/Archives/Public/public-script-coord/
 Repository: heycam/webidl
 !Participate: <a href="https://github.com/heycam/webidl">GitHub</a> (<a href="https://github.com/heycam/webidl/issues/new">new issue</a>, <a href="https://github.com/heycam/webidl/issues">open issues</a>, <a href="https://www.w3.org/Bugs/Public/buglist.cgi?product=WebAppsWG&amp;component=WebIDL&amp;resolution=---">legacy bug tracker</a>)
 ED: https://heycam.github.io/webidl/
-TR: http://www.w3.org/TR/WebIDL/
+<!--TR: http://www.w3.org/TR/WebIDL/
 Previous Version: http://www.w3.org/TR/2012/CR-WebIDL-20120419/
 Previous Version: http://www.w3.org/TR/2012/WD-WebIDL-20120207/
 Previous Version: http://www.w3.org/TR/2011/WD-WebIDL-20110927/
@@ -18,7 +18,7 @@ Previous Version: http://www.w3.org/TR/2010/WD-WebIDL-20101021/
 Previous Version: http://www.w3.org/TR/2008/WD-WebIDL-20081219/
 Previous Version: http://www.w3.org/TR/2008/WD-WebIDL-20080829/
 Previous Version: http://www.w3.org/TR/2008/WD-DOM-Bindings-20080410/
-Previous Version: http://www.w3.org/TR/2007/WD-DOM-Bindings-20071017/
+Previous Version: http://www.w3.org/TR/2007/WD-DOM-Bindings-20071017/ -->
 Editor: Cameron McCormack, Mozilla Corporation, http://mcc.id.au/, cam@mcc.id.au
 Editor: Boris Zbarsky, Mozilla Corporation, bzbarsky@mit.edu
 Editor: Tobie Langel 78102, http://www.tobie.me, tobie@codespeaks.com
