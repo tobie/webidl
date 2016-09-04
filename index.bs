@@ -6527,7 +6527,7 @@ that same global environment.
     </pre>
 </div>
 
-Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" lt="es expose" export>exposes</dfn>
+Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" lt="es expose|exposes" export>exposes</dfn>
 all [=interfaces=]
 that the implementation supports.  If a given ECMAScript global environment does not
 expose an interface, then the requirements given in
