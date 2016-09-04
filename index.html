@@ -1911,7 +1911,11 @@ for ECMAScript Edition 6 are given.</p>
     <li data-md="">
      <p>Links to terms defined in this document or elsewhere: <a data-link-type="dfn" href="#dfn-example-term" id="ref-for-dfn-example-term-1">example term</a></p>
     <li data-md="">
-     <p>Grammar symbols: <emu-t>ExampleGrammarSymbol</emu-t></p>
+     <p>Grammar terminals: <emu-t>sometoken</emu-t></p>
+    <li data-md="">
+     <p>Grammar non-terminals: <emu-nt>ExampleGrammarNonTerminal</emu-nt></p>
+    <li data-md="">
+     <p>Grammar symbols: <emu-t class="symbol">identifier</emu-t></p>
     <li data-md="">
      <p>IDL and ECMAScript types: <code class="idl">ExampleType</code></p>
     <li data-md="">
@@ -1933,9 +1937,9 @@ for ECMAScript Edition 6 are given.</p>
      <p>(Specific parts of the syntax discussed in surrounding prose are highlighted.)</p>
     <li data-md="">
      <p>IDL grammar snippets:</p>
-<pre class="grammar no-index">ExampleGrammarSymbol :
-    OtherSymbol "sometoken"
-    AnotherSymbol
+<pre class="grammar no-index">ExampleGrammarNonTerminal :
+    OtherNonTerminal "sometoken"
+    other AnotherNonTerminal
     ε  // nothing
 </pre>
     <li data-md="">
@@ -12590,10 +12594,10 @@ while the editor was unavailable to do so.</p>
 entire <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-49">IDL fragment</a>.</p>
    <p>Each production in the grammar has on its right hand side either a
 non-zero sequence of terminal and non-terminal symbols, or an
-epsilon (ε) which indicates no symbols.  Symbols that begin with
-an uppercase letter are non-terminal symbols.  Symbols within quotes
-are terminal symbols that are matched with the exact text between
-the quotes.  Symbols that begin with a lowercase letter are terminal
+epsilon (ε) which indicates no symbols.
+Symbols that begin with an uppercase letter are non-terminal symbols.
+Symbols in monospaced fonts are terminal symbols.
+Symbols in sans-serif font that begin with a lowercase letter are terminal
 symbols that are matched by the regular expressions (using Perl 5 regular
 expression syntax <a data-link-type="biblio" href="#biblio-perlre">[PERLRE]</a>) as follows:</p>
    <table class="grammar data">
@@ -12632,13 +12636,13 @@ When tokenizing, the longest possible match must be used.  For example, if the i
 text is “<span class="input">a1</span>”, it is tokenized as a single <emu-t><a href="#prod-identifier">identifier</a></emu-t>,
 and not as a separate <emu-t><a href="#prod-identifier">identifier</a></emu-t> and <emu-t><a href="#prod-integer">integer</a></emu-t>.
 If the longest possible match could match one of the above named terminal symbols or
-one of the quoted terminal symbols from the grammar, it must be tokenized as the quoted
-terminal symbol.  Thus, the input text “<span class="input">long</span>” is tokenized as the quoted terminal symbol <emu-t>long</emu-t> rather than an <emu-t><a href="#prod-identifier">identifier</a></emu-t> called “long”,
+one of the other terminal symbols from the grammar, it must be tokenized as the latter.
+Thus, the input text “<span class="input">long</span>” is tokenized as the quoted terminal symbol <emu-t>long</emu-t> rather than an <emu-t><a href="#prod-identifier">identifier</a></emu-t> called “long”,
 and “<span class="input">.</span>” is tokenized as the quoted terminal symbol <emu-t>.</emu-t> rather than an <emu-t><a href="#prod-other">other</a></emu-t>.</p>
    <p>The IDL syntax is case sensitive, both for the quoted terminal symbols
 used in the grammar and the values used for <emu-t><a href="#prod-identifier">identifier</a></emu-t> terminals.  Thus, for
 example, the input text “<span class="input">Const</span>” is tokenized as
-an <emu-t><a href="#prod-identifier">identifier</a></emu-t> rather than the quoted
+an <emu-t><a href="#prod-identifier">identifier</a></emu-t> rather than the
 terminal symbol <emu-t>const</emu-t>, an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-155">interface</a> with <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-97">identifier</a> “A” is distinct from one named “a”, and an <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-114">extended attribute</a> [<code class="idl">constructor</code>] will not be recognized as
 the [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-24">Constructor</a></code>]
 extended attribute.</p>

@@ -305,7 +305,9 @@ The following typographic conventions are used in this document:
 
 *   Defining instances of terms: <dfn id="dfn-example-term">example term</dfn>
 *   Links to terms defined in this document or elsewhere: [=example term=]
-*   Grammar symbols: <emu-t>ExampleGrammarSymbol</emu-t>
+*   Grammar terminals: <emu-t>sometoken</emu-t>
+*   Grammar non-terminals: <emu-nt>ExampleGrammarNonTerminal</emu-t>
+*   Grammar symbols: <emu-t class="symbol">identifier</emu-t>
 *   IDL and ECMAScript types: <code class="idl">ExampleType</code>
 *   Code snippets: <code>a = b + obj.f()</code>
 *   Unicode characters: <span class="char">U+0030 DIGIT ZERO ("0")</span>
@@ -322,9 +324,9 @@ The following typographic conventions are used in this document:
     (Specific parts of the syntax discussed in surrounding prose are highlighted.)
 *   IDL grammar snippets:
     <pre class="grammar no-index">
-        ExampleGrammarSymbol :
-            OtherSymbol "sometoken"
-            AnotherSymbol
+        ExampleGrammarNonTerminal :
+            OtherNonTerminal "sometoken"
+            other AnotherNonTerminal
             ε  // nothing
     </pre>
 *   Non-normative notes:
@@ -13562,10 +13564,10 @@ entire [=IDL fragment=].
 
 Each production in the grammar has on its right hand side either a
 non-zero sequence of terminal and non-terminal symbols, or an
-epsilon (ε) which indicates no symbols.  Symbols that begin with
-an uppercase letter are non-terminal symbols.  Symbols within quotes
-are terminal symbols that are matched with the exact text between
-the quotes.  Symbols that begin with a lowercase letter are terminal
+epsilon (ε) which indicates no symbols.
+Symbols that begin with an uppercase letter are non-terminal symbols.
+Symbols in monospaced fonts are terminal symbols.
+Symbols in sans-serif font that begin with a lowercase letter are terminal
 symbols that are matched by the regular expressions (using Perl 5 regular
 expression syntax [[!PERLRE]]) as follows:
 
@@ -13613,8 +13615,8 @@ When tokenizing, the longest possible match must be used.  For example, if the i
 text is “<span class="input">a1</span>”, it is tokenized as a single <emu-t><a href="#prod-identifier">identifier</a></emu-t>,
 and not as a separate <emu-t><a href="#prod-identifier">identifier</a></emu-t> and <emu-t><a href="#prod-integer">integer</a></emu-t>.
 If the longest possible match could match one of the above named terminal symbols or
-one of the quoted terminal symbols from the grammar, it must be tokenized as the quoted
-terminal symbol.  Thus, the input text “<span class="input">long</span>” is tokenized as the quoted terminal symbol
+one of the other terminal symbols from the grammar, it must be tokenized as the latter.
+Thus, the input text “<span class="input">long</span>” is tokenized as the quoted terminal symbol
 <emu-t>long</emu-t> rather than an <emu-t><a href="#prod-identifier">identifier</a></emu-t> called “long”,
 and “<span class="input">.</span>” is tokenized as the quoted terminal symbol
 <emu-t>.</emu-t> rather than an <emu-t><a href="#prod-other">other</a></emu-t>.
@@ -13623,7 +13625,7 @@ The IDL syntax is case sensitive, both for the quoted terminal symbols
 used in the grammar and the values used for
 <emu-t><a href="#prod-identifier">identifier</a></emu-t> terminals.  Thus, for
 example, the input text “<span class="input">Const</span>” is tokenized as
-an <emu-t><a href="#prod-identifier">identifier</a></emu-t> rather than the quoted
+an <emu-t><a href="#prod-identifier">identifier</a></emu-t> rather than the
 terminal symbol <emu-t>const</emu-t>, an
 [=interface=] with
 [=identifier=]
