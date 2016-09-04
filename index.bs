@@ -1252,7 +1252,7 @@ or one of the three special floating point constant values
 (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>).
 
 Note: These values – in addition to strings and the empty sequence – can also be used to specify the
-[=default value|default value of a dictionary member=] or [=default value|of an optional argument=].  Note that strings and the
+[=member default value|default value of a dictionary member=] or [=argument default value|of an optional argument=].  Note that strings and the
 empty sequence <code>[]</code> cannot be used as the value of a
 [=constant=].
 
@@ -1719,7 +1719,7 @@ defined on the same [=interface=].
 The <dfn id="dfn-return-type" export>return type</dfn> of the operation is given
 by the type (matching <emu-nt><a href="#prod-ReturnType">ReturnType</a></emu-nt>)
 that appears before the operation’s optional [=identifier=].
-A return type of <code id="idl-void">void</code> indicates that the operation returns no value.
+A return type of <dfn id="idl-void" typedef>void</dfn> indicates that the operation returns no value.
 If the return type is an
 [=identifier=] followed by <code>?</code>,
 then the identifier must
@@ -1859,10 +1859,10 @@ optional if the operation is [=variadic=].
     };
 </pre>
 
-Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" for="optional argument" export>default value</dfn>
+Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" lt="argument default value" export>default value</dfn>
 specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
 and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
-then that gives the optional argument its [=default value=].
+then that gives the optional argument its [=argument default value|default value=].
 The implicitly optional final argument of a [=variadic=]
 operation must not have a default value specified.
 The default value is the value to be assumed when the operation is called with the
@@ -1875,7 +1875,7 @@ corresponding argument omitted.
 </pre>
 
 <p class="advisement">
-    It is strongly suggested not to use [=default value=]
+    It is strongly suggested not to use [=argument default value|default value=]
     of <emu-val>true</emu-val> for {{boolean}}-typed arguments,
     as this can be confusing for authors who might otherwise expect the default
     conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
@@ -1889,7 +1889,7 @@ and the argument is either the final argument or is followed only by
 [=optional arguments=], then
 the argument must be specified as optional.
 Such arguments are always considered to have a
-[=default value=] of an empty dictionary,
+[=argument default value|default value=] of an empty dictionary,
 unless otherwise specified.
 
 <div class="note">
@@ -1911,7 +1911,7 @@ an <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> token, a
 <emu-t class="symbol"><a href="#prod-float">float</a></emu-t> token or one of
 the three special floating point literal values (<code>Infinity</code>,
 <code>-Infinity</code> or <code>NaN</code>) is used as the
-[=default value=],
+[=argument default value|default value=],
 it is interpreted in the same way as for a [=constant=].
 
 <p id="string-literal">
@@ -1936,7 +1936,7 @@ it is interpreted in the same way as for a [=constant=].
 
 If the type of the [=optional argument=]
 is an [=enumeration=], then its
-[=default value=] if specified must
+[=argument default value|default value=] if specified must
 be one of the [=enumeration values|enumeration’s values=].
 
 Optional argument default values can also be specified using the
@@ -4153,7 +4153,7 @@ Dictionaries are always passed by value.  In language bindings where a dictionar
 dictionary to a [=platform object=] will not result in a reference to the dictionary being kept by that object.
 Similarly, any dictionary returned from a platform object will be a copy and modifications made to it will not be visible to the platform object.
 
-A dictionary can be defined to <dfn id="dfn-inherit-dictionary" for="dictionary" export>inherit</dfn> from another dictionary.
+A dictionary can be defined to <dfn id="dfn-inherit-dictionary" lt="inherit from dictionary" export>inherit</dfn> from another dictionary.
 If the identifier of the dictionary is followed by a colon and a [=identifier=],
 then that identifier identifies the inherited dictionary.  The identifier
 must identify a dictionary.
@@ -4175,7 +4175,7 @@ dictionary |B| that inherits from |A|, and so on.
 
 The <dfn id="dfn-inherited-dictionaries" export>inherited dictionaries</dfn> of
 a given dictionary |D| is the set of all dictionaries that |D|
-inherits from, directly or indirectly.  If |D| does not [=inherit=]
+inherits from, directly or indirectly.  If |D| does not [=inherit from dictionary|inherit=]
 from another dictionary, then the set is empty.  Otherwise, the set
 includes the dictionary |E| that |D| [=inherits=]
 from and all of |E|’s [=inherited dictionaries=].
@@ -4187,16 +4187,16 @@ On a given dictionary value, the presence of each dictionary member
 is optional, unless that member is specified as required.
 When specified in the dictionary value, a dictionary member is said to be
 <dfn id="dfn-present" export>present</dfn>, otherwise it is [=present|not present=].
-Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" for="dictionary member" export>default value</dfn>, which is
+Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" lt="member default value" export>default value</dfn>, which is
 the value to use for the dictionary member when passing a value to a
 [=platform object=] that does
 not have a specified value.  Dictionary members with default values are
 always considered to be present.
 
 <p class="advisement">
-    As with [=default value|operation argument default values=],
+    As with [=argument default value|operation argument default values=],
     is strongly suggested not to use of <emu-val>true</emu-val> as the
-    [=default value=] for
+    [=member default value|default value=] for
     {{boolean}}-typed
     [=dictionary members=],
     as this can be confusing for authors who might otherwise expect the default
@@ -4227,7 +4227,7 @@ identify any one of those definitions or a [=dictionary=].
 
 If the identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
 and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
-then that gives the dictionary member its [=default value=].
+then that gives the dictionary member its [=member default value|default value=].
 
 <pre highlight="webidl" class="syntax">
     dictionary identifier {
@@ -4243,13 +4243,13 @@ one of the three special floating point literal values (<code>Infinity</code>,
 <code>-Infinity</code> or <code>NaN</code>),
 a <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token or
 the two token sequence <code>[]</code> used as the
-[=default value=],
+[=member default value|default value=],
 it is interpreted in the same way as for an [=operation=]’s
-[=default value|optional argument default value=].
+[=argument default value|optional argument default value=].
 
 If the type of the [=dictionary member=]
 is an [=enumeration=], then its
-[=default value=] if specified must
+[=member default value|default value=] if specified must
 be one of the [=enumeration values|enumeration’s values=].
 
 If the type of the dictionary member is preceded by the
@@ -4466,7 +4466,7 @@ The following extended attributes are applicable to dictionary members:
         ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) });
     </pre>
     
-    Both fillPattern and strokePattern are given [=default values=],
+    Both fillPattern and strokePattern are given [=member default values=],
     so if they are omitted, the definition of drawRectangle can assume that they
     have the given default values and not include explicit wording to handle
     their non-presence.
@@ -4514,17 +4514,17 @@ for compatibility with historically defined exceptions in the DOM.
 For [=simple exceptions=],
 the [=error name=] is the name
 of the exception.
-For a [=DOMException=],
+For a {{DOMException}},
 the [=error name=] must
 be one of the names listed in the [=error names table=]
-below.  The table also indicates the [=DOMException=]'s integer code
+below.  The table also indicates the {{DOMException}}'s integer code
 for that error name, if it has one.
 
 There are two <a href="#idl-types">types</a> that can be used to refer to
 exception objects: {{Error!!interface}}, which encompasses all exceptions,
 and {{DOMException}} which includes just DOMException objects.
 This allows for example an [=operation=]
-to be declared to have a [=DOMException=]
+to be declared to have a {{DOMException}}
 [=return type=] or an [=attribute=]
 to be of type {{Error!!interface}}.
 
@@ -4550,7 +4550,7 @@ entails in the ECMAScript language binding.
         
     </blockquote>
     
-    To throw a new [=DOMException=] with
+    To throw a new {{DOMException}} with
     [=error name=]
     {{IndexSizeError}}:
     
@@ -4560,7 +4560,7 @@ entails in the ECMAScript language binding.
         
     </blockquote>
     
-    To create a new [=DOMException=] with
+    To create a new {{DOMException}} with
     [=error name=]
     {{SyntaxError}}:
     
@@ -4575,14 +4575,14 @@ entails in the ECMAScript language binding.
 <h4 id="idl-DOMException-error-names">Error names</h4>
 
 The <dfn id="dfn-error-names-table" export>error names table</dfn> below lists all the allowed error names
-for [=DOMExceptions=], a description,
+for {{DOMException|DOMExceptions}}, a description,
 and legacy code values.
 
 Note: If an error name is not listed here, please file a bug as indicated at the top of this specification and it will be addressed shortly. Thanks!
 
 <table id="error-names" class="vert data">
     <thead>
-        <tr><th>Name</th><th>Description</th><th>Legacy [=DOMException|code=] name and value</th></tr>
+        <tr><th>Name</th><th>Description</th><th>Legacy {{DOMException|code}} name and value</th></tr>
     </thead>
     <tbody>
         <tr>
@@ -5146,7 +5146,7 @@ an object can be described as being a <dfn id="dfn-platform-object" export>platf
 object that are considered to be platform objects:
 
 *   objects that implement a non-[=callback interface|callback=] [=interface=];
-*   objects representing IDL [=DOMExceptions=].
+*   objects representing IDL {{DOMException|DOMExceptions}}.
 
 In a browser, for example,
 the browser-implemented DOM objects (implementing interfaces such as <code class="idl">Node</code> and
@@ -5554,17 +5554,16 @@ The [=type name=] of the
 
 <h4 oldids="dom-DOMString" id="idl-DOMString" interface>DOMString</h4>
 
-The {{DOMString}} type
-corresponds to the set of all possible sequences of [=code units=].
+The {{DOMString}} type corresponds to
+the set of all possible sequences of [=code units=].
 Such sequences are commonly interpreted as UTF-16 encoded strings [[!RFC2781]]
 although this is not required.
-While {{DOMString}} is defined to be an OMG IDL boxed
-{{sequence&lt;unsigned short&gt;}}
-valuetype in <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#ID-C74D1578">DOM Level 3 Core</a></cite>
-([[DOM-LEVEL-3-CORE]], section 1.2.1),
-this document defines {{DOMString}} to be an intrinsic type so as to avoid
-special casing that sequence type in various situations where a
-string is required.
+While {{DOMString}} is defined to be
+an OMG IDL boxed {{sequence}}&lt;{{unsigned short}}&gt; valuetype
+in [[DOM-LEVEL-3-CORE/core#ID-C74D1578|DOM Level 3 Core §The DOMString Type]],
+this document defines {{DOMString}} to be an intrinsic type
+so as to avoidspecial casing that sequence type
+in various situations where a string is required.
 
 Note: Note also that <emu-val>null</emu-val>
 is not a value of type {{DOMString}}.
@@ -5751,7 +5750,7 @@ refer to a type whose values are the set of strings (sequences of
 
 Like {{DOMString}}, there is no way to represent a constant [=enumeration=]
 value in IDL, although enumeration-typed [=dictionary member=]
-[=default values=] can be specified using a
+[=member default values=] can be specified using a
 <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> literal.
 
 The [=type name=] of an enumeration type
@@ -6009,7 +6008,7 @@ The [=type name=] of the
 The {{Error!!interface}} type corresponds to the
 set of all possible non-null references to exception objects, including
 [=simple exceptions=]
-and [=DOMExceptions=].
+and {{DOMException|DOMExceptions}}.
 
 There is no way to represent a constant {{Error!!interface}}
 value in IDL.
@@ -6022,7 +6021,7 @@ The [=type name=] of the
 
 The {{DOMException}} type corresponds to the
 set of all possible non-null references to objects
-representing [=DOMExceptions=].
+representing {{DOMException|DOMExceptions}}.
 
 There is no way to represent a constant {{DOMException}}
 value in IDL.
@@ -6103,8 +6102,8 @@ byte values using that reference.
     
 </div>
 
-Attempting to [=get a reference to the bytes held by the buffer source|get a reference to=] or
-[=get a copy of the bytes held by the buffer source|get a copy of the bytes held by a buffer source=]
+Attempting to [=get a reference to the buffer source|get a reference to=] or
+[=get a copy of the buffer source|get a copy of the bytes held by a buffer source=]
 when the {{ArrayBuffer}} has been [=detach|detached=]
 will fail in a language binding-specific manner.
 
@@ -6528,14 +6527,14 @@ that same global environment.
     </pre>
 </div>
 
-Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" for="ECMAScript global environment" export>exposes</dfn>
+Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" lt="es expose" export>exposes</dfn>
 all [=interfaces=]
 that the implementation supports.  If a given ECMAScript global environment does not
 expose an interface, then the requirements given in
 [[#es-interfaces]] are
 not followed for that interface.
 
-Note: This allows, for example, ECMAScript global environments for Web Workers to [=expose=]
+Note: This allows, for example, ECMAScript global environments for Web Workers to [=es expose|expose=]
 different sets of supported interfaces from those exposed in environments
 for Web pages.
 
@@ -6580,7 +6579,7 @@ ECMAScript value type.
         <emu-val>undefined</emu-val> value.
      :  The <emu-val>null</emu-val> value
      :: The IDL value is the <emu-val>null</emu-val>
-        {{object?}} reference.
+        {{object|object?}} reference.
      :  A <emu-val>Boolean</emu-val> value
      :: The IDL value is the
         {{boolean}}
@@ -6634,7 +6633,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-boolean">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{boolean}} value
     by running the following algorithm:
 </p>
@@ -6646,7 +6645,7 @@ may return any value, which will be discarded.
 
 <p id="boolean-to-es">
     The IDL {{boolean}} value <emu-val>true</emu-val>
-    is [=converted=] to
+    is [=converted to an ECMAScript value|converted=] to
     the ECMAScript <emu-val>true</emu-val> value and the IDL {{boolean}}
     value <emu-val>false</emu-val> is converted to the ECMAScript
     <emu-val>false</emu-val> value.
@@ -6657,7 +6656,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-byte">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{byte}} value
     by running the following algorithm:
 </p>
@@ -6705,7 +6704,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-octet">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{octet}} value
     by running the following algorithm:
 </p>
@@ -6753,7 +6752,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-short">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{short}} value
     by running the following algorithm:
 </p>
@@ -6802,7 +6801,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-unsigned-short">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{unsigned short}} value
     by running the following algorithm:
 </p>
@@ -6848,7 +6847,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-long">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{long}} value
     by running the following algorithm:
 </p>
@@ -6894,7 +6893,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-unsigned-long">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{unsigned long}} value
     by running the following algorithm:
 </p>
@@ -6940,7 +6939,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-long-long">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{long long}} value
     by running the following algorithm:
 </p>
@@ -6993,7 +6992,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-unsigned-long-long">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{unsigned long long}} value
     by running the following algorithm:
 </p>
@@ -7045,7 +7044,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-float">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{float}} value
     by running the following algorithm:
 </p>
@@ -7079,7 +7078,7 @@ may return any value, which will be discarded.
 
 <p id="es-to-unrestricted-float">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{unrestricted float}} value
     by running the following algorithm:
 </p>
@@ -7123,7 +7122,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 
 <p id="es-to-double">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{double}} value
     by running the following algorithm:
 </p>
@@ -7148,7 +7147,7 @@ value when its bit pattern is interpreted as an unsigned 32 bit integer.
 
 <p id="es-to-unrestricted-double">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{unrestricted double}} value
     by running the following algorithm:
 </p>
@@ -7182,7 +7181,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 
 <p id="es-to-DOMString">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{DOMString}} value
     by running the following algorithm:
 </p>
@@ -7219,7 +7218,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 
 <p id="es-to-ByteString">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{ByteString}} value
     by running the following algorithm:
 </p>
@@ -7247,7 +7246,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 
 <p id="es-to-USVString">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{USVString}} value
     by running the following algorithm:
 </p>
@@ -7261,7 +7260,7 @@ value when its bit pattern is interpreted as an unsigned 64 bit integer.
 
 <p id="USVString-to-es">
     An IDL {{USVString}} value is
-    [=converted=]
+    [=converted to an ECMAScript value|converted=]
     to an ECMAScript value by running the following algorithm:
 </p>
 
@@ -7279,7 +7278,7 @@ values are represented by ECMAScript <emu-val>Object</emu-val> values.
 
 <p id="es-to-object">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{object}} value
     by running the following algorithm:
 </p>
@@ -7305,7 +7304,7 @@ values are represented by ECMAScript <emu-val>Object</emu-val> or
 
 <p id="es-to-interface">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL <a href="#idl-interface">interface type</a> value
     by running the following algorithm (where |I| is the [=interface=]):
 </p>
@@ -7336,7 +7335,7 @@ the object (or its prototype chain) correspond to [=dictionary members=].
 
 <p id="es-to-dictionary">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL <a href="#idl-dictionary">dictionary type</a> value
     by running the following algorithm (where |D| is the [=dictionary=]):
 </p>
@@ -7363,7 +7362,7 @@ the object (or its prototype chain) correspond to [=dictionary members=].
             1.  If |value| is not <emu-val>undefined</emu-val>, then:
                 1.  Let |idlValue| be the result of [=converted to an IDL value|converting=] |value| to an IDL value whose type is the type |member| is declared to be of.
                 1.  Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].
-            1.  Otherwise, if |value| is <emu-val>undefined</emu-val> but the [=dictionary member=] has a [=default value=], then:
+            1.  Otherwise, if |value| is <emu-val>undefined</emu-val> but the [=dictionary member=] has a [=member default value|default value=], then:
                 1.  Let |idlValue| be the dictionary member’s default value.
                 1.  Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].
             1.  Otherwise, if |value| is
@@ -7378,7 +7377,7 @@ up on the ECMAScript object are not necessarily the same as the object’s prope
 
 <p id="dictionary-to-es">
     An IDL dictionary value |V| is
-    [=converted=]
+    [=converted to an ECMAScript value|converted=]
     to an ECMAScript <emu-val>Object</emu-val> value
     by running the following algorithm (where |D| is the [=dictionary=]):
 </p>
@@ -7405,7 +7404,7 @@ values.
 
 <p id="es-to-enumeration">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL [=enumeration|enumeration type=]
     value as follows (where |E| is the [=enumeration=]):
 </p>
@@ -7433,7 +7432,7 @@ when they can be any object.
 
 <p id="es-to-callback-function">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL <a href="#idl-callback-function">callback function type</a> value
     by running the following algorithm:
 </p>
@@ -7467,7 +7466,7 @@ the ECMAScript <emu-val>null</emu-val> value.
 
 <p id="es-to-nullable">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL [=nullable type=] <code class="idl">|T|?</code>
     value (where |T| is the [=inner type=]) as follows:
 </p>
@@ -7510,7 +7509,7 @@ IDL <a interface lt="sequence">sequence&lt;|T|&gt;</a> values are represented by
 ECMAScript <emu-val>Array</emu-val> values.
 
 <p id="es-to-sequence">
-    An ECMAScript value |V| is [=converted=]
+    An ECMAScript value |V| is [=converted to an IDL value|converted=]
     to an IDL <a interface lt="sequence">sequence&lt;|T|&gt;</a> value as follows:
 </p>
 
@@ -7531,7 +7530,7 @@ ECMAScript <emu-val>Array</emu-val> values.
 <p id="sequence-to-es">
     An IDL sequence value |S| of type
     <a interface lt="sequence">sequence&lt;|T|&gt;</a> is
-    [=converted=]
+    [=converted to an ECMAScript value|converted=]
     to an ECMAScript <emu-val>Array</emu-val> object as follows:
 </p>
 
@@ -7663,7 +7662,7 @@ objects.
 
 <p id="es-to-promise">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL <a interface lt="Promise">Promise&lt;|T|&gt;</a> value as follows:
 </p>
 
@@ -7760,7 +7759,7 @@ represented by ECMAScript values that correspond to the union’s
             |V| to {{RegExp}}.
         1.  If |types| includes {{object}}, then return the IDL value
             that is a reference to the object |V|.
-    1.  If |V| is a [=DOMException=] platform object, then:
+    1.  If |V| is a {{DOMException}} platform object, then:
         1.  If |types| includes {{DOMException}} or
             {{Error!!interface}}, then return the
             result of [=converted to an IDL value|converting=]
@@ -7866,7 +7865,7 @@ ECMAScript <emu-val>RegExp</emu-val> objects.
 
 <p id="es-to-RegExp">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{RegExp}} value
     by running the following algorithm:
 </p>
@@ -7896,12 +7895,12 @@ ECMAScript <emu-val>RegExp</emu-val> objects.
 
 IDL {{Error!!interface}} values are represented
 by native ECMAScript <emu-val>Error</emu-val> objects and
-platform objects for [=DOMExceptions=].
+platform objects for {{DOMException|DOMExceptions}}.
 
 <p id="es-to-Error">
     An ECMAScript value |V| is
-    [=converted=]
-    to an IDL {{Error}} value
+    [=converted to an IDL value|converted=]
+    to an IDL {{Error!!interface}} value
     by running the following algorithm:
 </p>
 
@@ -7922,18 +7921,18 @@ platform objects for [=DOMExceptions=].
 <h4 id="es-DOMException">DOMException</h4>
 
 IDL {{DOMException}} values are represented
-by platform objects for [=DOMExceptions=].
+by platform objects for {{DOMException|DOMExceptions}}.
 
 <p id="es-to-DOMException">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{DOMException}} value
     by running the following algorithm:
 </p>
 
 <ol class="algorithm">
     1.  If [=Type=](|V|) is not Object,
-        or |V| is not a platform object that represents a [=DOMException=], then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
+        or |V| is not a platform object that represents a {{DOMException}}, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Return the IDL {{DOMException}} value that is a reference to the same object as |V|.
 </ol>
 
@@ -7952,7 +7951,7 @@ are represented by objects of the corresponding ECMAScript class.
 
 <p id="es-to-buffer-source">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{ArrayBuffer}} value
     by running the following algorithm:
 </p>
@@ -7967,7 +7966,7 @@ are represented by objects of the corresponding ECMAScript class.
 
 <p id="buffer-source-to-es">
     An ECMAScript value |V| is
-    [=converted=]
+    [=converted to an IDL value|converted=]
     to an IDL {{DataView}} value
     by running the following algorithm:
 </p>
@@ -7980,7 +7979,7 @@ are represented by objects of the corresponding ECMAScript class.
 </ol>
 
 An ECMAScript value |V| is
-[=converted=]
+[=converted to an IDL value|converted=]
 to an IDL {{Int8Array}},
 {{Int16Array}},
 {{Int32Array}},
@@ -8006,8 +8005,8 @@ an IDL value of any [=buffer source type=]
 to an ECMAScript value is the <emu-val>Object</emu-val> value that represents
 a reference to the same object that the IDL value represents.
 
-When [=get a reference to the bytes held by the buffer source|getting a reference to=]
-or [=get a copy of the bytes held by the buffer source|getting a copy of the bytes held by a buffer source=]
+When [=get a reference to the buffer source|getting a reference to=]
+or [=get a copy of the buffer source|getting a copy of the bytes held by a buffer source=]
 that is an ECMAScript <emu-val>ArrayBuffer</emu-val>, <emu-val>DataView</emu-val>
 or typed array object, these steps must be followed:
 
@@ -8045,7 +8044,7 @@ Values of frozen array types are represented by frozen ECMAScript
 <emu-val>Array</emu-val> object references.
 
 An ECMAScript value |V| is
-[=converted=]
+[=converted to an IDL value|converted=]
 to an IDL <a interface lt="FrozenArray">FrozenArray&lt;|T|&gt;</a> value
 by running the following algorithm:
 
@@ -10022,7 +10021,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
             
         1.  Let |optionality| be the value at index |i| in the list of [=optionality values=] of any entry in |S|.
         1.  If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
-            1.  If the argument at index |i| is declared with a [=default value=],
+            1.  If the argument at index |i| is declared with a [=argument default value|default value=],
                 then append to |values| that default value.
             1.  Otherwise, append to |values| the special value “missing”.
         1.  Otherwise, append to |values| the result of [=converted to an IDL value|converting=]
@@ -10068,7 +10067,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
             
             then remove from |S| all other entries.
         
-        1.  Otherwise: if |V| is a [=DOMException=] platform object and
+        1.  Otherwise: if |V| is a {{DOMException}} platform object and
             there is an entry in |S| that has one of the following types at position |i| of its type list,
             *   {{DOMException}}
             *   {{Error!!interface}}
@@ -10230,7 +10229,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
         1.  Let |type| be the type at index |i| in the type list of the remaining entry in |S|.
         1.  Let |optionality| be the value at index |i| in the list of [=optionality values=] of the remaining entry in |S|.
         1.  If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
-            1.  If the argument at index |i| is declared with a [=default value=],
+            1.  If the argument at index |i| is declared with a [=argument default value|default value=],
                 then append to |values| that default value.
             1.  Otherwise, append to |values| the special value “missing”.
         1.  Otherwise, append to |values| the result of
@@ -10238,7 +10237,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
         1.  Set |i| to |i| + 1.
     
     1.  While |i| is less than the number of arguments |callable| is declared to take:
-        1.  If |callable|’s argument at index |i| is declared with a [=default value=],
+        1.  If |callable|’s argument at index |i| is declared with a [=argument default value|default value=],
             then append to |values| that default value.
         1.  Otherwise, if |callable|’s argument at index |i| is not variadic, then append to |values| the special value “missing”.
         1.  Set |i| to |i| + 1.
@@ -10293,7 +10292,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
     
     When converting an optional argument’s ECMAScript value to its equivalent IDL value,
     <emu-val>undefined</emu-val> will be converted into
-    the [=default value|optional argument’s default value=],
+    the [=argument default value|optional argument’s default value=],
     if it has one, or a special value “missing” otherwise.
     
     Optional arguments corresponding to a final, variadic argument do not treat
@@ -12138,9 +12137,9 @@ an object |destination| with adder method name |adder|, perform the following st
         1.  Let |nextItem| be [=IteratorValue=](|next|).
         1.  [=ReturnIfAbrupt=](|nextItem|).
         1.  If [=Type=](|nextItem|) is not Object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
-        1.  Let |k| be the result of [=Get=](|nextItem|, <code>'0'</code>).
+        1.  Let |k| be the result of [=Get=](|nextItem|, <code>"0"</code>).
         1.  [=ReturnIfAbrupt=](|k|).
-        1.  Let |v| be the result of [=Get=](|nextItem|, <code>'1'</code>).
+        1.  Let |v| be the result of [=Get=](|nextItem|, <code>"1"</code>).
         1.  [=ReturnIfAbrupt=](|v|).
         1.  Let |status| be the result of calling the \[[Call]] internal method of |adder| with |destination| as
             |thisArgument| and (|k|, |v|) as |argumentsList|.
@@ -13146,7 +13145,7 @@ attributes <span class="descriptor">{ \[[Writable]]: <emu-val>false</emu-val>, \
 [=Simple exceptions=] are represented
 by native ECMAScript objects of the corresponding type.
 
-[=DOMExceptions=] are represented by
+{{DOMException|DOMExceptions}} are represented by
 [=platform objects=] that inherit from
 the [=DOMException prototype object=].
 
@@ -13158,12 +13157,12 @@ of the newly created object is associated with must be the same as for the
 [=DOMException constructor object=] itself.
 
 The value of the internal \[[Prototype]]
-property of a [=DOMException=]
+property of a {{DOMException}}
 object must be the [=DOMException prototype object=]
 from the global environment the exception object is associated with.
 
 The [=class string=]
-of a [=DOMException=] object
+of a {{DOMException}} object
 must be “DOMException”.
 
 Note: The intention is for DOMException objects to be just like the other
@@ -13208,7 +13207,7 @@ as the result of running the following algorithm:
 </ol>
 
 When a [=simple exception=] or
-[=DOMException=]
+{{DOMException}}
 |E| is to be [=created=],
 with [=error name=] |N| and
 optional user agent-defined message |M|,
@@ -13219,7 +13218,7 @@ the following steps must be followed:
     1.  Let |N| be the result of [=converted to an ECMAScript value|converting=] |N| to a <emu-val>String</emu-val> value.
     1.  Let |args| be a list of ECMAScript values.
         <dl class="switch">
-             :  |E| is [=DOMException=]
+             :  |E| is {{DOMException}}
              :: |args| is (<emu-val>undefined</emu-val>, |N|).
              :  |E| is a [=simple exception=]
              :: |args| is (|M|)
@@ -13227,7 +13226,7 @@ the following steps must be followed:
     1.  Let |G| be the [=current global environment=].
     1.  Let |X| be an object determined based on the type of |E|:
         <dl class="switch">
-             :  |E| is [=DOMException=]
+             :  |E| is {{DOMException}}
              :: |X| is the [=DOMException constructor object=]
                 from the global environment |G|.
              :  |E| is a [=simple exception=]
@@ -13240,7 +13239,7 @@ the following steps must be followed:
 </ol>
 
 When a [=simple exception=] or
-[=DOMException=]
+{{DOMException}}
 |E| is to be [=thrown=],
 with [=error name=] |N| and
 optional user agent-defined message |M|,
@@ -13415,7 +13414,7 @@ type is used for representing function values with no restriction on what argume
 are passed to it or what kind of value is returned from it.
 
 
-<h3 id="VoidFunction" typedef oldids="common-Function">VoidFunction</h3>
+<h3 id="VoidFunction" typedef>VoidFunction</h3>
 
 <pre class="idl">callback VoidFunction = void ();</pre>
 
