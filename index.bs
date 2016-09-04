@@ -146,6 +146,7 @@ urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html
         text: Prepare to run a callback
         text: Clean up after running a callback
         text: incumbent settings object
+        text: event handler IDL attributes; url: event-handler-attributes
         url: concept-realm-settings-object
             text: settings object
 urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
@@ -8515,11 +8516,8 @@ See [[#es-operations]]
 for the specific requirements that the use of
 [{{ImplicitThis}}] entails.
 
-Note: The [{{ImplicitThis}}]
-[=extended attribute=]
-is intended for use on the <code class="idl">Window</code>
-[=interface=] as defined
-in HTML5 ([[HTML5]], section 5.2).
+Note: The [{{ImplicitThis}}] [=extended attribute=]
+is intended for use on the {{Window}} [=interface=].
 
 <div class="example">
     
@@ -8698,11 +8696,9 @@ corresponding to [=interface members=].
 
 <div class="example">
     
-    The [{{PrimaryGlobal}}]
-    [=extended attribute=] is intended
-    to be used by the <code class="idl">Window</code> interface as defined in
-    HTML5 ([[HTML5]], section 5.2).  ([{{Global}}]
-    is intended to be used by worker global interfaces.)
+    The [{{PrimaryGlobal}}] [=extended attribute=] is intended
+    to be used by the {{Window}} interface.
+    ([{{Global}}] is intended to be used by worker global interfaces.)
     The <code class="idl">Window</code> interface exposes frames as properties on the <code class="idl">Window</code>
     object.  Since the <code class="idl">Window</code> object also serves as the
     ECMAScript global object, variable declarations or assignments to the named properties
@@ -9623,8 +9619,7 @@ the <emu-val>null</emu-val> value.
     mailing list before proceeding.  At the time of writing, the only known
     valid use of [{{TreatNonObjectAsNull}}]
     is for the [=callback functions=] used as the type
-    of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
-    ([[HTML5]], section 6.1.6.1)
+    of [=event handler IDL attributes=]
     such as <code>onclick</code> and <code>onerror</code>.
 </p>
 
@@ -10701,9 +10696,8 @@ taken:
         [=named properties object=] |O|.
     1.  Let |object| be the sole object from |O|’s ECMAScript global environment that implements |A|.
         
-        Note: For example, if the [=interface=] is the <code class="idl">Window</code>
-        interface as defined in HTML5 ([[HTML5]], section 5.2), then the sole object
-        will be this global environment’s window object.
+        Note: For example, if the [=interface=] is the {{Window}} interface,
+        then the sole object will be this global environment’s window object. [[HTML]]
         
     1.  If the result of running the [=named property visibility algorithm=] with
         property name |P| and object |object| is true, then:

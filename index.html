@@ -8079,8 +8079,7 @@ This is regardless of whether the calling code is in strict mode.</p>
 extended attribute must <a data-link-type="dfn" href="#dfn-xattr-no-arguments" id="ref-for-dfn-xattr-no-arguments-4">take no arguments</a>.</p>
    <p>See <a href="#es-operations">§4.6.7 Operations</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-5">ImplicitThis</a></code>] entails.</p>
-   <p class="note" role="note">Note: The [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-6">ImplicitThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-50">extended attribute</a> is intended for use on the <code class="idl">Window</code> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-61">interface</a> as defined
-in HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).</p>
+   <p class="note" role="note">Note: The [<code class="idl"><a data-link-type="idl" href="#ImplicitThis" id="ref-for-ImplicitThis-6">ImplicitThis</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-50">extended attribute</a> is intended for use on the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/browsers.html#window">Window</a></code> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-61">interface</a>.</p>
    <div class="example" id="example-555bc8a6">
     <a class="self-link" href="#example-555bc8a6"></a> 
     <p>In the following example, the <code class="idl">Window</code> <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-62">interface</a> is defined
@@ -8199,12 +8198,11 @@ is declared on, if any, is known as the <dfn class="dfn-paneled" data-dfn-type="
 entails for named properties,
 and <a href="#es-constants">§4.6.5 Constants</a>, <a href="#es-attributes">§4.6.6 Attributes</a> and <a href="#es-operations">§4.6.7 Operations</a> for the requirements relating to the location of properties
 corresponding to <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-16">interface members</a>.</p>
-   <div class="example" id="example-64702733">
-    <a class="self-link" href="#example-64702733"></a> 
+   <div class="example" id="example-b5485ed2">
+    <a class="self-link" href="#example-b5485ed2"></a> 
     <p>The [<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-27">PrimaryGlobal</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-59">extended attribute</a> is intended
-    to be used by the <code class="idl">Window</code> interface as defined in
-    HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2).  ([<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-28">Global</a></code>]
-    is intended to be used by worker global interfaces.)
+    to be used by the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/browsers.html#window">Window</a></code> interface.
+    ([<code class="idl"><a data-link-type="idl" href="#Global" id="ref-for-Global-28">Global</a></code>] is intended to be used by worker global interfaces.)
     The <code class="idl">Window</code> interface exposes frames as properties on the <code class="idl">Window</code> object.  Since the <code class="idl">Window</code> object also serves as the
     ECMAScript global object, variable declarations or assignments to the named properties
     will result in them being replaced by the new value.  Variable declarations for
@@ -8813,8 +8811,7 @@ the <emu-val>null</emu-val> value.</p>
     wish to use this feature are strongly advised to discuss this on the <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a> mailing list before proceeding.  At the time of writing, the only known
     valid use of [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-7">TreatNonObjectAsNull</a></code>]
     is for the <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-24">callback functions</a> used as the type
-    of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a> (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 6.1.6.1)
-    such as <code>onclick</code> and <code>onerror</code>. </p>
+    of <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-attributes">event handler IDL attributes</a> such as <code>onclick</code> and <code>onerror</code>. </p>
    <p>See <a href="#es-nullable-type">§4.2.24 Nullable types — T?</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#TreatNonObjectAsNull" id="ref-for-TreatNonObjectAsNull-8">TreatNonObjectAsNull</a></code>] entails.</p>
    <div class="example" id="example-5b770cce">
@@ -9736,8 +9733,8 @@ taken:</p>
      <p>Let <var>A</var> be the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-98">interface</a> for the <a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-9">named properties object</a> <var>O</var>.</p>
     <li data-md="">
      <p>Let <var>object</var> be the sole object from <var>O</var>’s ECMAScript global environment that implements <var>A</var>.</p>
-     <p class="note" role="note">Note: For example, if the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-99">interface</a> is the <code class="idl">Window</code> interface as defined in HTML5 (<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a>, section 5.2), then the sole object
-will be this global environment’s window object.</p>
+     <p class="note" role="note">Note: For example, if the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-99">interface</a> is the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/browsers.html#window">Window</a></code> interface,
+then the sole object will be this global environment’s window object. <a data-link-type="biblio" href="#biblio-html">[HTML]</a></p>
     <li data-md="">
      <p>If the result of running the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-1">named property visibility algorithm</a> with
 property name <var>P</var> and object <var>object</var> is true, then:</p>
@@ -13350,6 +13347,11 @@ this was to the right.)</p>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
+    <a data-link-type="biblio">[HTML]</a> defines the following terms:
+    <ul>
+     <li><a href="https://html.spec.whatwg.org/multipage/browsers.html#window">Window</a>
+    </ul>
+   <li>
     <a data-link-type="biblio">[WebIDL-1]</a> defines the following terms:
     <ul>
      <li><a href="https://heycam.github.io/webidl/#Function">Function</a>
@@ -13391,8 +13393,6 @@ this was to the right.)</p>
   <dl>
    <dt id="biblio-dom">[DOM]
    <dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/">DOM Standard</a>. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
-   <dt id="biblio-html5">[HTML5]
-   <dd>Ian Hickson; et al. <a href="https://www.w3.org/html/wg/drafts/html/master/">HTML5</a>. 28 October 2014. REC. URL: <a href="https://www.w3.org/html/wg/drafts/html/master/">https://www.w3.org/html/wg/drafts/html/master/</a>
    <dt id="biblio-omgidl">[OMGIDL]
    <dd><a href="http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf">CORBA 3.1 – OMG IDL Syntax and Semantics chapter</a>. January 2008. URL: <a href="http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf">http://www.omg.org/cgi-bin/doc?formal/08-01-04.pdf</a>
    <dt id="biblio-xml-names">[XML-NAMES]
