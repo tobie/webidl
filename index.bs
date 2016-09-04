@@ -157,6 +157,10 @@ urlPrefix: https://tc39.github.io/ecma262/
 </pre>
 
 <style>
+        pre.set {
+          font-size: 80%;
+        }
+        
         .mute {
           color: #9D937D
         }
@@ -832,12 +836,12 @@ accessed on the object.
     
     <pre>
         [Object.prototype: the Object prototype object]
-               ↑
-          [A.prototype: interface prototype object for A]
-               ↑
-          [B.prototype: interface prototype object for B]
-               ↑
-          [instanceOfB]
+             ↑
+        [A.prototype: interface prototype object for A]
+             ↑
+        [B.prototype: interface prototype object for B]
+             ↑
+        [instanceOfB]
     </pre>
     
     Calling <code>instanceOfB.f()</code> in ECMAScript will invoke the f defined
@@ -3355,16 +3359,16 @@ extended attribute’s [=takes a named argument list|named argument list=].
     for [=regular operations=] with
     identifier <code>f</code> and argument count 4 is:
     
-    <div class="set">
-        { &lt;f1, (DOMString), (required)&gt;,<br/>
-        &lt;f2, (Node, DOMString), (required, required)&gt;,<br/>
-        &lt;f2, (Node, DOMString, double), (required, required, variadic)&gt;,<br/>
-        &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)&gt;,<br/>
-        &lt;f3, (), ()&gt;,<br/>
-        &lt;f4, (Event, DOMString), (required, required)&gt;,<br/>
-        &lt;f4, (Event, DOMString, DOMString), (required, required, optional)&gt;,<br/>
+    <pre class="set">
+      { &lt;f1, (DOMString), (required)&gt;,
+        &lt;f2, (Node, DOMString), (required, required)&gt;,
+        &lt;f2, (Node, DOMString, double), (required, required, variadic)&gt;,
+        &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)&gt;,
+        &lt;f3, (), ()&gt;,
+        &lt;f4, (Event, DOMString), (required, required)&gt;,
+        &lt;f4, (Event, DOMString, DOMString), (required, required, optional)&gt;,
         &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)&gt; }
-    </div>
+    </pre>
 </div>
 
 Two types are <dfn id="dfn-distinguishable" export>distinguishable</dfn> if
@@ -3667,11 +3671,11 @@ be the same.
     
     For argument count 4, the effective overload set is:
     
-    <div class="set">
-        { &lt;f1, (DOMString), (required)&gt;,<br/>
-        &lt;f2, (long, double, Node, Node), (required, required, required, required)&gt;,<br/>
+    <pre class="set">
+      { &lt;f1, (DOMString), (required)&gt;,
+        &lt;f2, (long, double, Node, Node), (required, required, required, required)&gt;,
         &lt;f3, (double, double, DOMString, Node), (required, required, required, required)&gt; }
-    </div>
+    </pre>
     
     Looking at entries with type list length 4, the
     [=distinguishing argument index=]

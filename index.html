@@ -1164,6 +1164,10 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed 1.0.0" name="generator">
 <style>
+        pre.set {
+          font-size: 80%;
+        }
+        
         .mute {
           color: #9D937D
         }
@@ -2291,8 +2295,8 @@ one from an inherited interface.  Objects that implement the derived
 interface will expose the member on the derived interface.  It is
 language binding specific whether the overridden member can be
 accessed on the object.</p>
-   <div class="example" id="example-30774f10">
-    <a class="self-link" href="#example-30774f10"></a> 
+   <div class="example" id="example-db2a61da">
+    <a class="self-link" href="#example-db2a61da"></a> 
     <p>Consider the following two interfaces.</p>
 <pre class="highlight"><span class="kt">interface</span> <span class="nv">A</span> {
   <span class="kt">void</span> <span class="nv">f</span>();
@@ -2306,12 +2310,12 @@ accessed on the object.</p>
 </pre>
     <p>In the ECMAScript language binding, an instance of <code class="idl">B</code> will have a prototype chain that looks like the following:</p>
 <pre>[Object.prototype: the Object prototype object]
-       ↑
-  [A.prototype: interface prototype object for A]
-       ↑
-  [B.prototype: interface prototype object for B]
-       ↑
-  [instanceOfB]
+     ↑
+[A.prototype: interface prototype object for A]
+     ↑
+[B.prototype: interface prototype object for B]
+     ↑
+[instanceOfB]
 </pre>
     <p>Calling <code>instanceOfB.f()</code> in ECMAScript will invoke the f defined
     on <code class="idl">B</code>.  However, the f from <code class="idl">A</code> can still be invoked on an object that implements <code class="idl">B</code> by
@@ -4240,8 +4244,8 @@ a final, variadic argument), then break this loop.</p>
     <li data-md="">
      <p>The effective overload set is <var>S</var>.</p>
    </ol>
-   <div class="example" id="example-ad27d21d">
-    <a class="self-link" href="#example-ad27d21d"></a> 
+   <div class="example" id="example-86a20b01">
+    <a class="self-link" href="#example-86a20b01"></a> 
     <p>For the following interface:</p>
 <pre class="highlight"><span class="kt">interface</span> <span class="nv">A</span> {
   /* f1 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">DOMString</span> <span class="nv">a</span>);
@@ -4253,7 +4257,15 @@ a final, variadic argument), then break this loop.</p>
     <p>assuming <code class="idl">Node</code> and <code class="idl">Event</code> are two other interfaces of which no object can implement both,
     the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-2">effective overload set</a> for <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-7">regular operations</a> with
     identifier <code>f</code> and argument count 4 is:</p>
-    <div class="set"> { &lt;f1, (DOMString), (required)>,<br> &lt;f2, (Node, DOMString), (required, required)>,<br> &lt;f2, (Node, DOMString, double), (required, required, variadic)>,<br> &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)>,<br> &lt;f3, (), ()>,<br> &lt;f4, (Event, DOMString), (required, required)>,<br> &lt;f4, (Event, DOMString, DOMString), (required, required, optional)>,<br> &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)> } </div>
+<pre class="set">{ &lt;f1, (DOMString), (required)>,
+  &lt;f2, (Node, DOMString), (required, required)>,
+  &lt;f2, (Node, DOMString, double), (required, required, variadic)>,
+  &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)>,
+  &lt;f3, (), ()>,
+  &lt;f4, (Event, DOMString), (required, required)>,
+  &lt;f4, (Event, DOMString, DOMString), (required, required, optional)>,
+  &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)> }
+</pre>
    </div>
    <p>Two types are <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-distinguishable">distinguishable</dfn> if
 at most one of the two <a data-link-type="dfn" href="#dfn-includes-a-nullable-type" id="ref-for-dfn-includes-a-nullable-type-1">includes a nullable type</a> or is a <a href="#idl-dictionary" id="ref-for-idl-dictionary-2">dictionary type</a>,
@@ -4500,8 +4512,8 @@ The lowest such index is termed the <dfn class="dfn-paneled" data-dfn-type="dfn"
 all of the entries’ type lists must be the same
 and the booleans in the corresponding list indicating argument optionality must
 be the same.</p>
-   <div class="example" id="example-3b110d70">
-    <a class="self-link" href="#example-3b110d70"></a> 
+   <div class="example" id="example-11d7a305">
+    <a class="self-link" href="#example-11d7a305"></a> 
     <p>The following is invalid:</p>
 <pre class="highlight"><span class="kt">interface</span> <span class="nv">B</span> {
   /* f1 */ <span class="kt">void</span> <span class="nv">f</span>(<span class="kt">DOMString</span> <span class="nv">w</span>);
@@ -4510,7 +4522,10 @@ be the same.</p>
 };
 </pre>
     <p>For argument count 4, the effective overload set is:</p>
-    <div class="set"> { &lt;f1, (DOMString), (required)>,<br> &lt;f2, (long, double, Node, Node), (required, required, required, required)>,<br> &lt;f3, (double, double, DOMString, Node), (required, required, required, required)> } </div>
+<pre class="set">{ &lt;f1, (DOMString), (required)>,
+  &lt;f2, (long, double, Node, Node), (required, required, required, required)>,
+  &lt;f3, (double, double, DOMString, Node), (required, required, required, required)> }
+</pre>
     <p>Looking at entries with type list length 4, the <a data-link-type="dfn" href="#dfn-distinguishing-argument-index" id="ref-for-dfn-distinguishing-argument-index-3">distinguishing argument index</a> is 2, since <code class="idl">Node</code> and <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-15">DOMString</a></code> are <a data-link-type="dfn" href="#dfn-distinguishable" id="ref-for-dfn-distinguishable-3">distinguishable</a>.
     However, since the arguments in these two overloads at index 0 are different,
     the overloading is invalid.</p>
