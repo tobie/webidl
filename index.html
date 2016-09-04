@@ -1712,7 +1712,7 @@ are interoperable.</p>
          <ol class="toc">
           <li><a href="#create-sequence-from-iterable"><span class="secno">4.2.25.1</span> <span class="content">Creating a sequence from an iterable</span></a>
          </ol>
-        <li><a href="#es-promise"><span class="secno">4.2.26</span> <span class="content">Promise types — Promise&lt;<var>T</var>></span></a>
+        <li><a href="#es-promise"><span class="secno">4.2.26</span> <span class="content">Promise types — Promise&lt;<var>T</var>></span></a>
         <li><a href="#es-union"><span class="secno">4.2.27</span> <span class="content">Union types</span></a>
         <li><a href="#es-RegExp"><span class="secno">4.2.28</span> <span class="content">RegExp</span></a>
         <li><a href="#es-Error"><span class="secno">4.2.29</span> <span class="content">Error</span></a>
@@ -1909,9 +1909,7 @@ for ECMAScript Edition 6 are given.</p>
     <li data-md="">
      <p>Defining instances of terms: <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="dfn-example-term">example term</dfn></p>
     <li data-md="">
-     <p>Links to terms defined in this document: <a data-link-type="dfn" href="#dfn-example-term" id="ref-for-dfn-example-term-1">example term</a></p>
-    <li data-md="">
-     <p>Links to terms defined in other documents: <a data-link-type="dfn" href="#dfn-example-term" id="ref-for-dfn-example-term-2">example term</a></p>
+     <p>Links to terms defined in this document or elsewhere: <a data-link-type="dfn" href="#dfn-example-term" id="ref-for-dfn-example-term-1">example term</a></p>
     <li data-md="">
      <p>Grammar symbols: <emu-t>ExampleGrammarSymbol</emu-t></p>
     <li data-md="">
@@ -2618,7 +2616,7 @@ whose value is determined as follows:</p>
     <li data-md="">
      <p>Let <var>number</var> be the result of interpreting all remaining characters following the optional leading <span class="char">U+002D HYPHEN-MINUS ("-")</span> character and any characters indicating the base as an integer specified in base <var>base</var>.</p>
     <li data-md="">
-     <p>Return <var>sign</var> × <var>number</var>.</p>
+     <p>Return <var>sign</var> × <var>number</var>.</p>
    </ol>
    <p>The type of an <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> token is the same
 as the type of the constant, dictionary member or optional argument it is being used as the value of.
@@ -3864,8 +3862,8 @@ by a description of how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-exp
 <span class="nx">a</span><span class="p">.</span><span class="nx">toWord</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>  <span class="c1">// Evaluates to "five".</span>
 <span class="nx">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>         <span class="c1">// Evaluates to undefined, since there is no property "5".</span></pre>
    </div>
-   <div class="example" id="example-e444ee9e">
-    <a class="self-link" href="#example-e444ee9e"></a> 
+   <div class="example" id="example-2d398963">
+    <a class="self-link" href="#example-2d398963"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-23">IDL fragment</a> defines an interface <code class="idl">OrderedMap</code> which allows
     retrieving and setting values by name or by index number:</p>
 <pre class="highlight"><span class="kt">interface</span> <span class="nv">OrderedMap</span> {
@@ -3887,7 +3885,7 @@ by a description of how to <dfn class="dfn-paneled" data-dfn-type="dfn" data-exp
     two sentences would suffice:</p>
     <blockquote>
      <p>An object <var>map</var> implementing <code class="idl">OrderedMap</code> supports indexed properties with indices in the range
-        0 ≤ <var>index</var> &lt; <code>map.size</code>.</p>
+        0 ≤ <var>index</var> &lt; <code>map.size</code>.</p>
      <p>Such objects also support a named property for every name that,
         if passed to <code>get()</code>, would return a non-null value.</p>
     </blockquote>
@@ -4125,12 +4123,12 @@ the inputs to the algorithm needed to compute the set.</p>
    <p>An effective overload set is used, among other things, to determine whether there are ambiguities in the
 overloaded operations, constructors and callers specified on an interface.</p>
    <p>The elements of an effective overload set are tuples of the form
-&lt;<var>callable</var>, <var>type list</var>, <var>optionality list</var>>.  If the effective overload
+&lt;<var>callable</var>, <var>type list</var>, <var>optionality list</var>>.  If the effective overload
 set is for regular operations, static operations or legacy callers, then <var>callable</var> is an operation;
 if it is for constructors or named constructors, then <var>callable</var> is an
 extended attribute; and if it is for callback functions, then <var>callable</var> is the callback function itself.  In all cases, <var>type list</var> is a list
 of IDL types, and <var>optionality list</var> is a list of three possible <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-optionality-value">optionality values</dfn> –
-“required”, “optional” or “variadic” – indicating whether
+“required”, “optional” or “variadic” – indicating whether
 the argument at a given index was declared as being <a data-link-type="dfn" href="#dfn-optional-argument" id="ref-for-dfn-optional-argument-4">optional</a> or corresponds to a <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic-6">variadic</a> argument.
 Each tuple represents an allowable invocation of the operation,
 constructor, legacy caller or callback function with an argument value list of the given types.
@@ -4206,19 +4204,19 @@ the argument on which the ellipsis appears counts as a single argument.</p>
 “optional” if the argument is <a data-link-type="dfn" href="#dfn-optional-argument" id="ref-for-dfn-optional-argument-6">optional</a>,
 and “required” otherwise.</p>
       <li data-md="">
-       <p>Add to <var>S</var> the tuple &lt;<var>X</var>, <var>t</var><sub>0..<var>n</var>−1</sub>, <var>o</var><sub>0..<var>n</var>−1</sub>>.</p>
+       <p>Add to <var>S</var> the tuple &lt;<var>X</var>, <var>t</var><sub>0..<var>n</var>−1</sub>, <var>o</var><sub>0..<var>n</var>−1</sub>>.</p>
       <li data-md="">
        <p>If <var>X</var> is declared to be <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic-9">variadic</a>, then:</p>
        <ol>
         <li data-md="">
-         <p>For every integer <var>i</var>, such that <var>n</var> ≤ <var>i</var> ≤ <var>m</var>−1:</p>
+         <p>For every integer <var>i</var>, such that <var>n</var> ≤ <var>i</var> ≤ <var>m</var>−1:</p>
          <ol>
           <li data-md="">
-           <p>Let <var>u</var><sub>0..<var>i</var></sub> be a list of types, where <var>u</var><sub>j</sub> = <var>t</var><sub>j</sub> (for <var>j</var> &lt; <var>n</var>) and <var>u</var><sub>j</sub> = <var>t</var><sub><var>n</var>−1</sub> (for <var>j</var> ≥ <var>n</var>).</p>
+           <p>Let <var>u</var><sub>0..<var>i</var></sub> be a list of types, where <var>u</var><sub>j</sub> = <var>t</var><sub>j</sub> (for <var>j</var> &lt; <var>n</var>) and <var>u</var><sub>j</sub> = <var>t</var><sub><var>n</var>−1</sub> (for <var>j</var> ≥ <var>n</var>).</p>
           <li data-md="">
-           <p>Let <var>p</var><sub>0..<var>i</var></sub> be a list of <a data-link-type="dfn" href="#dfn-optionality-value" id="ref-for-dfn-optionality-value-2">optionality values</a>, where <var>p</var><sub>j</sub> = <var>o</var><sub>j</sub> (for <var>j</var> &lt; <var>n</var>) and <var>p</var><sub>j</sub> = “variadic” (for <var>j</var> ≥ <var>n</var>).</p>
+           <p>Let <var>p</var><sub>0..<var>i</var></sub> be a list of <a data-link-type="dfn" href="#dfn-optionality-value" id="ref-for-dfn-optionality-value-2">optionality values</a>, where <var>p</var><sub>j</sub> = <var>o</var><sub>j</sub> (for <var>j</var> &lt; <var>n</var>) and <var>p</var><sub>j</sub> = “variadic” (for <var>j</var> ≥ <var>n</var>).</p>
           <li data-md="">
-           <p>Add to <var>S</var> the tuple &lt;<var>X</var>, <var>u</var><sub>0..<var>i</var></sub>, <var>p</var><sub>0..<var>i</var></sub>>.</p>
+           <p>Add to <var>S</var> the tuple &lt;<var>X</var>, <var>u</var><sub>0..<var>i</var></sub>, <var>p</var><sub>0..<var>i</var></sub>>.</p>
          </ol>
        </ol>
       <li data-md="">
@@ -4230,7 +4228,7 @@ and “required” otherwise.</p>
          <p>If argument <var>i</var> of <var>X</var> is not <a data-link-type="dfn" href="#dfn-optional-argument" id="ref-for-dfn-optional-argument-7">optional</a> (i.e., it is not marked as <code>optional</code> and is not
 a final, variadic argument), then break this loop.</p>
         <li data-md="">
-         <p>Otherwise, add to <var>S</var> the tuple &lt;<var>X</var>, <var>t</var><sub>0..<var>i</var>−1</sub>, <var>o</var><sub>0..<var>i</var>−1</sub>>.</p>
+         <p>Otherwise, add to <var>S</var> the tuple &lt;<var>X</var>, <var>t</var><sub>0..<var>i</var>−1</sub>, <var>o</var><sub>0..<var>i</var>−1</sub>>.</p>
         <li data-md="">
          <p>Set <var>i</var> to <var>i</var>−1.</p>
        </ol>
@@ -5595,49 +5593,49 @@ represented with the <code>true</code> and <code>false</code> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-2">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-boolean" id="ref-for-idl-boolean-9">boolean</a></code> type is “Boolean”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.3" data-lt="byte" id="idl-byte"><span class="secno">3.11.3. </span><span class="content">byte</span><span id="dom-byte"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-2">byte</a></code> type is a signed integer
-type that has values in the range [−128, 127].</p>
+type that has values in the range [−128, 127].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-3">byte</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-3">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-4">byte</a></code> type is “Byte”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.4" data-lt="octet" id="idl-octet"><span class="secno">3.11.4. </span><span class="content">octet</span><span id="dom-octet"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-2">octet</a></code> type is an unsigned integer
-type that has values in the range [0, 255].</p>
+type that has values in the range [0, 255].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-3">octet</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-4">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-4">octet</a></code> type is “Octet”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.5" data-lt="short" id="idl-short"><span class="secno">3.11.5. </span><span class="content">short</span><span id="dom-short"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-2">short</a></code> type is a signed integer
-type that has values in the range [−32768, 32767].</p>
+type that has values in the range [−32768, 32767].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-3">short</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-5">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-4">short</a></code> type is “Short”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.6" data-lt="unsigned short" id="idl-unsigned-short"><span class="secno">3.11.6. </span><span class="content">unsigned short</span><span id="dom-unsignedshort"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-2">unsigned short</a></code> type is an unsigned integer
-type that has values in the range [0, 65535].</p>
+type that has values in the range [0, 65535].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-3">unsigned short</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-6">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-4">unsigned short</a></code> type is “UnsignedShort”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.7" data-lt="long" id="idl-long"><span class="secno">3.11.7. </span><span class="content">long</span><span id="dom-long"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-3">long</a></code> type is a signed integer
-type that has values in the range [−2147483648, 2147483647].</p>
+type that has values in the range [−2147483648, 2147483647].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-4">long</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-7">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-5">long</a></code> type is “Long”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.8" data-lt="unsigned long" id="idl-unsigned-long"><span class="secno">3.11.8. </span><span class="content">unsigned long</span><span id="dom-unsignedlong"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-7">unsigned long</a></code> type is an unsigned integer
-type that has values in the range [0, 4294967295].</p>
+type that has values in the range [0, 4294967295].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-8">unsigned long</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-8">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-9">unsigned long</a></code> type is “UnsignedLong”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.9" data-lt="long long" id="idl-long-long"><span class="secno">3.11.9. </span><span class="content">long long</span><span id="dom-longlong"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-3">long long</a></code> type is a signed integer
-type that has values in the range [−9223372036854775808, 9223372036854775807].</p>
+type that has values in the range [−9223372036854775808, 9223372036854775807].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-4">long long</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-9">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-5">long long</a></code> type is “LongLong”.</p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.10" data-lt="unsigned long long" id="idl-unsigned-long-long"><span class="secno">3.11.10. </span><span class="content">unsigned long long</span><span id="dom-unsignedlonglong"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-3">unsigned long long</a></code> type is an unsigned integer
-type that has values in the range [0, 18446744073709551615].</p>
+type that has values in the range [0, 18446744073709551615].</p>
    <p><code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-4">unsigned long long</a></code> constant values in IDL are
 represented with <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> tokens.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-10">type name</a> of the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-5">unsigned long long</a></code> type is “UnsignedLongLong”.</p>
@@ -5697,7 +5695,7 @@ The following algorithm defines a way to <dfn class="dfn-paneled" data-dfn-type=
     <li data-md="">
      <p>Initialize <var>U</var> to be an empty sequence of Unicode characters.</p>
     <li data-md="">
-     <p>While <var>i</var> &lt; <var>n</var>:</p>
+     <p>While <var>i</var> &lt; <var>n</var>:</p>
      <ol>
       <li data-md="">
        <p>Let <var>c</var> be the <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-3">code unit</a> in <var>S</var> at index <var>i</var>.</p>
@@ -5705,31 +5703,31 @@ The following algorithm defines a way to <dfn class="dfn-paneled" data-dfn-type=
        <p>Depending on the value of <var>c</var>:</p>
        <dl class="switch">
         <dt data-md="">
-         <p><var>c</var> &lt; 0xD800 or <var>c</var> > 0xDFFF</p>
+         <p><var>c</var> &lt; 0xD800 or <var>c</var> > 0xDFFF</p>
         <dd data-md="">
          <p>Append to <var>U</var> the Unicode character with code point <var>c</var>.</p>
         <dt data-md="">
-         <p>0xDC00 ≤ <var>c</var> ≤ 0xDFFF</p>
+         <p>0xDC00 ≤ <var>c</var> ≤ 0xDFFF</p>
         <dd data-md="">
          <p>Append to <var>U</var> a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.</p>
         <dt data-md="">
-         <p>0xD800 ≤ <var>c</var> ≤ 0xDBFF</p>
+         <p>0xD800 ≤ <var>c</var> ≤ 0xDBFF</p>
         <dd data-md="">
          <ol class="only">
           <li data-md="">
-           <p>If <var>i</var> = <var>n</var>−1, then append to <var>U</var> a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.</p>
+           <p>If <var>i</var> = <var>n</var>−1, then append to <var>U</var> a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.</p>
           <li data-md="">
-           <p>Otherwise, <var>i</var> &lt; <var>n</var>−1:</p>
+           <p>Otherwise, <var>i</var> &lt; <var>n</var>−1:</p>
            <ol>
             <li data-md="">
              <p>Let <var>d</var> be the code unit in <var>S</var> at index <var>i</var>+1.</p>
             <li data-md="">
-             <p>If 0xDC00 ≤ <var>d</var> ≤ 0xDFFF, then:</p>
+             <p>If 0xDC00 ≤ <var>d</var> ≤ 0xDFFF, then:</p>
              <ol>
               <li data-md="">
-               <p>Let <var>a</var> be <var>c</var> &amp; 0x3FF.</p>
+               <p>Let <var>a</var> be <var>c</var> &amp; 0x3FF.</p>
               <li data-md="">
-               <p>Let <var>b</var> be <var>d</var> &amp; 0x3FF.</p>
+               <p>Let <var>b</var> be <var>d</var> &amp; 0x3FF.</p>
               <li data-md="">
                <p>Append to <var>U</var> the Unicode character with
 code point 2<sup>16</sup>+2<sup>10</sup><var>a</var>+<var>b</var>.</p>
@@ -5737,7 +5735,7 @@ code point 2<sup>16</sup>+2<sup>10</sup><var>a</var>+<var>b</var>.</p>
                <p>Set <var>i</var> to <var>i</var>+1.</p>
              </ol>
             <li data-md="">
-             <p>Otherwise, <var>d</var> &lt; 0xDC00 or <var>d</var> > 0xDFFF.
+             <p>Otherwise, <var>d</var> &lt; 0xDC00 or <var>d</var> > 0xDFFF.
 Append to <var>U</var> a <span class="char">U+FFFD REPLACEMENT CHARACTER</span>.</p>
            </ol>
          </ol>
@@ -6482,13 +6480,13 @@ may return any value, which will be discarded.</p>
     <li data-md="">
      <p>Set <var>x</var> to <var>x</var> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</p>
     <li data-md="">
-     <p>If <var>x</var> ≥ 2<sup>7</sup>, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-10">byte</a></code> value that represents the same numeric value as <var>x</var> − 2<sup>8</sup>.
+     <p>If <var>x</var> ≥ 2<sup>7</sup>, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-10">byte</a></code> value that represents the same numeric value as <var>x</var> − 2<sup>8</sup>.
 Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-11">byte</a></code> value that represents the same numeric value as <var>x</var>.</p>
    </ol>
    <p id="byte-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-2">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-12">byte</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val> that represents
     the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-13">byte</a></code> value.
-    The <emu-val>Number</emu-val> value will be an integer in the range [−128, 127]. </p>
+    The <emu-val>Number</emu-val> value will be an integer in the range [−128, 127]. </p>
    <h4 class="heading settled" data-level="4.2.5" id="es-octet"><span class="secno">4.2.5. </span><span class="content">octet</span><a class="self-link" href="#es-octet"></a></h4>
    <p id="es-to-octet"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-6">octet</a></code> value
     by running the following algorithm: </p>
@@ -6547,7 +6545,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-b
    <p id="octet-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-3">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-11">octet</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val> that represents
     the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-12">octet</a></code> value.
-    The <emu-val>Number</emu-val> value will be an integer in the range [0, 255]. </p>
+    The <emu-val>Number</emu-val> value will be an integer in the range [0, 255]. </p>
    <h4 class="heading settled" data-level="4.2.6" id="es-short"><span class="secno">4.2.6. </span><span class="content">short</span><a class="self-link" href="#es-short"></a></h4>
    <p id="es-to-short"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-5">short</a></code> value
     by running the following algorithm: </p>
@@ -6601,13 +6599,13 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-b
     <li data-md="">
      <p>Set <var>x</var> to <var>x</var> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>16</sup>.</p>
     <li data-md="">
-     <p>If <var>x</var> ≥ 2<sup>15</sup>, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-9">short</a></code> value that represents the same numeric value as <var>x</var> − 2<sup>16</sup>.
+     <p>If <var>x</var> ≥ 2<sup>15</sup>, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-9">short</a></code> value that represents the same numeric value as <var>x</var> − 2<sup>16</sup>.
 Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-10">short</a></code> value that represents the same numeric value as <var>x</var>.</p>
    </ol>
    <p id="short-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-4">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-11">short</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val> that represents the
     same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-short" id="ref-for-idl-short-12">short</a></code> value.
-    The <emu-val>Number</emu-val> value will be an integer in the range [−32768, 32767]. </p>
+    The <emu-val>Number</emu-val> value will be an integer in the range [−32768, 32767]. </p>
    <h4 class="heading settled" data-level="4.2.7" id="es-unsigned-short"><span class="secno">4.2.7. </span><span class="content">unsigned short</span><a class="self-link" href="#es-unsigned-short"></a></h4>
    <p id="es-to-unsigned-short"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-5">unsigned short</a></code> value
     by running the following algorithm: </p>
@@ -6662,7 +6660,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
    <p id="unsigned-short-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-5">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-9">unsigned short</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val> that
     represents the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-short" id="ref-for-idl-unsigned-short-10">unsigned short</a></code> value.
-    The <emu-val>Number</emu-val> value will be an integer in the range [0, 65535]. </p>
+    The <emu-val>Number</emu-val> value will be an integer in the range [0, 65535]. </p>
    <h4 class="heading settled" data-level="4.2.8" id="es-long"><span class="secno">4.2.8. </span><span class="content">long</span><a class="self-link" href="#es-long"></a></h4>
    <p id="es-to-long"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-6">long</a></code> value
     by running the following algorithm: </p>
@@ -6717,7 +6715,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
    <p id="long-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-6">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-10">long</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val> that
     represents the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-long" id="ref-for-idl-long-11">long</a></code> value.
-    The <emu-val>Number</emu-val> value will be an integer in the range [−2147483648, 2147483647]. </p>
+    The <emu-val>Number</emu-val> value will be an integer in the range [−2147483648, 2147483647]. </p>
    <h4 class="heading settled" data-level="4.2.9" id="es-unsigned-long"><span class="secno">4.2.9. </span><span class="content">unsigned long</span><a class="self-link" href="#es-unsigned-long"></a></h4>
    <p id="es-to-unsigned-long"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-10">unsigned long</a></code> value
     by running the following algorithm: </p>
@@ -6772,7 +6770,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
    <p id="unsigned-long-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-7">converting</a> an IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-14">unsigned long</a></code> value to an ECMAScript
     value is a <emu-val>Number</emu-val> that
     represents the same numeric value as the IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long" id="ref-for-idl-unsigned-long-15">unsigned long</a></code> value.
-    The <emu-val>Number</emu-val> value will be an integer in the range [0, 4294967295]. </p>
+    The <emu-val>Number</emu-val> value will be an integer in the range [0, 4294967295]. </p>
    <h4 class="heading settled" data-level="4.2.10" id="es-long-long"><span class="secno">4.2.10. </span><span class="content">long long</span><a class="self-link" href="#es-long-long"></a></h4>
    <p id="es-to-long-long"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-6">long long</a></code> value
     by running the following algorithm: </p>
@@ -6796,7 +6794,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
       <li data-md="">
        <p>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).</p>
       <li data-md="">
-       <p>If <var>x</var> &lt; −2<sup>53</sup> + 1 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-14">throw a <emu-val>TypeError</emu-val></a>.</p>
+       <p>If <var>x</var> &lt; −2<sup>53</sup> + 1 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-14">throw a <emu-val>TypeError</emu-val></a>.</p>
       <li data-md="">
        <p>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-7">long long</a></code> value that represents the same numeric value as <var>x</var>.</p>
      </ol>
@@ -6813,7 +6811,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
      <p>then:</p>
      <ol>
       <li data-md="">
-       <p>Set <var>x</var> to min(max(<var>x</var>, −2<sup>53</sup> + 1), 2<sup>53</sup> − 1).</p>
+       <p>Set <var>x</var> to min(max(<var>x</var>, −2<sup>53</sup> + 1), 2<sup>53</sup> − 1).</p>
       <li data-md="">
        <p>Round <var>x</var> to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</p>
       <li data-md="">
@@ -6826,7 +6824,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
     <li data-md="">
      <p>Set <var>x</var> to <var>x</var> <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a> 2<sup>64</sup>.</p>
     <li data-md="">
-     <p>If <var>x</var> is greater than or equal to 2<sup>63</sup>, then set <var>x</var> to <var>x</var> − 2<sup>64</sup>.</p>
+     <p>If <var>x</var> is greater than or equal to 2<sup>63</sup>, then set <var>x</var> to <var>x</var> − 2<sup>64</sup>.</p>
     <li data-md="">
      <p>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-10">long long</a></code> value that represents the same numeric value as <var>x</var>.</p>
    </ol>
@@ -6836,7 +6834,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
     choosing the numeric value with an <em>even significand</em> if there are
     two <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
     If the <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-13">long long</a></code> is in the range
-    [−2<sup>53</sup> + 1, 2<sup>53</sup> − 1], then the <emu-val>Number</emu-val> will be able to represent exactly the same value as the <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-14">long long</a></code>. </p>
+    [−2<sup>53</sup> + 1, 2<sup>53</sup> − 1], then the <emu-val>Number</emu-val> will be able to represent exactly the same value as the <code class="idl"><a data-link-type="idl" href="#idl-long-long" id="ref-for-idl-long-long-14">long long</a></code>. </p>
    <h4 class="heading settled" data-level="4.2.11" id="es-unsigned-long-long"><span class="secno">4.2.11. </span><span class="content">unsigned long long</span><a class="self-link" href="#es-unsigned-long-long"></a></h4>
    <p id="es-to-unsigned-long-long"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-6">unsigned long long</a></code> value
     by running the following algorithm: </p>
@@ -6860,7 +6858,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
       <li data-md="">
        <p>Set <var>x</var> to <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>(<var>x</var>) * <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>(<a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>(<var>x</var>)).</p>
       <li data-md="">
-       <p>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-16">throw a <emu-val>TypeError</emu-val></a>.</p>
+       <p>If <var>x</var> &lt; 0 or <var>x</var> > 2<sup>53</sup> − 1, then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-16">throw a <emu-val>TypeError</emu-val></a>.</p>
       <li data-md="">
        <p>Return the IDL <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-7">unsigned long long</a></code> value that represents the same numeric value as <var>x</var>.</p>
      </ol>
@@ -6877,7 +6875,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
      <p>then:</p>
      <ol>
       <li data-md="">
-       <p>Set <var>x</var> to min(max(<var>x</var>, 0), 2<sup>53</sup> − 1).</p>
+       <p>Set <var>x</var> to min(max(<var>x</var>, 0), 2<sup>53</sup> − 1).</p>
       <li data-md="">
        <p>Round <var>x</var> to the nearest integer, choosing the even integer if it lies halfway between two, and choosing +0 rather than −0.</p>
       <li data-md="">
@@ -6897,7 +6895,7 @@ Otherwise, return the IDL <code class="idl"><a data-link-type="idl" href="#idl-s
     represents the closest numeric value to the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-12">unsigned long long</a></code>,
     choosing the numeric value with an <em>even significand</em> if there are
     two <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>.
-    If the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-13">unsigned long long</a></code> is less than or equal to 2<sup>53</sup> − 1,
+    If the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-13">unsigned long long</a></code> is less than or equal to 2<sup>53</sup> − 1,
     then the <emu-val>Number</emu-val> will be able to
     represent exactly the same value as the <code class="idl"><a data-link-type="idl" href="#idl-unsigned-long-long" id="ref-for-idl-unsigned-long-long-14">unsigned long long</a></code>. </p>
    <h4 class="heading settled" data-level="4.2.12" id="es-float"><span class="secno">4.2.12. </span><span class="content">float</span><a class="self-link" href="#es-float"></a></h4>
@@ -7277,7 +7275,7 @@ ECMAScript <emu-val>Array</emu-val> values.</p>
     <li data-md="">
      <p>Initialize <var>i</var> to be 0.</p>
     <li data-md="">
-     <p>While <var>i</var> &lt; <var>n</var>:</p>
+     <p>While <var>i</var> &lt; <var>n</var>:</p>
      <ol>
       <li data-md="">
        <p>Let <var>V</var> be the value in <var>S</var> at index <var>i</var>.</p>
@@ -7288,7 +7286,7 @@ ECMAScript <emu-val>Array</emu-val> values.</p>
       <li data-md="">
        <p>Call <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(<var>A</var>, <var>P</var>, <var>E</var>).</p>
       <li data-md="">
-       <p>Set <var>i</var> to <var>i</var> + 1.</p>
+       <p>Set <var>i</var> to <var>i</var> + 1.</p>
      </ol>
     <li data-md="">
      <p>Return <var>A</var>.</p>
@@ -7321,7 +7319,7 @@ at index <var>j</var> is <var>S</var><sub><var>j</var></sub>.</p>
       <li data-md="">
        <p>Initialize <var>S</var><sub><var>i</var></sub> to the result of <a data-link-type="dfn" href="#dfn-convert-ecmascript-to-idl-value" id="ref-for-dfn-convert-ecmascript-to-idl-value-5">converting</a> <var>nextItem</var> to an IDL value of type <var>T</var>.</p>
       <li data-md="">
-       <p>Set <var>i</var> to <var>i</var> + 1.</p>
+       <p>Set <var>i</var> to <var>i</var> + 1.</p>
      </ol>
    </ol>
    <div class="example" id="example-ae3289f7">
@@ -7386,7 +7384,7 @@ at index <var>j</var> is <var>S</var><sub><var>j</var></sub>.</p>
 <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getLastDrawnPolygon</span><span class="p">();</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>    <span class="c1">// This would alert "50".</span></pre>
    </div>
-   <h4 class="heading settled" data-level="4.2.26" id="es-promise"><span class="secno">4.2.26. </span><span class="content">Promise types — Promise&lt;<var>T</var>></span><a class="self-link" href="#es-promise"></a></h4>
+   <h4 class="heading settled" data-level="4.2.26" id="es-promise"><span class="secno">4.2.26. </span><span class="content">Promise types — Promise&lt;<var>T</var>></span><a class="self-link" href="#es-promise"></a></h4>
    <p>IDL <a href="#idl-promise" id="ref-for-idl-promise-3">promise type</a> values are
 represented by ECMAScript <emu-val>Promise</emu-val> objects.</p>
    <p id="es-to-promise"> An ECMAScript value <var>V</var> is <a data-link-type="dfn">converted</a> to an IDL <a class="idl-code" data-link-type="interface" href="#idl-promise" id="ref-for-idl-promise-4">Promise&lt;<var>T</var>></a> value as follows: </p>
@@ -7792,8 +7790,8 @@ extended attribute.</p>
    <p>See the rules for converting ECMAScript values to the various IDL integer
 types in <a href="#es-type-mapping">§4.2 ECMAScript type mapping</a> for the specific requirements that the use of
 [<code class="idl"><a data-link-type="idl" href="#Clamp" id="ref-for-Clamp-31">Clamp</a></code>] entails.</p>
-   <div class="example" id="example-ec81a2ca">
-    <a class="self-link" href="#example-ec81a2ca"></a> 
+   <div class="example" id="example-563a8d41">
+    <a class="self-link" href="#example-563a8d41"></a> 
     <p>In the following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-35">IDL fragment</a>,
     two <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-50">operations</a> are declared that
     take three <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-13">octet</a></code> arguments; one uses
@@ -7803,7 +7801,7 @@ types in <a href="#es-type-mapping">§4.2 ECMAScript type mapping</a> for the sp
   <span class="kt">void</span> <span class="nv">setColorClamped</span>([<span class="nv">Clamp</span>] <span class="kt">octet</span> <span class="nv">red</span>, [<span class="nv">Clamp</span>] <span class="kt">octet</span> <span class="nv">green</span>, [<span class="nv">Clamp</span>] <span class="kt">octet</span> <span class="nv">blue</span>);
 };
 </pre>
-    <p>In an ECMAScript implementation of the IDL, a call to setColorClamped with <emu-val>Number</emu-val> values that are out of range for an <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-14">octet</a></code> are clamped to the range [0, 255].</p>
+    <p>In an ECMAScript implementation of the IDL, a call to setColorClamped with <emu-val>Number</emu-val> values that are out of range for an <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-14">octet</a></code> are clamped to the range [0, 255].</p>
 <pre class="highlight"><span class="c1">// Get an instance of GraphicsContext.</span>
 <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">getGraphicsContext</span><span class="p">();</span>
         
@@ -9061,7 +9059,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
     <li data-md="">
      <p>Let <var>maxarg</var> be the length of the longest type list of the entries in <var>S</var>.</p>
     <li data-md="">
-     <p>Initialize <var>argcount</var> to be min(<var>maxarg</var>, <var>n</var>).</p>
+     <p>Initialize <var>argcount</var> to be min(<var>maxarg</var>, <var>n</var>).</p>
     <li data-md="">
      <p>Remove from <var>S</var> all entries whose type list is not of length <var>argcount</var>.</p>
     <li data-md="">
@@ -9475,14 +9473,14 @@ ECMAScript global environment and:</p>
 ECMAScript environment’s global object.
 The name of the property is the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-57">identifier</a> of the interface,
 and its value is an object called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-interface-object">interface object</dfn>.</p>
-   <p>The property has the attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.
+   <p>The property has the attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.
 The characteristics of an interface object are described in <a href="#interface-object">§4.6.1 Interface object</a>.</p>
    <p>In addition, for every [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-16">NamedConstructor</a></code>]
 extended attribute on an <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed-3">exposed</a> interface, a corresponding property must
 exist on the ECMAScript global object.  The name of the property is the <emu-t class="symbol"><a href="#prod-identifier">identifier</a></emu-t> that occurs directly after the
 “<emu-t>=</emu-t>”, and its value is an object called a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-named-constructor">named constructor</dfn>, which allows
 construction of objects that implement the interface.  The property has the
-attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.
+attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.
 The characteristics of a named constructor are described in <a href="#named-constructors">§4.6.2 Named constructors</a>.</p>
    <h4 class="heading settled" data-level="4.6.1" id="interface-object"><span class="secno">4.6.1. </span><span class="content">Interface object</span><a class="self-link" href="#interface-object"></a></h4>
    <p>The interface object for a given non-callback <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-84">interface</a> is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-3">function object</a>.
@@ -9501,7 +9499,7 @@ object for that other interface.</p>
 the value of [[Prototype]] is <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-properties-of-the-function-prototype-object">%FunctionPrototype%</a>.</p>
    </ol>
    <p>An interface object for a non-callback interface must have a property named “prototype”
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is an object called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-interface-prototype-object">interface prototype object</dfn>.  This object has properties
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is an object called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-interface-prototype-object">interface prototype object</dfn>.  This object has properties
 that correspond to the <a data-link-type="dfn" href="#dfn-regular-attribute" id="ref-for-dfn-regular-attribute-12">regular attributes</a> and <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-14">regular operations</a> defined on the interface,
 and is described in more detail in <a href="#interface-prototype-object">§4.6.3 Interface prototype object</a>.</p>
    <p class="note" role="note">Note: Since an interface object for a non-callback interface is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-4">function object</a> the <code>typeof</code> operator will return
@@ -9542,7 +9540,7 @@ This object also must be
 associated with the ECMAScript global environment associated
 with the interface object.</p>
    <p>Interface objects for non-callback interfaces must have a property named “length”
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is a <emu-val>Number</emu-val>.
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is a <emu-val>Number</emu-val>.
 If the [<code class="idl"><a data-link-type="idl" href="#Constructor" id="ref-for-Constructor-22">Constructor</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-90">extended attribute</a> does not appear on the interface definition, then the value is 0.
 Otherwise, the value is determined as follows:</p>
    <ol class="algorithm">
@@ -9554,7 +9552,7 @@ Otherwise, the value is determined as follows:</p>
      <p>Return the length of the shortest argument list of the entries in <var>S</var>.</p>
    </ol>
    <p>All interface objects must have a
-property named “name” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is the identifier of the corresponding interface.</p>
+property named “name” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is the identifier of the corresponding interface.</p>
    <h5 class="heading settled" data-level="4.6.1.2" id="es-interface-hasinstance"><span class="secno">4.6.1.2. </span><span class="content">Interface object [[HasInstance]] method</span><a class="self-link" href="#es-interface-hasinstance"></a></h5>
    <p>The internal [[HasInstance]] method of every <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-9">interface object</a> <var>A</var> must behave as follows,
 assuming <var>V</var> is the object
@@ -9611,7 +9609,7 @@ This object also must be
 associated with the ECMAScript global environment associated
 with the <a data-link-type="dfn" href="#dfn-named-constructor" id="ref-for-dfn-named-constructor-4">named constructor</a>.</p>
    <p>A named constructor must have a property named “length”
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is a <emu-val>Number</emu-val> determined as follows:</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is a <emu-val>Number</emu-val> determined as follows:</p>
    <ol class="algorithm">
     <li data-md="">
      <p>Initialize <var>S</var> to the <a data-link-type="dfn" href="#dfn-effective-overload-set" id="ref-for-dfn-effective-overload-set-8">effective overload set</a> for constructors with <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-62">identifier</a> <var>id</var> on <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-91">interface</a> <var>I</var> and with argument count 0.</p>
@@ -9619,9 +9617,9 @@ with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-va
      <p>Return the length of the shortest argument list of the entries in <var>S</var>.</p>
    </ol>
    <p>A named constructor must have a property named “name”
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is the identifier used for the named constructor.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value is the identifier used for the named constructor.</p>
    <p>A named constructor must also have a property named
-“prototype” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-9">interface prototype object</a> for the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-92">interface</a> on which the
+“prototype” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-9">interface prototype object</a> for the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-92">interface</a> on which the
 [<code class="idl"><a data-link-type="idl" href="#NamedConstructor" id="ref-for-NamedConstructor-20">NamedConstructor</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-92">extended attribute</a> appears.</p>
    <h4 class="heading settled" data-level="4.6.3" id="interface-prototype-object"><span class="secno">4.6.3. </span><span class="content">Interface prototype object</span><a class="self-link" href="#interface-prototype-object"></a></h4>
    <p>There must exist an <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-10">interface prototype object</a> for every non-callback <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-93">interface</a> defined, regardless of whether the interface was declared with the
@@ -9635,7 +9633,7 @@ interface, described in <a href="#es-operations">§4.6.7 Operations</a>.</p>
    <p>If the [<code class="idl"><a data-link-type="idl" href="#NoInterfaceObject" id="ref-for-NoInterfaceObject-15">NoInterfaceObject</a></code>]
 extended attribute was not specified on the interface, then
 the interface prototype object must
-also have a property named “constructor” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value
+also have a property named “constructor” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> whose value
 is a reference to the interface object for the interface.</p>
    <p>The <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-11">interface prototype object</a> for a given interface <var>A</var> must have an internal
 [[Prototype]] property whose value is returned from
@@ -9804,7 +9802,7 @@ the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-pro
     <li data-md="">
      <p>The value of the property is that which is obtained by <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-35">converting</a> the <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-26">constant</a>’s IDL value to an ECMAScript value.</p>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
    </ul>
    <p>In addition, a property with the same characteristics must
 exist on the <a data-link-type="dfn" href="#dfn-interface-object" id="ref-for-dfn-interface-object-12">interface object</a>, if
@@ -9836,7 +9834,7 @@ the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-pro
        <p>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-20">interface prototype object</a>.</p>
      </ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Set]]: <var>S</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>configurable</var> }</span>,
+     <p>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Set]]: <var>S</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>configurable</var> }</span>,
 where:</p>
      <ul>
       <li data-md="">
@@ -10039,7 +10037,7 @@ the consequential interface’s <a data-link-type="dfn" href="#dfn-interface-pro
        <p>Otherwise, the property exists solely on the interface’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-24">interface prototype object</a>.</p>
      </ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <var>B</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>B</var> }</span>,
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <var>B</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>B</var> }</span>,
 where <var>B</var> is <emu-val>false</emu-val> if the operation is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-4">unforgeable</a> on the interface,
 and <emu-val>true</emu-val> otherwise.</p>
     <li data-md="">
@@ -10198,7 +10196,7 @@ or if the interface was declared with the [<code class="idl"><a data-link-type="
 then the property exists on every object that implements the interface.
 Otherwise, the property exists on the <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-26">interface prototype object</a>.</p>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <var>B</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>B</var> }</span>,
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <var>B</var>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <var>B</var> }</span>,
 where <var>B</var> is <emu-val>false</emu-val> if the stringifier is <a data-link-type="dfn" href="#dfn-unforgeable-on-an-interface" id="ref-for-dfn-unforgeable-on-an-interface-6">unforgeable</a> on the interface,
 and <emu-val>true</emu-val> otherwise.</p>
     <li data-md="">
@@ -10258,7 +10256,7 @@ property is the <emu-val>String</emu-val> value “toString”.</p>
    <p>If the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-111">interface</a> has an <a data-link-type="dfn" href="#dfn-exposed" id="ref-for-dfn-exposed-8">exposed</a> <a data-link-type="dfn" href="#dfn-serializer" id="ref-for-dfn-serializer-5">serializer</a>, then
 a property must exist
 whose name is “toJSON”,
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <emu-val>Function</emu-val> object.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <emu-val>Function</emu-val> object.</p>
    <p>The location of the property is determined as follows:</p>
    <ul>
     <li data-md="">
@@ -10394,7 +10392,7 @@ property is the <emu-val>String</emu-val> value “toJSON”.</p>
    </ul>
    <p>then a property must exist
 whose name is the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> symbol,
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-7">function object</a>.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-7">function object</a>.</p>
    <p>The location of the property is determined as follows:</p>
    <ul>
     <li data-md="">
@@ -10494,7 +10492,7 @@ if the interface has a <a data-link-type="dfn" href="#dfn-setlike-declaration" i
      <p>a <a data-link-type="dfn" href="#dfn-setlike-declaration" id="ref-for-dfn-setlike-declaration-11">setlike declaration</a></p>
    </ul>
    <p>then a property named “forEach” must exist
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-8">function object</a>.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-8">function object</a>.</p>
    <p>The location of the property is determined as follows:</p>
    <ul>
     <li data-md="">
@@ -10609,7 +10607,7 @@ property is the <emu-val>String</emu-val> value “forEach”.</p>
    <h5 class="heading settled" data-level="4.6.9.1" id="es-iterable-entries"><span class="secno">4.6.9.1. </span><span class="content">entries</span><a class="self-link" href="#es-iterable-entries"></a></h5>
    <p>If the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-119">interface</a> has an <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-13">iterable declaration</a>,
 then a property named “entries” must exist
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-9">function object</a>.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-9">function object</a>.</p>
    <p>The location of the property is determined as follows:</p>
    <ul>
     <li data-md="">
@@ -10632,7 +10630,7 @@ the value of the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#s
    <h5 class="heading settled" data-level="4.6.9.2" id="es-iterable-keys"><span class="secno">4.6.9.2. </span><span class="content">keys</span><a class="self-link" href="#es-iterable-keys"></a></h5>
    <p>If the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-120">interface</a> has an <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-14">iterable declaration</a>,
 then a property named “keys” must exist
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-10">function object</a>.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-10">function object</a>.</p>
    <p>The location of the property is determined as follows:</p>
    <ul>
     <li data-md="">
@@ -10682,7 +10680,7 @@ then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-thr
    <h5 class="heading settled" data-level="4.6.9.3" id="es-iterable-values"><span class="secno">4.6.9.3. </span><span class="content">values</span><a class="self-link" href="#es-iterable-values"></a></h5>
    <p>If the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-122">interface</a> has an <a data-link-type="dfn" href="#dfn-iterable-declaration" id="ref-for-dfn-iterable-declaration-16">iterable declaration</a>,
 then a property named “values” must exist
-with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-11">function object</a>.</p>
+with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-11">function object</a>.</p>
    <p>The location of the property is determined as follows:</p>
    <ul>
     <li data-md="">
@@ -10753,7 +10751,7 @@ the string “ Iterator”.</p>
 prototype for <a data-link-type="dfn" href="#dfn-default-iterator-object" id="ref-for-dfn-default-iterator-object-7">default iterator objects</a> for the interface.</p>
    <p>The internal [[Prototype]] property of an <a data-link-type="dfn" href="#dfn-iterator-prototype-object" id="ref-for-dfn-iterator-prototype-object-3">iterator prototype object</a> must be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%IteratorPrototype%</a>.</p>
    <p>An <a data-link-type="dfn" href="#dfn-iterator-prototype-object" id="ref-for-dfn-iterator-prototype-object-4">iterator prototype object</a> must have a property named “next” with
-attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-12">function object</a> that behaves as follows:</p>
+attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-12">function object</a> that behaves as follows:</p>
    <ol class="algorithm">
     <li data-md="">
      <p>Let <var>interface</var> be the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-129">interface</a> for which the <a data-link-type="dfn" href="#dfn-iterator-prototype-object" id="ref-for-dfn-iterator-prototype-object-5">iterator prototype object</a> exists.</p>
@@ -10888,7 +10886,7 @@ then <a data-link-type="dfn" href="#dfn-perform-a-security-check" id="ref-for-df
    <p>There must exist a property named “size” on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-40">interface prototype object</a> with the following characteristics:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>,
+     <p>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>,
 where <var>G</var> is the interface’s <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-map-size-getter">map size getter</dfn>,
 defined below.</p>
     <li data-md="">
@@ -10922,13 +10920,13 @@ then <a data-link-type="dfn" href="#dfn-perform-a-security-check" id="ref-for-df
      <p>The value of the <emu-val>Function</emu-val> object’s “name” property is the <emu-val>String</emu-val> value “size”.</p>
    </ul>
    <h5 class="heading settled" data-level="4.6.10.2" id="es-map-entries"><span class="secno">4.6.10.2. </span><span class="content">entries</span><a class="self-link" href="#es-map-entries"></a></h5>
-   <p>A property named “entries” must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-41">interface prototype object</a> with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is the <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-14">function object</a> that is the value of
+   <p>A property named “entries” must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-41">interface prototype object</a> with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is the <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-14">function object</a> that is the value of
 the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.</p>
    <h5 class="heading settled" data-level="4.6.10.3" id="es-map-keys-values"><span class="secno">4.6.10.3. </span><span class="content">keys and values</span><a class="self-link" href="#es-map-keys-values"></a></h5>
    <p>For both of “keys” and “values”, there must exist a property with that name on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-42">interface prototype object</a> with the following characteristics:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that <a data-link-type="dfn" href="#dfn-forwards-to-the-internal-map-object" id="ref-for-dfn-forwards-to-the-internal-map-object-1">forwards that name to the internal map object</a>.</p>
    </ul>
@@ -10938,7 +10936,7 @@ the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known
    <p>For both of “get” and “has”, there must exist a property with that name on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-43">interface prototype object</a> with the following characteristics:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:</p>
      <ol class="algorithm">
@@ -10985,7 +10983,7 @@ then a property named “clear” and the following characteristics
 must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-44">interface prototype object</a>:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that <a data-link-type="dfn" href="#dfn-forwards-to-the-internal-map-object" id="ref-for-dfn-forwards-to-the-internal-map-object-2">forwards “clear” to the internal map object</a>.</p>
    </ul>
@@ -10997,7 +10995,7 @@ then a property named “delete” and the following characteristics
 must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-45">interface prototype object</a>:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:</p>
      <ol class="algorithm">
@@ -11042,7 +11040,7 @@ then a property named “set” and the following characteristics
 must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-46">interface prototype object</a>:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:</p>
      <ol class="algorithm">
@@ -11137,7 +11135,7 @@ then <a data-link-type="dfn" href="#dfn-perform-a-security-check" id="ref-for-df
    <p>There must exist a property named “size” on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-48">interface prototype object</a> with the following characteristics:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>,
+     <p>The property has attributes <span class="descriptor">{ [[Get]]: <var>G</var>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>,
 where <var>G</var> is the interface’s <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-set-size-getter">set size getter</dfn>,
 defined below.</p>
     <li data-md="">
@@ -11171,13 +11169,13 @@ then <a data-link-type="dfn" href="#dfn-perform-a-security-check" id="ref-for-df
      <p>The value of the <emu-val>Function</emu-val> object’s “name” property is the <emu-val>String</emu-val> value “size”.</p>
    </ul>
    <h5 class="heading settled" data-level="4.6.11.2" id="es-set-values"><span class="secno">4.6.11.2. </span><span class="content">values</span><a class="self-link" href="#es-set-values"></a></h5>
-   <p>A property named “values” must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-49">interface prototype object</a> with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is the <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-16">function object</a> that is the value of
+   <p>A property named “values” must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-49">interface prototype object</a> with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is the <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-16">function object</a> that is the value of
 the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.</p>
    <h5 class="heading settled" data-level="4.6.11.3" id="es-set-entries-keys"><span class="secno">4.6.11.3. </span><span class="content">entries and keys</span><a class="self-link" href="#es-set-entries-keys"></a></h5>
    <p>For both of “entries” and “keys”, there must exist a property with that name on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-50">interface prototype object</a> with the following characteristics:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that <a data-link-type="dfn" href="#dfn-forwards-to-the-internal-set-object" id="ref-for-dfn-forwards-to-the-internal-set-object-1">forwards that name to the internal set object</a>.</p>
    </ul>
@@ -11187,7 +11185,7 @@ the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known
    <p>There must exist a property with named “has” on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-51">interface prototype object</a> with the following characteristics:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:</p>
      <ol class="algorithm">
@@ -11238,7 +11236,7 @@ then <a data-link-type="dfn" href="#dfn-perform-a-security-check" id="ref-for-df
 must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-52">interface prototype object</a>:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:</p>
      <ol class="algorithm">
@@ -11299,7 +11297,7 @@ then a property named “clear” and the following characteristics
 must exist on <var>A</var>’s <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-53">interface prototype object</a>:</p>
    <ul>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object that <a data-link-type="dfn" href="#dfn-forwards-to-the-internal-set-object" id="ref-for-dfn-forwards-to-the-internal-set-object-2">forwards “clear” to the internal set object</a>.</p>
    </ul>
@@ -11415,7 +11413,7 @@ following characteristics:</p>
     <li data-md="">
      <p>The name of the property is “toString”.</p>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ObjProto_toString%</a>, the initial value of Object.prototype.toString.</p>
    </ul>
@@ -11427,7 +11425,7 @@ following characteristics:</p>
     <li data-md="">
      <p>The name of the property is “toJSON”.</p>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is <emu-val>undefined</emu-val>.</p>
    </ul>
@@ -11438,7 +11436,7 @@ following characteristics:</p>
     <li data-md="">
      <p>The name of the property is “valueOf”.</p>
     <li data-md="">
-     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
+     <p>The property has attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
     <li data-md="">
      <p>The value of the property is a <emu-val>Function</emu-val> object whose behavior
 is as follows:</p>
@@ -11493,7 +11491,7 @@ and for which the following algorithm returns <emu-val>true</emu-val>:</p>
     <li data-md="">
      <p>Let <var>s</var> be <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(<var>i</var>).</p>
     <li data-md="">
-     <p>If <var>s</var> ≠ <var>P</var> or <var>i</var> = 2<sup>32</sup> − 1, then return <emu-val>false</emu-val>.</p>
+     <p>If <var>s</var> ≠ <var>P</var> or <var>i</var> = 2<sup>32</sup> − 1, then return <emu-val>false</emu-val>.</p>
     <li data-md="">
      <p>Return <emu-val>true</emu-val>.</p>
    </ol>
@@ -12187,8 +12185,8 @@ point <var>completion</var> will be set to an ECMAScript completion value.</p>
 a corresponding property must exist on the ECMAScript
 environment’s global object. The name of the property is the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-95">identifier</a> of the namespace, and its value is an object
 called the <dfn data-dfn-type="dfn" data-export="" id="dfn-namespace-object">namespace object<a class="self-link" href="#dfn-namespace-object"></a></dfn>.</p>
-   <p>The property has the attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>,
-[[Configurable]]: <emu-val>true</emu-val> }</span>. The characteristics of a
+   <p>The property has the attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>,
+[[Configurable]]: <emu-val>true</emu-val> }</span>. The characteristics of a
 namespace object are described in <a href="#namespace-object">§4.11.1 Namespace object</a>.</p>
    <h4 class="heading settled" data-level="4.11.1" id="namespace-object"><span class="secno">4.11.1. </span><span class="content">Namespace object</span><a class="self-link" href="#namespace-object"></a></h4>
    <p>The namespace object for a given <a data-link-type="dfn" href="#dfn-namespace" id="ref-for-dfn-namespace-14">namespace</a> <var>namespace</var> and <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms">Realm</a> <var>realm</var> is created as
@@ -12210,15 +12208,15 @@ follows:</p>
 whose name is “DOMException” and value is an object called the <dfn class="dfn-paneled" data-dfn-for="DOMException" data-dfn-type="dfn" data-export="" id="dfn-DOMException-constructor-object">DOMException constructor object</dfn>,
 which provides access to legacy DOMException code constants and allows construction of
 DOMException instances.
-The property has the attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
+The property has the attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span>.</p>
    <h4 class="heading settled" data-level="4.12.1" id="es-DOMException-constructor-object"><span class="secno">4.12.1. </span><span class="content">DOMException constructor object</span><a class="self-link" href="#es-DOMException-constructor-object"></a></h4>
    <p>The DOMException constructor object must be a <a data-link-type="dfn" href="#dfn-function-object" id="ref-for-dfn-function-object-17">function object</a> but with a [[Prototype]] value of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%Error%</a>.</p>
    <p>For every legacy code listed in the <a href="#dfn-error-names-table" id="ref-for-dfn-error-names-table-2">error names table</a>,
 there must be a property on the DOMException constructor object
 whose name and value are as indicated in the table.  The property has
-attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
+attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
    <p>The DOMException constructor object must also have a property named
-“prototype” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is an object called the <dfn class="dfn-paneled" data-dfn-for="DOMException" data-dfn-type="dfn" data-export="" id="dfn-DOMException-prototype-object">DOMException prototype object</dfn>.
+“prototype” with attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span> whose value is an object called the <dfn class="dfn-paneled" data-dfn-for="DOMException" data-dfn-type="dfn" data-export="" id="dfn-DOMException-prototype-object">DOMException prototype object</dfn>.
 This object also provides access to the legacy code values.</p>
    <h5 class="heading settled" data-level="4.12.1.1" id="es-DOMException-call"><span class="secno">4.12.1.1. </span><span class="content">DOMException(message, name)</span><a class="self-link" href="#es-DOMException-call"></a></h5>
    <p>When the DOMException function is called with arguments <var>message</var> and <var>name</var>, the following steps are taken:</p>
@@ -12259,11 +12257,11 @@ This object also provides access to the legacy code values.</p>
 have an internal [[Prototype]] property whose value is <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ErrorPrototype%</a>.</p>
    <p>The <a data-link-type="dfn" href="#dfn-class-string" id="ref-for-dfn-class-string-6">class string</a> of the <a data-link-type="dfn" href="#dfn-DOMException-prototype-object" id="ref-for-dfn-DOMException-prototype-object-2">DOMException prototype object</a> is “DOMExceptionPrototype”.</p>
    <p>There must be a property named “constructor”
-on the DOMException prototype object with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is the <a data-link-type="dfn" href="#dfn-DOMException-constructor-object" id="ref-for-dfn-DOMException-constructor-object-2">DOMException constructor object</a>.</p>
+on the DOMException prototype object with attributes <span class="descriptor">{ [[Writable]]: <emu-val>true</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }</span> and whose value is the <a data-link-type="dfn" href="#dfn-DOMException-constructor-object" id="ref-for-dfn-DOMException-constructor-object-2">DOMException constructor object</a>.</p>
    <p>For every legacy code listed in the <a href="#dfn-error-names-table" id="ref-for-dfn-error-names-table-4">error names table</a>,
 there must be a property on the DOMException prototype object
 whose name and value are as indicated in the table.  The property has
-attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
+attributes <span class="descriptor">{ [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>true</emu-val>, [[Configurable]]: <emu-val>false</emu-val> }</span>.</p>
    <h3 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="4.13" data-lt="Exception objects" data-noexport="" id="es-exception-objects"><span class="secno">4.13. </span><span class="content">Exception objects</span></h3>
    <p><a data-link-type="dfn" href="#dfn-simple-exception" id="ref-for-dfn-simple-exception-5">Simple exceptions</a> are represented
 by native ECMAScript objects of the corresponding type.</p>
@@ -12516,7 +12514,7 @@ agents in referencing specifications be linked to the <a data-link-type="dfn" hr
 to this specification:
 Glenn Adams,
 David Andersson,
-L. David Baron,
+L. David Baron,
 Art Barstow,
 Nils Barth,
 Robin Berjon,
@@ -12563,7 +12561,7 @@ Kyle Machulis,
 Mark Miller,
 Ms2ger,
 Andrew Oakley,
-岡坂 史紀 (Shiki Okasaka),
+岡坂 史紀 (Shiki Okasaka),
 Jason Orendorff,
 Olli Pettay,
 Simon Pieters,
@@ -13412,7 +13410,7 @@ this was to the right.)</p>
   <aside class="dfn-panel" data-for="dfn-example-term">
    <b><a href="#dfn-example-term">#dfn-example-term</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-example-term-1">1.1. Typographic conventions</a> <a href="#ref-for-dfn-example-term-2">(2)</a>
+    <li><a href="#ref-for-dfn-example-term-1">1.1. Typographic conventions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-conforming-set-of-idl-fragments">
@@ -14790,7 +14788,7 @@ this was to the right.)</p>
     <li><a href="#ref-for-idl-any-6">3.11.23. Nullable types — T?</a>
     <li><a href="#ref-for-idl-any-7">3.11.26. Union types</a> <a href="#ref-for-idl-any-8">(2)</a>
     <li><a href="#ref-for-idl-any-9">4.2.1. any</a> <a href="#ref-for-idl-any-10">(2)</a> <a href="#ref-for-idl-any-11">(3)</a> <a href="#ref-for-idl-any-12">(4)</a>
-    <li><a href="#ref-for-idl-any-13">4.2.26. Promise types — Promise&lt;T></a>
+    <li><a href="#ref-for-idl-any-13">4.2.26. Promise types — Promise&lt;T></a>
     <li><a href="#ref-for-idl-any-14">4.5. Overload resolution algorithm</a>
     <li><a href="#ref-for-idl-any-15">Changes</a>
    </ul>
@@ -15110,7 +15108,7 @@ this was to the right.)</p>
    <ul>
     <li><a href="#ref-for-idl-promise-1">3.2.4.1. Legacy callers</a>
     <li><a href="#ref-for-idl-promise-2">3.2.6. Overloading</a>
-    <li><a href="#ref-for-idl-promise-3">4.2.26. Promise types — Promise&lt;T></a> <a href="#ref-for-idl-promise-4">(2)</a> <a href="#ref-for-idl-promise-5">(3)</a> <a href="#ref-for-idl-promise-6">(4)</a> <a href="#ref-for-idl-promise-7">(5)</a> <a href="#ref-for-idl-promise-8">(6)</a>
+    <li><a href="#ref-for-idl-promise-3">4.2.26. Promise types — Promise&lt;T></a> <a href="#ref-for-idl-promise-4">(2)</a> <a href="#ref-for-idl-promise-5">(3)</a> <a href="#ref-for-idl-promise-6">(4)</a> <a href="#ref-for-idl-promise-7">(5)</a> <a href="#ref-for-idl-promise-8">(6)</a>
     <li><a href="#ref-for-idl-promise-9">4.6.7. Operations</a> <a href="#ref-for-idl-promise-10">(2)</a>
     <li><a href="#ref-for-idl-promise-11">4.9. User objects implementing callback interfaces</a> <a href="#ref-for-idl-promise-12">(2)</a>
     <li><a href="#ref-for-idl-promise-13">4.10. Invoking callback functions</a>
@@ -15432,7 +15430,7 @@ this was to the right.)</p>
   <aside class="dfn-panel" data-for="dfn-function-object">
    <b><a href="#dfn-function-object">#dfn-function-object</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-function-object-1">4.2.26. Promise types — Promise&lt;T></a> <a href="#ref-for-dfn-function-object-2">(2)</a>
+    <li><a href="#ref-for-dfn-function-object-1">4.2.26. Promise types — Promise&lt;T></a> <a href="#ref-for-dfn-function-object-2">(2)</a>
     <li><a href="#ref-for-dfn-function-object-3">4.6.1. Interface object</a> <a href="#ref-for-dfn-function-object-4">(2)</a> <a href="#ref-for-dfn-function-object-5">(3)</a>
     <li><a href="#ref-for-dfn-function-object-6">4.6.2. Named constructors</a>
     <li><a href="#ref-for-dfn-function-object-7">4.6.8.1. @@iterator</a>
@@ -15468,7 +15466,7 @@ this was to the right.)</p>
     <li><a href="#ref-for-ecmascript-throw-26">4.2.22. Enumeration types</a>
     <li><a href="#ref-for-ecmascript-throw-27">4.2.23. Callback function types</a>
     <li><a href="#ref-for-ecmascript-throw-28">4.2.25. Sequences — sequence&lt;T></a> <a href="#ref-for-ecmascript-throw-29">(2)</a> <a href="#ref-for-ecmascript-throw-30">(3)</a>
-    <li><a href="#ref-for-ecmascript-throw-31">4.2.26. Promise types — Promise&lt;T></a>
+    <li><a href="#ref-for-ecmascript-throw-31">4.2.26. Promise types — Promise&lt;T></a>
     <li><a href="#ref-for-ecmascript-throw-32">4.2.27. Union types</a>
     <li><a href="#ref-for-ecmascript-throw-33">4.2.29. Error</a>
     <li><a href="#ref-for-ecmascript-throw-34">4.2.30. DOMException</a>
@@ -15528,7 +15526,7 @@ this was to the right.)</p>
     <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-3">4.2.21. Dictionary types</a>
     <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-4">4.2.24. Nullable types — T?</a>
     <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-5">4.2.25.1. Creating a sequence from an iterable</a>
-    <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-6">4.2.26. Promise types — Promise&lt;T></a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-7">(2)</a>
+    <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-6">4.2.26. Promise types — Promise&lt;T></a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-7">(2)</a>
     <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-8">4.2.27. Union types</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-9">(2)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-10">(3)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-11">(4)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-12">(5)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-13">(6)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-14">(7)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-15">(8)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-16">(9)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-17">(10)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-18">(11)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-19">(12)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-20">(13)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-21">(14)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-22">(15)</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-23">(16)</a>
     <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-24">4.2.32. Frozen arrays — FrozenArray&lt;T></a>
     <li><a href="#ref-for-dfn-convert-ecmascript-to-idl-value-25">4.5. Overload resolution algorithm</a> <a href="#ref-for-dfn-convert-ecmascript-to-idl-value-26">(2)</a>
@@ -15569,7 +15567,7 @@ this was to the right.)</p>
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-20">4.2.23. Callback function types</a>
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-21">4.2.24. Nullable types — T?</a> <a href="#ref-for-dfn-convert-idl-to-ecmascript-value-22">(2)</a>
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-23">4.2.25. Sequences — sequence&lt;T></a>
-    <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-24">4.2.26. Promise types — Promise&lt;T></a>
+    <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-24">4.2.26. Promise types — Promise&lt;T></a>
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-25">4.2.27. Union types</a>
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-26">4.2.28. RegExp</a>
     <li><a href="#ref-for-dfn-convert-idl-to-ecmascript-value-27">4.2.29. Error</a>

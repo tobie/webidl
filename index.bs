@@ -304,8 +304,7 @@ for ECMAScript Edition 6 are given.
 The following typographic conventions are used in this document:
 
 *   Defining instances of terms: <dfn id="dfn-example-term">example term</dfn>
-*   Links to terms defined in this document: [=example term=]
-*   Links to terms defined in other documents: [=example term=]
+*   Links to terms defined in this document or elsewhere: [=example term=]
 *   Grammar symbols: <emu-t>ExampleGrammarSymbol</emu-t>
 *   IDL and ECMAScript types: <code class="idl">ExampleType</code>
 *   Code snippets: <code>a = b + obj.f()</code>
