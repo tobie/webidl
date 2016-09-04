@@ -5801,7 +5801,7 @@ is represented by a tuple of an object reference and a <dfn class="dfn-paneled" 
 The <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-1">callback context</a> is a language
 binding specific value, and is used to store information about the execution context at
 the time the language binding specific object reference is converted to an IDL value.</p>
-   <p class="note" role="note">Note: For ECMAScript objects, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-2">callback context</a> is used to hold a reference to the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a> at the time the <emu-val>Object</emu-val> value
+   <p class="note" role="note">Note: For ECMAScript objects, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-2">callback context</a> is used to hold a reference to the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> at the time the <emu-val>Object</emu-val> value
 is converted to an IDL callback interface type value. See <a href="#es-interface">§4.2.20 Interface types</a>.</p>
    <p>There is no way to represent a constant object reference value for
 a particular interface type in IDL.</p>
@@ -5832,7 +5832,7 @@ a type whose values are references to objects that are functions with the given 
    <p>An IDL value of the callback function type is represented by a tuple of an object
 reference and a <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-3">callback context</a>.</p>
    <p class="note" role="note">Note: As with <a href="#idl-interface" id="ref-for-idl-interface-3">callback interface types</a>, the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-4">callback context</a> is used to hold a
-reference to the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> <a data-link-type="biblio" href="#biblio-html">[HTML]</a> at
+reference to the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> at
 the time an ECMAScript <emu-val>Object</emu-val> value is converted to an IDL
 callback function type value.  See <a href="#es-callback-function">§4.2.23 Callback function types</a>.</p>
    <p>There is no way to represent a constant <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-18">callback function</a> value in IDL.</p>
@@ -7100,7 +7100,7 @@ that is the result of <a data-link-type="dfn" href="#dfn-obtain-unicode" id="ref
      <p>If <var>V</var> is a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-12">platform object</a> that implements <var>I</var>, then return the IDL <a href="#idl-interface" id="ref-for-idl-interface-6">interface type</a> value that represents a reference to that platform object.</p>
     <li data-md="">
      <p>If <var>V</var> is a <a data-link-type="dfn" href="#dfn-user-object" id="ref-for-dfn-user-object-8">user object</a> that is considered to implement <var>I</var> according to the rules in <a href="#es-user-objects">§4.9 User objects implementing callback interfaces</a>, then return the IDL <a href="#idl-interface" id="ref-for-idl-interface-7">interface type</a> value that represents a reference to that
-user object, with the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> as the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-5">callback context</a>. <a data-link-type="biblio" href="#biblio-html">[HTML]</a></p>
+user object, with the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> as the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-5">callback context</a>.</p>
     <li data-md="">
      <p><a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-23">Throw a <emu-val>TypeError</emu-val></a>.</p>
    </ol>
@@ -7227,7 +7227,7 @@ to <var>V</var> being assigned to an <a data-link-type="dfn" href="#dfn-attribut
 then <a data-link-type="dfn" href="#ecmascript-throw" id="ref-for-ecmascript-throw-27">throw a <emu-val>TypeError</emu-val></a>.</p>
     <li data-md="">
      <p>Return the IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-3">callback function type</a> value
-that represents a reference to the same object that <var>V</var> represents, with the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> as the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-6">callback context</a>. <a data-link-type="biblio" href="#biblio-html">[HTML]</a>.</p>
+that represents a reference to the same object that <var>V</var> represents, with the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a> as the <a data-link-type="dfn" href="#dfn-callback-context" id="ref-for-dfn-callback-context-6">callback context</a>.</p>
    </ol>
    <p id="callback-function-to-es"> The result of <a data-link-type="dfn" href="#dfn-convert-idl-to-ecmascript-value" id="ref-for-dfn-convert-idl-to-ecmascript-value-23">converting</a> an IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-4">callback function type</a> value to an ECMAScript value is a reference to the same object
     that the IDL <a href="#idl-callback-function" id="ref-for-idl-callback-function-5">callback function type</a> value represents. </p>
@@ -9734,7 +9734,7 @@ taken:</p>
     <li data-md="">
      <p>Let <var>object</var> be the sole object from <var>O</var>’s ECMAScript global environment that implements <var>A</var>.</p>
      <p class="note" role="note">Note: For example, if the <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-99">interface</a> is the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/browsers.html#window">Window</a></code> interface,
-then the sole object will be this global environment’s window object. <a data-link-type="biblio" href="#biblio-html">[HTML]</a></p>
+then the sole object will be this global environment’s window object.</p>
     <li data-md="">
      <p>If the result of running the <a data-link-type="dfn" href="#dfn-named-property-visibility" id="ref-for-dfn-named-property-visibility-1">named property visibility algorithm</a> with
 property name <var>P</var> and object <var>object</var> is true, then:</p>

@@ -5713,7 +5713,7 @@ The [=callback context=] is a language
 binding specific value, and is used to store information about the execution context at
 the time the language binding specific object reference is converted to an IDL value.
 
-Note: For ECMAScript objects, the [=callback context=] is used to hold a reference to the [=incumbent settings object=] [[!HTML]] at the time the <emu-val>Object</emu-val> value
+Note: For ECMAScript objects, the [=callback context=] is used to hold a reference to the [=incumbent settings object=] at the time the <emu-val>Object</emu-val> value
 is converted to an IDL callback interface type value. See [[#es-interface]].
 
 There is no way to represent a constant object reference value for
@@ -5768,7 +5768,7 @@ An IDL value of the callback function type is represented by a tuple of an objec
 reference and a [=callback context=].
 
 Note: As with <a href="#idl-interface">callback interface types</a>, the [=callback context=] is used to hold a
-reference to the [=incumbent settings object=] [[!HTML]] at
+reference to the [=incumbent settings object=] at
 the time an ECMAScript <emu-val>Object</emu-val> value is converted to an IDL
 callback function type value.  See [[#es-callback-function]].
 
@@ -7315,7 +7315,7 @@ values are represented by ECMAScript <emu-val>Object</emu-val> or
     1.  If |V| is a [=platform object=] that implements |I|, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that platform object.
     1.  If |V| is a [=user object=]
         that is considered to implement |I| according to the rules in [[#es-user-objects]], then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that
-        user object, with the [=incumbent settings object=] as the [=callback context=]. [[!HTML]]
+        user object, with the [=incumbent settings object=] as the [=callback context=].
     1.  <a lt="es throw">Throw a <emu-val>TypeError</emu-val></a>.
 </ol>
 
@@ -7448,7 +7448,7 @@ when they can be any object.
         then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Return the IDL <a href="#idl-callback-function">callback function type</a> value
         that represents a reference to the same object that |V| represents, with the
-        [=incumbent settings object=] as the [=callback context=]. [[!HTML]].
+        [=incumbent settings object=] as the [=callback context=].
 </ol>
 
 <p id="callback-function-to-es">
@@ -10697,7 +10697,7 @@ taken:
     1.  Let |object| be the sole object from |O|’s ECMAScript global environment that implements |A|.
         
         Note: For example, if the [=interface=] is the {{Window}} interface,
-        then the sole object will be this global environment’s window object. [[HTML]]
+        then the sole object will be this global environment’s window object.
         
     1.  If the result of running the [=named property visibility algorithm=] with
         property name |P| and object |object| is true, then:
