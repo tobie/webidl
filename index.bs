@@ -1910,14 +1910,21 @@ it is interpreted in the same way as for a [=constant=].
 </p>
 
 <ol class="algorithm">
-    1.  Let |S| be the sequence of [=Unicode scalar values=] matched by the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.
+    1.  Let |S| be the sequence of [=Unicode scalar values=] matched by
+        the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token
+        with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.
     1.  Depending on the type of the argument:
         <dl class="switch">
              :  {{DOMString}}
              :  an [=enumeration=] type
-             :: The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token is the sequence of 16 bit unsigned integer code units (hereafter referred to just as <dfn id="dfn-code-unit">code units</dfn>) corresponding to the UTF-16 encoding of |S|.
+             :: The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token
+                is the sequence of 16 bit unsigned integer code units
+                (hereafter referred to just as <dfn id="dfn-code-unit">code units</dfn>)
+                corresponding to the UTF-16 encoding of |S|.
              :  {{ByteString}}
-             :: The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token is the sequence of 8 bit unsigned integer code units corresponding to the UTF-8 encoding of |S|.
+             :: The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token
+                is the sequence of 8 bit unsigned integer code units
+                corresponding to the UTF-8 encoding of |S|.
              :  {{USVString}}
              :: The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token is |S|.
         </dl>
@@ -1962,21 +1969,21 @@ must be a
 </div>
 
 <p id="callback-operation-exceptions">
-    If an implementation attempts to invoke an
-    [=operation=] on a
-    [=user object=] (for example, when a callback object
-    has been supplied to the implementation), and that attempt results in an
-    exception being thrown, then, unless otherwise specified, that
-    exception will be propagated to the user code that caused the
-    implementation to invoke the operation.  Similarly, if a value
-    returned from invoking the operation cannot be converted to
-    an IDL type, then any exception resulting from this will also
-    be propagated to the user code that resulted in the implementation
-    attempting to invoke the operation.
+    If an implementation attempts to invoke
+    an [=operation=] on a [=user object=]
+    (for example, when a callback object has been supplied to the implementation),
+    and that attempt results in an exception being thrown, then,
+    unless otherwise specified,
+    that exception will be propagated to
+    the user code that caused the implementation to invoke the operation.
+    Similarly, if a value returned from invoking the operation
+    cannot be converted to an IDL type,
+    then any exception resulting from this will also
+    be propagated to the user code
+    that resulted in the implementation attempting to invoke the operation.
 </p>
 
-The following extended attributes
-are applicable to operations:
+The following extended attributes are applicable to operations:
 [{{Exposed}}],
 [{{NewObject}}],
 [{{SecureContext}}],

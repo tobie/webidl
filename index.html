@@ -3055,7 +3055,9 @@ it is interpreted in the same way as for a <a data-link-type="dfn" href="#dfn-co
    <p id="string-literal"> Optional argument default values can also be specified using a <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token, whose value is a <a data-link-type="dfn" href="#dfn-string-type" id="ref-for-dfn-string-type-1">string type</a> determined as follows: </p>
    <ol class="algorithm">
     <li data-md="">
-     <p>Let <var>S</var> be the sequence of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> matched by the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.</p>
+     <p>Let <var>S</var> be the sequence of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a> matched by
+the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token
+with its leading and trailing <span class="char">U+0022 QUOTATION MARK ('"')</span> characters removed.</p>
     <li data-md="">
      <p>Depending on the type of the argument:</p>
      <dl class="switch">
@@ -3064,11 +3066,16 @@ it is interpreted in the same way as for a <a data-link-type="dfn" href="#dfn-co
       <dt data-md="">
        <p>an <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-7">enumeration</a> type</p>
       <dd data-md="">
-       <p>The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token is the sequence of 16 bit unsigned integer code units (hereafter referred to just as <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="dfn-code-unit">code units</dfn>) corresponding to the UTF-16 encoding of <var>S</var>.</p>
+       <p>The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token
+is the sequence of 16 bit unsigned integer code units
+(hereafter referred to just as <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="dfn-code-unit">code units</dfn>)
+corresponding to the UTF-16 encoding of <var>S</var>.</p>
       <dt data-md="">
        <p><code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-1">ByteString</a></code></p>
       <dd data-md="">
-       <p>The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token is the sequence of 8 bit unsigned integer code units corresponding to the UTF-8 encoding of <var>S</var>.</p>
+       <p>The value of the <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token
+is the sequence of 8 bit unsigned integer code units
+corresponding to the UTF-8 encoding of <var>S</var>.</p>
       <dt data-md="">
        <p><code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-1">USVString</a></code></p>
       <dd data-md="">
