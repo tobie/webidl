@@ -12475,13 +12475,13 @@ provide a view on to an <code class="idl"><a data-link-type="idl" href="#idl-Arr
 a number of milliseconds, either as an absolute time (relative to some epoch)
 or as a relative amount of time.  Specifications that use this type will need
 to define how the number of milliseconds is to be interpreted.</p>
-   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="5.4" data-lt="Function" id="Function"><span class="secno">5.4. </span><span class="content">Function</span><span id="common-Function"></span></h3>
-<pre class="idl highlight def"><span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#Function">Function</a> = <span class="kt">any</span> (<span class="kt">any</span>... <a class="nv idl-code" data-link-type="argument" href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>);</pre>
-   <p>The <code class="idl"><a data-link-type="idl" href="#Function" id="ref-for-Function-1">Function</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-29">callback function</a> type is used for representing function values with no restriction on what arguments
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="callback" data-export="" data-level="5.4" data-lt="Function" id="Function"><span class="secno">5.4. </span><span class="content">Function</span><span id="common-Function"></span></h3>
+<pre class="idl highlight def"><span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="#Function" id="ref-for-Function-1">Function</a> = <span class="kt">any</span> (<span class="kt">any</span>... <a class="nv idl-code" data-link-type="argument" href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>);</pre>
+   <p>The <code class="idl"><a data-link-type="idl" href="#Function" id="ref-for-Function-2">Function</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-29">callback function</a> type is used for representing function values with no restriction on what arguments
 are passed to it or what kind of value is returned from it.</p>
-   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="typedef" data-export="" data-level="5.5" data-lt="VoidFunction" id="VoidFunction"><span class="secno">5.5. </span><span class="content">VoidFunction</span></h3>
-<pre class="idl highlight def"><span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#VoidFunction">VoidFunction</a> = <span class="kt">void</span> ();</pre>
-   <p>The <code class="idl"><a data-link-type="idl" href="#VoidFunction" id="ref-for-VoidFunction-1">VoidFunction</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-30">callback function</a> type is used for representing function values that take no arguments and do not
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="callback" data-export="" data-level="5.5" data-lt="VoidFunction" id="VoidFunction"><span class="secno">5.5. </span><span class="content">VoidFunction</span></h3>
+<pre class="idl highlight def"><span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="#VoidFunction" id="ref-for-VoidFunction-1">VoidFunction</a> = <span class="kt">void</span> ();</pre>
+   <p>The <code class="idl"><a data-link-type="idl" href="#VoidFunction" id="ref-for-VoidFunction-2">VoidFunction</a></code> <a data-link-type="dfn" href="#dfn-callback-function" id="ref-for-dfn-callback-function-30">callback function</a> type is used for representing function values that take no arguments and do not
 return any value.</p>
    <h2 class="heading settled" data-level="6" id="extensibility"><span class="secno">6. </span><span class="content">Extensibility</span><a class="self-link" href="#extensibility"></a></h2>
    <p><i>This section is informative.</i></p>
@@ -13359,12 +13359,6 @@ this was to the right.)</p>
      <li><a href="https://html.spec.whatwg.org/multipage/browsers.html#window">Window</a>
     </ul>
    <li>
-    <a data-link-type="biblio">[WebIDL-1]</a> defines the following terms:
-    <ul>
-     <li><a href="https://heycam.github.io/webidl/#Function">Function</a>
-     <li><a href="https://heycam.github.io/webidl/#VoidFunction">VoidFunction</a>
-    </ul>
-   <li>
     <a data-link-type="biblio">[worklets-1]</a> defines the following terms:
     <ul>
      <li><a href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>
@@ -13391,8 +13385,6 @@ this was to the right.)</p>
    <dd>Mike West. <a href="https://w3c.github.io/webappsec-secure-contexts/">Secure Contexts</a>. 19 July 2016. WD. URL: <a href="https://w3c.github.io/webappsec-secure-contexts/">https://w3c.github.io/webappsec-secure-contexts/</a>
    <dt id="biblio-unicode">[UNICODE]
    <dd><a href="http://www.unicode.org/versions/latest/">The Unicode Standard</a>. URL: <a href="http://www.unicode.org/versions/latest/">http://www.unicode.org/versions/latest/</a>
-   <dt id="biblio-webidl-1">[WebIDL-1]
-   <dd>Cameron McCormack; Boris Zbarsky. <a href="https://heycam.github.io/webidl/">WebIDL Level 1</a>. 8 March 2016. CR. URL: <a href="https://heycam.github.io/webidl/">https://heycam.github.io/webidl/</a>
    <dt id="biblio-worklets-1">[WORKLETS-1]
    <dd>Ian Kilpatrick. <a href="https://drafts.css-houdini.org/worklets/">Worklets Level 1</a>. 7 June 2016. WD. URL: <a href="https://drafts.css-houdini.org/worklets/">https://drafts.css-houdini.org/worklets/</a>
   </dl>
@@ -13412,8 +13404,8 @@ this was to the right.)</p>
 
 <span class="kt">typedef</span> (<a class="n" data-link-type="idl-name" href="#ArrayBufferView">ArrayBufferView</a> <span class="kt">or</span> <span class="kt">ArrayBuffer</span>) <a class="nv idl-code" data-link-type="typedef" href="#BufferSource">BufferSource</a>;
 <span class="kt">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <a class="nv idl-code" data-link-type="typedef" href="#DOMTimeStamp">DOMTimeStamp</a>;
-<span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#Function">Function</a> = <span class="kt">any</span> (<span class="kt">any</span>... <a class="nv idl-code" data-link-type="argument" href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>);
-<span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="https://heycam.github.io/webidl/#VoidFunction">VoidFunction</a> = <span class="kt">void</span> ();
+<span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="#Function">Function</a> = <span class="kt">any</span> (<span class="kt">any</span>... <a class="nv idl-code" data-link-type="argument" href="https://drafts.css-houdini.org/worklets/#dom-function-arguments">arguments</a>);
+<span class="kt">callback</span> <a class="nv idl-code" data-link-type="callback" href="#VoidFunction">VoidFunction</a> = <span class="kt">void</span> ();
 </pre>
   <aside class="dfn-panel" data-for="dfn-example-term">
    <b><a href="#dfn-example-term">#dfn-example-term</a></b><b>Referenced in:</b>
@@ -16280,13 +16272,13 @@ this was to the right.)</p>
   <aside class="dfn-panel" data-for="Function">
    <b><a href="#Function">#Function</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-Function-1">5.4. Function</a>
+    <li><a href="#ref-for-Function-1">5.4. Function</a> <a href="#ref-for-Function-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="VoidFunction">
    <b><a href="#VoidFunction">#VoidFunction</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-VoidFunction-1">5.5. VoidFunction</a>
+    <li><a href="#ref-for-VoidFunction-1">5.5. VoidFunction</a> <a href="#ref-for-VoidFunction-2">(2)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */

@@ -13400,7 +13400,7 @@ or as a relative amount of time.  Specifications that use this type will need
 to define how the number of milliseconds is to be interpreted.
 
 
-<h3 id="Function" typedef oldids="common-Function">Function</h3>
+<h3 id="Function" callback oldids="common-Function">Function</h3>
 
 <pre class="idl">callback Function = any (any... arguments);</pre>
 
@@ -13409,7 +13409,7 @@ type is used for representing function values with no restriction on what argume
 are passed to it or what kind of value is returned from it.
 
 
-<h3 id="VoidFunction" typedef>VoidFunction</h3>
+<h3 id="VoidFunction" callback>VoidFunction</h3>
 
 <pre class="idl">callback VoidFunction = void ();</pre>
 
