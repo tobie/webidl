@@ -1526,7 +1526,7 @@ pre.idl.highlight { color: #708090; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-09-04">4 September 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-09-05">5 September 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3019,7 +3019,7 @@ optional if the operation is <a data-link-type="dfn" href="#dfn-variadic" id="re
   <span class="n">return_type</span> <span class="nv">identifier</span>(<span class="n">type</span> <span class="nv">identifier</span>, <span class="kt">optional</span> <span class="n">type</span> <span class="nv">identifier</span>);
 };
 </pre>
-   <p>Optional arguments can also have a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="argument default value" id="dfn-optional-argument-default-value">default value</dfn> specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span> and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
+   <p>Optional arguments can also have a <dfn class="dfn-paneled" data-dfn-for="optional argument" data-dfn-type="dfn" data-export="" id="dfn-optional-argument-default-value">default value</dfn> specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span> and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
 then that gives the optional argument its <a data-link-type="dfn" href="#dfn-optional-argument-default-value" id="ref-for-dfn-optional-argument-default-value-2">default value</a>.
 The implicitly optional final argument of a <a data-link-type="dfn" href="#dfn-variadic" id="ref-for-dfn-variadic-4">variadic</a> operation must not have a default value specified.
 The default value is the value to be assumed when the operation is called with the
@@ -4784,7 +4784,7 @@ where keys are strings and values are of a particular type specified in the defi
    <p>Dictionaries are always passed by value.  In language bindings where a dictionary is represented by an object of some kind, passing a
 dictionary to a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-5">platform object</a> will not result in a reference to the dictionary being kept by that object.
 Similarly, any dictionary returned from a platform object will be a copy and modifications made to it will not be visible to the platform object.</p>
-   <p>A dictionary can be defined to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="inherit from dictionary" id="dfn-inherit-dictionary">inherit</dfn> from another dictionary.
+   <p>A dictionary can be defined to <dfn class="dfn-paneled" data-dfn-for="dictionary" data-dfn-type="dfn" data-export="" id="dfn-inherit-dictionary">inherit</dfn> from another dictionary.
 If the identifier of the dictionary is followed by a colon and a <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-33">identifier</a>,
 then that identifier identifies the inherited dictionary.  The identifier
 must identify a dictionary.</p>
@@ -4807,7 +4807,7 @@ to the dictionary members defined on <var>D</var> and on any of <var>D</var>’s
 On a given dictionary value, the presence of each dictionary member
 is optional, unless that member is specified as required.
 When specified in the dictionary value, a dictionary member is said to be <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-present">present</dfn>, otherwise it is <a data-link-type="dfn" href="#dfn-present" id="ref-for-dfn-present-1">not present</a>.
-Dictionary members can also optionally have a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="member default value" id="dfn-dictionary-member-default-value">default value</dfn>, which is
+Dictionary members can also optionally have a <dfn class="dfn-paneled" data-dfn-for="dictionary member" data-dfn-type="dfn" data-export="" id="dfn-dictionary-member-default-value">default value</dfn>, which is
 the value to use for the dictionary member when passing a value to a <a data-link-type="dfn" href="#dfn-platform-object" id="ref-for-dfn-platform-object-6">platform object</a> that does
 not have a specified value.  Dictionary members with default values are
 always considered to be present.</p>
@@ -4972,8 +4972,8 @@ on that dictionary’s <a data-link-type="dfn" href="#dfn-inherited-dictionaries
 </pre>
    <div data-fill-with="grammar-DefaultValue"></div>
    <div data-fill-with="grammar-Inheritance"></div>
-   <div class="example" id="example-044015f1">
-    <a class="self-link" href="#example-044015f1"></a> 
+   <div class="example" id="example-8f4677ec">
+    <a class="self-link" href="#example-8f4677ec"></a> 
     <p>One use of dictionary types is to allow a number of optional arguments to
     an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-21">operation</a> without being
     constrained as to the order they are specified at the call site.  For example,
@@ -5000,7 +5000,7 @@ on that dictionary’s <a data-link-type="dfn" href="#dfn-inherited-dictionaries
         
 <span class="c1">// Draw a rectangle.</span>
 <span class="nx">ctx</span><span class="p">.</span><span class="nx">drawRectangle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="nx">fillPattern</span><span class="o">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">});</span></pre>
-    <p>Both fillPattern and strokePattern are given <a data-link-type="dfn" href="#dfn-dictionary-member-default-value" id="ref-for-dfn-dictionary-member-default-value-6">member default values</a>,
+    <p>Both fillPattern and strokePattern are given <a data-link-type="dfn" href="#dfn-dictionary-member-default-value" id="ref-for-dfn-dictionary-member-default-value-6">default values</a>,
     so if they are omitted, the definition of drawRectangle can assume that they
     have the given default values and not include explicit wording to handle
     their non-presence.</p>
@@ -5822,7 +5822,7 @@ is the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier
    <p>An <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-45">identifier</a> that
 identifies an <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-15">enumeration</a> is used to
 refer to a type whose values are the set of strings (sequences of <a data-link-type="dfn" href="#dfn-code-unit" id="ref-for-dfn-code-unit-5">code units</a>, as with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-33">DOMString</a></code>) that are the <a data-link-type="dfn" href="#dfn-enumeration-value" id="ref-for-dfn-enumeration-value-4">enumeration’s values</a>.</p>
-   <p>Like <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-34">DOMString</a></code>, there is no way to represent a constant <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-16">enumeration</a> value in IDL, although enumeration-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-12">dictionary member</a> <a data-link-type="dfn" href="#dfn-dictionary-member-default-value" id="ref-for-dfn-dictionary-member-default-value-7">member default values</a> can be specified using a <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> literal.</p>
+   <p>Like <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-34">DOMString</a></code>, there is no way to represent a constant <a data-link-type="dfn" href="#dfn-enumeration" id="ref-for-dfn-enumeration-16">enumeration</a> value in IDL, although enumeration-typed <a data-link-type="dfn" href="#dfn-dictionary-member" id="ref-for-dfn-dictionary-member-12">dictionary member</a> <a data-link-type="dfn" href="#dfn-dictionary-member-default-value" id="ref-for-dfn-dictionary-member-default-value-7">default values</a> can be specified using a <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> literal.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-21">type name</a> of an enumeration type
 is the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-46">identifier</a> of the enumeration.</p>
    <h4 class="heading settled dfn-paneled" data-dfn-type="dfn" data-level="3.11.22" data-lt="Callback function types" data-noexport="" id="idl-callback-function"><span class="secno">3.11.22. </span><span class="content">Callback function types</span></h4>
@@ -6360,7 +6360,7 @@ that same global environment.</p>
 <span class="nx">iframe</span><span class="p">.</span><span class="nx">appendChild</span> <span class="k">instanceof</span> <span class="nx">w</span><span class="p">.</span><span class="nb">Function</span><span class="p">;</span>  <span class="c1">// Evaluates to false</span>
 <span class="nt">&lt;/script></span></pre>
    </div>
-   <p>Unless otherwise specified, each ECMAScript global environment <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="es expose|exposes" id="dfn-expose">exposes</dfn> all <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-53">interfaces</a> that the implementation supports.  If a given ECMAScript global environment does not
+   <p>Unless otherwise specified, each ECMAScript global environment <dfn class="dfn-paneled" data-dfn-for="ECMAScript global environment" data-dfn-type="dfn" data-export="" id="dfn-expose">exposes</dfn> all <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-53">interfaces</a> that the implementation supports.  If a given ECMAScript global environment does not
 expose an interface, then the requirements given in <a href="#es-interfaces">§4.6 Interfaces</a> are
 not followed for that interface.</p>
    <p class="note" role="note">Note: This allows, for example, ECMAScript global environments for Web Workers to <a data-link-type="dfn" href="#dfn-expose" id="ref-for-dfn-expose-1">expose</a> different sets of supported interfaces from those exposed in environments
@@ -13020,7 +13020,6 @@ this was to the right.)</p>
    <li><a href="#aborterror">AbortError</a><span>, in §3.5.1</span>
    <li><a href="#add-map-elements-from-iterable">add map elements from an iterable</a><span>, in §4.6.12</span>
    <li><a href="#idl-any">any</a><span>, in §3.11</span>
-   <li><a href="#dfn-optional-argument-default-value">argument default value</a><span>, in §3.2.3</span>
    <li><a href="#idl-ArrayBuffer">ArrayBuffer</a><span>, in §3.11.30</span>
    <li><a href="#ArrayBufferView">ArrayBufferView</a><span>, in §5</span>
    <li><a href="#dfn-array-index-property-name">array index property name</a><span>, in §4.8.1</span>
@@ -13071,6 +13070,12 @@ this was to the right.)</p>
    <li><a href="#idl-DataView">DataView</a><span>, in §3.11.30</span>
    <li><a href="#dfn-default-iterator-object">default iterator object</a><span>, in §4.6.9.4</span>
    <li><a href="#dfn-default-unforgeable-valueOf-function">default unforgeable valueOf function</a><span>, in §4.8</span>
+   <li>
+    default value
+    <ul>
+     <li><a href="#dfn-optional-argument-default-value">dfn for optional argument</a><span>, in §3.2.3</span>
+     <li><a href="#dfn-dictionary-member-default-value">dfn for dictionary member</a><span>, in §3.4</span>
+    </ul>
    <li><a href="#dfn-definition">definitions</a><span>, in §3</span>
    <li><a href="#dfn-delete-an-existing-named-property">delete an existing named property</a><span>, in §3.2.4.5</span>
    <li><a href="#dfn-deleter">deleter</a><span>, in §3.2.4</span>
@@ -13101,7 +13106,6 @@ this was to the right.)</p>
     </ul>
    <li><a href="#dfn-exception-error-name">error name</a><span>, in §3.5</span>
    <li><a href="#dfn-error-names-table">error names table</a><span>, in §3.5.1</span>
-   <li><a href="#dfn-expose">es expose</a><span>, in §4.1</span>
    <li><a href="#ecmascript-throw">es throw</a><span>, in §4</span>
    <li><a href="#exceptiondef-evalerror">EvalError</a><span>, in §3.5</span>
    <li><a href="#dfn-example-term">example term</a><span>, in §1.1</span>
@@ -13141,10 +13145,14 @@ this was to the right.)</p>
    <li><a href="#dfn-indexed-property-setter">indexed property setter</a><span>, in §3.2.4</span>
    <li><a href="#dom-domexception-index_size_err">INDEX_SIZE_ERR</a><span>, in §3.5.1</span>
    <li><a href="#indexsizeerror">IndexSizeError</a><span>, in §3.5.1</span>
-   <li><a href="#dfn-inherit">inherit</a><span>, in §3.2</span>
+   <li>
+    inherit
+    <ul>
+     <li><a href="#dfn-inherit">dfn for interface</a><span>, in §3.2</span>
+     <li><a href="#dfn-inherit-dictionary">dfn for dictionary</a><span>, in §3.4</span>
+    </ul>
    <li><a href="#dfn-inherited-dictionaries">inherited dictionaries</a><span>, in §3.4</span>
    <li><a href="#dfn-inherited-interfaces">inherited interfaces</a><span>, in §3.2</span>
-   <li><a href="#dfn-inherit-dictionary">inherit from dictionary</a><span>, in §3.4</span>
    <li><a href="#dfn-inherit-getter">inherit its getter</a><span>, in §3.2.2</span>
    <li><a href="#dfn-initial-object">initial objects</a><span>, in §4.1</span>
    <li><a href="#dfn-inner-type">inner type</a><span>, in §3.11.23</span>
@@ -13187,7 +13195,6 @@ this was to the right.)</p>
    <li><a href="#dfn-maplike">maplike</a><span>, in §3.2.8</span>
    <li><a href="#dfn-maplike-declaration">maplike declaration</a><span>, in §3.2.8</span>
    <li><a href="#dfn-map-size-getter">map size getter</a><span>, in §4.6.10.1</span>
-   <li><a href="#dfn-dictionary-member-default-value">member default value</a><span>, in §3.4</span>
    <li><a href="#dfn-union-member-type">member types</a><span>, in §3.11.26</span>
    <li><a href="#dfn-exception-message">message</a><span>, in §3.5</span>
    <li><a href="#dfn-named-constructor">named constructor</a><span>, in §4.6</span>

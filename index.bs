@@ -854,9 +854,9 @@ accessed on the object.
 
 The <dfn id="dfn-inherited-interfaces" export>inherited interfaces</dfn> of
 a given interface |A| is the set of all interfaces that |A|
-inherits from, directly or indirectly.  If |A| does not [=inherit=]
+inherits from, directly or indirectly.  If |A| does not [=interface/inherit=]
 from another interface, then the set is empty.  Otherwise, the set
-includes the interface |B| that |A| [=inherits=]
+includes the interface |B| that |A| [=interface/inherits=]
 from and all of |B|’s [=inherited interfaces=].
 
 An interface must not be declared such that
@@ -908,7 +908,7 @@ as described in [[#idl-objects]].
 Note: See also the similarly named [=callback function=] definition.
 
 [=Callback interfaces=]
-must not [=inherit=]
+must not [=interface/inherit=]
 from any non-callback interfaces, and non-callback interfaces must not
 inherit from any callback interfaces.
 Callback interfaces must not have any
@@ -1026,7 +1026,7 @@ definition and any of its [=partial interface=]
 definitions does not matter.
 
 Note: A partial interface definition cannot specify that the interface
-[=inherits=] from another interface.
+[=interface/inherits=] from another interface.
 Inheritance must be specified on the original [=interface=]
 definition.
 
@@ -1253,7 +1253,7 @@ or one of the three special floating point constant values
 (<code>-Infinity</code>, <code>Infinity</code> and <code>NaN</code>).
 
 Note: These values – in addition to strings and the empty sequence – can also be used to specify the
-[=member default value|default value of a dictionary member=] or [=argument default value|of an optional argument=].  Note that strings and the
+[=dictionary member/default value|default value of a dictionary member=] or [=optional argument/default value|of an optional argument=].  Note that strings and the
 empty sequence <code>[]</code> cannot be used as the value of a
 [=constant=].
 
@@ -1860,10 +1860,10 @@ optional if the operation is [=variadic=].
     };
 </pre>
 
-Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" lt="argument default value" export>default value</dfn>
+Optional arguments can also have a <dfn id="dfn-optional-argument-default-value" for="optional argument" export>default value</dfn>
 specified.  If the argument’s identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
 and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
-then that gives the optional argument its [=argument default value|default value=].
+then that gives the optional argument its [=optional argument/default value=].
 The implicitly optional final argument of a [=variadic=]
 operation must not have a default value specified.
 The default value is the value to be assumed when the operation is called with the
@@ -1876,7 +1876,7 @@ corresponding argument omitted.
 </pre>
 
 <p class="advisement">
-    It is strongly suggested not to use [=argument default value|default value=]
+    It is strongly suggested not to use [=optional argument/default value=]
     of <emu-val>true</emu-val> for {{boolean}}-typed arguments,
     as this can be confusing for authors who might otherwise expect the default
     conversion of <emu-val>undefined</emu-val> to be used (i.e., <emu-val>false</emu-val>).
@@ -1890,7 +1890,7 @@ and the argument is either the final argument or is followed only by
 [=optional arguments=], then
 the argument must be specified as optional.
 Such arguments are always considered to have a
-[=argument default value|default value=] of an empty dictionary,
+[=optional argument/default value=] of an empty dictionary,
 unless otherwise specified.
 
 <div class="note">
@@ -1912,7 +1912,7 @@ an <emu-t class="symbol"><a href="#prod-integer">integer</a></emu-t> token, a
 <emu-t class="symbol"><a href="#prod-float">float</a></emu-t> token or one of
 the three special floating point literal values (<code>Infinity</code>,
 <code>-Infinity</code> or <code>NaN</code>) is used as the
-[=argument default value|default value=],
+[=optional argument/default value=],
 it is interpreted in the same way as for a [=constant=].
 
 <p id="string-literal">
@@ -1937,7 +1937,7 @@ it is interpreted in the same way as for a [=constant=].
 
 If the type of the [=optional argument=]
 is an [=enumeration=], then its
-[=argument default value|default value=] if specified must
+[=optional argument/default value=] if specified must
 be one of the [=enumeration values|enumeration’s values=].
 
 Optional argument default values can also be specified using the
@@ -4154,7 +4154,7 @@ Dictionaries are always passed by value.  In language bindings where a dictionar
 dictionary to a [=platform object=] will not result in a reference to the dictionary being kept by that object.
 Similarly, any dictionary returned from a platform object will be a copy and modifications made to it will not be visible to the platform object.
 
-A dictionary can be defined to <dfn id="dfn-inherit-dictionary" lt="inherit from dictionary" export>inherit</dfn> from another dictionary.
+A dictionary can be defined to <dfn id="dfn-inherit-dictionary" for="dictionary" export>inherit</dfn> from another dictionary.
 If the identifier of the dictionary is followed by a colon and a [=identifier=],
 then that identifier identifies the inherited dictionary.  The identifier
 must identify a dictionary.
@@ -4176,9 +4176,9 @@ dictionary |B| that inherits from |A|, and so on.
 
 The <dfn id="dfn-inherited-dictionaries" export>inherited dictionaries</dfn> of
 a given dictionary |D| is the set of all dictionaries that |D|
-inherits from, directly or indirectly.  If |D| does not [=inherit from dictionary|inherit=]
+inherits from, directly or indirectly.  If |D| does not [=dictionary/inherit=]
 from another dictionary, then the set is empty.  Otherwise, the set
-includes the dictionary |E| that |D| [=inherits=]
+includes the dictionary |E| that |D| [=interface/inherits=]
 from and all of |E|’s [=inherited dictionaries=].
 
 A dictionary value of type |D| can have key–value pairs corresponding
@@ -4188,16 +4188,16 @@ On a given dictionary value, the presence of each dictionary member
 is optional, unless that member is specified as required.
 When specified in the dictionary value, a dictionary member is said to be
 <dfn id="dfn-present" export>present</dfn>, otherwise it is [=present|not present=].
-Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" lt="member default value" export>default value</dfn>, which is
+Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" for="dictionary member" export>default value</dfn>, which is
 the value to use for the dictionary member when passing a value to a
 [=platform object=] that does
 not have a specified value.  Dictionary members with default values are
 always considered to be present.
 
 <p class="advisement">
-    As with [=argument default value|operation argument default values=],
+    As with [=optional argument/default value|operation argument default values=],
     is strongly suggested not to use of <emu-val>true</emu-val> as the
-    [=member default value|default value=] for
+    [=dictionary member/default value=] for
     {{boolean}}-typed
     [=dictionary members=],
     as this can be confusing for authors who might otherwise expect the default
@@ -4228,7 +4228,7 @@ identify any one of those definitions or a [=dictionary=].
 
 If the identifier is followed by a <span class="char">U+003D EQUALS SIGN ("=")</span>
 and a value (matching <emu-nt><a href="#prod-DefaultValue">DefaultValue</a></emu-nt>),
-then that gives the dictionary member its [=member default value|default value=].
+then that gives the dictionary member its [=dictionary member/default value=].
 
 <pre highlight="webidl" class="syntax">
     dictionary identifier {
@@ -4244,13 +4244,13 @@ one of the three special floating point literal values (<code>Infinity</code>,
 <code>-Infinity</code> or <code>NaN</code>),
 a <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> token or
 the two token sequence <code>[]</code> used as the
-[=member default value|default value=],
+[=dictionary member/default value=],
 it is interpreted in the same way as for an [=operation=]’s
-[=argument default value|optional argument default value=].
+[=optional argument/default value|optional argument default value=].
 
 If the type of the [=dictionary member=]
 is an [=enumeration=], then its
-[=member default value|default value=] if specified must
+[=dictionary member/default value=] if specified must
 be one of the [=enumeration values|enumeration’s values=].
 
 If the type of the dictionary member is preceded by the
@@ -4270,7 +4270,7 @@ the dictionary it appears on.  A type includes a dictionary |D|
 if at least one of the following is true:
 
 *   the type is |D|
-*   the type is a dictionary that [=inherits=] from |D|
+*   the type is a dictionary that [=interface/inherits=] from |D|
 *   the type is a [=nullable type=]
     whose [=inner type=] includes |D|
 *   the type is a <a href="#idl-sequence">sequence type</a> or <a href="#idl-frozen-array">frozen array</a>
@@ -4467,7 +4467,7 @@ The following extended attributes are applicable to dictionary members:
         ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) });
     </pre>
     
-    Both fillPattern and strokePattern are given [=member default values=],
+    Both fillPattern and strokePattern are given [=dictionary member/default values=],
     so if they are omitted, the definition of drawRectangle can assume that they
     have the given default values and not include explicit wording to handle
     their non-presence.
@@ -5000,7 +5000,7 @@ The two [=identifiers=] must
 identify two different interfaces.
 
 The interface identified on the left-hand side of an implements statement
-must not [=inherit=]
+must not [=interface/inherit=]
 from the interface identifier on the right-hand side, and vice versa.  Both identified
 interfaces also must not be
 [=callback interfaces=].
@@ -5019,7 +5019,7 @@ An interface |A| is considered to be a
 *   |O| implements a different interface |B|, and the IDL states that
     <code>B implements A</code>; or
 *   |O| implements a different [=supplemental interface=]
-    |C|, and |C| [=inherits=] from |A|.
+    |C|, and |C| [=interface/inherits=] from |A|.
 
 <div class="note">
     
@@ -5751,7 +5751,7 @@ refer to a type whose values are the set of strings (sequences of
 
 Like {{DOMString}}, there is no way to represent a constant [=enumeration=]
 value in IDL, although enumeration-typed [=dictionary member=]
-[=member default values=] can be specified using a
+[=dictionary member/default values=] can be specified using a
 <emu-t class="symbol"><a href="#prod-string">string</a></emu-t> literal.
 
 The [=type name=] of an enumeration type
@@ -6528,14 +6528,14 @@ that same global environment.
     </pre>
 </div>
 
-Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" lt="es expose|exposes" export>exposes</dfn>
+Unless otherwise specified, each ECMAScript global environment <dfn id="dfn-expose" for="ECMAScript global environment" export>exposes</dfn>
 all [=interfaces=]
 that the implementation supports.  If a given ECMAScript global environment does not
 expose an interface, then the requirements given in
 [[#es-interfaces]] are
 not followed for that interface.
 
-Note: This allows, for example, ECMAScript global environments for Web Workers to [=es expose|expose=]
+Note: This allows, for example, ECMAScript global environments for Web Workers to [=ECMAScript global environment/expose=]
 different sets of supported interfaces from those exposed in environments
 for Web pages.
 
@@ -7363,7 +7363,7 @@ the object (or its prototype chain) correspond to [=dictionary members=].
             1.  If |value| is not <emu-val>undefined</emu-val>, then:
                 1.  Let |idlValue| be the result of [=converted to an IDL value|converting=] |value| to an IDL value whose type is the type |member| is declared to be of.
                 1.  Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].
-            1.  Otherwise, if |value| is <emu-val>undefined</emu-val> but the [=dictionary member=] has a [=member default value|default value=], then:
+            1.  Otherwise, if |value| is <emu-val>undefined</emu-val> but the [=dictionary member=] has a [=dictionary member/default value=], then:
                 1.  Let |idlValue| be the dictionary member’s default value.
                 1.  Set the dictionary member on |dict| with key name |key| to the value |idlValue|.  This dictionary member is considered to be [=present=].
             1.  Otherwise, if |value| is
@@ -8394,14 +8394,15 @@ must be a subset of the
 of the interface's [=consequential interfaces=].
 
 If an interface |X|
-[=inherits=] from another interface
+[=interface/inherits=] from another interface
 |Y| then the
 [=exposure set=] of
 |X| must be a subset of the
 [=exposure set=] of
 |Y|.
 
-An [=interface=], [=namespace=], [=interface member=], or [=namespace member=] is <dfn id="dfn-exposed" export>exposed</dfn> in a given ECMAScript global environment if the
+An [=interface=], [=namespace=], [=interface member=], or [=namespace member=] is
+<dfn id="dfn-exposed" export>exposed</dfn> in a given ECMAScript global environment if the
 ECMAScript global object implements an interface that is in the construct's [=exposure set=], and either:
 
 *   the [=relevant settings object=] for the ECMAScript global object is a [=secure context=]; or
@@ -8612,9 +8613,9 @@ is used on an [=interface=], then:
 *   The interface must not define a [=named property setter=].
 *   The interface must not also be declared with the [{{OverrideBuiltins}}]
     extended attribute.
-*   The interface must not [=inherit=] from another interface with the
+*   The interface must not [=interface/inherit=] from another interface with the
     [{{OverrideBuiltins}}] extended attribute.
-*   Any other interface must not [=inherit=] from it.
+*   Any other interface must not [=interface/inherit=] from it.
 
 If [{{Global}}] or [{{PrimaryGlobal}}] is specified on
 a [=partial interface=]
@@ -8752,7 +8753,7 @@ corresponding to [=interface members=].
 If the [{{LegacyArrayClass}}]
 [=extended attribute=]
 appears on an [=interface=]
-that is not defined to [=inherit=]
+that is not defined to [=interface/inherit=]
 from another, it indicates that the internal \[[Prototype]]
 property of its [=interface prototype object=]
 will be the <emu-val>Array</emu-val> prototype object rather than
@@ -9572,7 +9573,7 @@ on both a namespace member and the namespace or partial namespace definition the
 namespace member is declared on.
 
 An interface without the [{{SecureContext}}] extended attribute
-must not [=inherit=] from another interface
+must not [=interface/inherit=] from another interface
 that does specify [{{SecureContext}}].
 
 <div class="example">
@@ -10016,7 +10017,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
             
         1.  Let |optionality| be the value at index |i| in the list of [=optionality values=] of any entry in |S|.
         1.  If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
-            1.  If the argument at index |i| is declared with a [=argument default value|default value=],
+            1.  If the argument at index |i| is declared with a [=optional argument/default value=],
                 then append to |values| that default value.
             1.  Otherwise, append to |values| the special value “missing”.
         1.  Otherwise, append to |values| the result of [=converted to an IDL value|converting=]
@@ -10224,7 +10225,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
         1.  Let |type| be the type at index |i| in the type list of the remaining entry in |S|.
         1.  Let |optionality| be the value at index |i| in the list of [=optionality values=] of the remaining entry in |S|.
         1.  If |optionality| is “optional” and |V| is <emu-val>undefined</emu-val>, then:
-            1.  If the argument at index |i| is declared with a [=argument default value|default value=],
+            1.  If the argument at index |i| is declared with a [=optional argument/default value=],
                 then append to |values| that default value.
             1.  Otherwise, append to |values| the special value “missing”.
         1.  Otherwise, append to |values| the result of
@@ -10232,7 +10233,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
         1.  Set |i| to |i| + 1.
     
     1.  While |i| is less than the number of arguments |callable| is declared to take:
-        1.  If |callable|’s argument at index |i| is declared with a [=argument default value|default value=],
+        1.  If |callable|’s argument at index |i| is declared with a [=optional argument/default value=],
             then append to |values| that default value.
         1.  Otherwise, if |callable|’s argument at index |i| is not variadic, then append to |values| the special value “missing”.
         1.  Set |i| to |i| + 1.
@@ -10287,7 +10288,7 @@ and a list of IDL values or the special value “missing”.  The algorithm beha
     
     When converting an optional argument’s ECMAScript value to its equivalent IDL value,
     <emu-val>undefined</emu-val> will be converted into
-    the [=argument default value|optional argument’s default value=],
+    the [=optional argument/default value|optional argument’s default value=],
     if it has one, or a special value “missing” otherwise.
     
     Optional arguments corresponding to a final, variadic argument do not treat
@@ -12725,7 +12726,7 @@ to have constants declared on them.
 A <dfn id="dfn-single-operation-callback-interface" export>single operation callback interface</dfn> is
 a [=callback interface=] that:
 
-*   is not declared to [=inherit=] from another interface,
+*   is not declared to [=interface/inherit=] from another interface,
 *   has no [=attributes=], and
 *   has one or more [=regular operations=] that all have the same [=identifier=],
     and no others.
