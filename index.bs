@@ -133,8 +133,7 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: ECMA-262 section 19.2.2.3; url: sec-function-@@create
         text: ECMA-262 section 19.2.3.8; url: sec-function.prototype-@@hasinstance
         text: the Array methods themselves; url: sec-properties-of-the-array-prototype-object
-urlPrefix: http://www.ecma-international.org/ecma-262/6.0/
-    type: dfn
+        text: typed arrays; url: sec-typedarray-objects
         text: GetMethod; url: sec-getmethod
         text: @@unscopables; url: sec-well-known-symbols
 urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html
@@ -147,14 +146,10 @@ urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html
         text: Clean up after running a callback
         text: incumbent settings object
         text: event handler IDL attributes; url: event-handler-attributes
-        url: concept-realm-settings-object
-            text: settings object
+        text: settings object; url: concept-realm-settings-object            
 urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
     type: dfn
         text: secure context
-urlPrefix: https://tc39.github.io/ecma262/
-    type: dfn
-        text: typed arrays; url: sec-typedarray-objects
 </pre>
 
 <style>
