@@ -41,9 +41,7 @@ Boilerplate: omit issues-index, omit conformance
 <pre class="anchors">
 urlPrefix: http://www.unicode.org/glossary/
     type: dfn
-        url: unicode_scalar_value
-            text: Unicode scalar value
-            text: Unicode scalar values
+        text: Unicode scalar value; url: unicode_scalar_value
 urlPrefix: https://tc39.github.io/ecma262/
     type: dfn
         text: NumericLiteral; url: sec-literals-numeric-literals
@@ -409,7 +407,6 @@ implemented in any manner, so long as the end result is <dfn lt="processing equi
 particular, the algorithms defined in this specification are intended to
 be easy to understand and are not intended to be performant. Implementers
 are encouraged to optimize.
-
 
 <h2 id="idl">Interface definition language</h2>
 
