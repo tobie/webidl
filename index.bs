@@ -320,7 +320,7 @@ The following typographic conventions are used in this document:
         };
     </pre>
     
-    (Specific parts of the syntax discussed in surrounding prose are highlighted.)
+    (Specific parts of the syntax discussed in surrounding prose are <mark>highlighted</mark>.)
 *   IDL grammar snippets:
     <pre class="grammar no-index">
         ExampleGrammarNonTerminal :
@@ -334,7 +334,6 @@ The following typographic conventions are used in this document:
     
 *   Non-normative examples:
     <div class="example">
-        
         This is an example.
     </div>
 *   Normative warnings:
