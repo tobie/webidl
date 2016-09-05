@@ -2137,7 +2137,7 @@ then the operation does not have an identifier.</p>
 };
 </pre>
    </ul>
-   <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a <a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.</p>
+   <p class="note" role="note">Note: Operations can have no identifier when they are being used to declare a <a data-link-type="dfn" href="#dfn-special-operation" id="ref-for-dfn-special-operation-1">special kind of operation</a>, such as a getter or setter.</p>
    <p>For all of these constructs, the <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-1">identifier</a> is the value of the <emu-t class="symbol"><a href="#prod-identifier">identifier</a></emu-t> token with any leading <span class="char">U+005F LOW LINE ("_")</span> character (underscore) removed.</p>
    <p class="note" role="note">Note: A leading <span class="char">"_"</span> is used to escape an identifier from looking
 like a reserved word so that, for example, an interface named “interface” can be
@@ -2886,7 +2886,7 @@ the given <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identif
 };
 </pre>
     <li data-md="">
-     <p><a data-link-type="dfn" href="#dfn-special-operation" id="ref-for-dfn-special-operation-1">special operations</a>,
+     <p><a data-link-type="dfn" href="#dfn-special-operation" id="ref-for-dfn-special-operation-2">special operations</a>,
 which are used to declare special behavior on objects
 implementing the interface, such as object indexing and stringification</p>
 <pre class="syntax highlight"><span class="kt">interface</span> <span class="nv">interface_identifier</span> {
@@ -2907,17 +2907,19 @@ a particular object implementing the interface</p>
 If the operation has one or more <a data-link-type="dfn" href="#dfn-special-keyword" id="ref-for-dfn-special-keyword-1">special keywords</a> used in its declaration (that is, any keyword matching <emu-nt><a href="#prod-Special">Special</a></emu-nt>, or
 the <code>stringifier</code> keyword),
 then it declares a special operation.  A single operation can declare
-both a regular operation and a special operation; see <a href="#idl-special-operations">§3.2.4 Special operations</a> for details on special operations. Note that in addition to being <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a>, regular operations can also be <a data-link-type="dfn" href="#dfn-namespace-member" id="ref-for-dfn-namespace-member-1">namespace members</a>.</p>
+both a regular operation and a special operation;
+see <a href="#idl-special-operations">§3.2.4 Special operations</a> for details on special operations.
+Note that in addition to being <a data-link-type="dfn" href="#dfn-interface-member" id="ref-for-dfn-interface-member-6">interface members</a>,
+regular operations can also be <a data-link-type="dfn" href="#dfn-namespace-member" id="ref-for-dfn-namespace-member-1">namespace members</a>.</p>
    <p>If an operation has no identifier,
-then it must
-be declared to be a special operation using one of the
-special keywords.</p>
+then it must be declared to be a special operation
+using one of the special keywords.</p>
    <p>The identifier of a <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-2">regular operation</a> or <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-3">static operation</a> must not be the same as the identifier
 of a <a data-link-type="dfn" href="#dfn-constant" id="ref-for-dfn-constant-11">constant</a> or <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-9">attribute</a> defined on the same <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-21">interface</a>.
-The identifier of a static operation must not
-be “prototype”.</p>
-   <p class="note" role="note">Note: The identifier can be the same as that of another operation on the
-interface, however.  This is how operation overloading is specified.</p>
+The identifier of a static operation must not be “prototype”.</p>
+   <p class="note" role="note">Note: The identifier can be the same
+as that of another operation on the interface, however.
+This is how operation overloading is specified.</p>
    <p>The <a data-link-type="dfn" href="#dfn-identifier" id="ref-for-dfn-identifier-17">identifier</a> of a <a data-link-type="dfn" href="#dfn-static-operation" id="ref-for-dfn-static-operation-4">static operation</a> also must not be the same as the identifier
 of a <a data-link-type="dfn" href="#dfn-regular-operation" id="ref-for-dfn-regular-operation-3">regular operation</a> defined on the same <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-22">interface</a>.</p>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-return-type">return type</dfn> of the operation is given
@@ -14044,7 +14046,8 @@ this was to the right.)</p>
   <aside class="dfn-panel" data-for="dfn-special-operation">
    <b><a href="#dfn-special-operation">#dfn-special-operation</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dfn-special-operation-1">3.2.3. Operations</a>
+    <li><a href="#ref-for-dfn-special-operation-1">3.1. Names</a>
+    <li><a href="#ref-for-dfn-special-operation-2">3.2.3. Operations</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dfn-special-keyword">

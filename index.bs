@@ -598,7 +598,7 @@ in the declaration:
     </pre>
 
 Note: Operations can have no identifier when they are being used to declare a
-<a href="#idl-special-operations">special kind of operation</a>, such as a getter or setter.
+[=special operation|special kind of operation=], such as a getter or setter.
 
 For all of these constructs, the [=identifier=]
 is the value of the <emu-t class="symbol"><a href="#prod-identifier">identifier</a></emu-t> token with any leading
@@ -1681,27 +1681,24 @@ used in its declaration (that is, any keyword matching
 <emu-nt><a href="#prod-Special">Special</a></emu-nt>, or
 the <code>stringifier</code> keyword),
 then it declares a special operation.  A single operation can declare
-both a regular operation and a special operation; see
-[[#idl-special-operations]]
-for details on special operations. Note that in addition to being [=interface members=], regular operations can also be [=namespace members=].
+both a regular operation and a special operation;
+see [[#idl-special-operations]] for details on special operations.
+Note that in addition to being [=interface members=],
+regular operations can also be [=namespace members=].
 
 If an operation has no identifier,
-then it must
-be declared to be a special operation using one of the
-special keywords.
+then it must be declared to be a special operation
+using one of the special keywords.
 
-The identifier of a
-[=regular operation=]
-or [=static operation=]
+The identifier of a [=regular operation=] or [=static operation=]
 must not be the same as the identifier
-of a [=constant=] or
-[=attribute=]
+of a [=constant=] or [=attribute=]
 defined on the same [=interface=].
-The identifier of a static operation must not
-be “prototype”.
+The identifier of a static operation must not be “prototype”.
 
-Note: The identifier can be the same as that of another operation on the
-interface, however.  This is how operation overloading is specified.
+Note: The identifier can be the same
+as that of another operation on the interface, however.
+This is how operation overloading is specified.
 
 The [=identifier=] of a [=static operation=]
 also must not be the same as the identifier
