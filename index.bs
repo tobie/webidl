@@ -39,10 +39,10 @@ Boilerplate: omit issues-index, omit conformance
 </pre>
 
 <pre class="anchors">
-urlPrefix: http://www.unicode.org/glossary/
+urlPrefix: http://www.unicode.org/glossary/; spec: UNICODE
     type: dfn
         text: Unicode scalar value; url: unicode_scalar_value
-urlPrefix: https://tc39.github.io/ecma262/
+urlPrefix: https://tc39.github.io/ecma262/; spec: ECMA-262
     type: dfn
         text: NumericLiteral; url: sec-literals-numeric-literals
         text: ECMAScript error objects; url: sec-error-objects
@@ -131,11 +131,11 @@ urlPrefix: https://tc39.github.io/ecma262/
         text: ECMA-262 section 9.1.8; url: sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver
         text: ECMA-262 section 19.2.2.3; url: sec-function-@@create
         text: ECMA-262 section 19.2.3.8; url: sec-function.prototype-@@hasinstance
-        text: the Array methods themselves; url: sec-properties-of-the-array-prototype-object
+        text: Array methods; url: sec-properties-of-the-array-prototype-object
         text: typed arrays; url: sec-typedarray-objects
         text: GetMethod; url: sec-getmethod
         text: @@unscopables; url: sec-well-known-symbols
-urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html
+urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html; spec: HTML
     type: dfn
         text: relevant settings object
         text: relevant Realm; url: concept-relevant-realm
@@ -407,6 +407,7 @@ implemented in any manner, so long as the end result is <dfn lt="processing equi
 particular, the algorithms defined in this specification are intended to
 be easy to understand and are not intended to be performant. Implementers
 are encouraged to optimize.
+
 
 <h2 id="idl">Interface definition language</h2>
 
@@ -5642,7 +5643,6 @@ The [=type name=] of the
     with {{octet}} or {{byte}}
     elements should be used for holding
     8 bit data rather than {{ByteString}}.
-    [[!ECMA-262]]
 </p>
 
 
@@ -5858,7 +5858,7 @@ the string “Sequence”.
 A <dfn id="dfn-promise-type" export>promise type</dfn> is a parameterized type
 whose values are references to objects that “is used as a place holder
 for the eventual results of a deferred (and possibly asynchronous) computation
-result of an asynchronous operation” [[!ECMA-262]].
+result of an asynchronous operation”.
 See <a href="https://tc39.github.io/ecma262/#sec-promise-objects">section 25.4</a>
 of the ECMAScript specification for details on the semantics of promise objects.
 
@@ -6485,7 +6485,7 @@ and comprise the following:
 *   [=DOMException prototype objects=]
 *   [=named properties objects=]
 
-Each [=Realms|ECMAScript global environment=] ([[!ECMA-262]], section 8.2)
+Each [=Realms|ECMAScript global environment=]
 must have its own unique set of each of
 the [=initial objects=], created
 before control enters any ECMAScript execution context associated with the
@@ -8807,7 +8807,7 @@ entails.
     and no indexed property [=indexed property setters|setter=].  The
     mutating <emu-val>Array</emu-val> methods will generally not
     succeed on objects implementing <code class="idl">ImmutableItemList</code>.
-    The exact behavior depends on the definition of [=the Array methods themselves=] ([[!ECMA-262]], section 22.1.3).
+    The exact behavior depends on the definition of the [=Array methods=] themselves.
     
 </div>
 
@@ -10573,7 +10573,6 @@ the following steps:
     1.  Otherwise, if |A| is declared with the [{{LegacyArrayClass}}]
         extended attribute, then return [=%ArrayPrototype%=].
     1.  Otherwise, return [=%ObjectPrototype%=].
-        ([[!ECMA-262]], section 15.2.4).
 </ol>
 
 <div class="note">

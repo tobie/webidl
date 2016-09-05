@@ -5768,7 +5768,7 @@ can be specified using a <emu-t class="symbol"><a href="#prod-string">string</a>
     strings should be represented with <code class="idl"><a data-link-type="idl" href="#idl-DOMString" id="ref-for-idl-DOMString-30">DOMString</a></code> values, even if it is expected
     that values of the string will always be in ASCII or some
     8 bit character encoding. <a href="#idl-sequence" id="ref-for-idl-sequence-7">Sequences</a>, <a href="#idl-frozen-array" id="ref-for-idl-frozen-array-2">frozen arrays</a> or <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-typedarray-objects">Typed Arrays</a> with <code class="idl"><a data-link-type="idl" href="#idl-octet" id="ref-for-idl-octet-5">octet</a></code> or <code class="idl"><a data-link-type="idl" href="#idl-byte" id="ref-for-idl-byte-5">byte</a></code> elements should be used for holding
-    8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-9">ByteString</a></code>. <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a> </p>
+    8 bit data rather than <code class="idl"><a data-link-type="idl" href="#idl-ByteString" id="ref-for-idl-ByteString-9">ByteString</a></code>. </p>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="3.11.17" data-lt="USVString" id="idl-USVString"><span class="secno">3.11.17. </span><span class="content">USVString</span><span id="dom-USVString"></span></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#idl-USVString" id="ref-for-idl-USVString-5">USVString</a></code> type
 corresponds to the set of all possible sequences of <a data-link-type="dfn" href="http://www.unicode.org/glossary/#unicode_scalar_value">Unicode scalar values</a>,
@@ -5888,7 +5888,7 @@ the string “Sequence”.</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="dfn-promise-type">promise type</dfn> is a parameterized type
 whose values are references to objects that “is used as a place holder
 for the eventual results of a deferred (and possibly asynchronous) computation
-result of an asynchronous operation” <a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>.
+result of an asynchronous operation”.
 See <a href="https://tc39.github.io/ecma262/#sec-promise-objects">section 25.4</a> of the ECMAScript specification for details on the semantics of promise objects.</p>
    <p>There is no way to represent a promise value in IDL.</p>
    <p>The <a data-link-type="dfn" href="#dfn-type-name" id="ref-for-dfn-type-name-25">type name</a> of a promise type
@@ -6330,8 +6330,7 @@ and comprise the following:</p>
     <li data-md="">
      <p><a data-link-type="dfn" href="#dfn-named-properties-object" id="ref-for-dfn-named-properties-object-2">named properties objects</a></p>
    </ul>
-   <p>Each <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> (<a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>, section 8.2)
-must have its own unique set of each of
+   <p>Each <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> must have its own unique set of each of
 the <a data-link-type="dfn" href="#dfn-initial-object" id="ref-for-dfn-initial-object-1">initial objects</a>, created
 before control enters any ECMAScript execution context associated with the
 environment, but after the global object for that environment is created.  The [[Prototype]]s
@@ -8255,8 +8254,8 @@ which would provide access to the array elements.</p>
    <p>See <a href="#interface-prototype-object">§4.6.3 Interface prototype object</a> for the
 specific requirements that the use of [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-6">LegacyArrayClass</a></code>]
 entails.</p>
-   <div class="example" id="example-b7fcddbe">
-    <a class="self-link" href="#example-b7fcddbe"></a> 
+   <div class="example" id="example-48890bf2">
+    <a class="self-link" href="#example-48890bf2"></a> 
     <p>The following <a data-link-type="dfn" href="#dfn-idl-fragment" id="ref-for-dfn-idl-fragment-37">IDL fragment</a> defines two <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-68">interfaces</a> that use [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-7">LegacyArrayClass</a></code>].</p>
 <pre class="highlight">[<span class="nv">LegacyArrayClass</span>]
 <span class="kt">interface</span> <span class="nv">ItemList</span> {
@@ -8283,7 +8282,7 @@ entails.</p>
     length <a data-link-type="dfn" href="#dfn-attribute" id="ref-for-dfn-attribute-46">attribute</a> and no indexed property <a data-link-type="dfn" href="#dfn-indexed-property-setter" id="ref-for-dfn-indexed-property-setter-3">setter</a>.  The
     mutating <emu-val>Array</emu-val> methods will generally not
     succeed on objects implementing <code class="idl">ImmutableItemList</code>.
-    The exact behavior depends on the definition of <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-properties-of-the-array-prototype-object">the Array methods themselves</a> (<a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>, section 22.1.3).</p>
+    The exact behavior depends on the definition of the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-properties-of-the-array-prototype-object">Array methods</a> themselves.</p>
    </div>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="extended-attribute" data-export="" data-level="4.3.8" data-lt="LegacyUnenumerableNamedProperties" id="LegacyUnenumerableNamedProperties"><span class="secno">4.3.8. </span><span class="content">[LegacyUnenumerableNamedProperties]</span></h4>
    <p>If the [<code class="idl"><a data-link-type="idl" href="#LegacyUnenumerableNamedProperties" id="ref-for-LegacyUnenumerableNamedProperties-1">LegacyUnenumerableNamedProperties</a></code>] <a data-link-type="dfn" href="#dfn-extended-attribute" id="ref-for-dfn-extended-attribute-61">extended attribute</a> appears on a <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-69">interface</a> that <a data-link-type="dfn" href="#dfn-support-named-properties" id="ref-for-dfn-support-named-properties-2">supports named properties</a>,
@@ -9654,8 +9653,7 @@ interface, then return the <a data-link-type="dfn" href="#dfn-interface-prototyp
      <p>Otherwise, if <var>A</var> is declared with the [<code class="idl"><a data-link-type="idl" href="#LegacyArrayClass" id="ref-for-LegacyArrayClass-8">LegacyArrayClass</a></code>]
 extended attribute, then return <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%ArrayPrototype%</a>.</p>
     <li data-md="">
-     <p>Otherwise, return <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-properties-of-the-object-prototype-object">%ObjectPrototype%</a>.
-(<a data-link-type="biblio" href="#biblio-ecma-262">[ECMA-262]</a>, section 15.2.4).</p>
+     <p>Otherwise, return <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-properties-of-the-object-prototype-object">%ObjectPrototype%</a>.</p>
    </ol>
    <div class="note" role="note">
     <p>The <a data-link-type="dfn" href="#dfn-interface-prototype-object" id="ref-for-dfn-interface-prototype-object-13">interface prototype object</a> of an <a data-link-type="dfn" href="#dfn-interface" id="ref-for-dfn-interface-94">interface</a> that is defined with
@@ -13351,6 +13349,102 @@ this was to the right.)</p>
   </ul>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
+   <li>
+    <a data-link-type="biblio">[ECMA-262]</a> defines the following terms:
+    <ul>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">!</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%arrayproto_values%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%arrayprototype%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%error%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%errorprototype%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-properties-of-the-function-prototype-object">%functionprototype%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%iteratorprototype%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-properties-of-the-object-prototype-object">%objectprototype%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%objproto_tostring%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-promise-constructor">%promise%</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist">9.3.1</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@tostringtag</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@unscopables</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">abs</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-properties-of-the-array-prototype-object">array methods</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-arraycreate">arraycreate</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-call">call</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-iscallable">callable</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-completion-record-specification-type">completion</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-construct">construct</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">conventions of the ecmascript specification</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-createbuiltinfunction">createbuiltinfunction</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-createdataproperty">createdataproperty</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-createiterresultobject">createiterresultobject</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-createmapiterator">createmapiterator</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-createsetiterator">createsetiterator</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[set]] internal method</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">definepropertyorthrow</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">detacharraybuffer</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-function-@@create">ecma-262 section 19.2.2.3</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ecma-262 section 19.2.3.8</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ecma-262 section 5.2</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ecma-262 section 9.1.8</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-error-objects">ecmascript error objects</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type">element</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">equally close values</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">floor</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-get-o-p">get</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-getiterator">getiterator</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-getmethod">getmethod</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-immutable-prototype-exotic-objects">immutable prototype exotic object</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-isaccessordescriptor">isaccessordescriptor</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-iscallable">iscallable</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-isconstructor">isconstructor</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">isdatadescriptor</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">isdetachedbuffer</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-iteratorstep">iteratorstep</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-iteratorvalue">iteratorvalue</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">modulo</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-normalcompletion">normalcompletion</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-literals-numeric-literals">numericliteral</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-objectcreate">objectcreate</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ordinarydefineownproperty">ordinarydefineownproperty</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ordinarygetownproperty">ordinarygetownproperty</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type">property descriptor</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-code-realms">realm</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-returnifabrupt">returnifabrupt</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots">sections 9.1</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-set-o-p-v-throw">set</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-setfunctionname">setfunctionname</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-setintegritylevel">setintegritylevel</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">sign</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-toboolean">toboolean</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-toint32">toint32</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-tonumber">tonumber</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-toobject">toobject</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-tostring">tostring</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-touint16">touint16</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-touint32">touint32</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">type</a>
+     <li><a href="https://tc39.github.io/ecma262/#sec-typedarray-objects">typed arrays</a>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[HTML]</a> defines the following terms:
+    <ul>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-a-callback">clean up after running a callback</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-script">clean up after running script</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handler-attributes">event handler idl attributes</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#incumbent-settings-object">incumbent settings object</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#prepare-to-run-a-callback">prepare to run a callback</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#prepare-to-run-script">prepare to run script</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-relevant-realm">relevant realm</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#relevant-settings-object">relevant settings object</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-settings-object">settings object</a>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[UNICODE]</a> defines the following terms:
+    <ul>
+     <li><a href="http://www.unicode.org/glossary/#unicode_scalar_value">unicode scalar value</a>
+    </ul>
    <li>
     <a data-link-type="biblio">[HTML]</a> defines the following terms:
     <ul>
