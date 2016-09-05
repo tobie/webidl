@@ -147,9 +147,6 @@ urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html
         text: incumbent settings object
         text: event handler IDL attributes; url: event-handler-attributes
         text: settings object; url: concept-realm-settings-object            
-urlPrefix: https://w3c.github.io/webappsec-secure-contexts/
-    type: dfn
-        text: secure context
 </pre>
 
 <style>
@@ -9500,8 +9497,7 @@ appears on an [=interface=],
 [=namespace member=],
 it indicates that the construct is exposed
 only within a
-<a href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a>
-([[!SECURE-CONTEXTS]], section 2).
+[=secure context=].
 
 The [{{SecureContext}}]
 extended attribute must
