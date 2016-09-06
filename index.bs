@@ -1708,7 +1708,7 @@ defined on the same [=interface=].
 The <dfn id="dfn-return-type" export>return type</dfn> of the operation is given
 by the type (matching <emu-nt><a href="#prod-ReturnType">ReturnType</a></emu-nt>)
 that appears before the operation’s optional [=identifier=].
-A return type of <dfn id="idl-void" typedef>void</dfn> indicates that the operation returns no value.
+A return type of <dfn id="idl-void" interface>void</dfn> indicates that the operation returns no value.
 If the return type is an
 [=identifier=] followed by <code>?</code>,
 then the identifier must
