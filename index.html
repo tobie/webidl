@@ -1526,7 +1526,7 @@ pre.idl.highlight { color: #708090; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web IDL</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-09-05">5 September 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-09-06">6 September 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3103,17 +3103,18 @@ must be a <a href="#idl-sequence" id="ref-for-idl-sequence-2">sequence type</a> 
 };
 </pre>
    </div>
-   <p id="callback-operation-exceptions"> If an implementation attempts to invoke an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-8">operation</a> on a <a data-link-type="dfn" href="#dfn-user-object" id="ref-for-dfn-user-object-5">user object</a> (for example, when a callback object
-    has been supplied to the implementation), and that attempt results in an
-    exception being thrown, then, unless otherwise specified, that
-    exception will be propagated to the user code that caused the
-    implementation to invoke the operation.  Similarly, if a value
-    returned from invoking the operation cannot be converted to
-    an IDL type, then any exception resulting from this will also
-    be propagated to the user code that resulted in the implementation
-    attempting to invoke the operation. </p>
-   <p>The following extended attributes
-are applicable to operations:
+   <p id="callback-operation-exceptions"> If an implementation attempts to invoke
+    an <a data-link-type="dfn" href="#dfn-operation" id="ref-for-dfn-operation-8">operation</a> on a <a data-link-type="dfn" href="#dfn-user-object" id="ref-for-dfn-user-object-5">user object</a> (for example, when a callback object has been supplied to the implementation),
+    and that attempt results in an exception being thrown, then,
+    unless otherwise specified,
+    that exception will be propagated to
+    the user code that caused the implementation to invoke the operation.
+    Similarly, if a value returned from invoking the operation
+    cannot be converted to an IDL type,
+    then any exception resulting from this will also
+    be propagated to the user code
+    that resulted in the implementation attempting to invoke the operation. </p>
+   <p>The following extended attributes are applicable to operations:
 [<code class="idl"><a data-link-type="idl" href="#Exposed" id="ref-for-Exposed-5">Exposed</a></code>],
 [<code class="idl"><a data-link-type="idl" href="#NewObject" id="ref-for-NewObject-1">NewObject</a></code>],
 [<code class="idl"><a data-link-type="idl" href="#SecureContext" id="ref-for-SecureContext-5">SecureContext</a></code>],
