@@ -152,6 +152,11 @@ urlPrefix: https://html.spec.whatwg.org/multipage/webappapis.html; spec: HTML
           font-size: 80%;
         }
         
+        .syntax .n,
+        .syntax .nv {
+          font-style: italic;
+        }
+        
         .mute {
           color: #9D937D
         }
