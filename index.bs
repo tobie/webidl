@@ -774,7 +774,8 @@ an [=interface=]
 that uses the <emu-t>callback</emu-t> keyword at the start of
 its definition.  Callback interfaces are ones that can be
 implemented by [=user objects=]
-and not by [=platform objects=],
+and neither by [=platform objects=]
+nor by [=legacy platform objects=]
 as described in [[#idl-objects]].
 
 <pre highlight="webidl" class="syntax">
@@ -2127,8 +2128,15 @@ If multiple legacy callers are specified on an interface, overload resolution
 is used to determine which legacy caller is invoked when the object is called
 as if it were a function.
 
-Legacy callers must not be defined to return a
-[=promise type=].
+[=Legacy callers=] can only be defined on interfaces that also
+[=support indexed properties|supports indexed=] or
+[=support named properties|named properties=].
+
+Note: This is for historical reasons. It allows limiting the number of
+ECMAScript binding categories for interfaces to just two:
+[=platform object|platform=] and [=legacy platform object|legacy platform=] objects.
+
+Legacy callers must not be defined to return a [=promise type=].
 
 <p class="advisement">
     Legacy callers are universally recognised as an undesirable feature.  They exist
@@ -2853,7 +2861,7 @@ The following requirements apply to the definitions of indexed property getters 
 
     As described in [[#es-platform-objects]],
     an ECMAScript implementation would create
-    properties on a [=platform object=] implementing
+    properties on a [=legacy platform object=] implementing
     <code class="idl">OrderedMap</code> that correspond to
     entries in both the named and indexed property sets.
     These properties can then be used to interact
@@ -2861,7 +2869,7 @@ The following requirements apply to the definitions of indexed property getters 
     methods, as demonstrated below:
 
     <pre highlight="js">
-        // Assume map is a platform object implementing the OrderedMap interface.
+        // Assume map is a legacy platform object implementing the OrderedMap interface.
         var map = getOrderedMap();
         var x, y;
 
@@ -3500,8 +3508,8 @@ the following algorithm returns <i>true</i>.
 
     <ol type="a">
         1.  The two identified [=interfaces=] are
-            not the same, it is not possible for a single [=platform object=]
-            to implement both [=interfaces=],
+            not the same, it is not possible for a single [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object to implement both [=interfaces=],
             and it is not the case that both are [=callback interfaces=].
         1.  The interface type is not a [=callback interface=].
     </ol>
@@ -4075,8 +4083,10 @@ where keys are strings and values are of a particular type specified in the defi
 </pre>
 
 Dictionaries are always passed by value.  In language bindings where a dictionary is represented by an object of some kind, passing a
-dictionary to a [=platform object=] will not result in a reference to the dictionary being kept by that object.
-Similarly, any dictionary returned from a platform object will be a copy and modifications made to it will not be visible to the platform object.
+dictionary to a [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+will not result in a reference to the dictionary being kept by that object.
+Similarly, any dictionary returned from a platform or legacy platform object will be a copy.
+Modifications made to it will not be visible to the platform or legacy platform object.
 
 A dictionary can be defined to <dfn id="dfn-inherit-dictionary" for="dictionary" export>inherit</dfn> from another dictionary.
 If the identifier of the dictionary is followed by a colon and a [=identifier=],
@@ -4114,7 +4124,7 @@ When specified in the dictionary value, a dictionary member is said to be
 <dfn id="dfn-present" export>present</dfn>, otherwise it is [=present|not present=].
 Dictionary members can also optionally have a <dfn id="dfn-dictionary-member-default-value" for="dictionary member" export>default value</dfn>, which is
 the value to use for the dictionary member when passing a value to a
-[=platform object=] that does
+[=platform object|platform=] or [=legacy platform object|legacy platform=] object that does
 not have a specified value.  Dictionary members with default values are
 always considered to be present.
 
@@ -4267,7 +4277,7 @@ identifiers.
 
     Dictionaries are required to have their members ordered because
     in some language bindings the behavior observed when passing
-    a dictionary value to a platform object depends on the order
+    a dictionary value to a platform or legacy platform object depends on the order
     the dictionary members are fetched.  For example, consider the
     following additional interface:
 
@@ -5066,29 +5076,39 @@ defined in this specification are applicable to
 <h3 id="idl-objects">Objects implementing interfaces</h3>
 
 In a given implementation of a set of [=IDL fragments=],
-an object can be described as being a <dfn id="dfn-platform-object" export>platform object</dfn>, a
-<dfn id="dfn-user-object" export>user object</dfn>, or neither.  There are two kinds of
-object that are considered to be platform objects:
+an object can be described as being a
+<dfn id="dfn-platform-object" export>platform object</dfn>,
+<dfn id="dfn-legacy-platform-object" export>legacy platform object</dfn>
+a <dfn id="dfn-user-object" export>user object</dfn>, or none of the above.
 
-*   objects that implement a non-[=callback interface|callback=] [=interface=];
+[=Legacy platform objects=] are objects that
+implement a non-[=callback interface|callback=] [=interface=]
+that [=support indexed properties|supports indexed=] or
+[=support named properties|named properties=].
+
+There are two kinds of object that are considered to be [=platform objects=]:
+
+*   objects that implement a non-[=callback interface|callback=] [=interface=]
+    but that are not [=legacy platform objects=];
 *   objects representing IDL {{DOMException|DOMExceptions}}.
 
 In a browser, for example,
 the browser-implemented DOM objects (implementing interfaces such as <code class="idl">Node</code> and
 <code class="idl">Document</code>) that provide access to a web page’s contents
-to ECMAScript running in the page would be platform objects.  These objects might be exotic objects,
+to ECMAScript running in the page would be platform or legacy platform objects.  These objects might be exotic objects,
 implemented in a language like C++, or they might be native ECMAScript objects.  Regardless,
-an implementation of a given set of IDL fragments needs to be able to recognize all platform objects
+an implementation of a given set of IDL fragments needs to be able to recognize all platform and legacy platform objects
 that are created by the implementation.  This might be done by having some internal state that records whether
-a given object is indeed a platform object for that implementation, or perhaps by observing
-that the object is implemented by a given internal C++ class.  How exactly platform objects
+a given object is indeed a platform or legacy platform object for that implementation, or perhaps by observing
+that the object is implemented by a given internal C++ class.  How exactly platform and legacy platform objects
 are recognised by a given implementation of a set of IDL fragments is implementation specific.
 
-All other objects in the system would not be treated as platform objects.  For example, assume that
+All other objects in the system would not be treated as platform or legacy platform objects.  For example, assume that
 a web page opened in a browser loads an ECMAScript library that implements DOM Core.  This library
 would be considered to be a different implementation from the browser provided implementation.
 The objects created by the ECMAScript library that implement the <code class="idl">Node</code> interface
-will not be treated as platform objects that implement <code class="idl">Node</code> by the browser implementation.
+will not be treated as platform or legacy platform objects that implement <code class="idl">Node</code>
+by the browser implementation.
 
 User objects are those that authors would create, implementing
 [=callback interfaces=] that the Web APIs use to be able to invoke author-defined
@@ -5099,7 +5119,7 @@ used to register a callback that the DOM Events implementation invokes, would be
 to be a user object.
 
 Note that user objects can only implement [=callback interfaces=]
-and platform objects can only implement non-callback interfaces.
+and platform and legacy platform objects can only implement non-callback interfaces.
 
 
 <h3 id="idl-types">Types</h3>
@@ -5774,10 +5794,12 @@ values of type |T|.
 
 Sequences are always passed by value.  In
 language bindings where a sequence is represented by an object of
-some kind, passing a sequence to a [=platform object=]
+some kind, passing a sequence to a [=platform object|platform=] or
+[=legacy platform object|legacy platform=] object
 will not result in a reference to the sequence being kept by that object.
-Similarly, any sequence returned from a platform object
-will be a copy and modifications made to it will not be visible to the platform object.
+Similarly, any sequence returned from a platform or legacy platform object
+will be a copy and modifications made to it will not be visible to the
+platform or legacy platform object.
 
 There is no way to represent a constant sequence value in IDL.
 
@@ -5815,10 +5837,11 @@ However, there is no way to represent a constant record value in IDL.
 
 Records are always passed by value. In language bindings where a record
 is represented by an object of some kind, passing a record
-to a [=platform object=] will not result in a reference to the record
+to a [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+will not result in a reference to the record
 being kept by that object. Similarly, any record returned from a
 platform object will be a copy and modifications made to it will not be visible
-to the platform object.
+to the platform or legacy platform object.
 
 Records must not be used as the type of an [=attribute=] or
 [=constant=].
@@ -6328,7 +6351,8 @@ more of the following are redefined in accordance with the rules for exotic obje
 \[[HasInstance]].
 
 Other specifications may override the definitions
-of any internal method of a [=platform object=]
+of any internal method of a [=platform object|platform=]
+or [=legacy platform object|legacy platform=] object
 that is an instance of an [=interface=].
 
 <p class="advisement">
@@ -6489,8 +6513,8 @@ for Web pages.
 Although at the time of this writing the ECMAScript specification does not reflect this,
 every ECMAScript object must have an <dfn id="dfn-associated-realm" export>associated [=Realm=]</dfn>. The mechanisms
 for associating objects with Realms are, for now, underspecified. However, we note that
-in the case of [=platform objects=], the
-associated Realm is equal to the object's [=relevant Realm=], and
+in the case of [=platform object|platform=] or [=legacy platform object|legacy platform=] object,
+the associated Realm is equal to the object's [=relevant Realm=], and
 for non-exotic function objects (i.e. not callable proxies, and not bound functions)
 the associated Realm is equal to the value of the function object's \[[Realm]] internal
 slot.
@@ -6503,9 +6527,9 @@ This section describes how types in the IDL map to types in ECMAScript.
 Each sub-section below describes how values of a given IDL type are represented
 in ECMAScript.  For each IDL type, it is described how ECMAScript values are
 <dfn id="dfn-convert-ecmascript-to-idl-value" export lt="converted to an IDL value|converted to IDL values">converted to an IDL value</dfn>
-when passed to a [=platform object=] expecting that type, and how IDL values
+when passed to a [=platform object|platform=] or [=legacy platform object|legacy platform=] object expecting that type, and how IDL values
 of that type are <dfn id="dfn-convert-idl-to-ecmascript-value" export lt="converted to an ECMAScript value|converted to ECMAScript values">converted to ECMAScript values</dfn>
-when returned from a platform object.
+when returned from a platform or legacy platform object.
 
 
 <h4 id="es-any">any</h4>
@@ -6567,7 +6591,8 @@ ECMAScript value type.
 
 The only place that the {{void}} type may appear
 in IDL is as the [=return type=] of an
-[=operation=].  Functions on [=platform objects=]
+[=operation=].  Functions on [=platform object|platform=] or
+[=legacy platform object|legacy platform=] object
 that implement an operation whose IDL specifies a
 {{void}} return type must return the
 <emu-val>undefined</emu-val> value.
@@ -7208,7 +7233,8 @@ values are represented by ECMAScript <emu-val>Object</emu-val> or
     to an IDL [=interface type=] value by running the following algorithm (where |I| is the [=interface=]):
 
     1.  If [=Type=](|V|) is not Object, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
-    1.  If |V| is a [=platform object=] that implements |I|, then return the IDL [=interface type=] value that represents a reference to that platform object.
+    1.  If |V| is a [=platform object|platform=] or [=legacy platform object|legacy platform=] object that implements |I|,
+        then return the IDL [=interface type=] value that represents a reference to that platform or legacy platform object.
     1.  If |V| is a [=user object=]
         that is considered to implement |I| according to the rules in [[#es-user-objects]], then return the IDL [=interface type=] value that represents a reference to that
         user object, with the [=incumbent settings object=] as the [=callback context=].
@@ -7519,7 +7545,7 @@ ECMAScript <emu-val>Array</emu-val> values.
         // An Array of Numbers...
         var a = [0, 0, 100, 0, 50, 62.5];
 
-        // ...can be passed to a platform object expecting a sequence&lt;double&gt;.
+        // ...can be passed to a platform or legacy platform object expecting a sequence&lt;double&gt;.
         canvas.drawPolygon(a);
 
         // Each element will be converted to a double by first calling ToNumber().
@@ -7726,7 +7752,7 @@ that correspond to the union’s [=member types=].
             result of [=converted to an IDL value|converting=] |V| to that dictionary type.
         1.  If |types| includes a [=record type=], then return the
             result of [=converted to an IDL value|converting=] |V| to that record type.
-    1.  If |V| is a [=platform object=], then:
+    1.  If |V| is a [=platform object|platform=] or [=legacy platform object|legacy platform=] object, then:
         1.  If |types| includes an [=interface type=] that |V|
             implements, then return the IDL value that is a reference to the object |V|.
         1.  If |types| includes {{object}}, then return the IDL value
@@ -7870,6 +7896,7 @@ by platform objects for {{DOMException|DOMExceptions}}.
     to an IDL {{DOMException}} value by running the following algorithm:
 
     1.  If [=Type=](|V|) is not Object,
+        or |V| is a legacy platform object,
         or |V| is not a platform object that represents a {{DOMException}},
         then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Return the IDL {{DOMException}} value that is a reference
@@ -9060,7 +9087,7 @@ for the specific requirements that the use of
 If the [{{OverrideBuiltins}}]
 [=extended attribute=]
 appears on an [=interface=],
-it indicates that for a [=platform object=] implementing the interface,
+it indicates that for a [=legacy platform object=] implementing the interface,
 properties corresponding to all of
 the object’s [=supported property names=]
 will appear to be on the object,
@@ -9255,8 +9282,8 @@ If the [{{Replaceable}}]
 appears on a [=read only=]
 [=regular attribute=],
 it indicates that setting the corresponding property on the
-[=platform object=] will result in
-an own property with the same name being created on the object
+[=platform object|platform=] or [=legacy platform object|legacy platform=] object
+will result in an own property with the same name being created on the object
 which has the value being assigned.  This property will shadow
 the accessor property corresponding to the attribute, which
 exists on the [=interface prototype object=].
@@ -9303,7 +9330,8 @@ for the specific requirements that the use of
     </pre>
 
     Assigning to the “value” property
-    on a [=platform object=] implementing <code class="idl">Counter</code>
+    on a [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+    implementing <code class="idl">Counter</code>
     will shadow the property that corresponds to the
     [=attribute=]:
 
@@ -9794,7 +9822,7 @@ object.  This check is used to determine whether a given
 [=attribute=] access should be
 allowed.  The security check takes the following three inputs:
 
-1.  the [=platform object=] on
+1.  the [=platform object|platform=] or [=legacy platform object|legacy platform=] object on
     which the operation invocation or attribute access is being done,
 1.  the [=identifier=]
     of the operation or attribute, and
@@ -9863,8 +9891,8 @@ Note: The HTML Standard defines how a security check is performed. [[!HTML]]
 
             then remove from |S| all other entries.
 
-        1.  Otherwise: if |V| is a [=platform object=], and
-            there is an entry in |S| that has one of the following types at position |i| of its type list,
+        1.  Otherwise: if |V| is a [=platform object|platform=] or [=legacy platform object|legacy platform=] object,
+            and there is an entry in |S| that has one of the following types at position |i| of its type list,
             *   an [=interface type=] that |V| implements
             *   {{object}}
             *   a [=nullable type|nullable=] version of any of the above types
@@ -10252,7 +10280,7 @@ whose value is the identifier of the corresponding interface.
     1.  If |V| is not an object, return <emu-val>false</emu-val>.
     1.  Let |O| be the result of calling the \[[Get]] method of |A| with property name “prototype”.
     1.  If |O| is not an object, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a> exception.
-    1.  If |V| is a platform object that implements the
+    1.  If |V| is a platform or legacy platform object that implements the
         interface for which |O| is the [=interface prototype object=],
         return <emu-val>true</emu-val>.
     1.  Repeat:
@@ -10627,12 +10655,14 @@ The characteristics of this property are as follows:
                 that the attribute was originally declared on.
 
             1.  Let |O| be the <emu-val>this</emu-val> value.
-            1.  If |O| is a [=platform object=],
+            1.  If |O| is a [=platform object|platform=] or
+                [=legacy platform object|legacy platform=] object,
                 then [=perform a security check=], passing:
-                *   the platform object |O|,
+                *   the platform or legacy platform object |O|,
                 *   the [=identifier=] of the [=attribute=], and
                 *   the type “getter”.
-            1.  If |O| is not a [=platform object=] that implements |I|, then:
+            1.  If |O| is not a [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+                that implements |I|, then:
                 1.  If the [=attribute=] was specified with the
                     [{{LenientThis}}] [=extended attribute=],
                     then return <emu-val>undefined</emu-val>.
@@ -10671,14 +10701,15 @@ The characteristics of this property are as follows:
                 whose [=interface prototype object=]
                 this property corresponding to the attribute appears on.
             1.  Let |O| be the <emu-val>this</emu-val> value.
-            1.  If |O| is a [=platform object=],
-                then [=perform a security check=], passing:
-                *   the platform object |O|,
+            1.  If |O| is a [=platform object|platform=] or
+                [=legacy platform object|legacy platform=]
+                object, then [=perform a security check=], passing:
+                *   the platform or legacy platform object |O|,
                 *   the [=identifier=] of the [=attribute=], and
                 *   the type “setter”.
             1.  Let |validThis| be <emu-val>true</emu-val> if |O| is a
-                [=platform object=] that implements |I|, or
-                <emu-val>false</emu-val> otherwise.
+                [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+                that implements |I|, or <emu-val>false</emu-val> otherwise.
             1.  If |validThis| is <emu-val>false</emu-val> and the
                 [=attribute=] was not specified with the
                 [{{LenientThis}}] [=extended attribute=],
@@ -10797,10 +10828,10 @@ given an [=operation=] |op|, a [=namespace=] or [=interface=] |target|, and a [=
                 object does not implement |target|.)
                 <!-- https://www.w3.org/Bugs/Public/show_bug.cgi?id=18547#c9 -->
             1.  Otherwise, set |O| to the <emu-val>this</emu-val> value.
-            1.  If |O| is a [=platform object=], then [=perform a security check=], passing |O|,
-                |id|, and "method".
-            1.  If |O| is not a [=platform object=] that implements the interface |target|,
-                <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
+            1.  If |O| is a [=platform object|platform=] or [=legacy platform object|legacy platform=] object,
+                then [=perform a security check=], passing |O|, |id|, and "method".
+            1.  If |O| is not a [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+                that implements the interface |target|, <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
         1.  Let |S| be the [=effective overload set=] for [=regular operations=] (if |op| is a
             regular operation) or for [=static operations=] (if |op| is a static operation) with
             [=identifier=] |id| on |target| and with argument count |n|.
@@ -10849,9 +10880,10 @@ then there must exist a property with the following characteristics:
         The value of the property is a <emu-val>Function</emu-val> object, which behaves as follows:
 
         1.  Let |O| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   the [=identifier=] of the [=stringifier=], and
             *   the type “method”.
         1.  If |O| is not an object that implements the [=interface=]
@@ -10904,9 +10936,10 @@ The location of the property is determined as follows:
     must behave as follows:
 
     1.  Let |O| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |O| is a [=platform object=],
+    1.  If |O| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |O|,
+        *   the platform or legacy platform object |O|,
         *   the [=identifier=] of the [=serializer=], and
         *   the type “method”.
     1.  If |O| is not an object that implements the [=interface=]
@@ -11001,14 +11034,17 @@ then the <emu-val>Function</emu-val> object is [=%ArrayProto_values%=].
     then the <emu-val>Function</emu-val>, when invoked, must behave as follows:
 
     1.  Let |object| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |object| is a [=platform object=],
+    1.  If |object| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |object|,
+        *   the platform or legacy platform object |object|,
         *   the identifier “@@iterator”, and
         *   the type “method”.
     1.  Let |interface| be the [=interface=]
         the [=iterable declaration=] is on.
-    1.  If |object| is not a [=platform object=] that implements |interface|,
+    1.  If |object| is not a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object
+        that implements |interface|,
         then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Let |iterator| be a newly created [=default iterator object=]
         for |interface| with |object| as its target and iterator kind “key+value”.
@@ -11022,12 +11058,14 @@ then the <emu-val>Function</emu-val> object is [=%ArrayProto_values%=].
     when invoked, must behave as follows:
 
     1.  Let |object| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |object| is a [=platform object=],
+    1.  If |object| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |object|,
+        *   the platform or legacy platform object |object|,
         *   the identifier “@@iterator”, and
         *   the type “method”.
-    1.  If |object| is not a [=platform object=]
+    1.  If |object| is not a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object
         that implements the [=interface=]
         on which the [=maplike declaration=]
         or [=setlike declaration=] is defined,
@@ -11114,15 +11152,17 @@ the initial value of the “forEach” data property of [=%ArrayPrototype%=].
     the <emu-val>Function</emu-val>, when invoked, must behave as follows:
 
     1.  Let |object| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |object| is a [=platform object=],
+    1.  If |object| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |object|,
+        *   the platform or legacy platform object |object|,
         *   the identifier “forEach”, and
         *   the type “method”.
     1.  Let |interface| be the [=interface=]
         on which the [=maplike declaration=]
         or [=setlike declaration=] is declared.
-    1.  If |object| is not a [=platform object=]
+    1.  If |object| is not a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object
         that implements |interface|,
         then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Let |callbackFn| be the value of the first argument passed to the function, or <emu-val>undefined</emu-val> if the argument was not supplied.
@@ -11216,14 +11256,16 @@ the initial value of the “keys” data property of [=%ArrayPrototype%=].
     then the <emu-val>Function</emu-val>, when invoked, must behave as follows:
 
     1.  Let |object| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |object| is a [=platform object=],
+    1.  If |object| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |object|,
+        *   the platform or legacy platform object |object|,
         *   the identifier “keys”, and
         *   the type “method”.
     1.  Let |interface| be the [=interface=]
         on which the [=iterable declaration=] is declared on.
-    1.  If |object| is not a [=platform object=]
+    1.  If |object| is not a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object
         that implements |interface|,
         then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Let |iterator| be a newly created [=default iterator object=]
@@ -11265,14 +11307,16 @@ the value of the [=@@iterator=] property.
     then the <emu-val>Function</emu-val>, when invoked, must behave as follows:
 
     1.  Let |object| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |object| is a [=platform object=],
+    1.  If |object| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |object|,
+        *   the platform or legacy platform object |object|,
         *   the identifier “entries”, and
         *   the type “method”.
     1.  Let |interface| be the [=interface=]
         on which the [=iterable declaration=] is declared on.
-    1.  If |object| is not a [=platform object=]
+    1.  If |object| is not a [=platform object|platform=] or 
+        [=legacy platform object|legacy platform=] object
         that implements |interface|,
         then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
     1.  Let |iterator| be a newly created [=default iterator object=]
@@ -11335,9 +11379,10 @@ must be [=%IteratorPrototype%=].
     1.  Let |interface| be the [=interface=] for which the
         [=iterator prototype object=] exists.
     1.  Let |object| be the result of calling [=ToObject=] on the <emu-val>this</emu-val> value.
-    1.  If |object| is a [=platform object=],
+    1.  If |object| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |object|,
+        *   the platform or legacy platform object |object|,
         *   the identifier “next”, and
         *   the type “method”.
     1.  If |object| is not a [=default iterator object=] for |interface|,
@@ -11402,9 +11447,10 @@ These additional properties are described in the sub-sections below.
     1.  Let |O| be the <emu-val>this</emu-val> value.
     1.  Let |arguments| be the list of arguments passed to this function.
     1.  Let |name| be the function name.
-    1.  If |O| is a [=platform object=],
+    1.  If |O| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |O|,
+        *   the platform or legacy platform object |O|,
         *   an identifier equal to |name|, and
         *   the type “method”.
     1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11431,9 +11477,10 @@ with the following characteristics:
         whose behavior when invoked is as follows:
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   the identifier “size”, and
             *   the type “getter”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11483,9 +11530,10 @@ For both of “get” and “has”, there must exist a property with that name 
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
         1.  Let |name| be the name of the property – “get” or “has”.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   an identifier equal to |name|, and
             *   the type “method”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11539,9 +11587,10 @@ must exist on |A|’s
         The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   the identifier “delete”, and
             *   the type “method”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11574,9 +11623,10 @@ must exist on |A|’s [=interface prototype object=]:
         The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   the identifier “set”, and
             *   the type “method”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11621,9 +11671,10 @@ These additional properties are described in the sub-sections below.
     1.  Let |O| be the <emu-val>this</emu-val> value.
     1.  Let |arguments| be the list of arguments passed to this function.
     1.  Let |name| be the function name.
-    1.  If |O| is a [=platform object=],
+    1.  If |O| is a [=platform object|platform=] or
+        [=legacy platform object|legacy platform=] object,
         then [=perform a security check=], passing:
-        *   the platform object |O|,
+        *   the platform or legacy platform object |O|,
         *   an identifier equal to |name|, and
         *   the type “method”.
     1.  If |O| is not an object that implements |A|,
@@ -11652,9 +11703,10 @@ with the following characteristics:
         whose behavior when invoked is as follows:
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   the identifier “size”, and
             *   the type “getter”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11704,9 +11756,10 @@ with the following characteristics:
         The value of the property is a <emu-val>Function</emu-val> object that behaves as follows when invoked:
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   the identifier “has”, and
             *   the type “method”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11745,9 +11798,10 @@ must exist on |A|’s
 
         1.  Let |O| be the <emu-val>this</emu-val> value.
         1.  Let |name| be the name of the property – “add” or “delete”.
-        1.  If |O| is a [=platform object=],
+        1.  If |O| is a [=platform object|platform=] or
+            [=legacy platform object|legacy platform=] object,
             then [=perform a security check=], passing:
-            *   the platform object |O|,
+            *   the platform or legacy platform object |O|,
             *   an identifier equal to |name|, and
             *   the type “method”.
         1.  If |O| is not an object that implements |A|, then <a lt="es throw">throw a <emu-val>TypeError</emu-val></a>.
@@ -11848,37 +11902,39 @@ and similarly with their setters.
 
 <h3 id="es-platform-objects">Platform objects implementing interfaces</h3>
 
-Every [=platform object=] is associated with a global environment, just
-as the [=initial objects=] are.
+Every [=platform object|platform=] or [=legacy platform object|legacy platform=] object
+is associated with a global environment, just as the [=initial objects=] are.
 It is the responsibility of specifications using Web IDL to state
-which global environment (or, by proxy, which global object) each platform
+which global environment (or, by proxy, which global object) each platform or legacy platform
 object is associated with.
 
-The <dfn id="dfn-primary-interface" export>primary interface</dfn> of a platform object
+The <dfn id="dfn-primary-interface" export>primary interface</dfn> of a platform or legacy platform object
 that implements one or more interfaces is the most-derived [=supplemental interfaces|non-supplemental interface=]
 that it implements.  The value of the internal \[[Prototype]]
-property of the platform object is the [=interface prototype object=]
+property of the platform or legacy platform object is the [=interface prototype object=]
 of the [=primary interface=]
-from the [=platform object=]’s associated global environment.
+from the [=platform object|platform=] or [=legacy platform object|legacy platform=] object’s
+associated global environment.
 
-The global environment that a given [=platform object=]
+The global environment that a given [=platform object|platform=] or
+[=legacy platform object|legacy platform=] object
 is associated with can <dfn id="dfn-change-global-environment" for="global environment" export>change</dfn> after it has been created.  When
-the global environment associated with a platform object is changed, its internal
+the global environment associated with a platform or legacy platform object is changed, its internal
 \[[Prototype]] property must be immediately
 updated to be the [=interface prototype object=]
-of the [=primary interface=]
-from the [=platform object=]’s newly associated global environment.
+of the [=primary interface=] from
+the [=platform object|platform=] or [=legacy platform object|legacy platform=] object’s
+newly associated global environment.
 
 The [=class string=] of
-a platform object that implements one or more interfaces
-must be the [=identifier=] of
-the [=primary interface=]
-of the platform object.
+a platform or legacy platform object that implements one or more interfaces
+must be the [=identifier=] of the [=primary interface=]
+of the platform or legacy platform object.
 
 
 <h4 id="indexed-and-named-properties">Indexed and named properties</h4>
 
-If a [=platform object=] implements an [=interface=] that
+If a [=legacy platform object=] implements an [=interface=] that
 [=support indexed properties|supports indexed=] or
 [=support named properties|named properties=],
 the object will appear to have additional properties that correspond to the
@@ -11896,13 +11952,13 @@ It is permissible for an object to implement multiple interfaces that support in
 However, if so, and there are conflicting definitions as to the object’s
 [=supported property indices=],
 or if one of the interfaces is a [=supplemental interface=] for the
-platform object, then it is undefined what additional properties the object will appear to
+legacy platform object, then it is undefined what additional properties the object will appear to
 have, or what its exact behavior will be with regard to its indexed properties.
 The same applies for named properties.
 
 The [=indexed property getter=]
 that is defined on the derived-most interface that the
-platform object implements is the one that defines the behavior
+legacy platform object implements is the one that defines the behavior
 when indexing the object with an array index.  Similarly for
 [=indexed property setters=].
 This way, the definitions of these special operations from
@@ -11922,7 +11978,7 @@ ancestor interfaces can be overridden.
 </div>
 
 A property name is an <dfn id="dfn-unforgeable-property-name" export>unforgeable property name</dfn> on a
-given platform object if the object implements an [=interface=] that
+given platform or legacy platform object if the object implements an [=interface=] that
 has an [=interface member=] with that identifier
 and that interface member is [=unforgeable=] on any of
 the interfaces that |O| implements.
@@ -12032,14 +12088,11 @@ defined in section [[#platformobjectset]].
 </div>
 
 
-<h4 id="getownproperty">Platform object \[[GetOwnProperty]] method</h4>
+<h4 id="getownproperty">Legacy platform object \[[GetOwnProperty]] method</h4>
 
 <div algorithm="to invoke the internal [[GetOwnProperty]] method of platform objects">
 
-    The internal \[[GetOwnProperty]] method of every [=platform object=] |O|
-    that implements an [=interface=] which
-    [=support indexed properties|supports indexed=] or
-    [=support named properties|named properties=]
+    The internal \[[GetOwnProperty]] method of every [=legacy platform object=] |O|
     must behave as follows when called with property name |P|:
 
     1.  Return the result of invoking the [=The PlatformObjectGetOwnProperty abstract operation|PlatformObjectGetOwnProperty=]
@@ -12047,7 +12100,7 @@ defined in section [[#platformobjectset]].
 </div>
 
 
-<h4 id="invoking-indexed-setter">Invoking a platform object indexed property setter</h4>
+<h4 id="invoking-indexed-setter">Invoking a legacy platform object indexed property setter</h4>
 
 <div algorithm>
 
@@ -12072,7 +12125,7 @@ defined in section [[#platformobjectset]].
 </div>
 
 
-<h4 id="invoking-named-setter">Invoking a platform object named property setter</h4>
+<h4 id="invoking-named-setter">Invoking a legacy platform object named property setter</h4>
 
 <div algorithm>
 
@@ -12095,14 +12148,11 @@ defined in section [[#platformobjectset]].
 </div>
 
 
-<h4 id="platformobjectset">Platform object \[[Set]] method</h4>
+<h4 id="platformobjectset">Legacy platform object \[[Set]] method</h4>
 
-<div algorithm="to invoke the internal [[Set]] method of platform objects">
+<div algorithm="to invoke the internal [[Set]] method of legacy platform objects">
 
-    The internal \[[Set]] method of every [=platform object=] |O|
-    that implements an [=interface=] which
-    [=support indexed properties|supports indexed=] or
-    [=support named properties|named properties=]
+    The internal \[[Set]] method of every [=legacy platform object=] |O|
     must behave as follows when called with
     property name |P|, value |V|, and ECMAScript language value |Receiver|:
 
@@ -12121,11 +12171,11 @@ defined in section [[#platformobjectset]].
     1.  Perform steps 3-11 of the [=default [[Set]] internal method=].
 </div>
 
-<h4 id="platformobjectsetprototypeof">Platform object \[[SetPrototypeOf]] method</h4>
+<h4 id="platformobjectsetprototypeof">Legacy platform object \[[SetPrototypeOf]] method</h4>
 
-<div algorithm="to invoke the internal [[SetPrototypeOf]] method of platform objects">
+<div algorithm="to invoke the internal [[SetPrototypeOf]] method of legacy platform objects">
 
-    The internal \[[SetPrototypeOf]] method of every [=platform object=]
+    The internal \[[SetPrototypeOf]] method of every [=legacy platform object=]
     that implements an [=interface=] with the [{{Global}}] or [{{PrimaryGlobal}}]
     [=extended attribute=] must execute the same algorithm as is defined for the
     \[[SetPrototypeOf]] internal method of an [=immutable prototype exotic object=].
@@ -12136,15 +12186,12 @@ the {{WindowProxy}} object ensures that \[[SetPrototypeOf]] is never called on a
 directly. For other global objects, however, this is necessary.
 
 
-<h4 id="defineownproperty">Platform object \[[DefineOwnProperty]] method</h4>
+<h4 id="defineownproperty">Legacy platform object \[[DefineOwnProperty]] method</h4>
 
-<div algorithm="to invoke the internal [[DefineOwnProperty]] method of platform objects">
+<div algorithm="to invoke the internal [[DefineOwnProperty]] method of legacy platform objects">
 
-    When the internal \[[DefineOwnProperty]] method of a [=platform object=] |O|
-    that implements an [=interface=] which
-    [=support indexed properties|supports indexed=] or
-    [=support named properties|named properties=] is called with
-    property key |P| and [=Property Descriptor=] |Desc|,
+    When the internal \[[DefineOwnProperty]] method of a [=legacy platform object=] |O|
+    is called with property key |P| and [=Property Descriptor=] |Desc|,
     the following steps must be taken:
 
     1.  If |O| [=support indexed properties|supports indexed properties=] and
@@ -12185,13 +12232,11 @@ directly. For other global objects, however, this is necessary.
 </div>
 
 
-<h4 id="delete">Platform object \[[Delete]] method</h4>
+<h4 id="delete">Legacy platform object \[[Delete]] method</h4>
 
-<div algorithm="to invoke the internal [[Delete]] method of platform objects">
+<div algorithm="to invoke the internal [[Delete]] method of legacy platform objects">
 
-    The internal \[[Delete]] method of every [=platform object=] |O|
-    that implements an [=interface=] which
-    [=support indexed properties|supports indexed=] or [=support named properties|named properties=]
+    The internal \[[Delete]] method of every [=legacy platform object=] |O|
     must behave as follows when called with property name |P|.
 
     1.  If |O| [=support indexed properties|supports indexed properties=] and
@@ -12223,11 +12268,11 @@ directly. For other global objects, however, this is necessary.
 </div>
 
 
-<h4 id="call">Platform object \[[Call]] method</h4>
+<h4 id="call">Legacy Platform object \[[Call]] method</h4>
 
-<div algorithm="to invoke the internal [[Call]] method of platform objects">
+<div algorithm="to invoke the internal [[Call]] method of legacy platform objects">
 
-    The internal \[[Call]] method of every [=platform object=] that implements
+    The internal \[[Call]] method of [=legacy platform object=] that implements
     an [=interface=] |I| with at least one [=legacy caller=] must behave as follows,
     assuming |arg|<sub>0..|n|−1</sub> is the list of argument values passed to \[[Call]]:
 
@@ -12243,22 +12288,18 @@ directly. For other global objects, however, this is necessary.
         if |operation| is declared to return {{void}}).
 </div>
 
+Note: 
 
-<h4 id="preventextensions">Platform object \[[PreventExtensions]] method</h4>
+<h4 id="preventextensions">Legacy Platform object \[[PreventExtensions]] method</h4>
 
-<div algorithm="to invoke the internal [[PreventExtensions]] method of platform objects">
+<div algorithm="to invoke the internal [[PreventExtensions]] method of legacy platform objects">
 
-    When the \[[PreventExtensions]] internal method of a [=platform object=] |O| is called,
+    When the \[[PreventExtensions]] internal method of a [=legacy platform object=] is called,
     the following steps are taken:
 
-    1.  If |O| [=support indexed properties|supports indexed properties=] or
-        |O| [=support named properties|supports named properties=],
-        return <emu-val>false</emu-val>.
-    1.  Return [=OrdinaryPreventExtensions=](|O|).
+    1.  return <emu-val>false</emu-val>.
 
-    Note: this keeps [=platform objects=] which
-    [=support indexed properties|support indexed=] or
-    [=support named properties|named properties=] extensible by
+    Note: this keeps [=legacy platform objects=] extensible by
     making \[[PreventExtensions]] fail for them.
 </div>
 
@@ -12266,11 +12307,9 @@ directly. For other global objects, however, this is necessary.
 <h4 id="property-enumeration">Property enumeration</h4>
 
 This document does not define a complete property enumeration order
-for all [=platform objects=] implementing [=interfaces=]
+for [=platform objects=] implementing [=interfaces=]
 (or for <a href="#es-exception-objects">platform objects representing exceptions</a>).
-However, if a platform object implements an interface that
-[=support indexed properties|supports indexed=] or
-[=support named properties|named properties=], then
+However, for [=legacy platform objects=],
 properties on the object must be
 enumerated in the following order:
 
