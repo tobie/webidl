@@ -12407,6 +12407,28 @@ attribute is the concatenation of the class string of the namespace, ".",
 and the class string that the interface would otherwise have without this
 extended attribute.
 
+
+<div algorithm>
+
+    A [=platform object=] implementing an [=interface=] |interface|, in [=Realm=] |realm|,
+    and with optional [=list=] of [=internal slots=] |internalSlotsList|,
+    is <dfn lt="create a platform object">created</dfn> as follows:
+
+    1.  Let |proto| be the [=interface prototype object=] for |interface| in |realm|.
+    1.  Let |obj| be [=ObjectCreate=](|proto|, |internalSlotsList|).
+    1.  [=Define the unforgeable regular attributes=] of |interface| on |obj| given |realm|.
+    1.  [=Define the unforgeable regular operations=] of |interface| on |obj| given |realm|.
+    1.  If |interface| is declared with the [{{Global}}] [=extended attribute=], then:
+        1.  Set |obj|.\[[SetPrototypeOf]] to the definition specified in [[#platform-object-setprototypeof]].
+        1.  [=Define the constants=] of |interface| on |obj| given |realm|.
+    1.  Otherwise, if |obj| is a [=legacy platform object=], then:
+        1.  Set |obj|'s internal methods to the definitions specified in [[#es-legacy-platform-objects]].
+    1.  If  alternative internal method definitions are specified for objects implementing |interface|,
+        then set |obj|'s internal methods to those definitions.
+    1.  Return |obj|.
+</div>
+
+
 <h4 id="platform-object-setprototypeof" oldids="platformobjectsetprototypeof">\[[SetPrototypeOf]]</h4>
 
 <div algorithm="to invoke the internal [[SetPrototypeOf]] method of a platform object that implements an interface with [Global] extended attribute">
